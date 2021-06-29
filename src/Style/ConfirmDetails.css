@@ -116,7 +116,7 @@
 
 .displayArea {
   background-color: #e8e0dd;
-  width: 85%;
+  width: 55vw;
   height: 21em;
   margin-top: 1em;
   padding-top: 5em;
@@ -266,7 +266,7 @@ select {
 @media only screen and (min-width: 768px) {
   .displayArea {
     background-color: #e8e0dd;
-    width: 90%;
+    width: 55vw;
     height: 21em;
     margin-top: 1em;
     padding-top: 3em;
