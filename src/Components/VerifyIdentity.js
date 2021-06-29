@@ -7,31 +7,39 @@ class VerifyIdentity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // width for mobile view
       width: 0,
+      //four digit OTP
       otp: {
         otp1: "",
         otp2: "",
         otp3: "",
         otp4: "",
       },
+      // error for 4 digit OTP
       error: {
         otp1: true,
         otp2: true,
         otp3: true,
         otp4: true,
       },
+      // 3 minute timer for resend OTP
       timer: {
         minute: "03",
         second: "00",
       },
       timerId: 0,
       timeOut: true,
+      //get user email id
       userEmail: props.userData.email,
+      // resend email text will be displayed when true
       resendEmail: false,
+      // agreement Screen will be displayed when true
       agreementScreen: false,
     };
   }
 
+  // move to Agreement screen if OTP is valid
   checkOTP = () => {
     let otp = this.state.otp;
     if ("" + otp["otp1"] + otp["otp2"] + otp["otp3"] + otp["otp4"] === "8888") {
@@ -41,6 +49,7 @@ class VerifyIdentity extends React.Component {
     }
   };
 
+  // to display masked version of email address for resend email screen
   maskEmail = (email) => {
     let id = email.substring(0, email.indexOf("@"));
     return (
@@ -51,6 +60,7 @@ class VerifyIdentity extends React.Component {
     );
   };
 
+  //this method is called to resend OTP and reset the timer to 3 minutes
   resendCode = () => {
     let timer = this.state.timer;
     timer["second"] = "00";
@@ -64,6 +74,8 @@ class VerifyIdentity extends React.Component {
     this.runTimer();
   };
 
+  // run Timer starts the timer when component is mounted or when resend email is called.
+  //it count downs form 3 minutes to 0 and then enables resend email button when it reaches 0
   runTimer = () => {
     const timerId = setInterval(() => {
       let timer = this.state.timer;
@@ -84,6 +96,7 @@ class VerifyIdentity extends React.Component {
     this.setState({ timerId });
   };
 
+  // handle change to update otp to state variables
   handleChange = (e) => {
     let type = e.target.id;
     let value = e.target.value;
@@ -110,6 +123,10 @@ class VerifyIdentity extends React.Component {
     this.checkOTP();
   };
 
+  // loads when component is mounted
+  // 1. sets width for mobile view
+  // 2. removes the footer
+  // 3. starts the timer
   componentDidMount = () => {
     this.setState({ width: window.innerWidth });
     this.props.setDisplayFooter(false);
@@ -122,7 +139,10 @@ class VerifyIdentity extends React.Component {
       <React.Fragment>
         {!this.state.agreementScreen ? (
           <>
-            {this.state.width <= 550 ? <Header step={2} agreement={false} /> : null}
+            {/* Header displayed in  mobile view */}
+            {this.state.width <= 550 ? (
+              <Header step={2} agreement={false} />
+            ) : null}
             <div
               className={
                 this.state.width >= 550 ? "componentMargin " : "mobileComponent"
@@ -137,8 +157,10 @@ class VerifyIdentity extends React.Component {
                 <div className="col-lg-12 col-md-8 offset-md-1 verifyDivOffset">
                   <div className="row">
                     <div className="col-lg-5">
+                      {/* 4 Digit  OTP  */}
                       <div className="otpContainer">
                         <div className="row">
+                          {/* OTP Digit 1 */}
                           <input
                             type="text"
                             value={otp.otp1}
@@ -152,6 +174,7 @@ class VerifyIdentity extends React.Component {
                             autoComplete="off"
                             onChange={this.handleChange}
                           />
+                          {/* OTP Digit 2 */}
                           <input
                             type="text"
                             value={otp.otp2}
@@ -165,6 +188,7 @@ class VerifyIdentity extends React.Component {
                             autoComplete="off"
                             onChange={this.handleChange}
                           />
+                          {/* OTP Digit 3 */}
                           <input
                             type="text"
                             value={otp.otp3}
@@ -178,6 +202,7 @@ class VerifyIdentity extends React.Component {
                             autoComplete="off"
                             onChange={this.handleChange}
                           />
+                          {/* OTP Digit 4 */}
                           <input
                             type="text"
                             value={otp.otp4}
@@ -195,6 +220,7 @@ class VerifyIdentity extends React.Component {
                       </div>
                     </div>
                   </div>
+                  {/* Resend Email  */}
                   {this.state.resendEmail ? (
                     <div className="resendTextArea">
                       Code sent again to <br />
@@ -213,6 +239,7 @@ class VerifyIdentity extends React.Component {
                       </div>
                     )}
                   </div>
+                  {/* Timer  */}
                   <div className="row">
                     <div className="col-lg-5 ">
                       {this.state.timeOut ? (
@@ -231,6 +258,7 @@ class VerifyIdentity extends React.Component {
             </div>
           </>
         ) : (
+          // if OTP is correct, then Agreement screen is loaded
           <Agreement
             userData={this.props.userData}
             setrightFooterButtonDisabled={

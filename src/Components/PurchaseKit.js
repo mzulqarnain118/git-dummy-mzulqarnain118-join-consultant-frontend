@@ -8,7 +8,9 @@ class PurchaseKit extends React.Component {
   constructor() {
     super();
     this.state = {
+      //width for mobile view
       width: 0,
+      //form details
       form: {
         cardHolderName: "",
         cardNumber: "",
@@ -19,6 +21,7 @@ class PurchaseKit extends React.Component {
         city: "",
         state: "",
       },
+      //error messages
       error: {
         cardHolderName: "",
         cardNumber: "",
@@ -29,10 +32,12 @@ class PurchaseKit extends React.Component {
         city: "",
         state: "",
       },
+      // checked for billing address / shipping address
       checked: true,
     };
   }
 
+  // enable /disable footer button to move to next screen
   enableDone = (checked = this.state.checked) => {
     let form = this.state.form;
     let error = this.state.error;
@@ -62,12 +67,14 @@ class PurchaseKit extends React.Component {
     }
   };
 
+  // handle change to update input details in form state variables
   handleChange = (e) => {
     let form = this.state.form;
     let error = this.state.error;
     let id = e.target.id;
     let value = e.target.value;
 
+    //card holder name
     if (id === "cardHolderName") {
       if (value !== "") {
         error[id] = "";
@@ -76,6 +83,7 @@ class PurchaseKit extends React.Component {
       }
     }
 
+    //card number
     if (id === "cardNumber") {
       if (value !== "") {
         error[id] = "";
@@ -84,6 +92,7 @@ class PurchaseKit extends React.Component {
       }
     }
 
+    //card date
     if (id === "cardDate") {
       if (value !== "") {
         error[id] = "";
@@ -92,6 +101,7 @@ class PurchaseKit extends React.Component {
       }
     }
 
+    //card CVV
     if (id === "cardCVV") {
       if (value !== "") {
         error[id] = "";
@@ -108,6 +118,7 @@ class PurchaseKit extends React.Component {
       }
     }
 
+    //zip code
     if (id === "zipCode") {
       if (value !== "") {
         error[id] = "";
@@ -116,6 +127,7 @@ class PurchaseKit extends React.Component {
       }
     }
 
+    //city
     if (id === "city") {
       if (value !== "") {
         error[id] = "";
@@ -124,6 +136,7 @@ class PurchaseKit extends React.Component {
       }
     }
 
+    //state
     if (id === "state") {
       if (value !== "") {
         error[id] = "";
@@ -137,6 +150,7 @@ class PurchaseKit extends React.Component {
     this.enableDone();
   };
 
+  //used to update width for mobile view
   componentDidMount = () => {
     this.setState({ width: window.innerWidth });
   };
@@ -145,6 +159,7 @@ class PurchaseKit extends React.Component {
     const { form, error, checked } = this.state;
     return (
       <React.Fragment>
+        {/* Header for mobile view  */}
         {this.state.width <= 550 ? <Header step={3} agreement={false} /> : null}
         <div
           className={
@@ -158,6 +173,7 @@ class PurchaseKit extends React.Component {
           <span className="head1">PURCHASE KIT</span>
           <div className="row">
             <div className="col-lg-12 col-md-11 mobileTotalPanel">
+              {/* total panel to display price details */}
               <div className="totalPanel">
                 <div className="row">
                   <div className="col-lg-4 offset-lg-1 col-md-4 offset-md-1 mobileTotalTitle">
@@ -184,6 +200,7 @@ class PurchaseKit extends React.Component {
                   <div className="col-lg-1"></div>
                 </div>
               </div>
+              {/* subtext to to be displayed below total panel */}
               <div className="totalSubText">
                 Depending on where your BBK is going, additional taxes and fees
                 may apply. These rates are determined by shipping address
@@ -194,6 +211,7 @@ class PurchaseKit extends React.Component {
                 <div className="paymentHead">PAYMENT DETAILS</div>
                 <div className="row">
                   <div className="col-lg-5 ">
+                    {/* Card Holder name */}
                     <div className="form-group">
                       <div className="purchaseInputMargin">
                         <span
@@ -227,6 +245,7 @@ class PurchaseKit extends React.Component {
                     </div>
                   </div>
                   <div className="col-lg-5 offset-lg-1 ">
+                    {/* Card Number */}
                     <div className="form-group">
                       <div className="purchaseInputMargin1">
                         <span className="purchasehead3" htmlFor="cardNumber">
@@ -259,6 +278,7 @@ class PurchaseKit extends React.Component {
                 </div>
                 <div className="row">
                   <div className="col-lg-3 col-md-5 mobileMMYY">
+                    {/* Month and year of card */}
                     <div className="form-group">
                       <span className="purchasehead3" htmlFor="cardDate">
                         MM/YY
@@ -287,6 +307,7 @@ class PurchaseKit extends React.Component {
                     </div>
                   </div>
                   <div className="col-lg-2 col-md-4 mobileCVV">
+                    {/* CVV of card */}
                     <div className="form-group">
                       <span className="purchasehead3" htmlFor="cardCVV">
                         CVV
@@ -316,6 +337,7 @@ class PurchaseKit extends React.Component {
                   </div>
                 </div>
               </div>
+              {/* Check box to accept Billing Address or Shipping Address */}
               <div className="col-lg-12 billingAddressoffset">
                 <div className="billingHead"> BILLING ADDRESS</div>
                 <div className="acceptBillingAddress">
@@ -332,11 +354,12 @@ class PurchaseKit extends React.Component {
                   />
                   <span className="billingText">Same as shipping address.</span>
                 </div>
-
+                {/* The Below part will be displayed if billing address is same as Shipping address */}
                 {!checked ? (
                   <>
                     <div className="row">
                       <div className="col-lg-5">
+                        {/* Street */}
                         <div className="form-group">
                           <div className="purchaseInputMargin">
                             <span className="purchasehead3" htmlFor="street">
@@ -367,6 +390,7 @@ class PurchaseKit extends React.Component {
                         </div>
                       </div>
                       <div className="col-lg-5 desktopViewMarginLeft">
+                        {/* Zip code */}
                         <div className="form-group">
                           <div className="purchaseInputMargin">
                             <span className="purchasehead3" htmlFor="zipCode">
@@ -399,6 +423,7 @@ class PurchaseKit extends React.Component {
                     </div>
                     <div className="row">
                       <div className="col-lg-5">
+                        {/* City */}
                         <div className="form-group">
                           <div className="purchaseInputMargin">
                             <span className="purchasehead3" htmlFor="city">
@@ -429,6 +454,7 @@ class PurchaseKit extends React.Component {
                         </div>
                       </div>
                       <div className="col-lg-5 desktopViewMarginLeft">
+                        {/* State */}
                         <div className="form-group">
                           <div className="purchaseInputMargin">
                             <span className="purchasehead3" htmlFor="state">

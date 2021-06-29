@@ -97,6 +97,7 @@ class PaymentConfirmation extends React.Component {
     ];
   };
 
+  // width for mobile view
   componentDidMount = () => {
     this.setState({ width: window.innerWidth });
   };
@@ -115,6 +116,7 @@ class PaymentConfirmation extends React.Component {
           >
             <div className="row">
               <div className="col-lg-5 offset-lg-3 col-md-12 col-xs-3">
+                {/* header for mobile view  */}
                 {width <= 550 ? (
                   <>
                     <ArrowBackIosIcon className="arrowIcon1" />
@@ -153,6 +155,7 @@ class PaymentConfirmation extends React.Component {
           COMPLETE ALL THE STEPS TO FINISH YOUR ENROLLMENT
         </div>
         <div className="col-lg-8 offset-lg-2 col-md-4 stepperMdMarginLeft">
+          {/* Stepper */}
           <Stepper
             connector={<GreenStepConnector />}
             activeStep={activeStep}
@@ -192,9 +195,11 @@ class PaymentConfirmation extends React.Component {
             })}
           </Stepper>
         </div>
+        {/* Footer  */}
         <div className="pcFooter">
           <div className="pcFooterHead">LET'S GET GOING</div>
           <div className="row pcFooterLeftMargin">
+            {/* card 1 */}
             <div
               className="col-lg-3  pcFooterCard"
               onMouseDown={this.onRippleStart1}
@@ -212,6 +217,7 @@ class PaymentConfirmation extends React.Component {
               </div>
             </div>
 
+            {/* card 2 */}
             <div
               className="col-lg-3 pcFooterCard"
               onMouseDown={this.onRippleStart2}
@@ -229,6 +235,7 @@ class PaymentConfirmation extends React.Component {
               </div>
             </div>
 
+            {/* card 3 */}
             <div
               className="col-lg-3 pcCardMarginLeft pcFooterCard"
               onMouseDown={this.onRippleStart3}
@@ -250,6 +257,7 @@ class PaymentConfirmation extends React.Component {
   }
 }
 
+//  styles and prop type for material ui
 PaymentConfirmation.propTypes = {
   classes: PropTypes.object,
 };
