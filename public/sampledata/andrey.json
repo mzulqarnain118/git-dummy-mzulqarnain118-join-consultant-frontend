@@ -1,0 +1,22 @@
+{
+    "id":1,
+    "email":"andrey01@gmail.com",
+    "password":"Andrey01",
+    "firstname":"Andrey",
+    "lastname":"Wilkinson",
+    "dob":{
+        "month":7,
+        "day":16,
+        "year":1996
+    },
+    "cellno":"7148752145",
+    "workingwith":"Jenny Rouse",
+    "address":{
+        "street": "17852 Lenore Park Ct",
+        "zipcode":89166,
+        "city":"Los Vegas",
+        "state":"NV"
+    },
+    "ssn":0
+    
+}

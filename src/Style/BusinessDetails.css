@@ -1,0 +1,618 @@
+.componentMargin {
+  margin-top: 4em;
+  margin-left: 2.5em;
+}
+
+.customURL {
+  border-width: 1px;
+  border-color: #d8c5a6;
+  border-radius: 0;
+  width: 20em !important;
+  height: 3.8em !important;
+  margin-bottom: 0.5em;
+  margin-top: 2.5em;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: Domine;
+}
+.customURL:focus {
+  border-color: #d8c5a6;
+}
+
+.customURL::placeholder {
+  font-weight: 100;
+}
+
+.availableIcon {
+  margin-top: 1.7em;
+  color: #4ba380;
+}
+
+.availableText {
+  margin-top: 3em;
+  font-family: oswald;
+  font-size: 1.1em;
+  margin-left: 0.7em;
+}
+
+.customURLRed {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 1 !important;
+  width: 20em !important;
+  height: 3.8em !important;
+  margin-bottom: 0.5em;
+  margin-top: 2.5em;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: Domine;
+  border-radius: 0 !important;
+}
+.customURLRed:focus {
+  border-color: red;
+  border-radius: 0 !important;
+}
+
+.customURLRed::placeholder {
+  font-weight: 100;
+}
+.notAvailableIcon {
+  margin-top: 1.7em;
+  color: rgb(236, 85, 85);
+}
+
+.businessHead {
+  font-size: 2em;
+  font-weight: 400;
+  font-family: oswald;
+  margin-top: 2em;
+}
+.businessButton1 {
+  background: #dcba80;
+  text-align: center;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  color: white;
+  font-size: 1.4em;
+  margin-top: 0.5em;
+  font-family: Domine;
+}
+.businessButton1:hover {
+  cursor: pointer;
+}
+
+.businessButton2 {
+  background: #dcba80;
+  text-align: center;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  color: white;
+  font-size: 1.4em;
+  margin-left: 0.3em;
+  margin-top: 0.5em;
+  font-family: Domine;
+}
+
+.businessButton2:hover {
+  cursor: pointer;
+}
+
+.iconBusiness {
+  margin-top: -0.15em;
+  margin-right: 0.3em;
+}
+
+.businessButtonNotActive {
+  background: #f7f3f2;
+  color: #707070;
+  border-width: 2px;
+  border-color: #d8c5a6;
+  border-style: solid;
+}
+.businessButtonNotActive:hover {
+  cursor: pointer;
+}
+.ssn {
+  font-family: oswald;
+  font-size: 1.5em;
+  margin-top: 2em;
+  font-weight: 400;
+}
+.ssnSubtext {
+  font-family: Domine;
+  margin-top: 0.3em;
+  font-size: 1.1em;
+  font-weight: 100;
+}
+.ssnInput {
+  border-width: 1px;
+  border-color: #d8c5a6;
+  border-radius: 0;
+  width: 25em !important;
+  height: 4.5em !important;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: Domine;
+}
+.ssnInput:focus {
+  border-color: #d8c5a6;
+}
+
+.ssnInputRed {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 1 !important;
+  width: 25em !important;
+  height: 4.5em !important;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+  font-weight: bold;
+  font-size: 1em;
+  font-family: Domine;
+  border-radius: 0 !important;
+}
+
+.ssnInputRed:focus {
+  border-color: red;
+  border-radius: 0 !important;
+}
+
+.ssnInput::placeholder,
+.ssnInputRed ::placeholder {
+  font-weight: 100;
+}
+
+.entitySubtext {
+  background: #e8e0dd;
+  margin-top: 0.5em !important;
+  margin-left: 0.5em;
+  padding: 1.5em;
+  font-size: 1.1em !important;
+  width: 31.5em !important;
+}
+
+.errorMesSubtext {
+  font-size: 0.8em;
+  color: red;
+  font-family: Domine;
+  width: 100em !important;
+  margin-top: 1.5em;
+  margin-left: 1.5em;
+}
+
+@media only screen and (max-width: 768px) {
+  .staticText4 {
+    font-size: 1em;
+    font-family: Domine;
+    margin-top: 2.5em;
+    font-weight: bold;
+  }
+
+  .customURL {
+    border-width: 1px;
+    border-color: #d8c5a6;
+    border-radius: 0;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Domine;
+    margin-left: 1em;
+  }
+  .customURL:focus {
+    border-color: #d8c5a6;
+  }
+
+  .customURL::placeholder {
+    font-weight: 100;
+  }
+  .customURLRed {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 1 !important;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Domine;
+    border-radius: 0 !important;
+    margin-left: 1em;
+  }
+  .customURLRed:focus {
+    border-color: red;
+    border-radius: 0 !important;
+  }
+
+  .customURLRed::placeholder {
+    font-weight: 100;
+  }
+
+  .availableIcon {
+    margin-top: 3.9em;
+    color: #4ba380;
+  }
+  .notAvailableIcon {
+    margin-top: 3.9em;
+    color: rgb(236, 85, 85);
+  }
+
+  .availableText {
+    margin-top: 5.6em;
+    font-family: oswald;
+    font-size: 1em;
+    margin-left: 0.7em;
+    width: 10em;
+  }
+
+  .businessHead {
+    font-size: 1.8em;
+    font-weight: 400;
+    font-family: oswald;
+    margin-top: 0.7em;
+  }
+
+  .errorMes {
+    font-size: 0.8em;
+    color: red;
+    font-family: Domine;
+    width: 100em !important;
+    margin-left: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .businessButton1 {
+    background: #dcba80;
+    text-align: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: white;
+    font-size: 1.1em;
+    margin-top: 0.5em;
+    font-family: Domine;
+  }
+  .businessButton1:hover {
+    cursor: pointer;
+  }
+
+  .businessButton2 {
+    background: #dcba80;
+    text-align: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: white;
+    font-size: 1.1em;
+    margin-top: 0.5em;
+    font-family: Domine;
+  }
+
+  .businessButton2:hover {
+    cursor: pointer;
+  }
+
+  .iconBusiness {
+    margin-top: -0.15em;
+    margin-right: 0.3em;
+  }
+
+  .businessButtonNotActive {
+    background: #f7f3f2;
+    color: #707070;
+    border-width: 2px;
+    border-color: #d8c5a6;
+    border-style: solid;
+    font-size: 1.1em;
+    width: 14em;
+    height: 3.1em;
+  }
+  .businessButtonNotActive:hover {
+    cursor: pointer;
+  }
+
+  .ssn {
+    font-family: oswald;
+    font-size: 1.3em;
+    margin-top: 1.5em;
+    font-weight: 400;
+  }
+
+  .ssnInput {
+    border-width: 1px;
+    border-color: #d8c5a6;
+    border-radius: 0;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Domine;
+  }
+  .ssnInput:focus {
+    border-color: #d8c5a6;
+  }
+
+  .ssnInputRed {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 1 !important;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Domine;
+    border-radius: 0 !important;
+  }
+
+  .ssnInputRed:focus {
+    border-color: red;
+    border-radius: 0 !important;
+  }
+  .ssnSubtext {
+    font-family: Domine;
+    margin-top: 0.3em;
+    font-size: 0.9em;
+    font-weight: 100;
+  }
+
+  .entitySubtext {
+    background: #e8e0dd;
+    margin-top: 1em;
+    margin-left: 0.5em;
+    padding: 1.5em;
+    font-size: 1em;
+    width: 32em;
+  }
+
+  .errorMesSubtext {
+    font-size: 0.8em;
+    color: red;
+    font-family: Domine;
+    width: 100em !important;
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .customURL {
+    border-width: 1px;
+    border-color: #d8c5a6;
+    border-radius: 0;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Domine;
+    margin-left: 0.1em;
+  }
+  .customURL:focus {
+    border-color: #d8c5a6;
+  }
+
+  .customURL::placeholder {
+    font-weight: 100;
+  }
+  .customURLRed {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 1 !important;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Domine;
+    border-radius: 0 !important;
+    margin-left: 0.1em;
+  }
+  .customURLRed:focus {
+    border-color: red;
+    border-radius: 0 !important;
+  }
+
+  .customURLRed::placeholder {
+    font-weight: 100;
+  }
+
+  .availableIcon {
+    margin-top: 4.6em;
+    color: #4ba380;
+  }
+  .notAvailableIcon {
+    margin-top: 4.6em;
+    color: rgb(236, 85, 85);
+  }
+
+  .availableText {
+    margin-top: 7.2em;
+    font-family: oswald;
+    font-size: 0.8em;
+    margin-left: 0.7em;
+    width: 10em;
+  }
+
+  .businessHead {
+    font-size: 1.8em;
+    font-weight: 400;
+    font-family: oswald;
+    margin-top: 0.5em;
+  }
+
+  .errorMes {
+    font-size: 0.8em;
+    color: red;
+    font-family: Domine;
+    width: 100em !important;
+    margin-left: 1em;
+    margin-top: 1.5em;
+  }
+
+  .businessButton1 {
+    background: #dcba80;
+    text-align: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    color: white;
+    margin-top: 0.5em;
+    font-family: Domine;
+    font-size: 1.1em;
+    width: 9em;
+    height: 3.1em;
+  }
+  .businessButton1:hover {
+    cursor: pointer;
+  }
+
+  .businessButton2 {
+    background: #dcba80;
+    text-align: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    color: white;
+    margin-top: 0.5em;
+    font-family: Domine;
+    font-size: 1.1em;
+    width: 9em;
+    height: 3.1em;
+  }
+
+  .businessButton2:hover {
+    cursor: pointer;
+  }
+
+  .iconBusiness {
+    margin-top: -0.15em;
+    margin-right: 0.3em;
+  }
+
+  .businessButtonNotActive {
+    background: #f7f3f2;
+    color: #707070;
+    border-width: 2px;
+    border-color: #d8c5a6;
+    border-style: solid;
+    font-family: Domine;
+    font-size: 1.1em;
+    width: 9em;
+    height: 3.1em;
+  }
+  .businessButtonNotActive:hover {
+    cursor: pointer;
+  }
+
+  .ssn {
+    font-family: oswald;
+    font-size: 1.3em;
+    margin-top: 0.7em;
+    font-weight: 400;
+  }
+
+  .ssnInput {
+    border-width: 1px;
+    border-color: #d8c5a6;
+    border-radius: 0;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Domine;
+  }
+  .ssnInput:focus {
+    border-color: #d8c5a6;
+  }
+
+  .ssnInputRed {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 1 !important;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Domine;
+    border-radius: 0 !important;
+  }
+
+  .ssnInputRed:focus {
+    border-color: red;
+    border-radius: 0 !important;
+  }
+  .ssnSubtext {
+    font-family: Domine;
+    margin-top: 0.3em;
+    font-size: 0.9em;
+    font-weight: 100;
+  }
+
+  .entitySubtext {
+    background: #e8e0dd;
+    margin-top: 1em;
+    margin-left: 0.8em;
+    padding: 1.5em;
+    font-size: 1em;
+    width: 19em !important;
+  }
+
+  .errorMesSubtext {
+    font-size: 0.8em;
+    color: red;
+    font-family: Domine;
+    width: 100em !important;
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+  }
+
+  .mobileAvailabilityIcon {
+    width: 1em !important;
+  }
+  .mobileAvailabilitySubText {
+    width: 1em !important;
+  }
+  .mobileAvailabilityText {
+    margin-top: -5.5em;
+    margin-left: 11em;
+  }
+
+  .mobileSsnToggle {
+    width: 11em;
+    margin-top: 0.5em;
+  }
+  .staticText3 {
+    font-size: 0.8em;
+    font-family: Domine;
+    margin-top: 0.8em;
+    width: 25em;
+  }
+
+  .staticText4 {
+    font-size: 1em;
+    font-family: Domine;
+    margin-top: 1.5em;
+    font-weight: bold;
+  }
+  .mobileoverFlowBusinessDetails{
+    overflow: hidden;
+  }
+}

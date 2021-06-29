@@ -1,0 +1,46 @@
+.header {
+  margin-left: 3em;
+}
+.fontOswald {
+  font-family: oswald;
+  font-size: 1.2em;
+}
+.LogoIcon {
+  margin-left: -2em;
+}
+.arrowIcon3 {
+  margin-top: 0.3em;
+}
+.headerMarginTop {
+  padding-top: 2.5em;
+  margin-left: -18em;
+  margin-right: -27.2em;
+  padding-left: 15em;
+  padding-bottom: 0.5em;
+}
+.stepperMarginTop {
+  margin-top: 2em;
+}
+.Home-step-1 {
+  border: 0px solid white;
+  font-color: black;
+  border-radius: 0%;
+}
+.MuiStepIcon-root-53.MuiStepIcon-active-54 .MuiStepIcon-text-54 {
+  fill: #034691 !important;
+}
+@media only screen and (max-width: 550px) {
+  .mobileMargin {
+    margin-bottom: 10vh;
+    margin-left: -5vw;
+  }
+  .mobileStep {
+    margin-left: 10vw;
+  }
+  .mobileStepHead {
+    margin-left: 15vw;
+    font-size: 3vh;
+    font-family: oswald;
+    font-weight: 400;
+  }
+}

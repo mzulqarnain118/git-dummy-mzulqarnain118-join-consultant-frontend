@@ -1,0 +1,313 @@
+.componentMargin {
+  margin-top: 1em;
+  margin-left: 1em;
+}
+.agreementButton1 {
+  background: #dcba80;
+  text-align: center;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  color: white;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  font-family: Domine;
+}
+.agreementButton1:hover {
+  cursor: pointer;
+}
+
+.agreementButton2 {
+  background: #dcba80;
+  text-align: center;
+  padding-top: 0.9em;
+  padding-bottom: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  color: white;
+  font-size: 1.2em;
+  margin-left: 0.3em;
+  margin-top: 0.5em;
+  font-family: Domine;
+}
+
+.agreementButton2:hover {
+  cursor: pointer;
+}
+
+.agreementButtonNotActive1 {
+  background: #f7f3f2;
+  color: #707070;
+  border-width: 2px;
+  border-color: #d8c5a6;
+  border-style: solid;
+  padding-top: 0.1em;
+  padding-bottom: 0.15em;
+}
+.agreementButtonNotActive1:hover {
+  cursor: pointer;
+}
+
+.agreementButtonNotActive2 {
+  background: #f7f3f2;
+  color: #707070;
+  border-width: 2px;
+  border-color: #d8c5a6;
+  border-style: solid;
+  padding-top: 0.8em;
+  padding-bottom: 0.85em;
+}
+.agreementButtonNotActive2:hover {
+  cursor: pointer;
+}
+
+.downloadButton {
+  cursor: pointer;
+  background: #e8e0dd;
+  font-family: oswald;
+  text-align: center;
+  margin-top: 1em;
+  width: 84.5vh;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #6e7071;
+}
+
+.agreementPolicy {
+  border-width: 1px;
+  border-color: #d8c5a6;
+  border-style: solid;
+  background: white;
+  width: 84.5vh;
+  height: 26vw;
+  margin-top: 1em;
+  overflow-y: scroll;
+  font-family: Domine;
+  padding: 2em;
+}
+.agreementTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.acceptAgreement {
+  margin-top: 2em;
+  font-weight: bold;
+}
+.checkBoxAccept {
+  margin-top: -0.2em !important;
+}
+@media only screen and (max-width: 768px) {
+  .componentMargin {
+    margin-top: 4em;
+    margin-left: 1em;
+  }
+  .agreementButton1 {
+    background: #dcba80;
+    text-align: center;
+    padding-top: 0.65em;
+    padding-bottom: 0.65em;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: white;
+    font-size: 1.1em;
+    margin-top: 0.5em;
+    font-family: Domine;
+  }
+  .agreementButton1:hover {
+    cursor: pointer;
+  }
+
+  .agreementButton2 {
+    background: #dcba80;
+    text-align: center;
+    padding-top: 1.4em;
+    padding-bottom: 1.4em;
+    width: 15.5em;
+    color: white;
+    font-size: 1.1em;
+    margin-left: 0.2em;
+    margin-top: 0.5em;
+    font-family: Domine;
+  }
+
+  .agreementButton2:hover {
+    cursor: pointer;
+  }
+
+  .agreementButtonNotActive1 {
+    background: #f7f3f2;
+    color: #707070;
+    border-width: 2px;
+    border-color: #d8c5a6;
+    border-style: solid;
+    padding-top: 0.55em;
+    padding-bottom: 0.55em;
+  }
+  .agreementButtonNotActive1:hover {
+    cursor: pointer;
+  }
+
+  .agreementButtonNotActive2 {
+    background: #f7f3f2;
+    color: #707070;
+    border-width: 2px;
+    border-color: #d8c5a6;
+    border-style: solid;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+  }
+  .agreementButtonNotActive2:hover {
+    cursor: pointer;
+  }
+
+  .downloadButton {
+    cursor: pointer;
+    background: #e8e0dd;
+    font-family: oswald;
+    text-align: center;
+    margin-top: 1em;
+    width: 58.5vh;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: #6e7071;
+  }
+
+  .agreementPolicy {
+    border-width: 1px;
+    border-color: #d8c5a6;
+    border-style: solid;
+    background: white;
+    width: 58.5vh;
+    height: 56vw;
+    margin-top: 1em;
+    overflow-y: scroll;
+    font-family: Domine;
+    padding: 2em;
+  }
+  .agreementTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  .acceptAgreement {
+    margin-top: 2em;
+    font-weight: bold;
+  }
+  .checkBoxAccept {
+    margin-top: -0.2em !important;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .agreementButton1 {
+    background: #dcba80;
+    text-align: center;
+    padding-top: 0.65em;
+    padding-bottom: 0.5em;
+    padding-left: 1.3em;
+    padding-right: 1.3em;
+    color: white;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    font-family: Domine;
+  }
+  .agreementButton1:hover {
+    cursor: pointer;
+  }
+
+  .agreementButton2 {
+    background: #dcba80;
+    text-align: center;
+    padding-top: 1.3em;
+    padding-bottom: 1.4em;
+    color: white;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    font-family: Domine;
+    margin-left: -1em;
+    width: 14em ;
+  }
+
+  .agreementButton2:hover {
+    cursor: pointer;
+  }
+
+  .agreementButtonNotActive1 {
+    background: #f7f3f2;
+    color: #707070;
+    border-width: 2px;
+    border-color: #d8c5a6;
+    border-style: solid;
+    text-align: center;
+    padding-top: 0.55em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 0.8em;
+    margin-top: 0.5em;
+    font-family: Domine;
+  }
+  .agreementButtonNotActive1:hover {
+    cursor: pointer;
+  }
+
+  .agreementButtonNotActive2 {
+    background: #f7f3f2;
+    color: #707070;
+    border-width: 2px;
+    border-color: #d8c5a6;
+    border-style: solid;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+  }
+  .agreementButtonNotActive2:hover {
+    cursor: pointer;
+  }
+
+  .downloadButton {
+    cursor: pointer;
+    background: #e8e0dd;
+    font-family: oswald;
+    text-align: center;
+    margin-top: 1em;
+    width: 46vh;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: #6e7071;
+  }
+
+  .agreementPolicy {
+    border-width: 1px;
+    border-color: #d8c5a6;
+    border-style: solid;
+    background: white;
+    width: 46vh;
+    height: 137vw;
+    margin-top: 1em;
+    overflow-y: scroll;
+    font-family: Domine;
+    padding: 1em;
+  }
+  .agreementTitle {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  .acceptAgreement {
+    margin-top: 1em;
+    font-weight: bold;
+  }
+  .checkBoxAccept {
+    margin-top: -0.2em !important;
+  }
+  .mobileAgreementButtonWidth {
+    width: 12.8em;
+  }
+  .mobileAcceptCheckBox {
+    font-size: 0.7em;
+  }
+  .agreementData {
+    font-size: 0.7em;
+  }
+  .mobileAgreementLeftMargin{
+    margin-left: -1em;
+  }
+}

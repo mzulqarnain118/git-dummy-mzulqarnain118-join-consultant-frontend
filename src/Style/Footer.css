@@ -1,0 +1,150 @@
+.blackBar {
+  background-color: #241f20;
+  position: fixed;
+  width: 100vw;
+  bottom: 0px;
+  height: auto;
+}
+.textButton {
+  color: white;
+  margin: 1%;
+  font-size: 3vh;
+  font-weight: 500;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-family: oswald;
+}
+.textButton:hover {
+  cursor: pointer;
+}
+.textButtonDisabled {
+  color: #707070;
+  margin: 1%;
+  font-size: 3vh;
+  font-weight: 500;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-family: oswald;
+}
+.textButtonDisabled:hover {
+  cursor: not-allowed;
+}
+.grey {
+  background-color: grey;
+  padding-top: 0.8em;
+}
+.leftTextButton {
+  color: white;
+  margin: 1%;
+  font-size: 3vh;
+  font-weight: 500;
+  margin-top: 1.5%;
+  margin-bottom: 1%;
+  font-family: oswald;
+}
+.leftTextButton:hover {
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .grey {
+    background-color: grey;
+    padding-top: 0.2em;
+  }
+
+  .textButton {
+    color: white;
+    margin: 1%;
+    font-size: 3vh;
+    font-weight: 500;
+    margin-top: 0.2em;
+    margin-bottom: 1%;
+    font-family: oswald;
+  }
+  .textButton:hover {
+    cursor: pointer;
+  }
+  .textButtonDisabled {
+    color: #707070;
+    margin: 1%;
+    font-size: 3vh;
+    font-weight: 500;
+    margin-top: 0.2em;
+    margin-bottom: 1%;
+    font-family: oswald;
+  }
+  .textButtonDisabled:hover {
+    cursor: not-allowed;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .blackBar {
+    background-color: #241f20;
+    position: fixed;
+    width: 115vw;
+    bottom: 0px;
+    height: auto;
+  }
+  .textButton {
+    color: white;
+    margin: 1%;
+    font-size: 3vh;
+    font-weight: 400;
+    margin-top: 0.2em;
+    margin-bottom: 3%;
+    font-family: oswald;
+    margin-left: 48vw;
+  }
+  .textButton:hover {
+    cursor: pointer;
+  }
+  .textButtonDisabled {
+    color: #707070;
+    margin: 1%;
+    font-size: 3vh;
+    font-weight: 400;
+    margin-top: 0.2em;
+    margin-bottom: 3%;
+    font-family: oswald;
+    margin-left: 48vw;
+  }
+  .textButtonDisabled:hover {
+    cursor: not-allowed;
+  }
+  .mobileHalfButton {
+    width: 60vw;
+  }
+  .mobileSaveAndProceed {
+    width: 0vw;
+  }
+  .mobileSaveMargin {
+    margin-left: 33vw;
+  }
+  .grey {
+    background-color: grey;
+    padding-top: 0.2em;
+    width: 14em;
+    height: 14.6vw;
+    position: fixed;
+    bottom: 0;
+  }
+  .emptyWidth {
+    width: 0vw;
+  }
+  .leftTextButton {
+    color: white;
+    margin: 1%;
+    font-size: 3vh;
+    font-weight: 400;
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+    font-family: oswald;
+    width: 40vw;
+    margin-left: 1.5em;
+  }
+  .leftTextButton:hover {
+    cursor: pointer;
+  }
+  .mobileLeftMargin {
+    margin-left: 10.5em;
+  }
+}

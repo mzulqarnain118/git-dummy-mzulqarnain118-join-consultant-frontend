@@ -1,0 +1,390 @@
+.componentMargin1 {
+  margin-top: 6em;
+  margin-left: 4em;
+}
+.componentMargin2 {
+  margin-top: 5em;
+  margin-left: 4em;
+}
+.componentMargin3 {
+  margin-top: 2em;
+  margin-left: 4em;
+}
+.componentMargin4 {
+  margin-top: 2em;
+  margin-left: 4em;
+}
+.componentMargin {
+  margin-top: 4em;
+  margin-left: 2.5em;
+}
+.head1 {
+  font-size: 3em;
+  font-weight: "bold";
+  font-family: oswald;
+}
+.email1 {
+  margin-top: 3em;
+}
+.emailLabel {
+  margin-bottom: 1em;
+  color: grey;
+  font-family: oswald;
+}
+.SubText {
+  font-size: 0.9em;
+  font-family: Domine;
+}
+.Input {
+  border-width: 1px;
+  border-color: #d8c5a6 !important;
+  border-radius: 0 !important;
+  width: 28em !important;
+  height: 4em !important;
+  margin-bottom: 0.5em;
+}
+.Input:focus {
+  border-color: #d8c5a6 !important;
+}
+.Red {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 0 !important;
+  width: 28em !important;
+  height: 4em !important;
+  margin-bottom: 0.5em;
+}
+
+.Red:focus {
+  border-color: red !important;
+}
+.errorMes {
+  font-size: 0.8em;
+  color: red;
+  font-family: Domine;
+  width: 17em;
+}
+
+.form-control:focus {
+  border-color: none;
+  box-shadow: none;
+}
+.InputMargin {
+  margin-bottom: 1em;
+}
+/* confirm details passwords page */
+.head2 {
+  font-size: 3em;
+  font-weight: 400;
+  font-family: oswald;
+}
+.staticText1 {
+  font-size: 1.8em;
+  margin-top: 0.7em;
+  font-family: Domine;
+}
+.staticText2 {
+  font-size: 1.2em;
+  font-family: Domine;
+}
+.passwordForgotLink {
+  color: #dcba80;
+  font-size: 1em;
+  text-decoration: underline;
+}
+.passwordForgotLink:hover {
+  cursor: pointer;
+}
+.password1 {
+  margin-top: 2.5em;
+}
+.passwordLabel {
+  margin-bottom: 1em;
+  color: grey;
+  font-family: oswald;
+}
+
+/* details display */
+
+.staticText3 {
+  font-size: 1.1em;
+  font-family: Domine;
+  margin-top: 0.8em;
+}
+
+.staticText4 {
+  font-size: 1.2em;
+  font-family: Domine;
+  margin-top: 3em;
+  font-weight: bold;
+}
+
+.displayArea {
+  background-color: #e8e0dd;
+  width: 85%;
+  height: 21em;
+  margin-top: 1em;
+  padding-top: 5em;
+}
+
+.head3 {
+  color: grey;
+  font-family: oswald;
+  font-size: 1em;
+}
+
+.dataText {
+  font-size: 1.2em;
+  font-family: Domine;
+}
+
+.marginHead {
+  margin-top: 4em;
+}
+
+/* edit cofirm details */
+
+.edit-Input {
+  border-width: 1px;
+  border-color: #d8c5a6 !important;
+  border-radius: 0 !important;
+  width: 18em !important;
+  height: 3.5em !important;
+  margin-bottom: 0.5em;
+}
+.edit-Input:focus {
+  border-color: #d8c5a6 !important;
+}
+.edit-Red {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 0 !important;
+  width: 18em !important;
+  height: 3.5em !important;
+  margin-bottom: 0.5em;
+}
+
+.edit-Red:focus {
+  border-color: red !important;
+}
+
+.edit-margin {
+  margin-top: 1.3em;
+}
+
+.edit-InputMargin {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.staticText5 {
+  font-family: oswald;
+  font-size: 1.5em;
+  margin-top: 1.3em;
+}
+
+.edit-month {
+  border-width: 1px;
+  border-color: #d8c5a6 !important;
+  border-radius: 0 !important;
+  width: 6em !important;
+  height: 3.5em !important;
+  margin-bottom: 0.5em;
+}
+.edit-month:focus {
+  border-color: #d8c5a6 !important;
+}
+
+.edit-day {
+  border-width: 1px;
+  border-color: #d8c5a6 !important;
+  border-radius: 0 !important;
+  width: 5.5em !important;
+  height: 3.5em !important;
+  margin-bottom: 0.5em;
+  margin-left: 0.3em;
+}
+.edit-day:focus {
+  border-color: #d8c5a6 !important;
+}
+.edit-year {
+  border-width: 1px;
+  border-color: #d8c5a6 !important;
+  border-radius: 0 !important;
+  width: 6.5em !important;
+  height: 3.5em !important;
+  margin-bottom: 0.5em;
+}
+.edit-year:focus {
+  border-color: #d8c5a6 !important;
+}
+.edit-month-red {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 0 !important;
+  width: 6em !important;
+  height: 3.5em !important;
+  margin-bottom: 0.5em;
+}
+.edit-month-red :focus {
+  border-color: red !important;
+}
+
+.edit-day-red {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 0 !important;
+  width: 5.5em !important;
+  height: 3.5em !important;
+  margin-bottom: 0.5em;
+  margin-left: 0.3em;
+}
+.edit-day-red :focus {
+  border-color: red !important;
+}
+.edit-year-red {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 0 !important;
+  width: 6.5em !important;
+  height: 3.5em !important;
+  margin-bottom: 0.5em;
+}
+.edit-year-red :focus {
+  border-color: red !important;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 13px;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  margin-right: 2rem;
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .displayArea {
+    background-color: #e8e0dd;
+    width: 90%;
+    height: 21em;
+    margin-top: 1em;
+    padding-top: 3em;
+  }
+  .bottomMargin {
+    margin-bottom: 10em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .head1 {
+    font-size: 2.1em;
+    font-weight: "bold";
+    font-family: oswald;
+  }
+  .mobileComponent {
+    margin-top: 2em;
+  }
+  .Input {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 20em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+  .Input:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .Red {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 20em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+
+  .Red:focus {
+    border-color: red !important;
+  }
+  .SubText {
+    font-size: calc(10px+0.7vw);
+    font-family: Domine;
+    width: 38vh;
+  }
+
+  .head3 {
+    color: grey;
+    font-family: oswald;
+    font-size: 3.5vw;
+  }
+
+  .dataText {
+    font-size: 4.5vw;
+    font-family: Domine;
+  }
+  .displayArea {
+    background-color: #e8e0dd;
+    width: 90%;
+    height: 21em;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-left: 1em;
+  }
+  .mobileDisplayWidth {
+    height: 10vh;
+    width: 45vw;
+  }
+  .marginHead {
+    margin-top: 0em;
+  }
+  .edit-Input {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+  }
+  .edit-Input:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .edit-Red {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 21em !important;
+    height: 3.5em !important;
+    margin-bottom: 0.5em;
+  }
+
+  .edit-Red:focus {
+    border-color: red !important;
+  }
+  .bottomMargin {
+    margin-bottom: 8em;
+  }
+  .mobileDate {
+    width: 30vw;
+  }
+
+  .displayNote {
+    margin-top: 2vh;
+    font-family: oswald;
+    font-weight: 200;
+    margin-bottom: 20vh;
+    width: 80vw;
+  }
+}
+
+.displayNote {
+  margin-top: 2vh;
+  font-family: oswald;
+  font-weight: 200;
+}

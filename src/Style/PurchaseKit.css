@@ -1,0 +1,334 @@
+.purchaseComponentMargin1 {
+  margin-top: 2em;
+  margin-left: 4em;
+}
+.purchaseComponentMargin2 {
+  overflow-y: auto;
+  margin-top: 2em;
+  margin-left: 4em;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+.totalPanel {
+  background: #e8e0dd;
+  margin-top: 1em;
+  padding: 1em;
+  font-family: Domine;
+}
+.subTotalText {
+  font-size: 1.3em;
+}
+.subTotalMoney {
+  font-size: 1.3em;
+  text-align: right;
+}
+.totalText {
+  font-size: 1em;
+}
+.totalMoney {
+  font-size: 1em;
+  text-align: right;
+}
+.totalResultPanel {
+  background: #241f20;
+  padding: 1em;
+  font-family: Domine;
+}
+.ResultText {
+  font-size: 1.5em;
+  color: white;
+}
+.ResultMoney {
+  font-size: 1.5em;
+  color: white;
+  text-align: right;
+}
+.totalSubText {
+  margin-top: 0.7em;
+  color: #241f20;
+  font-size: 0.8em;
+}
+.paymentHead {
+  font-family: oswald;
+  margin-top: 1em;
+  font-size: 2em;
+}
+.purchaseInputMargin {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.purchaseInputMargin1 {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  margin-left: 1.9em;
+}
+.purchasehead3 {
+  color: grey;
+  font-family: oswald;
+  font-size: 1em;
+  margin-bottom: 0.8em;
+}
+.purchaseInput {
+  border-width: 1px;
+  border-color: #d8c5a6 !important;
+  border-radius: 0 !important;
+  width: 30.5em !important;
+  height: 4em !important;
+  margin-bottom: 0.5em;
+}
+.purchaseInput:focus {
+  border-color: #d8c5a6 !important;
+}
+.purchaseRed {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 0 !important;
+  width: 30.5em !important;
+  height: 4em !important;
+  margin-bottom: 0.5em;
+}
+
+.purchaseRed:focus {
+  border-color: red !important;
+}
+.errorMes {
+  font-size: 0.8em;
+  color: red;
+  font-family: Domine;
+  width: 17em;
+}
+.form-control:focus {
+  border-color: none;
+  box-shadow: none;
+}
+.purchaseInput1 {
+  border-width: 1px;
+  border-color: #d8c5a6 !important;
+  border-radius: 0 !important;
+  width: 14.8em !important;
+  height: 4em !important;
+  margin-bottom: 0.5em;
+}
+.purchaseInput1:focus {
+  border-color: #d8c5a6 !important;
+}
+.purchaseRed1 {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 0 !important;
+  width: 15em !important;
+  height: 4em !important;
+  margin-bottom: 0.5em;
+}
+.purchaseRed1:focus {
+  border-color: red !important;
+}
+.billingAddressoffset {
+  margin-left: 0em;
+  margin-top: 1em;
+  margin-bottom: 10em;
+}
+.billingHead {
+  font-family: oswald;
+  margin-top: 1em;
+  font-size: 1em;
+  color: #241f20;
+}
+.acceptBillingAddress {
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+.billingText {
+  font-family: oswald;
+  font-size: 0.9em;
+  color: #241f20;
+  font-weight: 300;
+}
+.purchaseInput2 {
+  border-width: 1px;
+  border-color: #d8c5a6 !important;
+  border-radius: 0 !important;
+  width: 14.4em !important;
+  height: 4em !important;
+  margin-bottom: 0.5em;
+}
+.purchaseInput2:focus {
+  border-color: #d8c5a6 !important;
+}
+.purchaseRed2 {
+  border-width: 1px;
+  border-color: red !important;
+  border-radius: 0 !important;
+  width: 14.4em !important;
+  height: 4em !important;
+  margin-bottom: 0.5em;
+}
+.purchaseRed2:focus {
+  border-color: red !important;
+}
+.desktopViewMarginLeft {
+  margin-left: 7em;
+}
+@media only screen and (max-width: 768px) {
+  .purchaseInput2 {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 15.4em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+  .purchaseInput2:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .purchaseRed2 {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 15.4em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+  .purchaseRed2:focus {
+    border-color: red !important;
+  }
+  .billingAddressoffset {
+    margin-left: 0em;
+    margin-top: 1em;
+    margin-bottom: 10em;
+  }
+  .purchaseInputMargin1 {
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    margin-left: 0em;
+  }
+  .desktopViewMarginLeft {
+    margin-left: 0em;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .purchaseInput {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 21em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+  .purchaseInput:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .purchaseRed {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 21em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+
+  .purchaseRed:focus {
+    border-color: red !important;
+  }
+  .purchaseInput1 {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 9.5em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+  .purchaseInput1:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .purchaseRed1 {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 9.5em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+  .purchaseRed1:focus {
+    border-color: red !important;
+  }
+  .purchaseInput2 {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 10.5em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+  .purchaseInput2:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .purchaseRed2 {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 10.5em !important;
+    height: 4em !important;
+    margin-bottom: 0.5em;
+  }
+  .purchaseRed2:focus {
+    border-color: red !important;
+  }
+  .billingAddressoffset {
+    margin-left: 0em;
+    margin-top: 1em;
+    margin-bottom: 10em;
+  }
+  .mobileMMYY {
+    width: 10.5em;
+  }
+  .mobileCVV {
+    width: 4em;
+  }
+  .mobileTotalTitle {
+    width: 5.5em;
+  }
+  .mobileTotalValue {
+    width: 5em;
+    margin-left: 10em;
+    text-align: right;
+  }
+  .mobileTotalPanel {
+    width: 23em;
+  }
+  .subTotalText {
+    font-size: 1em;
+  }
+  .subTotalMoney {
+    font-size: 1em;
+    text-align: right;
+  }
+  .totalText {
+    font-size: 0.8em;
+  }
+  .totalMoney {
+    font-size: 0.8em;
+    text-align: right;
+  }
+  .ResultText {
+    font-size: 1.1em;
+    color: white;
+  }
+  .ResultMoney {
+    margin-left: -2em;
+    font-size: 1.1em;
+    color: white;
+    text-align: right;
+  }
+  .paymentHead {
+    font-family: oswald;
+    margin-top: 2em;
+    font-size: 1.5em;
+  }
+}
