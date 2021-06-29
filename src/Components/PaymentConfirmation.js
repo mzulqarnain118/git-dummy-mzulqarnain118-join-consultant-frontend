@@ -114,58 +114,65 @@ class PaymentConfirmation extends React.Component {
           <div
             className={width >= 550 ? "PCcomponentMargin " : "mobileComponent"}
           >
-            <div className="row">
-              <div className="col-lg-5 offset-lg-3 col-md-12 col-xs-3">
-                {/* header for mobile view  */}
-                {width <= 550 ? (
-                  <>
-                    <ArrowBackIosIcon className="arrowIcon1" />
-                    <span className="signOutStyle">
-                      SIGNOUT <Icon4 />
-                    </span>
-                  </>
-                ) : null}
-                <div className="paymentConfirmationHead">
-                  HEY, AUDREY!
-                  {/* {userData.firstname} */}
-                </div>
-                <div className="paymentConfirmationSuccess">
-                  Enrolment Successful!
-                </div>
-                <div className="col-lg-5 offset-lg-2 col-md-5 offset-md-2 mobileHead1">
-                  <div className="customURLAssigned">
-                    scoutandcellar.com/BetterWinesCorp
-                  </div>
-                </div>
-                <div className=" paymentConfirmationHead2">
-                  IS NOW RESERVED!
-                </div>
-
-                <hr style={{ background: "white", color: "white" }} />
-
-                <div className="pcHead3">Consultant Number</div>
-                <div className="col-lg-5 offset-lg-2 col-md-5 offset-md-2">
-                  <div className="pcConsultantNumber">37548742</div>
+            <div style={{ marginLeft: "auto", marginRight: "auto" }}>
+              {/* header for mobile view  */}
+              {width <= 550 ? (
+                <>
+                  <ArrowBackIosIcon className="arrowIcon1" />
+                  <span className="signOutStyle">
+                    SIGNOUT <Icon4 />
+                  </span>
+                </>
+              ) : null}
+              <div className="paymentConfirmationHead">
+                HEY, AUDREY!
+                {/* {userData.firstname} */}
+              </div>
+              <div className="paymentConfirmationSuccess">
+                Enrolment Successful!
+              </div>
+              <div className=" mobileHead1">
+                <div className="customURLAssigned">
+                  scoutandcellar.com/BetterWinesCorp
                 </div>
               </div>
+              <div className=" paymentConfirmationHead2">IS NOW RESERVED!</div>
+
+              <hr
+                style={{
+                  background: "white",
+                  color: "white",
+                  width: "60%",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              />
+
+              <div className="pcHead3">Consultant Number</div>
+
+              <div className="pcConsultantNumber">37548742</div>
             </div>
           </div>
         </div>
         <div className="pcHead4">
           COMPLETE ALL THE STEPS TO FINISH YOUR ENROLLMENT
         </div>
-        <div className="col-lg-8 offset-lg-2 col-md-4 stepperMdMarginLeft">
+        <div
+          className=" stepperMdMarginLeft"
+          style={{ marginLeft: "auto", marginRight: "auto" }}
+        >
           {/* Stepper */}
           <Stepper
             connector={<GreenStepConnector />}
             activeStep={activeStep}
             style={{
               background: "transparent",
-              width: "75em",
+              width:"70vw",
               marginTop: "1em",
-              marginBottom: "2em",
+              marginBottom: "1em",
+              marginLeft: "auto", marginRight: "auto"
             }}
-            orientation={width <= 1500 ? "vertical" : "horizontal"}
+            orientation={width <= 550 ? "vertical" : "horizontal"}
           >
             {steps.map((label, index) => {
               const props = {};
