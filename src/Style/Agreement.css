@@ -88,7 +88,7 @@
   border-style: solid;
   background: white;
   width: initial;
-  height: 26vw;
+  height: 30vw;
   margin-top: 1em;
   overflow-y: scroll;
   font-family: Domine;
@@ -100,7 +100,7 @@
   font-weight: bold;
 }
 .acceptAgreement {
-  margin-top: 2em;
+  margin-top: 1em;
   font-weight: bold;
 }
 .checkBoxAccept {

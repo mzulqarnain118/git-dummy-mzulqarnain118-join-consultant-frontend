@@ -137,18 +137,18 @@ class BusinessDetails extends React.Component {
               this.state.width >= 550 ? "BDcomponentMargin " : "mobileComponent"
             }
           >
-            <span className="head1">SETTING UP YOUR STORE</span>
-            <div className="staticText3">
+            <span className="BDhead1">SETTING UP YOUR STORE</span>
+            <div className="BDstaticText3">
               Pick a custom URL to promote your personalized Scout &amp; Cellar
               storefront.
             </div>
 
             <div className="row">
-              <div className="col-lg-3 col-md-4 ">
-                <div className="staticText4">www.scoutandcellar.com/</div>
+              <div className="col-lg-2 col-md-4 ">
+                <div className="BDstaticText4">www.scoutandcellar.com/</div>
               </div>
               {/* Input to custom URL */}
-              <div className="col-lg-4 col-md-3 ">
+              <div className="col-lg-3 offset-lg-1 col-md-3 ">
                 <input
                   type="text"
                   value={customURL}
@@ -165,7 +165,7 @@ class BusinessDetails extends React.Component {
                 />
 
                 {errorCustomURL.length > 0 ? (
-                  <div className="errorMes">
+                  <div className="errorMes" style={{ marginLeft: "-5vw" }}>
                     {errorCustomURL}
                     <br />
                   </div>
@@ -231,7 +231,7 @@ class BusinessDetails extends React.Component {
                     <div
                       className={
                         currentButton
-                          ? "businessButton1 businessButtonNotActive"
+                          ? "businessButton1 businessButtonNotActive1"
                           : "businessButton1 "
                       }
                       onClick={() => this.toggleButton(false)}
