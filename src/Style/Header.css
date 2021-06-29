@@ -12,6 +12,10 @@
   overflow: hidden;
   white-space: nowrap;
 }
+.LogoIcon svg {
+  width: 375px;
+  height: auto;
+}
 .arrowIcon {
   margin-top: -11vh;
   margin-left: -2.5vh;

@@ -19,7 +19,7 @@ class Footer extends React.Component {
   // update displayFooter state variable based on new props recived
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.displayFooter !== this.props.displayFooter) {
-      this.setState({ displayFooter: this.props.displayFooter });
+      this.setState({displayFooter: this.props.displayFooter});
     }
   }
 
@@ -35,7 +35,7 @@ class Footer extends React.Component {
         await axios
           .get("../sampledata/andrey.json")
           .then((response) => {
-            this.setState({ userData: response.data });
+            this.setState({userData: response.data});
             this.props.setUserData("LOG IN", response.data, true);
           })
           .catch((error) => {
@@ -62,45 +62,34 @@ class Footer extends React.Component {
 
   // to handle width for mobile view
   componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
+    this.setState({width: window.innerWidth});
   };
 
   render() {
     return this.state.displayFooter ? (
       <React.Fragment>
         <div className="blackBar">
-          <div className="row">
+          <div className="row h-100">
             {/* left button */}
             {this.props.rightFooterButtonName === "LOOKS GOOD" ? (
               <>
                 <div className="col-lg-2 col-md-2 grey "></div>
                 <div className=" col-lg-2 col-md-4 grey ">
                   <div className="leftTextButton">
-                    <Ripples>
+                    <Ripples className="h-100">
                       <div onClick={this.handleClickLeft}>MAKE CHANGES</div>
                     </Ripples>
                   </div>
                 </div>
               </>
             ) : (
-              <div
-                className={
-                  this.props.rightFooterButtonName === "SAVE AND PROCEED"
-                    ? "col-lg-8 col-md-4 mobileSaveAndProceed"
-                    : "col-lg-8 col-md-5 "
-                }
-              ></div>
+              <div className={this.props.rightFooterButtonName === "SAVE AND PROCEED" ? "col-lg-8 col-md-4 mobileSaveAndProceed" : "col-lg-8 col-md-5 "}></div>
             )}
 
-            {!(
-              this.state.width <= 550 &&
-              this.props.rightFooterButtonName === "LOOKS GOOD"
-            ) ? (
+            {!(this.state.width <= 550 && this.props.rightFooterButtonName === "LOOKS GOOD") ? (
               <>
                 {/* right button */}
-                {this.props.rightFooterButtonName === "LOOKS GOOD" ? (
-                  <div className="col-lg-4  col-md-1"></div>
-                ) : null}
+                {this.props.rightFooterButtonName === "LOOKS GOOD" ? <div className="col-lg-4  col-md-1"></div> : null}
                 <div
                   className={
                     this.props.rightFooterButtonDisabled
@@ -113,18 +102,14 @@ class Footer extends React.Component {
                   }
                 >
                   <Ripples>
-                    <div onClick={this.handleClickRight}>
-                      {this.props.rightFooterButtonName}
-                    </div>
+                    <div onClick={this.handleClickRight}>{this.props.rightFooterButtonName}</div>
                   </Ripples>
                 </div>
               </>
             ) : (
               <div className="textButton mobileLeftMargin">
                 <Ripples>
-                  <div onClick={this.handleClickRight}>
-                    {this.props.rightFooterButtonName}
-                  </div>
+                  <div onClick={this.handleClickRight}>{this.props.rightFooterButtonName}</div>
                 </Ripples>
               </div>
             )}

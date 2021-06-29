@@ -3,28 +3,29 @@
   position: fixed;
   width: 100vw;
   bottom: 0px;
-  height: auto;
+  height: 50px;
 }
-.textButton {
+.textButton,
+.leftTextButton {
   color: white;
-  margin: 1%;
-  font-size: 3vh;
+  font-size: 20px;
   font-weight: 500;
-  margin-top: 1%;
-  margin-bottom: 1%;
   font-family: oswald;
+  height: 100% !important;
 }
 .textButton:hover {
   cursor: pointer;
 }
 .textButtonDisabled {
   color: #707070;
-  margin: 1%;
-  font-size: 3vh;
+  font-size: 20px;
   font-weight: 500;
-  margin-top: 1%;
-  margin-bottom: 1%;
   font-family: oswald;
+}
+.react-ripples {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 .textButtonDisabled:hover {
   cursor: not-allowed;
@@ -33,7 +34,7 @@
   background-color: grey;
   padding-top: 0.8em;
 }
-.leftTextButton {
+/* .leftTextButton {
   color: white;
   margin: 1%;
   font-size: 3vh;
@@ -41,7 +42,7 @@
   margin-top: 1.5%;
   margin-bottom: 1%;
   font-family: oswald;
-}
+} */
 .leftTextButton:hover {
   cursor: pointer;
 }
@@ -53,24 +54,12 @@
 
   .textButton {
     color: white;
-    margin: 1%;
-    font-size: 3vh;
+    font-size: 20px;
     font-weight: 500;
-    margin-top: 0.2em;
-    margin-bottom: 1%;
     font-family: oswald;
   }
   .textButton:hover {
     cursor: pointer;
-  }
-  .textButtonDisabled {
-    color: #707070;
-    margin: 1%;
-    font-size: 3vh;
-    font-weight: 500;
-    margin-top: 0.2em;
-    margin-bottom: 1%;
-    font-family: oswald;
   }
   .textButtonDisabled:hover {
     cursor: not-allowed;
@@ -86,13 +75,9 @@
   }
   .textButton {
     color: white;
-    margin: 1%;
-    font-size: 3vh;
-    font-weight: 400;
-    margin-top: 0.2em;
-    margin-bottom: 3%;
+    font-size: 20px;
+    font-weight: 500;
     font-family: oswald;
-    margin-left: 48vw;
   }
   .textButton:hover {
     cursor: pointer;
@@ -130,7 +115,7 @@
   .emptyWidth {
     width: 0vw;
   }
-  .leftTextButton {
+  /* .leftTextButton {
     color: white;
     margin: 1%;
     font-size: 3vh;
@@ -140,7 +125,7 @@
     font-family: oswald;
     width: 40vw;
     margin-left: 1.5em;
-  }
+  } */
   .leftTextButton:hover {
     cursor: pointer;
   }
