@@ -164,10 +164,12 @@
   width: 25em !important;
   height: 4.5em !important;
   margin-bottom: 0.5em;
-  margin-top: 1.3em;
+  margin-top: 1.5em;
   font-weight: bold;
   font-size: 1em;
   font-family: Domine;
+  letter-spacing: 1.1em !important;
+  text-align: center;
 }
 .ssnInput:focus {
   border-color: #d8c5a6;
@@ -185,6 +187,8 @@
   font-size: 1em;
   font-family: Domine;
   border-radius: 0 !important;
+  letter-spacing: 1.1em !important;
+  text-align: center;
 }
 
 .ssnInputRed:focus {
@@ -196,6 +200,8 @@
 .ssnInputRed ::placeholder {
   font-weight: 100;
   word-spacing: normal;
+  letter-spacing: 0em !important;
+  text-align: left;
 }
 
 .entitySubtext {
