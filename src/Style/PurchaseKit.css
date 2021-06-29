@@ -2,7 +2,7 @@
   margin-top: 2em;
 }
 .purchaseComponentMargin2 {
-  overflow-y: auto;
+  overflow: hidden;
   margin-top: 2em;
 }
 ::-webkit-scrollbar {
