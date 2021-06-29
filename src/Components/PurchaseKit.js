@@ -244,7 +244,7 @@ class PurchaseKit extends React.Component {
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-5 offset-lg-1 ">
+                  <div className="col-lg-5 ">
                     {/* Card Number */}
                     <div className="form-group">
                       <div className="purchaseInputMargin1">
@@ -277,7 +277,7 @@ class PurchaseKit extends React.Component {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-lg-3 col-md-5 mobileMMYY">
+                  <div className="col-lg-2 col-md-5 mobileMMYY">
                     {/* Month and year of card */}
                     <div className="form-group">
                       <span className="purchasehead3" htmlFor="cardDate">
@@ -389,7 +389,7 @@ class PurchaseKit extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-5 desktopViewMarginLeft">
+                      <div className="col-lg-5">
                         {/* Zip code */}
                         <div className="form-group">
                           <div className="purchaseInputMargin">
@@ -453,7 +453,7 @@ class PurchaseKit extends React.Component {
                           </div>
                         </div>
                       </div>
-                      <div className="col-lg-5 desktopViewMarginLeft">
+                      <div className="col-lg-5">
                         {/* State */}
                         <div className="form-group">
                           <div className="purchaseInputMargin">

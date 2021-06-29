@@ -1,6 +1,10 @@
-.componentMargin {
+.AGcomponentMargin {
   margin-top: 1em;
-  margin-left: 1em;
+}
+.AGhead1 {
+  font-size: calc(6px + 2vw);
+  font-weight: "bold";
+  font-family: oswald;
 }
 .agreementButton1 {
   background: #dcba80;
@@ -13,6 +17,7 @@
   font-size: 1.2em;
   margin-top: 0.5em;
   font-family: Domine;
+  width: initial;
 }
 .agreementButton1:hover {
   cursor: pointer;
@@ -27,9 +32,10 @@
   padding-right: 0.5em;
   color: white;
   font-size: 1.2em;
-  margin-left: 0.3em;
+
   margin-top: 0.5em;
   font-family: Domine;
+  width: initial;
 }
 
 .agreementButton2:hover {
@@ -44,6 +50,7 @@
   border-style: solid;
   padding-top: 0.1em;
   padding-bottom: 0.15em;
+  width: initial;
 }
 .agreementButtonNotActive1:hover {
   cursor: pointer;
@@ -57,6 +64,7 @@
   border-style: solid;
   padding-top: 0.8em;
   padding-bottom: 0.85em;
+  width: initial;
 }
 .agreementButtonNotActive2:hover {
   cursor: pointer;
@@ -68,7 +76,7 @@
   font-family: oswald;
   text-align: center;
   margin-top: 1em;
-  width: 84.5vh;
+  width: initial;
   padding-top: 1em;
   padding-bottom: 1em;
   color: #6e7071;
@@ -79,12 +87,13 @@
   border-color: #d8c5a6;
   border-style: solid;
   background: white;
-  width: 84.5vh;
+  width: initial;
   height: 26vw;
   margin-top: 1em;
   overflow-y: scroll;
   font-family: Domine;
   padding: 2em;
+  font-size: calc(1px + 1vw);
 }
 .agreementTitle {
   font-size: 1.5em;
@@ -224,7 +233,7 @@
     margin-top: 0.5em;
     font-family: Domine;
     margin-left: -1em;
-    width: 14em ;
+    width: 14em;
   }
 
   .agreementButton2:hover {
@@ -307,7 +316,7 @@
   .agreementData {
     font-size: 0.7em;
   }
-  .mobileAgreementLeftMargin{
+  .mobileAgreementLeftMargin {
     margin-left: -1em;
   }
 }

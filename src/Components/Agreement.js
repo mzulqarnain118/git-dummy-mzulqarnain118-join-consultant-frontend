@@ -147,14 +147,14 @@ class Agreement extends React.Component {
         {this.state.width <= 550 ? <Header step={2} agreement={true} /> : null}
         <div
           className={
-            this.state.width >= 550 ? "componentMargin " : "mobileComponent"
+            this.state.width >= 550 ? "AGcomponentMargin " : "mobileComponent"
           }
         >
           <div className="mobileAgreementLeftMargin">
-            <span className="head1">Let’s make this official!</span>
+            <span className="AGhead1">Let’s make this official!</span>
             {/* buttons to select the requested policy */}
             <div className="row">
-              <div className="col-lg-5 col-md-6 mobileAgreementButtonWidth">
+              <div className="col-lg-3 col-md-6 mobileAgreementButtonWidth">
                 <div
                   className={
                     currentButton
@@ -166,7 +166,7 @@ class Agreement extends React.Component {
                   Independent <br /> Consultant Agreement
                 </div>
               </div>
-              <div className="col-lg-5 col-md-6 mobileAgreementButtonWidth">
+              <div className="col-lg-3 col-md-6 mobileAgreementButtonWidth">
                 <div
                   className={
                     !currentButton
@@ -179,29 +179,36 @@ class Agreement extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="downloadButton" onClick={this.downloadFile}>
-              <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp; DOWNLOAD
-              AGREEMENT
+
+            <div className="col-lg-6 ">
+              <div className="downloadButton" onClick={this.downloadFile}>
+                <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp; DOWNLOAD
+                AGREEMENT
+              </div>
             </div>
             {/* to display selected policy data */}
-            <div className="agreementPolicy">
-              {!currentButton
-                ? this.IndependentAgreement()
-                : this.PolicyAgreement()}
+            <div className="col-lg-6 ">
+              <div className="agreementPolicy">
+                {!currentButton
+                  ? this.IndependentAgreement()
+                  : this.PolicyAgreement()}
+              </div>
             </div>
             {/* check Box to accept agreement */}
-            <div className="acceptAgreement">
-              <Checkbox
-                checked={checked}
-                onChange={this.handleChange}
-                className="checkBoxAccept"
-                style={{
-                  color: "#DCBA80",
-                }}
-              />
-              <span className="mobileAcceptCheckBox">
-                I have read and accept the terms of this agreement.
-              </span>
+            <div className="col-lg-8 ">
+              <div className="acceptAgreement">
+                <Checkbox
+                  checked={checked}
+                  onChange={this.handleChange}
+                  className="checkBoxAccept"
+                  style={{
+                    color: "#DCBA80",
+                  }}
+                />
+                <span className="mobileAcceptCheckBox">
+                  I have read and accept the terms of this agreement.
+                </span>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
-.componentMargin {
-  margin-top: 4em;
-  margin-left: 2.5em;
+.BDcomponentMargin {
+  margin-top: 2em;
 }
 
 .customURL {
@@ -612,7 +611,7 @@
     margin-top: 1.5em;
     font-weight: bold;
   }
-  .mobileoverFlowBusinessDetails{
+  .mobileoverFlowBusinessDetails {
     overflow: hidden;
   }
 }

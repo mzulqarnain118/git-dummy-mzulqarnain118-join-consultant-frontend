@@ -134,7 +134,7 @@ class BusinessDetails extends React.Component {
         <div className="mobileoverFlowBusinessDetails">
           <div
             className={
-              this.state.width >= 550 ? "componentMargin " : "mobileComponent"
+              this.state.width >= 550 ? "BDcomponentMargin " : "mobileComponent"
             }
           >
             <span className="head1">SETTING UP YOUR STORE</span>
