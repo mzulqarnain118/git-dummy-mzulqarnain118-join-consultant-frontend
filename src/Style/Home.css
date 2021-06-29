@@ -13,10 +13,8 @@
 }
 .headerMarginTop {
   padding-top: 2.5em;
-  margin-left: -18em;
-  margin-right: -27.2em;
-  padding-left: 15em;
   padding-bottom: 0.5em;
+  margin: 0;
 }
 .stepperMarginTop {
   margin-top: 2em;
