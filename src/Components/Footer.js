@@ -73,8 +73,8 @@ class Footer extends React.Component {
             {/* left button */}
             {this.props.rightFooterButtonName === "LOOKS GOOD" ? (
               <>
-                <div className="col-lg-2 col-md-2 grey "></div>
-                <div className=" col-lg-2 col-md-4 grey ">
+                {/* <div className="col-lg-2 col-md-2 grey "></div> */}
+                <div className=" col-lg-4 col-md-4 col-sm-4 col-4 grey ">
                   <div className="leftTextButton">
                     <Ripples className="h-100">
                       <div onClick={this.handleClickLeft}>MAKE CHANGES</div>
@@ -83,22 +83,28 @@ class Footer extends React.Component {
                 </div>
               </>
             ) : (
-              <div className={this.props.rightFooterButtonName === "SAVE AND PROCEED" ? "col-lg-8 col-md-4 mobileSaveAndProceed" : "col-lg-8 col-md-5 "}></div>
+              // <div className={this.props.rightFooterButtonName === "SAVE AND PROCEED" ? "col-lg-8 col-md-4 mobileSaveAndProceed" : "col-lg-8 col-md-5 "}></div>
+              <div className={this.props.rightFooterButtonName === "SAVE AND PROCEED" ? "col-lg-8 col-md-4 mobileSaveAndProceed" : "col-lg-8 col-md-8 col-sm-3"}></div>
             )}
 
             {!(this.state.width <= 550 && this.props.rightFooterButtonName === "LOOKS GOOD") ? (
               <>
                 {/* right button */}
-                {this.props.rightFooterButtonName === "LOOKS GOOD" ? <div className="col-lg-4  col-md-1"></div> : null}
+                {this.props.rightFooterButtonName === "LOOKS GOOD" ? <div className="col-lg-4 col-md-1 col-sm-1 col-1"></div> : null}
+                {this.props.rightFooterButtonName === "LOOKS GOOD" ? '' : null}
                 <div
                   className={
                     this.props.rightFooterButtonDisabled
                       ? this.props.rightFooterButtonName === "SAVE AND PROCEED"
                         ? "col-lg-2 col-md-4 textButtonDisabled mobileSaveMargin"
-                        : "col-lg-2 col-md-4 textButtonDisabled "
+                        // : "col-lg-4 col-md-4 textButtonDisabled "
+                        // : "col-lg-8 col-md-8 textButtonDisabled "
+                        : "col-lg-4 col-md-4 col-sm-7 textButtonDisabled "
                       : this.props.rightFooterButtonName === "SAVE AND PROCEED"
                       ? "col-lg-2 col-md-4  textButton mobileSaveMargin"
-                      : "col-lg-2 col-md-4 textButton "
+                      // : "col-lg-4 col-md-4 textButton "
+                      // : "col-lg-8 col-md-8 textButton "
+                      : "col-lg-4 col-md-4 col-sm-7 col-7 textButton "
                   }
                 >
                   <Ripples>
