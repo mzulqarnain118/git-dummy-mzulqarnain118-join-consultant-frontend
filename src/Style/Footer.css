@@ -8,7 +8,7 @@
 .textButton,
 .leftTextButton {
   color: white;
-  font-size: 20px;
+  font-size: 27px;
   font-weight: 500;
   font-family: oswald;
   height: 100% !important;
@@ -18,7 +18,7 @@
 }
 .textButtonDisabled {
   color: #707070;
-  font-size: 20px;
+  font-size: 27px;
   font-weight: 500;
   font-family: oswald;
 }
@@ -54,7 +54,7 @@
 
   .textButton {
     color: white;
-    font-size: 20px;
+    font-size: 27px;
     font-weight: 500;
     font-family: oswald;
   }
@@ -75,7 +75,7 @@
   }
   .textButton {
     color: white;
-    font-size: 20px;
+    font-size: 27px;
     font-weight: 500;
     font-family: oswald;
   }
