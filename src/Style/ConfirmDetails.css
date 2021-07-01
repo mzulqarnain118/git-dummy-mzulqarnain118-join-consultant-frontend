@@ -3,9 +3,11 @@
 }
 .componentMargin2 {
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 .componentMargin3 {
-  margin-top: 10px;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 .componentMargin4 {
   margin-top: 10px;
@@ -14,29 +16,28 @@
   margin-top: 20px;
 }
 .head1 {
-  font-size: calc(8px + 2vw);
-  font-weight: "bold";
+  font-size: 34px;
   font-family: oswald;
 }
 .email1 {
-  margin-top: 3em;
+  margin-top:48px;
 }
 .emailLabel {
-  margin-bottom: 1em;
+  margin-bottom: 15px;
   color: grey;
   font-family: oswald;
 }
 .SubText {
-  font-size: 0.9em;
+  font-size: 15px;
   font-family: Domine;
 }
 .Input {
   border-width: 1px;
   border-color: #d8c5a6 !important;
   border-radius: 0 !important;
-  width: 28em !important;
-  height: 4em !important;
-  margin-bottom: 0.5em;
+  width: 400px !important;
+  height: 64px !important;
+  margin-bottom: 8px;
 }
 .Input:focus {
   border-color: #d8c5a6 !important;
@@ -45,19 +46,19 @@
   border-width: 1px;
   border-color: red !important;
   border-radius: 0 !important;
-  width: 28em !important;
-  height: 4em !important;
-  margin-bottom: 0.5em;
+  width: 400px !important;
+  height: 64px !important;
+  margin-bottom: 8px;
 }
 
 .Red:focus {
   border-color: red !important;
 }
 .errorMes {
-  font-size: 0.8em;
+  font-size: 12px;
   color: red;
   font-family: Domine;
-  width: 17em;
+  width: 272px;
 }
 
 .form-control:focus {
@@ -65,36 +66,36 @@
   box-shadow: none;
 }
 .InputMargin {
-  margin-bottom: 1em;
+  margin-bottom: 15px;
 }
 /* confirm details passwords page */
 .head2 {
-  font-size: calc(8px + 2vw);
+  font-size: 34px;
   font-weight: 400;
   font-family: oswald;
 }
 .staticText1 {
-  font-size: calc(7px + 1vw);
-  margin-top: 0.7em;
+  font-size: 20px;
+  margin-top: 12px;
   font-family: Domine;
 }
 .staticText2 {
-  font-size: calc(3px + 1vw);
+  font-size: 16px;
   font-family: Domine;
 }
 .passwordForgotLink {
   color: #dcba80;
-  font-size: 1em;
+  font-size: 16px;
   text-decoration: underline;
 }
 .passwordForgotLink:hover {
   cursor: pointer;
 }
 .password1 {
-  margin-top: 2.5em;
+  margin-top: 40px;
 }
 .passwordLabel {
-  margin-bottom: 1em;
+  margin-bottom: 16px;
   color: grey;
   font-family: oswald;
 }
@@ -102,39 +103,38 @@
 /* details display */
 
 .staticText3 {
-  font-size: 1.1em;
+  font-size: 18px;
   font-family: Domine;
-  margin-top: 0.8em;
+  margin-top: 12px;
 }
 
 .staticText4 {
-  font-size: 1.2em;
+  font-size: 18px;
   font-family: Domine;
-  margin-top: 3em;
+  margin-top: 48px;
   font-weight: bold;
 }
 
 .displayArea {
   background-color: #e8e0dd;
-  width: 55vw;
-  height: 21em;
-  margin-top: 1em;
-  padding-top: 5em;
+  max-width: 850px;
+  margin-top: 16px;
+  padding: 50px;
 }
 
 .head3 {
   color: grey;
   font-family: oswald;
-  font-size: 1em;
+  font-size: 16px;
 }
 
 .dataText {
-  font-size: 1.2em;
+  font-size: 18px;
   font-family: Domine;
 }
 
 .marginHead {
-  margin-top: 4em;
+  margin-top: 64px;
 }
 
 /* edit cofirm details */
@@ -143,9 +143,9 @@
   border-width: 1px;
   border-color: #d8c5a6 !important;
   border-radius: 0 !important;
-  width: 18em !important;
-  height: 3.5em !important;
-  margin-bottom: 0.5em;
+  width: 288px !important;
+  height: 56px !important;
+  margin-bottom: 8px;
 }
 .edit-Input:focus {
   border-color: #d8c5a6 !important;
@@ -154,9 +154,9 @@
   border-width: 1px;
   border-color: red !important;
   border-radius: 0 !important;
-  width: 18em !important;
-  height: 3.5em !important;
-  margin-bottom: 0.5em;
+  width: 288px !important;
+  height: 56px !important;
+  margin-bottom: 8px;
 }
 
 .edit-Red:focus {
@@ -164,27 +164,27 @@
 }
 
 .edit-margin {
-  margin-top: 1.3em;
+  margin-top: 20px;
 }
 
 .edit-InputMargin {
-  margin-top: 0.5em;
-  margin-bottom: 1em;
+  margin-top: 8px;
+  margin-bottom: 16px;
 }
 
 .staticText5 {
   font-family: oswald;
-  font-size: 1.5em;
-  margin-top: 1.3em;
+  font-size: 24px;
+  margin-top: 20px;
 }
 
 .edit-month {
   border-width: 1px;
   border-color: #d8c5a6 !important;
   border-radius: 0 !important;
-  width: 6em !important;
-  height: 3.5em !important;
-  margin-bottom: 0.5em;
+  width: 96px !important;
+  height: 56px !important;
+  margin-bottom: 8px;
 }
 .edit-month:focus {
   border-color: #d8c5a6 !important;
@@ -194,10 +194,10 @@
   border-width: 1px;
   border-color: #d8c5a6 !important;
   border-radius: 0 !important;
-  width: 5.5em !important;
-  height: 3.5em !important;
-  margin-bottom: 0.5em;
-  margin-left: 0.3em;
+  width: 88px !important;
+  height: 56px !important;
+  margin-bottom: 8px;
+  margin-left: 5px;
 }
 .edit-day:focus {
   border-color: #d8c5a6 !important;
@@ -206,9 +206,9 @@
   border-width: 1px;
   border-color: #d8c5a6 !important;
   border-radius: 0 !important;
-  width: 6.5em !important;
-  height: 3.5em !important;
-  margin-bottom: 0.5em;
+  width: 104px !important;
+  height: 56px !important;
+  margin-bottom: 8px;
 }
 .edit-year:focus {
   border-color: #d8c5a6 !important;
@@ -217,9 +217,9 @@
   border-width: 1px;
   border-color: red !important;
   border-radius: 0 !important;
-  width: 6em !important;
-  height: 3.5em !important;
-  margin-bottom: 0.5em;
+  width: 96px !important;
+  height: 56px !important;
+  margin-bottom: 8px;
 }
 .edit-month-red :focus {
   border-color: red !important;
@@ -229,10 +229,10 @@
   border-width: 1px;
   border-color: red !important;
   border-radius: 0 !important;
-  width: 5.5em !important;
-  height: 3.5em !important;
-  margin-bottom: 0.5em;
-  margin-left: 0.3em;
+  width: 88px !important;
+  height: 56px !important;
+  margin-bottom: 8px;
+  margin-left: 5px;
 }
 .edit-day-red :focus {
   border-color: red !important;
@@ -241,9 +241,9 @@
   border-width: 1px;
   border-color: red !important;
   border-radius: 0 !important;
-  width: 6.5em !important;
-  height: 3.5em !important;
-  margin-bottom: 0.5em;
+  width: 104px !important;
+  height: 56px !important;
+  margin-bottom: 8px;
 }
 .edit-year-red :focus {
   border-color: red !important;
@@ -258,40 +258,44 @@ select {
   background-position-y: 13px;
   border: 1px solid #dfdfdf;
   border-radius: 2px;
-  margin-right: 2rem;
-  padding: 1rem;
-  padding-right: 2rem;
+  margin-right: 32px;
+  padding: 16px;
+  padding-right: 32px;
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .displayArea {
     background-color: #e8e0dd;
-    width: 55vw;
-    height: 21em;
-    margin-top: 1em;
-    padding-top: 3em;
+    width: 850px;
+    height:336px;
+    margin-top: 16px;
+    padding-top: 48px;
   }
   .bottomMargin {
-    margin-bottom: 10em;
+    margin-bottom: 160px;
   }
-}
+} */
+
+
 
 @media only screen and (max-width: 550px) {
+  .emailLabel{margin-bottom: 5px;}
+  .InputMargin{margin-bottom: 10px;}
   .head1 {
-    font-size: 2.1em;
+    font-size: 33px;
     font-weight: "bold";
     font-family: oswald;
   }
   .mobileComponent {
-    margin-top: 2em;
+    margin-top: 20px;
   }
   .Input {
     border-width: 1px;
     border-color: #d8c5a6 !important;
     border-radius: 0 !important;
-    width: 20em !important;
-    height: 4em !important;
-    margin-bottom: 0.5em;
+    width: 320px !important;
+    height: 50px !important;
+    margin-bottom: 8px;
   }
   .Input:focus {
     border-color: #d8c5a6 !important;
@@ -300,52 +304,51 @@ select {
     border-width: 1px;
     border-color: red !important;
     border-radius: 0 !important;
-    width: 20em !important;
-    height: 4em !important;
-    margin-bottom: 0.5em;
+    width: 320px !important;
+    height: 50px !important;
+    margin-bottom: 8px;
   }
 
   .Red:focus {
     border-color: red !important;
   }
   .SubText {
-    font-size: calc(10px+0.7vw);
+    font-size: 15px;
     font-family: Domine;
-    width: 38vh;
   }
-
-  .head3 {
+  .passwordForgotLink{font-size: 15px;}
+  /* .head3 {
     color: grey;
     font-family: oswald;
-    font-size: 3.5vw;
-  }
+    font-size: 48px;
+  } */
 
   .dataText {
-    font-size: 4.5vw;
+    font-size: 62px;
     font-family: Domine;
   }
-  .displayArea {
+  /* .displayArea {
     background-color: #e8e0dd;
     width: 90%;
-    height: 21em;
-    margin-top: 1em;
-    padding-top: 1em;
-    padding-left: 1em;
-  }
-  .mobileDisplayWidth {
-    height: 10vh;
-    width: 45vw;
-  }
+    height:336px;
+    margin-top: 16px;
+    padding-top: 16px;
+    padding-left: 16px;
+  } */
+  /* .mobileDisplayWidth {
+    height: 62px;
+    width: 614px;
+  } */
   .marginHead {
-    margin-top: 0em;
+    margin-top: 0;
   }
   .edit-Input {
     border-width: 1px;
     border-color: #d8c5a6 !important;
     border-radius: 0 !important;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
+    width:336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
   }
   .edit-Input:focus {
     border-color: #d8c5a6 !important;
@@ -354,32 +357,61 @@ select {
     border-width: 1px;
     border-color: red !important;
     border-radius: 0 !important;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
+    width:336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
   }
 
   .edit-Red:focus {
     border-color: red !important;
   }
   .bottomMargin {
-    margin-bottom: 8em;
+    margin-bottom: 128px;
   }
   .mobileDate {
-    width: 30vw;
+    width: 410;
   }
 
-  .displayNote {
-    margin-top: 2vh;
+  /* .displayNote {
+    margin-top: 12px;
     font-family: oswald;
     font-weight: 200;
-    margin-bottom: 20vh;
-    width: 80vw;
-  }
+    margin-bottom: 125px;
+    width: 1092px;
+  } */
 }
 
 .displayNote {
-  margin-top: 2vh;
+  margin-top: 12px;
   font-family: oswald;
   font-weight: 200;
+}
+
+@media (max-width: 1199px) {
+.displayArea{padding: 30px;}
+}
+@media (max-width: 991px) {
+.email1{margin-top: 30px;}  
+.head1, .head2{font-size: 25px;}
+.staticText1{font-size: 18px;}
+.staticText2{font-size: 14px;}
+.componentMargin3{margin-top: 30px;}
+.staticText3{font-size: 16px;}
+.marginHead{margin-top: 30px;}
+}
+@media (max-width: 767px) {
+
+}
+@media (max-width: 639px) {
+.mobileDisplayWidth{padding-top:5px;padding-bottom: 5px;}
+.dataText{font-size: 16px;}
+}
+@media (max-width: 567px) {
+
+}
+
+
+@media (max-width: 479px) {
+.Input{width: 100% !important;}
+.head1, .head2{font-size: 22px;}
 }

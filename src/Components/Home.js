@@ -298,34 +298,23 @@ class Home extends React.Component {
         if active step is 4  - payment confirmation page is displayed */}
         {this.state.activeStep < 4 ? (
           <>
-            <div className="container-fluid" style={{ background: "#e8e0dd" }}>
-              <div
-                className="row headerMarginTop"
-                style={{ background: "#e8e0dd" }}
-              >
-                <div className="col-lg-2 " style={{ background: "#e8e0dd" }}>
+            <div className="container-fluid">
+              <div className="row headerMarginTop">
+                <div className="col-xl-2 col-lg-1 col-md-1 col-1">
                   <div className="arrowIcon3">
-                    <ArrowBackIosIcon
-                      style={{ width: "1.3em", height: "2.5em" }}
-                      className="HomeBackButton"
-                      onClick={this.handleBackButton}
-                    />
+                    <ArrowBackIosIcon />
                   </div>
                 </div>
-                <div className="col-lg-3 " style={{ background: "#e8e0dd" }}>
+                <div className="col-xl-3 col-lg-2 col-md-11 col-11">
                   <div className="LogoIcon">
                     <Logo />
                   </div>
                 </div>
-                <div
-                  className="col-lg-6 stepperMarginTop"
-                  style={{ background: "#e8e0dd" }}
-                >
+                <div className="col-xl-7 col-lg-9 col-md-12 col-12 stepperMarginTop">
                   {/* stepper */}
                   <Stepper
                     activeStep={activeStep}
                     connector={<GreenStepConnector />}
-                    style={{ background: "#e8e0dd" }}
                     orientation={
                       this.state.width >= 550 ? "horizontal" : "vertical"
                     }
@@ -366,7 +355,7 @@ class Home extends React.Component {
 
             <div className="container-fluid HomeContainer" id="">
               <div className="row">
-                <div className="col-lg-10 offset-lg-2 col-md-11 ">
+                <div className="col-xl-10 offset-xl-2 col-lg-11 offset-lg-1">
                   {this.state.width >= 550 ? (
                     <>
                       {/* Stepper */}
@@ -388,64 +377,57 @@ class Home extends React.Component {
                       </div>
                       {/* Stepper */}
                       {this.state.rightFooterButtonName === "NEXT" ? (
-                        <div
-                          style={{
-                            background: "#e8e0dd",
-                            marginLeft: "-70px",
-                            width: "116vw",
-                            paddingTop: "4vh",
-                            paddingBottom: "30vh",
-                          }}
-                        >
-                          <div
-                            className="mobileStepHead"
-                            style={{ background: "#e8e0dd" }}
-                          >
-                            {" "}
-                            WHAT HAPPENS NEXT ?
-                          </div>
-                          {/* stepper for mobile view  */}
-                          <Stepper
-                            activeStep={activeStep}
-                            style={{ background: "#e8e0dd" }}
-                            className="mobileStep"
-                            orientation={
-                              this.state.width >= 550
-                                ? "horizontal"
-                                : "vertical"
-                            }
-                          >
-                            {steps.map((label, index) => {
-                              const props = {};
-                              const labelProps = {};
-                              return (
-                                <Step
-                                  key={label}
-                                  {...props}
-                                  classes={{
-                                    //root: classes.step,
-                                    completed: classes.completed,
-                                    active: classes.active,
-                                  }}
-                                >
-                                  <StepLabel
-                                    {...labelProps}
-                                    StepIconProps={{
-                                      classes: {
-                                        root: classes.step,
-                                        completed: classes.completed,
-                                        active: classes.active,
-                                        disabled: classes.disabled,
-                                        text: classes.textStep,
-                                      },
+                        <div className="btm-list-blk">
+                          <div className="btm-list-inner">
+                            <div className="mobileStepHead">
+                              {" "}
+                              WHAT HAPPENS NEXT ?
+                            </div>
+                            {/* stepper for mobile view  */}
+                            <Stepper
+                              activeStep={activeStep}
+                              style={{ background: "#e8e0dd" }}
+                              className="mobileStep"
+                              orientation={
+                                this.state.width >= 550
+                                  ? "horizontal"
+                                  : "vertical"
+                              }
+                            >
+                              {steps.map((label, index) => {
+                                const props = {};
+                                const labelProps = {};
+                                return (
+                                  <Step
+                                    key={label}
+                                    {...props}
+                                    classes={{
+                                      //root: classes.step,
+                                      completed: classes.completed,
+                                      active: classes.active,
                                     }}
                                   >
-                                    <span className="fontOswald">{label}</span>
-                                  </StepLabel>
-                                </Step>
-                              );
-                            })}
-                          </Stepper>
+                                    <StepLabel
+                                      {...labelProps}
+                                      StepIconProps={{
+                                        classes: {
+                                          root: classes.step,
+                                          completed: classes.completed,
+                                          active: classes.active,
+                                          disabled: classes.disabled,
+                                          text: classes.textStep,
+                                        },
+                                      }}
+                                    >
+                                      <span className="fontOswald">
+                                        {label}
+                                      </span>
+                                    </StepLabel>
+                                  </Step>
+                                );
+                              })}
+                            </Stepper>
+                          </div>
                         </div>
                       ) : null}
                     </>

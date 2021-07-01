@@ -1,18 +1,18 @@
 .BDcomponentMargin {
-  margin-top: 2em;
+  margin-top: 32px;
 }
 .BDhead1 {
-  font-size: calc(6px + 1.8vw);
+  font-size: 30px;
   font-weight: "bold";
   font-family: oswald;
 }
 .BDstaticText3 {
-  font-size: calc(2px + 1vw);
+  font-size: 16px;
   font-family: Domine;
-  margin-top: 0.8em;
+  margin-top: 12px;
 }
 .BDstaticText4 {
-  font-size: calc(2px + 1vw);
+  font-size: 16px;
   font-family: Domine;
   margin-top: 3.6vw;
   font-weight: bold;
@@ -22,11 +22,11 @@
   border-color: #d8c5a6;
   border-radius: 0;
   width: 22vw !important;
-  height: 3.8em !important;
-  margin-bottom: 0.5em;
+  height: 60px !important;
+  margin-bottom: 8px;
   margin-top: 2.3vw;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 16px;
   font-family: Domine;
   margin-left: -5vw;
 }
@@ -39,15 +39,15 @@
 }
 
 .availableIcon {
-  margin-top: 1.7em;
+  margin-top:  27px;
   color: #4ba380;
 }
 
 .availableText {
-  margin-top: 3em;
+  margin-top: 48px;
   font-family: oswald;
-  font-size: 1.1em;
-  margin-left: 0.2em;
+  font-size: 16px;
+  margin-left: 3px;
 }
 
 .customURLRed {
@@ -55,11 +55,11 @@
   border-color: red !important;
   border-radius: 1 !important;
   width: 22vw !important;
-  height: 3.8em !important;
-  margin-bottom: 0.5em;
+  height: 60px !important;
+  margin-bottom: 8px;
   margin-top: 2.3vw;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 16px;
   font-family: Domine;
   border-radius: 0 !important;
   margin-left: -5vw;
@@ -73,26 +73,26 @@
   font-weight: 100;
 }
 .notAvailableIcon {
-  margin-top: 1.7em;
+  margin-top:  27px;
   color: rgb(236, 85, 85);
 }
 
 .businessHead {
-  font-size: calc(4px + 1.8vw);
+  font-size: 28px;
   font-weight: 400;
   font-family: oswald;
-  margin-top: 1em;
+  margin-top: 16px;
 }
 .businessButton1 {
   background: #dcba80;
   text-align: center;
-  padding-top: 0.6em;
-  padding-bottom: 0.6em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-top:  9px;
+  padding-bottom:  9px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: white;
-  font-size: calc(3px + 1.1vw);
-  margin-top: 0.5em;
+  font-size: 18px;
+  margin-top: 8px;
   font-family: Domine;
 }
 .businessButton1:hover {
@@ -102,14 +102,14 @@
 .businessButton2 {
   background: #dcba80;
   text-align: center;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
   color: white;
-  font-size: calc(3px + 1.1vw);
-  margin-left: 0.3em;
-  margin-top: 0.5em;
+  font-size: 18px;
+  margin-left: 5px;
+  margin-top: 8px;
   font-family: Domine;
 }
 
@@ -118,8 +118,8 @@
 }
 
 .iconBusiness {
-  margin-top: -0.15em;
-  margin-right: 0.3em;
+  margin-top: -2px;
+  margin-right: 5px;
 }
 
 .businessButtonNotActive1 {
@@ -128,8 +128,8 @@
   border-width: 2px;
   border-color: #d8c5a6;
   border-style: solid;
-  padding-top: 0.4em;
-  padding-bottom: 0.5em;
+  padding-top: 6px;
+  padding-bottom: 8px;
 }
 .businessButtonNotActive1:hover {
   cursor: pointer;
@@ -147,28 +147,28 @@
 }
 .ssn {
   font-family: oswald;
-  font-size: 1.5em;
-  margin-top: 1.5em;
+  font-size: 24px;
+  margin-top: 24px;
   font-weight: 400;
 }
 .ssnSubtext {
   font-family: Domine;
-  margin-top: 0.3em;
-  font-size: 1.1em;
+  margin-top: 5px;
+  font-size: 16px;
   font-weight: 100;
 }
 .ssnInput {
   border-width: 1px;
   border-color: #d8c5a6;
   border-radius: 0;
-  width: 25em !important;
-  height: 4.5em !important;
-  margin-bottom: 0.5em;
-  margin-top: 1.5em;
+  width: 400px !important;
+  height: 72px !important;
+  margin-bottom: 8px;
+  margin-top: 24px;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 16px;
   font-family: Domine;
-  letter-spacing: 1.1em !important;
+  letter-spacing: 16px !important;
   text-align: center;
 }
 .ssnInput:focus {
@@ -179,15 +179,15 @@
   border-width: 1px;
   border-color: red !important;
   border-radius: 1 !important;
-  width: 25em !important;
-  height: 4.5em !important;
-  margin-bottom: 0.5em;
-  margin-top: 1.5em;
+  width: 400px !important;
+  height: 72px !important;
+  margin-bottom: 8px;
+  margin-top: 24px;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 16px;
   font-family: Domine;
   border-radius: 0 !important;
-  letter-spacing: 1.1em !important;
+  letter-spacing: 16px !important;
   text-align: center;
 }
 
@@ -200,33 +200,33 @@
 .ssnInputRed ::placeholder {
   font-weight: 100;
   word-spacing: normal;
-  letter-spacing: 0em !important;
+  letter-spacing: 0 !important;
   text-align: left;
 }
 
 .entitySubtext {
   background: #e8e0dd;
-  margin-top: 0.5em !important;
-  margin-left: 0.5em;
-  padding: 1.5em;
-  font-size: calc(2px + 1vw) !important;
-  width: 31.5em !important;
+  margin-top: 8px !important;
+  margin-left: 8px;
+  padding: 24px;
+  font-size: 18px !important;
+  width: 504px !important;
 }
 
 .errorMesSubtext {
-  font-size: 0.8em;
+  font-size: 12px;
   color: red;
   font-family: Domine;
-  width: 100em !important;
-  margin-top: 1.5em;
-  margin-left: 1.5em;
+  width: 1600px !important;
+  margin-top: 24px;
+  margin-left: 24px;
 }
 
 @media only screen and (max-width: 768px) {
   .staticText4 {
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
-    margin-top: 2.5em;
+    margin-top: 40px;
     font-weight: bold;
   }
 
@@ -234,14 +234,14 @@
     border-width: 1px;
     border-color: #d8c5a6;
     border-radius: 0;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
-    margin-top: 1.5em;
+    width: 336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-top: 24px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
-    margin-left: 1em;
+    margin-left: 16px;
   }
   .customURL:focus {
     border-color: #d8c5a6;
@@ -254,15 +254,15 @@
     border-width: 1px;
     border-color: red !important;
     border-radius: 1 !important;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
-    margin-top: 1.5em;
+    width: 336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-top: 24px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
     border-radius: 0 !important;
-    margin-left: 1em;
+    margin-left: 16px;
   }
   .customURLRed:focus {
     border-color: red;
@@ -274,48 +274,48 @@
   }
 
   .availableIcon {
-    margin-top: 3.9em;
+    margin-top: 62px;
     color: #4ba380;
   }
   .notAvailableIcon {
-    margin-top: 3.9em;
+    margin-top: 62px;
     color: rgb(236, 85, 85);
   }
 
   .availableText {
-    margin-top: 5.6em;
+    margin-top: 90px;
     font-family: oswald;
-    font-size: 1em;
-    margin-left: 0.7em;
-    width: 10em;
+    font-size: 16px;
+    margin-left:  10px;
+    width: 160px;
   }
 
   .businessHead {
-    font-size: 1.8em;
+    font-size: 28px;
     font-weight: 400;
     font-family: oswald;
-    margin-top: 0.7em;
+    margin-top:  10px;
   }
 
   .errorMes {
-    font-size: 0.8em;
+    font-size: 12px;
     color: red;
     font-family: Domine;
-    width: 100em !important;
-    margin-left: 2.5em;
-    margin-top: 1.5em;
+    width: 1600px !important;
+    margin-left: 0;
+    margin-top: 24px;
   }
 
   .businessButton1 {
     background: #dcba80;
     text-align: center;
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
     color: white;
-    font-size: 1.1em;
-    margin-top: 0.5em;
+    font-size: 16px;
+    margin-top: 8px;
     font-family: Domine;
   }
   .businessButton1:hover {
@@ -325,13 +325,13 @@
   .businessButton2 {
     background: #dcba80;
     text-align: center;
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
     color: white;
-    font-size: 1.1em;
-    margin-top: 0.5em;
+    font-size: 16px;
+    margin-top: 8px;
     font-family: Domine;
   }
 
@@ -340,8 +340,8 @@
   }
 
   .iconBusiness {
-    margin-top: -0.15em;
-    margin-right: 0.3em;
+    margin-top: -2px;
+    margin-right: 5px;
   }
 
   .businessButtonNotActive {
@@ -350,9 +350,9 @@
     border-width: 2px;
     border-color: #d8c5a6;
     border-style: solid;
-    font-size: 1.1em;
-    width: 14em;
-    height: 3.1em;
+    font-size: 16px;
+    width: 224px;
+    height: 50px;
   }
   .businessButtonNotActive:hover {
     cursor: pointer;
@@ -360,8 +360,8 @@
 
   .ssn {
     font-family: oswald;
-    font-size: 1.3em;
-    margin-top: 1.5em;
+    font-size: 20px;
+    margin-top: 24px;
     font-weight: 400;
   }
 
@@ -369,12 +369,12 @@
     border-width: 1px;
     border-color: #d8c5a6;
     border-radius: 0;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
-    margin-top: 1.5em;
+    width: 336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-top: 24px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
   }
   .ssnInput:focus {
@@ -385,12 +385,12 @@
     border-width: 1px;
     border-color: red !important;
     border-radius: 1 !important;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
-    margin-top: 1.5em;
+    width: 336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-top: 24px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
     border-radius: 0 !important;
   }
@@ -401,27 +401,27 @@
   }
   .ssnSubtext {
     font-family: Domine;
-    margin-top: 0.3em;
-    font-size: 0.9em;
+    margin-top: 5px;
+    font-size: 14px;
     font-weight: 100;
   }
 
   .entitySubtext {
     background: #e8e0dd;
-    margin-top: 1em;
-    margin-left: 0.5em;
-    padding: 1.5em;
-    font-size: 1em;
-    width: 32em;
+    margin-top: 16px;
+    margin-left: 8px;
+    padding: 24px;
+    font-size: 16px;
+    width: 512px;
   }
 
   .errorMesSubtext {
-    font-size: 0.8em;
+    font-size: 12px;
     color: red;
     font-family: Domine;
-    width: 100em !important;
-    margin-top: 1.5em;
-    margin-left: 1.5em;
+    width: 1600px !important;
+    margin-top: 24px;
+    margin-left: 24px;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -429,14 +429,14 @@
     border-width: 1px;
     border-color: #d8c5a6;
     border-radius: 0;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
-    margin-top: 1em;
+    width: 336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-top: 16px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
-    margin-left: 0.1em;
+    margin-left: 2px;
   }
   .customURL:focus {
     border-color: #d8c5a6;
@@ -449,15 +449,15 @@
     border-width: 1px;
     border-color: red !important;
     border-radius: 1 !important;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
-    margin-top: 1em;
+    width: 336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-top: 16px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
     border-radius: 0 !important;
-    margin-left: 0.1em;
+    margin-left: 2px;
   }
   .customURLRed:focus {
     border-color: red;
@@ -469,49 +469,49 @@
   }
 
   .availableIcon {
-    margin-top: 4.6em;
+    margin-top: 74px;
     color: #4ba380;
   }
   .notAvailableIcon {
-    margin-top: 4.6em;
+    margin-top: 74px;
     color: rgb(236, 85, 85);
   }
 
   .availableText {
-    margin-top: 7.2em;
+    margin-top: 115px;
     font-family: oswald;
-    font-size: 0.8em;
-    margin-left: 0.7em;
-    width: 10em;
+    font-size: 12px;
+    margin-left:  10px;
+    width: 160px;
   }
 
   .businessHead {
-    font-size: 1.8em;
+    font-size: 28px;
     font-weight: 400;
     font-family: oswald;
-    margin-top: 0.5em;
+    margin-top: 8px;
   }
 
   .errorMes {
-    font-size: 0.8em;
+    font-size: 12px;
     color: red;
     font-family: Domine;
-    width: 100em !important;
-    margin-left: 1em;
-    margin-top: 1.5em;
+    width: 1600px !important;
+    margin-left: 16px;
+    margin-top: 24px;
   }
 
   .businessButton1 {
     background: #dcba80;
     text-align: center;
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
+    padding-top: 12px;
+    padding-bottom: 12px;
     color: white;
-    margin-top: 0.5em;
+    margin-top: 8px;
     font-family: Domine;
-    font-size: 1.1em;
-    width: 9em;
-    height: 3.1em;
+    font-size: 16px;
+    width: 144px;
+    height: 50px;
   }
   .businessButton1:hover {
     cursor: pointer;
@@ -520,14 +520,14 @@
   .businessButton2 {
     background: #dcba80;
     text-align: center;
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
+    padding-top: 12px;
+    padding-bottom: 12px;
     color: white;
-    margin-top: 0.5em;
+    margin-top: 8px;
     font-family: Domine;
-    font-size: 1.1em;
-    width: 9em;
-    height: 3.1em;
+    font-size: 16px;
+    width: 144px;
+    height: 50px;
   }
 
   .businessButton2:hover {
@@ -535,8 +535,8 @@
   }
 
   .iconBusiness {
-    margin-top: -0.15em;
-    margin-right: 0.3em;
+    margin-top: -2px;
+    margin-right: 5px;
   }
 
   .businessButtonNotActive {
@@ -546,9 +546,9 @@
     border-color: #d8c5a6;
     border-style: solid;
     font-family: Domine;
-    font-size: 1.1em;
-    width: 9em;
-    height: 3.1em;
+    font-size: 16px;
+    width: 144px;
+    height: 50px;
   }
   .businessButtonNotActive:hover {
     cursor: pointer;
@@ -556,8 +556,8 @@
 
   .ssn {
     font-family: oswald;
-    font-size: 1.3em;
-    margin-top: 0.7em;
+    font-size: 20px;
+    margin-top:  10px;
     font-weight: 400;
   }
 
@@ -565,12 +565,12 @@
     border-width: 1px;
     border-color: #d8c5a6;
     border-radius: 0;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
-    margin-top: 1.5em;
+    width: 336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-top: 24px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
   }
   .ssnInput:focus {
@@ -581,12 +581,12 @@
     border-width: 1px;
     border-color: red !important;
     border-radius: 1 !important;
-    width: 21em !important;
-    height: 3.5em !important;
-    margin-bottom: 0.5em;
-    margin-top: 1.5em;
+    width: 336px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-top: 24px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
     border-radius: 0 !important;
   }
@@ -597,55 +597,54 @@
   }
   .ssnSubtext {
     font-family: Domine;
-    margin-top: 0.3em;
-    font-size: 0.9em;
+    margin-top: 5px;
+    font-size: 14px;
     font-weight: 100;
   }
 
   .entitySubtext {
     background: #e8e0dd;
-    margin-top: 1em;
-    margin-left: 0.8em;
-    padding: 1.5em;
-    font-size: 1em;
-    width: 19em !important;
+    margin-top: 16px;
+    margin-left: 12px;
+    padding: 24px;
+    font-size: 16px;
+    width: 304px !important;
   }
 
   .errorMesSubtext {
-    font-size: 0.8em;
+    font-size: 12px;
     color: red;
     font-family: Domine;
-    width: 100em !important;
-    margin-top: 1.5em;
-    margin-left: 1.5em;
+    width: 1600px !important;
+    margin-top: 24px;
+    margin-left: 24px;
   }
 
   .mobileAvailabilityIcon {
-    width: 1em !important;
+    width: 16px !important;
   }
   .mobileAvailabilitySubText {
-    width: 1em !important;
+    width: 16px !important;
   }
   .mobileAvailabilityText {
-    margin-top: -5.5em;
-    margin-left: 11em;
+    margin-top: 88px;
+    margin-left: 176px;
   }
 
   .mobileSsnToggle {
-    width: 11em;
-    margin-top: 0.5em;
+    width: 176px;
+    margin-top: 8px;
   }
   .staticText3 {
-    font-size: 0.8em;
+    font-size: 12px;
     font-family: Domine;
-    margin-top: 0.8em;
-    width: 25em;
+    margin-top: 12px;
   }
 
   .staticText4 {
-    font-size: 1em;
+    font-size: 16px;
     font-family: Domine;
-    margin-top: 1.5em;
+    margin-top: 24px;
     font-weight: bold;
   }
   .mobileoverFlowBusinessDetails {
