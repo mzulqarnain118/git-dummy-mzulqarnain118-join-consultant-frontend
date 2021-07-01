@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {withStyles} from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -13,8 +13,10 @@ import VerifyIdentity from "./VerifyIdentity";
 import PurchaseKit from "./PurchaseKit";
 import PaymentConfirmation from "./PaymentConfirmation";
 import StepConnector from "@material-ui/core/StepConnector";
-import {Logo} from "../Assets/HeaderSVG";
+import { Logo } from "../Assets/HeaderSVG";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import * as API from "../configuration/apiconfig";
+import { setUserName } from "../configuration/config";
 require("typeface-oswald");
 require("typeface-domine");
 
@@ -97,6 +99,10 @@ class Home extends React.Component {
       rightFooterButtonDisabled: true,
       //get userdata by making axios call
       userData: {},
+      // userData Error
+      errorUserData: {
+        email: "",
+      },
       //width for mobile view
       width: 0,
       // state variable to (enable/disable) footer
@@ -104,14 +110,74 @@ class Home extends React.Component {
     };
   }
 
+  //*********************************************************** API Calls Starts Here*********************************************************/
+
+  // API to Verify Email (landing page)
+  apiVerifyEmail = () => {
+    let userData = this.state.userData;
+    let errorUserData = this.state.errorUserData;
+    let data = { email: userData["email"] };
+    API.callEndpoint("POST", "Basic", "/api/v1/users/verifyEmail", data)
+      .then((response) => {
+        try {
+          if (response.data.is_emailValid) {
+            errorUserData["email"] = "";
+            this.setState({
+              rightFooterButtonName: "LOG IN",
+              rightFooterButtonDisabled: true,
+              errorUserData: errorUserData,
+            });
+            setUserName(userData["email"]);
+          }
+        } catch (e) {
+          console.log(e);
+          errorUserData["email"] = "Invalid Email";
+          this.setState({ errorUserData: errorUserData });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        errorUserData["email"] = "Invalid Email";
+        this.setState({ errorUserData: errorUserData });
+      });
+  };
+
+  // API to Login
+  apiLogin = () => {
+    let data = {
+      accessTokenExpiry: 300,
+      keepMeSignedIn: false,
+      getUserInfo: true,
+      newcustomer: true,
+    };
+    API.callEndpoint("POST", "Basic", "/api/v1/users/login", data)
+      .then((response) => {
+        try {
+          console.log(response);
+        } catch (e) {
+          console.log(e);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  //*********************************************************** API Calls Ends Here*********************************************************/
+
   // method to (ennable/disable) footer
   setDisplayFooter = (value) => {
-    this.setState({displayFooter: value});
+    this.setState({ displayFooter: value });
   };
 
   //stepper title content
   getSteps = () => {
-    return ["CONFIRM DETAILS", "BUSINESS DETAILS", "VERIFY IDENTITY", "PURCHASE KIT"];
+    return [
+      "CONFIRM DETAILS",
+      "BUSINESS DETAILS",
+      "VERIFY IDENTITY",
+      "PURCHASE KIT",
+    ];
   };
 
   //stepper content to be displayed based on current active step
@@ -124,7 +190,10 @@ class Home extends React.Component {
             rightFooterButtonName={this.state.rightFooterButtonName}
             setrightFooterButtonDisabled={this.setrightFooterButtonDisabled}
             userData={this.state.userData}
+            errorUserData={this.state.errorUserData}
             setUserData={this.setUserData}
+            setButtonName={this.setButtonName}
+            setErrorUserData={this.setErrorUserData}
           />
         );
       case 1:
@@ -135,6 +204,7 @@ class Home extends React.Component {
             setrightFooterButtonDisabled={this.setrightFooterButtonDisabled}
             userData={this.state.userData}
             setUserData={this.setUserData}
+            setButtonName={this.setButtonName}
           />
         );
       case 2:
@@ -145,6 +215,7 @@ class Home extends React.Component {
             setrightFooterButtonDisabled={this.setrightFooterButtonDisabled}
             userData={this.state.userData}
             setUserData={this.setUserData}
+            setButtonName={this.setButtonName}
             setDisplayFooter={this.setDisplayFooter}
           />
         );
@@ -156,6 +227,7 @@ class Home extends React.Component {
             setrightFooterButtonDisabled={this.setrightFooterButtonDisabled}
             userData={this.state.userData}
             setUserData={this.setUserData}
+            setButtonName={this.setButtonName}
           />
         );
       default:
@@ -169,23 +241,35 @@ class Home extends React.Component {
     this.handleNext();
   };
 
-  // method to ser user data
-  setUserData = (button, data, disabled) => {
+  // method to set user data
+  setUserData = (data) => {
+    this.setState({
+      userData: data,
+    });
+  };
+
+  // method to set error
+  setErrorUserData = (data) => {
+    this.setState({
+      errorUserData: data,
+    });
+  };
+
+  //set button name
+  setButtonName = (button) => {
     this.setState({
       rightFooterButtonName: button,
-      userData: data,
-      rightFooterButtonDisabled: disabled,
     });
   };
 
   // method to enable/disable right footer button
   setrightFooterButtonDisabled = (value) => {
-    this.setState({rightFooterButtonDisabled: value});
+    this.setState({ rightFooterButtonDisabled: value });
   };
 
   // to move to next screen
   handleNext = () => {
-    const {activeStep} = this.state;
+    const { activeStep } = this.state;
 
     this.setState({
       activeStep: activeStep + 1,
@@ -194,13 +278,19 @@ class Home extends React.Component {
 
   // to set width for mobile view
   componentDidMount = () => {
-    this.setState({width: window.innerWidth});
+    this.setState({ width: window.innerWidth });
+  };
+
+  // header Back button
+  handleBackButton = () => {
+    let rightButton = this.state.rightFooterButtonName;
+    console.log(rightButton);
   };
 
   render() {
-    const {classes} = this.props;
+    const { classes } = this.props;
     const steps = this.getSteps();
-    const {activeStep} = this.state;
+    const { activeStep } = this.state;
 
     return (
       <React.Fragment>
@@ -208,21 +298,38 @@ class Home extends React.Component {
         if active step is 4  - payment confirmation page is displayed */}
         {this.state.activeStep < 4 ? (
           <>
-            <div className="container-fluid" style={{background: "#e8e0dd"}}>
-              <div className="row headerMarginTop" style={{background: "#e8e0dd"}}>
-                <div className="col-lg-2 " style={{background: "#e8e0dd"}}>
+            <div className="container-fluid" style={{ background: "#e8e0dd" }}>
+              <div
+                className="row headerMarginTop"
+                style={{ background: "#e8e0dd" }}
+              >
+                <div className="col-lg-2 " style={{ background: "#e8e0dd" }}>
                   <div className="arrowIcon3">
-                    <ArrowBackIosIcon style={{width: "1.3em", height: "2.5em"}} />
+                    <ArrowBackIosIcon
+                      style={{ width: "1.3em", height: "2.5em" }}
+                      className="HomeBackButton"
+                      onClick={this.handleBackButton}
+                    />
                   </div>
                 </div>
-                <div className="col-lg-3 " style={{background: "#e8e0dd"}}>
+                <div className="col-lg-3 " style={{ background: "#e8e0dd" }}>
                   <div className="LogoIcon">
                     <Logo />
                   </div>
                 </div>
-                <div className="col-lg-6 stepperMarginTop" style={{background: "#e8e0dd"}}>
+                <div
+                  className="col-lg-6 stepperMarginTop"
+                  style={{ background: "#e8e0dd" }}
+                >
                   {/* stepper */}
-                  <Stepper activeStep={activeStep} connector={<GreenStepConnector />} style={{background: "#e8e0dd"}} orientation={this.state.width >= 550 ? "horizontal" : "vertical"}>
+                  <Stepper
+                    activeStep={activeStep}
+                    connector={<GreenStepConnector />}
+                    style={{ background: "#e8e0dd" }}
+                    orientation={
+                      this.state.width >= 550 ? "horizontal" : "vertical"
+                    }
+                  >
                     {steps.map((label, index) => {
                       const props = {};
                       const labelProps = {};
@@ -266,14 +373,18 @@ class Home extends React.Component {
 
                       {/* to display content based on active step */}
                       <div>
-                        <Typography className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
+                        <Typography className={classes.instructions}>
+                          {this.getStepContent(activeStep)}
+                        </Typography>
                       </div>
                     </>
                   ) : (
                     <>
                       {/* enter email */}
                       <div className="mobileMargin">
-                        <Typography className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
+                        <Typography className={classes.instructions}>
+                          {this.getStepContent(activeStep)}
+                        </Typography>
                       </div>
                       {/* Stepper */}
                       {this.state.rightFooterButtonName === "NEXT" ? (
@@ -286,12 +397,24 @@ class Home extends React.Component {
                             paddingBottom: "30vh",
                           }}
                         >
-                          <div className="mobileStepHead" style={{background: "#e8e0dd"}}>
+                          <div
+                            className="mobileStepHead"
+                            style={{ background: "#e8e0dd" }}
+                          >
                             {" "}
                             WHAT HAPPENS NEXT ?
                           </div>
                           {/* stepper for mobile view  */}
-                          <Stepper activeStep={activeStep} style={{background: "#e8e0dd"}} className="mobileStep" orientation={this.state.width >= 550 ? "horizontal" : "vertical"}>
+                          <Stepper
+                            activeStep={activeStep}
+                            style={{ background: "#e8e0dd" }}
+                            className="mobileStep"
+                            orientation={
+                              this.state.width >= 550
+                                ? "horizontal"
+                                : "vertical"
+                            }
+                          >
                             {steps.map((label, index) => {
                               const props = {};
                               const labelProps = {};
@@ -338,13 +461,21 @@ class Home extends React.Component {
               rightFooterButtonDisabled={this.state.rightFooterButtonDisabled}
               moveToNextScreen={this.moveToNextScreen}
               setUserData={this.setUserData}
+              setButtonName={this.setButtonName}
+              setrightFooterButtonDisabled={this.setrightFooterButtonDisabled}
               displayFooter={this.state.displayFooter}
               setDisplayFooter={this.setDisplayFooter}
+              apiVerifyEmail={this.apiVerifyEmail}
+              apiLogin={this.apiLogin}
             />
           </>
         ) : (
           // once all steps are completed Payement confirmation screen is displayed
-          <PaymentConfirmation userData={this.state.userData} setUserData={this.setUserData} />
+          <PaymentConfirmation
+            userData={this.state.userData}
+            setUserData={this.setUserData}
+            setButtonName={this.setButtonName}
+          />
         )}
       </React.Fragment>
     );

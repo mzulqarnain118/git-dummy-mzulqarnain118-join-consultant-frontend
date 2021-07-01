@@ -1,4 +1,5 @@
 import React from "react";
+import { constant, setPassword } from "../configuration/config";
 
 class ConfirmDetailsPasswordPage extends React.Component {
   constructor(props) {
@@ -20,39 +21,46 @@ class ConfirmDetailsPasswordPage extends React.Component {
 
     // password
     if (type === "password") {
-      let regex = new RegExp("^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$");
+      let regex = new RegExp(
+        "^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$"
+      );
 
       if (regex.test(value)) {
         error = "";
         this.props.setrightFooterButtonDisabled(false);
+        setPassword(value);
+        console.log(value);
       } else {
         error = "Please enter valid password ";
         this.props.setrightFooterButtonDisabled(true);
       }
-      //letting regex pass though for demo
-      error = "";
-      this.props.setrightFooterButtonDisabled(false);
+      
     }
 
-    this.setState({password: value, errorMes: error});
+    this.setState({ password: value, errorMes: error });
   };
 
   //width for mobile view
   componentDidMount = () => {
-    this.setState({width: window.innerWidth});
+    this.setState({ width: window.innerWidth });
   };
 
   render() {
-    const {password, errorMes} = this.state;
-    const {userData} = this.props;
+    const { password, errorMes } = this.state;
     return (
       <React.Fragment>
-        <div className={this.state.width >= 550 ? "componentMargin2 " : "mobileComponent"}>
-          <span className="head2">Hey, {userData.firstname.toUpperCase()}!</span>
+        <div
+          className={
+            this.state.width >= 550 ? "componentMargin2 " : "mobileComponent"
+          }
+        >
+          <span className="head2">Hey, there!</span>
 
           <div className="staticText1">Welcome back!</div>
 
-          <div className="staticText2">We're excited to have you as a Consultant.</div>
+          <div className="staticText2">
+            We're excited to have you as a Consultant.
+          </div>
 
           {/* input to accept Password  */}
           <div className="password1 form-group">
@@ -61,11 +69,15 @@ class ConfirmDetailsPasswordPage extends React.Component {
             </label>
             <div className="InputMargin">
               <input
-                style={{width: "40%"}}
+                style={{ width: "40%" }}
                 type="password"
                 autoComplete="off"
                 value={password}
-                className={errorMes.length > 0 ? "form-control Red" : "form-control Input"}
+                className={
+                  errorMes.length > 0
+                    ? "form-control Red"
+                    : "form-control Input"
+                }
                 id="password"
                 name="password"
                 placeholder="Enter password"

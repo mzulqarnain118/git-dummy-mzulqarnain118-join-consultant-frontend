@@ -12,9 +12,6 @@ class ConfirmDetails extends React.Component {
       form: {
         emailAddress: "",
       },
-      error: {
-        emailAddress: "",
-      },
       //to adjust view for mobile
       width: 0,
     };
@@ -25,23 +22,26 @@ class ConfirmDetails extends React.Component {
     let type = e.target.id;
     let value = e.target.value;
     let form = this.state.form;
-    let error = this.state.error;
+    let error = this.props.errorUserData;
 
     // email
     if (type === "emailAddress") {
-      let regex = new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
-
+      let regex = new RegExp(
+        "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$"
+      );
       if (regex.test(value)) {
-        error[type] = "";
+        this.props.setUserData({ email: value });
+        error["email"] = "";
+        this.props.setErrorUserData(error);
         this.props.setrightFooterButtonDisabled(false);
       } else {
-        error[type] = "Please enter valid email address";
+        error["email"] = "Please enter valid email address";
+        this.props.setErrorUserData(error);
         this.props.setrightFooterButtonDisabled(true);
       }
     }
-
     form[type] = value;
-    this.setState({ form: form, error: error });
+    this.setState({ form: form });
   };
 
   // set width for mobile view
@@ -50,8 +50,9 @@ class ConfirmDetails extends React.Component {
   };
 
   render() {
-    const { form, error } = this.state;
-    const { rightFooterButtonName, userData } = this.props;
+    const { form } = this.state;
+    const { rightFooterButtonName, userData, errorUserData } = this.props;
+
     return (
       <React.Fragment>
         {rightFooterButtonName === "NEXT" ? (
@@ -72,7 +73,7 @@ class ConfirmDetails extends React.Component {
                   type="text"
                   value={form["emailAddress"]}
                   className={
-                    error.emailAddress.length > 0
+                    errorUserData.email.length
                       ? "form-control Red"
                       : "form-control Input"
                   }
@@ -83,9 +84,10 @@ class ConfirmDetails extends React.Component {
                   onChange={this.handleChange}
                 />
                 {/* error handling of email field */}
-                {error.emailAddress.length > 0 ? (
+
+                {errorUserData.email.length ? (
                   <span className="errorMes">
-                    {error.emailAddress}
+                    {errorUserData.email}
                     <br />
                   </span>
                 ) : null}
@@ -121,6 +123,7 @@ class ConfirmDetails extends React.Component {
               this.props.setrightFooterButtonDisabled
             }
             setUserData={this.props.setUserData}
+            setButtonName={this.props.setButtonName}
           />
         )}
       </React.Fragment>

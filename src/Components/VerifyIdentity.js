@@ -45,7 +45,9 @@ class VerifyIdentity extends React.Component {
     if ("" + otp["otp1"] + otp["otp2"] + otp["otp3"] + otp["otp4"] === "8888") {
       this.setState({ agreementScreen: true });
       this.props.setDisplayFooter(true);
-      this.props.setUserData("CONTINUE", this.props.userData, true);
+      this.props.setUserData(this.props.userData);
+      this.props.setrightFooterButtonDisabled(true);
+      this.props.setButtonName("CONTINUE");
     }
   };
 
