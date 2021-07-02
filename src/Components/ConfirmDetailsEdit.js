@@ -175,7 +175,7 @@ class ConfirmDetailsEdit extends React.Component {
       )
     );
     this.setState({ userData: form, error: error, errorArr: errorArr });
-    //this.props.setUserData({ form });
+    
   };
 
   // to handle change in date
@@ -200,7 +200,6 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     this.setState({ userData: userData });
-   // this.props.setUserData({ userData });
   };
 
   // change footer button name when component is removed

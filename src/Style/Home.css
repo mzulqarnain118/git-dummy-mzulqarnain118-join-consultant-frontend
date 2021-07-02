@@ -1,12 +1,19 @@
+.loader {
+  z-index: 1;
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+}
+
 .fontOswald {
   font-family: oswald;
   font-size: 18px;
 }
-
 .arrowIcon3 {
   margin-top: 5px;
   text-align: right;
   padding-right: 8px;
+  cursor: pointer;
 }
 .arrowIcon3 svg {
   width: 31px;

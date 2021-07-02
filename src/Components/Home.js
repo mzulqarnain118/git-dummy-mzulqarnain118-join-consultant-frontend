@@ -16,6 +16,7 @@ import StepConnector from "@material-ui/core/StepConnector";
 import { Logo } from "../Assets/HeaderSVG";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import * as API from "../configuration/apiconfig";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import moment from "moment";
 require("typeface-oswald");
 require("typeface-domine");
@@ -132,6 +133,8 @@ class Home extends React.Component {
       width: 0,
       // state variable to (enable/disable) footer
       displayFooter: true,
+      //display loader
+      load: false,
     };
   }
 
@@ -139,6 +142,7 @@ class Home extends React.Component {
 
   // API to Verify Email (landing page)
   apiVerifyEmail = async () => {
+    this.setState({ load: true, rightFooterButtonDisabled: true });
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
     let data = { email: userData["email"] };
@@ -160,6 +164,7 @@ class Home extends React.Component {
         errorUserData["email"] = "Invalid Email";
       });
     this.setState({
+      load: false,
       rightFooterButtonName: "LOG IN",
       rightFooterButtonDisabled: true,
       errorUserData: errorUserData,
@@ -168,6 +173,7 @@ class Home extends React.Component {
 
   // API to Login
   apiLogin = async () => {
+    this.setState({ load: true, rightFooterButtonDisabled: true });
     let userData = this.state.userData;
     await API.getAccessToken(userData.email, userData.password, false)
       .then((response) => {
@@ -199,6 +205,7 @@ class Home extends React.Component {
 
     //update state with user data
     this.setState({
+      load: false,
       rightFooterButtonName: "LOOKS GOOD",
       rightFooterButtonDisabled: false,
       userData,
@@ -207,6 +214,7 @@ class Home extends React.Component {
 
   // API to update user data
   apiUpdateUserData = async () => {
+    this.setState({ load: true, rightFooterButtonDisabled: true });
     let data = {};
     let userData = this.state.userData;
 
@@ -226,7 +234,7 @@ class Home extends React.Component {
     //Change date to required format
     data["dateofbirth"] = moment([
       userData["dob"]["year"],
-      userData["dob"]["month"]-1,
+      userData["dob"]["month"] - 1,
       userData["dob"]["day"],
     ]).format("YYYY-MM-DD");
 
@@ -259,6 +267,7 @@ class Home extends React.Component {
       });
 
     this.setState({
+      load: false,
       rightFooterButtonName: "LOOKS GOOD",
       rightFooterButtonDisabled: false,
       userData,
@@ -387,15 +396,54 @@ class Home extends React.Component {
   handleBackButton = () => {
     let rightButton = this.state.rightFooterButtonName;
     console.log(rightButton);
+    switch (rightButton) {
+      case "LOG IN":
+        this.setState({
+          rightFooterButtonName: "NEXT",
+          rightFooterButtonDisabled: false,
+        });
+        break;
+      case "LOOKS GOOD":
+        this.setState({
+          rightFooterButtonName: "NEXT",
+          rightFooterButtonDisabled: false,
+        });
+        break;
+      case "SAVE AND PROCEED":
+        this.apiUpdateUserData();
+        break;
+      case "PROCEED":
+        if (this.state.activeStep === 1) {
+          this.setState({
+            rightFooterButtonName: "LOOKS GOOD",
+            rightFooterButtonDisabled: false,
+            activeStep: 0,
+          });
+        } else {
+          this.setState({
+            displayFooter: true,
+            rightFooterButtonDisabled: true,
+            activeStep: 1,
+          });
+        }
+        break;
+
+      default:
+        this.setState({ rightFooterButtonName: "NEXT" });
+        break;
+    }
   };
 
   render() {
     const { classes } = this.props;
     const steps = this.getSteps();
-    const { activeStep } = this.state;
+    const { activeStep, load } = this.state;
 
     return (
       <React.Fragment>
+        {load ? (
+          <CircularProgress color="black" size={100} className="loader" />
+        ) : null}
         {/* If active step is less than 4 appropriate step page is dispayed , 
         if active step is 4  - payment confirmation page is displayed */}
         {this.state.activeStep < 4 ? (
@@ -403,7 +451,7 @@ class Home extends React.Component {
             <div className="container-fluid">
               <div className="row headerMarginTop">
                 <div className="col-xl-2 col-lg-1 col-md-1 col-1">
-                  <div className="arrowIcon3">
+                  <div className="arrowIcon3" onClick={this.handleBackButton}>
                     <ArrowBackIosIcon />
                   </div>
                 </div>
