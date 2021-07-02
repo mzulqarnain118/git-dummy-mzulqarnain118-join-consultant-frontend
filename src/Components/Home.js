@@ -232,12 +232,13 @@ class Home extends React.Component {
     data["state"] = userData["address"]["state"];
 
     //Change date to required format
-    data["dateofbirth"] = moment([
-      userData["dob"]["year"],
-      userData["dob"]["month"] - 1,
-      userData["dob"]["day"],
-    ]).format("YYYY-MM-DD");
+    data["dateofbirth"] = moment()
+      .year(userData["dob"]["year"])
+      .month(userData["dob"]["month"] - 1)
+      .date(userData["dob"]["day"])
+      .format("YYYY-MM-DD");
 
+    console.log(userData, data);
     await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
       .then((response) => {
         try {
@@ -442,7 +443,7 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         {load ? (
-          <CircularProgress color="black" size={100} className="loader" />
+          <CircularProgress color="black" size={80} className="loader" />
         ) : null}
         {/* If active step is less than 4 appropriate step page is dispayed , 
         if active step is 4  - payment confirmation page is displayed */}
