@@ -1,5 +1,4 @@
 import React from "react";
-import { constant, setPassword } from "../configuration/config";
 
 class ConfirmDetailsPasswordPage extends React.Component {
   constructor(props) {
@@ -21,20 +20,17 @@ class ConfirmDetailsPasswordPage extends React.Component {
 
     // password
     if (type === "password") {
-      let regex = new RegExp(
-        "^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$"
-      );
-
+      let regex = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$");
       if (regex.test(value)) {
         error = "";
         this.props.setrightFooterButtonDisabled(false);
-        setPassword(value);
-        console.log(value);
+        let userData = this.props.userData;
+        userData["password"] = value;
+        this.props.setUserData(userData)
       } else {
         error = "Please enter valid password ";
         this.props.setrightFooterButtonDisabled(true);
       }
-      
     }
 
     this.setState({ password: value, errorMes: error });

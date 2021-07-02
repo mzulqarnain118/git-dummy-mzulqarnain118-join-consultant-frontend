@@ -16,7 +16,7 @@ import StepConnector from "@material-ui/core/StepConnector";
 import { Logo } from "../Assets/HeaderSVG";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import * as API from "../configuration/apiconfig";
-import { setUserName } from "../configuration/config";
+import moment from "moment";
 require("typeface-oswald");
 require("typeface-domine");
 
@@ -98,7 +98,32 @@ class Home extends React.Component {
       // footer right side button (disable/enable)
       rightFooterButtonDisabled: true,
       //get userdata by making axios call
-      userData: {},
+      userData: {
+        accessToken: "",
+        refreshToken: "",
+        id: "",
+        email: "",
+        phonenumber: "",
+        address: "",
+        working_with: "",
+        url: "",
+        ssn: "",
+        doing_business: "",
+        isemail_verified: false,
+        first_name: "",
+        last_name: "",
+        customer: false,
+        consultant: false,
+        dateofbirth: "",
+        screen: 0,
+        street: "",
+        zipcode: "",
+        city: "",
+        state: "",
+        indepedent_agreement: false,
+        policy_procedures: false,
+        cart_id: "",
+      },
       // userData Error
       errorUserData: {
         email: "",
@@ -113,54 +138,131 @@ class Home extends React.Component {
   //*********************************************************** API Calls Starts Here*********************************************************/
 
   // API to Verify Email (landing page)
-  apiVerifyEmail = () => {
+  apiVerifyEmail = async () => {
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
     let data = { email: userData["email"] };
-    API.callEndpoint("POST", "Basic", "/api/v1/users/verifyEmail", data)
+    await API.callEndpoint("POST", "Basic", "/api/v1/users/verifyEmail", data)
       .then((response) => {
         try {
           if (response.data.is_emailValid) {
             errorUserData["email"] = "";
-            this.setState({
-              rightFooterButtonName: "LOG IN",
-              rightFooterButtonDisabled: true,
-              errorUserData: errorUserData,
-            });
-            setUserName(userData["email"]);
           }
         } catch (e) {
+          console.log("Error in /verifyEmail");
           console.log(e);
           errorUserData["email"] = "Invalid Email";
-          this.setState({ errorUserData: errorUserData });
         }
       })
       .catch((error) => {
+        console.log("Error in /verifyEmail");
         console.log(error);
         errorUserData["email"] = "Invalid Email";
-        this.setState({ errorUserData: errorUserData });
       });
+    this.setState({
+      rightFooterButtonName: "LOG IN",
+      rightFooterButtonDisabled: true,
+      errorUserData: errorUserData,
+    });
   };
 
   // API to Login
-  apiLogin = () => {
-    let data = {
-      accessTokenExpiry: 300,
-      keepMeSignedIn: false,
-      getUserInfo: true,
-      newcustomer: true,
-    };
-    API.callEndpoint("POST", "Basic", "/api/v1/users/login", data)
+  apiLogin = async () => {
+    let userData = this.state.userData;
+    await API.getAccessToken(userData.email, userData.password, false)
       .then((response) => {
         try {
-          console.log(response);
+          userData = response.data;
+          //update date in required format
+          let Date = moment(userData["dateofbirth"], "YYYY/MM/DD");
+          userData["dob"] = {
+            day: Date.date(),
+            month: 1 + Date.month(),
+            year: Date.year(),
+          };
+          //update address to required format
+          userData["address"] = {
+            street: userData["street"],
+            zipcode: userData["zipcode"],
+            city: userData["city"],
+            state: userData["state"],
+          };
         } catch (e) {
+          console.log("Error in /Login");
           console.log(e);
         }
       })
       .catch((error) => {
+        console.log("Error in /Login");
         console.log(error);
       });
+
+    //update state with user data
+    this.setState({
+      rightFooterButtonName: "LOOKS GOOD",
+      rightFooterButtonDisabled: false,
+      userData,
+    });
+  };
+
+  // API to update user data
+  apiUpdateUserData = async () => {
+    let data = {};
+    let userData = this.state.userData;
+
+    //user details
+    data["id"] = userData["id"];
+    data["first_name"] = userData["first_name"];
+    data["last_name"] = userData["last_name"];
+    data["working_with"] = userData["working_with"];
+    data["phonenumber"] = userData["phonenumber"];
+
+    //Change Address to required format
+    data["street"] = userData["address"]["street"];
+    data["zipcode"] = userData["address"]["zipcode"];
+    data["city"] = userData["address"]["city"];
+    data["state"] = userData["address"]["state"];
+
+    //Change date to required format
+    data["dateofbirth"] = moment([
+      userData["dob"]["year"],
+      userData["dob"]["month"]-1,
+      userData["dob"]["day"],
+    ]).format("YYYY-MM-DD");
+
+    await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
+      .then((response) => {
+        try {
+          userData = response.data;
+          //update date in required format
+          let Date = moment(userData["dateofbirth"], "YYYY/MM/DD");
+          userData["dob"] = {
+            day: Date.date(),
+            month: 1 + Date.month(),
+            year: Date.year(),
+          };
+          //update address to required format
+          userData["address"] = {
+            street: userData["street"],
+            zipcode: userData["zipcode"],
+            city: userData["city"],
+            state: userData["state"],
+          };
+        } catch (e) {
+          console.log("Error in /Update");
+          console.log(e);
+        }
+      })
+      .catch((error) => {
+        console.log("Error in /update");
+        console.log(error);
+      });
+
+    this.setState({
+      rightFooterButtonName: "LOOKS GOOD",
+      rightFooterButtonDisabled: false,
+      userData,
+    });
   };
 
   //*********************************************************** API Calls Ends Here*********************************************************/
@@ -449,6 +551,7 @@ class Home extends React.Component {
               setDisplayFooter={this.setDisplayFooter}
               apiVerifyEmail={this.apiVerifyEmail}
               apiLogin={this.apiLogin}
+              apiUpdateUserData={this.apiUpdateUserData}
             />
           </>
         ) : (

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { constant } from "./config";
+import constant from "./config";
 var accessTokenExpiry = 300;
 var methodType, authorisationType, URL;
 
@@ -8,7 +8,7 @@ export async function callEndpoint(methodType, authorisationType, URL, data) {
     var accessToken = getCookie("accessToken");
     if (accessToken == null) {
       return new Promise((resolve, reject) => {
-        window.location.href = "/login";
+        // window.location.href = "/login";
       });
     } else {
       return new Promise((resolve, reject) => {
@@ -84,8 +84,14 @@ export async function getAccessToken(
   var headerObject = {};
   headerObject.Authorization =
     "Basic " + new Buffer.from(username + ":" + password).toString("base64");
-  var data = {};
-  data.accessTokenExpiry = accessTokenExpiry;
+  headerObject.appplatform = "WEBSITE";
+  headerObject.appversion = "1.0.0";
+  var data = {
+    accessTokenExpiry: accessTokenExpiry,
+    keepMeSignedIn: keepmesignedin,
+    getUserInfo: true,
+    newcustomer: true,
+  };
   return new Promise((resolve, reject) => {
     axios({
       url: "https://apidevscoutncellar.influx.co.in/api/v1/users/login",

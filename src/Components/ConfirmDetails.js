@@ -34,6 +34,9 @@ class ConfirmDetails extends React.Component {
         error["email"] = "";
         this.props.setErrorUserData(error);
         this.props.setrightFooterButtonDisabled(false);
+        let userData = this.props.userData;
+        userData["email"] = value;
+        this.props.setUserData(userData);
       } else {
         error["email"] = "Please enter valid email address";
         this.props.setErrorUserData(error);
@@ -103,6 +106,7 @@ class ConfirmDetails extends React.Component {
           // to display the password page of cnfirm details
           <ConfirmDetailsPasswordPage
             userData={userData}
+            setUserData={this.props.setUserData}
             setrightFooterButtonDisabled={
               this.props.setrightFooterButtonDisabled
             }

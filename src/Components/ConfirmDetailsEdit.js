@@ -13,10 +13,10 @@ class ConfirmDetailsEdit extends React.Component {
       //used to record error message
       error: {
         email: "",
-        firstname: "",
-        lastname: "",
-        cellno: "",
-        workingwith: "",
+        first_name: "",
+        last_name: "",
+        phonenumber: "",
+        working_with: "",
         dob: "",
         address: {
           street: "",
@@ -39,7 +39,7 @@ class ConfirmDetailsEdit extends React.Component {
     let errorArr = this.state.errorArr;
 
     // firstname
-    if (type === "firstname") {
+    if (type === "first_name") {
       if (value !== "") {
         error[type] = "";
         errorArr[0] = true;
@@ -51,7 +51,7 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     // lastname
-    if (type === "lastname") {
+    if (type === "last_name") {
       if (value !== "") {
         error[type] = "";
         errorArr[1] = true;
@@ -111,7 +111,7 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     // cellno
-    if (type === "cellno") {
+    if (type === "phonenumber") {
       if (value !== "") {
         error[type] = "";
         if (value.length === 10) {
@@ -129,7 +129,7 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     // workingwith
-    if (type === "workingwith") {
+    if (type === "working_with") {
       if (value !== "") {
         error[type] = "";
         errorArr[7] = true;
@@ -175,6 +175,7 @@ class ConfirmDetailsEdit extends React.Component {
       )
     );
     this.setState({ userData: form, error: error, errorArr: errorArr });
+    //this.props.setUserData({ form });
   };
 
   // to handle change in date
@@ -199,6 +200,7 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     this.setState({ userData: userData });
+   // this.props.setUserData({ userData });
   };
 
   // change footer button name when component is removed
@@ -225,7 +227,7 @@ class ConfirmDetailsEdit extends React.Component {
         >
           {/* static text to be displayed */}
           <span className="head1">
-            GOOD MOVE, {userData.firstname.toUpperCase()}!
+            GOOD MOVE, {userData.first_name.toUpperCase()}!
           </span>
           <div className="staticText3">
             We love it when our customers become consultants. We have most of
@@ -238,29 +240,29 @@ class ConfirmDetailsEdit extends React.Component {
           <div className="row edit-margin">
             <div className="col-lg-2 ">
               <div className="form-group">
-                <span className="head3" htmlFor="firstname">
+                <span className="head3" htmlFor="first_name">
                   FIRST NAME
                 </span>
                 <div className="edit-InputMargin">
                   <input
                     type="text"
                     autoComplete="off"
-                    value={userData["firstname"]}
+                    value={userData["first_name"]}
                     className={
-                      error.firstname.length > 0
+                      error.first_name.length > 0
                         ? "form-control edit-Red"
                         : "form-control edit-Input"
                     }
-                    id="firstname"
-                    name="firstname"
+                    id="first_name"
+                    name="first_name"
                     placeholder="Enter first name"
                     onChange={this.handleChange}
                   />
                 </div>
               </div>
-              {error.firstname.length > 0 ? (
+              {error.first_name.length > 0 ? (
                 <>
-                  <div className="errorMes">{error.firstname}</div>
+                  <div className="errorMes">{error.first_name}</div>
                   <br />
                 </>
               ) : null}
@@ -269,29 +271,29 @@ class ConfirmDetailsEdit extends React.Component {
             {/* Last name  */}
             <div className="col-lg-2 offset-lg-1">
               <div className="form-group">
-                <span className="head3" htmlFor="lastname">
+                <span className="head3" htmlFor="last_name">
                   LAST NAME
                 </span>
                 <div className="edit-InputMargin">
                   <input
                     type="text"
                     autoComplete="off"
-                    value={userData["lastname"]}
+                    value={userData["last_name"]}
                     className={
-                      error.lastname.length > 0
+                      error.last_name.length > 0
                         ? "form-control edit-Red"
                         : "form-control edit-Input"
                     }
-                    id="lastname"
-                    name="lastname"
+                    id="last_name"
+                    name="last_name"
                     placeholder="Enter last name"
                     onChange={this.handleChange}
                   />
                 </div>
               </div>
-              {error.lastname.length > 0 ? (
+              {error.last_name.length > 0 ? (
                 <>
-                  <div className="errorMes">{error.lastname}</div>
+                  <div className="errorMes">{error.last_name}</div>
                   <br />
                 </>
               ) : null}
@@ -570,29 +572,29 @@ class ConfirmDetailsEdit extends React.Component {
             {/* cell number */}
             <div className="col-lg-2 offset-lg-1">
               <div className="form-group">
-                <span className="head3" htmlFor="cellno">
+                <span className="head3" htmlFor="phonenumber">
                   CELL NUMBER
                 </span>
                 <div className="edit-InputMargin">
                   <input
                     type="text"
                     autoComplete="off"
-                    value={userData["cellno"]}
+                    value={userData["phonenumber"]}
                     className={
-                      error.cellno.length > 0
+                      error.phonenumber.length > 0
                         ? "form-control edit-Red"
                         : "form-control edit-Input"
                     }
-                    id="cellno"
-                    name="cellno"
+                    id="phonenumber"
+                    name="phonenumber"
                     placeholder="Enter cell number"
                     onChange={this.handleChange}
                   />
                 </div>
               </div>
-              {error.cellno.length > 0 ? (
+              {error.phonenumber.length > 0 ? (
                 <>
-                  <div className="errorMes">{error.cellno}</div>
+                  <div className="errorMes">{error.phonenumber}</div>
                   <br />
                 </>
               ) : null}
@@ -601,29 +603,29 @@ class ConfirmDetailsEdit extends React.Component {
             {/* working with */}
             <div className="col-lg-2 offset-lg-1">
               <div className="form-group">
-                <span className="head3" htmlFor="workingwith">
+                <span className="head3" htmlFor="working_with">
                   WORKING WITH
                 </span>
                 <div className="edit-InputMargin">
                   <input
                     type="text"
                     autoComplete="off"
-                    value={userData["workingwith"]}
+                    value={userData["working_with"]}
                     className={
-                      error.workingwith.length > 0
+                      error.working_with.length > 0
                         ? "form-control edit-Red"
                         : "form-control edit-Input"
                     }
-                    id="workingwith"
-                    name="workingwith"
+                    id="working_with"
+                    name="working_with"
                     placeholder="Enter working with"
                     onChange={this.handleChange}
                   />
                 </div>
               </div>
-              {error.workingwith.length > 0 ? (
+              {error.working_with.length > 0 ? (
                 <>
-                  <div className="errorMes">{error.workingwith}</div>
+                  <div className="errorMes">{error.working_with}</div>
                   <br />
                 </>
               ) : null}

@@ -28,7 +28,7 @@ class ConfirmDetailsDisplay extends React.Component {
           }
         >
           <span className="head1">
-            GOOD MOVE, {userData.firstname.toUpperCase()}!
+            GOOD MOVE, {userData.first_name.toUpperCase()}!
           </span>
           <div className="staticText3">
             We love it when our customers become consultants. We have most of
@@ -43,12 +43,12 @@ class ConfirmDetailsDisplay extends React.Component {
               {/* first name */}
               <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
                 <span className="head3">FIRST NAME</span>
-                <div className="dataText">{userData.firstname}</div>
+                <div className="dataText">{userData.first_name}</div>
               </div>
               {/* last name */}
               <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
                 <span className="head3">LAST NAME</span>
-                <div className="dataText">{userData.lastname}</div>
+                <div className="dataText">{userData.last_name}</div>
               </div>
               {/* date of birth */}
               <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
@@ -75,7 +75,7 @@ class ConfirmDetailsDisplay extends React.Component {
               {this.state.width >= 550 ? (
                 <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
                   <span className="head3">CELL NUMBER</span>
-                  <div className="dataText">{userData.cellno}</div>
+                  <div className="dataText">{userData.phonenumber}</div>
                 </div>
               ) : null}
               {/* address */}
@@ -89,7 +89,7 @@ class ConfirmDetailsDisplay extends React.Component {
               {/* working with */}
               <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
                 <span className="head3">WORKING WITH</span>
-                <div className="dataText">{userData.workingwith}</div>
+                <div className="dataText">{userData.working_with}</div>
               </div>
             </div>
           </div>

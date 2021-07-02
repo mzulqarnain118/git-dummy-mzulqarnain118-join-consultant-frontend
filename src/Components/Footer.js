@@ -6,8 +6,6 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //user data
-      userData: {},
       //to adjust to mobile width
       width: 0,
       // to display or hide footer
@@ -24,35 +22,31 @@ class Footer extends React.Component {
 
   // to handle left footer button
   handleClickLeft = () => {
-    this.props.setUserData("SAVE AND PROCEED", this.state.userData, false);
+    this.props.setButtonName("SAVE AND PROCEED");
+    this.props.setrightFooterButtonDisabled(false);
   };
 
   // to handle right footer button changes
   handleClickRight = async () => {
     if (!this.props.rightFooterButtonDisabled) {
       if (this.props.rightFooterButtonName === "NEXT") {
-        //call API to verify email
+        //call API to verify email (API CALL IN Home)
         this.props.apiVerifyEmail();
       } else if (this.props.rightFooterButtonName === "LOG IN") {
-        this.props.setUserData(this.state.userData);
-        // this.props.setButtonName("LOOKS GOOD");
-        this.props.setrightFooterButtonDisabled(false);
-        //call API to Login
+        //call API to Login (API CALL IN Home)
         this.props.apiLogin();
       } else if (this.props.rightFooterButtonName === "LOOKS GOOD") {
-        this.props.setUserData(this.state.userData);
         this.props.setButtonName("PROCEED");
         this.props.setrightFooterButtonDisabled(true);
         this.props.moveToNextScreen();
       } else if (this.props.rightFooterButtonName === "SAVE AND PROCEED") {
-        this.props.setUserData(this.state.userData);
-        this.props.setButtonName("LOOKS GOOD");
-        this.props.setrightFooterButtonDisabled(false);
+        //call API to update data (API CALL IN Home)
+        this.props.apiUpdateUserData();
       } else if (this.props.rightFooterButtonName === "PROCEED") {
         this.props.moveToNextScreen();
       } else if (this.props.rightFooterButtonName === "CONTINUE") {
         this.props.moveToNextScreen();
-        this.props.setUserData(this.state.userData);
+
         this.props.setButtonName("DONE");
         this.props.setrightFooterButtonDisabled(true);
       } else if (this.props.rightFooterButtonName === "DONE") {
