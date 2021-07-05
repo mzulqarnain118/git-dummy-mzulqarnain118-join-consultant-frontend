@@ -51,6 +51,9 @@ class BusinessDetails extends React.Component {
     // update to home.js userdata state
     let userData = this.props.userData;
     userData["ssn"] = value;
+    userData["doing_business"] = this.state.currentButton
+      ? "Entity"
+      : "Individual";
     this.props.setUserData(userData);
     let errorUserData = this.props.errorUserData;
     errorUserData["ssn"] = errorSsn;
@@ -58,6 +61,9 @@ class BusinessDetails extends React.Component {
   };
 
   toggleButton = (toggle) => {
+    let userData = this.props.userData;
+    userData["doing_business"] = toggle ? "Entity" : "Individual";
+    this.props.setUserData(userData);
     this.setState({ currentButton: toggle });
   };
 
