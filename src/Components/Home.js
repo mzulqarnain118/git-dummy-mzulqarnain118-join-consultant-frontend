@@ -179,8 +179,9 @@ class Home extends React.Component {
       })
       .catch((error) => {
         console.log("Error in /verifyEmail2");
-        console.log(error.data);
-        errorUserData["email"] = "Invalid Email";
+        console.log(error);
+        errorUserData["email"] =
+          "This email address is in use for an existing Consultant Account.";
         this.setState({
           load: false,
           errorUserData: errorUserData,
