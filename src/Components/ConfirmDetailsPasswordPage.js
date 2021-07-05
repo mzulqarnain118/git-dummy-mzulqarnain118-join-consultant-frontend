@@ -6,7 +6,6 @@ class ConfirmDetailsPasswordPage extends React.Component {
     this.state = {
       // password for login
       password: "",
-      errorMes: "",
       //width for mobile view
       width: 0,
     };
@@ -16,7 +15,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
   handleChange = (e) => {
     let type = e.target.id;
     let value = e.target.value;
-    let error = this.state.errorMes;
+    let error = this.props.errorUserData.password;
 
     // password
     if (type === "password") {
@@ -33,7 +32,10 @@ class ConfirmDetailsPasswordPage extends React.Component {
       }
     }
 
-    this.setState({ password: value, errorMes: error });
+    this.setState({ password: value });
+    let errorUserData = this.props.errorUserData;
+    errorUserData["password"] = error;
+    this.props.setErrorUserData(errorUserData);
   };
 
   //width for mobile view
@@ -42,7 +44,8 @@ class ConfirmDetailsPasswordPage extends React.Component {
   };
 
   render() {
-    const { password, errorMes } = this.state;
+    const { password } = this.state;
+    const { errorUserData } = this.props;
     return (
       <React.Fragment>
         <div
@@ -72,7 +75,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 autoComplete="off"
                 value={password}
                 className={
-                  errorMes.length > 0
+                  errorUserData.password.length > 0
                     ? "form-control Red"
                     : "form-control Input"
                 }
@@ -83,9 +86,9 @@ class ConfirmDetailsPasswordPage extends React.Component {
               />
 
               {/* error message incase for incorrect password */}
-              {errorMes.length > 0 ? (
+              {errorUserData.password.length > 0 ? (
                 <span className="errorMes">
-                  {errorMes}
+                  {errorUserData.password}
                   <br />
                 </span>
               ) : null}

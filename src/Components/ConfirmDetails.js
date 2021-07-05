@@ -27,7 +27,7 @@ class ConfirmDetails extends React.Component {
     // email
     if (type === "emailAddress") {
       let regex = new RegExp(
-        "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$"
+        '^(([^<>()[\\]\\.,;:\\s@"]+(\\.[^<>()[\\]\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'
       );
       if (regex.test(value)) {
         this.props.setUserData({ email: value });
@@ -54,7 +54,8 @@ class ConfirmDetails extends React.Component {
 
   render() {
     const { form } = this.state;
-    const { rightFooterButtonName, userData, errorUserData } = this.props;
+    const { rightFooterButtonName, userData, errorUserData, setErrorUserData } =
+      this.props;
 
     return (
       <React.Fragment>
@@ -110,6 +111,8 @@ class ConfirmDetails extends React.Component {
             setrightFooterButtonDisabled={
               this.props.setrightFooterButtonDisabled
             }
+            errorUserData={errorUserData}
+            setErrorUserData={setErrorUserData}
           />
         ) : rightFooterButtonName === "LOOKS GOOD" ? (
           //to display confirm details page

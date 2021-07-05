@@ -18,7 +18,6 @@ class BusinessDetails extends React.Component {
       errorCustomURL: "",
       //to check availability of URL
       customURLAvailability: false,
-      checkAvailability: false,
       // Individual /entity
       currentButton: false,
       // SSN entered by user
@@ -32,7 +31,7 @@ class BusinessDetails extends React.Component {
 
     if (value !== "") {
       let regex = new RegExp(
-        "^(?!0{3}|6{3}|9[0-9]{2})[0-9]{3}-?(?!0{2})[0-9]{2}-?(?!0{4})[0-9]{4}$"
+        "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
       );
       if (regex.test(value)) {
         errorSsn = "";
@@ -92,14 +91,14 @@ class BusinessDetails extends React.Component {
     });
     // to check the availability of custom URL in the database
     setTimeout(() => {
-      this.checkAvailability();
+      this.checkURLAvailability();
     }, 100);
   };
 
   // check availability of custom URL
-  checkAvailability = async () => {
+  checkURLAvailability = async () => {
     let customURLAvailability = this.state.customURLAvailability;
-    let checkAvailability = false;
+    let checkURLAvailability = this.props.checkURLAvailability;
     let customURL = this.state.customURL;
     let errorCustomURL = this.state.errorCustomURL;
 
@@ -107,10 +106,10 @@ class BusinessDetails extends React.Component {
       customURLAvailability = true;
       let available = await this.props.apiVerifyURL(customURL);
       if (!available) {
-        checkAvailability = false;
+        checkURLAvailability = false;
         this.props.setrightFooterButtonDisabled(true);
       } else {
-        checkAvailability = true;
+        checkURLAvailability = true;
         this.props.setrightFooterButtonDisabled(true);
       }
     } else {
@@ -122,7 +121,8 @@ class BusinessDetails extends React.Component {
     let userData = this.props.userData;
     userData["url"] = customURL;
     this.props.setUserData(userData);
-    this.setState({ checkAvailability, customURLAvailability });
+    this.setState({ customURLAvailability });
+    this.props.setCheckURLAvailability(checkURLAvailability);
   };
 
   // used for mobile view change
@@ -131,9 +131,8 @@ class BusinessDetails extends React.Component {
   };
 
   render() {
-    const { customURL, errorCustomURL, checkAvailability, currentButton, ssn } =
-      this.state;
-    const { errorUserData } = this.props;
+    const { customURL, errorCustomURL, currentButton, ssn } = this.state;
+    const { errorUserData, checkURLAvailability } = this.props;
     return (
       <React.Fragment>
         {/* header user in mobile view */}
@@ -179,7 +178,7 @@ class BusinessDetails extends React.Component {
                 ) : null}
               </div>
               {this.state.customURLAvailability ? (
-                checkAvailability ? (
+                checkURLAvailability ? (
                   <div className="col-lg-5 col-md-4 mobileAvailabilityText">
                     <div className="row">
                       <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
@@ -227,7 +226,7 @@ class BusinessDetails extends React.Component {
               ) : null}
             </div>
             {/* if the custom url is valid display the rest of the screen */}
-            {this.state.customURLAvailability && checkAvailability ? (
+            {this.state.customURLAvailability && checkURLAvailability ? (
               <>
                 <div className="row">
                   <span className="businessHead">DOING BUSINESS AS AN</span>

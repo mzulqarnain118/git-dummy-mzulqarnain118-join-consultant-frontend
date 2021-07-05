@@ -134,7 +134,10 @@ class Home extends React.Component {
       errorUserData: {
         email: "",
         ssn: "",
+        password: "",
       },
+      //to check if url is available
+      checkURLAvailability: false,
       //width for mobile view
       width: 0,
       // state variable to (enable/disable) footer
@@ -189,6 +192,8 @@ class Home extends React.Component {
   apiLogin = async () => {
     this.setState({ load: true, rightFooterButtonDisabled: true });
     let userData = this.state.userData;
+    let errorUserData = this.state.errorUserData;
+
     await API.getAccessToken(userData.email, userData.password, false)
       .then((response) => {
         try {
@@ -224,26 +229,23 @@ class Home extends React.Component {
             userData,
           });
         } catch (e) {
-          console.log("Error in /Login");
+          console.log("Error in /Login1");
           console.log(e);
           //update state with user data
           this.setState({
             load: false,
-            rightFooterButtonName: "LOOKS GOOD",
-            rightFooterButtonDisabled: false,
-            userData,
           });
         }
       })
       .catch((error) => {
-        console.log("Error in /Login");
+        console.log("Error in /Login2");
         console.log(error);
+        errorUserData["password"] =
+          "The credentials used do not match. Please try again.";
         //update state with user data
         this.setState({
           load: false,
-          rightFooterButtonName: "LOOKS GOOD",
-          rightFooterButtonDisabled: false,
-          userData,
+          errorUserData,
         });
       });
   };
@@ -306,21 +308,14 @@ class Home extends React.Component {
 
           this.setState({
             load: false,
-            rightFooterButtonName: "LOOKS GOOD",
-            rightFooterButtonDisabled: false,
-            userData,
           });
         }
       })
       .catch((error) => {
         console.log("Error in /update");
         console.log(error);
-
         this.setState({
           load: false,
-          rightFooterButtonName: "LOOKS GOOD",
-          rightFooterButtonDisabled: false,
-          userData,
         });
       });
   };
@@ -330,28 +325,35 @@ class Home extends React.Component {
   apiUpdateScreen = async (data, buttonName) => {
     this.setState({ load: true, rightFooterButtonDisabled: true });
     let errorUserData = this.state.errorUserData;
-
-    await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
-      .then((response) => {
-        errorUserData["ssn"] = "";
-        this.setState({
-          load: false,
-          rightFooterButtonName: buttonName,
-          rightFooterButtonDisabled: true,
-          activeStep: data.screen,
-          errorUserData,
+    let available = true;
+    if (buttonName === "") {
+      available = await this.apiVerifyURL(data.url);
+    }
+    if (available) {
+      await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
+        .then((response) => {
+          errorUserData["ssn"] = "";
+          this.setState({
+            load: false,
+            rightFooterButtonName: buttonName,
+            rightFooterButtonDisabled: true,
+            activeStep: data.screen,
+            errorUserData,
+          });
+        })
+        .catch((error) => {
+          console.log("Error in /update");
+          console.log(error);
+          if (error.error === "Please enter valid ssn") {
+            errorUserData["ssn"] = "Invalid SSN";
+          }
+          this.setState({
+            load: false,
+          });
         });
-      })
-      .catch((error) => {
-        console.log("Error in /update");
-        console.log(error);
-        if (error.error === "Please enter valid ssn") {
-          errorUserData["ssn"] = "Please enter valid ssn";
-        }
-        this.setState({
-          load: false,
-        });
-      });
+    } else {
+      this.setCheckURLAvailability(false);
+    }
   };
 
   // API to verify URL
@@ -388,6 +390,11 @@ class Home extends React.Component {
   // method to (ennable/disable) footer
   setDisplayFooter = (value) => {
     this.setState({ displayFooter: value });
+  };
+
+  //setCheckURLAvailability
+  setCheckURLAvailability = (value) => {
+    this.setState({ checkURLAvailability: value });
   };
 
   //stepper title content
@@ -428,6 +435,8 @@ class Home extends React.Component {
             apiVerifyURL={this.apiVerifyURL}
             errorUserData={this.state.errorUserData}
             setErrorUserData={this.setErrorUserData}
+            checkURLAvailability={this.state.checkURLAvailability}
+            setCheckURLAvailability={this.setCheckURLAvailability}
           />
         );
       case 2:
