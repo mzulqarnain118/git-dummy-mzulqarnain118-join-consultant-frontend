@@ -124,6 +124,11 @@ class Home extends React.Component {
         indepedent_agreement: false,
         policy_procedures: false,
         cart_id: "",
+        dob: {
+          year: 1970,
+          month: 0,
+          day: 1,
+        },
       },
       // userData Error
       errorUserData: {
@@ -151,24 +156,32 @@ class Home extends React.Component {
         try {
           if (response.data.is_emailValid) {
             errorUserData["email"] = "";
+            this.setState({
+              load: false,
+              rightFooterButtonName: "LOG IN",
+              rightFooterButtonDisabled: true,
+              errorUserData: errorUserData,
+            });
           }
         } catch (e) {
-          console.log("Error in /verifyEmail");
+          console.log("Error in /verifyEmail1");
           console.log(e);
           errorUserData["email"] = "Invalid Email";
+          this.setState({
+            load: false,
+            errorUserData: errorUserData,
+          });
         }
       })
       .catch((error) => {
-        console.log("Error in /verifyEmail");
-        console.log(error);
+        console.log("Error in /verifyEmail2");
+        console.log(error.data);
         errorUserData["email"] = "Invalid Email";
+        this.setState({
+          load: false,
+          errorUserData: errorUserData,
+        });
       });
-    this.setState({
-      load: false,
-      rightFooterButtonName: "LOG IN",
-      rightFooterButtonDisabled: true,
-      errorUserData: errorUserData,
-    });
   };
 
   // API to Login
@@ -193,23 +206,45 @@ class Home extends React.Component {
             city: userData["city"],
             state: userData["state"],
           };
+          let buttonName = "";
+          let buttonDisable = false;
+          if (userData.first_name === "") {
+            buttonName = "SAVE AND PROCEED";
+            buttonDisable = true;
+          } else {
+            buttonName = "LOOKS GOOD";
+            buttonDisable = false;
+          }
+          //update state with user data
+          this.setState({
+            load: false,
+            rightFooterButtonName: buttonName,
+            rightFooterButtonDisabled: buttonDisable,
+            userData,
+          });
         } catch (e) {
           console.log("Error in /Login");
           console.log(e);
+          //update state with user data
+          this.setState({
+            load: false,
+            rightFooterButtonName: "LOOKS GOOD",
+            rightFooterButtonDisabled: false,
+            userData,
+          });
         }
       })
       .catch((error) => {
         console.log("Error in /Login");
         console.log(error);
+        //update state with user data
+        this.setState({
+          load: false,
+          rightFooterButtonName: "LOOKS GOOD",
+          rightFooterButtonDisabled: false,
+          userData,
+        });
       });
-
-    //update state with user data
-    this.setState({
-      load: false,
-      rightFooterButtonName: "LOOKS GOOD",
-      rightFooterButtonDisabled: false,
-      userData,
-    });
   };
 
   // API to update user data
@@ -238,7 +273,6 @@ class Home extends React.Component {
       .date(userData["dob"]["day"])
       .format("YYYY-MM-DD");
 
-    console.log(userData, data);
     await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
       .then((response) => {
         try {
@@ -250,6 +284,7 @@ class Home extends React.Component {
             month: 1 + Date.month(),
             year: Date.year(),
           };
+
           //update address to required format
           userData["address"] = {
             street: userData["street"],
@@ -257,22 +292,91 @@ class Home extends React.Component {
             city: userData["city"],
             state: userData["state"],
           };
+
+          this.setState({
+            load: false,
+            rightFooterButtonName: "LOOKS GOOD",
+            rightFooterButtonDisabled: false,
+            userData,
+          });
         } catch (e) {
           console.log("Error in /Update");
           console.log(e);
+
+          this.setState({
+            load: false,
+            rightFooterButtonName: "LOOKS GOOD",
+            rightFooterButtonDisabled: false,
+            userData,
+          });
         }
       })
       .catch((error) => {
         console.log("Error in /update");
         console.log(error);
-      });
 
-    this.setState({
-      load: false,
-      rightFooterButtonName: "LOOKS GOOD",
-      rightFooterButtonDisabled: false,
-      userData,
-    });
+        this.setState({
+          load: false,
+          rightFooterButtonName: "LOOKS GOOD",
+          rightFooterButtonDisabled: false,
+          userData,
+        });
+      });
+  };
+
+  // Api to update which screen the user has completed ,
+  //screen represented by screen id + data collected in that screen
+  apiUpdateScreen = async (data, buttonName) => {
+    this.setState({ load: true, rightFooterButtonDisabled: true });
+
+    await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
+      .then((response) => {
+        this.setState({
+          load: false,
+          rightFooterButtonName: "PROCEED",
+          rightFooterButtonDisabled: true,
+          activeStep: data.screen,
+        });
+      })
+      .catch((error) => {
+        console.log("Error in /update");
+        console.log(error);
+        this.setState({
+          load: false,
+          rightFooterButtonName: buttonName,
+          rightFooterButtonDisabled: true,
+          activeStep: data.screen - 1,
+        });
+      });
+  };
+
+  // API to verify URL
+  apiVerifyURL = async (customURL) => {
+    let data = {
+      url: customURL,
+    };
+    return await API.callEndpoint(
+      "POST",
+      "Bearer",
+      "/api/v1/users/verifyUrl",
+      data
+    )
+      .then((response) => {
+        try {
+          if (response.data.validText) {
+            return true;
+          } else {
+            return false;
+          }
+        } catch (e) {
+          console.log("Error in /VerifyURL1");
+          return false;
+        }
+      })
+      .catch((error) => {
+        console.log("Error in /VerifyURL2");
+        return false;
+      });
   };
 
   //*********************************************************** API Calls Ends Here*********************************************************/
@@ -317,6 +421,7 @@ class Home extends React.Component {
             userData={this.state.userData}
             setUserData={this.setUserData}
             setButtonName={this.setButtonName}
+            apiVerifyURL={this.apiVerifyURL}
           />
         );
       case 2:
@@ -593,6 +698,7 @@ class Home extends React.Component {
               rightFooterButtonName={this.state.rightFooterButtonName}
               rightFooterButtonDisabled={this.state.rightFooterButtonDisabled}
               moveToNextScreen={this.moveToNextScreen}
+              userData={this.state.userData}
               setUserData={this.setUserData}
               setButtonName={this.setButtonName}
               setrightFooterButtonDisabled={this.setrightFooterButtonDisabled}
@@ -601,6 +707,7 @@ class Home extends React.Component {
               apiVerifyEmail={this.apiVerifyEmail}
               apiLogin={this.apiLogin}
               apiUpdateUserData={this.apiUpdateUserData}
+              apiUpdateScreen={this.apiUpdateScreen}
             />
           </>
         ) : (

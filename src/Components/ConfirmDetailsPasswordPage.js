@@ -26,7 +26,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
         this.props.setrightFooterButtonDisabled(false);
         let userData = this.props.userData;
         userData["password"] = value;
-        this.props.setUserData(userData)
+        this.props.setUserData(userData);
       } else {
         error = "Please enter valid password ";
         this.props.setrightFooterButtonDisabled(true);
@@ -52,7 +52,9 @@ class ConfirmDetailsPasswordPage extends React.Component {
         >
           <span className="head2">Hey, there!</span>
 
-          <div className="staticText1">Welcome back!</div>
+          <div className="staticText1">
+            Welcome {this.props.userData.first_name !== "" ? "back!" : null}
+          </div>
 
           <div className="staticText2">
             We're excited to have you as a Consultant.

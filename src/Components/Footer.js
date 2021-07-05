@@ -36,14 +36,24 @@ class Footer extends React.Component {
         //call API to Login (API CALL IN Home)
         this.props.apiLogin();
       } else if (this.props.rightFooterButtonName === "LOOKS GOOD") {
-        this.props.setButtonName("PROCEED");
-        this.props.setrightFooterButtonDisabled(true);
-        this.props.moveToNextScreen();
+        // call API to Update screen id and move to next screen
+        let data = {
+          id: this.props.userData.id,
+          screen: 1,
+        };
+        this.props.apiUpdateScreen(data, "PROCEED");
       } else if (this.props.rightFooterButtonName === "SAVE AND PROCEED") {
         //call API to update data (API CALL IN Home)
         this.props.apiUpdateUserData();
       } else if (this.props.rightFooterButtonName === "PROCEED") {
-        this.props.moveToNextScreen();
+        // call API to Update screen id and move to next screen
+        let data = {
+          id: this.props.userData.id,
+          screen: 2,
+          ssn: this.props.userData.ssn,
+          url: this.props.userData.url,
+        };
+        this.props.apiUpdateScreen(data, "");
       } else if (this.props.rightFooterButtonName === "CONTINUE") {
         this.props.moveToNextScreen();
 

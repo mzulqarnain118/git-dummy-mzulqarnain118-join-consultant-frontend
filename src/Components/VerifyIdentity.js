@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "./Header";
 import Agreement from "./Agreement";
+import axios from "axios";
+import * as API from "../configuration/apiconfig";
 import "../Style/VerifyIdentity.css";
 
 class VerifyIdentity extends React.Component {
@@ -15,6 +17,8 @@ class VerifyIdentity extends React.Component {
         otp2: "",
         otp3: "",
         otp4: "",
+        otp5: "",
+        otp6: "",
       },
       // error for 4 digit OTP
       error: {
@@ -22,6 +26,8 @@ class VerifyIdentity extends React.Component {
         otp2: true,
         otp3: true,
         otp4: true,
+        otp5: true,
+        otp6: true,
       },
       // 3 minute timer for resend OTP
       timer: {
@@ -35,19 +41,48 @@ class VerifyIdentity extends React.Component {
       // resend email text will be displayed when true
       resendEmail: false,
       // agreement Screen will be displayed when true
-      agreementScreen: false,
+      agreementScreen: true,
     };
   }
 
   // move to Agreement screen if OTP is valid
   checkOTP = () => {
     let otp = this.state.otp;
-    if ("" + otp["otp1"] + otp["otp2"] + otp["otp3"] + otp["otp4"] === "8888") {
-      this.setState({ agreementScreen: true });
-      this.props.setDisplayFooter(true);
-      this.props.setUserData(this.props.userData);
-      this.props.setrightFooterButtonDisabled(true);
-      this.props.setButtonName("CONTINUE");
+    if (
+      otp["otp1"] !== "" &&
+      otp["otp2"] !== "" &&
+      otp["otp3"] !== "" &&
+      otp["otp4"] !== "" &&
+      otp["otp5"] !== "" &&
+      otp["otp6"] !== ""
+    ) {
+      let data = {
+        email: this.props.userData.email,
+        otp:
+          otp["otp1"] +
+          otp["otp2"] +
+          otp["otp3"] +
+          otp["otp4"] +
+          otp["otp5"] +
+          otp["otp6"],
+      };
+      //   API.callEndpoint("POST", "Bearer", "/api/v1/users/verifyOTP", data)
+      //     .then((response) => {
+      //       try {
+      //         this.setState({ agreementScreen: true });
+      //         this.props.setDisplayFooter(true);
+      //         this.props.setUserData(this.props.userData);
+      //         this.props.setrightFooterButtonDisabled(true);
+      //         this.props.setButtonName("CONTINUE");
+      //       } catch (e) {
+      //         console.log("Error in /verifyOTP");
+      //         return false;
+      //       }
+      //     })
+      //     .catch((error) => {
+      //       console.log("Error in /verifyOTP");
+      //       return false;
+      //     });
     }
   };
 
@@ -72,6 +107,8 @@ class VerifyIdentity extends React.Component {
     otp["otp2"] = "";
     otp["otp3"] = "";
     otp["otp4"] = "";
+    otp["otp5"] = "";
+    otp["otp6"] = "";
     this.setState({ timeOut: true, timer, otp, resendEmail: true });
     this.runTimer();
   };
@@ -110,7 +147,7 @@ class VerifyIdentity extends React.Component {
       error[type] = false;
       if (!regex.test(value)) {
         value = "";
-      } else if (type !== "otp4") {
+      } else if (type !== "otp6") {
         document
           .querySelector(`input[name=otp${parseInt(type.slice(3, 4)) + 1}]`)
           .focus();
@@ -133,6 +170,29 @@ class VerifyIdentity extends React.Component {
     this.setState({ width: window.innerWidth });
     this.props.setDisplayFooter(false);
     this.runTimer();
+
+    let data = {
+      email: this.props.userData.email,
+    };
+
+    // API.callEndpoint(
+    //   "POST",
+    //   "Bearer",
+    //   "/api/v1/users/initiateVerification",
+    //   data
+    // )
+    //   .then((response) => {
+    //     try {
+    //       console.log(response);
+    //     } catch (e) {
+    //       console.log("Error in /initiateVerfication");
+    //       return false;
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log("Error in /initiateVerfication");
+    //     return false;
+    //   });
   };
 
   render() {
@@ -158,7 +218,7 @@ class VerifyIdentity extends React.Component {
               <div className="row">
                 <div className="col-lg-12 col-md-8 offset-md-1 verifyDivOffset">
                   <div className="row">
-                    <div className="col-lg-5">
+                    <div className="col-lg-8">
                       {/* 4 Digit  OTP  */}
                       <div className="otpContainer">
                         <div className="row">
@@ -215,6 +275,34 @@ class VerifyIdentity extends React.Component {
                             }
                             id="otp4"
                             name="otp4"
+                            autoComplete="off"
+                            onChange={this.handleChange}
+                          />
+                          {/* OTP Digit 5 */}
+                          <input
+                            type="text"
+                            value={otp.otp5}
+                            className={
+                              otp.otp5.length === 1
+                                ? "form-control otpInput1 otpLeftMargin"
+                                : "form-control otpInput otpLeftMargin"
+                            }
+                            id="otp5"
+                            name="otp5"
+                            autoComplete="off"
+                            onChange={this.handleChange}
+                          />
+                          {/* OTP Digit 6 */}
+                          <input
+                            type="text"
+                            value={otp.otp6}
+                            className={
+                              otp.otp6.length === 1
+                                ? "form-control otpInput1 otpLeftMargin"
+                                : "form-control otpInput otpLeftMargin"
+                            }
+                            id="otp6"
+                            name="otp6"
                             autoComplete="off"
                             onChange={this.handleChange}
                           />

@@ -49,6 +49,11 @@ class BusinessDetails extends React.Component {
     // masking is done to add the hypen "-" to the SSN
     value = maskingSSN(value);
     this.setState({ ssn: value, errorSsn });
+
+    // update to home.js userdata state
+    let userData = this.props.userData;
+    userData["ssn"] = value;
+    this.props.setUserData(userData);
   };
 
   toggleButton = (toggle) => {
@@ -84,33 +89,38 @@ class BusinessDetails extends React.Component {
       ssn: "",
     });
     // to check the availability of custom URL in the database
-    this.checkAvailability();
+    setTimeout(() => {
+      this.checkAvailability();
+    }, 100);
   };
 
   // check availability of custom URL
-  checkAvailability = () => {
-    //dummy timeout to mimic backend call- to be removed
-    setTimeout(() => {
-      let customURLAvailability = this.state.customURLAvailability;
-      let checkAvailability = false;
-      let customURL = this.state.customURL;
-      let errorCustomURL = this.state.errorCustomURL;
+  checkAvailability = async () => {
+    let customURLAvailability = this.state.customURLAvailability;
+    let checkAvailability = false;
+    let customURL = this.state.customURL;
+    let errorCustomURL = this.state.errorCustomURL;
 
-      if (errorCustomURL === "") {
-        customURLAvailability = true;
-        if (customURL === "testurlfail") {
-          checkAvailability = false;
-          this.props.setrightFooterButtonDisabled(true);
-        } else {
-          checkAvailability = true;
-          this.props.setrightFooterButtonDisabled(true);
-        }
+    if (errorCustomURL === "") {
+      customURLAvailability = true;
+      let available = await this.props.apiVerifyURL(customURL);
+      if (!available) {
+        checkAvailability = false;
+        this.props.setrightFooterButtonDisabled(true);
       } else {
-        customURLAvailability = false;
+        checkAvailability = true;
         this.props.setrightFooterButtonDisabled(true);
       }
-      this.setState({ checkAvailability, customURLAvailability });
-    }, 1000);
+    } else {
+      customURLAvailability = false;
+      this.props.setrightFooterButtonDisabled(true);
+    }
+
+    //update to home state
+    let userData = this.props.userData;
+    userData["url"] = customURL;
+    this.props.setUserData(userData);
+    this.setState({ checkAvailability, customURLAvailability });
   };
 
   // used for mobile view change

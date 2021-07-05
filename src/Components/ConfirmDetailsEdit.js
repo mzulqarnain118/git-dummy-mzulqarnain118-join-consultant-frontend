@@ -175,7 +175,6 @@ class ConfirmDetailsEdit extends React.Component {
       )
     );
     this.setState({ userData: form, error: error, errorArr: errorArr });
-    
   };
 
   // to handle change in date
@@ -211,6 +210,63 @@ class ConfirmDetailsEdit extends React.Component {
   // set width for mobile view
   componentDidMount = () => {
     this.setState({ width: window.innerWidth });
+    let userData = this.props.userData;
+    let errorArr = this.state.errorArr;
+    if (userData["first_name"] === "") {
+      errorArr[0] = false;
+    } else {
+      errorArr[0] = true;
+    }
+    if (userData["last_name"] === "") {
+      errorArr[1] = false;
+    } else {
+      errorArr[1] = true;
+    }
+    if (userData["street"] === "") {
+      errorArr[2] = false;
+    } else {
+      errorArr[2] = true;
+    }
+    if (userData["zipcode"] === "") {
+      errorArr[3] = false;
+    } else {
+      errorArr[3] = true;
+    }
+    if (userData["city"] === "") {
+      errorArr[4] = false;
+    } else {
+      errorArr[4] = true;
+    }
+    if (userData["state"] === "") {
+      errorArr[5] = false;
+    } else {
+      errorArr[5] = true;
+    }
+    if (userData["phonenumber"] === "") {
+      errorArr[6] = false;
+    } else {
+      errorArr[6] = true;
+    }
+    if (userData["working_with"] === "") {
+      errorArr[7] = false;
+    } else {
+      errorArr[7] = true;
+    }
+    if (userData["email"] === "") {
+      errorArr[8] = false;
+    } else {
+      errorArr[8] = true;
+    }
+
+    //to check if date is empty
+    if (userData.dob.day !== userData.dob.day) {
+      userData["dob"] = {
+        day: 1,
+        month: 0,
+        year: 1970,
+      };
+    }
+    this.setState({ errorArr, userData });
   };
 
   render() {
@@ -226,7 +282,10 @@ class ConfirmDetailsEdit extends React.Component {
         >
           {/* static text to be displayed */}
           <span className="head1">
-            GOOD MOVE, {userData.first_name.toUpperCase()}!
+            GOOD MOVE
+            {this.props.userData.first_name !== "" ? (
+              <>, {userData.first_name.toUpperCase()}!</>
+            ) : null}
           </span>
           <div className="staticText3">
             We love it when our customers become consultants. We have most of
