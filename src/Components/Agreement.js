@@ -137,6 +137,7 @@ class Agreement extends React.Component {
   // to get window width for mobile view change
   componentDidMount = () => {
     this.setState({ width: window.innerWidth });
+    this.props.setrightFooterButtonDisabled(false)
   };
 
   render() {

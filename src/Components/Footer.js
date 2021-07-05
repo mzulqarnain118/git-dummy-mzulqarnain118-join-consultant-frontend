@@ -28,6 +28,7 @@ class Footer extends React.Component {
 
   // to handle right footer button changes
   handleClickRight = async () => {
+    let userData = this.props.userData;
     if (!this.props.rightFooterButtonDisabled) {
       if (this.props.rightFooterButtonName === "NEXT") {
         //call API to verify email (API CALL IN Home)
@@ -42,6 +43,8 @@ class Footer extends React.Component {
           screen: 1,
         };
         this.props.apiUpdateScreen(data, "PROCEED");
+        userData["screen"] = 1;
+        this.props.setUserData(userData);
       } else if (this.props.rightFooterButtonName === "SAVE AND PROCEED") {
         //call API to update data (API CALL IN Home)
         this.props.apiUpdateUserData();
@@ -54,10 +57,23 @@ class Footer extends React.Component {
           url: this.props.userData.url,
         };
         this.props.apiUpdateScreen(data, "");
+        userData["screen"] = 2;
+        userData["ssn"] = this.props.userData.ssn;
+        userData["url"] = this.props.userData.url;
+        this.props.setUserData(userData);
       } else if (this.props.rightFooterButtonName === "CONTINUE") {
-        this.props.moveToNextScreen();
-
-        this.props.setButtonName("DONE");
+        // call API to Update screen id ,agreement accepted and move to next screen
+        let data = {
+          id: this.props.userData.id,
+          screen: 3,
+          indepedent_agreement: true,
+          policy_procedures: true,
+        };
+        this.props.apiUpdateScreen(data, "DONE");
+        userData["screen"] = 3;
+        userData["indepedent_agreement"] = true;
+        userData["policy_procedures"] = true;
+        this.props.setUserData(userData);
         this.props.setrightFooterButtonDisabled(true);
       } else if (this.props.rightFooterButtonName === "DONE") {
         this.props.moveToNextScreen();

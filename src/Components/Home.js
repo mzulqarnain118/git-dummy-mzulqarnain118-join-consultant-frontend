@@ -133,6 +133,7 @@ class Home extends React.Component {
       // userData Error
       errorUserData: {
         email: "",
+        ssn: "",
       },
       //width for mobile view
       width: 0,
@@ -328,24 +329,27 @@ class Home extends React.Component {
   //screen represented by screen id + data collected in that screen
   apiUpdateScreen = async (data, buttonName) => {
     this.setState({ load: true, rightFooterButtonDisabled: true });
+    let errorUserData = this.state.errorUserData;
 
     await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
       .then((response) => {
+        errorUserData["ssn"] = "";
         this.setState({
           load: false,
-          rightFooterButtonName: "PROCEED",
+          rightFooterButtonName: buttonName,
           rightFooterButtonDisabled: true,
           activeStep: data.screen,
+          errorUserData,
         });
       })
       .catch((error) => {
         console.log("Error in /update");
         console.log(error);
+        if (error.error === "Please enter valid ssn") {
+          errorUserData["ssn"] = "Please enter valid ssn";
+        }
         this.setState({
           load: false,
-          rightFooterButtonName: buttonName,
-          rightFooterButtonDisabled: true,
-          activeStep: data.screen - 1,
         });
       });
   };
@@ -422,6 +426,8 @@ class Home extends React.Component {
             setUserData={this.setUserData}
             setButtonName={this.setButtonName}
             apiVerifyURL={this.apiVerifyURL}
+            errorUserData={this.state.errorUserData}
+            setErrorUserData={this.setErrorUserData}
           />
         );
       case 2:
@@ -434,6 +440,8 @@ class Home extends React.Component {
             setUserData={this.setUserData}
             setButtonName={this.setButtonName}
             setDisplayFooter={this.setDisplayFooter}
+            errorUserData={this.state.errorUserData}
+            setErrorUserData={this.setErrorUserData}
           />
         );
       case 3:

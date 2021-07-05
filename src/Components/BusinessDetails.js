@@ -23,12 +23,11 @@ class BusinessDetails extends React.Component {
       currentButton: false,
       // SSN entered by user
       ssn: "",
-      errorSsn: "",
     };
   }
   // to handle change in SSN value and validate it
   handleSSN = (e) => {
-    let errorSsn = this.state.errorSsn;
+    let errorSsn = this.props.errorUserData.ssn;
     let value = e.target.value;
 
     if (value !== "") {
@@ -48,12 +47,15 @@ class BusinessDetails extends React.Component {
     }
     // masking is done to add the hypen "-" to the SSN
     value = maskingSSN(value);
-    this.setState({ ssn: value, errorSsn });
+    this.setState({ ssn: value });
 
     // update to home.js userdata state
     let userData = this.props.userData;
     userData["ssn"] = value;
     this.props.setUserData(userData);
+    let errorUserData = this.props.errorUserData;
+    errorUserData["ssn"] = errorSsn;
+    this.props.setErrorUserData(errorUserData);
   };
 
   toggleButton = (toggle) => {
@@ -129,14 +131,9 @@ class BusinessDetails extends React.Component {
   };
 
   render() {
-    const {
-      customURL,
-      errorCustomURL,
-      checkAvailability,
-      currentButton,
-      ssn,
-      errorSsn,
-    } = this.state;
+    const { customURL, errorCustomURL, checkAvailability, currentButton, ssn } =
+      this.state;
+    const { errorUserData } = this.props;
     return (
       <React.Fragment>
         {/* header user in mobile view */}
@@ -294,7 +291,7 @@ class BusinessDetails extends React.Component {
                       type="text"
                       value={ssn}
                       className={
-                        errorSsn.length > 0
+                        errorUserData.ssn.length > 0
                           ? "form-control ssnInputRed"
                           : "form-control ssnInput"
                       }
@@ -305,9 +302,9 @@ class BusinessDetails extends React.Component {
                       onChange={this.handleSSN}
                     />
 
-                    {errorSsn.length > 0 ? (
+                    {errorUserData.ssn.length > 0 ? (
                       <span className="errorMesSubtext">
-                        {errorSsn}
+                        {errorUserData.ssn}
                         <br />
                       </span>
                     ) : null}

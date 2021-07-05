@@ -167,32 +167,35 @@ class VerifyIdentity extends React.Component {
   // 2. removes the footer
   // 3. starts the timer
   componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
-    this.props.setDisplayFooter(false);
-    this.runTimer();
+    //temporary move to agreement screen // should be removed in the future
+    this.props.setButtonName("CONTINUE");
+    this.props.setrightFooterButtonDisabled(true);
+    //   this.setState({ width: window.innerWidth });
+    //   this.props.setDisplayFooter(false);
+    //   this.runTimer();
 
-    let data = {
-      email: this.props.userData.email,
-    };
+    //   let data = {
+    //     email: this.props.userData.email,
+    //   };
 
-    // API.callEndpoint(
-    //   "POST",
-    //   "Bearer",
-    //   "/api/v1/users/initiateVerification",
-    //   data
-    // )
-    //   .then((response) => {
-    //     try {
-    //       console.log(response);
-    //     } catch (e) {
+    //   API.callEndpoint(
+    //     "POST",
+    //     "Bearer",
+    //     "/api/v1/users/initiateVerification",
+    //     data
+    //   )
+    //     .then((response) => {
+    //       try {
+    //         console.log(response);
+    //       } catch (e) {
+    //         console.log("Error in /initiateVerfication");
+    //         return false;
+    //       }
+    //     })
+    //     .catch((error) => {
     //       console.log("Error in /initiateVerfication");
     //       return false;
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.log("Error in /initiateVerfication");
-    //     return false;
-    //   });
+    //     });
   };
 
   render() {
