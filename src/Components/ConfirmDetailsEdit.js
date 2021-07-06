@@ -272,7 +272,7 @@ class ConfirmDetailsEdit extends React.Component {
   render() {
     const { userData, error } = this.state;
     return (
-      <React.Fragment>
+      <React.Fragment style={{ overflow: "vissible" }}>
         {/* display header for mobile view */}
         {this.state.width <= 550 ? <Header step={0} agreement={false} /> : null}
         <div
@@ -635,7 +635,7 @@ class ConfirmDetailsEdit extends React.Component {
                 </span>
                 <div className="edit-InputMargin">
                   <input
-                    type="text"
+                    type="number"
                     autoComplete="off"
                     value={userData["phonenumber"]}
                     className={
