@@ -194,6 +194,7 @@ class Home extends React.Component {
     this.setState({ load: true, rightFooterButtonDisabled: true });
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
+    let activeStep = this.state.activeStep;
 
     await API.getAccessToken(userData.email, userData.password, false)
       .then((response) => {
@@ -222,12 +223,26 @@ class Home extends React.Component {
             buttonName = "LOOKS GOOD";
             buttonDisable = false;
           }
+          activeStep = userData.screen;
+          if (activeStep === 1) {
+            buttonDisable = true;
+            buttonName = "PROCEED";
+          } else if (activeStep === 2) {
+            buttonDisable = true;
+            buttonName = "CONTINUE";
+          } else if (activeStep === 3) {
+            buttonDisable = true;
+            buttonName = "DONE";
+          } else if (activeStep === 4) {
+            buttonDisable = false;
+          }
           //update state with user data
           this.setState({
             load: false,
             rightFooterButtonName: buttonName,
             rightFooterButtonDisabled: buttonDisable,
             userData,
+            activeStep,
           });
         } catch (e) {
           console.log("Error in /Login1");
