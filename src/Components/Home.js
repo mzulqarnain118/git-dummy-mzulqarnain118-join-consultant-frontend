@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import {withStyles} from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -13,7 +13,7 @@ import VerifyIdentity from "./VerifyIdentity";
 import PurchaseKit from "./PurchaseKit";
 import PaymentConfirmation from "./PaymentConfirmation";
 import StepConnector from "@material-ui/core/StepConnector";
-import { Logo } from "../Assets/HeaderSVG";
+import {Logo} from "../Assets/HeaderSVG";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import * as API from "../configuration/apiconfig";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -151,10 +151,10 @@ class Home extends React.Component {
 
   // API to Verify Email (landing page)
   apiVerifyEmail = async () => {
-    this.setState({ load: true, rightFooterButtonDisabled: true });
+    this.setState({load: true, rightFooterButtonDisabled: true});
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
-    let data = { email: userData["email"] };
+    let data = {email: userData["email"]};
     await API.callEndpoint("POST", "Basic", "/api/v1/users/verifyEmail", data)
       .then((response) => {
         try {
@@ -180,8 +180,7 @@ class Home extends React.Component {
       .catch((error) => {
         console.log("Error in /verifyEmail2");
         console.log(error);
-        errorUserData["email"] =
-          "This email address is in use for an existing Consultant Account.";
+        errorUserData["email"] = "This email address is in use for an existing Consultant Account.";
         this.setState({
           load: false,
           errorUserData: errorUserData,
@@ -191,7 +190,7 @@ class Home extends React.Component {
 
   // API to Login
   apiLogin = async () => {
-    this.setState({ load: true, rightFooterButtonDisabled: true });
+    this.setState({load: true, rightFooterButtonDisabled: true});
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
     let activeStep = this.state.activeStep;
@@ -259,8 +258,7 @@ class Home extends React.Component {
       .catch((error) => {
         console.log("Error in /Login2");
         console.log(error);
-        errorUserData["password"] =
-          "The credentials used do not match. Please try again.";
+        errorUserData["password"] = "The credentials used do not match. Please try again.";
         //update state with user data
         this.setState({
           load: false,
@@ -271,7 +269,7 @@ class Home extends React.Component {
 
   // API to update user data
   apiUpdateUserData = async () => {
-    this.setState({ load: true, rightFooterButtonDisabled: true });
+    this.setState({load: true, rightFooterButtonDisabled: true});
     let data = {};
     let userData = this.state.userData;
 
@@ -342,7 +340,7 @@ class Home extends React.Component {
   // Api to update which screen the user has completed ,
   //screen represented by screen id + data collected in that screen
   apiUpdateScreen = async (data, buttonName) => {
-    this.setState({ load: true, rightFooterButtonDisabled: true });
+    this.setState({load: true, rightFooterButtonDisabled: true});
     let errorUserData = this.state.errorUserData;
     let available = true;
     if (buttonName === "") {
@@ -380,12 +378,7 @@ class Home extends React.Component {
     let data = {
       url: customURL,
     };
-    return await API.callEndpoint(
-      "POST",
-      "Bearer",
-      "/api/v1/users/verifyUrl",
-      data
-    )
+    return await API.callEndpoint("POST", "Bearer", "/api/v1/users/verifyUrl", data)
       .then((response) => {
         try {
           if (response.data.validText) {
@@ -408,22 +401,17 @@ class Home extends React.Component {
 
   // method to (ennable/disable) footer
   setDisplayFooter = (value) => {
-    this.setState({ displayFooter: value });
+    this.setState({displayFooter: value});
   };
 
   //setCheckURLAvailability
   setCheckURLAvailability = (value) => {
-    this.setState({ checkURLAvailability: value });
+    this.setState({checkURLAvailability: value});
   };
 
   //stepper title content
   getSteps = () => {
-    return [
-      "CONFIRM DETAILS",
-      "BUSINESS DETAILS",
-      "VERIFY IDENTITY",
-      "PURCHASE KIT",
-    ];
+    return ["CONFIRM DETAILS", "BUSINESS DETAILS", "VERIFY IDENTITY", "PURCHASE KIT"];
   };
 
   //stepper content to be displayed based on current active step
@@ -517,12 +505,12 @@ class Home extends React.Component {
 
   // method to enable/disable right footer button
   setrightFooterButtonDisabled = (value) => {
-    this.setState({ rightFooterButtonDisabled: value });
+    this.setState({rightFooterButtonDisabled: value});
   };
 
   // to move to next screen
   handleNext = () => {
-    const { activeStep } = this.state;
+    const {activeStep} = this.state;
 
     this.setState({
       activeStep: activeStep + 1,
@@ -531,7 +519,7 @@ class Home extends React.Component {
 
   // to set width for mobile view
   componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
+    this.setState({width: window.innerWidth});
   };
 
   // header Back button
@@ -582,21 +570,19 @@ class Home extends React.Component {
         break;
 
       default:
-        this.setState({ rightFooterButtonName: "NEXT" });
+        this.setState({rightFooterButtonName: "NEXT"});
         break;
     }
   };
 
   render() {
-    const { classes } = this.props;
+    const {classes} = this.props;
     const steps = this.getSteps();
-    const { activeStep, load } = this.state;
+    const {activeStep, load} = this.state;
 
     return (
       <React.Fragment>
-        {load ? (
-          <CircularProgress color="black" size={80} className="loader" />
-        ) : null}
+        {load ? <CircularProgress color="black" size={80} className="loader" /> : null}
         {/* If active step is less than 4 appropriate step page is dispayed , 
         if active step is 4  - payment confirmation page is displayed */}
         {this.state.activeStep < 4 ? (
@@ -608,20 +594,14 @@ class Home extends React.Component {
                     <ArrowBackIosIcon />
                   </div>
                 </div>
-                <div className="col-xl-3 col-lg-2 col-md-11 col-11">
+                <div className="col-xl-2 col-lg-2 col-md-11 col-11">
                   <div className="LogoIcon">
                     <Logo />
                   </div>
                 </div>
-                <div className="col-xl-6 col-lg-9 col-md-12 col-12 stepperMarginTop">
+                <div className="col-xl-8 col-lg-9 col-md-12 col-12 stepperMarginTop">
                   {/* stepper */}
-                  <Stepper
-                    activeStep={activeStep}
-                    connector={<GreenStepConnector />}
-                    orientation={
-                      this.state.width >= 550 ? "horizontal" : "vertical"
-                    }
-                  >
+                  <Stepper activeStep={activeStep} connector={<GreenStepConnector />} orientation={this.state.width >= 550 ? "horizontal" : "vertical"}>
                     {steps.map((label, index) => {
                       const props = {};
                       const labelProps = {};
@@ -665,38 +645,22 @@ class Home extends React.Component {
 
                       {/* to display content based on active step */}
                       <div>
-                        <Typography className={classes.instructions}>
-                          {this.getStepContent(activeStep)}
-                        </Typography>
+                        <Typography className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
                       </div>
                     </>
                   ) : (
                     <>
                       {/* enter email */}
                       <div className="mobileMargin">
-                        <Typography className={classes.instructions}>
-                          {this.getStepContent(activeStep)}
-                        </Typography>
+                        <Typography className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
                       </div>
                       {/* Stepper */}
                       {this.state.rightFooterButtonName === "NEXT" ? (
                         <div className="btm-list-blk">
                           <div className="btm-list-inner">
-                            <div className="mobileStepHead">
-                              {" "}
-                              WHAT HAPPENS NEXT ?
-                            </div>
+                            <div className="mobileStepHead"> WHAT HAPPENS NEXT ?</div>
                             {/* stepper for mobile view  */}
-                            <Stepper
-                              activeStep={activeStep}
-                              style={{ background: "#e8e0dd" }}
-                              className="mobileStep"
-                              orientation={
-                                this.state.width >= 550
-                                  ? "horizontal"
-                                  : "vertical"
-                              }
-                            >
+                            <Stepper activeStep={activeStep} style={{background: "#e8e0dd"}} className="mobileStep" orientation={this.state.width >= 550 ? "horizontal" : "vertical"}>
                               {steps.map((label, index) => {
                                 const props = {};
                                 const labelProps = {};
@@ -722,9 +686,7 @@ class Home extends React.Component {
                                         },
                                       }}
                                     >
-                                      <span className="fontOswald">
-                                        {label}
-                                      </span>
+                                      <span className="fontOswald">{label}</span>
                                     </StepLabel>
                                   </Step>
                                 );
@@ -759,11 +721,7 @@ class Home extends React.Component {
           </>
         ) : (
           // once all steps are completed Payement confirmation screen is displayed
-          <PaymentConfirmation
-            userData={this.state.userData}
-            setUserData={this.setUserData}
-            setButtonName={this.setButtonName}
-          />
+          <PaymentConfirmation userData={this.state.userData} setUserData={this.setUserData} setButtonName={this.setButtonName} />
         )}
       </React.Fragment>
     );
