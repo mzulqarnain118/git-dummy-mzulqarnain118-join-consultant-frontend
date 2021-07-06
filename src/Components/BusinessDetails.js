@@ -20,7 +20,7 @@ class BusinessDetails extends React.Component {
       customURLAvailability: false,
       // Individual /entity
       currentButton:
-        this.props.userData.doing_business === "Individual" ? false : true,
+        props.userData.doing_business === "Individual" ? false : true,
       // SSN entered by user
       ssn: props.userData.ssn,
     };

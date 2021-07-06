@@ -236,6 +236,9 @@ class Home extends React.Component {
           } else if (activeStep === 4) {
             buttonDisable = false;
           }
+          if (userData.doing_business === "") {
+            userData["doing_business"] = "Individual";
+          }
           //update state with user data
           this.setState({
             load: false,
