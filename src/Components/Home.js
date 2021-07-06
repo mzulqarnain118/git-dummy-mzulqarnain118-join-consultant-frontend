@@ -109,7 +109,7 @@ class Home extends React.Component {
         working_with: "",
         url: "",
         ssn: "",
-        doing_business: "",
+        doing_business: "Individual",
         isemail_verified: false,
         first_name: "",
         last_name: "",
