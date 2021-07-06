@@ -3,8 +3,8 @@ export let Logo = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="453.037"
-      height="104.468"
+      width="653.037"
+      height="204.468"
       viewBox="0 0 303.037 64.468"
     >
       <g

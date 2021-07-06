@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./Header";
 import Agreement from "./Agreement";
-import axios from "axios";
-import * as API from "../configuration/apiconfig";
+// import axios from "axios";
+// import * as API from "../configuration/apiconfig";
 import "../Style/VerifyIdentity.css";
 
 class VerifyIdentity extends React.Component {
@@ -56,16 +56,16 @@ class VerifyIdentity extends React.Component {
       otp["otp5"] !== "" &&
       otp["otp6"] !== ""
     ) {
-      let data = {
-        email: this.props.userData.email,
-        otp:
-          otp["otp1"] +
-          otp["otp2"] +
-          otp["otp3"] +
-          otp["otp4"] +
-          otp["otp5"] +
-          otp["otp6"],
-      };
+      // let data = {
+      //   email: this.props.userData.email,
+      //   otp:
+      //     otp["otp1"] +
+      //     otp["otp2"] +
+      //     otp["otp3"] +
+      //     otp["otp4"] +
+      //     otp["otp5"] +
+      //     otp["otp6"],
+      // };
       //   API.callEndpoint("POST", "Bearer", "/api/v1/users/verifyOTP", data)
       //     .then((response) => {
       //       try {

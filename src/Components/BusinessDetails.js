@@ -160,7 +160,7 @@ class BusinessDetails extends React.Component {
                 <div className="BDstaticText4">www.scoutandcellar.com/</div>
               </div>
               {/* Input to custom URL */}
-              <div className="col-lg-3 offset-lg-1 col-md-3 ">
+              <div className="col-lg-2 offset-lg-1 col-md-3 ">
                 <input
                   type="text"
                   value={customURL}
@@ -185,7 +185,7 @@ class BusinessDetails extends React.Component {
               </div>
               {this.state.customURLAvailability ? (
                 checkURLAvailability ? (
-                  <div className="col-lg-5 col-md-4 mobileAvailabilityText">
+                  <div className="col-lg-5  col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
                     <div className="row">
                       <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
                         <CheckCircleIcon
@@ -207,7 +207,7 @@ class BusinessDetails extends React.Component {
                     </div>
                   </div>
                 ) : (
-                  <div className="col-lg-5 col-md-4 mobileAvailabilityText">
+                  <div className="col-lg-5 col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
                     <div className="row">
                       <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
                         <CancelIcon

@@ -96,8 +96,11 @@
   font-size: calc(1px + 1vw);
 }
 .agreementTitle {
-  font-size: 1.5em;
+  font-size: 25px;
   font-weight: bold;
+}
+.agreementData {
+  font-size: 15px;
 }
 .acceptAgreement {
   margin-top: 1em;

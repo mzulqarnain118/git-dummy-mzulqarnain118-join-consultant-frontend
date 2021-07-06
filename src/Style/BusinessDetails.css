@@ -28,7 +28,7 @@
   font-weight: bold;
   font-size: 16px;
   font-family: Domine;
-  margin-left: -5vw;
+  margin-left: -8vw;
 }
 .customURL:focus {
   border-color: #d8c5a6;
@@ -39,7 +39,7 @@
 }
 
 .availableIcon {
-  margin-top:  46px;
+  margin-top: 46px;
   color: #4ba380;
 }
 
@@ -62,7 +62,7 @@
   font-size: 16px;
   font-family: Domine;
   border-radius: 0 !important;
-  margin-left: -5vw;
+  margin-left: -8vw;
 }
 .customURLRed:focus {
   border-color: red;
@@ -73,7 +73,7 @@
   font-weight: 100;
 }
 .notAvailableIcon {
-  margin-top:  46px;
+  margin-top: 46px;
   color: rgb(236, 85, 85);
 }
 
@@ -81,15 +81,15 @@
   font-size: 28px;
   font-weight: 400;
   font-family: oswald;
-  margin-top: 16px;
+  margin-top: 66px;
 }
 .businessButton1 {
   background: #dcba80;
   text-align: center;
-  padding-top:  9px;
-  padding-bottom:  9px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 4px;
+  padding-right: 4px;
   color: white;
   font-size: 18px;
   margin-top: 8px;
@@ -203,6 +203,10 @@
   letter-spacing: 0 !important;
   text-align: left;
 }
+input::-webkit-input-placeholder {
+  letter-spacing: 0 !important;
+  text-align: left;
+}
 
 .entitySubtext {
   background: #e8e0dd;
@@ -220,6 +224,11 @@
   width: 1600px !important;
   margin-top: 24px;
   margin-left: 24px;
+}
+
+.offsetLeftAvailableIcon {
+  margin-left: 40px;
+  margin-top: 10px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -286,7 +295,7 @@
     margin-top: 90px;
     font-family: oswald;
     font-size: 16px;
-    margin-left:  10px;
+    margin-left: 10px;
     width: 160px;
   }
 
@@ -294,7 +303,7 @@
     font-size: 28px;
     font-weight: 400;
     font-family: oswald;
-    margin-top:  10px;
+    margin-top: 10px;
   }
 
   .errorMes {
@@ -481,7 +490,7 @@
     margin-top: 115px;
     font-family: oswald;
     font-size: 12px;
-    margin-left:  10px;
+    margin-left: 10px;
     width: 160px;
   }
 
@@ -557,7 +566,7 @@
   .ssn {
     font-family: oswald;
     font-size: 20px;
-    margin-top:  10px;
+    margin-top: 10px;
     font-weight: 400;
   }
 

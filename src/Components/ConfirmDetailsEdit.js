@@ -258,7 +258,7 @@ class ConfirmDetailsEdit extends React.Component {
       errorArr[8] = true;
     }
 
-    //to check if date is empty
+    //to check if date is NaN (Not a Number)
     if (userData.dob.day !== userData.dob.day) {
       userData["dob"] = {
         day: 1,
