@@ -534,22 +534,33 @@ class Home extends React.Component {
         });
         break;
       case "SAVE AND PROCEED":
-        this.apiUpdateUserData();
-        break;
-      case "PROCEED":
-        if (this.state.activeStep === 1) {
-          this.setState({
-            rightFooterButtonName: "LOOKS GOOD",
-            rightFooterButtonDisabled: false,
-            activeStep: 0,
-          });
+        if (!this.state.rightFooterButtonDisabled) {
+          this.apiUpdateUserData();
+          break;
         } else {
-          this.setState({
-            displayFooter: true,
-            rightFooterButtonDisabled: true,
-            activeStep: 1,
-          });
+          break;
         }
+
+      case "PROCEED":
+        this.setState({
+          rightFooterButtonName: "LOOKS GOOD",
+          rightFooterButtonDisabled: false,
+          activeStep: 0,
+        });
+        break;
+      case "CONTINUE":
+        this.setState({
+          rightFooterButtonName: "PROCEED",
+          rightFooterButtonDisabled: false,
+          activeStep: 1,
+        });
+        break;
+      case "DONE":
+        this.setState({
+          rightFooterButtonName: "CONTINUE",
+          rightFooterButtonDisabled: false,
+          activeStep: 2,
+        });
         break;
 
       default:

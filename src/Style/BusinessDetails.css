@@ -28,7 +28,7 @@
   font-weight: bold;
   font-size: 16px;
   font-family: Domine;
-  margin-left: -8vw;
+  margin-left: -5vw;
 }
 .customURL:focus {
   border-color: #d8c5a6;
@@ -62,7 +62,7 @@
   font-size: 16px;
   font-family: Domine;
   border-radius: 0 !important;
-  margin-left: -8vw;
+  margin-left: -5vw;
 }
 .customURLRed:focus {
   border-color: red;

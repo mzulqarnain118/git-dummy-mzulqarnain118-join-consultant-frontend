@@ -14,14 +14,15 @@ class BusinessDetails extends React.Component {
       //width for mobile view
       width: 0,
       //to record custom URL
-      customURL: "",
+      customURL: props.userData.url,
       errorCustomURL: "",
       //to check availability of URL
       customURLAvailability: false,
       // Individual /entity
-      currentButton: false,
+      currentButton:
+        this.props.userData.doing_business === "Individual" ? false : true,
       // SSN entered by user
-      ssn: "",
+      ssn: props.userData.ssn,
     };
   }
   // to handle change in SSN value and validate it
@@ -132,8 +133,14 @@ class BusinessDetails extends React.Component {
   };
 
   // used for mobile view change
-  componentDidMount = () => {
+  componentDidMount = async () => {
     this.setState({ width: window.innerWidth });
+    if (this.props.userData.url !== "") {
+      await this.checkURLAvailability();
+    }
+    if (this.props.userData.ssn !== "") {
+      this.props.setrightFooterButtonDisabled(false);
+    }
   };
 
   render() {
@@ -160,7 +167,7 @@ class BusinessDetails extends React.Component {
                 <div className="BDstaticText4">www.scoutandcellar.com/</div>
               </div>
               {/* Input to custom URL */}
-              <div className="col-lg-2 offset-lg-1 col-md-3 ">
+              <div className="col-lg-3 offset-lg-1 col-md-3 ">
                 <input
                   type="text"
                   value={customURL}

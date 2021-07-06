@@ -38,7 +38,7 @@ class ConfirmDetails extends React.Component {
         userData["email"] = value;
         this.props.setUserData(userData);
       } else {
-        error["email"] = "Please enter valid email address";
+        error["email"] = "Please enter a valid email address";
         this.props.setErrorUserData(error);
         this.props.setrightFooterButtonDisabled(true);
       }

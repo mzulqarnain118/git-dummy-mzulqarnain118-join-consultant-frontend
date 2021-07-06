@@ -27,7 +27,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
         userData["password"] = value;
         this.props.setUserData(userData);
       } else {
-        error = "Please enter valid password ";
+        error = "Please enter a valid password ";
         this.props.setrightFooterButtonDisabled(true);
       }
     }
