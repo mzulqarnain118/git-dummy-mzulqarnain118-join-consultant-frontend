@@ -29,7 +29,7 @@ class ConfirmDetails extends React.Component {
       let regex = new RegExp(
         '^(([^<>()[\\]\\.,;:\\s@"]+(\\.[^<>()[\\]\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'
       );
-      if (regex.test(value)|| true) {
+      if (regex.test(value)) {
         this.props.setUserData({ email: value });
         error["email"] = "";
         this.props.setErrorUserData(error);
