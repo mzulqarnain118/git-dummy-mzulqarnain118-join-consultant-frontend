@@ -70,8 +70,7 @@ export async function callEndpoint(methodType, authorisationType, URL, data) {
           resolve(response);
         })
         .catch((ex) => {
-          console.log(ex);
-          reject({ error: ex.response.message });
+          reject({ error: ex.response.data.message });
         });
     });
   }

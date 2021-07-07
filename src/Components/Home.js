@@ -180,7 +180,7 @@ class Home extends React.Component {
       .catch((error) => {
         console.log("Error in /verifyEmail2");
         console.log(error);
-        errorUserData["email"] = "This email address is in use for an existing Consultant Account.";
+        errorUserData["email"] = error.error;
         this.setState({
           load: false,
           errorUserData: errorUserData,
