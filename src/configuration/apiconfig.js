@@ -105,7 +105,7 @@ export async function getAccessToken(
         resolve(response);
       })
       .catch((ex) => {
-        reject({ error: ex });
+        reject({ error: ex.response.data.message });
       });
   });
 }
