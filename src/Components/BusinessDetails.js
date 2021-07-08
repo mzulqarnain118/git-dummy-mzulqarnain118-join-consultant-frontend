@@ -7,6 +7,8 @@ import CancelIcon from "@material-ui/icons/Cancel";
 import BusinessCenterOutlinedIcon from "@material-ui/icons/BusinessCenterOutlined";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { FiSearch } from "react-icons/fi";
+import Ripples from "react-ripples";
 
 class BusinessDetails extends React.Component {
   constructor(props) {
@@ -195,38 +197,43 @@ class BusinessDetails extends React.Component {
               </div>
               {/* Input to custom URL */}
               <div className="col-lg-3 offset-lg-1 col-md-3 ">
-                <input
-                  type="text"
-                  value={customURL}
-                  className={
-                    errorCustomURL.length > 0
-                      ? "form-control customURLRed"
-                      : "form-control customURL"
-                  }
-                  id="webLink"
-                  name="webLink"
-                  placeholder="Customise your URL"
-                  autoComplete="off"
-                  onChange={this.handleChange}
-                  onMouseOut={this.validateURL}
-                  onTouchLeave={this.validateURL}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      this.validateURL();
+                <div className="row">
+                  <input
+                    type="text"
+                    value={customURL}
+                    className={
+                      errorCustomURL.length > 0
+                        ? "form-control customURLRed"
+                        : "form-control customURL"
                     }
-                  }}
-                />
+                    id="webLink"
+                    name="webLink"
+                    placeholder="Customise your URL"
+                    autoComplete="off"
+                    onChange={this.handleChange}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        this.validateURL();
+                      }
+                    }}
+                  />
+                  {errorCustomURL.length > 0 ? (
+                    <div className="errorMes" style={{ marginLeft: "-5vw" }}>
+                      {errorCustomURL}
+                      <br />
+                    </div>
+                  ) : null}
 
-                {errorCustomURL.length > 0 ? (
-                  <div className="errorMes" style={{ marginLeft: "-5vw" }}>
-                    {errorCustomURL}
-                    <br />
+                  <div className="col-lg-1  col-md-1 ">
+                    <button className="searchButton" onClick={this.validateURL}>
+                      <FiSearch color="white" width={"30px"} height={"30px"} />
+                    </button>
                   </div>
-                ) : null}
+                </div>
               </div>
 
               {load ? (
-                <div className="col-lg-5  col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
+                <div className="col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon">
                   <div className="row">
                     <div className="col-lg-1 col-md-1 urlLoader">
                       <CircularProgress color="black" size={30} />
@@ -237,7 +244,7 @@ class BusinessDetails extends React.Component {
                 <>
                   {this.state.customURLAvailability ? (
                     checkURLAvailability ? (
-                      <div className="col-lg-5  col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
+                      <div className="col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon">
                         <div className="row">
                           <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
                             <CheckCircleIcon
@@ -251,7 +258,7 @@ class BusinessDetails extends React.Component {
                               }
                             />
                           </div>
-                          <div className="col-lg-5 col-md-6 mobileAvailabilitySubText">
+                          <div className="col-lg-4 col-md-5 mobileAvailabilitySubText">
                             <div className="availableText">
                               This name is Available
                             </div>
@@ -259,7 +266,7 @@ class BusinessDetails extends React.Component {
                         </div>
                       </div>
                     ) : (
-                      <div className="col-lg-5 col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
+                      <div className="col-lg-4 col-md-5 mobileAvailabilityText offsetLeftAvailableIcon">
                         <div className="row">
                           <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
                             <CancelIcon
@@ -273,7 +280,7 @@ class BusinessDetails extends React.Component {
                               }
                             />
                           </div>
-                          <div className="col-lg-6 col-md-6 mobileAvailabilitySubText">
+                          <div className="col-lg-5 col-md-5 mobileAvailabilitySubText">
                             <div className="availableText">
                               This name is Not Available
                             </div>

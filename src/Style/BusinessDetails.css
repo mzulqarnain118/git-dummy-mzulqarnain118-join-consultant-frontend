@@ -232,9 +232,20 @@ input::-webkit-input-placeholder {
   margin-top: 10px;
 }
 .urlLoader {
-  margin-top: 3.5em;
+  margin-top: 3em;
 }
 
+.searchButton {
+  background: #dcba80;
+  text-align: center;
+  border: 0px solid #dcba80;
+  width: 60px;
+  height: 60px;
+  margin-top: 40px;
+}
+.searchButton:hover {
+ cursor: pointer;
+}
 @media only screen and (max-width: 768px) {
   .staticText4 {
     font-size: 16px;

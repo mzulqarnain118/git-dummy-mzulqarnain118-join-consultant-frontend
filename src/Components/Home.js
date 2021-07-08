@@ -93,7 +93,7 @@ class Home extends React.Component {
     document.body.style = "background: #F7F3F2";
     this.state = {
       //active step for stepper and to display appropriate screen
-      activeStep: 0,
+      activeStep: 1,
       //label for footer right side button
       rightFooterButtonName: "NEXT",
       // footer right side button (disable/enable)
