@@ -41,17 +41,17 @@ class ConfirmDetailsDisplay extends React.Component {
           <div className="displayArea">
             <div className="row">
               {/* first name */}
-              <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
                 <span className="head3">FIRST NAME</span>
                 <div className="dataText">{userData.first_name}</div>
               </div>
               {/* last name */}
-              <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth">
                 <span className="head3">LAST NAME</span>
                 <div className="dataText">{userData.last_name}</div>
               </div>
               {/* date of birth */}
-              <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
                 <span className="head3">DATE OF BIRTH</span>
                 <div className="dataText">
                   {moment(
@@ -63,6 +63,11 @@ class ConfirmDetailsDisplay extends React.Component {
                   ).format("MM/DD/YYYY")}
                 </div>
               </div>
+              {/* email*/}
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth">
+                <span className="head3">EMAIL</span>
+                <div className="dataText">{userData.email}</div>
+              </div>
               {this.state.width <= 550 ? (
                 <div className="col-lg-3 offset-lg-1 col-md-3 offset-md-1 mobileDisplayWidth">
                   <span className="head3">CELL NUMBER1</span>
@@ -72,10 +77,11 @@ class ConfirmDetailsDisplay extends React.Component {
                 </div>
               ) : null}
             </div>
+
             {/* cell number */}
             <div className="row marginHead">
               {this.state.width >= 550 ? (
-                <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
+                <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
                   <span className="head3">CELL NUMBER2</span>
                   <div className="dataText">
                     {maskingPhoneNumber(userData.phonenumber)}
@@ -83,7 +89,7 @@ class ConfirmDetailsDisplay extends React.Component {
                 </div>
               ) : null}
               {/* address */}
-              <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth">
                 <span className="head3">SHIPPING ADDRESS</span>
                 <div className="dataText">
                   {userData.address.street}, {userData.address.city},{" "}
@@ -91,7 +97,7 @@ class ConfirmDetailsDisplay extends React.Component {
                 </div>
               </div>
               {/* working with */}
-              <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
                 <span className="head3">WORKING WITH</span>
                 <div className="dataText">{userData.working_with}</div>
               </div>

@@ -83,7 +83,10 @@ class ConfirmDetailsEdit extends React.Component {
         error["address"][type] = "Zip is mandatory";
         errorArr[3] = false;
       }
-      form["address"][type] = value;
+      form["address"][type] = value
+        .split("")
+        .filter((item) => item.match(/[0-9\\-]/i))
+        .join("");
     }
 
     // address city
@@ -125,7 +128,12 @@ class ConfirmDetailsEdit extends React.Component {
         errorArr[6] = false;
       }
 
-      form[type] = maskingPhoneNumber(value);
+      form[type] = maskingPhoneNumber(
+        value
+          .split("")
+          .filter((item) => item.match(/[0-9\\-]/i))
+          .join("")
+      );
     }
 
     // workingwith
@@ -161,19 +169,8 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     // enable /disable button to move to next screen
-    this.props.setrightFooterButtonDisabled(
-      !(
-        errorArr[0] &&
-        errorArr[1] &&
-        errorArr[2] &&
-        errorArr[3] &&
-        errorArr[4] &&
-        errorArr[5] &&
-        errorArr[6] &&
-        errorArr[7] &&
-        errorArr[8]
-      )
-    );
+    this.validateToMoveToNextScreen();
+
     this.setState({ userData: form, error: error, errorArr: errorArr });
   };
 
@@ -201,24 +198,58 @@ class ConfirmDetailsEdit extends React.Component {
       if (month === 0) {
         if (day > 0) {
           error["dob"] = "";
-          this.props.setrightFooterButtonDisabled(false);
+          this.validateToMoveToNextScreen();
         } else {
           error["dob"] = "you have to be older than 21 years";
           this.props.setrightFooterButtonDisabled(true);
         }
       } else if (month > 0) {
         error["dob"] = "";
-        this.props.setrightFooterButtonDisabled(false);
+        this.validateToMoveToNextScreen();
       } else {
         error["dob"] = "you have to be older than 21 years";
         this.props.setrightFooterButtonDisabled(true);
       }
     } else {
       error["dob"] = "";
-      this.props.setrightFooterButtonDisabled(false);
+      this.validateToMoveToNextScreen();
+    }
+
+    if (
+      moment(
+        new Date(userData.dob.year, userData.dob.month, userData.dob.day)
+      ).format("MM/DD/YYYY") === "Invalid date"
+    ) {
+      error["dob"] = "Invalid Date";
+      this.props.setrightFooterButtonDisabled(true);
+    } else {
+      this.validateToMoveToNextScreen();
     }
 
     this.setState({ userData: userData });
+  };
+
+  validateToMoveToNextScreen = () => {
+    let errorArr = this.state.errorArr;
+    let userData = this.state.userData;
+    let date = moment(
+      new Date(userData.dob.year, userData.dob.month, userData.dob.day)
+    ).format("MM/DD/YYYY");
+    // enable /disable button to move to next screen
+    this.props.setrightFooterButtonDisabled(
+      !(
+        errorArr[0] &&
+        errorArr[1] &&
+        errorArr[2] &&
+        errorArr[3] &&
+        errorArr[4] &&
+        errorArr[5] &&
+        errorArr[6] &&
+        errorArr[7] &&
+        errorArr[8] &&
+        date !== "Invalid date"
+      )
+    );
   };
 
   // change footer button name when component is removed
@@ -282,9 +313,9 @@ class ConfirmDetailsEdit extends React.Component {
     //to check if date is NaN (Not a Number)
     if (userData.dob.day !== userData.dob.day) {
       userData["dob"] = {
-        day: 1,
-        month: 0,
-        year: 1970,
+        day: "DD",
+        month: "MM",
+        year: "YYYY",
       };
     }
     this.setState({ errorArr, userData });
@@ -396,6 +427,9 @@ class ConfirmDetailsEdit extends React.Component {
                         name="month"
                         onChange={this.handleDate}
                       >
+                        <option value={"MM"} key={"MM"}>
+                          MM
+                        </option>
                         {moment.monthsShort().map((month, index) => (
                           <option value={index} key={index}>
                             {month}
@@ -419,6 +453,11 @@ class ConfirmDetailsEdit extends React.Component {
                         name="day"
                         onChange={this.handleDate}
                       >
+                        options.push(
+                        <option value={"DD"} key={"DD"}>
+                          DD
+                        </option>
+                        );
                         {(() => {
                           const options = [];
                           for (
@@ -444,7 +483,11 @@ class ConfirmDetailsEdit extends React.Component {
                             ][this.state.userData.dob.month];
                             i++
                           ) {
-                            options.push(<option value={i}>{i}</option>);
+                            options.push(
+                              <option value={i} key={"DD"}>
+                                {i}
+                              </option>
+                            );
                           }
                           return options;
                         })()}
@@ -466,6 +509,11 @@ class ConfirmDetailsEdit extends React.Component {
                         name="year"
                         onChange={this.handleDate}
                       >
+                        options.push(
+                        <option value={"YYYY"} key={"YYYY"}>
+                          YYYY
+                        </option>
+                        );
                         {(() => {
                           const options = [];
                           for (
@@ -473,7 +521,11 @@ class ConfirmDetailsEdit extends React.Component {
                             i <= new Date().getFullYear() - 21;
                             i++
                           ) {
-                            options.push(<option value={i}>{i}</option>);
+                            options.push(
+                              <option value={i} key={"YYYY"}>
+                                {i}
+                              </option>
+                            );
                           }
                           return options;
                         })()}
@@ -564,7 +616,7 @@ class ConfirmDetailsEdit extends React.Component {
                 </span>
                 <div className="edit-InputMargin">
                   <input
-                    type="number"
+                    type="text"
                     autoComplete="off"
                     value={userData["address"]["zipcode"]}
                     className={
@@ -576,6 +628,7 @@ class ConfirmDetailsEdit extends React.Component {
                     name="zipcode"
                     placeholder="Enter zipcode"
                     onChange={this.handleChange}
+                    maxLength="6"
                   />
                 </div>
               </div>

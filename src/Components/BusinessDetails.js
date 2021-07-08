@@ -49,7 +49,12 @@ class BusinessDetails extends React.Component {
       this.props.setrightFooterButtonDisabled(true);
     }
     // masking is done to add the hypen "-" to the SSN
-    value = maskingSSN(value);
+    value = maskingSSN(
+      value
+        .split("")
+        .filter((item) => item.match(/[0-9\\-]/i))
+        .join("")
+    );
     this.setState({ ssn: value });
 
     // update to home.js userdata state
