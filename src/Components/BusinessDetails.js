@@ -39,7 +39,6 @@ class BusinessDetails extends React.Component {
       );
       if (regex.test(value)) {
         errorSsn = "";
-        this.props.setrightFooterButtonDisabled(false);
       } else {
         errorSsn = "Invalid SSN";
         this.props.setrightFooterButtonDisabled(true);
@@ -67,6 +66,7 @@ class BusinessDetails extends React.Component {
     let errorUserData = this.props.errorUserData;
     errorUserData["ssn"] = errorSsn;
     this.props.setErrorUserData(errorUserData);
+    this.validateToMoveToNextScreen();
   };
 
   toggleButton = (toggle) => {
@@ -80,10 +80,14 @@ class BusinessDetails extends React.Component {
   handleChange = (e) => {
     let customURLAvailability = this.state.customURLAvailability;
     let errorCustomURL = this.state.errorCustomURL;
-    let value = e.target.value;
+    let value = e.target.value
+      .split("")
+      .filter((item) => item.match(/[a-z0-9]/i))
+      .filter((item) => !item.match(/^[A-Z]*$/))
+      .join("");
 
     if (value !== "") {
-      let regex = new RegExp("[^A-Za-z0-9]+");
+      let regex = new RegExp("[^a-z0-9]+");
       if (!regex.test(value)) {
         errorCustomURL = "";
         this.props.setrightFooterButtonDisabled(true);
@@ -102,11 +106,10 @@ class BusinessDetails extends React.Component {
       customURL: value,
       errorCustomURL,
       customURLAvailability,
-      ssn: "",
     });
   };
 
-  validateURL = async () => {
+  validateURL = async (e) => {
     this.setState({ load: true });
     // to check the availability of custom URL in the database
     await setTimeout(() => {
@@ -129,7 +132,7 @@ class BusinessDetails extends React.Component {
         this.props.setrightFooterButtonDisabled(true);
       } else {
         checkURLAvailability = true;
-        this.props.setrightFooterButtonDisabled(true);
+        this.validateToMoveToNextScreen();
       }
     } else {
       customURLAvailability = false;
@@ -144,7 +147,18 @@ class BusinessDetails extends React.Component {
     this.props.setCheckURLAvailability(checkURLAvailability);
   };
 
-  // used for mobile view change
+  // move to next screen
+  validateToMoveToNextScreen = () => {
+    let errorSsn = this.props.errorUserData.ssn;
+    let checkURLAvailability = this.props.checkURLAvailability;
+    if (errorSsn === "" && checkURLAvailability) {
+      this.props.setrightFooterButtonDisabled(false);
+    } else {
+      this.props.setrightFooterButtonDisabled(true);
+    }
+  };
+
+  //load when business details screen is loaded
   componentDidMount = async () => {
     this.setState({ width: window.innerWidth });
     if (this.props.userData.url !== "") {
@@ -194,7 +208,12 @@ class BusinessDetails extends React.Component {
                   autoComplete="off"
                   onChange={this.handleChange}
                   onMouseOut={this.validateURL}
-                  onTouchEnd={this.validateURL}
+                  onTouchLeave={this.validateURL}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      this.validateURL();
+                    }
+                  }}
                 />
 
                 {errorCustomURL.length > 0 ? (

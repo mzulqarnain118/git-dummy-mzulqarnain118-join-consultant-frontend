@@ -215,6 +215,7 @@ input::-webkit-input-placeholder {
   padding: 24px;
   font-size: 18px !important;
   width: 504px !important;
+  font-family: Domine !important;
 }
 
 .errorMesSubtext {
@@ -230,8 +231,8 @@ input::-webkit-input-placeholder {
   margin-left: 40px;
   margin-top: 10px;
 }
-.urlLoader{
-  margin-top: 2.3em;
+.urlLoader {
+  margin-top: 3.5em;
 }
 
 @media only screen and (max-width: 768px) {
@@ -634,9 +635,17 @@ input::-webkit-input-placeholder {
 
   .mobileAvailabilityIcon {
     width: 16px !important;
+    margin-top: -10em;
+  }
+
+  .urlLoader {
+    margin-top: 3.5em;
+    margin-top: -5.5em;
+    margin-left: 1em;
   }
   .mobileAvailabilitySubText {
     width: 16px !important;
+    margin-top: -12.5em;
   }
   .mobileAvailabilityText {
     margin-top: 88px;
