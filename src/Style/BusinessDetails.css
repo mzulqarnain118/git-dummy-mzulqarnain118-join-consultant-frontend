@@ -244,8 +244,13 @@ input::-webkit-input-placeholder {
   margin-top: 40px;
 }
 .searchButton:hover {
- cursor: pointer;
+  cursor: pointer;
 }
+.searchIcon {
+  height: 30px;
+  width: 30px;
+}
+
 @media only screen and (max-width: 768px) {
   .staticText4 {
     font-size: 16px;

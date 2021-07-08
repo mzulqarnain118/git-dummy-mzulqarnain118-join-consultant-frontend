@@ -226,7 +226,7 @@ class BusinessDetails extends React.Component {
 
                   <div className="col-lg-1  col-md-1 ">
                     <button className="searchButton" onClick={this.validateURL}>
-                      <FiSearch color="white" width={"30px"} height={"30px"} />
+                      <FiSearch color="white" className="searchIcon" />
                     </button>
                   </div>
                 </div>
