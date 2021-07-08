@@ -293,6 +293,12 @@ class Home extends React.Component {
       .date(userData["dob"]["day"])
       .format("YYYY-MM-DD");
 
+    // phone number remove hypen
+    data["phonenumber"] = userData["phonenumber"]
+      .split("")
+      .filter((item) => item !== "-")
+      .join("");
+
     await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
       .then((response) => {
         try {
@@ -419,7 +425,7 @@ class Home extends React.Component {
     return [
       "CONFIRM DETAILS",
       "BUSINESS DETAILS",
-      "VERIFY IDENTITY",
+      "REVIEW TERMS",
       "PURCHASE KIT",
     ];
   };

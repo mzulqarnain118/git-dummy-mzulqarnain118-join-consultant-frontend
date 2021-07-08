@@ -6,6 +6,7 @@ import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import CancelIcon from "@material-ui/icons/Cancel";
 import BusinessCenterOutlinedIcon from "@material-ui/icons/BusinessCenterOutlined";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 class BusinessDetails extends React.Component {
   constructor(props) {
@@ -23,6 +24,8 @@ class BusinessDetails extends React.Component {
         props.userData.doing_business === "Individual" ? false : true,
       // SSN entered by user
       ssn: props.userData.ssn,
+      //load circle
+      load: false,
     };
   }
   // to handle change in SSN value and validate it
@@ -96,8 +99,12 @@ class BusinessDetails extends React.Component {
       customURLAvailability,
       ssn: "",
     });
+  };
+
+  validateURL = async () => {
+    this.setState({ load: true });
     // to check the availability of custom URL in the database
-    setTimeout(() => {
+    await setTimeout(() => {
       this.checkURLAvailability();
     }, 100);
   };
@@ -128,7 +135,7 @@ class BusinessDetails extends React.Component {
     let userData = this.props.userData;
     userData["url"] = customURL;
     this.props.setUserData(userData);
-    this.setState({ customURLAvailability });
+    this.setState({ customURLAvailability, load: false });
     this.props.setCheckURLAvailability(checkURLAvailability);
   };
 
@@ -144,7 +151,7 @@ class BusinessDetails extends React.Component {
   };
 
   render() {
-    const { customURL, errorCustomURL, currentButton, ssn } = this.state;
+    const { customURL, errorCustomURL, currentButton, ssn, load } = this.state;
     const { errorUserData, checkURLAvailability } = this.props;
     return (
       <React.Fragment>
@@ -181,6 +188,8 @@ class BusinessDetails extends React.Component {
                   placeholder="Customise your URL"
                   autoComplete="off"
                   onChange={this.handleChange}
+                  onMouseOut={this.validateURL}
+                  onTouchEnd={this.validateURL}
                 />
 
                 {errorCustomURL.length > 0 ? (
@@ -190,53 +199,66 @@ class BusinessDetails extends React.Component {
                   </div>
                 ) : null}
               </div>
-              {this.state.customURLAvailability ? (
-                checkURLAvailability ? (
-                  <div className="col-lg-5  col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
-                    <div className="row">
-                      <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
-                        <CheckCircleIcon
-                          className="availableIcon"
-                          style={
-                            this.state.width <= 850
-                              ? this.state.width <= 550
-                                ? { fontSize: 20 }
-                                : { fontSize: 23 }
-                              : { fontSize: 30 }
-                          }
-                        />
-                      </div>
-                      <div className="col-lg-5 col-md-6 mobileAvailabilitySubText">
-                        <div className="availableText">
-                          This name is Available
-                        </div>
-                      </div>
+
+              {load ? (
+                <div className="col-lg-5  col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
+                  <div className="row">
+                    <div className="col-lg-1 col-md-1 urlLoader">
+                      <CircularProgress color="black" size={30} />
                     </div>
                   </div>
-                ) : (
-                  <div className="col-lg-5 col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
-                    <div className="row">
-                      <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
-                        <CancelIcon
-                          className="notAvailableIcon"
-                          style={
-                            this.state.width <= 850
-                              ? this.state.width <= 550
-                                ? { fontSize: 20 }
-                                : { fontSize: 23 }
-                              : { fontSize: 30 }
-                          }
-                        />
-                      </div>
-                      <div className="col-lg-6 col-md-6 mobileAvailabilitySubText">
-                        <div className="availableText">
-                          This name is Not Available
+                </div>
+              ) : (
+                <>
+                  {this.state.customURLAvailability ? (
+                    checkURLAvailability ? (
+                      <div className="col-lg-5  col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
+                        <div className="row">
+                          <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
+                            <CheckCircleIcon
+                              className="availableIcon"
+                              style={
+                                this.state.width <= 850
+                                  ? this.state.width <= 550
+                                    ? { fontSize: 20 }
+                                    : { fontSize: 23 }
+                                  : { fontSize: 30 }
+                              }
+                            />
+                          </div>
+                          <div className="col-lg-5 col-md-6 mobileAvailabilitySubText">
+                            <div className="availableText">
+                              This name is Available
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                )
-              ) : null}
+                    ) : (
+                      <div className="col-lg-5 col-md-4 mobileAvailabilityText offsetLeftAvailableIcon">
+                        <div className="row">
+                          <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
+                            <CancelIcon
+                              className="notAvailableIcon"
+                              style={
+                                this.state.width <= 850
+                                  ? this.state.width <= 550
+                                    ? { fontSize: 20 }
+                                    : { fontSize: 23 }
+                                  : { fontSize: 30 }
+                              }
+                            />
+                          </div>
+                          <div className="col-lg-6 col-md-6 mobileAvailabilitySubText">
+                            <div className="availableText">
+                              This name is Not Available
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  ) : null}
+                </>
+              )}
             </div>
             {/* if the custom url is valid display the rest of the screen */}
             {this.state.customURLAvailability && checkURLAvailability ? (
@@ -312,6 +334,7 @@ class BusinessDetails extends React.Component {
                       placeholder="Enter your SSN"
                       autoComplete="off"
                       onChange={this.handleSSN}
+                      maxLength="11"
                     />
 
                     {errorUserData.ssn.length > 0 ? (

@@ -65,8 +65,10 @@ class ConfirmDetailsDisplay extends React.Component {
               </div>
               {this.state.width <= 550 ? (
                 <div className="col-lg-3 offset-lg-1 col-md-3 offset-md-1 mobileDisplayWidth">
-                  <span className="head3">CELL NUMBER</span>
-                  <div className="dataText">{userData.cellno}</div>
+                  <span className="head3">CELL NUMBER1</span>
+                  <div className="dataText">
+                    {maskingPhoneNumber(userData.phonenumber)}
+                  </div>
                 </div>
               ) : null}
             </div>
@@ -74,8 +76,10 @@ class ConfirmDetailsDisplay extends React.Component {
             <div className="row marginHead">
               {this.state.width >= 550 ? (
                 <div className="col-lg-4 col-md-4 col-sm-4 col-6 mobileDisplayWidth">
-                  <span className="head3">CELL NUMBER</span>
-                  <div className="dataText">{userData.phonenumber}</div>
+                  <span className="head3">CELL NUMBER2</span>
+                  <div className="dataText">
+                    {maskingPhoneNumber(userData.phonenumber)}
+                  </div>
                 </div>
               ) : null}
               {/* address */}
@@ -96,7 +100,7 @@ class ConfirmDetailsDisplay extends React.Component {
           {/* static text displatey at the bottom of text area */}
           <div className="displayNote">
             <b>Note:</b> If you want to change any of the Information provided,
-            click on the '<b>Mange Changes</b>' button.
+            click on the '<b>Manage Changes</b>' button.
           </div>
         </div>
       </React.Fragment>
@@ -105,3 +109,27 @@ class ConfirmDetailsDisplay extends React.Component {
 }
 
 export default ConfirmDetailsDisplay;
+
+// additional function to add hypen "-" to the phone number
+const maskingPhoneNumber = (value) => {
+  value = value
+    .split("")
+    .filter((item) => item !== "-")
+    .join("");
+
+  if (value.length > 3 && value.length <= 6) {
+    value =
+      value.split("").splice(0, 3).join("") +
+      "-" +
+      value.split("").splice(3).join("");
+  } else if (value.length >= 7) {
+    value =
+      value.split("").splice(0, 3).join("") +
+      "-" +
+      value.split("").splice(3, 3).join("") +
+      "-" +
+      value.split("").splice(6).join("");
+  }
+
+  return value;
+};

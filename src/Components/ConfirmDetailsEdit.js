@@ -114,7 +114,7 @@ class ConfirmDetailsEdit extends React.Component {
     if (type === "phonenumber") {
       if (value !== "") {
         error[type] = "";
-        if (value.length === 10) {
+        if (value.length === 12) {
           errorArr[6] = true;
         } else {
           error[type] = "Invalid Cell Number";
@@ -125,7 +125,7 @@ class ConfirmDetailsEdit extends React.Component {
         errorArr[6] = false;
       }
 
-      form[type] = value;
+      form[type] = maskingPhoneNumber(value);
     }
 
     // workingwith
@@ -187,12 +187,32 @@ class ConfirmDetailsEdit extends React.Component {
 
     dob[type] = value;
     let date1 = new Date();
-    let date2 = new Date(dob.year);
+    let date2 = new Date(dob.year, dob.month, dob.day);
     let yearsDiff = date1.getFullYear() - date2.getFullYear();
-    // avaoid users below 19 years
-    if (yearsDiff <= 19) {
-      error["dob"] = "you have to be older than 19 years";
+
+    // avoid users below 19 years
+    if (yearsDiff < 21) {
+      error["dob"] = "you have to be older than 21 years";
       this.props.setrightFooterButtonDisabled(true);
+    } else if (yearsDiff === 21) {
+      let month = date1.getMonth() - date2.getMonth();
+      let day = date1.getDate() - date2.getDate();
+
+      if (month === 0) {
+        if (day > 0) {
+          error["dob"] = "";
+          this.props.setrightFooterButtonDisabled(false);
+        } else {
+          error["dob"] = "you have to be older than 21 years";
+          this.props.setrightFooterButtonDisabled(true);
+        }
+      } else if (month > 0) {
+        error["dob"] = "";
+        this.props.setrightFooterButtonDisabled(false);
+      } else {
+        error["dob"] = "you have to be older than 21 years";
+        this.props.setrightFooterButtonDisabled(true);
+      }
     } else {
       error["dob"] = "";
       this.props.setrightFooterButtonDisabled(false);
@@ -246,6 +266,7 @@ class ConfirmDetailsEdit extends React.Component {
       errorArr[6] = false;
     } else {
       errorArr[6] = true;
+      userData["phonenumber"] = maskingPhoneNumber(userData["phonenumber"]);
     }
     if (userData["working_with"] === "") {
       errorArr[7] = false;
@@ -447,7 +468,11 @@ class ConfirmDetailsEdit extends React.Component {
                       >
                         {(() => {
                           const options = [];
-                          for (let i = 1970; i <= 2021; i++) {
+                          for (
+                            let i = 1970;
+                            i <= new Date().getFullYear() - 21;
+                            i++
+                          ) {
                             options.push(<option value={i}>{i}</option>);
                           }
                           return options;
@@ -635,7 +660,7 @@ class ConfirmDetailsEdit extends React.Component {
                 </span>
                 <div className="edit-InputMargin">
                   <input
-                    type="number"
+                    type="text"
                     autoComplete="off"
                     value={userData["phonenumber"]}
                     className={
@@ -647,6 +672,7 @@ class ConfirmDetailsEdit extends React.Component {
                     name="phonenumber"
                     placeholder="Enter cell number"
                     onChange={this.handleChange}
+                    maxLength="12"
                   />
                 </div>
               </div>
@@ -696,3 +722,27 @@ class ConfirmDetailsEdit extends React.Component {
 }
 
 export default ConfirmDetailsEdit;
+
+// additional function to add hypen "-" to the phone number
+const maskingPhoneNumber = (value) => {
+  value = value
+    .split("")
+    .filter((item) => item !== "-")
+    .join("");
+
+  if (value.length > 3 && value.length <= 6) {
+    value =
+      value.split("").splice(0, 3).join("") +
+      "-" +
+      value.split("").splice(3).join("");
+  } else if (value.length >= 7) {
+    value =
+      value.split("").splice(0, 3).join("") +
+      "-" +
+      value.split("").splice(3, 3).join("") +
+      "-" +
+      value.split("").splice(6).join("");
+  }
+
+  return value;
+};

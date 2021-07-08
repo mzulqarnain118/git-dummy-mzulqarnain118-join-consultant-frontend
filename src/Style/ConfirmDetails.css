@@ -20,7 +20,7 @@
   font-family: oswald;
 }
 .email1 {
-  margin-top:48px;
+  margin-top: 48px;
 }
 .emailLabel {
   margin-bottom: 15px;
@@ -87,9 +87,11 @@
   color: #dcba80;
   font-size: 16px;
   text-decoration: underline;
+  font-family: Domine;
 }
 .passwordForgotLink:hover {
   cursor: pointer;
+  font-family: Domine;
 }
 .password1 {
   margin-top: 40px;
@@ -276,11 +278,13 @@ select {
   }
 } */
 
-
-
 @media only screen and (max-width: 550px) {
-  .emailLabel{margin-bottom: 5px;}
-  .InputMargin{margin-bottom: 10px;}
+  .emailLabel {
+    margin-bottom: 5px;
+  }
+  .InputMargin {
+    margin-bottom: 10px;
+  }
   .head1 {
     font-size: 33px;
     font-weight: "bold";
@@ -316,7 +320,9 @@ select {
     font-size: 15px;
     font-family: Domine;
   }
-  .passwordForgotLink{font-size: 15px;}
+  .passwordForgotLink {
+    font-family: Domine;
+  }
   /* .head3 {
     color: grey;
     font-family: oswald;
@@ -346,7 +352,7 @@ select {
     border-width: 1px;
     border-color: #d8c5a6 !important;
     border-radius: 0 !important;
-    width:336px !important;
+    width: 336px !important;
     height: 56px !important;
     margin-bottom: 8px;
   }
@@ -357,7 +363,7 @@ select {
     border-width: 1px;
     border-color: red !important;
     border-radius: 0 !important;
-    width:336px !important;
+    width: 336px !important;
     height: 56px !important;
     margin-bottom: 8px;
   }
@@ -388,30 +394,54 @@ select {
 }
 
 @media (max-width: 1199px) {
-.displayArea{padding: 30px;}
+  .displayArea {
+    padding: 30px;
+  }
 }
 @media (max-width: 991px) {
-.email1{margin-top: 30px;}  
-.head1, .head2{font-size: 25px;}
-.staticText1{font-size: 18px;}
-.staticText2{font-size: 14px;}
-.componentMargin3{margin-top: 30px;}
-.staticText3{font-size: 16px;}
-.marginHead{margin-top: 30px;}
+  .email1 {
+    margin-top: 30px;
+  }
+  .head1,
+  .head2 {
+    font-size: 25px;
+  }
+  .staticText1 {
+    font-size: 18px;
+  }
+  .staticText2 {
+    font-size: 14px;
+  }
+  .componentMargin3 {
+    margin-top: 30px;
+  }
+  .staticText3 {
+    font-size: 16px;
+  }
+  .marginHead {
+    margin-top: 30px;
+  }
 }
 @media (max-width: 767px) {
-
 }
 @media (max-width: 639px) {
-.mobileDisplayWidth{padding-top:5px;padding-bottom: 5px;}
-.dataText{font-size: 16px;}
+  .mobileDisplayWidth {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .dataText {
+    font-size: 16px;
+  }
 }
 @media (max-width: 567px) {
-
 }
 
-
 @media (max-width: 479px) {
-.Input{width: 100% !important;}
-.head1, .head2{font-size: 22px;}
+  .Input {
+    width: 100% !important;
+  }
+  .head1,
+  .head2 {
+    font-size: 22px;
+  }
 }
