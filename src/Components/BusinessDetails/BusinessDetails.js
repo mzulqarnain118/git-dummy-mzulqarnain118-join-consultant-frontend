@@ -1,7 +1,7 @@
 import React from "react";
-import "../Style/BusinessDetails.css";
-import "../Style/ConfirmDetails.css";
-import Header from "./Header";
+import "./BusinessDetails.css";
+import "../ConfirmDetails/ConfirmDetails.css";
+import Header from "../MobileHeader/Header";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import CancelIcon from "@material-ui/icons/Cancel";
 import BusinessCenterOutlinedIcon from "@material-ui/icons/BusinessCenterOutlined";

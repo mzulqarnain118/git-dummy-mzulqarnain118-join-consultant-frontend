@@ -5,17 +5,17 @@ import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Typography from "@material-ui/core/Typography";
-import "../Style/Home.css";
-import ConfirmDetails from "./ConfirmDetails";
-import BusinessDetails from "./BusinessDetails";
-import Footer from "./Footer";
-import VerifyIdentity from "./VerifyIdentity";
-import PurchaseKit from "./PurchaseKit";
-import PaymentConfirmation from "./PaymentConfirmation";
+import "./Home.css";
+import ConfirmDetails from "../ConfirmDetails/ConfirmDetails";
+import BusinessDetails from "../BusinessDetails/BusinessDetails";
+import Footer from "../Footer/Footer";
+import VerifyIdentity from "../VerifyIdentity/VerifyIdentity";
+import PurchaseKit from "../PurchaseKit/PurchaseKit";
+import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 import StepConnector from "@material-ui/core/StepConnector";
-import { Logo } from "../Assets/HeaderSVG";
+import { Logo } from "../../Assets/HeaderSVG";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import * as API from "../configuration/apiconfig";
+import * as API from "../../configuration/apiconfig";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import moment from "moment";
 require("typeface-oswald");
@@ -138,6 +138,8 @@ class Home extends React.Component {
       },
       //to check if url is available
       checkURLAvailability: false,
+      //current agreement displayed
+      currentAgreement: false,
       //width for mobile view
       width: 0,
       // state variable to (enable/disable) footer
@@ -348,35 +350,28 @@ class Home extends React.Component {
   apiUpdateScreen = async (data, buttonName) => {
     this.setState({ load: true, rightFooterButtonDisabled: true });
     let errorUserData = this.state.errorUserData;
-    let available = true;
-    if (buttonName === "") {
-      available = await this.apiVerifyURL(data.url);
-    }
-    if (available) {
-      await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
-        .then((response) => {
-          errorUserData["ssn"] = "";
-          this.setState({
-            load: false,
-            rightFooterButtonName: buttonName,
-            rightFooterButtonDisabled: true,
-            activeStep: data.screen,
-            errorUserData,
-          });
-        })
-        .catch((error) => {
-          console.log("Error in /update");
-          console.log(error);
-          if (error.error === "Please enter valid ssn") {
-            errorUserData["ssn"] = "Invalid SSN";
-          }
-          this.setState({
-            load: false,
-          });
+
+    await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
+      .then((response) => {
+        errorUserData["ssn"] = "";
+        this.setState({
+          load: false,
+          rightFooterButtonName: buttonName,
+          rightFooterButtonDisabled: true,
+          activeStep: data.screen,
+          errorUserData,
         });
-    } else {
-      this.setCheckURLAvailability(false);
-    }
+      })
+      .catch((error) => {
+        console.log("Error in /update");
+        console.log(error);
+        if (error.error === "Please enter valid ssn") {
+          errorUserData["ssn"] = "Invalid SSN";
+        }
+        this.setState({
+          load: false,
+        });
+      });
   };
 
   // API to verify URL
@@ -492,6 +487,11 @@ class Home extends React.Component {
         return "Unknown step";
     }
   }
+
+  //set current agreement
+  setCurrentAgreement = () => {
+    this.setState({ currentAgreement: !this.state.currentAgreement });
+  };
 
   //method to move to next screen
   moveToNextScreen = () => {

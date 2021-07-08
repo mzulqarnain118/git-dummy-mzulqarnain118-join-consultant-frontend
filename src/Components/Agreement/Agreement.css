@@ -80,10 +80,11 @@
   padding-top: 1em;
   padding-bottom: 1em;
   color: #6e7071;
-  border: 1px solid #676969;
+  border: 1px solid #5d6163;
 }
 
 .agreementPolicy {
+  max-height: 550px;
   border-width: 1px;
   border-color: #d8c5a6;
   border-style: solid;
@@ -94,8 +95,9 @@
   overflow-y: scroll;
   font-family: Domine;
   padding: 2em;
-  font-size: calc(1px + 1vw);
+  /* font-size: calc(1px + 1vw); */
 }
+
 .agreementTitle {
   font-size: 25px;
   font-weight: bold;
@@ -106,10 +108,13 @@
 .acceptAgreement {
   margin-top: 1em;
   font-weight: bold;
-  margin-bottom: 2em;
+  margin-bottom: 6em;
 }
 .checkBoxAccept {
   margin-top: -0.2em !important;
+}
+.checkboxText {
+  cursor: pointer;
 }
 @media only screen and (max-width: 768px) {
   .componentMargin {
@@ -195,7 +200,7 @@
     width: 58.5vh;
     height: 56vw;
     margin-top: 1em;
-    overflow-y: scroll;
+    overflow-y: visible;
     font-family: Domine;
     padding: 2em;
   }

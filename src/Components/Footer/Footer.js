@@ -1,5 +1,5 @@
 import React from "react";
-import "../Style/Footer.css";
+import "./Footer.css";
 import Ripples from "react-ripples";
 
 class Footer extends React.Component {

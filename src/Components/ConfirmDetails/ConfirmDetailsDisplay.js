@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import Header from "./Header";
+import Header from "../MobileHeader/Header";
 
 class ConfirmDetailsDisplay extends React.Component {
   constructor() {

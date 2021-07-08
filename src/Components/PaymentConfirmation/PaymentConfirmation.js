@@ -7,10 +7,10 @@ import StepLabel from "@material-ui/core/StepLabel";
 import StepConnector from "@material-ui/core/StepConnector";
 import { IoCheckmarkCircleSharp, IoAlertCircle } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
-import { Icon1, Icon2, Icon3, Icon4 } from "../Assets/PaymentConfirmationSVG";
+import { Icon1, Icon2, Icon3, Icon4 } from "../../Assets/PaymentConfirmationSVG";
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import "../Style/PaymentConfirmation.css";
+import "./PaymentConfirmation.css";
 
 // styles for material ui
 const styles = (theme) => ({

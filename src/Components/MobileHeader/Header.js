@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "../Style/Header.css";
+import "./Header.css";
 import { withStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";

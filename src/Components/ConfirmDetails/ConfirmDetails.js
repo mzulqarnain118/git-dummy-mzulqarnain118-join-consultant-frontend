@@ -1,5 +1,5 @@
 import React from "react";
-import "../Style/ConfirmDetails.css";
+import "./ConfirmDetails.css";
 import ConfirmDetailsPasswordPage from "./ConfirmDetailsPasswordPage";
 import ConfirmDetailsDisplay from "./ConfirmDetailsDisplay";
 import ConfirmDetailsEdit from "./ConfirmDetailsEdit";

@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import Header from "./Header";
+import Header from "../MobileHeader/Header";
 
 class ConfirmDetailsEdit extends React.Component {
   constructor(props) {
@@ -311,6 +311,7 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     //to check if date is NaN (Not a Number)
+    // eslint-disable-next-line
     if (userData.dob.day !== userData.dob.day) {
       userData["dob"] = {
         day: "DD",

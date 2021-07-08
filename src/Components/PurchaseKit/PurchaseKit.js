@@ -1,8 +1,7 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../MobileHeader/Header";
 import Checkbox from "@material-ui/core/Checkbox";
-
-import "../Style/PurchaseKit.css";
+import "./PurchaseKit.css";
 
 class PurchaseKit extends React.Component {
   constructor() {

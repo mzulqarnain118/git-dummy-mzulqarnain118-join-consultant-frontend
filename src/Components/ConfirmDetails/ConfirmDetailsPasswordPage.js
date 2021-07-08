@@ -41,6 +41,9 @@ class ConfirmDetailsPasswordPage extends React.Component {
   //width for mobile view
   componentDidMount = () => {
     this.setState({ width: window.innerWidth });
+    let errorUserData = this.props.errorUserData;
+    errorUserData["password"] = "";
+    this.props.setErrorUserData(errorUserData);
   };
 
   render() {

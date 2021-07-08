@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./Header";
-import Agreement from "./Agreement";
+import Header from "../MobileHeader/Header";
+import Agreement from "../Agreement/Agreement";
 // import axios from "axios";
 // import * as API from "../configuration/apiconfig";
-import "../Style/VerifyIdentity.css";
+import "./VerifyIdentity.css";
 
 class VerifyIdentity extends React.Component {
   constructor(props) {
