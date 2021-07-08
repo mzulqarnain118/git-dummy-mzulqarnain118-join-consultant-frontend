@@ -149,9 +149,10 @@ class BusinessDetails extends React.Component {
 
   // move to next screen
   validateToMoveToNextScreen = () => {
+    let ssn = this.state.ssn;
     let errorSsn = this.props.errorUserData.ssn;
     let checkURLAvailability = this.props.checkURLAvailability;
-    if (errorSsn === "" && checkURLAvailability) {
+    if (ssn !== "" && errorSsn === "" && checkURLAvailability) {
       this.props.setrightFooterButtonDisabled(false);
     } else {
       this.props.setrightFooterButtonDisabled(true);

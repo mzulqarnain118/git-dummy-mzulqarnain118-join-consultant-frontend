@@ -50,6 +50,11 @@ class ConfirmDetailsDisplay extends React.Component {
                 <span className="head3">LAST NAME</span>
                 <div className="dataText">{userData.last_name}</div>
               </div>
+              {/* email*/}
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth">
+                <span className="head3">EMAIL</span>
+                <div className="dataText">{userData.email}</div>
+              </div>
               {/* date of birth */}
               <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
                 <span className="head3">DATE OF BIRTH</span>
@@ -62,11 +67,6 @@ class ConfirmDetailsDisplay extends React.Component {
                     )
                   ).format("MM/DD/YYYY")}
                 </div>
-              </div>
-              {/* email*/}
-              <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth">
-                <span className="head3">EMAIL</span>
-                <div className="dataText">{userData.email}</div>
               </div>
               {this.state.width <= 550 ? (
                 <div className="col-lg-3 offset-lg-1 col-md-3 offset-md-1 mobileDisplayWidth">

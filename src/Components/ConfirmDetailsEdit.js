@@ -189,7 +189,7 @@ class ConfirmDetailsEdit extends React.Component {
 
     // avoid users below 19 years
     if (yearsDiff < 21) {
-      error["dob"] = "you have to be older than 21 years";
+      error["dob"] = "you have to be older than 21 Years";
       this.props.setrightFooterButtonDisabled(true);
     } else if (yearsDiff === 21) {
       let month = date1.getMonth() - date2.getMonth();
@@ -200,14 +200,14 @@ class ConfirmDetailsEdit extends React.Component {
           error["dob"] = "";
           this.validateToMoveToNextScreen();
         } else {
-          error["dob"] = "you have to be older than 21 years";
+          error["dob"] = "you have to be older than 21 Years";
           this.props.setrightFooterButtonDisabled(true);
         }
       } else if (month > 0) {
         error["dob"] = "";
         this.validateToMoveToNextScreen();
       } else {
-        error["dob"] = "you have to be older than 21 years";
+        error["dob"] = "you have to be older than 21 Years";
         this.props.setrightFooterButtonDisabled(true);
       }
     } else {
