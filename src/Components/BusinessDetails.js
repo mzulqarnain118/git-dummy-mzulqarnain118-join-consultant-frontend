@@ -8,7 +8,6 @@ import BusinessCenterOutlinedIcon from "@material-ui/icons/BusinessCenterOutline
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { FiSearch } from "react-icons/fi";
-import Ripples from "react-ripples";
 
 class BusinessDetails extends React.Component {
   constructor(props) {
@@ -222,13 +221,16 @@ class BusinessDetails extends React.Component {
                       {errorCustomURL}
                       <br />
                     </div>
-                  ) : null}
-
-                  <div className="col-lg-1  col-md-1 ">
-                    <button className="searchButton" onClick={this.validateURL}>
-                      <FiSearch color="white" className="searchIcon" />
-                    </button>
-                  </div>
+                  ) : (
+                    <div className="col-lg-1  col-md-1 ">
+                      <button
+                        className="searchButton"
+                        onClick={this.validateURL}
+                      >
+                        <FiSearch color="white" className="searchIcon" />
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
 
