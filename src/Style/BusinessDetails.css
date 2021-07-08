@@ -11,10 +11,15 @@
   font-family: Domine;
   margin-top: 12px;
 }
+.urlRow {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
 .BDstaticText4 {
   font-size: 16px;
   font-family: Domine;
-  margin-top: 3.6vw;
+  margin-top: 0;
   font-weight: bold;
 }
 .customURL {
@@ -23,8 +28,8 @@
   border-radius: 0;
   width: 22vw !important;
   height: 60px !important;
-  margin-bottom: 8px;
-  margin-top: 2.3vw;
+  margin-bottom: 0;
+  margin-top: 0;
   font-weight: bold;
   font-size: 16px;
   font-family: Domine;
@@ -39,12 +44,12 @@
 }
 
 .availableIcon {
-  margin-top: 46px;
+  margin-top: 0;
   color: #4ba380;
 }
 
 .availableText {
-  margin-top: 48px;
+  margin-top: 0;
   font-family: oswald;
   font-size: 16px;
   margin-left: 3px;
@@ -73,7 +78,7 @@
   font-weight: 100;
 }
 .notAvailableIcon {
-  margin-top: 46px;
+  margin-top: 0;
   color: rgb(236, 85, 85);
 }
 
@@ -228,11 +233,11 @@ input::-webkit-input-placeholder {
 }
 
 .offsetLeftAvailableIcon {
-  margin-left: 40px;
-  margin-top: 10px;
+  margin-left: 0;
+  margin-top: 0;
 }
 .urlLoader {
-  margin-top: 3em;
+  margin-top: 0;
 }
 
 .searchButton {
@@ -241,7 +246,7 @@ input::-webkit-input-placeholder {
   border: 0px solid #dcba80;
   width: 60px;
   height: 60px;
-  margin-top: 40px;
+  margin-top: 0;
 }
 .searchButton:hover {
   cursor: pointer;
@@ -307,7 +312,7 @@ input::-webkit-input-placeholder {
     color: #4ba380;
   }
   .notAvailableIcon {
-    margin-top: 62px;
+    margin-top: 0;
     color: rgb(236, 85, 85);
   }
 
@@ -502,7 +507,7 @@ input::-webkit-input-placeholder {
     color: #4ba380;
   }
   .notAvailableIcon {
-    margin-top: 74px;
+    margin-top: 0;
     color: rgb(236, 85, 85);
   }
 
