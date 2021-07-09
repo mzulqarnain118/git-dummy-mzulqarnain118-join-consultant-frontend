@@ -84,7 +84,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 }
                 id="password"
                 name="password"
-                placeholder="Enter password"
+                placeholder="Enter your password"
                 onChange={this.handleChange}
               />
 
