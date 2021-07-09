@@ -13,7 +13,7 @@ class Agreement extends React.Component {
       //width for mobile view change
       width: 0,
       //used to indicate the current policy selected
-      currentButton: false,
+      currentButton: this.props.currentAgreement,
       //used to record if user accepted the agreement
       checkbox1: false,
       checkbox2: false,
@@ -141,13 +141,17 @@ class Agreement extends React.Component {
   handleChangecheckbox = (e) => {
     let checkbox1 = this.state.checkbox1;
     let checkbox2 = this.state.checkbox2;
+    let userData = this.props.userData;
 
     if (e.target.id === "checkbox1") {
       checkbox1 = !checkbox1;
+      userData["indepedent_agreement"] = !checkbox1;
     } else {
       checkbox2 = !checkbox2;
+      userData["policy_procedures"] = !checkbox2;
     }
 
+    this.props.setUserData(userData);
     this.props.setrightFooterButtonDisabled(!(checkbox1 && checkbox2));
     this.setState({ checkbox1, checkbox2 });
   };
@@ -155,6 +159,7 @@ class Agreement extends React.Component {
   // toggle which policy nneds to be displayed
   toggleButton = (toggle) => {
     this.setState({ currentButton: toggle });
+    this.props.setCurrentAgreement(toggle);
   };
 
   // to get window width for mobile view change
@@ -219,56 +224,56 @@ class Agreement extends React.Component {
               </div>
             </div>
             {/* check Box to accept agreement */}
-            {scrollReachEnd ? (
-              <>
-                {!currentButton ? (
-                  <div className="col-lg-8 ">
-                    <div className="acceptAgreement">
-                      <Checkbox
-                        id="checkbox1"
-                        name="checkbox1"
-                        checked={checkbox1}
-                        onChange={this.handleChangecheckbox}
-                        className="checkBoxAccept"
-                        style={{
-                          color: "#DCBA80",
-                        }}
-                      />
-                      <span
-                        id="checkbox1"
-                        className="checkboxText mobileAcceptCheckBox"
-                        onClick={this.handleChangecheckbox}
-                      >
-                        I have read and accepted Independent Consultant
-                        Agreement.
-                      </span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="col-lg-8 ">
-                    <div className="acceptAgreement">
-                      <Checkbox
-                        id="checkbox2"
-                        name="checkbox2"
-                        checked={checkbox2}
-                        onChange={this.handleChangecheckbox}
-                        className="checkBoxAccept"
-                        style={{
-                          color: "#DCBA80",
-                        }}
-                      />
-                      <span
-                        id="checkbox2"
-                        className="checkboxText mobileAcceptCheckBox"
-                        onClick={this.handleChangecheckbox}
-                      >
-                        I have read and accepted Policy and Procedures.
-                      </span>
-                    </div>
-                  </div>
-                )}
-              </>
-            ) : null}
+            <div className="col-lg-8 ">
+              <div className="acceptAgreement">
+                {scrollReachEnd ? (
+                  <>
+                    {!currentButton ? (
+                      <>
+                        <Checkbox
+                          id="checkbox1"
+                          name="checkbox1"
+                          checked={checkbox1}
+                          onChange={this.handleChangecheckbox}
+                          className="checkBoxAccept"
+                          style={{
+                            color: "#DCBA80",
+                          }}
+                        />
+                        <span
+                          id="checkbox1"
+                          className="checkboxText mobileAcceptCheckBox"
+                          onClick={this.handleChangecheckbox}
+                        >
+                          I have read and accepted Independent Consultant
+                          Agreement.
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <Checkbox
+                          id="checkbox2"
+                          name="checkbox2"
+                          checked={checkbox2}
+                          onChange={this.handleChangecheckbox}
+                          className="checkBoxAccept"
+                          style={{
+                            color: "#DCBA80",
+                          }}
+                        />
+                        <span
+                          id="checkbox2"
+                          className="checkboxText mobileAcceptCheckBox"
+                          onClick={this.handleChangecheckbox}
+                        >
+                          I have read and accepted Policy and Procedures.
+                        </span>
+                      </>
+                    )}
+                  </>
+                ) : null}
+              </div>
+            </div>
           </div>
         </div>
       </React.Fragment>

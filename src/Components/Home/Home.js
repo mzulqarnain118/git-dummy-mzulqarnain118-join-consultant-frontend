@@ -469,6 +469,8 @@ class Home extends React.Component {
             setDisplayFooter={this.setDisplayFooter}
             errorUserData={this.state.errorUserData}
             setErrorUserData={this.setErrorUserData}
+            currentAgreement={this.state.currentAgreement}
+            setCurrentAgreement={this.setCurrentAgreement}
           />
         );
       case 3:
@@ -580,7 +582,7 @@ class Home extends React.Component {
       case "DONE":
         this.setState({
           rightFooterButtonName: "CONTINUE",
-          rightFooterButtonDisabled: false,
+          rightFooterButtonDisabled: true,
           activeStep: 2,
         });
         break;
@@ -759,6 +761,8 @@ class Home extends React.Component {
               apiLogin={this.apiLogin}
               apiUpdateUserData={this.apiUpdateUserData}
               apiUpdateScreen={this.apiUpdateScreen}
+              currentAgreement={this.state.currentAgreement}
+              setCurrentAgreement={this.setCurrentAgreement}
             />
           </>
         ) : (

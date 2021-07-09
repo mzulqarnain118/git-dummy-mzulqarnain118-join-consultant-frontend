@@ -5,14 +5,7 @@
   overflow: hidden;
   margin-top: 32px;
 }
-::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
-}
-/* Optional: show position indicator in red */
-/* ::-webkit-scrollbar-thumb {
-  background: #ff0000;
-} */
+
 .totalPanel {
   background: #e8e0dd;
   margin-top: 16px;

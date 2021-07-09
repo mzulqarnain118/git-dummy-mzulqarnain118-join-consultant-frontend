@@ -95,6 +95,7 @@
   overflow-y: scroll;
   font-family: Domine;
   padding: 2em;
+  scroll-behavior: smooth;
   /* font-size: calc(1px + 1vw); */
 }
 

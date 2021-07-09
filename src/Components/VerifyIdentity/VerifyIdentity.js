@@ -354,9 +354,12 @@ class VerifyIdentity extends React.Component {
           // if OTP is correct, then Agreement screen is loaded
           <Agreement
             userData={this.props.userData}
+            setUserData={this.props.setUserData}
             setrightFooterButtonDisabled={
               this.props.setrightFooterButtonDisabled
             }
+            currentAgreement={this.props.currentAgreement}
+            setCurrentAgreement={this.props.setCurrentAgreement}
           />
         )}
       </React.Fragment>
