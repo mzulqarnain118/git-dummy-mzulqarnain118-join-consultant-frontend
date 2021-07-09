@@ -255,7 +255,6 @@ class ConfirmDetailsEdit extends React.Component {
   // change footer button name when component is removed
   componentWillUnmount = () => {
     this.props.setUserData(this.state.userData);
-    this.props.setButtonName("LOOKS GOOD");
   };
 
   // set width for mobile view

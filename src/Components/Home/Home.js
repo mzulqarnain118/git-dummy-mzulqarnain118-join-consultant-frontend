@@ -557,13 +557,6 @@ class Home extends React.Component {
           rightFooterButtonDisabled: false,
         });
         break;
-      case "SAVE AND PROCEED":
-        if (!this.state.rightFooterButtonDisabled) {
-          this.apiUpdateUserData();
-          break;
-        } else {
-          break;
-        }
 
       case "PROCEED":
         this.setState({
@@ -586,6 +579,17 @@ class Home extends React.Component {
           activeStep: 2,
         });
         break;
+      case "SAVE AND PROCEED":
+        if (!this.state.rightFooterButtonDisabled) {
+          this.apiUpdateUserData();
+          break;
+        } else {
+          this.setState({
+            rightFooterButtonName: "NEXT",
+            rightFooterButtonDisabled: false,
+          });
+          break;
+        }
 
       default:
         this.setState({ rightFooterButtonName: "NEXT" });
