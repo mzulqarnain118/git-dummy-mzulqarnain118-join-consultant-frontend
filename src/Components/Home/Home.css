@@ -54,6 +54,10 @@
   }
 } */
 
+.LogoIcon {
+  cursor: pointer !important;
+}
+
 @media (max-width: 1199px) {
   .fontOswald {
     font-size: 15px;

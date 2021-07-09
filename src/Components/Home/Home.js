@@ -620,7 +620,9 @@ class Home extends React.Component {
                 </div>
                 <div className="col-xl-2 col-lg-2 col-md-11 col-11">
                   <div className="LogoIcon">
-                    <Logo />
+                    <a href="https://scoutandcellar.com/">
+                      <Logo />
+                    </a>
                   </div>
                 </div>
                 <div className="col-xl-8 col-lg-9 col-md-12 col-12 stepperMarginTop">
