@@ -4,8 +4,8 @@ import Checkbox from "@material-ui/core/Checkbox";
 import "./PurchaseKit.css";
 
 class PurchaseKit extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       //width for mobile view
       width: 0,
@@ -33,6 +33,8 @@ class PurchaseKit extends React.Component {
       },
       // checked for billing address / shipping address
       checked: true,
+      // purchase kit details
+      purchaseKitDetails: props.purchaseKitDetails,
     };
   }
 
@@ -150,12 +152,15 @@ class PurchaseKit extends React.Component {
   };
 
   //used to update width for mobile view
-  componentDidMount = () => {
+  componentDidMount = async () => {
     this.setState({ width: window.innerWidth });
+    if (this.props.purchaseKitDetails.total === 0) {
+      await this.props.apiCartDetails();
+    }
   };
 
   render() {
-    const { form, error, checked } = this.state;
+    const { form, error, checked, purchaseKitDetails } = this.state;
     return (
       <React.Fragment>
         {/* Header for mobile view  */}
@@ -181,9 +186,15 @@ class PurchaseKit extends React.Component {
                     <div className="totalText">Sales Tax</div>
                   </div>
                   <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 mobileTotalValue">
-                    <div className="subTotalMoney">$249.00</div>
-                    <div className="totalMoney">$0.00</div>
-                    <div className="totalMoney">$0.00</div>
+                    <div className="subTotalMoney">
+                      ${purchaseKitDetails.subtotal}.00
+                    </div>
+                    <div className="totalMoney">
+                      ${purchaseKitDetails.shipping}.00
+                    </div>
+                    <div className="totalMoney">
+                      ${purchaseKitDetails.salestax}.00
+                    </div>
                   </div>
                   <div className="col-lg-1"></div>
                 </div>
@@ -194,7 +205,9 @@ class PurchaseKit extends React.Component {
                     <div className="ResultText">Total</div>
                   </div>
                   <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 mobileTotalValue">
-                    <div className="ResultMoney">$249.00</div>
+                    <div className="ResultMoney">
+                      ${purchaseKitDetails.total}
+                    </div>
                   </div>
                   <div className="col-lg-1"></div>
                 </div>

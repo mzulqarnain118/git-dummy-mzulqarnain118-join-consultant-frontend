@@ -140,6 +140,15 @@ class Home extends React.Component {
       checkURLAvailability: false,
       //current agreement displayed
       currentAgreement: false,
+      // cart id
+      cartId: 0,
+      //purchase kit details
+      purchaseKitDetails: {
+        subtotal: 0,
+        shipping: 0,
+        salestax: 0,
+        total: 0,
+      },
       //width for mobile view
       width: 0,
       // state variable to (enable/disable) footer
@@ -330,7 +339,6 @@ class Home extends React.Component {
         } catch (e) {
           console.log("Error in /Update");
           console.log(e);
-
           this.setState({
             load: false,
           });
@@ -350,14 +358,19 @@ class Home extends React.Component {
   apiUpdateScreen = async (data, buttonName) => {
     this.setState({ load: true, rightFooterButtonDisabled: true });
     let errorUserData = this.state.errorUserData;
-
+    let rightFooterButtonDisabled = true;
     await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
-      .then((response) => {
+      .then(async (response) => {
         errorUserData["ssn"] = "";
+        if (this.state.rightFooterButtonName === "LOOKS GOOD") {
+          await this.apiGetCartId();
+        } else if (this.state.rightFooterButtonName === "CONTINUE") {
+          await this.apiCartDetails();
+        }
         this.setState({
           load: false,
           rightFooterButtonName: buttonName,
-          rightFooterButtonDisabled: true,
+          rightFooterButtonDisabled: rightFooterButtonDisabled,
           activeStep: data.screen,
           errorUserData,
         });
@@ -376,6 +389,7 @@ class Home extends React.Component {
 
   // API to verify URL
   apiVerifyURL = async (customURL) => {
+    this.setState({ load: true });
     let data = {
       url: customURL,
     };
@@ -387,6 +401,7 @@ class Home extends React.Component {
     )
       .then((response) => {
         try {
+          this.setState({ load: false });
           if (response.data.validText) {
             return true;
           } else {
@@ -394,12 +409,98 @@ class Home extends React.Component {
           }
         } catch (e) {
           console.log("Error in /VerifyURL1");
+          this.setState({ load: false });
           return false;
         }
       })
       .catch((error) => {
         console.log("Error in /VerifyURL2");
+        this.setState({ load: false });
         return false;
+      });
+  };
+
+  //API to verify
+  apiGetCartId = async () => {
+    this.setState({ load: true });
+    let cartId = this.state.cartId;
+    if (cartId.length !== 36) {
+      await API.callEndpoint("POST", "Bearer", "/api/v1/users/createCart")
+        .then((response) => {
+          try {
+            cartId = response.data.cartId;
+            this.setState({
+              load: false,
+              cartId,
+            });
+          } catch (e) {
+            console.log("Error in /CreateCart");
+            console.log(e);
+            this.setState({
+              load: false,
+            });
+          }
+        })
+        .catch((error) => {
+          console.log("Error in /CreateCart");
+          console.log(error);
+          this.setState({
+            load: false,
+          });
+        });
+    }
+  };
+
+  //API get card details
+  apiCartDetails = async () => {
+    this.setState({ load: true });
+    let cartId = this.state.cartId;
+    if (cartId.length !== 36) {
+      await this.apiGetCartId();
+      cartId = this.state.cartId;
+    }
+    this.setState({ load: true });
+    let purchaseKitDetails = this.state.purchaseKitDetails;
+    let data = {
+      id: this.state.userData.id,
+      ssn: this.state.userData.ssn,
+    };
+    await API.callEndpoint(
+      "GET",
+      "Bearer",
+      "/api/v1/users/viewCart?cartid=" + cartId,
+      data
+    )
+      .then((response) => {
+        try {
+          let total =
+            response.data.Subtotal +
+            response.data.TaxTotal +
+            response.data.OrderLines[0].ShippingTax;
+          purchaseKitDetails["subtotal"] = response.data.Subtotal;
+          purchaseKitDetails["shipping"] =
+            response.data.OrderLines[0].ShippingTax;
+          purchaseKitDetails["salestax"] = response.data.TaxTotal;
+          purchaseKitDetails["total"] = total;
+          this.setState({
+            load: false,
+            cartId,
+            purchaseKitDetails,
+          });
+        } catch (e) {
+          console.log("Error in /get cart details");
+          console.log(e);
+          this.setState({
+            load: false,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("Error in /get cart details");
+        console.log(error);
+        this.setState({
+          load: false,
+        });
       });
   };
 
@@ -482,6 +583,8 @@ class Home extends React.Component {
             userData={this.state.userData}
             setUserData={this.setUserData}
             setButtonName={this.setButtonName}
+            purchaseKitDetails={this.state.purchaseKitDetails}
+            apiCartDetails={this.apiCartDetails}
           />
         );
       default:
@@ -543,7 +646,6 @@ class Home extends React.Component {
   // header Back button
   handleBackButton = () => {
     let rightButton = this.state.rightFooterButtonName;
-    console.log(rightButton);
     switch (rightButton) {
       case "LOG IN":
         this.setState({

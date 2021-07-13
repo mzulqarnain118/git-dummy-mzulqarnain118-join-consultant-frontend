@@ -1,5 +1,7 @@
 import axios from "axios";
 import constant from "./config";
+import { browserName, browserVersion } from "react-device-detect";
+
 var accessTokenExpiry = 300;
 var methodType, authorisationType, URL;
 
@@ -19,6 +21,7 @@ export async function callEndpoint(methodType, authorisationType, URL, data) {
             Authorization: "Bearer " + getCookie("accessToken"),
             appplatform: "WEBSITE",
             appversion: "1.0.0",
+            "User-Agent": `${browserName} ${browserVersion}`,
           },
           data: data,
         })
