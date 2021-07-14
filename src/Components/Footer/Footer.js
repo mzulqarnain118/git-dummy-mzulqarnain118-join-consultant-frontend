@@ -70,8 +70,7 @@ class Footer extends React.Component {
         this.props.setUserData(userData);
         this.props.setrightFooterButtonDisabled(true);
       } else if (this.props.rightFooterButtonName === "DONE") {
-        this.props.moveToNextScreen();
-        this.props.setDisplayFooter(false);
+        this.props.apiCreateConsultant();
       }
     }
   };

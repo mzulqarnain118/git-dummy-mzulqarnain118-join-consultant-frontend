@@ -149,6 +149,25 @@ class Home extends React.Component {
         salestax: 0,
         total: 0,
       },
+      //purchase kit card info
+      cardinfo: {
+        cardnumber: "",
+        expiryMonth: "",
+        expiryYear: "",
+        expiryFullYear: "",
+        cvv: "",
+        nameoncard: "",
+      },
+      //address change
+      addresschange: false,
+      //billing address
+      billingAddress: {
+        city: "",
+        zipcode: 0,
+        state: "",
+        country: "",
+        street: "",
+      },
       //width for mobile view
       width: 0,
       // state variable to (enable/disable) footer
@@ -296,6 +315,7 @@ class Home extends React.Component {
     data["zipcode"] = userData["address"]["zipcode"];
     data["city"] = userData["address"]["city"];
     data["state"] = userData["address"]["state"];
+    data["country"] = "US";
 
     //Change date to required format
     data["dateofbirth"] = moment()
@@ -504,7 +524,52 @@ class Home extends React.Component {
       });
   };
 
+  // api to create a consultant
+  apiCreateConsultant = async () => {
+    this.setState({ load: true });
+    let data = {
+      addresschange: this.state.addresschange,
+      address: this.state.billingAddress,
+      cardinfo: this.state.cardinfo,
+    };
+    console.log(data);
+    await API.callEndpoint(
+      "POST",
+      "Bearer",
+      "/api/v1/users/createConsultant",
+      data
+    )
+      .then((response) => {
+        try {
+          console.log(response);
+          this.setState({
+            load: false,
+            activeStep: this.state.activeStep + 1,
+            displayFooter: false,
+          });
+        } catch (e) {
+          console.log("Error in /createConsultant");
+          console.log(e);
+          this.setState({
+            load: false,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("Error in /createConsultant");
+        console.log(error);
+        this.setState({
+          load: false,
+        });
+      });
+  };
+
   //*********************************************************** API Calls Ends Here*********************************************************/
+
+  //method to set card and address details
+  setCardDetails = (cardinfo, addresschange, billingAddress) => {
+    this.setState({ cardinfo, addresschange, billingAddress });
+  };
 
   // method to (ennable/disable) footer
   setDisplayFooter = (value) => {
@@ -585,6 +650,10 @@ class Home extends React.Component {
             setButtonName={this.setButtonName}
             purchaseKitDetails={this.state.purchaseKitDetails}
             apiCartDetails={this.apiCartDetails}
+            cardinfo={this.state.cardinfo}
+            addresschange={this.state.addresschange}
+            billingAddress={this.state.billingAddress}
+            setCardDetails={this.setCardDetails}
           />
         );
       default:
@@ -871,6 +940,7 @@ class Home extends React.Component {
               apiUpdateScreen={this.apiUpdateScreen}
               currentAgreement={this.state.currentAgreement}
               setCurrentAgreement={this.setCurrentAgreement}
+              apiCreateConsultant={this.apiCreateConsultant}
             />
           </>
         ) : (

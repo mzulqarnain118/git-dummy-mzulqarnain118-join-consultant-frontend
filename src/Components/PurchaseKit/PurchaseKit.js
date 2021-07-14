@@ -38,6 +38,31 @@ class PurchaseKit extends React.Component {
     };
   }
 
+  //send data to home component
+  sendDataToHomeComponent = () => {
+    let cardinfo = this.props.cardinfo;
+    let addresschange = this.props.addresschange;
+    let billingAddress = this.props.billingAddress;
+    let form = this.state.form;
+
+    cardinfo["cardnumber"] = form.cardNumber;
+    cardinfo["expiryMonth"] = form.cardDate.slice(0, 2);
+    cardinfo["expiryYear"] = form.cardDate.slice(3);
+    cardinfo["expiryFullYear"] = "20" + form.cardDate.slice(3);
+    cardinfo["cvv"] = form.cardCVV;
+    cardinfo["nameoncard"] = form.cardHolderName;
+
+    addresschange = this.state.checked;
+
+    billingAddress["city"] = form.city;
+    billingAddress["zipcode"] = form.zipCode;
+    billingAddress["state"] = form.state;
+    billingAddress["country"] = "US";
+    billingAddress["street"] = form.street;
+
+    this.props.setCardDetails(cardinfo, addresschange, billingAddress);
+  };
+
   // enable /disable footer button to move to next screen
   enableDone = (checked = this.state.checked) => {
     let form = this.state.form;
@@ -87,19 +112,46 @@ class PurchaseKit extends React.Component {
     //card number
     if (id === "cardNumber") {
       if (value !== "") {
-        error[id] = "";
+        if (value.length >= 13 && value.length <= 19) {
+          error[id] = "";
+        } else {
+          error[id] = "Enter a valid Card Number";
+        }
       } else {
         error[id] = "Card Number is Mandatory";
       }
+      value = value
+        .split("")
+        .filter((item) => item.match(/[0-9]/i))
+        .join("");
     }
 
     //card date
     if (id === "cardDate") {
       if (value !== "") {
-        error[id] = "";
+        //month validation
+        if (
+          parseInt(value.slice(0, 2)) > 0 &&
+          parseInt(value.slice(0, 2)) < 13
+        ) {
+          //year validation
+          if (value.length === 5) {
+            error[id] = "";
+          } else {
+            error[id] = "Please enter a valid year";
+          }
+        } else {
+          error[id] = "Please enter a valid Month";
+        }
       } else {
         error[id] = "MM/YY is Mandatory";
       }
+      value = maskingMMYY(
+        value
+          .split("")
+          .filter((item) => item.match(/[0-9]/i))
+          .join("")
+      );
     }
 
     //card CVV
@@ -109,6 +161,10 @@ class PurchaseKit extends React.Component {
       } else {
         error[id] = "CVV is Mandatory";
       }
+      value = value
+        .split("")
+        .filter((item) => item.match(/[0-9]/i))
+        .join("");
     }
 
     if (id === "street") {
@@ -126,6 +182,10 @@ class PurchaseKit extends React.Component {
       } else {
         error[id] = "Zip Code is Mandatory";
       }
+      value = value
+        .split("")
+        .filter((item) => item.match(/[0-9]/i))
+        .join("");
     }
 
     //city
@@ -148,6 +208,7 @@ class PurchaseKit extends React.Component {
 
     form[id] = value;
     this.setState({ form, error });
+    this.sendDataToHomeComponent();
     this.enableDone();
   };
 
@@ -206,7 +267,7 @@ class PurchaseKit extends React.Component {
                   </div>
                   <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 mobileTotalValue">
                     <div className="ResultMoney">
-                      ${purchaseKitDetails.total}
+                      ${purchaseKitDetails.total}.00
                     </div>
                   </div>
                   <div className="col-lg-1"></div>
@@ -276,6 +337,7 @@ class PurchaseKit extends React.Component {
                           placeholder="Enter Card Number"
                           autoComplete="off"
                           onChange={this.handleChange}
+                          maxLength="19"
                         />
 
                         {error.cardNumber.length > 0 ? (
@@ -308,6 +370,7 @@ class PurchaseKit extends React.Component {
                         autoComplete="off"
                         placeholder="Enter MM/YY"
                         onChange={this.handleChange}
+                        maxLength="5"
                       />
 
                       {error.cardDate.length > 0 ? (
@@ -321,7 +384,7 @@ class PurchaseKit extends React.Component {
                   <div className="col-lg-2 col-md-4 mobileCVV">
                     {/* CVV of card */}
                     <div className="form-group">
-                      <span className="purchasehead3" htmlFor="cardCVV">
+                      <span className="purchasehead4" htmlFor="cardCVV">
                         CVV
                       </span>
                       <input
@@ -337,10 +400,14 @@ class PurchaseKit extends React.Component {
                         autoComplete="off"
                         placeholder="Enter CVV"
                         onChange={this.handleChange}
+                        maxLength="4"
                       />
 
                       {error.cardCVV.length > 0 ? (
-                        <span className="errorMes">
+                        <span
+                          className="errorMes"
+                          style={{ marginLeft: "48px" }}
+                        >
                           {error.cardCVV}
                           <br />
                         </span>
@@ -421,6 +488,7 @@ class PurchaseKit extends React.Component {
                               placeholder="Enter ZIP Code"
                               autoComplete="off"
                               onChange={this.handleChange}
+                              maxLength="6"
                             />
 
                             {error.zipCode.length > 0 ? (
@@ -509,3 +577,19 @@ class PurchaseKit extends React.Component {
 }
 
 export default PurchaseKit;
+
+// additional function to add "/" to MM/YY
+const maskingMMYY = (value) => {
+  value = value
+    .split("")
+    .filter((item) => item !== "/")
+    .join("");
+
+  if (value.length > 2 && value.length <= 4) {
+    value =
+      value.split("").splice(0, 2).join("") +
+      "/" +
+      value.split("").splice(2, 2).join("");
+  }
+  return value;
+};
