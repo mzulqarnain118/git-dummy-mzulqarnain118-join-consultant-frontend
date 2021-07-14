@@ -99,7 +99,7 @@ class ConfirmDetailsDisplay extends React.Component {
               {/* working with */}
               <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
                 <span className="head3">WORKING WITH</span>
-                <div className="dataText">{userData.working_with}</div>
+                <div className="dataText">{userData.working_with.name}</div>
               </div>
             </div>
           </div>

@@ -7,7 +7,12 @@ import StepLabel from "@material-ui/core/StepLabel";
 import StepConnector from "@material-ui/core/StepConnector";
 import { IoCheckmarkCircleSharp, IoAlertCircle } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
-import { Icon1, Icon2, Icon3, Icon4 } from "../../Assets/PaymentConfirmationSVG";
+import {
+  Icon1,
+  Icon2,
+  Icon3,
+  Icon4,
+} from "../../Assets/PaymentConfirmationSVG";
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "./PaymentConfirmation.css";
@@ -104,7 +109,7 @@ class PaymentConfirmation extends React.Component {
 
   render() {
     //const { userData } = this.state;
-    const { classes } = this.props;
+    const { classes, userData } = this.props;
     const steps = this.getSteps();
     const { activeStep, rippleRef1, rippleRef2, rippleRef3, width } =
       this.state;
@@ -125,15 +130,14 @@ class PaymentConfirmation extends React.Component {
                 </>
               ) : null}
               <div className="paymentConfirmationHead">
-                HEY, AUDREY!
-                {/* {userData.firstname} */}
+                HEY, {userData.first_name}!
               </div>
               <div className="paymentConfirmationSuccess">
                 Enrolment Successful!
               </div>
               <div className=" mobileHead1">
                 <div className="customURLAssigned">
-                  scoutandcellar.com/BetterWinesCorp
+                  scoutandcellar.com/{userData.url}
                 </div>
               </div>
               <div className=" paymentConfirmationHead2">IS NOW RESERVED!</div>
@@ -150,7 +154,7 @@ class PaymentConfirmation extends React.Component {
 
               <div className="pcHead3">Consultant Number</div>
 
-              <div className="pcConsultantNumber">37548742</div>
+              <div className="pcConsultantNumber">{userData.id}</div>
             </div>
           </div>
         </div>
@@ -167,10 +171,11 @@ class PaymentConfirmation extends React.Component {
             activeStep={activeStep}
             style={{
               background: "transparent",
-              width:"70vw",
+              width: "70vw",
               marginTop: "1em",
               marginBottom: "1em",
-              marginLeft: "auto", marginRight: "auto"
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
             orientation={width <= 550 ? "vertical" : "horizontal"}
           >

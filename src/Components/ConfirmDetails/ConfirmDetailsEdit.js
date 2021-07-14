@@ -16,7 +16,10 @@ class ConfirmDetailsEdit extends React.Component {
         first_name: "",
         last_name: "",
         phonenumber: "",
-        working_with: "",
+        working_with: {
+          id: 1,
+          name: "",
+        },
         dob: "",
         address: {
           street: "",
@@ -146,7 +149,7 @@ class ConfirmDetailsEdit extends React.Component {
         errorArr[7] = false;
       }
 
-      form[type] = value;
+      form[type] = { id: 1, name: value };
     }
 
     // email id
@@ -298,7 +301,7 @@ class ConfirmDetailsEdit extends React.Component {
       errorArr[6] = true;
       userData["phonenumber"] = maskingPhoneNumber(userData["phonenumber"]);
     }
-    if (userData["working_with"] === "") {
+    if (userData["working_with"].name === "") {
       errorArr[7] = false;
     } else {
       errorArr[7] = true;
@@ -747,7 +750,7 @@ class ConfirmDetailsEdit extends React.Component {
                   <input
                     type="text"
                     autoComplete="off"
-                    value={userData["working_with"]}
+                    value={userData["working_with"].name}
                     className={
                       error.working_with.length > 0
                         ? "form-control edit-Red"

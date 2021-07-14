@@ -106,7 +106,10 @@ class Home extends React.Component {
         email: "",
         phonenumber: "",
         address: "",
-        working_with: "",
+        working_with: {
+          id: 1,
+          name: "",
+        },
         url: "",
         ssn: "",
         doing_business: "Individual",
@@ -140,8 +143,6 @@ class Home extends React.Component {
       checkURLAvailability: false,
       //current agreement displayed
       currentAgreement: false,
-      // cart id
-      cartId: 0,
       //purchase kit details
       purchaseKitDetails: {
         subtotal: 0,
@@ -440,45 +441,40 @@ class Home extends React.Component {
       });
   };
 
-  //API to verify
+  //API to get cart id
   apiGetCartId = async () => {
     this.setState({ load: true });
-    let cartId = this.state.cartId;
-    if (cartId.length !== 36) {
-      await API.callEndpoint("POST", "Bearer", "/api/v1/users/createCart")
-        .then((response) => {
-          try {
-            cartId = response.data.cartId;
-            this.setState({
-              load: false,
-              cartId,
-            });
-          } catch (e) {
-            console.log("Error in /CreateCart");
-            console.log(e);
-            this.setState({
-              load: false,
-            });
-          }
-        })
-        .catch((error) => {
+    let userData = this.state.userData;
+
+    await API.callEndpoint("POST", "Bearer", "/api/v1/users/createCart")
+      .then((response) => {
+        try {
+          userData["cart_id"] = response.data.cartId;
+          this.setState({
+            load: false,
+            userData,
+          });
+        } catch (e) {
           console.log("Error in /CreateCart");
-          console.log(error);
+          console.log(e);
           this.setState({
             load: false,
           });
+        }
+      })
+      .catch((error) => {
+        console.log("Error in /CreateCart");
+        console.log(error);
+        this.setState({
+          load: false,
         });
-    }
+      });
   };
 
   //API get card details
   apiCartDetails = async () => {
     this.setState({ load: true });
-    let cartId = this.state.cartId;
-    if (cartId.length !== 36) {
-      await this.apiGetCartId();
-      cartId = this.state.cartId;
-    }
+    let cartId = this.state.userData.cart_id;
     this.setState({ load: true });
     let purchaseKitDetails = this.state.purchaseKitDetails;
     let data = {
@@ -527,9 +523,18 @@ class Home extends React.Component {
   // api to create a consultant
   apiCreateConsultant = async () => {
     this.setState({ load: true });
+    let address = this.state.billingAddress;
+    let userData = this.state.userData;
+    if (this.state.addresschange) {
+      address["city"] = userData.address.city;
+      address["zipcode"] = userData.address.zipcode;
+      address["state"] = userData.address.state;
+      address["country"] = "US";
+      address["street"] = userData.address.street;
+    }
     let data = {
       addresschange: this.state.addresschange,
-      address: this.state.billingAddress,
+      address,
       cardinfo: this.state.cardinfo,
     };
     console.log(data);
