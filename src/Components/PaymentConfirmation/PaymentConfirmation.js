@@ -16,7 +16,6 @@ import {
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "./PaymentConfirmation.css";
-import Ripples from "react-ripples";
 
 // styles for material ui
 const styles = (theme) => ({
@@ -176,7 +175,7 @@ class PaymentConfirmation extends React.Component {
                   this.props.moveBackToLastScreen();
                 }}
               >
-                <Ripples>RETRY PAYMENT</Ripples>
+                RETRY PAYMENT
               </div>
             </>
           ) : null}

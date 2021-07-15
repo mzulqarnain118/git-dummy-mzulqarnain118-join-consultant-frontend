@@ -602,8 +602,8 @@ class Home extends React.Component {
           });
         } catch (e) {
           console.log("Error in /forgotpassword");
-          console.log(e.error.error);
-          errorUserData["email"] = e.error;
+          console.log(e);
+          errorUserData["password"] = e.error;
           this.setState({
             load: false,
             rightFooterButtonName: "LOG IN",
@@ -616,7 +616,7 @@ class Home extends React.Component {
       .catch((error) => {
         console.log("Error in /forgotpassword");
         console.log(error);
-        errorUserData["email"] = error.error;
+        errorUserData["password"] = error.error;
         this.setState({
           load: false,
           rightFooterButtonName: "LOG IN",
@@ -784,6 +784,9 @@ class Home extends React.Component {
   moveBackToLastScreen = () => {
     this.setState({
       activeStep: 3,
+      rightFooterButtonName: "DONE",
+      rightFooterButtonDisabled: true,
+      displayFooter: true,
     });
   };
 
@@ -868,7 +871,7 @@ class Home extends React.Component {
         ) : null}
         {/* If active step is less than 4 appropriate step page is dispayed , 
         if active step is 4  - payment confirmation page is displayed */}
-        {this.state.activeStep < 4 ? (
+        {activeStep < 4 ? (
           <>
             <div className="container-fluid">
               <div className="row headerMarginTop">
