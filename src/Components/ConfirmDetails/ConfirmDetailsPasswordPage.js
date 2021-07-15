@@ -1,5 +1,5 @@
 import React from "react";
-import { loadReCaptcha, ReCaptcha } from "react-recaptcha-google";
+import ReCAPTCHA from "react-google-recaptcha";
 import { site_key } from "../../configuration/config";
 import "./ConfirmDetails.css";
 
@@ -31,7 +31,8 @@ class ConfirmDetailsPasswordPage extends React.Component {
       );
       if (regex.test(value)) {
         error = "";
-        this.props.setrightFooterButtonDisabled(false);
+        this.setState({ emailError: error });
+        this.checkAndMoveToLogin(error);
       } else {
         error = "Please enter a valid email address";
         this.props.setrightFooterButtonDisabled(true);
@@ -46,7 +47,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
       let errorUserData = this.props.errorUserData;
       errorUserData["email"] = error;
       this.props.setErrorUserData(errorUserData);
-      this.checkAndMoveToLogin();
+      this.setState({ emailError: error });
     }
   };
 
@@ -83,17 +84,18 @@ class ConfirmDetailsPasswordPage extends React.Component {
     let errorUserData = this.props.errorUserData;
     errorUserData["password"] = "";
     this.props.setErrorUserData(errorUserData);
-    loadReCaptcha();
   };
 
-  verifyCallback = (recaptchaToken) => {
+  onChangeReCaptcha = (recaptchaToken) => {
+    if (recaptchaToken === null) {
+      recaptchaToken = "";
+    }
     this.setState({ recaptchaToken });
-    this.checkAndMoveToLogin();
-    setInterval(this.captcha.reset, 5 * 60 * 1000);
+    this.checkAndMoveToLogin(this.props.errorUserData.email);
   };
 
-  checkAndMoveToLogin = () => {
-    if (this.state.recaptchaToken.length > 0 && this.state.emailError === "") {
+  checkAndMoveToLogin = (errorEmail) => {
+    if (this.state.recaptchaToken.length > 0 && errorEmail === "") {
       this.props.setrightFooterButtonDisabled(false);
     } else {
       this.props.setrightFooterButtonDisabled(true);
@@ -144,7 +146,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
               />
 
               {/* error message incase for incorrect password */}
-              { errorUserData.password && errorUserData.password.length > 0 ? (
+              {errorUserData.password && errorUserData.password.length > 0 ? (
                 <span className="errorMes">
                   {errorUserData.password}
                   <br />
@@ -212,13 +214,10 @@ class ConfirmDetailsPasswordPage extends React.Component {
                         ) : null}
                       </div>
                     </div>
-                    <ReCaptcha
-                      ref={(el) => {
-                        this.captcha = el;
-                      }}
+                    <ReCAPTCHA
+                      className="ReCAPTCHA"
                       sitekey={site_key}
-                      onloadCallback={this.onLoadRecaptcha}
-                      verifyCallback={this.verifyCallback}
+                      onChange={this.onChangeReCaptcha}
                     />
                   </div>
                 </div>

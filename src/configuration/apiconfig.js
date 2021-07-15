@@ -29,26 +29,31 @@ export async function callEndpoint(methodType, authorisationType, URL, data) {
             resolve(response);
           })
           .catch((ex) => {
-            if (ex.response.data.message !== undefined) {
-              if (ex.response.data.message.toLowerCase() === "unauthorized") {
-                getRefreshToken().then((response) => {
-                  callEndpoint(methodType, authorisationType, URL, data)
-                    .then((response) => {
-                      resolve(response);
-                    })
-                    .catch(reject);
-                });
+            try {
+              if (ex.response.data.message !== undefined) {
+                if (ex.response.data.message.toLowerCase() === "unauthorized") {
+                  getRefreshToken().then((response) => {
+                    callEndpoint(methodType, authorisationType, URL, data)
+                      .then((response) => {
+                        resolve(response);
+                      })
+                      .catch(reject);
+                  });
+                } else {
+                  reject({ error: ex.response.data.message });
+                }
               } else {
-                reject({ error: ex.response.data.message });
+                if (ex.toString().includes("Network Error")) {
+                  reject({ error: "Network Error" });
+                } else if (axios.isCancel(ex)) {
+                  reject({ Cancel: "" });
+                } else {
+                  reject({ error: ex.response.data.message });
+                }
               }
-            } else {
-              if (ex.toString().includes("Network Error")) {
-                reject({ error: "Network Error" });
-              } else if (axios.isCancel(ex)) {
-                reject({ Cancel: "" });
-              } else {
-                reject({ error: ex.response.data.message });
-              }
+            } catch (error) {
+              reject({ error: "Network Error" });
+              window.location.href = "/login";
             }
           });
       });
