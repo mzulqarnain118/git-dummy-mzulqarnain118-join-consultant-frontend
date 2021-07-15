@@ -33,6 +33,9 @@ class Footer extends React.Component {
       if (this.props.rightFooterButtonName === "NEXT") {
         //call API to verify email (API CALL IN Home)
         this.props.apiVerifyEmail();
+      } else if (this.props.rightFooterButtonName === "CONTINUE ") {
+        // api call forgot password
+        this.props.apiForgotPassword();
       } else if (this.props.rightFooterButtonName === "LOG IN") {
         //call API to Login (API CALL IN Home)
         this.props.apiLogin();

@@ -1,3 +1,7 @@
+.g-recaptcha {
+  transform: scale(1.33);
+  transform-origin: 0 0;
+}
 .componentMargin1 {
   margin-top: 20px;
 }
@@ -133,6 +137,7 @@
 .dataText {
   font-size: 18px;
   font-family: Domine;
+  overflow-wrap: anywhere !important;
 }
 
 .marginHead {
@@ -263,6 +268,20 @@ select {
   margin-right: 32px;
   padding: 16px;
   padding-right: 32px;
+}
+
+.forgotPassowordContainer {
+  padding: 3em;
+}
+
+input:disabled {
+  cursor: not-allowed;
+}
+
+.forgotpasswordText1 {
+  font-size: 16px;
+  font-family: Domine;
+  margin-top: 10px;
 }
 
 /* @media only screen and (min-width: 768px) {

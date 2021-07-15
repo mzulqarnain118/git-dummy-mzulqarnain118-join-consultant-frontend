@@ -16,6 +16,7 @@ import {
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "./PaymentConfirmation.css";
+import Ripples from "react-ripples";
 
 // styles for material ui
 const styles = (theme) => ({
@@ -53,7 +54,7 @@ const GreenStepConnector = withStyles({
     },
   },
   line: {
-    borderColor: "#4BA380",
+    borderColor: "#EF7070",
     borderTopWidth: 1,
     borderRadius: 1,
   },
@@ -61,9 +62,9 @@ const GreenStepConnector = withStyles({
 
 // stepper icon (complete and incomplete)
 const disabledIcon = (props) => {
-  const { active } = props;
+  const { completed } = props;
 
-  if (!active) {
+  if (completed) {
     return (
       <IoCheckmarkCircleSharp
         style={{ color: "#4BA380", width: "2em", height: "2em" }}
@@ -87,7 +88,7 @@ class PaymentConfirmation extends React.Component {
       // receive propd for user data
       userData: props.userData,
       // active step for stepper (default value 4 since all steps are complete)
-      activeStep: 4,
+      activeStep: props.confirmation ? 4 : 3,
     };
   }
 
@@ -98,7 +99,7 @@ class PaymentConfirmation extends React.Component {
       "Business Details",
       "Verify Identity",
       "Purchase Kit",
-      "DOCUMENTATION",
+      "Documentation",
     ];
   };
 
@@ -109,7 +110,7 @@ class PaymentConfirmation extends React.Component {
 
   render() {
     //const { userData } = this.state;
-    const { classes, userData } = this.props;
+    const { classes, userData, confirmation } = this.props;
     const steps = this.getSteps();
     const { activeStep, rippleRef1, rippleRef2, rippleRef3, width } =
       this.state;
@@ -130,33 +131,55 @@ class PaymentConfirmation extends React.Component {
                 </>
               ) : null}
               <div className="paymentConfirmationHead">
-                HEY, {userData.first_name}!
+                HEY, {userData.first_name.toUpperCase()}!
               </div>
-              <div className="paymentConfirmationSuccess">
-                Enrolment Successful!
-              </div>
-              <div className=" mobileHead1">
-                <div className="customURLAssigned">
-                  scoutandcellar.com/{userData.url}
+              {confirmation ? (
+                <>
+                  <div className="paymentConfirmationSuccess">
+                    Enrolment Successful!
+                  </div>
+                  <div className=" mobileHead1">
+                    <div className="customURLAssigned">
+                      scoutandcellar.com/{userData.url}
+                    </div>
+                  </div>
+                  <div className=" paymentConfirmationHead2">
+                    IS NOW RESERVED!
+                  </div>
+
+                  <hr
+                    style={{
+                      background: "white",
+                      color: "white",
+                      width: "60%",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                  />
+
+                  <div className="pcHead3">Consultant Number</div>
+
+                  <div className="pcConsultantNumber">{userData.id}</div>
+                </>
+              ) : (
+                <div className="paymentConfirmationFaliure">
+                  ENROLMENT FAILURE!
                 </div>
-              </div>
-              <div className=" paymentConfirmationHead2">IS NOW RESERVED!</div>
-
-              <hr
-                style={{
-                  background: "white",
-                  color: "white",
-                  width: "60%",
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                }}
-              />
-
-              <div className="pcHead3">Consultant Number</div>
-
-              <div className="pcConsultantNumber">{userData.id}</div>
+              )}
             </div>
           </div>
+          {!confirmation ? (
+            <>
+              <div
+                className="retryPaymentButton"
+                onClick={() => {
+                  this.props.moveBackToLastScreen();
+                }}
+              >
+                <Ripples>RETRY PAYMENT</Ripples>
+              </div>
+            </>
+          ) : null}
         </div>
         <div className="pcHead4">
           COMPLETE ALL THE STEPS TO FINISH YOUR ENROLLMENT
@@ -194,8 +217,12 @@ class PaymentConfirmation extends React.Component {
                   }}
                 >
                   <StepLabel {...labelProps} StepIconComponent={disabledIcon}>
-                    {label !== "DOCUMENTATION" ? (
-                      <div className="fontOswald1">{label}</div>
+                    {label !== "Documentation" ? (
+                      !confirmation && label === "Purchase Kit" ? (
+                        <div className="fontOswald2">{label}</div>
+                      ) : (
+                        <div className="fontOswald1">{label}</div>
+                      )
                     ) : (
                       <>
                         <div className="fontOswald2">{label}</div>
@@ -208,62 +235,64 @@ class PaymentConfirmation extends React.Component {
           </Stepper>
         </div>
         {/* Footer  */}
-        <div className="pcFooter">
-          <div className="pcFooterHead">LET'S GET GOING</div>
-          <div className="row pcFooterLeftMargin">
-            {/* card 1 */}
-            <div
-              className="col-lg-3  pcFooterCard"
-              onMouseDown={this.onRippleStart1}
-              onMouseUp={this.onRippleStop1}
-            >
-              <TouchRipple ref={rippleRef1} center={false} />
-              <div className="row">
-                <div className="pcFooterMainIcon">
-                  <Icon1 />
+        {confirmation ? (
+          <div className="pcFooter">
+            <div className="pcFooterHead">LET'S GET GOING</div>
+            <div className="row pcFooterLeftMargin">
+              {/* card 1 */}
+              <div
+                className="col-lg-3  pcFooterCard"
+                onMouseDown={this.onRippleStart1}
+                onMouseUp={this.onRippleStop1}
+              >
+                <TouchRipple ref={rippleRef1} center={false} />
+                <div className="row">
+                  <div className="pcFooterMainIcon">
+                    <Icon1 />
+                  </div>
+                  <div className="pcFooterText">
+                    Access your consultant Account
+                  </div>
+                  <IoIosArrowForward className="pcFooterNextIcon" />
                 </div>
-                <div className="pcFooterText">
-                  Access your consultant Account
-                </div>
-                <IoIosArrowForward className="pcFooterNextIcon" />
               </div>
-            </div>
 
-            {/* card 2 */}
-            <div
-              className="col-lg-3 pcFooterCard"
-              onMouseDown={this.onRippleStart2}
-              onMouseUp={this.onRippleStop2}
-            >
-              <TouchRipple ref={rippleRef2} center={false} />
-              <div className="row">
-                <div className="pcFooterMainIcon2">
-                  <Icon2 />
+              {/* card 2 */}
+              <div
+                className="col-lg-3 pcFooterCard"
+                onMouseDown={this.onRippleStart2}
+                onMouseUp={this.onRippleStop2}
+              >
+                <TouchRipple ref={rippleRef2} center={false} />
+                <div className="row">
+                  <div className="pcFooterMainIcon2">
+                    <Icon2 />
+                  </div>
+                  <div className="pcFooterText1">
+                    Download Vine App for Consultant
+                  </div>
+                  <IoIosArrowForward className="pcFooterNextIcon" />
                 </div>
-                <div className="pcFooterText1">
-                  Download Vine App for Consultant
-                </div>
-                <IoIosArrowForward className="pcFooterNextIcon" />
               </div>
-            </div>
 
-            {/* card 3 */}
-            <div
-              className="col-lg-3 pcCardMarginLeft pcFooterCard"
-              onMouseDown={this.onRippleStart3}
-              onMouseUp={this.onRippleStop3}
-            >
-              <TouchRipple ref={rippleRef3} center={false} />
-              <div className="row">
-                <div className="pcFooterMainIcon">
-                  <Icon3 />
+              {/* card 3 */}
+              <div
+                className="col-lg-3 pcCardMarginLeft pcFooterCard"
+                onMouseDown={this.onRippleStart3}
+                onMouseUp={this.onRippleStop3}
+              >
+                <TouchRipple ref={rippleRef3} center={false} />
+                <div className="row">
+                  <div className="pcFooterMainIcon">
+                    <Icon3 />
+                  </div>
+                  <div className="pcFooterText2">Get Started Videos</div>
+                  <IoIosArrowForward className="pcFooterNextIcon" />
                 </div>
-                <div className="pcFooterText2">Get Started Videos</div>
-                <IoIosArrowForward className="pcFooterNextIcon" />
               </div>
             </div>
           </div>
-        </div>
+        ) : null}
       </React.Fragment>
     );
   }

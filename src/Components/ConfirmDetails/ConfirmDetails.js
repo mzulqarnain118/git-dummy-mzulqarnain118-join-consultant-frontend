@@ -103,16 +103,20 @@ class ConfirmDetails extends React.Component {
               </div>
             </div>
           </div>
-        ) : rightFooterButtonName === "LOG IN" ? (
+        ) : rightFooterButtonName === "LOG IN" ||
+          rightFooterButtonName === "CONTINUE " ? (
           // to display the password page of cnfirm details
           <ConfirmDetailsPasswordPage
             userData={userData}
             setUserData={this.props.setUserData}
+            setButtonName={this.props.setButtonName}
             setrightFooterButtonDisabled={
               this.props.setrightFooterButtonDisabled
             }
             errorUserData={errorUserData}
             setErrorUserData={setErrorUserData}
+            displayForgotPassword={this.props.displayForgotPassword}
+            setForgotPassword={this.props.setForgotPassword}
           />
         ) : rightFooterButtonName === "LOOKS GOOD" ? (
           //to display confirm details page

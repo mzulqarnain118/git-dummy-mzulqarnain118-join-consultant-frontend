@@ -175,6 +175,10 @@ class Home extends React.Component {
       displayFooter: true,
       //display loader
       load: false,
+      //display forgot password
+      displayForgotPassword: false,
+      //confirmation screen
+      confirmation: false,
     };
   }
 
@@ -537,7 +541,7 @@ class Home extends React.Component {
       address,
       cardinfo: this.state.cardinfo,
     };
-    console.log(data);
+
     await API.callEndpoint(
       "POST",
       "Bearer",
@@ -546,17 +550,20 @@ class Home extends React.Component {
     )
       .then((response) => {
         try {
-          console.log(response);
           this.setState({
             load: false,
-            activeStep: this.state.activeStep + 1,
+            activeStep: 4,
             displayFooter: false,
+            confirmation: true,
           });
         } catch (e) {
           console.log("Error in /createConsultant");
           console.log(e);
           this.setState({
             load: false,
+            activeStep: 4,
+            displayFooter: false,
+            confirmation: false,
           });
         }
       })
@@ -565,6 +572,57 @@ class Home extends React.Component {
         console.log(error);
         this.setState({
           load: false,
+          activeStep: 4,
+          displayFooter: false,
+          confirmation: false,
+        });
+      });
+  };
+
+  //api for forgot password
+  apiForgotPassword = async () => {
+    this.setState({ load: true });
+    let errorUserData = this.state.errorUserData;
+    let data = {
+      email: this.state.userData.email,
+    };
+    await API.callEndpoint(
+      "POST",
+      "Basic",
+      "/api/v1/users/forgotpassword",
+      data
+    )
+      .then((response) => {
+        try {
+          this.setState({
+            load: false,
+            rightFooterButtonName: "LOG IN",
+            rightFooterButtonDisabled: true,
+            displayForgotPassword: false,
+          });
+        } catch (e) {
+          console.log("Error in /forgotpassword");
+          console.log(e.error.error);
+          errorUserData["email"] = e.error;
+          this.setState({
+            load: false,
+            rightFooterButtonName: "LOG IN",
+            rightFooterButtonDisabled: true,
+            displayForgotPassword: false,
+            errorUserData,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log("Error in /forgotpassword");
+        console.log(error);
+        errorUserData["email"] = error.error;
+        this.setState({
+          load: false,
+          rightFooterButtonName: "LOG IN",
+          rightFooterButtonDisabled: true,
+          displayForgotPassword: false,
+          errorUserData,
         });
       });
   };
@@ -610,6 +668,8 @@ class Home extends React.Component {
             setUserData={this.setUserData}
             setButtonName={this.setButtonName}
             setErrorUserData={this.setErrorUserData}
+            displayForgotPassword={this.state.displayForgotPassword}
+            setForgotPassword={this.setForgotPassword}
           />
         );
       case 1:
@@ -666,7 +726,15 @@ class Home extends React.Component {
         return "Unknown step";
     }
   }
+  //set confirmation
+  setConfirmation = (value) => {
+    this.setState({ confirmation: value });
+  };
 
+  //set display forgot password
+  setForgotPassword = () => {
+    this.setState({ displayForgotPassword: true });
+  };
   //set current agreement
   setCurrentAgreement = () => {
     this.setState({ currentAgreement: !this.state.currentAgreement });
@@ -712,6 +780,13 @@ class Home extends React.Component {
     });
   };
 
+  //move back to last screen
+  moveBackToLastScreen = () => {
+    this.setState({
+      activeStep: 3,
+    });
+  };
+
   // to set width for mobile view
   componentDidMount = () => {
     this.setState({ width: window.innerWidth });
@@ -724,6 +799,14 @@ class Home extends React.Component {
       case "LOG IN":
         this.setState({
           rightFooterButtonName: "NEXT",
+          displayForgotPassword: false,
+          rightFooterButtonDisabled: false,
+        });
+        break;
+      case "CONTINUE ":
+        this.setState({
+          rightFooterButtonName: "NEXT",
+          displayForgotPassword: false,
           rightFooterButtonDisabled: false,
         });
         break;
@@ -946,6 +1029,7 @@ class Home extends React.Component {
               currentAgreement={this.state.currentAgreement}
               setCurrentAgreement={this.setCurrentAgreement}
               apiCreateConsultant={this.apiCreateConsultant}
+              apiForgotPassword={this.apiForgotPassword}
             />
           </>
         ) : (
@@ -954,6 +1038,9 @@ class Home extends React.Component {
             userData={this.state.userData}
             setUserData={this.setUserData}
             setButtonName={this.setButtonName}
+            confirmation={this.state.confirmation}
+            setConfirmation={this.setConfirmation}
+            moveBackToLastScreen={this.moveBackToLastScreen}
           />
         )}
       </React.Fragment>

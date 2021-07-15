@@ -222,6 +222,7 @@ class PurchaseKit extends React.Component {
 
   render() {
     const { form, error, checked, purchaseKitDetails } = this.state;
+    
     return (
       <React.Fragment>
         {/* Header for mobile view  */}
