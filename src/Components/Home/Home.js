@@ -169,8 +169,7 @@ class Home extends React.Component {
         country: "",
         street: "",
       },
-      //width for mobile view
-      width: 0,
+      
       // state variable to (enable/disable) footer
       displayFooter: true,
       //display loader
@@ -790,10 +789,6 @@ class Home extends React.Component {
     });
   };
 
-  // to set width for mobile view
-  componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
-  };
 
   // header Back button
   handleBackButton = () => {
@@ -893,7 +888,7 @@ class Home extends React.Component {
                     activeStep={activeStep}
                     connector={<GreenStepConnector />}
                     orientation={
-                      this.state.width >= 550 ? "horizontal" : "vertical"
+                      window.innerWidth >= 550 ? "horizontal" : "vertical"
                     }
                   >
                     {steps.map((label, index) => {
@@ -933,7 +928,7 @@ class Home extends React.Component {
             <div className="container-fluid HomeContainer" id="">
               <div className="row">
                 <div className="col-xl-10 offset-xl-2 col-lg-11 offset-lg-1">
-                  {this.state.width >= 550 ? (
+                  {window.innerWidth>= 550 ? (
                     <>
                       {/* Stepper */}
 
@@ -966,7 +961,7 @@ class Home extends React.Component {
                               style={{ background: "#e8e0dd" }}
                               className="mobileStep"
                               orientation={
-                                this.state.width >= 550
+                                window.innerWidth>= 550
                                   ? "horizontal"
                                   : "vertical"
                               }

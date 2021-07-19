@@ -13,8 +13,6 @@ class BusinessDetails extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //width for mobile view
-      width: 0,
       //to record custom URL
       customURL: props.userData.url,
       errorCustomURL: "",
@@ -162,7 +160,6 @@ class BusinessDetails extends React.Component {
 
   //load when business details screen is loaded
   componentDidMount = async () => {
-    this.setState({ width: window.innerWidth });
     if (this.props.userData.url !== "") {
       await this.checkURLAvailability();
     }
@@ -177,11 +174,15 @@ class BusinessDetails extends React.Component {
     return (
       <React.Fragment>
         {/* header user in mobile view */}
-        {this.state.width <= 550 ? <Header step={1} agreement={false} /> : null}
+        {window.innerWidth <= 550 ? (
+          <Header step={1} agreement={false} />
+        ) : null}
         <div className="mobileoverFlowBusinessDetails">
           <div
             className={
-              this.state.width >= 550 ? "BDcomponentMargin " : "mobileComponent"
+              window.innerWidth >= 550
+                ? "BDcomponentMargin "
+                : "mobileComponent"
             }
           >
             <span className="BDhead1">SETTING UP YOUR STORE</span>
@@ -264,8 +265,8 @@ class BusinessDetails extends React.Component {
                             <CheckCircleIcon
                               className="availableIcon"
                               style={
-                                this.state.width <= 850
-                                  ? this.state.width <= 550
+                                window.innerWidth <= 850
+                                  ? window.innerWidth <= 550
                                     ? { fontSize: 20 }
                                     : { fontSize: 23 }
                                   : { fontSize: 30 }
@@ -286,8 +287,8 @@ class BusinessDetails extends React.Component {
                             <CancelIcon
                               className="notAvailableIcon"
                               style={
-                                this.state.width <= 850
-                                  ? this.state.width <= 550
+                                window.innerWidth <= 850
+                                  ? window.innerWidth <= 550
                                     ? { fontSize: 20 }
                                     : { fontSize: 23 }
                                   : { fontSize: 30 }
@@ -326,7 +327,7 @@ class BusinessDetails extends React.Component {
                       <AccountCircleOutlinedIcon
                         className="iconBusiness"
                         style={
-                          this.state.width <= 850
+                          window.innerWidth <= 850
                             ? { fontSize: 23 }
                             : { fontSize: 30 }
                         }
@@ -346,7 +347,7 @@ class BusinessDetails extends React.Component {
                       <BusinessCenterOutlinedIcon
                         className="iconBusiness"
                         style={
-                          this.state.width <= 850
+                          window.innerWidth <= 850
                             ? { fontSize: 23 }
                             : { fontSize: 30 }
                         }

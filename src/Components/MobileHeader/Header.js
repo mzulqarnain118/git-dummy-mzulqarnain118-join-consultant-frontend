@@ -34,8 +34,6 @@ class Header extends React.Component {
     this.state = {
       //get current active step from props
       activeStep: props.step,
-      //width for mobile view
-      width: 0,
     };
   }
 

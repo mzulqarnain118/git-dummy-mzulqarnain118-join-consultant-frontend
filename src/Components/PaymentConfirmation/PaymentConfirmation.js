@@ -82,8 +82,6 @@ class PaymentConfirmation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //width for mobile view
-      width: 0,
       // receive propd for user data
       userData: props.userData,
       // active step for stepper (default value 4 since all steps are complete)
@@ -102,26 +100,24 @@ class PaymentConfirmation extends React.Component {
     ];
   };
 
-  // width for mobile view
-  componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
-  };
-
   render() {
     //const { userData } = this.state;
     const { classes, userData, confirmation } = this.props;
     const steps = this.getSteps();
-    const { activeStep, rippleRef1, rippleRef2, rippleRef3, width } =
-      this.state;
+    const { activeStep, rippleRef1, rippleRef2, rippleRef3 } = this.state;
     return (
       <React.Fragment>
         <div style={{ background: "#E8E0DD", overflow: "hidden" }}>
           <div
-            className={width >= 550 ? "PCcomponentMargin " : "mobileComponent"}
+            className={
+              window.innerWidth >= 550
+                ? "PCcomponentMargin "
+                : "mobileComponent"
+            }
           >
             <div style={{ marginLeft: "auto", marginRight: "auto" }}>
               {/* header for mobile view  */}
-              {width <= 550 ? (
+              {window.innerWidth <= 550 ? (
                 <>
                   <ArrowBackIosIcon className="arrowIcon1" />
                   <span className="signOutStyle">
@@ -199,7 +195,7 @@ class PaymentConfirmation extends React.Component {
               marginLeft: "auto",
               marginRight: "auto",
             }}
-            orientation={width <= 550 ? "vertical" : "horizontal"}
+            orientation={window.innerWidth <= 550 ? "vertical" : "horizontal"}
           >
             {steps.map((label, index) => {
               const props = {};

@@ -6,8 +6,6 @@ class ConfirmDetailsEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // width used for mobile view
-      width: 0,
       //fetch user details from from props
       userData: props.userData,
       //used to record error message
@@ -260,9 +258,7 @@ class ConfirmDetailsEdit extends React.Component {
     this.props.setUserData(this.state.userData);
   };
 
-  // set width for mobile view
   componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
     let userData = this.props.userData;
     let errorArr = this.state.errorArr;
     if (userData["first_name"] === "") {
@@ -329,10 +325,12 @@ class ConfirmDetailsEdit extends React.Component {
     return (
       <React.Fragment style={{ overflow: "vissible" }}>
         {/* display header for mobile view */}
-        {this.state.width <= 550 ? <Header step={0} agreement={false} /> : null}
+        {window.innerWidth <= 550 ? (
+          <Header step={0} agreement={false} />
+        ) : null}
         <div
           className={
-            this.state.width >= 550 ? "componentMargin4 " : "mobileComponent"
+            window.innerWidth >= 550 ? "componentMargin4 " : "mobileComponent"
           }
         >
           {/* static text to be displayed */}

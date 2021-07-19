@@ -7,8 +7,6 @@ class PurchaseKit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //width for mobile view
-      width: 0,
       //form details
       form: {
         cardHolderName: "",
@@ -212,9 +210,7 @@ class PurchaseKit extends React.Component {
     this.enableDone();
   };
 
-  //used to update width for mobile view
   componentDidMount = async () => {
-    this.setState({ width: window.innerWidth });
     if (this.props.purchaseKitDetails.total === 0) {
       await this.props.apiCartDetails();
     }
@@ -222,14 +218,16 @@ class PurchaseKit extends React.Component {
 
   render() {
     const { form, error, checked, purchaseKitDetails } = this.state;
-    
+
     return (
       <React.Fragment>
         {/* Header for mobile view  */}
-        {this.state.width <= 550 ? <Header step={3} agreement={false} /> : null}
+        {window.innerWidth <= 550 ? (
+          <Header step={3} agreement={false} />
+        ) : null}
         <div
           className={
-            this.state.width >= 550
+            window.innerWidth >= 550
               ? checked
                 ? "purchaseComponentMargin1"
                 : "purchaseComponentMargin2 "

@@ -12,8 +12,6 @@ class ConfirmDetails extends React.Component {
       form: {
         emailAddress: "",
       },
-      //to adjust view for mobile
-      width: 0,
     };
   }
 
@@ -47,11 +45,6 @@ class ConfirmDetails extends React.Component {
     this.setState({ form: form });
   };
 
-  // set width for mobile view
-  componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
-  };
-
   render() {
     const { form } = this.state;
     const { rightFooterButtonName, userData, errorUserData, setErrorUserData } =
@@ -62,7 +55,7 @@ class ConfirmDetails extends React.Component {
         {rightFooterButtonName === "NEXT" ? (
           <div
             className={
-              this.state.width >= 550 ? "componentMargin1 " : "mobileComponent"
+              window.innerWidth >= 550 ? "componentMargin1 " : "mobileComponent"
             }
           >
             <span className="head1">BECOME A CONSULTANT</span>

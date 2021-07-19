@@ -9,8 +9,6 @@ class ConfirmDetailsPasswordPage extends React.Component {
     this.state = {
       // password for login
       password: "",
-      //width for mobile view
-      width: 0,
       //forgot passowrd
       email: props.userData.email,
       emailError: props.errorUserData.email,
@@ -78,9 +76,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
     this.props.setErrorUserData(errorUserData);
   };
 
-  //width for mobile view
   componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
     let errorUserData = this.props.errorUserData;
     errorUserData["password"] = "";
     this.props.setErrorUserData(errorUserData);
@@ -109,7 +105,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
       <React.Fragment>
         <div
           className={
-            this.state.width >= 550 ? "componentMargin2 " : "mobileComponent"
+            window.innerWidth >= 550 ? "componentMargin2 " : "mobileComponent"
           }
         >
           <span className="head2">Hey, there!</span>

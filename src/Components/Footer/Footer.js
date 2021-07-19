@@ -6,8 +6,6 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //to adjust to mobile width
-      width: 0,
       // to display or hide footer
       displayFooter: props.displayFooter,
     };
@@ -78,11 +76,6 @@ class Footer extends React.Component {
     }
   };
 
-  // to handle width for mobile view
-  componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
-  };
-
   render() {
     return this.state.displayFooter ? (
       <React.Fragment>
@@ -112,7 +105,7 @@ class Footer extends React.Component {
             )}
 
             {!(
-              this.state.width <= 550 &&
+              window.innerWidth <= 550 &&
               this.props.rightFooterButtonName === "LOOKS GOOD"
             ) ? (
               <>

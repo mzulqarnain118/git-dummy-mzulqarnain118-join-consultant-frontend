@@ -9,8 +9,6 @@ class VerifyIdentity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // width for mobile view
-      width: 0,
       //four digit OTP
       otp: {
         otp1: "",
@@ -163,14 +161,12 @@ class VerifyIdentity extends React.Component {
   };
 
   // loads when component is mounted
-  // 1. sets width for mobile view
-  // 2. removes the footer
-  // 3. starts the timer
+  // 1. removes the footer
+  // 2. starts the timer
   componentDidMount = () => {
     //temporary move to agreement screen // should be removed in the future
     this.props.setButtonName("CONTINUE");
     this.props.setrightFooterButtonDisabled(true);
-    //   this.setState({ width: window.innerWidth });
     //   this.props.setDisplayFooter(false);
     //   this.runTimer();
 
@@ -205,12 +201,14 @@ class VerifyIdentity extends React.Component {
         {!this.state.agreementScreen ? (
           <>
             {/* Header displayed in  mobile view */}
-            {this.state.width <= 550 ? (
+            {window.innerWidth <= 550 ? (
               <Header step={2} agreement={false} />
             ) : null}
             <div
               className={
-                this.state.width >= 550 ? "componentMargin " : "mobileComponent"
+                window.innerWidth >= 550
+                  ? "componentMargin "
+                  : "mobileComponent"
               }
             >
               <span className="head1">VERIFY YOUR EMAIL</span>

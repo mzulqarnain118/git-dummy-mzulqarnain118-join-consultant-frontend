@@ -3,28 +3,17 @@ import moment from "moment";
 import Header from "../MobileHeader/Header";
 
 class ConfirmDetailsDisplay extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      //width for the mobile view
-      width: 0,
-    };
-  }
-
-  //update width for mobile view
-  componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
-  };
-
   render() {
     const { userData } = this.props;
     return (
       <React.Fragment>
         {/* header displayed for mobile view */}
-        {this.state.width <= 550 ? <Header step={0} agreement={false} /> : null}
+        {window.innerWidth <= 550 ? (
+          <Header step={0} agreement={false} />
+        ) : null}
         <div
           className={
-            this.state.width >= 550 ? "componentMargin3 " : "mobileComponent"
+            window.innerWidth >= 550 ? "componentMargin3 " : "mobileComponent"
           }
         >
           <span className="head1">
@@ -68,7 +57,7 @@ class ConfirmDetailsDisplay extends React.Component {
                   ).format("MM/DD/YYYY")}
                 </div>
               </div>
-              {this.state.width <= 550 ? (
+              {window.innerWidth <= 550 ? (
                 <div className="col-lg-3 offset-lg-1 col-md-3 offset-md-1 mobileDisplayWidth">
                   <span className="head3">CELL NUMBER1</span>
                   <div className="dataText">
@@ -80,7 +69,7 @@ class ConfirmDetailsDisplay extends React.Component {
 
             {/* cell number */}
             <div className="row marginHead">
-              {this.state.width >= 550 ? (
+              {window.innerWidth >= 550 ? (
                 <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
                   <span className="head3">CELL NUMBER2</span>
                   <div className="dataText">

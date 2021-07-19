@@ -10,8 +10,6 @@ class Agreement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //width for mobile view change
-      width: 0,
       //used to indicate the current policy selected
       currentButton: this.props.currentAgreement,
       //used to record if user accepted the agreement
@@ -162,9 +160,7 @@ class Agreement extends React.Component {
     this.props.setCurrentAgreement(toggle);
   };
 
-  // to get window width for mobile view change
   componentDidMount = () => {
-    this.setState({ width: window.innerWidth });
     this.props.setrightFooterButtonDisabled(true);
   };
 
@@ -173,10 +169,10 @@ class Agreement extends React.Component {
     return (
       <React.Fragment>
         {/* Header for mobile view */}
-        {this.state.width <= 550 ? <Header step={2} agreement={true} /> : null}
+        {window.innerWidth <= 550 ? <Header step={2} agreement={true} /> : null}
         <div
           className={
-            this.state.width >= 550 ? "AGcomponentMargin " : "mobileComponent"
+            window.innerWidth >= 550 ? "AGcomponentMargin " : "mobileComponent"
           }
         >
           <div className="mobileAgreementLeftMargin">
