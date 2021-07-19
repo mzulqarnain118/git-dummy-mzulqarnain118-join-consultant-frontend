@@ -54,7 +54,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
   // handle change to record password and validate
   handleChange = (e) => {
     let type = e.target.id;
-    let value = e.target.value;
+    let value = e.target.value.trim();
     let error = this.props.errorUserData.password;
 
     // password
