@@ -67,15 +67,12 @@ class Header extends React.Component {
               className="mobileHead"
             >
               {steps.map((label, index) => {
-                const props = {};
-                const labelProps = {};
                 if (index < activeStep) {
                   return null;
                 }
                 return (
                   <Step
                     key={label}
-                    {...props}
                     classes={{
                       root: classes.step,
                       completed: classes.completed,
@@ -83,7 +80,6 @@ class Header extends React.Component {
                     }}
                   >
                     <StepLabel
-                      {...labelProps}
                       StepIconProps={{
                         classes: {
                           root: classes.step,

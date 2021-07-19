@@ -126,7 +126,7 @@ class Footer extends React.Component {
                       ? "col-lg-2 col-md-4  textButton mobileSaveMargin"
                       : // : "col-lg-4 col-md-4 textButton "
                         // : "col-lg-8 col-md-8 textButton "
-                        "col-lg-4 col-md-4 col-sm-7 col-7 textButton "
+                        "col-lg-4 col-md-4 col-sm-7  textButton "
                   }
                 >
                   <Ripples>

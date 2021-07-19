@@ -56,6 +56,14 @@ const styles = (theme) => ({
     },
   },
 
+  step2: {
+    "& $active": {
+      color: "#241F20",
+      border: "0px solid #241F20",
+      borderRadius: "0%",
+    },
+  },
+
   alternativeLabel: {},
   active: {},
   completed: {},
@@ -85,6 +93,23 @@ const GreenStepConnector = withStyles({
     borderRadius: 1,
   },
 })(StepConnector);
+
+//mobile stepper connector
+const MobileStepConnector = withStyles({
+  active: {
+    "& $line": {
+      borderColor: "black",
+    },
+  },
+  line: {
+    borderColor: "white",
+    borderTopWidth: 1,
+    borderRadius: 2,
+  },
+})(StepConnector);
+
+
+
 
 class Home extends React.Component {
   constructor() {
@@ -169,7 +194,7 @@ class Home extends React.Component {
         country: "",
         street: "",
       },
-      
+
       // state variable to (enable/disable) footer
       displayFooter: true,
       //display loader
@@ -643,6 +668,11 @@ class Home extends React.Component {
     this.setState({ checkURLAvailability: value });
   };
 
+  //stepper
+  getMobileSteps = () => {
+    return ["Your Details", "Business Details", "Review Terms", "Purchase Kit"];
+  };
+
   //stepper title content
   getSteps = () => {
     return [
@@ -789,7 +819,6 @@ class Home extends React.Component {
     });
   };
 
-
   // header Back button
   handleBackButton = () => {
     let rightButton = this.state.rightFooterButtonName;
@@ -857,6 +886,7 @@ class Home extends React.Component {
   render() {
     const { classes } = this.props;
     const steps = this.getSteps();
+    const mobileStep = this.getMobileSteps();
     const { activeStep, load } = this.state;
 
     return (
@@ -892,12 +922,9 @@ class Home extends React.Component {
                     }
                   >
                     {steps.map((label, index) => {
-                      const props = {};
-                      const labelProps = {};
                       return (
                         <Step
                           key={label}
-                          {...props}
                           classes={{
                             root: classes.step1,
                             completed: classes.completed,
@@ -905,7 +932,6 @@ class Home extends React.Component {
                           }}
                         >
                           <StepLabel
-                            {...labelProps}
                             StepIconProps={{
                               classes: {
                                 root: classes.step,
@@ -925,10 +951,10 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <div className="container-fluid HomeContainer" id="">
+            <div className="container-fluid HomeContainer">
               <div className="row">
                 <div className="col-xl-10 offset-xl-2 col-lg-11 offset-lg-1">
-                  {window.innerWidth>= 550 ? (
+                  {window.innerWidth >= 550 ? (
                     <>
                       {/* Stepper */}
 
@@ -952,35 +978,31 @@ class Home extends React.Component {
                         <div className="btm-list-blk">
                           <div className="btm-list-inner">
                             <div className="mobileStepHead">
-                              {" "}
                               WHAT HAPPENS NEXT ?
                             </div>
                             {/* stepper for mobile view  */}
                             <Stepper
-                              activeStep={activeStep}
+                              connector={<MobileStepConnector />}
+                              activeStep={0}
                               style={{ background: "#e8e0dd" }}
                               className="mobileStep"
                               orientation={
-                                window.innerWidth>= 550
+                                window.innerWidth >= 550
                                   ? "horizontal"
                                   : "vertical"
                               }
                             >
-                              {steps.map((label, index) => {
-                                const props = {};
-                                const labelProps = {};
+                              {mobileStep.map((label, index) => {
                                 return (
                                   <Step
                                     key={label}
-                                    {...props}
                                     classes={{
-                                      //root: classes.step,
+                                      root: classes.step2,
                                       completed: classes.completed,
                                       active: classes.active,
                                     }}
                                   >
                                     <StepLabel
-                                      {...labelProps}
                                       StepIconProps={{
                                         classes: {
                                           root: classes.step,
@@ -991,7 +1013,7 @@ class Home extends React.Component {
                                         },
                                       }}
                                     >
-                                      <span className="fontOswald">
+                                      <span className="fontOswald1">
                                         {label}
                                       </span>
                                     </StepLabel>

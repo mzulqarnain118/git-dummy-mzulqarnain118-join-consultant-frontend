@@ -5,7 +5,7 @@ export let Logo = () => {
       xmlns="http://www.w3.org/2000/svg"
       width="653.037"
       height="204.468"
-      viewBox="0 0 303.037 64.468"
+      viewBox="0 0 233.037 55.468"
     >
       <g
         id="New_Logo"

@@ -66,7 +66,6 @@ class ConfirmDetails extends React.Component {
               {/* input to accept email address */}
               <div className="InputMargin">
                 <input
-                  style={{ width: "40%" }}
                   type="text"
                   value={form["emailAddress"]}
                   className={
