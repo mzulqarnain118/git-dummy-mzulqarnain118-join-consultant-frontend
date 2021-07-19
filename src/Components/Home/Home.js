@@ -108,9 +108,6 @@ const MobileStepConnector = withStyles({
   },
 })(StepConnector);
 
-
-
-
 class Home extends React.Component {
   constructor() {
     super();
@@ -810,10 +807,10 @@ class Home extends React.Component {
   };
 
   //move back to last screen
-  moveBackToLastScreen = () => {
+  moveBackToLastScreen = (activeStep, button) => {
     this.setState({
-      activeStep: 3,
-      rightFooterButtonName: "DONE",
+      activeStep: activeStep,
+      rightFooterButtonName: button,
       rightFooterButtonDisabled: true,
       displayFooter: true,
     });
@@ -887,7 +884,7 @@ class Home extends React.Component {
     const { classes } = this.props;
     const steps = this.getSteps();
     const mobileStep = this.getMobileSteps();
-    const { activeStep, load } = this.state;
+    const { activeStep, load, rightFooterButtonName } = this.state;
 
     return (
       <React.Fragment>
@@ -900,26 +897,34 @@ class Home extends React.Component {
           <>
             <div className="container-fluid">
               <div className="row headerMarginTop">
-                <div className="col-xl-2 col-lg-1 col-md-1 col-1">
-                  <div className="arrowIcon3" onClick={this.handleBackButton}>
-                    <ArrowBackIosIcon />
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-2 col-md-11 col-11">
-                  <div className="LogoIcon">
-                    <a href="https://scoutandcellar.com/">
-                      <Logo />
-                    </a>
-                  </div>
-                </div>
+                {window.innerWidth >= 550 ||
+                rightFooterButtonName === "NEXT" ||
+                rightFooterButtonName === "LOG IN" ||
+                rightFooterButtonName === "CONTINUE " ? (
+                  <>
+                    <div className="col-xl-2 col-lg-1 col-md-1 col-1">
+                      <div
+                        className="arrowIcon3"
+                        onClick={this.handleBackButton}
+                      >
+                        <ArrowBackIosIcon />
+                      </div>
+                    </div>
+                    <div className="col-xl-2 col-lg-2 col-md-11 col-11">
+                      <div className="LogoIcon">
+                        <a href="https://scoutandcellar.com/">
+                          <Logo />
+                        </a>
+                      </div>
+                    </div>
+                  </>
+                ) : null}
                 <div className="col-xl-8 col-lg-9 col-md-12 col-12 stepperMarginTop">
                   {/* stepper */}
                   <Stepper
                     activeStep={activeStep}
                     connector={<GreenStepConnector />}
-                    orientation={
-                      window.innerWidth >= 550 ? "horizontal" : "vertical"
-                    }
+                    orientation={"horizontal"}
                   >
                     {steps.map((label, index) => {
                       return (

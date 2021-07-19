@@ -1,6 +1,9 @@
 .PCcomponentMargin {
   margin-top: 4em;
 }
+.PCmobileComponent {
+  margin-top: 40px;
+}
 .paymentConfirmationHead {
   font-family: Oswald;
   font-size: 2em;
@@ -35,7 +38,7 @@
   font-family: Oswald;
   font-size: 1.3em;
   text-align: center;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .pcHead3 {
@@ -58,7 +61,7 @@
 }
 .pcHead4 {
   font-family: oswald;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 1.4em;
   margin-top: 1em;
   text-align: center;
@@ -260,7 +263,7 @@
     font-family: Oswald;
     font-size: 1em;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
   }
   .pcHead3 {
     font-family: Domine;
@@ -269,7 +272,7 @@
   }
   .pcHead4 {
     font-family: oswald;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 1.1em;
     margin-top: 1em;
     text-align: left;
@@ -377,4 +380,22 @@
   left: 21.5em;
   margin-top: -1em;
   font-size: 0.8em;
+}
+@media (max-width: 567px) {
+  .retryPaymentButton {
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    background: #241f20;
+    color: white;
+    width: 250px;
+    padding: 0.8em;
+    font-family: Oswald;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-weight: 500;
+  }
 }

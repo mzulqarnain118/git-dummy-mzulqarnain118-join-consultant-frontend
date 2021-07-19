@@ -101,7 +101,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
   render() {
     const { password, email, emailError } = this.state;
     const { errorUserData } = this.props;
-    console.log(window.innerWidth);
+   
     return (
       <React.Fragment>
         <div
@@ -175,7 +175,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
           {this.props.displayForgotPassword ? (
             <>
               <div className="row">
-                <div className="col-lg-8 col-md-4 col-sm-4">
+                <div className="col-lg-8 col-md-8 col-sm-5">
                   <div className="forgotPassowordContainer">
                     <span className="head2">FORGOT YOUR PASSWORD?</span>
                     <div className="forgotpasswordText1">

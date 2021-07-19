@@ -49,7 +49,7 @@ class ConfirmDetails extends React.Component {
     const { form } = this.state;
     const { rightFooterButtonName, userData, errorUserData, setErrorUserData } =
       this.props;
-
+    console.log(window.innerWidth);
     return (
       <React.Fragment>
         {rightFooterButtonName === "NEXT" ? (

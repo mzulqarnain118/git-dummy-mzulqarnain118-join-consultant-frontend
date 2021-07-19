@@ -105,6 +105,7 @@ class PaymentConfirmation extends React.Component {
     const { classes, userData, confirmation } = this.props;
     const steps = this.getSteps();
     const { activeStep, rippleRef1, rippleRef2, rippleRef3 } = this.state;
+    console.log(window.innerWidth);
     return (
       <React.Fragment>
         <div style={{ background: "#E8E0DD", overflow: "hidden" }}>
@@ -112,15 +113,25 @@ class PaymentConfirmation extends React.Component {
             className={
               window.innerWidth >= 550
                 ? "PCcomponentMargin "
-                : "mobileComponent"
+                : "PCmobileComponent"
             }
           >
             <div style={{ marginLeft: "auto", marginRight: "auto" }}>
               {/* header for mobile view  */}
               {window.innerWidth <= 550 ? (
                 <>
-                  <ArrowBackIosIcon className="arrowIcon1" />
-                  <span className="signOutStyle">
+                  <ArrowBackIosIcon
+                    className="arrowIcon1"
+                    onClick={() => {
+                      this.props.moveBackToLastScreen(3, "DONE");
+                    }}
+                  />
+                  <span
+                    className="signOutStyle"
+                    onClick={() => {
+                      this.props.moveBackToLastScreen(0, "NEXT");
+                    }}
+                  >
                     SIGNOUT <Icon4 />
                   </span>
                 </>
@@ -131,7 +142,7 @@ class PaymentConfirmation extends React.Component {
               {confirmation ? (
                 <>
                   <div className="paymentConfirmationSuccess">
-                    Enrolment Successful!
+                    ENROLMENT SUCCESSFUL!
                   </div>
                   <div className=" mobileHead1">
                     <div className="customURLAssigned">
@@ -168,7 +179,7 @@ class PaymentConfirmation extends React.Component {
               <div
                 className="retryPaymentButton"
                 onClick={() => {
-                  this.props.moveBackToLastScreen();
+                  this.props.moveBackToLastScreen(3, "DONE");
                 }}
               >
                 RETRY PAYMENT
@@ -181,7 +192,7 @@ class PaymentConfirmation extends React.Component {
         </div>
         <div
           className=" stepperMdMarginLeft"
-          style={{ marginLeft: "auto", marginRight: "auto" }}
+         
         >
           {/* Stepper */}
           <Stepper
@@ -195,7 +206,7 @@ class PaymentConfirmation extends React.Component {
               marginLeft: "auto",
               marginRight: "auto",
             }}
-            orientation={window.innerWidth <= 550 ? "vertical" : "horizontal"}
+            orientation={window.innerWidth <= 768 ? "vertical" : "horizontal"}
           >
             {steps.map((label, index) => {
               const props = {};
@@ -219,9 +230,9 @@ class PaymentConfirmation extends React.Component {
                         <div className="fontOswald1">{label}</div>
                       )
                     ) : (
-                      <>
+                      
                         <div className="fontOswald2">{label}</div>
-                      </>
+                      
                     )}
                   </StepLabel>
                 </Step>
