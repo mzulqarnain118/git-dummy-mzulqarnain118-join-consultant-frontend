@@ -120,7 +120,7 @@
   .btm-list-blk .btm-list-inner {
     padding-left: 30px;
   }
-  .btm-list-blk .btm-list-inner{
+  .btm-list-blk .btm-list-inner {
     font-family: oswald;
     font-weight: bold;
   }
@@ -137,5 +137,11 @@
     font-family: oswald;
     font-size: 22px;
     font-weight: 400;
+  }
+  .loader {
+    z-index: 1;
+    position: absolute;
+    bottom: 50%;
+    right: 40%;
   }
 }

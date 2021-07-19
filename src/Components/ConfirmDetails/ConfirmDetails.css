@@ -271,7 +271,8 @@ select {
 }
 
 .forgotPassowordContainer {
-  padding: 3em;
+  padding-top: 3em;
+  margin-bottom: 4em;
 }
 
 input:disabled {
@@ -409,6 +410,7 @@ input:disabled {
 
   .errorMes {
     margin-left: 0px !important;
+    width: 320px !important;
   }
 }
 
@@ -460,13 +462,31 @@ input:disabled {
 }
 @media (max-width: 567px) {
 }
-
 @media (max-width: 479px) {
   .Input {
     width: 96% !important;
   }
   .head1,
   .head2 {
-    font-size: 25px;
+    font-size: 23px;
+  }
+}
+@media (max-width: 414px) {
+  .ReCAPTCHA {
+    transform: scale(1.62);
+    transform-origin: 0 0;
+  }
+}
+
+@media (max-width: 375px) {
+  .ReCAPTCHA {
+    transform: scale(1.45);
+    transform-origin: 0 0;
+  }
+}
+@media (max-width: 360px) {
+  .ReCAPTCHA {
+    transform: scale(1.39);
+    transform-origin: 0 0;
   }
 }
