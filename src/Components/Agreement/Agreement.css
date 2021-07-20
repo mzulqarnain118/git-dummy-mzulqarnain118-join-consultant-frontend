@@ -124,6 +124,15 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 768px) {
+  .AGcomponentMargin {
+    margin-top: 3em;
+    margin-left: 2.5em;
+  }
+  .AGhead1 {
+    font-size: 35px;
+    font-weight: "bold";
+    font-family: oswald;
+  }
   .componentMargin {
     margin-top: 4em;
     margin-left: 1em;
@@ -193,10 +202,12 @@
     font-family: oswald;
     text-align: center;
     margin-top: 1em;
-    width: 58.5vh;
+    width: 650px;
     padding-top: 1em;
     padding-bottom: 1em;
     color: #6e7071;
+    border: 1px solid #5d6163;
+    font-size: 14px;
   }
 
   .agreementPolicy {
@@ -204,12 +215,12 @@
     border-color: #d8c5a6;
     border-style: solid;
     background: white;
-    width: 58.5vh;
-    height: 56vw;
+    width: 650px;
+    height: 137vw;
     margin-top: 1em;
-    overflow-y: visible;
+    overflow-y: scroll;
     font-family: Domine;
-    padding: 2em;
+    padding: 1em;
   }
   .agreementTitle {
     font-size: 1.5em;
@@ -288,18 +299,6 @@
   }
   .agreementButtonNotActive2:hover {
     cursor: pointer;
-  }
-
-  .downloadButton {
-    cursor: pointer;
-    background: #e8e0dd;
-    font-family: oswald;
-    text-align: center;
-    margin-top: 1em;
-    width: 46vh;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    color: #6e7071;
   }
 
   .agreementPolicy {

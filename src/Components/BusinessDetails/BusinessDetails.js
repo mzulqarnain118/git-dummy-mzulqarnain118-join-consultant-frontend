@@ -212,7 +212,7 @@ class BusinessDetails extends React.Component {
                 </div>
               </div>
               {/* Input to custom URL */}
-              <div className="col-lg-3 offset-lg-1 col-md-3 col-xs-3">
+              <div className="col-lg-3 offset-lg-1 col-md-7 col-xs-3">
                 <div className="row">
                   <input
                     type="text"
@@ -234,7 +234,7 @@ class BusinessDetails extends React.Component {
                     }}
                   />
                   {errorCustomURL.length > 0 ? (
-                    <div className="errorMes" style={{ marginLeft: "-5vw" }}>
+                    <div className="BDerrorMes" >
                       {errorCustomURL}
                       <br />
                     </div>
@@ -295,7 +295,7 @@ class BusinessDetails extends React.Component {
                             />
                           </div>
                           <div className="col-lg-11 col-md-11 mobileAvailabilitySubText">
-                            <div className="availableText">
+                            <div className="availableText ipad-not-available-text">
                               This name is Not Available
                             </div>
                           </div>

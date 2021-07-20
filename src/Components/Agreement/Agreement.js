@@ -166,7 +166,6 @@ class Agreement extends React.Component {
 
   render() {
     const { currentButton, checkbox1, checkbox2, scrollReachEnd } = this.state;
-    console.log(window.innerWidth)
     return (
       <React.Fragment>
         {/* Header for mobile view */}
