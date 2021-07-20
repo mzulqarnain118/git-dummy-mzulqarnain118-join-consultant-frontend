@@ -166,6 +166,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 errorUserData["password"] = "";
                 this.props.setErrorUserData(errorUserData);
                 this.props.setButtonName("CONTINUE ");
+                this.props.setrightFooterButtonDisabled(true);
               }}
             >
               LET'S FIND IT

@@ -13,7 +13,6 @@
   font-size: 27px;
   font-weight: 500;
   font-family: oswald;
-  
 }
 .textButton:hover {
   cursor: pointer;
@@ -73,27 +72,24 @@
     position: fixed;
     width: 1570px;
     bottom: 0px;
-    height: auto;
+    height: 50px;
   }
   .textButton {
     color: white;
     font-size: 27px;
     font-weight: 500;
     font-family: oswald;
+    margin-top: -8px !important;
   }
   .textButton:hover {
     cursor: pointer;
   }
-  /* .textButtonDisabled {
-    color: #707070;
-    margin: 1%;
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 3px;
-    margin-bottom: 3%;
+  .textButtonDisabled {
+    margin-top: -8px !important;
+    font-size: 27px;
+    font-weight: 500;
     font-family: oswald;
-    margin-left: 655px;
-  } */
+  }
   .textButtonDisabled:hover {
     cursor: not-allowed;
   }
@@ -134,12 +130,16 @@
   .mobileLeftMargin {
     margin-left: 138px;
   }
-
 }
 @media (max-width: 639px) {
-.textButton, .leftTextButton, .textButtonDisabled{font-size: 22px;}  
+  .textButton,
+  .leftTextButton,
+  .textButtonDisabled {
+    font-size: 22px;
+  }
 }
 @media (max-width: 567px) {
-.blackBar{width: 100%;}
+  .blackBar {
+    width: 100%;
+  }
 }
-
