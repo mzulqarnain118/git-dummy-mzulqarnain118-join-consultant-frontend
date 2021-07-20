@@ -75,11 +75,11 @@
     height: 50px;
   }
   .textButton {
+    margin-top: -15px !important;
     color: white;
     font-size: 27px;
     font-weight: 500;
     font-family: oswald;
-    margin-top: -8px !important;
   }
   .textButton:hover {
     cursor: pointer;

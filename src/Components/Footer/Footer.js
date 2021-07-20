@@ -117,16 +117,8 @@ class Footer extends React.Component {
                 <div
                   className={
                     this.props.rightFooterButtonDisabled
-                      ? this.props.rightFooterButtonName === "SAVE AND PROCEED"
-                        ? "col-lg-2 col-md-4 textButtonDisabled mobileSaveMargin"
-                        : // : "col-lg-4 col-md-4 textButtonDisabled "
-                          // : "col-lg-8 col-md-8 textButtonDisabled "
-                          "col-lg-4 col-md-4 col-sm-7 textButtonDisabled "
-                      : this.props.rightFooterButtonName === "SAVE AND PROCEED"
-                      ? "col-lg-2 col-md-4  textButton mobileSaveMargin"
-                      : // : "col-lg-4 col-md-4 textButton "
-                        // : "col-lg-8 col-md-8 textButton "
-                        "col-lg-4 col-md-4 col-sm-7  textButton "
+                      ? "col-lg-4 col-md-4 col-sm-7 textButtonDisabled "
+                      : "col-lg-4 col-md-4 col-sm-7  textButton "
                   }
                 >
                   <Ripples>
