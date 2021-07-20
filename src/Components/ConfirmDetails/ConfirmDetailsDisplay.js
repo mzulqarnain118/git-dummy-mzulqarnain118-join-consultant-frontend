@@ -61,26 +61,17 @@ class ConfirmDetailsDisplay extends React.Component {
                   ).format("MM/DD/YYYY")}
                 </div>
               </div>
-              {window.innerWidth <= 550 ? (
-                <div className="col-lg-3 offset-lg-1 col-md-3 offset-md-1 mobileDisplayWidth">
-                  <span className="head3">CELL NUMBER1</span>
-                  <div className="dataText">
-                    {maskingPhoneNumber(userData.phonenumber)}
-                  </div>
-                </div>
-              ) : null}
             </div>
 
             {/* cell number */}
             <div className="row marginHead">
-              {window.innerWidth >= 550 ? (
-                <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
-                  <span className="head3">CELL NUMBER2</span>
-                  <div className="dataText">
-                    {maskingPhoneNumber(userData.phonenumber)}
-                  </div>
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
+                <span className="head3">CELL NUMBER</span>
+                <div className="dataText">
+                  {maskingPhoneNumber(userData.phonenumber)}
                 </div>
-              ) : null}
+              </div>
+
               {/* address */}
               <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth">
                 <span className="head3">SHIPPING ADDRESS</span>
