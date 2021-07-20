@@ -1,6 +1,9 @@
 .BDcomponentMargin {
   margin-top: 32px;
 }
+.BDmobileComponent{
+  margin-left: 10px;
+}
 .BDhead1 {
   font-size: 30px;
   font-weight: "bold";
@@ -258,6 +261,7 @@ input::-webkit-input-placeholder {
   width: 60px;
   height: 60px;
   margin-top: 0;
+  margin-left: 5px;
 }
 .searchButton:hover {
   cursor: pointer;
@@ -458,6 +462,7 @@ input::-webkit-input-placeholder {
     padding: 24px;
     font-size: 16px;
     width: 512px;
+    font-family: Domine !important;
   }
 
   .errorMesSubtext {
@@ -470,11 +475,21 @@ input::-webkit-input-placeholder {
   }
 }
 @media only screen and (max-width: 550px) {
+
+  .searchButton {
+    background: #dcba80;
+    text-align: center;
+    border: 0px solid #dcba80;
+    width: 60px;
+    height: 56px;
+    margin-top: 16px;
+    margin-left: 5px;
+  }
   .customURL {
     border-width: 1px;
     border-color: #d8c5a6;
     border-radius: 0;
-    width: 336px !important;
+    width: 266px !important;
     height: 56px !important;
     margin-bottom: 8px;
     margin-top: 16px;
@@ -518,7 +533,7 @@ input::-webkit-input-placeholder {
     color: #4ba380;
   }
   .notAvailableIcon {
-    margin-top: 0;
+    margin-top: 74px;
     color: rgb(236, 85, 85);
   }
 
@@ -534,7 +549,7 @@ input::-webkit-input-placeholder {
     font-size: 28px;
     font-weight: 400;
     font-family: oswald;
-    margin-top: 8px;
+    margin-top: -30px;
   }
 
   .errorMes {
@@ -610,7 +625,7 @@ input::-webkit-input-placeholder {
     border-width: 1px;
     border-color: #d8c5a6;
     border-radius: 0;
-    width: 336px !important;
+    width: 316px !important;
     height: 56px !important;
     margin-bottom: 8px;
     margin-top: 24px;
@@ -626,7 +641,7 @@ input::-webkit-input-placeholder {
     border-width: 1px;
     border-color: red !important;
     border-radius: 1 !important;
-    width: 336px !important;
+    width: 316px !important;
     height: 56px !important;
     margin-bottom: 8px;
     margin-top: 24px;
@@ -652,8 +667,10 @@ input::-webkit-input-placeholder {
     margin-top: 16px;
     margin-left: 12px;
     padding: 24px;
-    font-size: 16px;
-    width: 304px !important;
+    font-size: 13px;
+    width: 316px !important;
+    font-family: Domine !important;
+    margin-bottom: 4em;
   }
 
   .errorMesSubtext {
@@ -702,5 +719,17 @@ input::-webkit-input-placeholder {
   }
   .mobileoverFlowBusinessDetails {
     overflow: hidden;
+  }
+  .businessButtonNotActive1 {
+    background: #f7f3f2;
+    color: #707070;
+    border-width: 2px;
+    border-color: #d8c5a6;
+    border-style: solid;
+    padding-top: 8px;
+    padding-bottom: 6px;
+  }
+  .businessButtonNotActive1:hover {
+    cursor: pointer;
   }
 }

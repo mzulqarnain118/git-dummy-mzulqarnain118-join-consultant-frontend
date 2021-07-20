@@ -186,7 +186,7 @@ class BusinessDetails extends React.Component {
             className={
               window.innerWidth >= 550
                 ? "BDcomponentMargin "
-                : "mobileComponent"
+                : "BDmobileComponent"
             }
           >
             <span className="BDhead1">SETTING UP YOUR STORE</span>
@@ -212,7 +212,7 @@ class BusinessDetails extends React.Component {
                 </div>
               </div>
               {/* Input to custom URL */}
-              <div className="col-lg-3 offset-lg-1 col-md-3 ">
+              <div className="col-lg-3 offset-lg-1 col-md-3 col-xs-3">
                 <div className="row">
                   <input
                     type="text"
@@ -239,14 +239,9 @@ class BusinessDetails extends React.Component {
                       <br />
                     </div>
                   ) : (
-                    <div className="col-lg-1  col-md-1 ">
-                      <button
-                        className="searchButton"
-                        onClick={this.validateURL}
-                      >
-                        <FiSearch color="white" className="searchIcon" />
-                      </button>
-                    </div>
+                    <button className="searchButton" onClick={this.validateURL}>
+                      <FiSearch color="white" className="searchIcon" />
+                    </button>
                   )}
                 </div>
               </div>

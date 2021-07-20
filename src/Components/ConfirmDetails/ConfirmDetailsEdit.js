@@ -502,7 +502,7 @@ class ConfirmDetailsEdit extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-2 offset-lg-2 col-md-2 col-xs-1 mobileDate">
+                <div className="col-lg-2  col-md-2 col-xs-1 mobileDate">
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select
