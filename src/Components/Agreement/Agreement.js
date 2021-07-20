@@ -169,7 +169,13 @@ class Agreement extends React.Component {
     return (
       <React.Fragment>
         {/* Header for mobile view */}
-        {window.innerWidth <= 550 ? <Header step={2} agreement={true} /> : null}
+        {window.innerWidth <= 550 ? (
+          <Header
+            step={2}
+            agreement={true}
+            handleBackButton={this.props.handleBackButton}
+          />
+        ) : null}
         <div
           className={
             window.innerWidth >= 550 ? "AGcomponentMargin " : "mobileComponent"
