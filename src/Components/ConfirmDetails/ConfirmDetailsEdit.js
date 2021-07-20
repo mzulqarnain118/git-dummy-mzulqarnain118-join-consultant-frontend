@@ -5,6 +5,8 @@ import Header from "../MobileHeader/Header";
 class ConfirmDetailsEdit extends React.Component {
   constructor(props) {
     super(props);
+    //set background color
+    document.body.style = "background: #F7F3F2 ";
     this.state = {
       //fetch user details from from props
       userData: props.userData,
@@ -323,10 +325,14 @@ class ConfirmDetailsEdit extends React.Component {
   render() {
     const { userData, error } = this.state;
     return (
-      <React.Fragment style={{ overflow: "vissible" }}>
+      <React.Fragment>
         {/* display header for mobile view */}
         {window.innerWidth <= 550 ? (
-          <Header step={0} agreement={false} />
+          <Header
+            step={0}
+            agreement={false}
+            handleBackButton={this.props.handleBackButton}
+          />
         ) : null}
         <div
           className={
@@ -414,7 +420,7 @@ class ConfirmDetailsEdit extends React.Component {
               <span className="head3">DATE OF BIRTH</span>
 
               <div className="row">
-                <div className="col-lg-1 col-md-2 mobileDate">
+                <div className="col-lg-1 col-md-2 col-xs-1 mobileDate">
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select
@@ -440,7 +446,7 @@ class ConfirmDetailsEdit extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-3 offset-lg-2 col-md-2 mobileDate">
+                <div className="col-lg-3 offset-lg-2 col-md-2 col-xs-1 mobileDate">
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select
@@ -496,7 +502,7 @@ class ConfirmDetailsEdit extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-2 offset-lg-21col-md-2 mobileDate">
+                <div className="col-lg-2 offset-lg-2 col-md-2 col-xs-1 mobileDate">
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select

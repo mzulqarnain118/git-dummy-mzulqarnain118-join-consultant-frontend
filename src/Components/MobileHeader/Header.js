@@ -6,16 +6,25 @@ import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import StepConnector from "@material-ui/core/StepConnector";
 require("typeface-oswald");
 
 const styles = (theme) => ({
   step: {
-    fontColor: "black",
+    fontColor: "grey",
+
+    border: "2px solid white",
+    borderRadius: "50%",
+
     "& $completed": {
-      color: "black",
+      color: "#4BA380",
+      border: "0px solid white",
+      borderRadius: "0%",
     },
     "& $active": {
-      color: "black",
+      color: "#DCBA80",
+      border: "0px solid white",
+      borderRadius: "0%",
     },
   },
 
@@ -25,12 +34,34 @@ const styles = (theme) => ({
   disabled: {},
 });
 
+//style for stepper connector
+const GreenStepConnector = withStyles({
+  alternativeLabel: {
+    top: 10,
+    left: "calc(-50% + 30px)",
+    right: "calc(50% + 16px)",
+  },
+  active: {
+    "& $line": {
+      borderColor: "black",
+    },
+  },
+  completed: {
+    "& $line": {
+      borderColor: "#4BA380",
+    },
+  },
+  line: {
+    borderColor: "black",
+    borderTopWidth: 1,
+    borderRadius: 1,
+  },
+})(StepConnector);
+
 // this header is displayed only on mobile view
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    //send background color
-    document.body.style = "background: #F7F3F2";
     this.state = {
       //get current active step from props
       activeStep: props.step,
@@ -54,52 +85,59 @@ class Header extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="mobileHead"></div>
-        {/* arrow icon (back button) */}
-        <ArrowBackIosIcon className="arrowIcon" />
-        <div className="mobileStepperOveflow">
-          {!this.props.agreement ? (
-            // stepper
-            <Stepper
-              activeStep={activeStep}
-              style={{ background: "#E8E0DD" }}
-              orientation="horizontal"
-              className="mobileHead"
-            >
-              {steps.map((label, index) => {
-                if (index < activeStep) {
-                  return null;
-                }
-                return (
-                  <Step
-                    key={label}
-                    classes={{
-                      root: classes.step,
-                      completed: classes.completed,
-                      active: classes.active,
-                    }}
-                  >
-                    <StepLabel
-                      StepIconProps={{
-                        classes: {
-                          root: classes.step,
-                          completed: classes.completed,
-                          active: classes.active,
-                          disabled: classes.disabled,
-                          text: classes.textStep,
-                        },
+        <div className="mobileHeaderHeight">
+          {/* arrow icon (back button) */}
+          <ArrowBackIosIcon
+            className="arrowIcon"
+            onClick={this.props.handleBackButton}
+          />
+          <div className="mobileStepperOveflow">
+            {!this.props.agreement ? (
+              // stepper
+              <Stepper
+                connector={<GreenStepConnector />}
+                activeStep={activeStep}
+                style={{ background: "#E8E0DD" }}
+                orientation="horizontal"
+                className="mobileHead"
+              >
+                {steps.map((label, index) => {
+                  if (index < activeStep) {
+                    return null;
+                  }
+                  return (
+                    <Step
+                      key={label}
+                      classes={{
+                        root: classes.step,
+                        completed: classes.completed,
+                        active: classes.active,
                       }}
                     >
-                      <div className="fontOswald1">{label}</div>
-                    </StepLabel>
-                  </Step>
-                );
-              })}
-            </Stepper>
-          ) : (
-            // to be displayed on agreement screen (Mobile view only)
-            <div className="AgreementHeader">Almost there - Sign paperwork</div>
-          )}
+                      <StepLabel
+                        StepIconProps={{
+                          classes: {
+                            root: classes.step,
+                            completed: classes.completed,
+                            active: classes.active,
+                            disabled: classes.disabled,
+                            text: classes.textStep,
+                          },
+                        }}
+                      >
+                        <div className="head-stepper-font">{label}</div>
+                      </StepLabel>
+                    </Step>
+                  );
+                })}
+              </Stepper>
+            ) : (
+              // to be displayed on agreement screen (Mobile view only)
+              <div className="AgreementHeader">
+                Almost there - Sign paperwork
+              </div>
+            )}
+          </div>
         </div>
       </React.Fragment>
     );

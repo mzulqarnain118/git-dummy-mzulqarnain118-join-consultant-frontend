@@ -175,7 +175,11 @@ class BusinessDetails extends React.Component {
       <React.Fragment>
         {/* header user in mobile view */}
         {window.innerWidth <= 550 ? (
-          <Header step={1} agreement={false} />
+          <Header
+            step={1}
+            agreement={false}
+            handleBackButton={this.props.handleBackButton}
+          />
         ) : null}
         <div className="mobileoverFlowBusinessDetails">
           <div

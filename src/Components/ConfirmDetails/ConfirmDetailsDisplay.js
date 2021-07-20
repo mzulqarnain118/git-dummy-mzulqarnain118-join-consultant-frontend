@@ -9,11 +9,15 @@ class ConfirmDetailsDisplay extends React.Component {
       <React.Fragment>
         {/* header displayed for mobile view */}
         {window.innerWidth <= 550 ? (
-          <Header step={0} agreement={false} />
+          <Header
+            step={0}
+            agreement={false}
+            handleBackButton={this.props.handleBackButton}
+          />
         ) : null}
         <div
           className={
-            window.innerWidth >= 550 ? "componentMargin3 " : "mobileComponent"
+            window.innerWidth >= 550 ? "componentMargin3 " : "mobileComponent1"
           }
         >
           <span className="head1">

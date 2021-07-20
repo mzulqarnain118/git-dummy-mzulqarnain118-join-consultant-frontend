@@ -696,6 +696,7 @@ class Home extends React.Component {
             setErrorUserData={this.setErrorUserData}
             displayForgotPassword={this.state.displayForgotPassword}
             setForgotPassword={this.setForgotPassword}
+            handleBackButton={this.handleBackButton}
           />
         );
       case 1:
@@ -712,6 +713,7 @@ class Home extends React.Component {
             setErrorUserData={this.setErrorUserData}
             checkURLAvailability={this.state.checkURLAvailability}
             setCheckURLAvailability={this.setCheckURLAvailability}
+            handleBackButton={this.handleBackButton}
           />
         );
       case 2:
@@ -728,6 +730,7 @@ class Home extends React.Component {
             setErrorUserData={this.setErrorUserData}
             currentAgreement={this.state.currentAgreement}
             setCurrentAgreement={this.setCurrentAgreement}
+            handleBackButton={this.handleBackButton}
           />
         );
       case 3:
@@ -745,6 +748,7 @@ class Home extends React.Component {
             addresschange={this.state.addresschange}
             billingAddress={this.state.billingAddress}
             setCardDetails={this.setCardDetails}
+            handleBackButton={this.handleBackButton}
           />
         );
       default:

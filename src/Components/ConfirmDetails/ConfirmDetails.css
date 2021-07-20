@@ -313,6 +313,11 @@ input:disabled {
   .mobileComponent {
     margin-top: 20px;
   }
+  .mobileComponent1 {
+    margin-top: 20px;
+    margin-bottom: 6em;
+    margin-right: 10px;
+  }
   .Input {
     border-width: 1px;
     border-color: #d8c5a6 !important;
@@ -397,7 +402,7 @@ input:disabled {
     margin-bottom: 128px;
   }
   .mobileDate {
-    width: 410;
+    width: 110px !important;
   }
 
   /* .displayNote {
@@ -411,6 +416,53 @@ input:disabled {
   .errorMes {
     margin-left: 0px !important;
     width: 320px !important;
+  }
+
+  .edit-month {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 90px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+  }
+  .edit-month:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .edit-month-red {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 90px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+  }
+  .edit-month-red :focus {
+    border-color: red !important;
+  }
+  .edit-day {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 80px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-left: 5px;
+  }
+  .edit-day:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .edit-day-red {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 80px !important;
+    height: 56px !important;
+    margin-bottom: 8px;
+    margin-left: 5px;
+  }
+  .edit-day-red :focus {
+    border-color: red !important;
   }
 }
 
@@ -455,13 +507,19 @@ input:disabled {
     margin-top: 50px;
     margin-left: 50px;
   }
+  .componentMargin3,
+  .componentMargin4 {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 6em;
+  }
   .ReCAPTCHA {
     transform: scale(1.76);
     transform-origin: 0 0;
     width: 230px;
     overflow: hidden !important;
   }
-  
 }
 @media (max-width: 639px) {
   .mobileDisplayWidth {
@@ -472,8 +530,7 @@ input:disabled {
     font-size: 16px;
   }
 }
-@media (max-width: 567px) {
-}
+
 @media (max-width: 479px) {
   .Input {
     width: 96% !important;

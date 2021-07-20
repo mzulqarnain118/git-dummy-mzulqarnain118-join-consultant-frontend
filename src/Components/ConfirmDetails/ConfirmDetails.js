@@ -49,7 +49,6 @@ class ConfirmDetails extends React.Component {
     const { form } = this.state;
     const { rightFooterButtonName, userData, errorUserData, setErrorUserData } =
       this.props;
-    console.log(window.innerWidth);
     return (
       <React.Fragment>
         {rightFooterButtonName === "NEXT" ? (
@@ -117,6 +116,7 @@ class ConfirmDetails extends React.Component {
             setrightFooterButtonDisabled={
               this.props.setrightFooterButtonDisabled
             }
+            handleBackButton={this.props.handleBackButton}
           />
         ) : (
           //to display editable version  of confirm details page
@@ -127,6 +127,7 @@ class ConfirmDetails extends React.Component {
             }
             setUserData={this.props.setUserData}
             setButtonName={this.props.setButtonName}
+            handleBackButton={this.props.handleBackButton}
           />
         )}
       </React.Fragment>

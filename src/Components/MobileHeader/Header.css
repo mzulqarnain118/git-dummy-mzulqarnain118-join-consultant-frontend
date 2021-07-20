@@ -1,7 +1,9 @@
-/* .fontOswald1 {
+.head-stepper-font{
   font-family: oswald;
-  font-size: 110%;
+  font-size: 15px;
+  white-space: nowrap;
 }
+/*
 .mobileHead {
   margin-left: -15vw;
   background: #e8e0dd;
@@ -34,17 +36,30 @@
   height: auto;
 }
 
+.mobileHeaderHeight {
+  height: 70px !important;
+  margin-bottom: 2em;
+}
 
-
-.MuiPaper-root{background: transparent !important;}
+.MuiPaper-root {
+  background: transparent !important;
+}
 
 @media (max-width: 1199px) {
-  .LogoIcon svg{width: 265px;height: 100px;}
+  .LogoIcon svg {
+    width: 265px;
+    height: 100px;
+  }
 }
 @media (max-width: 991px) {
-  .LogoIcon svg{width: 100%;height: 70px;}
+  .LogoIcon svg {
+    width: 100%;
+    height: 70px;
+  }
 }
 
 @media (max-width: 480px) {
-  .LogoIcon svg{height: 50px;}
-}  
+  .LogoIcon svg {
+    height: 50px;
+  }
+}

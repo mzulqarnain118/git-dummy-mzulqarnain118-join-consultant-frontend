@@ -223,7 +223,11 @@ class PurchaseKit extends React.Component {
       <React.Fragment>
         {/* Header for mobile view  */}
         {window.innerWidth <= 550 ? (
-          <Header step={3} agreement={false} />
+          <Header
+            step={3}
+            agreement={false}
+            handleBackButton={this.props.handleBackButton}
+          />
         ) : null}
         <div
           className={
