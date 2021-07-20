@@ -1,6 +1,12 @@
 .AGcomponentMargin {
   margin-top: 1em;
 }
+.AGmobileComponent {
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-bottom: 3em;
+  margin-top: -40px;
+}
 .AGhead1 {
   font-size: calc(6px + 2vw);
   font-weight: "bold";
@@ -222,13 +228,14 @@
     background: #dcba80;
     text-align: center;
     padding-top: 0.65em;
-    padding-bottom: 0.5em;
+    padding-bottom: 0.7em;
     padding-left: 1.3em;
     padding-right: 1.3em;
     color: white;
-    font-size: 0.8em;
+    font-size: 0.6em;
     margin-top: 0.5em;
     font-family: Domine;
+    width: 43vw;
   }
   .agreementButton1:hover {
     cursor: pointer;
@@ -237,14 +244,14 @@
   .agreementButton2 {
     background: #dcba80;
     text-align: center;
-    padding-top: 1.3em;
+    padding-top: 1.5em;
     padding-bottom: 1.4em;
     color: white;
-    font-size: 0.8em;
+    font-size: 0.6em;
     margin-top: 0.5em;
     font-family: Domine;
-    margin-left: -1em;
-    width: 14em;
+    margin-left: 5vw;
+    width: 43vw;
   }
 
   .agreementButton2:hover {
@@ -262,7 +269,7 @@
     padding-bottom: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
-    font-size: 0.8em;
+    font-size: 0.6em;
     margin-top: 0.5em;
     font-family: Domine;
   }
@@ -300,7 +307,7 @@
     border-color: #d8c5a6;
     border-style: solid;
     background: white;
-    width: 46vh;
+    width: initial;
     height: 137vw;
     margin-top: 1em;
     overflow-y: scroll;
@@ -319,15 +326,34 @@
     margin-top: -0.2em !important;
   }
   .mobileAgreementButtonWidth {
-    width: 12.8em;
+    width: 170px;
   }
   .mobileAcceptCheckBox {
-    font-size: 0.7em;
+    font-size: 12px;
+    font-family: oswald;
   }
   .agreementData {
     font-size: 0.7em;
   }
   .mobileAgreementLeftMargin {
     margin-left: -1em;
+  }
+  .AGhead1 {
+    font-size: 28px;
+    font-weight: "bold";
+    font-family: oswald;
+  }
+  .downloadButton {
+    cursor: pointer;
+    background: #e8e0dd;
+    font-family: oswald;
+    text-align: center;
+    margin-top: 1em;
+    width: initial;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: #6e7071;
+    border: 1px solid #5d6163;
+    font-size: 14px;
   }
 }

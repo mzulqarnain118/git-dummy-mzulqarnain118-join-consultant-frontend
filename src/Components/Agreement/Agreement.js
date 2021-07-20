@@ -166,6 +166,7 @@ class Agreement extends React.Component {
 
   render() {
     const { currentButton, checkbox1, checkbox2, scrollReachEnd } = this.state;
+    console.log(window.innerWidth)
     return (
       <React.Fragment>
         {/* Header for mobile view */}
@@ -178,7 +179,7 @@ class Agreement extends React.Component {
         ) : null}
         <div
           className={
-            window.innerWidth >= 550 ? "AGcomponentMargin " : "mobileComponent"
+            window.innerWidth >= 550 ? "AGcomponentMargin " : "AGmobileComponent"
           }
         >
           <div className="mobileAgreementLeftMargin">

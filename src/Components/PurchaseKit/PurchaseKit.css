@@ -214,13 +214,44 @@
   .desktopViewMarginLeft {
     margin-left: 0;
   }
+  .purchaseComponentMargin1 {
+    margin-top: 32px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .purchaseComponentMargin2 {
+    overflow: hidden;
+    margin-top: 32px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .totalPanel {
+    background: #e8e0dd;
+    margin-top: 16px;
+    padding: 16px;
+    font-family: Domine;
+    width: 80vw;
+  }
+  .totalResultPanel {
+    background: #241f20;
+    padding: 15px;
+    font-family: Domine;
+    width: 80vw;
+  }
+  .totalSubText {
+    margin-top: 12px;
+    color: #241f20;
+    font-size: 12px;
+    /* width: 65vw; */
+    width: 80vw;
+  }
 }
 @media only screen and (max-width: 550px) {
   .purchaseInput {
     border-width: 1px;
     border-color: #d8c5a6 !important;
     border-radius: 0 !important;
-    width: 336px !important;
+    width: 90vw !important;
     height: 64px !important;
     margin-bottom: 8px;
   }
@@ -231,7 +262,7 @@
     border-width: 1px;
     border-color: red !important;
     border-radius: 0 !important;
-    width: 336px !important;
+    width: 90vw !important;
     height: 64px !important;
     margin-bottom: 8px;
   }
@@ -243,7 +274,7 @@
     border-width: 1px;
     border-color: #d8c5a6 !important;
     border-radius: 0 !important;
-    width: 152px !important;
+    width: 40vw !important;
     height: 64px !important;
     margin-bottom: 8px;
   }
@@ -254,7 +285,7 @@
     border-width: 1px;
     border-color: red !important;
     border-radius: 0 !important;
-    width: 152px !important;
+    width: 40vw !important;
     height: 64px !important;
     margin-bottom: 8px;
   }
@@ -289,17 +320,18 @@
     margin-bottom: 160px;
   }
   .mobileMMYY {
-    width: 168px;
+    width: 32vw;
   }
   .mobileCVV {
-    width: 64px;
+    width: 30vw;
   }
   .mobileTotalTitle {
     width: 88px;
   }
   .mobileTotalValue {
     width: 80px;
-    margin-left: 160px;
+    position: absolute;
+    right: 10%;
     text-align: right;
   }
   .mobileTotalPanel {
@@ -333,5 +365,18 @@
     font-family: oswald;
     margin-top: 32px;
     font-size: 24px;
+  }
+  .totalPanel {
+    background: #e8e0dd;
+    margin-top: 16px;
+    padding: 16px;
+    font-family: Domine;
+    width: 90vw;
+  }
+  .totalResultPanel {
+    background: #241f20;
+    padding: 15px;
+    font-family: Domine;
+    width: 90vw;
   }
 }

@@ -134,7 +134,7 @@ class Header extends React.Component {
             ) : (
               // to be displayed on agreement screen (Mobile view only)
               <div className="AgreementHeader">
-                Almost there - Sign paperwork
+                ALMOST THERE - SIGN PAPERWORK
               </div>
             )}
           </div>

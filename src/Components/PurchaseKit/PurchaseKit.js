@@ -244,12 +244,12 @@ class PurchaseKit extends React.Component {
               {/* total panel to display price details */}
               <div className="totalPanel">
                 <div className="row">
-                  <div className="col-lg-4 offset-lg-1 col-md-4 offset-md-1 mobileTotalTitle">
+                  <div className="col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-xs-1 mobileTotalTitle">
                     <div className="subTotalText">SubTotal</div>
                     <div className="totalText">Shipping</div>
                     <div className="totalText">Sales Tax</div>
                   </div>
-                  <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 mobileTotalValue">
+                  <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
                     <div className="subTotalMoney">
                       ${purchaseKitDetails.subtotal}.00
                     </div>
@@ -265,10 +265,10 @@ class PurchaseKit extends React.Component {
               </div>
               <div className="totalResultPanel">
                 <div className="row">
-                  <div className="col-lg-4 offset-lg-1 col-md-4 offset-md-1 mobileTotalTitle">
+                  <div className="col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-xs-1 mobileTotalTitle">
                     <div className="ResultText">Total</div>
                   </div>
-                  <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 mobileTotalValue">
+                  <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
                     <div className="ResultMoney">
                       ${purchaseKitDetails.total}.00
                     </div>
