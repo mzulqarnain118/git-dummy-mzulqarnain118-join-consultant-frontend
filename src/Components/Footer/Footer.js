@@ -113,7 +113,7 @@ class Footer extends React.Component {
                 {this.props.rightFooterButtonName === "LOOKS GOOD" ? (
                   <div className="col-lg-4 col-md-1 col-sm-1 col-1"></div>
                 ) : null}
-                {this.props.rightFooterButtonName === "LOOKS GOOD" ? "" : null}
+                {/* {this.props.rightFooterButtonName === "LOOKS GOOD" ? "" : null} */}
                 <div
                   className={
                     this.props.rightFooterButtonDisabled
