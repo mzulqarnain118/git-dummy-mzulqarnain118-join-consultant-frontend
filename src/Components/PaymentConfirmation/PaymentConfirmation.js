@@ -66,13 +66,13 @@ const disabledIcon = (props) => {
   if (completed) {
     return (
       <IoCheckmarkCircleSharp
-        style={{ color: "#4BA380", width: "2em", height: "2em" }}
+        style={{ color: "#4BA380", width: "2em", height: "2em",marginLeft:"-3px" }}
       />
     );
   } else {
     return (
       <IoAlertCircle
-        style={{ color: "#EF7070", width: "2em", height: "2em" }}
+        style={{ color: "#EF7070", width: "2em", height: "2em" ,marginLeft:"-3px"}}
       />
     );
   }
@@ -190,10 +190,7 @@ class PaymentConfirmation extends React.Component {
         <div className="pcHead4">
           COMPLETE ALL THE STEPS TO FINISH YOUR ENROLLMENT
         </div>
-        <div
-          className=" stepperMdMarginLeft"
-         
-        >
+        <div className=" stepperMdMarginLeft">
           {/* Stepper */}
           <Stepper
             connector={<GreenStepConnector />}
@@ -209,20 +206,16 @@ class PaymentConfirmation extends React.Component {
             orientation={window.innerWidth <= 768 ? "vertical" : "horizontal"}
           >
             {steps.map((label, index) => {
-              const props = {};
-              const labelProps = {};
-
               return (
                 <Step
                   key={label}
-                  {...props}
                   classes={{
                     root: classes.step,
                     completed: classes.completed,
                     active: classes.active,
                   }}
                 >
-                  <StepLabel {...labelProps} StepIconComponent={disabledIcon}>
+                  <StepLabel StepIconComponent={disabledIcon}>
                     {label !== "Documentation" ? (
                       !confirmation && label === "Purchase Kit" ? (
                         <div className="fontOswald2">{label}</div>
@@ -230,9 +223,7 @@ class PaymentConfirmation extends React.Component {
                         <div className="fontOswald1">{label}</div>
                       )
                     ) : (
-                      
-                        <div className="fontOswald2">{label}</div>
-                      
+                      <div className="fontOswald2">{label}</div>
                     )}
                   </StepLabel>
                 </Step>
