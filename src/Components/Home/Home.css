@@ -30,6 +30,8 @@
 }
 .stepperMarginTop {
   margin-top: 30px;
+  width: 60%;
+  margin-left: 6% !important;
 }
 .Home-step-1 {
   border: 0 solid white;
@@ -77,6 +79,8 @@
   }
   .stepperMarginTop {
     margin-top: 0;
+    width: 100%;
+    margin-left: 0% !important;
   }
   .MuiStepper-root {
     padding: 15px 0 15px 0 !important;
@@ -93,6 +97,11 @@
   .HomeContainer {
     padding-left: 20px;
     overflow: hidden;
+  }
+  .stepperMarginTop {
+    margin-top: 0;
+    width: 100%;
+    margin-left: 0% !important;
   }
 }
 

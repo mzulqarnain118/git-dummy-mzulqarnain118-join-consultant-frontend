@@ -965,10 +965,8 @@ class Home extends React.Component {
                 <div className="col-xl-10 offset-xl-2 col-lg-11 offset-lg-1">
                   {window.innerWidth >= 550 ? (
                     <>
-                      {/* Stepper */}
-
                       {/* to display content based on active step */}
-                      <div>
+                      <div style={{ marginTop: "5em" }}>
                         <Typography className={classes.instructions}>
                           {this.getStepContent(activeStep)}
                         </Typography>
