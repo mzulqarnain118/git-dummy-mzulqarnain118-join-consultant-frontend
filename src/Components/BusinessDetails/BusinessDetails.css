@@ -3,7 +3,7 @@
 }
 .BDmobileComponent {
   margin-left: 10px;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
   margin-top:7em;
 }
 .BDhead1 {
@@ -107,8 +107,8 @@
 .businessButton1 {
   background: #dcba80;
   text-align: center;
-  padding-top: 9px;
-  padding-bottom: 9px;
+  padding-top: 1.2em;
+  padding-bottom: 1.1em;
   padding-left: 4px;
   padding-right: 4px;
   color: white;
@@ -123,8 +123,8 @@
 .businessButton2 {
   background: #dcba80;
   text-align: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 1.1em;
+  padding-bottom: 1em;
   padding-left: 8px;
   padding-right: 8px;
   color: white;
@@ -139,8 +139,8 @@
 }
 
 .iconBusiness {
-  margin-top: -2px;
   margin-right: 5px;
+  margin-top: -5px !important;
 }
 
 .businessButtonNotActive1 {
@@ -149,8 +149,8 @@
   border-width: 2px;
   border-color: #d8c5a6;
   border-style: solid;
-  padding-top: 6px;
-  padding-bottom: 8px;
+  padding-top: 1em;
+  padding-bottom: 0.95em;
 }
 .businessButtonNotActive1:hover {
   cursor: pointer;
@@ -162,6 +162,8 @@
   border-width: 2px;
   border-color: #d8c5a6;
   border-style: solid;
+  padding-top: 1.1em;
+  padding-bottom: 1em;
 }
 .businessButtonNotActive:hover {
   cursor: pointer;
@@ -608,13 +610,13 @@ input::-webkit-input-placeholder {
   .businessButton1 {
     background: #dcba80;
     text-align: center;
-    padding-top: 12px;
+    padding-top: 14px;
     padding-bottom: 12px;
     color: white;
     margin-top: 8px;
     font-family: Domine;
     font-size: 16px;
-    width: 144px;
+    width: 115%;
     height: 50px;
   }
   .businessButton1:hover {
@@ -624,13 +626,13 @@ input::-webkit-input-placeholder {
   .businessButton2 {
     background: #dcba80;
     text-align: center;
-    padding-top: 12px;
+    padding-top: 13px;
     padding-bottom: 12px;
     color: white;
     margin-top: 8px;
     font-family: Domine;
     font-size: 16px;
-    width: 144px;
+    width: 115%;
     height: 50px;
   }
 
@@ -651,8 +653,10 @@ input::-webkit-input-placeholder {
     border-style: solid;
     font-family: Domine;
     font-size: 16px;
-    width: 144px;
+    width: 115%;
     height: 50px;
+    padding-top: 11px;
+    padding-bottom: 12px;
   }
   .businessButtonNotActive:hover {
     cursor: pointer;
@@ -661,7 +665,7 @@ input::-webkit-input-placeholder {
   .ssn {
     font-family: oswald;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 2em;
     font-weight: 400;
   }
 
@@ -669,7 +673,7 @@ input::-webkit-input-placeholder {
     border-width: 1px;
     border-color: #d8c5a6;
     border-radius: 0;
-    width: 316px !important;
+    width: 97% !important;
     height: 56px !important;
     margin-bottom: 8px;
     margin-top: 24px;
@@ -685,7 +689,7 @@ input::-webkit-input-placeholder {
     border-width: 1px;
     border-color: red !important;
     border-radius: 1 !important;
-    width: 316px !important;
+    width: 97% !important;
     height: 56px !important;
     margin-bottom: 8px;
     margin-top: 24px;
@@ -712,7 +716,7 @@ input::-webkit-input-placeholder {
     margin-left: 12px;
     padding: 24px;
     font-size: 13px;
-    width: 316px !important;
+    width: 91% !important;
     font-family: Domine !important;
     margin-bottom: 4em;
   }
@@ -723,7 +727,7 @@ input::-webkit-input-placeholder {
     font-family: Domine;
     width: 1600px !important;
     margin-top: 24px;
-    margin-left: 24px;
+    margin-left: 0px;
   }
 
   .mobileAvailabilityIcon {
@@ -746,7 +750,7 @@ input::-webkit-input-placeholder {
   }
 
   .mobileSsnToggle {
-    width: 176px;
+    width:45%;
     margin-top: 8px;
   }
   .staticText3 {
@@ -770,8 +774,8 @@ input::-webkit-input-placeholder {
     border-width: 2px;
     border-color: #d8c5a6;
     border-style: solid;
-    padding-top: 8px;
-    padding-bottom: 6px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
   .businessButtonNotActive1:hover {
     cursor: pointer;

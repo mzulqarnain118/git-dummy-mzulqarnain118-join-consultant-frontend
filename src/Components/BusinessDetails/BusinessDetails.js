@@ -308,7 +308,7 @@ class BusinessDetails extends React.Component {
             </div>
             {/* if the custom url is valid display the rest of the screen */}
             {this.state.customURLAvailability && checkURLAvailability ? (
-              <>
+              <div style={{marginBottom:"6em"}} >
                 <div className="row">
                   <span className="businessHead">DOING BUSINESS AS AN</span>
                 </div>
@@ -400,7 +400,7 @@ class BusinessDetails extends React.Component {
                     </div>
                   </div>
                 ) : null}
-              </>
+              </div>
             ) : null}
           </div>
         </div>
