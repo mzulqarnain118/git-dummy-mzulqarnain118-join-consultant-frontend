@@ -966,7 +966,7 @@ class Home extends React.Component {
                   {window.innerWidth >= 550 ? (
                     <>
                       {/* to display content based on active step */}
-                      <div style={{ marginTop: "5em" }}>
+                      <div style={{ marginTop: "4em" }}>
                         <Typography className={classes.instructions}>
                           {this.getStepContent(activeStep)}
                         </Typography>
