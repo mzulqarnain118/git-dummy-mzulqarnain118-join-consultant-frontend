@@ -517,9 +517,9 @@ input:disabled {
     margin-bottom: 6em;
   }
   .ReCAPTCHA {
-    transform: scale(1.76);
+    transform: scale(1.33);
     transform-origin: 0 0;
-    width: 244px !important;
+    width: 310px !important;
     overflow: hidden;
   }
 }
@@ -544,24 +544,24 @@ input:disabled {
 }
 @media (max-width: 414px) {
   .ReCAPTCHA {
-    transform: scale(1.5);
+    transform: scale(1.2);
     transform-origin: 0 0;
-     width: 244px !important;
+     width: 304px !important;
   }
 }
 
 @media (max-width: 375px) {
   .ReCAPTCHA {
-    transform: scale(1.36);
+    transform: scale(1.09);
     transform-origin: 0 0;
-    width: 244px !important;
+    width: 304px !important;
   }
 }
 @media (max-width: 360px) {
   .ReCAPTCHA {
-    transform: scale(1.3);
+    transform: scale(1.04);
     transform-origin: 0 0;
-    width: 244px !important;
+    width: 304px !important;
   }
 }
 /* @media (max-width: 1440px) {
