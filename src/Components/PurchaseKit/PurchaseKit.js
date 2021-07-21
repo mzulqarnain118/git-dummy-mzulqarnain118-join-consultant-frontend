@@ -235,7 +235,7 @@ class PurchaseKit extends React.Component {
               ? checked
                 ? "purchaseComponentMargin1"
                 : "purchaseComponentMargin2 "
-              : "mobileComponent"
+              : "PKmobileComponent"
           }
         >
           <span className="head1">PURCHASE KIT</span>

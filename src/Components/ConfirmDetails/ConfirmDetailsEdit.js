@@ -336,7 +336,7 @@ class ConfirmDetailsEdit extends React.Component {
         ) : null}
         <div
           className={
-            window.innerWidth >= 550 ? "componentMargin4 " : "mobileComponent"
+            window.innerWidth >= 550 ? "componentMargin4 " : "CEmobileComponent"
           }
         >
           {/* static text to be displayed */}

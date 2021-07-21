@@ -13,9 +13,6 @@ const styles = (theme) => ({
   step: {
     fontColor: "grey",
 
-    border: "2px solid white",
-    borderRadius: "50%",
-
     "& $completed": {
       color: "#4BA380",
       border: "0px solid white",
@@ -85,7 +82,7 @@ class Header extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="mobileHeaderHeight">
+        <div className={this.props.agreement ?"mobileHeaderHeight1":"mobileHeaderHeight"}>
           {/* arrow icon (back button) */}
           <ArrowBackIosIcon
             className="arrowIcon"

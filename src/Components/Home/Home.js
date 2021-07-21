@@ -841,7 +841,7 @@ class Home extends React.Component {
       case "LOOKS GOOD":
         this.setState({
           rightFooterButtonName: "NEXT",
-          rightFooterButtonDisabled: false,
+          rightFooterButtonDisabled: true,
         });
         break;
 
