@@ -533,6 +533,9 @@ class Home extends React.Component {
           console.log(e);
           this.setState({
             load: false,
+            activeStep: 2,
+            rightFooterButtonName: "CONTINUE",
+            rightFooterButtonDisabled: false,
           });
         }
       })
@@ -541,6 +544,9 @@ class Home extends React.Component {
         console.log(error);
         this.setState({
           load: false,
+          activeStep: 2,
+          rightFooterButtonName: "CONTINUE",
+          rightFooterButtonDisabled: false,
         });
       });
   };

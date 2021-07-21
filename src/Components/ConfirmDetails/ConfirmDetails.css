@@ -314,7 +314,7 @@ input:disabled {
   .mobileComponent {
     margin-top: 20px;
   }
-  .CEmobileComponent{
+  .CEmobileComponent {
     margin-top: 5.5em;
   }
   .mobileComponent1 {
@@ -372,7 +372,7 @@ input:disabled {
     padding-top: 16px;
     padding-left: 16px;
   } */
-  
+
   .marginHead {
     margin-top: 0;
   }
@@ -519,7 +519,6 @@ input:disabled {
     transform: scale(1.76);
     transform-origin: 0 0;
     width: 230px;
-    overflow: hidden !important;
   }
 }
 @media (max-width: 639px) {
@@ -543,20 +542,20 @@ input:disabled {
 }
 @media (max-width: 414px) {
   .ReCAPTCHA {
-    transform: scale(1.62);
+    transform: scale(1.2);
     transform-origin: 0 0;
   }
 }
 
 @media (max-width: 375px) {
   .ReCAPTCHA {
-    transform: scale(1.45);
+    transform: scale(1.1);
     transform-origin: 0 0;
   }
 }
 @media (max-width: 360px) {
   .ReCAPTCHA {
-    transform: scale(1.39);
+    transform: scale(1.05);
     transform-origin: 0 0;
   }
 }
