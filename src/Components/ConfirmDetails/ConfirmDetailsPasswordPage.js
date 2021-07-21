@@ -101,7 +101,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
   render() {
     const { password, email, emailError } = this.state;
     const { errorUserData } = this.props;
-
+   
     return (
       <React.Fragment>
         <div
