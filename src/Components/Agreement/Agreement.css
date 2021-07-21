@@ -38,8 +38,8 @@
   padding-right: 0.5em;
   color: white;
   font-size: 1.2em;
-
   margin-top: 0.5em;
+  margin-right: -0.6em;
   font-family: Domine;
   width: initial;
 }
@@ -158,10 +158,10 @@
     text-align: center;
     padding-top: 1.4em;
     padding-bottom: 1.4em;
-    width: 15.5em;
+    width: 16.2em;
     color: white;
     font-size: 1.1em;
-    margin-left: 0.2em;
+   
     margin-top: 0.5em;
     font-family: Domine;
   }
@@ -238,7 +238,7 @@
   .agreementButton1 {
     background: #dcba80;
     text-align: center;
-    padding-top: 0.65em;
+    padding-top: 0.7em;
     padding-bottom: 0.7em;
     padding-left: 1.3em;
     padding-right: 1.3em;
@@ -246,7 +246,7 @@
     font-size: 0.6em;
     margin-top: 0.5em;
     font-family: Domine;
-    width: 43vw;
+    width: 105%;
   }
   .agreementButton1:hover {
     cursor: pointer;
@@ -261,8 +261,8 @@
     font-size: 0.6em;
     margin-top: 0.5em;
     font-family: Domine;
-    margin-left: 5vw;
-    width: 43vw;
+    margin-left: 0px;
+    width: 105%;
   }
 
   .agreementButton2:hover {
@@ -325,7 +325,7 @@
     margin-top: -0.2em !important;
   }
   .mobileAgreementButtonWidth {
-    width: 170px;
+    width: 49%;
   }
   .mobileAcceptCheckBox {
     font-size: 12px;
