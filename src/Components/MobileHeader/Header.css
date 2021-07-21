@@ -3,16 +3,20 @@
   font-size: 15px;
   white-space: nowrap;
 }
-/*
 .mobileHead {
-  margin-left: -15vw;
-  background: #e8e0dd;
+ 
+}
+.bdmobileHead {
+  margin-left: -40vw;
   width: 117vw;
-  height: 10vh;
-  margin-top: -6vh;
-  overflow: hidden;
   white-space: nowrap;
 }
+.pkmobileHead {
+  margin-left: -70vw;
+  width: 117vw;
+  white-space: nowrap;
+}
+/*
 .LogoIcon svg {
   width: 375px;
   height: auto;
@@ -29,7 +33,7 @@
   font-family: oswald;
   margin-left: 16%;
   margin-top: -25px;
-  width:100% !important;
+  width: 100% !important;
 }
 
 .LogoIcon svg {
@@ -44,7 +48,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  right:0;
+  right: 0;
   padding-top: 20px !important;
   padding-left: 20px !important;
   padding-bottom: 40px !important;
@@ -57,7 +61,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  right:0;
+  right: 0;
   padding-top: 20px !important;
   padding-left: 20px !important;
   padding-bottom: 40px !important;

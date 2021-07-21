@@ -70,7 +70,7 @@ class Header extends React.Component {
     return [
       "CONFIRM DETAILS",
       "BUSINESS DETAILS",
-      "VERIFY IDENTITY",
+      "REVIEW TERMS",
       "PURCHASE KIT",
     ];
   };
@@ -82,7 +82,11 @@ class Header extends React.Component {
 
     return (
       <React.Fragment>
-        <div className={this.props.agreement ?"mobileHeaderHeight1":"mobileHeaderHeight"}>
+        <div
+          className={
+            this.props.agreement ? "mobileHeaderHeight1" : "mobileHeaderHeight"
+          }
+        >
           {/* arrow icon (back button) */}
           <ArrowBackIosIcon
             className="arrowIcon"
@@ -96,12 +100,15 @@ class Header extends React.Component {
                 activeStep={activeStep}
                 style={{ background: "#E8E0DD" }}
                 orientation="horizontal"
-                className="mobileHead"
+                className={
+                  activeStep < 1
+                    ? "mobileHead"
+                    : activeStep === 1
+                    ? "bdmobileHead "
+                    : "pkmobileHead"
+                }
               >
                 {steps.map((label, index) => {
-                  if (index < activeStep) {
-                    return null;
-                  }
                   return (
                     <Step
                       key={label}
