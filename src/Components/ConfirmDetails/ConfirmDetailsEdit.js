@@ -12,13 +12,6 @@ const styles = (theme) => ({
     opacity: "1 !important",
     backgroundColor: "white !important",
   },
-  textField: {
-    borderColor: `white !important`,
-    width: 295,
-    marginLeft: "-2px",
-    height: 57,
-    backgroundColor: "white",
-  },
   listbox: {
     backgroundColor: "white",
     width: 300,
@@ -851,7 +844,6 @@ class ConfirmDetailsEdit extends React.Component {
                     renderInput={(params) => (
                       <TextField
                         {...params}
-                        className={classes.textField}
                         placeholder="Enter working with"
                         variant="outlined"
                       />
