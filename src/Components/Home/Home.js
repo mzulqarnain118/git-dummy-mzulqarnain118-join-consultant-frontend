@@ -17,6 +17,8 @@ import { Logo } from "../../Assets/HeaderSVG";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import * as API from "../../configuration/apiconfig";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import axios from "axios";
+import { algoliaURL } from "../../configuration/config";
 import moment from "moment";
 require("typeface-oswald");
 require("typeface-domine");
@@ -200,6 +202,8 @@ class Home extends React.Component {
       displayForgotPassword: false,
       //confirmation screen
       confirmation: false,
+      //alogoliya hits
+      working_with_arr: [],
     };
   }
 
@@ -654,6 +658,32 @@ class Home extends React.Component {
       });
   };
 
+  //api to get "working with" drop down
+  apiGetWorkingWithDropDownData = async (searchWord) => {
+    let data = {
+      requests: [
+        {
+          indexName: "prod_consultants",
+          params: `query=${searchWord}&page=0&highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&facets=%5B%5D&tagFilters=`,
+        },
+      ],
+    };
+    await axios
+      .post(algoliaURL, data)
+      .then((res) => {
+        try {
+          this.setState({ working_with_arr: res.data.results[0].hits });
+        } catch (e) {
+          console.log(e);
+          this.setState({ working_with_arr: [] });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        this.setState({ working_with_arr: [] });
+      });
+  };
+
   //*********************************************************** API Calls Ends Here*********************************************************/
 
   //method to set card and address details
@@ -703,6 +733,8 @@ class Home extends React.Component {
             displayForgotPassword={this.state.displayForgotPassword}
             setForgotPassword={this.setForgotPassword}
             handleBackButton={this.handleBackButton}
+            apiGetWorkingWithDropDownData={this.apiGetWorkingWithDropDownData}
+            working_with_arr={this.state.working_with_arr}
           />
         );
       case 1:

@@ -128,6 +128,10 @@ class ConfirmDetails extends React.Component {
             setUserData={this.props.setUserData}
             setButtonName={this.props.setButtonName}
             handleBackButton={this.props.handleBackButton}
+            apiGetWorkingWithDropDownData={
+              this.props.apiGetWorkingWithDropDownData
+            }
+            working_with_arr={this.props.working_with_arr}
           />
         )}
       </React.Fragment>

@@ -1,6 +1,51 @@
 import React from "react";
 import moment from "moment";
+import PropTypes from "prop-types";
 import Header from "../MobileHeader/Header";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = (theme) => ({
+  paper: {
+    border: "1px solid #d8c5a6",
+    opacity: "1 !important",
+    backgroundColor: "white !important",
+  },
+  textField: {
+    borderColor: `white !important`,
+    width: 295,
+    marginLeft: "-2px",
+    height: 57,
+    backgroundColor: "white",
+  },
+  listbox: {
+    backgroundColor: "white",
+    width: 300,
+    margin: 0,
+    padding: 0,
+    height: 57,
+    overflow: "hidden",
+    maxHeight: 200,
+    border: "1px solid #d8c5a6",
+  },
+  inputRoot: {
+    // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
+    '&[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-child': {
+      // Default left padding is 6px
+      paddingLeft: 26,
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderColor: "white",
+    },
+    "&:hover .MuiOutlinedInput-notchedOutline": {
+      borderColor: "white",
+    },
+    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderColor: "white",
+    },
+  },
+});
 
 class ConfirmDetailsEdit extends React.Component {
   constructor(props) {
@@ -30,6 +75,8 @@ class ConfirmDetailsEdit extends React.Component {
       },
       // used to validate and enable button to move to next screen
       errorArr: [true, true, true, true, true, true, true, true, true],
+      //working with value
+      value: 0,
     };
   }
 
@@ -148,7 +195,7 @@ class ConfirmDetailsEdit extends React.Component {
         error[type] = "Working With is mandatory";
         errorArr[7] = false;
       }
-
+      this.props.apiGetWorkingWithDropDownData(value);
       form[type] = { id: 1, name: value };
     }
 
@@ -323,7 +370,8 @@ class ConfirmDetailsEdit extends React.Component {
   };
 
   render() {
-    const { userData, error } = this.state;
+    const { userData, error, value } = this.state;
+    const { classes, working_with_arr } = this.props;
     return (
       <React.Fragment>
         {/* display header for mobile view */}
@@ -751,7 +799,7 @@ class ConfirmDetailsEdit extends React.Component {
                   WORKING WITH
                 </span>
                 <div className="edit-InputMargin">
-                  <input
+                  {/* <input
                     type="text"
                     autoComplete="off"
                     value={userData["working_with"].name}
@@ -764,6 +812,50 @@ class ConfirmDetailsEdit extends React.Component {
                     name="working_with"
                     placeholder="Enter working with"
                     onChange={this.handleChange}
+                  /> */}
+                  <Autocomplete
+                    className={
+                      error.working_with.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
+                    value={value}
+                    onChange={(event, newValue) => {
+                      this.setState({ value: newValue });
+                    }}
+                    inputValue={this.state.userData["working_with"].name}
+                    onInputChange={(event, newInputValue) => {
+                      let e = {
+                        target: {
+                          id: "working_with",
+                          value: newInputValue,
+                        },
+                      };
+                      this.handleChange(e);
+                    }}
+                    id="controllable-states-demo"
+                    options={working_with_arr}
+                    getOptionLabel={(option) => {
+                      if (option.DisplayName !== null) {
+                        return option.DisplayName;
+                      } else {
+                        return "";
+                      }
+                    }}
+                    style={{ width: 290 }}
+                    classes={{
+                      paper: classes.paper,
+                      inputRoot: classes.inputRoot,
+                      root: classes.listbox,
+                    }}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        className={classes.textField}
+                        placeholder="Enter working with"
+                        variant="outlined"
+                      />
+                    )}
                   />
                 </div>
               </div>
@@ -781,7 +873,12 @@ class ConfirmDetailsEdit extends React.Component {
   }
 }
 
-export default ConfirmDetailsEdit;
+// to add styles and props type for material UI design used
+ConfirmDetailsEdit.propTypes = {
+  classes: PropTypes.object,
+};
+
+export default withStyles(styles)(ConfirmDetailsEdit);
 
 // additional function to add hypen "-" to the phone number
 const maskingPhoneNumber = (value) => {

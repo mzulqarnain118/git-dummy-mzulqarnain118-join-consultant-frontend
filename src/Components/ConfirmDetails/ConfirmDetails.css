@@ -16,7 +16,7 @@
 }
 .componentMargin4 {
   margin-top: 10px;
-  margin-bottom: 6em;
+  margin-bottom: 30em;
 }
 .componentMargin {
   margin-top: 20px;
@@ -317,6 +317,7 @@ input:disabled {
   }
   .CEmobileComponent {
     margin-top: 5.5em;
+    margin-bottom: 6em;
   }
   .mobileComponent1 {
     margin-top: 5.5em;
@@ -546,7 +547,7 @@ input:disabled {
   .ReCAPTCHA {
     transform: scale(1.2);
     transform-origin: 0 0;
-     width: 304px !important;
+    width: 304px !important;
   }
 }
 
@@ -572,3 +573,7 @@ input:disabled {
     overflow: hidden;
   }
 } */
+
+#controllable-states-demo {
+  margin-left: -21px;
+}
