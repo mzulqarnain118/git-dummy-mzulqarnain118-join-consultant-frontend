@@ -69,7 +69,10 @@ class ConfirmDetailsEdit extends React.Component {
       // used to validate and enable button to move to next screen
       errorArr: [true, true, true, true, true, true, true, true, true],
       //working with value
-      value: 0,
+      value: {
+        id: props.userData["working_with"].id,
+        DisplayName: props.userData["working_with"].name,
+      },
     };
   }
 
@@ -792,20 +795,6 @@ class ConfirmDetailsEdit extends React.Component {
                   WORKING WITH
                 </span>
                 <div className="edit-InputMargin">
-                  {/* <input
-                    type="text"
-                    autoComplete="off"
-                    value={userData["working_with"].name}
-                    className={
-                      error.working_with.length > 0
-                        ? "form-control edit-Red"
-                        : "form-control edit-Input"
-                    }
-                    id="working_with"
-                    name="working_with"
-                    placeholder="Enter working with"
-                    onChange={this.handleChange}
-                  /> */}
                   <Autocomplete
                     className={
                       error.working_with.length > 0
@@ -814,7 +803,14 @@ class ConfirmDetailsEdit extends React.Component {
                     }
                     value={value}
                     onChange={(event, newValue) => {
-                      this.setState({ value: newValue });
+                      let userData = this.state.userData;
+                      if (newValue !== null) {
+                        userData["working_with"] = {
+                          id: newValue["PersonID"],
+                          name: newValue["DisplayName"],
+                        };
+                      }
+                      this.setState({ value: newValue, userData });
                     }}
                     inputValue={this.state.userData["working_with"].name}
                     onInputChange={(event, newInputValue) => {
