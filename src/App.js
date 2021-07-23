@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "./Components/Home/Home";
+import Home from "./CreateConsultantComponents/Home/Home";
 
 class App extends React.Component {
   render() {
