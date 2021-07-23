@@ -4,7 +4,7 @@
 .BDmobileComponent {
   margin-left: 10px;
   margin-bottom: 2em;
-  margin-top:7em;
+  margin-top: 7em;
 }
 .BDhead1 {
   font-size: 30px;
@@ -247,7 +247,6 @@ input::-webkit-input-placeholder {
   font-family: Domine;
   width: 1600px !important;
   margin-top: 24px;
-  margin-left: 24px;
 }
 
 .offsetLeftAvailableIcon {
@@ -413,7 +412,7 @@ input::-webkit-input-placeholder {
     font-size: 16px;
     margin-top: 8px;
     font-family: Domine;
-    width:100%;
+    width: 100%;
   }
   .businessButton1:hover {
     cursor: pointer;
@@ -430,7 +429,7 @@ input::-webkit-input-placeholder {
     font-size: 16px;
     margin-top: 8px;
     font-family: Domine;
-    width:100%;
+    width: 100%;
   }
 
   .businessButton2:hover {
@@ -469,7 +468,7 @@ input::-webkit-input-placeholder {
     font-size: 16px;
     margin-top: 8px;
     font-family: Domine;
-    width:100%;
+    width: 100%;
   }
   .businessButtonNotActive1:hover {
     cursor: pointer;
@@ -538,7 +537,6 @@ input::-webkit-input-placeholder {
     font-family: Domine;
     width: 1600px !important;
     margin-top: 24px;
-    margin-left: 24px;
   }
 }
 @media only screen and (max-width: 550px) {
@@ -747,7 +745,6 @@ input::-webkit-input-placeholder {
     font-family: Domine;
     width: 1600px !important;
     margin-top: 24px;
-    margin-left: 0px;
   }
 
   .mobileAvailabilityIcon {
@@ -770,7 +767,7 @@ input::-webkit-input-placeholder {
   }
 
   .mobileSsnToggle {
-    width:45%;
+    width: 45%;
     margin-top: 8px;
   }
   .staticText3 {
