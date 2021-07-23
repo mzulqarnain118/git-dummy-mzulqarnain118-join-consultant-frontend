@@ -119,6 +119,7 @@
 }
 .checkBoxAccept {
   margin-top: -0.2em !important;
+  margin-left: -13px !important;
 }
 .checkboxText {
   cursor: pointer;
@@ -232,6 +233,7 @@
   }
   .checkBoxAccept {
     margin-top: -0.2em !important;
+    margin-left: -11px !important;
   }
 }
 @media only screen and (max-width: 550px) {

@@ -178,11 +178,13 @@ class Agreement extends React.Component {
         ) : null}
         <div
           className={
-            window.innerWidth >= 550 ? "AGcomponentMargin " : "AGmobileComponent"
+            window.innerWidth >= 550
+              ? "AGcomponentMargin "
+              : "AGmobileComponent"
           }
         >
           <div className="mobileAgreementLeftMargin">
-            <span className="AGhead1">Let’s make this official!</span>
+            <span className="AGhead1">LET’S MAKE THIS OFFICIAL!</span>
             {/* buttons to select the requested policy */}
             <div className="row">
               <div className="col-lg-3 col-md-6 mobileAgreementButtonWidth">
