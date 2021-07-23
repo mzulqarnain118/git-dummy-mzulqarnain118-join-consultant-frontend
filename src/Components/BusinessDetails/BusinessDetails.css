@@ -282,7 +282,7 @@ input::-webkit-input-placeholder {
   width: 1600px !important;
   margin-top: 5px;
   text-align: left;
-  margin-left: -108px !important;
+  margin-left: -5.5vw;
 }
 
 @media only screen and (max-width: 768px) {
@@ -398,8 +398,8 @@ input::-webkit-input-placeholder {
     color: red;
     font-family: Domine;
     width: 1600px !important;
-    margin-left: 0px !important;
-    margin-top: 24px;
+    margin-left: 5px !important;
+    margin-top: 3px !important;
   }
 
   .businessButton1 {
@@ -623,8 +623,8 @@ input::-webkit-input-placeholder {
     color: red;
     font-family: Domine;
     width: 1600px !important;
-    margin-left: 16px;
-    margin-top: 24px;
+    margin-left: -10px !important;
+    margin-top: 1px !important;
   }
 
   .businessButton1 {

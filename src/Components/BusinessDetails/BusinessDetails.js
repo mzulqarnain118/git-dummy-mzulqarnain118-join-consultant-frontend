@@ -233,6 +233,7 @@ class BusinessDetails extends React.Component {
                       }
                     }}
                   />
+               
                   {errorCustomURL.length > 0 ? (
                     <div className="BDerrorMes" >
                       {errorCustomURL}
