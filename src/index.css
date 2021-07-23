@@ -1,0 +1,10 @@
+input::placeholder {
+  color: grey !important;
+  font-family: Domine !important;
+  font-weight: 600 !important;
+}
+
+input {
+  font-family: Domine !important;
+  font-weight: 600 !important;
+}
