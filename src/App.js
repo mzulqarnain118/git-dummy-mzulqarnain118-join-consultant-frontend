@@ -1,13 +1,20 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./CreateConsultantComponents/Home/Home";
+import HomePage from "./HomePage";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 class App extends React.Component {
   render() {
-  // console.log = console.warn = console.error = () => {};
+    console.log = console.warn = console.error = () => {};
     return (
       <div>
-        <Home />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={HomePage}></Route>
+            <Route exact path="/consultant" component={Home}></Route>
+          </Switch>
+        </Router>
       </div>
     );
   }

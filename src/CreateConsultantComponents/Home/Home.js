@@ -13,7 +13,7 @@ import VerifyIdentity from "../VerifyIdentity/VerifyIdentity";
 import PurchaseKit from "../PurchaseKit/PurchaseKit";
 import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 import StepConnector from "@material-ui/core/StepConnector";
-import { Logo } from "../../Assets/HeaderSVG";
+import { Logo } from "../../assets/HeaderSVG";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import * as API from "../../configuration/apiconfig";
 import CircularProgress from "@material-ui/core/CircularProgress";

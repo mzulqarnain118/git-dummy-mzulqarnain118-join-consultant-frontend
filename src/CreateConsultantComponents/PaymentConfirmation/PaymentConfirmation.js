@@ -12,7 +12,7 @@ import {
   Icon2,
   Icon3,
   Icon4,
-} from "../../Assets/PaymentConfirmationSVG";
+} from "../../assets/PaymentConfirmationSVG";
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "./PaymentConfirmation.css";
@@ -66,13 +66,23 @@ const disabledIcon = (props) => {
   if (completed) {
     return (
       <IoCheckmarkCircleSharp
-        style={{ color: "#4BA380", width: "2em", height: "2em",marginLeft:"-3px" }}
+        style={{
+          color: "#4BA380",
+          width: "2em",
+          height: "2em",
+          marginLeft: "-3px",
+        }}
       />
     );
   } else {
     return (
       <IoAlertCircle
-        style={{ color: "#EF7070", width: "2em", height: "2em" ,marginLeft:"-3px"}}
+        style={{
+          color: "#EF7070",
+          width: "2em",
+          height: "2em",
+          marginLeft: "-3px",
+        }}
       />
     );
   }
