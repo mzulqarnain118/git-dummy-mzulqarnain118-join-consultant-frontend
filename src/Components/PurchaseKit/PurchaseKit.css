@@ -57,6 +57,7 @@
   font-size: 12px;
   /* width: 65vw; */
   width: 1248px;
+  font-family: Domine !important;
 }
 .paymentHead {
   font-family: oswald;
