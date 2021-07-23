@@ -2,7 +2,7 @@
   margin-top: 32px;
 }
 .BDmobileComponent {
-  margin-left: 10px;
+  margin-left: 5px;
   margin-bottom: 2em;
   margin-top: 7em;
 }
@@ -553,14 +553,14 @@ input::-webkit-input-placeholder {
     border-width: 1px;
     border-color: #d8c5a6;
     border-radius: 0;
-    width: 266px !important;
+    width: 70vw !important;
     height: 56px !important;
     margin-bottom: 8px;
     margin-top: 16px;
     font-weight: bold;
     font-size: 16px;
     font-family: Domine;
-    margin-left: 2px;
+    margin-left: 10px;
   }
   .customURL:focus {
     border-color: #d8c5a6;
@@ -573,7 +573,7 @@ input::-webkit-input-placeholder {
     border-width: 1px;
     border-color: red !important;
     border-radius: 1 !important;
-    width: 336px !important;
+    width: 85vw !important;
     height: 56px !important;
     margin-bottom: 8px;
     margin-top: 16px;
@@ -581,7 +581,7 @@ input::-webkit-input-placeholder {
     font-size: 16px;
     font-family: Domine;
     border-radius: 0 !important;
-    margin-left: 2px;
+    margin-left: 10px;
   }
   .customURLRed:focus {
     border-color: red;
@@ -621,7 +621,7 @@ input::-webkit-input-placeholder {
     color: red;
     font-family: Domine;
     width: 1600px !important;
-    margin-left: -10px !important;
+    margin-left: -2px !important;
     margin-top: 1px !important;
   }
 
