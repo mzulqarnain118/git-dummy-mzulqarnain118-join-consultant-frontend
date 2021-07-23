@@ -75,7 +75,7 @@
     height: 50px;
   }
   .textButton {
-    margin-top: -15px !important;
+    margin-top: -25px !important;
     color: white;
     font-size: 27px;
     font-weight: 500;
@@ -85,7 +85,7 @@
     cursor: pointer;
   }
   .textButtonDisabled {
-    margin-top: -15px !important;
+    margin-top: -25px !important;
     font-size: 27px;
     font-weight: 500;
     font-family: oswald;

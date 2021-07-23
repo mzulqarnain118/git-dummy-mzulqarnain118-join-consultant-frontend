@@ -1023,7 +1023,7 @@ class Home extends React.Component {
                         <div className="btm-list-blk">
                           <div className="btm-list-inner">
                             <div className="mobileStepHead">
-                              WHAT HAPPENS NEXT ?
+                              WHAT HAPPENS NEXT?
                             </div>
                             {/* stepper for mobile view  */}
                             <Stepper
