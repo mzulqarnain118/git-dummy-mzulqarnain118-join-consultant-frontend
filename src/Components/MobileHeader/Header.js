@@ -49,7 +49,7 @@ const GreenStepConnector = withStyles({
     },
   },
   line: {
-    borderColor: "black",
+    borderColor: "white",
     borderTopWidth: 1,
     borderRadius: 1,
   },

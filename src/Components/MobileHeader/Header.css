@@ -4,16 +4,18 @@
   white-space: nowrap;
 }
 .mobileHead {
- 
+  margin-left: 0vw;
+  width: 170vw;
+  white-space: nowrap;
 }
 .bdmobileHead {
-  margin-left: -40vw;
-  width: 117vw;
+  margin-left: -52vw;
+  width: 190vw;
   white-space: nowrap;
 }
 .pkmobileHead {
-  margin-left: -70vw;
-  width: 117vw;
+  margin-left: -105vw;
+  width: 190vw;
   white-space: nowrap;
 }
 /*
