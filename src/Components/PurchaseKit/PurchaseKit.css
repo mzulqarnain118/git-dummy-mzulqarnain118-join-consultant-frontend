@@ -8,6 +8,10 @@
 .PKmobileComponent {
   margin-top: 7em;
 }
+.PKcheckBoxAccept {
+  margin-top: -0.2em !important;
+  margin-left: -13px !important;
+}
 
 .totalPanel {
   background: #e8e0dd;
@@ -345,7 +349,7 @@
   .subTotalMoney {
     font-size: 16px;
     text-align: right;
-    margin-left:-15vw;
+    margin-left: -15vw;
   }
   .totalText {
     font-size: 12px;
@@ -381,5 +385,9 @@
     padding: 15px;
     font-family: Domine;
     width: 90vw;
+  }
+  .PKcheckBoxAccept {
+    margin-top: -0.2em !important;
+    margin-left: -11px !important;
   }
 }

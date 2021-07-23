@@ -249,7 +249,7 @@ class PurchaseKit extends React.Component {
                     <div className="totalText">Shipping</div>
                     <div className="totalText">Sales Tax</div>
                   </div>
-                  <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue" >
+                  <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
                     <div className="subTotalMoney">
                       ${purchaseKitDetails.subtotal}.00
                     </div>
@@ -429,7 +429,7 @@ class PurchaseKit extends React.Component {
                       this.enableDone(!checked);
                       this.setState({ checked: !checked });
                     }}
-                    className="checkBoxAccept"
+                    className="PKcheckBoxAccept"
                     style={{
                       color: "#DCBA80",
                     }}
