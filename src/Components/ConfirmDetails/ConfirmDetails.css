@@ -321,6 +321,10 @@ input:disabled {
 } */
 
 @media only screen and (max-width: 550px) {
+  .mobileDisplayColumnSpacing {
+    margin-left: 45px;
+  }
+
   .emailLabel {
     margin-bottom: 5px;
   }

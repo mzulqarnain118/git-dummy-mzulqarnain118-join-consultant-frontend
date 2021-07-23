@@ -39,7 +39,7 @@ class ConfirmDetailsDisplay extends React.Component {
                 <div className="dataText">{userData.first_name}</div>
               </div>
               {/* last name */}
-              <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth">
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth mobileDisplayColumnSpacing">
                 <span className="head3">LAST NAME</span>
                 <div className="dataText">{userData.last_name}</div>
               </div>
@@ -49,7 +49,7 @@ class ConfirmDetailsDisplay extends React.Component {
                 <div className="dataText">{userData.email}</div>
               </div>
               {/* date of birth */}
-              <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth">
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5 mobileDisplayWidth mobileDisplayColumnSpacing">
                 <span className="head3">DATE OF BIRTH</span>
                 <div className="dataText">
                   {moment(
@@ -73,7 +73,7 @@ class ConfirmDetailsDisplay extends React.Component {
               </div>
 
               {/* address */}
-              <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth">
+              <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth mobileDisplayColumnSpacing">
                 <span className="head3">SHIPPING ADDRESS</span>
                 <div className="dataText">
                   {userData.address.street}, {userData.address.city},{" "}
