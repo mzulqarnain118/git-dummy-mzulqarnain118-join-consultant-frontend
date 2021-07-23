@@ -44,6 +44,8 @@
   width: 400px !important;
   height: 64px !important;
   margin-bottom: 8px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 .Input:focus {
   border-color: #d8c5a6 !important;
@@ -55,6 +57,8 @@
   width: 400px !important;
   height: 64px !important;
   margin-bottom: 8px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 
 .Red:focus {
@@ -155,6 +159,8 @@
   width: 288px !important;
   height: 56px !important;
   margin-bottom: 8px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 .edit-Input:focus {
   border-color: #d8c5a6 !important;
@@ -166,6 +172,8 @@
   width: 288px !important;
   height: 56px !important;
   margin-bottom: 8px;
+  font-family: Domine !important;
+  font-weight: 400 !important;
 }
 
 .edit-Red:focus {
@@ -194,6 +202,8 @@
   width: 96px !important;
   height: 56px !important;
   margin-bottom: 8px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 .edit-month:focus {
   border-color: #d8c5a6 !important;
@@ -207,6 +217,8 @@
   height: 56px !important;
   margin-bottom: 8px;
   margin-left: 5px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 .edit-day:focus {
   border-color: #d8c5a6 !important;
@@ -218,6 +230,8 @@
   width: 104px !important;
   height: 56px !important;
   margin-bottom: 8px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 .edit-year:focus {
   border-color: #d8c5a6 !important;
@@ -229,6 +243,8 @@
   width: 96px !important;
   height: 56px !important;
   margin-bottom: 8px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 .edit-month-red :focus {
   border-color: red !important;
@@ -242,6 +258,8 @@
   height: 56px !important;
   margin-bottom: 8px;
   margin-left: 5px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 .edit-day-red :focus {
   border-color: red !important;
@@ -253,6 +271,8 @@
   width: 104px !important;
   height: 56px !important;
   margin-bottom: 8px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 .edit-year-red :focus {
   border-color: red !important;
@@ -576,4 +596,6 @@ input:disabled {
 
 #controllable-states-demo {
   margin-left: -21px;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }

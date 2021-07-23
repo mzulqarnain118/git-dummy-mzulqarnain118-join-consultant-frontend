@@ -11,6 +11,8 @@ const styles = (theme) => ({
     border: "1px solid #d8c5a6",
     opacity: "1 !important",
     backgroundColor: "white !important",
+    fontFamily: "Domine !important",
+    fontWeight: "600 !important",
   },
   listbox: {
     backgroundColor: "white",
@@ -21,6 +23,7 @@ const styles = (theme) => ({
     overflow: "hidden",
     maxHeight: 200,
     border: "1px solid #d8c5a6",
+    fontFamily: "Domine !important",
   },
   inputRoot: {
     // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
@@ -399,7 +402,7 @@ class ConfirmDetailsEdit extends React.Component {
           </div>
           {/* edit name and date of birth */}
           <div className="row edit-margin">
-            <div className="col-lg-2 ">
+            <div className="col-lg-2 col-md-3">
               <div className="form-group">
                 <span className="head3" htmlFor="first_name">
                   FIRST NAME
@@ -430,7 +433,7 @@ class ConfirmDetailsEdit extends React.Component {
             </div>
 
             {/* Last name  */}
-            <div className="col-lg-2 offset-lg-1">
+            <div className="col-lg-2 offset-lg-1 col-md-3">
               <div className="form-group">
                 <span className="head3" htmlFor="last_name">
                   LAST NAME
@@ -460,7 +463,7 @@ class ConfirmDetailsEdit extends React.Component {
               ) : null}
             </div>
             {/* date of bith  */}
-            <div className="col-lg-4 offset-lg-1">
+            <div className="col-lg-4 offset-lg-1 col-md-5">
               <span className="head3">DATE OF BIRTH</span>
 
               <div className="row">
