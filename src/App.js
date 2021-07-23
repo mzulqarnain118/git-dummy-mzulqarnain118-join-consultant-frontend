@@ -11,7 +11,9 @@ class App extends React.Component {
       <div>
         <Router>
           <Switch>
+            {/* Home Page component */}
             <Route exact path="/" component={HomePage}></Route>
+            {/* create consultant Home component */}
             <Route exact path="/consultant" component={Home}></Route>
           </Switch>
         </Router>
