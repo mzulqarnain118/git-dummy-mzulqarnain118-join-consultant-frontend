@@ -5,7 +5,7 @@
   margin-left: 20px;
   margin-right: 10px;
   margin-bottom: 3em;
-  margin-top: 3em;
+  margin-top: 4em;
 }
 .AGhead1 {
   font-size: calc(6px + 2vw);
@@ -337,6 +337,10 @@
   .mobileAcceptCheckBox {
     font-size: 12px;
     font-family: oswald;
+  }
+  .mobileAcceptCheckBox1 {
+    margin-left: 30px;
+    margin-top: -30px;
   }
   .agreementData {
     font-size: 0.7em;

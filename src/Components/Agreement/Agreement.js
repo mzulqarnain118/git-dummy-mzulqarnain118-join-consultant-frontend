@@ -244,14 +244,25 @@ class Agreement extends React.Component {
                             color: "#DCBA80",
                           }}
                         />
-                        <span
-                          id="checkbox1"
-                          className="checkboxText mobileAcceptCheckBox"
-                          onClick={this.handleChangecheckbox}
-                        >
-                          I have read and accepted Independent Consultant
-                          Agreement.
-                        </span>
+                        {window.innerWidth >= 550 ? (
+                          <span
+                            id="checkbox1"
+                            className="checkboxText mobileAcceptCheckBox"
+                            onClick={this.handleChangecheckbox}
+                          >
+                            I have read and accepted Independent Consultant
+                            Agreement.
+                          </span>
+                        ) : (
+                          <div
+                            id="checkbox1"
+                            className="checkboxText mobileAcceptCheckBox mobileAcceptCheckBox1"
+                            onClick={this.handleChangecheckbox}
+                          >
+                            I have read and accepted Independent Consultant
+                            Agreement.
+                          </div>
+                        )}
                       </>
                     ) : (
                       <>
