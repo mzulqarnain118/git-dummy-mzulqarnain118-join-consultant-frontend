@@ -162,7 +162,7 @@
     width: 16.2em;
     color: white;
     font-size: 1.1em;
-   
+
     margin-top: 0.5em;
     font-family: Domine;
   }
@@ -245,10 +245,11 @@
     padding-left: 1.3em;
     padding-right: 1.3em;
     color: white;
-    font-size: 0.6em;
+    font-size: 0.67em;
     margin-top: 0.5em;
     font-family: Domine;
     width: 105%;
+    font-weight: 600;
   }
   .agreementButton1:hover {
     cursor: pointer;
@@ -260,11 +261,12 @@
     padding-top: 1.5em;
     padding-bottom: 1.4em;
     color: white;
-    font-size: 0.6em;
+    font-size: 0.67em;
     margin-top: 0.5em;
     font-family: Domine;
     margin-left: 0px;
     width: 105%;
+    font-weight: 600;
   }
 
   .agreementButton2:hover {
@@ -282,9 +284,10 @@
     padding-bottom: 0.5em;
     padding-left: 1em;
     padding-right: 1em;
-    font-size: 0.6em;
+    font-size: 0.67em;
     margin-top: 0.5em;
     font-family: Domine;
+    font-weight: 600;
   }
   .agreementButtonNotActive1:hover {
     cursor: pointer;
@@ -298,6 +301,8 @@
     border-style: solid;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
+    font-size: 0.67em;
+    font-weight: 600;
   }
   .agreementButtonNotActive2:hover {
     cursor: pointer;
