@@ -2,10 +2,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
-import Getin from "../assets/images/ic-getin.svg";
-import Gettrained from "../assets/images/ic-gettrained.svg";
-import Getgrowing from "../assets/images/ic-getgrowing.svg";
-import consultProfile from "../assets/images/Hear.png";
+import Getin from "../Assets/images/ic-getin.svg";
+import Gettrained from "../Assets/images/ic-gettrained.svg";
+import Getgrowing from "../Assets/images/ic-getgrowing.svg";
+import consultProfile from "../Assets/images/Hear.png";
 var slidesettings = {
   dots: true,
   arrows: false,
@@ -38,11 +38,8 @@ class Howdoesitwork extends React.Component {
             <figure className="consult-img">
               <img src={consultProfile} className="img-fluid" />
               <p>
-                <sup className="topqt">‘</sup>Lorem ipsum dolor sit amet,
-                consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                enim ad minim veniam, quis nostrud exerci tation ullam corper
-                suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                <sup className="topqt">‘</sup>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+                enim ad minim veniam, quis nostrud exerci tation ullam corper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
                 <sup className="btmqt">’</sup>
               </p>
               <h5>
@@ -62,56 +59,37 @@ class Howdoesitwork extends React.Component {
                   </section>
                   <h3>Get In</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                    quis nostrud exerci tation ullamcorper suscipit.
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                    nostrud exerci tation ullamcorper suscipit.
                   </p>
                 </aside>
                 <aside className="col-lg-4 col-md-4 col-12  dot-line">
                   <section className="howdoes-list">
                     <figure className="d-flex justify-content-center align-items-center">
-                      <img
-                        src={Gettrained}
-                        alt="GET IN"
-                        className="img-fluid"
-                      />
+                      <img src={Gettrained} alt="GET IN" className="img-fluid" />
                     </figure>
                   </section>
                   <h3>Get Trained</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                    quis nostrud exerci tation ullamcorper suscipit.
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                    nostrud exerci tation ullamcorper suscipit.
                   </p>
                 </aside>
                 <aside className="col-lg-4 col-md-4 col-12  dot-line">
                   <section className="howdoes-list">
                     <figure className="d-flex justify-content-center align-items-center">
-                      <img
-                        src={Getgrowing}
-                        alt="GET IN"
-                        className="img-fluid"
-                      />
+                      <img src={Getgrowing} alt="GET IN" className="img-fluid" />
                     </figure>
                   </section>
                   <h3>Get Growing</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-                    magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                    quis nostrud exerci tation ullamcorper suscipit.
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                    nostrud exerci tation ullamcorper suscipit.
                   </p>
                 </aside>
               </Slider>
             </section>
-            <a
-              className="btn btn-primary"
-              href="javascript:;"
-              role="button"
-              title="GET GOING"
-            >
+            <a className="btn btn-primary" href="javascript:;" role="button" title="GET GOING">
               {" "}
               GET GOING
             </a>

@@ -1,8 +1,7 @@
-import "./HomePage.css";
-import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./assets/css/style.scss";
-import "./assets/css/responsive.scss";
+import "./HomePage.css";
+import "./Assets/css/style.scss";
+import "./Assets/css/responsive.scss";
 import React from "react";
 import Header from "./HomePageComponents/Header";
 import Home from "./HomePageComponents/Home";

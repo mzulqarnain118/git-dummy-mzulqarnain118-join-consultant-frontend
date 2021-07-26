@@ -11,7 +11,7 @@ import Whyyou from "./Whyyou";
 class Home extends React.Component {
   render() {
     return (
-      <>
+      <div className="bodyWrapper">
         <Banner />
         <Whyyou />
         <Whyscoutandcellar />
@@ -20,7 +20,7 @@ class Home extends React.Component {
         <Hearfromotherconsultants />
         <Havemorequestions />
         <Letsgetstarted />
-      </>
+      </div>
     );
   }
 }

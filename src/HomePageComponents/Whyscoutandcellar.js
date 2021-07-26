@@ -1,5 +1,5 @@
 import React from "react";
-import ScoutCellar from "../assets/images/scout-cellar.png";
+import ScoutCellar from "../Assets/images/scout-cellar.png";
 
 class Whyscoutandcellar extends React.Component {
   render() {
@@ -17,18 +17,12 @@ class Whyscoutandcellar extends React.Component {
                 </h3>
                 <ul>
                   <li>Grown naturally</li>
-                  <li>
-                    Free from synthetic pesticides, added sugars and chemical
-                    preservatives
-                  </li>
+                  <li>Free from synthetic pesticides, added sugars and chemical preservatives</li>
                 </ul>
                 <h3>Made by a community of wine lovers</h3>
                 <h3>Fast growing</h3>
                 <ul>
-                  <li>
-                    The U.S. wine market is worth $72 billion. Scout &amp;
-                    Cellar has doubled its growth year-on-year
-                  </li>
+                  <li>The U.S. wine market is worth $72 billion. Scout &amp; Cellar has doubled its growth year-on-year</li>
                 </ul>
               </aside>
               <aside className="col-lg-6 col-md-6 col-12 p-0">
