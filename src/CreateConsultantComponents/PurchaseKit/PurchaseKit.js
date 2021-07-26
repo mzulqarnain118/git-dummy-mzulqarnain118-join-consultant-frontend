@@ -133,7 +133,11 @@ class PurchaseKit extends React.Component {
           parseInt(value.slice(0, 2)) < 13
         ) {
           //year validation
-          if (value.length === 5) {
+          if (
+            value.length === 5 &&
+            parseInt(value.slice(3)) >=
+              parseInt(new Date().getFullYear().toString().substr(-2))
+          ) {
             error[id] = "";
           } else {
             error[id] = "Please enter a valid year";
