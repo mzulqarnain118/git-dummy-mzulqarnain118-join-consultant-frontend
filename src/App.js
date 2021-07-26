@@ -11,10 +11,10 @@ class App extends React.Component {
       <div>
         <Router>
           <Switch>
+            <Route path="/consultant" component={Home}></Route>
             {/* Home Page component */}
-            <Route exact path="/" component={HomePage}></Route>
+            <Route path="/" component={HomePage}></Route>
             {/* create consultant Home component */}
-            <Route exact path="/consultant" component={Home}></Route>
           </Switch>
         </Router>
       </div>
