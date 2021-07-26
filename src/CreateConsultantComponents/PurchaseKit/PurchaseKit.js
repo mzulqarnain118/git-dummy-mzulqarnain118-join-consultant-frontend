@@ -251,13 +251,13 @@ class PurchaseKit extends React.Component {
                   </div>
                   <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
                     <div className="subTotalMoney">
-                      ${purchaseKitDetails.subtotal}.00
+                      ${addTrailingZeros(purchaseKitDetails.subtotal)}
                     </div>
                     <div className="totalMoney">
-                      ${purchaseKitDetails.shipping}.00
+                      ${addTrailingZeros(purchaseKitDetails.shipping)}
                     </div>
                     <div className="totalMoney">
-                      ${purchaseKitDetails.salestax}.00
+                      ${addTrailingZeros(purchaseKitDetails.salestax)}
                     </div>
                   </div>
                   <div className="col-lg-1"></div>
@@ -270,7 +270,7 @@ class PurchaseKit extends React.Component {
                   </div>
                   <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
                     <div className="ResultMoney">
-                      ${purchaseKitDetails.total}.00
+                      ${addTrailingZeros(purchaseKitDetails.total)}
                     </div>
                   </div>
                   <div className="col-lg-1"></div>
@@ -595,4 +595,9 @@ const maskingMMYY = (value) => {
       value.split("").splice(2, 2).join("");
   }
   return value;
+};
+
+const addTrailingZeros = (num) => {
+  let out = parseFloat(num);
+  return out.toFixed(2);
 };

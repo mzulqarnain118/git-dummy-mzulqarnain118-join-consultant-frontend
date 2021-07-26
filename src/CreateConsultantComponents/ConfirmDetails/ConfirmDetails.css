@@ -16,7 +16,7 @@
 }
 .componentMargin4 {
   margin-top: 10px;
-  margin-bottom: 30em;
+  margin-bottom: 10em;
 }
 .componentMargin {
   margin-top: 20px;
@@ -603,3 +603,4 @@ input:disabled {
   font-family: Domine !important;
   font-weight: 600 !important;
 }
+

@@ -204,6 +204,8 @@ class Home extends React.Component {
       confirmation: false,
       //alogoliya hits
       working_with_arr: [],
+      //consultant_id
+      consultant_number: 0,
     };
   }
 
@@ -581,11 +583,16 @@ class Home extends React.Component {
     )
       .then((response) => {
         try {
+          let consultant_number = 0;
+          if (response.data.consultant_number !== null) {
+            consultant_number = response.data.consultant_number;
+          }
           this.setState({
             load: false,
             activeStep: 4,
             displayFooter: false,
             confirmation: true,
+            consultant_number,
           });
         } catch (e) {
           console.log("Error in /createConsultant");
@@ -1106,6 +1113,7 @@ class Home extends React.Component {
             confirmation={this.state.confirmation}
             setConfirmation={this.setConfirmation}
             moveBackToLastScreen={this.moveBackToLastScreen}
+            consultant_number={this.state.consultant_number}
           />
         )}
       </React.Fragment>
