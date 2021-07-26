@@ -41,6 +41,13 @@ const styles = (theme) => ({
       borderColor: "white",
     },
   },
+  customTextField: {
+    "& input::placeholder": {
+      color: "black !important",
+      fontFamily: "Domine !important",
+      fontWeight: "600 !important",
+    },
+  },
 });
 
 class ConfirmDetailsEdit extends React.Component {
@@ -843,6 +850,7 @@ class ConfirmDetailsEdit extends React.Component {
                     renderInput={(params) => (
                       <TextField
                         {...params}
+                        classes={{ root: classes.customTextField }}
                         placeholder="Enter working with"
                         variant="outlined"
                       />

@@ -101,10 +101,9 @@ class PaymentConfirmation extends React.Component {
 
   render() {
     //const { userData } = this.state;
-    const {classes, userData, confirmation} = this.props;
+    const {classes, userData, confirmation, consultant_number} = this.props;
     const steps = this.getSteps();
     const {activeStep, rippleRef1, rippleRef2, rippleRef3} = this.state;
-    console.log(window.innerWidth);
     return (
       <React.Fragment>
         <div style={{background: "#E8E0DD", overflow: "hidden"}}>
@@ -150,7 +149,7 @@ class PaymentConfirmation extends React.Component {
 
                   <div className="pcHead3">Consultant Number</div>
 
-                  <div className="pcConsultantNumber">{userData.id}</div>
+                  <div className="pcConsultantNumber"> {consultant_number}</div>
                 </>
               ) : (
                 <div className="paymentConfirmationFaliure">ENROLMENT FAILURE!</div>
