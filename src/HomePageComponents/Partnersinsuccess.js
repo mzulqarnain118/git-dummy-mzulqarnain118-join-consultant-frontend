@@ -3,6 +3,7 @@ import Community from "../Assets/images/ic-community.svg";
 import Personal from "../Assets/images/ic-personal.svg";
 import Portal from "../Assets/images/ic-portal.svg";
 import Videos from "../Assets/images/ic-videos.svg";
+import {Amp} from "../Assets/SandCAmp";
 
 class Partnersinsuccess extends React.Component {
   render() {
@@ -14,9 +15,7 @@ class Partnersinsuccess extends React.Component {
             <p className="text-center">“We are committed to helping you succeed in your business, and we offer a variety of tools to help you do just that.”</p>
             <section className="row d-flex flex-row m-0 justify-content-center align-items-start position-relative">
               <section className="youus d-flex justify-content-center align-items-center">
-                Scout
-                <br />
-                &amp; Cellar
+                <Amp className="amp-fill"/>
               </section>
               <aside className="col-lg-6 col-md-6 col-12 gray-box p-0">
                 <h3>The Scout &amp; Cellar Community</h3>

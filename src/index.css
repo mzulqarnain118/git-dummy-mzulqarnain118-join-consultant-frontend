@@ -8,3 +8,6 @@ input {
   font-family: Domine !important;
   font-weight: 600 !important;
 }
+#amp path {
+  fill: white!important;
+}
