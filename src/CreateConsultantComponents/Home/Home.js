@@ -510,11 +510,10 @@ class Home extends React.Component {
     await API.callEndpoint("GET", "Bearer", "/api/v1/users/viewCart?cartid=" + cartId, data)
       .then((response) => {
         try {
-          let total = response.data.Subtotal + response.data.TaxTotal + response.data.OrderLines[0].ShippingTax;
-          purchaseKitDetails["subtotal"] = response.data.Subtotal;
+          purchaseKitDetails["subtotal"] = response.data.OrderLines[0].Subtotal;
           purchaseKitDetails["shipping"] = response.data.OrderLines[0].ShippingTax;
-          purchaseKitDetails["salestax"] = response.data.TaxTotal;
-          purchaseKitDetails["total"] = total;
+          purchaseKitDetails["salestax"] = response.data.OrderLines[0].ItemTax;
+          purchaseKitDetails["total"] = response.data.OrderLines[0].TotalPrice;
           this.setState({
             load: false,
             cartId,
