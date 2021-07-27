@@ -65,7 +65,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
         userData["password"] = value;
         this.props.setUserData(userData);
       } else {
-        error = "Please enter a valid password ";
+        error = "Password length must be at least with one letter, one Uppercase letter and one digit ";
         this.props.setrightFooterButtonDisabled(true);
       }
     }
@@ -169,7 +169,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 this.props.setrightFooterButtonDisabled(true);
               }}
             >
-              LET'S FIND IT
+              Lets's Find It
             </span>
           </div>
           {/* forgot password flow */}

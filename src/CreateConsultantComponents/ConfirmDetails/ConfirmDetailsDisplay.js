@@ -90,7 +90,7 @@ class ConfirmDetailsDisplay extends React.Component {
           {/* static text displatey at the bottom of text area */}
           <div className="displayNote">
             <b>Note:</b> If you want to change any of the Information provided,
-            click on the '<b>Manage Changes</b>' button.
+            click on the '<b>Make Changes</b>' button.
           </div>
         </div>
       </React.Fragment>
