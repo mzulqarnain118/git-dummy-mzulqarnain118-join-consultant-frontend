@@ -405,7 +405,7 @@ class ConfirmDetailsEdit extends React.Component {
             your details on file.
           </div>
           <div className="staticText4">
-            Take a quick look over and we'll move forward.
+          Take a quick look at the details below, then we’ll move forward
           </div>
           {/* edit name and date of birth */}
           <div className="row edit-margin">

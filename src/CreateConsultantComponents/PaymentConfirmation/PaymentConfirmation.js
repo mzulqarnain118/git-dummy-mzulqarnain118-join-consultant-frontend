@@ -131,7 +131,7 @@ class PaymentConfirmation extends React.Component {
               <div className="paymentConfirmationHead">HEY, {userData.first_name.toUpperCase()}!</div>
               {confirmation ? (
                 <>
-                  <div className="paymentConfirmationSuccess">ENROLMENT SUCCESSFUL!</div>
+                  <div className="paymentConfirmationSuccess">Congratulations, welcome to Scout &amp; Cellar!</div>
                   <div className=" mobileHead1">
                     <div className="customURLAssigned">scoutandcellar.com/{userData.url}</div>
                   </div>
