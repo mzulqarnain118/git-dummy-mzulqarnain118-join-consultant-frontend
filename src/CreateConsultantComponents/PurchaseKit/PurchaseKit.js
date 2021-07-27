@@ -129,8 +129,10 @@ class PurchaseKit extends React.Component {
       if (value !== "") {
         //month validation
         if (
-          parseInt(value.slice(0, 2)) > 0 &&
-          parseInt(value.slice(0, 2)) < 13
+          (parseInt(value.slice(0, 2)) > 0 &&
+          parseInt(value.slice(0, 2)) < 13)&&(
+            parseInt(value.slice(0, 2))>=  parseInt(new Date().getMonth().toString().substr(-2))
+          )
         ) {
           //year validation
           if (
