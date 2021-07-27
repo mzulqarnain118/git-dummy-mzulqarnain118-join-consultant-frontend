@@ -10,8 +10,8 @@ class Banner extends React.Component {
             <section className="row d-flex flex-row m-0 justify-content-center align-items-center banner-bg">
               <aside className="jumbotron p-0 text-center">
                 <h1>
-                  WELCOME TO
-                  <br /> THE WINE BUSINESS
+                 Join the 
+                  <br /> Scout &amp; Cellar Family
                 </h1>
                 <p>
                   <Link
@@ -34,11 +34,7 @@ class Banner extends React.Component {
               </aside>
             </section>
             <p className="bdes text-center">
-              Wine is an experiential lesson in history, geography and science,
-              rolled into one elevating glass of joy. If you enjoy it, you’ll
-              probably have just as much fun sharing a bottle with your friends.
-              Thankfully, selling wine isn’t about knowing wine; it’s about
-              knowing your friends.
+            At Scout &amp; Cellar™ we believe each bottle of Clean-Crafted ™ wine is an experiential lesson in history, geography, and science, rolled into one elevating experience of joy. If you enjoy it, you will have just as much fun sharing a bottle, and the experience, with your friends. Thankfully, marketing wine isn’t just about knowing wine; it's about knowing your friends and choosing to join this community on the journey to discover the unknown good.
             </p>
           </section>
         </section>

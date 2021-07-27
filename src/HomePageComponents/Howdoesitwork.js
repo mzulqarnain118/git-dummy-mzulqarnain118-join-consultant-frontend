@@ -57,10 +57,9 @@ class Howdoesitwork extends React.Component {
                       <img src={Getin} alt="GET IN" className="img-fluid" />
                     </figure>
                   </section>
-                  <h3>Get In</h3>
+                  <h3>Join</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                    nostrud exerci tation ullamcorper suscipit.
+                  “Start your journey by joining the Scout &amp; Cellar Family. Go through the Consultant registration process so we can get to know each other! Let us know if you will be doing business as an individual or an entity, and then purchase your Business Basics Kit. Welcome to the Family!”
                   </p>
                 </aside>
                 <aside className="col-lg-4 col-md-4 col-12  dot-line">
@@ -69,10 +68,9 @@ class Howdoesitwork extends React.Component {
                       <img src={Gettrained} alt="GET IN" className="img-fluid" />
                     </figure>
                   </section>
-                  <h3>Get Trained</h3>
+                  <h3>Learn</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                    nostrud exerci tation ullamcorper suscipit.
+                  “You’re now part of the family, we are so glad to have you here! The first thing New Consultants should do is attend Scout School. Scout School is our online education series where you will learn all about Scout &amp; Cellar and your new business. We also offer a large variety of tools and educational resources to help you always continue learning how to grow your business."
                   </p>
                 </aside>
                 <aside className="col-lg-4 col-md-4 col-12  dot-line">
@@ -81,10 +79,9 @@ class Howdoesitwork extends React.Component {
                       <img src={Getgrowing} alt="GET IN" className="img-fluid" />
                     </figure>
                   </section>
-                  <h3>Get Growing</h3>
+                  <h3>Grow</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                    nostrud exerci tation ullamcorper suscipit.
+                  “Once you have learned about Scout &amp; Cellar, and your new business, it’s time to start growing! Start introducing Clean-Crafted™ wine to your friends, hosting tastings, and sharing the opportunity with others to build your team.”
                   </p>
                 </aside>
               </Slider>

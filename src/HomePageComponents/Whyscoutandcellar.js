@@ -13,16 +13,21 @@ class Whyscoutandcellar extends React.Component {
             <section className="row d-flex flex-row m-0 justify-content-start align-items-start">
               <aside className="col-lg-6 col-md-6 col-12 p-0">
                 <h3>
-                  Clean-Crafted<sup>&#8482;</sup>Wine
+                  Clean-Crafted<sup>&#8482;</sup>Commitment
                 </h3>
                 <ul>
-                  <li>Grown naturally</li>
-                  <li>Free from synthetic pesticides, added sugars and chemical preservatives</li>
+                  <li>We use healthy soil.</li>
+                  <li>Which produces healthy fruit with authentic, distinctive flavors. </li>
+                  <li>The result? Delicious wine!</li>
                 </ul>
-                <h3>Made by a community of wine lovers</h3>
-                <h3>Fast growing</h3>
+                <h3>A Community of Wine Lovers Working Together</h3>
+                <h3>Doing Better for the World Around Us</h3>
                 <ul>
-                  <li>The U.S. wine market is worth $72 billion. Scout &amp; Cellar has doubled its growth year-on-year</li>
+                  <li>To	Everything we do, we do it with the world around us in mind. We want to protect the earth we live on for ourselves and future generations.</li>
+                </ul>
+                <h3>We are Growing Fast</h3>
+                <ul>
+                  <li>Scout &amp; Cellar has continued to grow exponentially year-over-year. Come join us as we continue to grow!</li>
                 </ul>
               </aside>
               <aside className="col-lg-6 col-md-6 col-12 p-0">
