@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Banner extends React.Component {
   render() {
@@ -13,14 +14,14 @@ class Banner extends React.Component {
                   <br /> THE WINE BUSINESS
                 </h1>
                 <p>
-                  <a
+                  <Link
                     className="btn btn-primary me-2 get-start"
-                    href="javascript:;"
+                    to="/consultant"
                     role="button"
                     title="GET STARTED"
                   >
                     GET STARTED
-                  </a>
+                  </Link>
                   <a
                     className="btn btn-secondary ms-2"
                     href="javascript:;"
