@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
 
 class App extends React.Component {
   render() {
-    console.log = console.warn = console.error = () => {};
+    //console.log = console.warn = console.error = () => {};
     return (
       <div>
         <Router>
