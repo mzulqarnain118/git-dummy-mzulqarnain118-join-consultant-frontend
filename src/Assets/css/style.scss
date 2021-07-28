@@ -1,8 +1,11 @@
 @font-face {
   font-family: "Domine";
   src: url("../fonts/Domine-Regular.eot");
-  src: url("../fonts/Domine-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Domine-Regular.woff2") format("woff2"), url("../fonts/Domine-Regular.woff") format("woff"),
-    url("../fonts/Domine-Regular.ttf") format("truetype"), url("../fonts/Domine-Regular.svg#Domine-Regular") format("svg");
+  src: url("../fonts/Domine-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Domine-Regular.woff2") format("woff2"),
+    url("../fonts/Domine-Regular.woff") format("woff"),
+    url("../fonts/Domine-Regular.ttf") format("truetype"),
+    url("../fonts/Domine-Regular.svg#Domine-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,8 +13,11 @@
 @font-face {
   font-family: "Domine";
   src: url("../fonts/Domine-Bold.eot");
-  src: url("../fonts/Domine-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Domine-Bold.woff2") format("woff2"), url("../fonts/Domine-Bold.woff") format("woff"),
-    url("../fonts/Domine-Bold.ttf") format("truetype"), url("../fonts/Domine-Bold.svg#Domine-Bold") format("svg");
+  src: url("../fonts/Domine-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Domine-Bold.woff2") format("woff2"),
+    url("../fonts/Domine-Bold.woff") format("woff"),
+    url("../fonts/Domine-Bold.ttf") format("truetype"),
+    url("../fonts/Domine-Bold.svg#Domine-Bold") format("svg");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -19,8 +25,11 @@
 @font-face {
   font-family: "Domine";
   src: url("../fonts/Domine-SemiBold.eot");
-  src: url("../fonts/Domine-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Domine-SemiBold.woff2") format("woff2"), url("../fonts/Domine-SemiBold.woff") format("woff"),
-    url("../fonts/Domine-SemiBold.ttf") format("truetype"), url("../fonts/Domine-SemiBold.svg#Domine-SemiBold") format("svg");
+  src: url("../fonts/Domine-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Domine-SemiBold.woff2") format("woff2"),
+    url("../fonts/Domine-SemiBold.woff") format("woff"),
+    url("../fonts/Domine-SemiBold.ttf") format("truetype"),
+    url("../fonts/Domine-SemiBold.svg#Domine-SemiBold") format("svg");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -28,8 +37,11 @@
 @font-face {
   font-family: "Oswald";
   src: url("../fonts/Oswald-Regular.eot");
-  src: url("../fonts/Oswald-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Oswald-Regular.woff2") format("woff2"), url("../fonts/Oswald-Regular.woff") format("woff"),
-    url("../fonts/Oswald-Regular.ttf") format("truetype"), url("../fonts/Oswald-Regular.svg#Oswald-Regular") format("svg");
+  src: url("../fonts/Oswald-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Oswald-Regular.woff2") format("woff2"),
+    url("../fonts/Oswald-Regular.woff") format("woff"),
+    url("../fonts/Oswald-Regular.ttf") format("truetype"),
+    url("../fonts/Oswald-Regular.svg#Oswald-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -48,6 +60,13 @@ $gd-bg: #dcba80; //Gold color
 $font-oswald: "Oswald";
 $font-domine: "Domine";
 /*Common Style*/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .bodyWrapper {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -125,7 +144,9 @@ $font-domine: "Domine";
     --bs-gutter-x: 0 !important;
   }
 }
-
+body {
+  background: $body-bg;
+}
 .wrapper {
   h2 {
     font: 45px/66px $font-oswald;
@@ -732,13 +753,20 @@ $font-domine: "Domine";
     padding: 80px 0 15px;
     color: $tc-wt;
     position: relative;
-    li {
-      a {
-        color: rgb(179, 172, 168);
-        font: 15px/32px $font-oswald;
-        letter-spacing: 1px;
-        &:hover {
-          color: $tc-wt;
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        a {
+          color: rgb(179, 172, 168);
+          font: 15px/32px $font-oswald;
+          letter-spacing: 1px;
+          text-decoration: none;
+          &:hover {
+            color: $tc-wt;
+          }
         }
       }
     }
@@ -748,6 +776,7 @@ $font-domine: "Domine";
         font: 15px/32px $font-oswald;
         letter-spacing: 1px;
         padding: 30px 0 10px;
+        margin-bottom: 0;
         &:hover {
           color: $tc-wt;
         }
@@ -760,6 +789,7 @@ $font-domine: "Domine";
       font-weight: bold;
       margin-top: 8px;
       text-transform: uppercase;
+      margin-bottom: 0;
     }
     p.simon {
       color: rgb(179, 172, 168);
@@ -767,6 +797,7 @@ $font-domine: "Domine";
       letter-spacing: 1px;
       font-weight: bold;
       padding: 10px 0 15px;
+      margin-bottom: 0;
     }
     p em {
       color: rgb(179, 172, 168);

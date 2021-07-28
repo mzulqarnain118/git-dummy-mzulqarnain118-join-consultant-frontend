@@ -204,16 +204,19 @@
   .wrapper .banner-blk {
     padding-bottom: 20px;
   }
-.consult-rgt-dts,.consult-lft-dts{display:none;}
-.wrapper .whyyou-blk {
+  .consult-rgt-dts,
+  .consult-lft-dts {
+    display: none;
+  }
+  .wrapper .whyyou-blk {
     padding: 40px 0;
-}
-.wrapper .whyscout {
+  }
+  .wrapper .whyscout {
     padding: 50px 0;
-}
-.wrapper .howdoes {
+  }
+  .wrapper .howdoes {
     padding: 50px 0;
-}
+  }
 }
 @media (max-width: 767px) {
   .sc-logo {
@@ -373,7 +376,7 @@
     position: absolute;
     left: 50%;
     bottom: 60px;
-    margin: 0;
+    margin: 0 !important;
     z-index: 1;
     transform: translate(-50%, 0);
   }
@@ -455,9 +458,9 @@
     top: 20% !important;
   }
   .wrapper .havemore .accordion-button {
-    font-size: 20px;
-    line-height: 34px;
-    padding: 15px;
+    font-size: 18px;
+    line-height: 30px;
+    padding: 15px 0 15px 10px;
   }
   .wrapper .havemore .accordion-body {
     padding: 0 50px 15px 15px;
