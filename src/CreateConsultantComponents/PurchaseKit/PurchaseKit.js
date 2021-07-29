@@ -129,10 +129,10 @@ class PurchaseKit extends React.Component {
       if (value !== "") {
         //month validation
         if (
-          (parseInt(value.slice(0, 2)) > 0 &&
-          parseInt(value.slice(0, 2)) < 13)&&(
-            parseInt(value.slice(0, 2))>=  parseInt(new Date().getMonth().toString().substr(-2))
-          )
+          parseInt(value.slice(0, 2)) > 0 &&
+          parseInt(value.slice(0, 2)) < 13 &&
+          parseInt(value.slice(0, 2)) >=
+            parseInt(new Date().getMonth().toString().substr(-2))
         ) {
           //year validation
           if (
@@ -254,6 +254,7 @@ class PurchaseKit extends React.Component {
                     <div className="subTotalText">SubTotal</div>
                     <div className="totalText">Shipping</div>
                     <div className="totalText">Sales Tax</div>
+                    <div className="totalText">Discount</div>
                   </div>
                   <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
                     <div className="subTotalMoney">
@@ -264,6 +265,9 @@ class PurchaseKit extends React.Component {
                     </div>
                     <div className="totalMoney">
                       ${addTrailingZeros(purchaseKitDetails.salestax)}
+                    </div>
+                    <div className="totalMoney">
+                      -${addTrailingZeros(purchaseKitDetails.discount)}
                     </div>
                   </div>
                   <div className="col-lg-1"></div>
