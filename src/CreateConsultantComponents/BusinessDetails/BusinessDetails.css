@@ -285,6 +285,9 @@ input::-webkit-input-placeholder {
 }
 
 @media only screen and (max-width: 768px) {
+  .business-margin-url{
+    margin-left: 0% !important;
+  }
   .ipad-not-available-text {
     margin-top: 1px !important;
     margin-left: 10px !important;
@@ -805,5 +808,11 @@ input::-webkit-input-placeholder {
   }
   .businessButtonNotActive1:hover {
     cursor: pointer;
+  }
+}
+
+@media (max-width: 1440px) {
+   .business-margin-url{
+    margin-left: 10.66%;
   }
 }

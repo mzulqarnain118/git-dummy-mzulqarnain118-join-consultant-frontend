@@ -219,7 +219,7 @@ class BusinessDetails extends React.Component {
                 </div>
               </div>
               {/* Input to custom URL */}
-              <div className="col-lg-3 offset-lg-1 col-md-7 col-xs-3">
+              <div className="col-lg-3 offset-lg-1 col-md-7 col-xs-3 business-margin-url">
                 <div className="row">
                   <input
                     type="text"
