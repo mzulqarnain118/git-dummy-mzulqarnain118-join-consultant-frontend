@@ -495,7 +495,8 @@ body {
       position: relative;
       min-height: 350px;
       text-align: left;
-      word-break: break-all;
+      word-break: normal;
+      text-align: justify;
       h3 {
         padding: 0 0 20px;
         font: 32px/45px $font-oswald;
@@ -507,6 +508,7 @@ body {
         padding: 0;
         font: 18px/30px $font-domine;
         font-weight: 400;
+        height: 240px !important;
       }
       .ic-gray-box {
         position: absolute;
