@@ -9,5 +9,8 @@ input {
   font-weight: 600 !important;
 }
 #amp path {
-  fill: white!important;
+  fill: white !important;
+}
+*:focus {
+  outline: none !important;
 }

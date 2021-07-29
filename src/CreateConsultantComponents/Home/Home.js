@@ -205,7 +205,11 @@ class Home extends React.Component {
       consultant_number: 0,
     };
   }
-
+  handleKeypress = (e) => {
+    if (e.key === "Enter") {
+      this.handleClickRight();
+    }
+  };
   // to handle right footer button changes
   handleClickRight = async () => {
     let userData = this.state.userData;
@@ -998,7 +1002,10 @@ class Home extends React.Component {
     const { activeStep, load, rightFooterButtonName } = this.state;
 
     return (
-      <React.Fragment >
+      <div
+        tabIndex="0"
+        onKeyDown={this.handleKeypress}
+      >
         {load ? (
           <CircularProgress color="black" size={80} className="loader" />
         ) : null}
@@ -1178,7 +1185,7 @@ class Home extends React.Component {
             consultant_number={this.state.consultant_number}
           />
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }
