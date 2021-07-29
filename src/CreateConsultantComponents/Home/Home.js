@@ -530,9 +530,8 @@ class Home extends React.Component {
           purchaseKitDetails["salestax"] = response.data.OrderLines[0].ItemTax;
           purchaseKitDetails["discount"] =
             response.data.OrderLines[0].Discounts;
-          purchaseKitDetails["total"] =
-            response.data.OrderLines[0].TotalPrice -
-            response.data.OrderLines[0].Discounts;
+          purchaseKitDetails["total"] = response.data.OrderLines[0].LineTotal;
+
           this.setState({
             load: false,
             cartId,
