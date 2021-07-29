@@ -86,12 +86,6 @@ class ConfirmDetailsEdit extends React.Component {
     };
   }
 
-  handleKeypress = (e) => {
-    if (e.key === "Enter") {
-      this.props.handleClickRight();
-    }
-  };
-
   // used to handle change in case of change input
   handleChange = (e) => {
     let type = e.target.id;
@@ -411,7 +405,7 @@ class ConfirmDetailsEdit extends React.Component {
             your details on file.
           </div>
           <div className="staticText4">
-          Take a quick look at the details below, then we’ll move forward
+            Take a quick look at the details below, then we’ll move forward
           </div>
           {/* edit name and date of birth */}
           <div className="row edit-margin">
@@ -434,7 +428,6 @@ class ConfirmDetailsEdit extends React.Component {
                     name="first_name"
                     placeholder="Enter first name"
                     onChange={this.handleChange}
-                    onKeyPress={this.handleKeypress}
                   />
                 </div>
               </div>
@@ -466,7 +459,6 @@ class ConfirmDetailsEdit extends React.Component {
                     name="last_name"
                     placeholder="Enter last name"
                     onChange={this.handleChange}
-                    onKeyPress={this.handleKeypress}
                   />
                 </div>
               </div>
@@ -495,7 +487,6 @@ class ConfirmDetailsEdit extends React.Component {
                         id="month"
                         name="month"
                         onChange={this.handleDate}
-                        onKeyPress={this.handleKeypress}
                       >
                         <option value={"MM"} key={"MM"}>
                           MM
@@ -522,7 +513,6 @@ class ConfirmDetailsEdit extends React.Component {
                         id="day"
                         name="day"
                         onChange={this.handleDate}
-                        onKeyPress={this.handleKeypress}
                       >
                         options.push(
                         <option value={"DD"} key={"DD"}>
@@ -579,7 +569,6 @@ class ConfirmDetailsEdit extends React.Component {
                         id="year"
                         name="year"
                         onChange={this.handleDate}
-                        onKeyPress={this.handleKeypress}
                       >
                         options.push(
                         <option value={"YYYY"} key={"YYYY"}>
@@ -635,7 +624,6 @@ class ConfirmDetailsEdit extends React.Component {
                     name="email"
                     placeholder="Enter Email ID"
                     onChange={this.handleChange}
-                    onKeyPress={this.handleKeypress}
                   />
                 </div>
               </div>
@@ -670,7 +658,6 @@ class ConfirmDetailsEdit extends React.Component {
                     name="street"
                     placeholder="Enter street"
                     onChange={this.handleChange}
-                    onKeyPress={this.handleKeypress}
                   />
                 </div>
               </div>
@@ -702,7 +689,6 @@ class ConfirmDetailsEdit extends React.Component {
                     name="zipcode"
                     placeholder="Enter zipcode"
                     onChange={this.handleChange}
-                    onKeyPress={this.handleKeypress}
                     maxLength="6"
                   />
                 </div>
@@ -736,7 +722,6 @@ class ConfirmDetailsEdit extends React.Component {
                     name="city"
                     placeholder="Enter city"
                     onChange={this.handleChange}
-                    onKeyPress={this.handleKeypress}
                   />
                 </div>
               </div>
@@ -770,7 +755,6 @@ class ConfirmDetailsEdit extends React.Component {
                     name="state"
                     placeholder="Enter state"
                     onChange={this.handleChange}
-                    onKeyPress={this.handleKeypress}
                   />
                 </div>
               </div>
@@ -802,7 +786,6 @@ class ConfirmDetailsEdit extends React.Component {
                     name="phonenumber"
                     placeholder="Enter cell number"
                     onChange={this.handleChange}
-                    onKeyPress={this.handleKeypress}
                     maxLength="12"
                   />
                 </div>
@@ -829,7 +812,6 @@ class ConfirmDetailsEdit extends React.Component {
                         : "form-control edit-Input"
                     }
                     value={value}
-                    onKeyPress={this.handleKeypress}
                     onChange={(event, newValue) => {
                       let userData = this.state.userData;
                       if (newValue !== null) {

@@ -45,12 +45,6 @@ class ConfirmDetails extends React.Component {
     this.setState({ form: form });
   };
 
-  handleKeypress = (e) => {
-    if (e.key === "Enter") {
-      this.props.handleClickRight();
-    }
-  };
-
   render() {
     const { form } = this.state;
     const { rightFooterButtonName, userData, errorUserData, setErrorUserData } =
@@ -83,7 +77,7 @@ class ConfirmDetails extends React.Component {
                   placeholder="Enter email address"
                   autoComplete="off"
                   onChange={this.handleChange}
-                  onKeyPress={this.handleKeypress}
+                 
                 />
                 {/* error handling of email field */}
 
@@ -116,7 +110,7 @@ class ConfirmDetails extends React.Component {
             displayForgotPassword={this.props.displayForgotPassword}
             setForgotPassword={this.props.setForgotPassword}
             handleBackButton={this.props.handleBackButton}
-            handleClickRight={this.props.handleClickRight}
+           
           />
         ) : rightFooterButtonName === "LOOKS GOOD" ? (
           //to display confirm details page
@@ -126,7 +120,7 @@ class ConfirmDetails extends React.Component {
               this.props.setrightFooterButtonDisabled
             }
             handleBackButton={this.props.handleBackButton}
-            handleClickRight={this.props.handleClickRight}
+           
           />
         ) : (
           //to display editable version  of confirm details page
@@ -138,7 +132,7 @@ class ConfirmDetails extends React.Component {
             setUserData={this.props.setUserData}
             setButtonName={this.props.setButtonName}
             handleBackButton={this.props.handleBackButton}
-            handleClickRight={this.props.handleClickRight}
+          
             apiGetWorkingWithDropDownData={
               this.props.apiGetWorkingWithDropDownData
             }

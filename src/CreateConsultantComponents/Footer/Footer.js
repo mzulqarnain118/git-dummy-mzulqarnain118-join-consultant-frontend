@@ -23,11 +23,6 @@ class Footer extends React.Component {
     this.props.setButtonName("SAVE AND PROCEED");
     this.props.setrightFooterButtonDisabled(false);
   };
-  handleKeypress = (e) => {
-    if (e.key === "Enter") {
-      this.handleClickRight();
-    }
-  };
 
   // to handle right footer button changes
   handleClickRight = async () => {
@@ -76,6 +71,7 @@ class Footer extends React.Component {
         this.props.setUserData(userData);
         this.props.setrightFooterButtonDisabled(true);
       } else if (this.props.rightFooterButtonName === "DONE") {
+        console.log("footer create consultant");
         this.props.apiCreateConsultant();
       }
     }
@@ -126,10 +122,7 @@ class Footer extends React.Component {
                   }
                 >
                   <Ripples>
-                    <div
-                      onClick={this.handleClickRight}
-                      onKeyPress={this.handleKeypress}
-                    >
+                    <div onClick={this.handleClickRight}>
                       {this.props.rightFooterButtonName}
                     </div>
                   </Ripples>
@@ -138,10 +131,7 @@ class Footer extends React.Component {
             ) : (
               <div className="textButton mobileLeftMargin">
                 <Ripples>
-                  <div
-                    onClick={this.handleClickRight}
-                    onKeyPress={this.handleKeypress}
-                  >
+                  <div onClick={this.handleClickRight}>
                     {this.props.rightFooterButtonName}
                   </div>
                 </Ripples>

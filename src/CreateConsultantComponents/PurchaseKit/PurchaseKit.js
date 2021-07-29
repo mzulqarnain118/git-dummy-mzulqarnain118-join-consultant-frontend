@@ -36,12 +36,6 @@ class PurchaseKit extends React.Component {
     };
   }
 
-  handleKeypress = (e) => {
-    if (e.key === "Enter") {
-      this.props.handleClickRight();
-    }
-  };
-
   //send data to home component
   sendDataToHomeComponent = () => {
     let cardinfo = this.props.cardinfo;
@@ -153,7 +147,7 @@ class PurchaseKit extends React.Component {
           ) {
             if (
               parseInt(value.slice(0, 2)) >=
-              parseInt(new Date().getMonth().toString().substr(-2))+1
+              parseInt(new Date().getMonth().toString().substr(-2)) + 1
             ) {
               error[id] = "";
             } else {
@@ -337,7 +331,6 @@ class PurchaseKit extends React.Component {
                           placeholder="Enter Card Holder Name"
                           autoComplete="off"
                           onChange={this.handleChange}
-                          onKeyPress={this.handleKeypress}
                         />
 
                         {error.cardHolderName.length > 0 ? (
@@ -369,7 +362,6 @@ class PurchaseKit extends React.Component {
                           placeholder="Enter Card Number"
                           autoComplete="off"
                           onChange={this.handleChange}
-                          onKeyPress={this.handleKeypress}
                           maxLength="19"
                         />
 
@@ -403,7 +395,6 @@ class PurchaseKit extends React.Component {
                         autoComplete="off"
                         placeholder="Enter MM/YY"
                         onChange={this.handleChange}
-                        onKeyPress={this.handleKeypress}
                         maxLength="5"
                       />
 
@@ -434,7 +425,6 @@ class PurchaseKit extends React.Component {
                         autoComplete="off"
                         placeholder="Enter CVV"
                         onChange={this.handleChange}
-                        onKeyPress={this.handleKeypress}
                         maxLength="4"
                       />
 
@@ -492,7 +482,6 @@ class PurchaseKit extends React.Component {
                               placeholder="Enter Street"
                               autoComplete="off"
                               onChange={this.handleChange}
-                              onKeyPress={this.handleKeypress}
                             />
 
                             {error.street.length > 0 ? (
@@ -524,7 +513,6 @@ class PurchaseKit extends React.Component {
                               placeholder="Enter ZIP Code"
                               autoComplete="off"
                               onChange={this.handleChange}
-                              onKeyPress={this.handleKeypress}
                               maxLength="6"
                             />
 
@@ -559,7 +547,6 @@ class PurchaseKit extends React.Component {
                               placeholder="Enter City"
                               autoComplete="off"
                               onChange={this.handleChange}
-                              onKeyPress={this.handleKeypress}
                             />
 
                             {error.city.length > 0 ? (
@@ -591,7 +578,6 @@ class PurchaseKit extends React.Component {
                               placeholder="Enter State"
                               autoComplete="off"
                               onChange={this.handleChange}
-                              onKeyPress={this.handleKeypress}
                             />
 
                             {error.state.length > 0 ? (

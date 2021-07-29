@@ -28,12 +28,6 @@ class BusinessDetails extends React.Component {
     };
   }
 
-  handleKeypress = (e) => {
-    if (e.key === "Enter") {
-      this.props.handleClickRight();
-    }
-  };
-
   // to handle change in SSN value and validate it
   handleSSN = (e) => {
     let errorSsn = this.props.errorUserData.ssn;
@@ -388,7 +382,6 @@ class BusinessDetails extends React.Component {
                       placeholder="Enter your SSN"
                       autoComplete="off"
                       onChange={this.handleSSN}
-                      onKeyPress={this.handleKeypress}
                       maxLength="11"
                     />
 

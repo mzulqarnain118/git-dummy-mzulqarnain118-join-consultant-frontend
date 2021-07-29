@@ -16,12 +16,6 @@ class ConfirmDetailsPasswordPage extends React.Component {
     };
   }
 
-  handleKeypress = (e) => {
-    if (e.key === "Enter") {
-      this.props.handleClickRight();
-    }
-  };
-
   //handle change for forgot password flow
   handleForgotPassword = (e) => {
     let type = e.target.id;
@@ -71,7 +65,8 @@ class ConfirmDetailsPasswordPage extends React.Component {
         userData["password"] = value;
         this.props.setUserData(userData);
       } else {
-        error = "Password length must be at least with one letter, one Uppercase letter and one digit ";
+        error =
+          "Password length must be at least with one letter, one Uppercase letter and one digit ";
         this.props.setrightFooterButtonDisabled(true);
       }
     }
@@ -107,7 +102,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
   render() {
     const { password, email, emailError } = this.state;
     const { errorUserData } = this.props;
-   
+
     return (
       <React.Fragment>
         <div
@@ -122,7 +117,8 @@ class ConfirmDetailsPasswordPage extends React.Component {
           </div>
 
           <div className="staticText2">
-          We are excited to have you as a member of the Scout &amp; Cellar Family.
+            We are excited to have you as a member of the Scout &amp; Cellar
+            Family.
           </div>
 
           {/* input to accept Password  */}
@@ -145,7 +141,6 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 name="password"
                 placeholder="Enter your password"
                 onChange={this.handleChange}
-                onKeyPress={this.handleKeypress}
                 disabled={this.props.displayForgotPassword}
               />
 
@@ -208,7 +203,6 @@ class ConfirmDetailsPasswordPage extends React.Component {
                           placeholder="Enter email address"
                           autoComplete="off"
                           onChange={this.handleForgotPassword}
-                          onKeyPress={this.handleKeypress}
                         />
                         {/* error handling of email field */}
 
@@ -225,7 +219,6 @@ class ConfirmDetailsPasswordPage extends React.Component {
                       className="ReCAPTCHA"
                       sitekey={site_key}
                       onChange={this.onChangeReCaptcha}
-                      onKeyPress={this.handleKeypress}
                     />
                   </div>
                 </div>

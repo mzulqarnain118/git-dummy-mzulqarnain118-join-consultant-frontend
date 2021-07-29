@@ -275,6 +275,7 @@ class Home extends React.Component {
         this.setUserData(userData);
         this.setrightFooterButtonDisabled(true);
       } else if (this.state.rightFooterButtonName === "DONE") {
+        console.log("home page create consultant")
         this.apiCreateConsultant();
       }
     }
@@ -817,7 +818,6 @@ class Home extends React.Component {
             handleBackButton={this.handleBackButton}
             apiGetWorkingWithDropDownData={this.apiGetWorkingWithDropDownData}
             working_with_arr={this.state.working_with_arr}
-            handleClickRight={this.handleClickRight}
           />
         );
       case 1:
@@ -835,7 +835,6 @@ class Home extends React.Component {
             checkURLAvailability={this.state.checkURLAvailability}
             setCheckURLAvailability={this.setCheckURLAvailability}
             handleBackButton={this.handleBackButton}
-            handleClickRight={this.handleClickRight}
           />
         );
       case 2:
@@ -853,7 +852,6 @@ class Home extends React.Component {
             currentAgreement={this.state.currentAgreement}
             setCurrentAgreement={this.setCurrentAgreement}
             handleBackButton={this.handleBackButton}
-            handleClickRight={this.handleClickRight}
           />
         );
       case 3:
@@ -872,7 +870,6 @@ class Home extends React.Component {
             billingAddress={this.state.billingAddress}
             setCardDetails={this.setCardDetails}
             handleBackButton={this.handleBackButton}
-            handleClickRight={this.handleClickRight}
           />
         );
       default:
