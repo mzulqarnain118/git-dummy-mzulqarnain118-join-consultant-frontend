@@ -80,7 +80,7 @@ class Partnersinsuccess extends React.Component {
             </section>
             <a
               className="btn btn-primary"
-              href="javascript:;"
+              href="/#"
               role="button"
               title="LET'S BEGIN"
             >

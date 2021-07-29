@@ -7,7 +7,7 @@ class Havemorequestions extends React.Component {
         <section className="havemore position-relative">
           <section className="consult-rgt-dts">
             <figure className="consult-img">
-              <img src={consultProfile} className="img-fluid" />
+              <img src={consultProfile} className="img-fluid" alt=""/>
               <p>
                 <sup className="topqt">‘</sup>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
                 enim ad minim veniam, quis nostrud exerci tation ullam corper suscipit lobortis nisl ut aliquip ex ea commodo consequat.

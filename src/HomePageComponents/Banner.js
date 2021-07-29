@@ -24,7 +24,7 @@ class Banner extends React.Component {
                   </Link>
                   <a
                     className="btn btn-secondary ms-2"
-                    href="javascript:;"
+                    href="/#"
                     role="button"
                     title="LEARN MORE"
                   >

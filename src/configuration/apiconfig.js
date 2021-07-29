@@ -53,7 +53,7 @@ export async function callEndpoint(methodType, authorisationType, URL, data) {
               }
             } catch (error) {
               reject({ error: "Network Error" });
-              window.location.href = "/login";
+              window.location.href = "/consultant";
             }
           });
       });

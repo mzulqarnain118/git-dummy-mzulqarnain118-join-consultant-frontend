@@ -17,22 +17,22 @@ const Footer = () => {
             <aside className="col-lg-2 col-md-2 col-12">
               <ul>
                 <li>
-                  <a href="javascript:;" title="WINE">
+                  <a href="/#" title="WINE">
                     WINE
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="WINE CLUB">
+                  <a href="/#" title="WINE CLUB">
                     WINE CLUB
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="MERCH">
+                  <a href="/#" title="MERCH">
                     MERCH
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="ABOUT CLEAN-CRAFTED">
+                  <a href="/#" title="ABOUT CLEAN-CRAFTED">
                     ABOUT CLEAN-CRAFTED
                   </a>
                 </li>
@@ -41,27 +41,27 @@ const Footer = () => {
             <aside className="col-lg-2 col-md-2 col-12">
               <ul>
                 <li>
-                  <a href="javascript:;" title="FIND A CONSULTANT">
+                  <a href="/#" title="FIND A CONSULTANT">
                     FIND A CONSULTANT
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="BECOME A CONSULTANT">
+                  <a href="/#" title="BECOME A CONSULTANT">
                     BECOME A CONSULTANT
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="LOG IN AS A CONSULTANT">
+                  <a href="/#" title="LOG IN AS A CONSULTANT">
                     LOG IN AS A CONSULTANT
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="WINERY TEAM CAREERS">
+                  <a href="/#" title="WINERY TEAM CAREERS">
                     WINERY TEAM CAREERS
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="CONTACT US">
+                  <a href="/#" title="CONTACT US">
                     CONTACT US
                   </a>
                 </li>
@@ -70,22 +70,22 @@ const Footer = () => {
             <aside className="col-lg-2 col-md-2 col-12">
               <ul>
                 <li>
-                  <a href="javascript:;" title="FAQS">
+                  <a href="/#" title="FAQS">
                     FAQS
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="SATISFACTION GUARANTEE">
+                  <a href="/#" title="SATISFACTION GUARANTEE">
                     SATISFACTION GUARANTEE
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="PRIVACY POLICY">
+                  <a href="/#" title="PRIVACY POLICY">
                     PRIVACY POLICY
                   </a>
                 </li>
                 <li>
-                  <a href="javascript:;" title="TERMS AND CONDITIONS">
+                  <a href="/#" title="TERMS AND CONDITIONS">
                     TERMS AND CONDITIONS
                   </a>
                 </li>
@@ -104,13 +104,13 @@ const Footer = () => {
           <section className="row d-flex flex-row m-0 justify-content-center align-items-center text-center">
             <div class="col">
               <div class="justify-content-center">
-                <a target="_blank" href="https://www.facebook.com/scoutandcellar/" className="ic-facebook">
+                <a target="_blank" href="https://www.facebook.com/scoutandcellar/" className="ic-facebook" rel="noreferrer">
                   <img src={Facebook} alt="" />
                 </a>
-                <a target="_blank" href="https://www.youtube.com/channel/UCLatNJbkphQqr0L2sO8l7oQ" className="ic-facebook">
+                <a target="_blank" href="https://www.youtube.com/channel/UCLatNJbkphQqr0L2sO8l7oQ" className="ic-facebook" rel="noreferrer">
                   <img src={Youtube} alt="" />
                 </a>
-                <a target="_blank" href="https://www.instagram.com/scoutandcellar/" className="ic-facebook">
+                <a target="_blank" href="https://www.instagram.com/scoutandcellar/" className="ic-facebook" rel="noreferrer">
                   <img src={Instagram} alt="" />
                 </a>
               </div>
