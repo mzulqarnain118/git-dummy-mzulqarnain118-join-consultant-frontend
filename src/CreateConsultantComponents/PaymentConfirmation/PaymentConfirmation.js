@@ -1,13 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {withStyles} from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import StepConnector from "@material-ui/core/StepConnector";
-import {IoCheckmarkCircleSharp, IoAlertCircle} from "react-icons/io5";
-import {IoIosArrowForward} from "react-icons/io";
-import {Icon1, Icon2, Icon3, Icon4} from "../../Assets/PaymentConfirmationSVG";
+import { IoCheckmarkCircleSharp, IoAlertCircle } from "react-icons/io5";
+import { IoIosArrowForward } from "react-icons/io";
+import {
+  Icon1,
+  Icon2,
+  Icon3,
+  Icon4,
+} from "../../Assets/PaymentConfirmationSVG";
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "./PaymentConfirmation.css";
@@ -56,7 +61,7 @@ const GreenStepConnector = withStyles({
 
 // stepper icon (complete and incomplete)
 const disabledIcon = (props) => {
-  const {completed} = props;
+  const { completed } = props;
 
   if (completed) {
     return (
@@ -96,19 +101,31 @@ class PaymentConfirmation extends React.Component {
 
   //stepper title content
   getSteps = () => {
-    return ["Confirm Details", "Business Details", "Verify Identity", "Purchase Kit", "Documentation"];
+    return [
+      "Confirm Details",
+      "Business Details",
+      "Verify Identity",
+      "Purchase Kit",
+      "Documentation",
+    ];
   };
 
   render() {
     //const { userData } = this.state;
-    const {classes, userData, confirmation, consultant_number} = this.props;
+    const { classes, userData, confirmation, consultant_number } = this.props;
     const steps = this.getSteps();
-    const {activeStep, rippleRef1, rippleRef2, rippleRef3} = this.state;
+    const { activeStep, rippleRef1, rippleRef2, rippleRef3 } = this.state;
     return (
       <React.Fragment>
-        <div style={{background: "#E8E0DD", overflow: "hidden"}}>
-          <div className={window.innerWidth >= 550 ? "PCcomponentMargin " : "PCmobileComponent"}>
-            <div style={{marginLeft: "auto", marginRight: "auto"}}>
+        <div style={{ background: "#E8E0DD", overflow: "hidden" }}>
+          <div
+            className={
+              window.innerWidth >= 550
+                ? "PCcomponentMargin "
+                : "PCmobileComponent"
+            }
+          >
+            <div style={{ marginLeft: "auto", marginRight: "auto" }}>
               {/* header for mobile view  */}
               {window.innerWidth <= 550 ? (
                 <>
@@ -128,14 +145,22 @@ class PaymentConfirmation extends React.Component {
                   </span>
                 </>
               ) : null}
-              <div className="paymentConfirmationHead">HEY, {userData.first_name.toUpperCase()}!</div>
+              <div className="paymentConfirmationHead">
+                HEY, {userData.first_name.toUpperCase()}!
+              </div>
               {confirmation ? (
                 <>
-                  <div className="paymentConfirmationSuccess">Congratulations, welcome to Scout &amp; Cellar!</div>
-                  <div className=" mobileHead1">
-                    <div className="customURLAssigned">scoutandcellar.com/{userData.url}</div>
+                  <div className="paymentConfirmationSuccess">
+                    Congratulations, welcome to Scout &amp; Cellar!
                   </div>
-                  <div className=" paymentConfirmationHead2">IS NOW RESERVED!</div>
+                  <div className=" mobileHead1">
+                    <div className="customURLAssigned">
+                      scoutandcellar.com/{userData.url}
+                    </div>
+                  </div>
+                  <div className=" paymentConfirmationHead2">
+                    IS NOW RESERVED!
+                  </div>
 
                   <hr
                     style={{
@@ -152,7 +177,14 @@ class PaymentConfirmation extends React.Component {
                   <div className="pcConsultantNumber"> {consultant_number}</div>
                 </>
               ) : (
-                <div className="paymentConfirmationFaliure">ENROLMENT FAILURE!</div>
+                <>
+                  <div className="paymentConfirmationFaliure">
+                    ENROLMENT FAILURE!
+                  </div>
+                  <h6 className="payment-confirmation-error-message">
+                    {this.props.consultant_error}
+                  </h6>
+                </>
               )}
             </div>
           </div>
@@ -169,7 +201,9 @@ class PaymentConfirmation extends React.Component {
             </>
           ) : null}
         </div>
-        <div className="pcHead4">COMPLETE ALL THE STEPS TO FINISH YOUR ENROLLMENT</div>
+        <div className="pcHead4">
+          COMPLETE ALL THE STEPS TO FINISH YOUR ENROLLMENT
+        </div>
         <div className=" stepperMdMarginLeft">
           {/* Stepper */}
           <Stepper
@@ -217,31 +251,47 @@ class PaymentConfirmation extends React.Component {
             <div className="pcFooterHead">LET'S GET GOING</div>
             <div className="row pcFooterLeftMargin">
               {/* card 1 */}
-              <div className="col-lg-3  pcFooterCard" onMouseDown={this.onRippleStart1} onMouseUp={this.onRippleStop1}>
+              <div
+                className="col-lg-3  pcFooterCard"
+                onMouseDown={this.onRippleStart1}
+                onMouseUp={this.onRippleStop1}
+              >
                 <TouchRipple ref={rippleRef1} center={false} />
                 <div className="row">
                   <div className="pcFooterMainIcon">
                     <Icon1 />
                   </div>
-                  <div className="pcFooterText">Access your consultant Account</div>
+                  <div className="pcFooterText">
+                    Access your consultant Account
+                  </div>
                   <IoIosArrowForward className="pcFooterNextIcon" />
                 </div>
               </div>
 
               {/* card 2 */}
-              <div className="col-lg-3 pcFooterCard" onMouseDown={this.onRippleStart2} onMouseUp={this.onRippleStop2}>
+              <div
+                className="col-lg-3 pcFooterCard"
+                onMouseDown={this.onRippleStart2}
+                onMouseUp={this.onRippleStop2}
+              >
                 <TouchRipple ref={rippleRef2} center={false} />
                 <div className="row">
                   <div className="pcFooterMainIcon2">
                     <Icon2 />
                   </div>
-                  <div className="pcFooterText1">Download Vine App for Consultant</div>
+                  <div className="pcFooterText1">
+                    Download Vine App for Consultant
+                  </div>
                   <IoIosArrowForward className="pcFooterNextIcon" />
                 </div>
               </div>
 
               {/* card 3 */}
-              <div className="col-lg-3 pcCardMarginLeft pcFooterCard" onMouseDown={this.onRippleStart3} onMouseUp={this.onRippleStop3}>
+              <div
+                className="col-lg-3 pcCardMarginLeft pcFooterCard"
+                onMouseDown={this.onRippleStart3}
+                onMouseUp={this.onRippleStop3}
+              >
                 <TouchRipple ref={rippleRef3} center={false} />
                 <div className="row">
                   <div className="pcFooterMainIcon">

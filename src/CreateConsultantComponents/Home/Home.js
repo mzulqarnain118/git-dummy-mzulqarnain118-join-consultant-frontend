@@ -219,6 +219,8 @@ class Home extends React.Component {
       working_with_arr: [],
       //consultant_id
       consultant_number: 0,
+      //consulatnt payment error
+      consultant_error: "",
     };
   }
   handleKeypress = (e) => {
@@ -673,6 +675,7 @@ class Home extends React.Component {
             activeStep: 4,
             displayFooter: false,
             confirmation: false,
+            consultant_error: e.error,
           });
         }
       })
@@ -684,6 +687,7 @@ class Home extends React.Component {
           activeStep: 4,
           displayFooter: false,
           confirmation: false,
+          consultant_error: error.error,
         });
       });
   };
@@ -1192,6 +1196,7 @@ class Home extends React.Component {
             setConfirmation={this.setConfirmation}
             moveBackToLastScreen={this.moveBackToLastScreen}
             consultant_number={this.state.consultant_number}
+            consultant_error={this.state.consultant_error}
           />
         )}
       </div>

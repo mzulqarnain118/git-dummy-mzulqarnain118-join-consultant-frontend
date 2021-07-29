@@ -171,6 +171,11 @@
   cursor: pointer;
   font-weight: 500;
 }
+.payment-confirmation-error-message{
+  font-family: Oswald;
+  font-size: 1.5em;
+  text-align: center;
+}
 
 @media only screen and (max-width: 768px) {
   .pcFooter {
