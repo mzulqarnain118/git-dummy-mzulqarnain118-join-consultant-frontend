@@ -36,7 +36,6 @@ class PurchaseKit extends React.Component {
     };
   }
 
-
   handleKeypress = (e) => {
     if (e.key === "Enter") {
       this.props.handleClickRight();
@@ -137,17 +136,29 @@ class PurchaseKit extends React.Component {
         //month validation
         if (
           parseInt(value.slice(0, 2)) > 0 &&
-          parseInt(value.slice(0, 2)) < 13 &&
-          parseInt(value.slice(0, 2)) >=
-            parseInt(new Date().getMonth().toString().substr(-2))
+          parseInt(value.slice(0, 2)) < 13
         ) {
-          //year validation
+          //year validation if (year is greater than current year)
           if (
             value.length === 5 &&
-            parseInt(value.slice(3)) >=
+            parseInt(value.slice(3)) >
               parseInt(new Date().getFullYear().toString().substr(-2))
           ) {
             error[id] = "";
+          } //year validation if (year is equal to current year)
+          else if (
+            value.length === 5 &&
+            parseInt(value.slice(3)) ===
+              parseInt(new Date().getFullYear().toString().substr(-2))
+          ) {
+            if (
+              parseInt(value.slice(0, 2)) >=
+              parseInt(new Date().getMonth().toString().substr(-2))+1
+            ) {
+              error[id] = "";
+            } else {
+              error[id] = "Please enter a valid Month";
+            }
           } else {
             error[id] = "Please enter a valid year";
           }
