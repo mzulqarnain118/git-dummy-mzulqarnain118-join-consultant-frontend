@@ -26,8 +26,8 @@ require("typeface-domine");
 //style for stepper
 const styles = (theme) => ({
   step: {
-    // fill: "white",
-    border: "1px solid white",
+    fill: "#f2efed",
+    border: "1px solid black",
     borderRadius: "50%",
 
     "& $completed": {
@@ -50,15 +50,31 @@ const styles = (theme) => ({
     "& $active": {
       border: "0px solid white",
       borderRadius: "0%",
-      fill: "#DCBA80 ",
+      fill: "#DCBA80",
     },
   },
 
   step2: {
     "& $active": {
-      color: "#241F20",
+      fill: "#241F20 !important",
       border: "0px solid #241F20",
       borderRadius: "0%",
+    },
+  },
+
+  step3: {
+    fill: "#f2efed",
+    border: "2px solid white",
+    borderRadius: "50%",
+    "& $completed": {
+      fill: "#4BA380",
+      border: "0px solid white",
+      borderRadius: "0%",
+    },
+    "& $active": {
+      border: "0px solid white",
+      borderRadius: "0%",
+      fill: "#DCBA80",
     },
   },
 
@@ -1002,10 +1018,7 @@ class Home extends React.Component {
     const { activeStep, load, rightFooterButtonName } = this.state;
 
     return (
-      <div
-        tabIndex="0"
-        onKeyDown={this.handleKeypress}
-      >
+      <div tabIndex="0" onKeyDown={this.handleKeypress}>
         {load ? (
           <CircularProgress color="black" size={80} className="loader" />
         ) : null}
@@ -1126,7 +1139,7 @@ class Home extends React.Component {
                                     <StepLabel
                                       StepIconProps={{
                                         classes: {
-                                          root: classes.step,
+                                          root: classes.step3,
                                           completed: classes.completed,
                                           active: classes.active,
                                           disabled: classes.disabled,

@@ -10,8 +10,25 @@ import StepConnector from "@material-ui/core/StepConnector";
 require("typeface-oswald");
 
 const styles = (theme) => ({
+  // step: {
+  //   fontColor: "grey",
+  //   fill: "#f2efed",
+
+
+  //   "& $completed": {
+  //     color: "#4BA380",
+  //     border: "0px solid white",
+  //     borderRadius: "0%",
+  //   },
+  //   "& $active": {
+  //     fill: "#DCBA80",
+  //     border: "0px solid white",
+  //     borderRadius: "0%",
+  //   },
+  // },
+
   step: {
-    fontColor: "grey",
+    fill: "#f2efed",
 
     "& $completed": {
       color: "#4BA380",
@@ -24,6 +41,19 @@ const styles = (theme) => ({
       borderRadius: "0%",
     },
   },
+  step1: {
+    "& $completed": {
+      fill: "#4BA380",
+      border: "0px solid white",
+      borderRadius: "0%",
+    },
+    "& $active": {
+      border: "0px solid white",
+      borderRadius: "0%",
+      fill: "#DCBA80",
+    },
+  },
+
 
   alternativeLabel: {},
   active: {},
@@ -113,7 +143,7 @@ class Header extends React.Component {
                     <Step
                       key={label}
                       classes={{
-                        root: classes.step,
+                        root: classes.step1,
                         completed: classes.completed,
                         active: classes.active,
                       }}
@@ -125,7 +155,6 @@ class Header extends React.Component {
                             completed: classes.completed,
                             active: classes.active,
                             disabled: classes.disabled,
-                            text: classes.textStep,
                           },
                         }}
                       >
