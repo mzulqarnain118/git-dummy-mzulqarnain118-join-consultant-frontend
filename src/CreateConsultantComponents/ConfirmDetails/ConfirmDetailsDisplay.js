@@ -3,6 +3,11 @@ import moment from "moment";
 import Header from "../MobileHeader/Header";
 
 class ConfirmDetailsDisplay extends React.Component {
+  handleKeypress = (e) => {
+    if (e.key === "Enter") {
+      this.props.handleClickRight();
+    }
+  };
   render() {
     const { userData } = this.props;
     return (

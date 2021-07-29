@@ -359,6 +359,7 @@ class VerifyIdentity extends React.Component {
             currentAgreement={this.props.currentAgreement}
             setCurrentAgreement={this.props.setCurrentAgreement}
             handleBackButton={this.props.handleBackButton}
+            handleClickRight={this.props.handleClickRight}
           />
         )}
       </React.Fragment>

@@ -16,6 +16,12 @@ class ConfirmDetailsPasswordPage extends React.Component {
     };
   }
 
+  handleKeypress = (e) => {
+    if (e.key === "Enter") {
+      this.props.handleClickRight();
+    }
+  };
+
   //handle change for forgot password flow
   handleForgotPassword = (e) => {
     let type = e.target.id;
@@ -139,6 +145,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 name="password"
                 placeholder="Enter your password"
                 onChange={this.handleChange}
+                onKeyPress={this.handleKeypress}
                 disabled={this.props.displayForgotPassword}
               />
 
@@ -201,6 +208,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                           placeholder="Enter email address"
                           autoComplete="off"
                           onChange={this.handleForgotPassword}
+                          onKeyPress={this.handleKeypress}
                         />
                         {/* error handling of email field */}
 
@@ -217,6 +225,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                       className="ReCAPTCHA"
                       sitekey={site_key}
                       onChange={this.onChangeReCaptcha}
+                      onKeyPress={this.handleKeypress}
                     />
                   </div>
                 </div>

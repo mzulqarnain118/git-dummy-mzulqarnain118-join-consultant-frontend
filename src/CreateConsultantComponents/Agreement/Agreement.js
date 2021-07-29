@@ -18,6 +18,12 @@ class Agreement extends React.Component {
       scrollReachEnd: false,
     };
   }
+
+  handleKeypress = (e) => {
+    if (e.key === "Enter") {
+      this.props.handleClickRight();
+    }
+  };
   // policy text data  (Policy and Procedures)
   PolicyAgreement = () => {
     return (
@@ -239,6 +245,7 @@ class Agreement extends React.Component {
                           name="checkbox1"
                           checked={checkbox1}
                           onChange={this.handleChangecheckbox}
+                          onKeyPress={this.handleKeypress}
                           className="checkBoxAccept"
                           style={{
                             color: "#DCBA80",
@@ -271,6 +278,7 @@ class Agreement extends React.Component {
                           name="checkbox2"
                           checked={checkbox2}
                           onChange={this.handleChangecheckbox}
+                          onKeyPress={this.handleKeypress}
                           className="checkBoxAccept"
                           style={{
                             color: "#DCBA80",

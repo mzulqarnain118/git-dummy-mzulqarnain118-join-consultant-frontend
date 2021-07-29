@@ -206,6 +206,58 @@ class Home extends React.Component {
     };
   }
 
+  // to handle right footer button changes
+  handleClickRight = async () => {
+    let userData = this.state.userData;
+    if (!this.state.rightFooterButtonDisabled) {
+      if (this.state.rightFooterButtonName === "NEXT") {
+        //call API to verify email (API CALL IN Home)
+        this.apiVerifyEmail();
+      } else if (this.state.rightFooterButtonName === "CONTINUE ") {
+        // api call forgot password
+        this.apiForgotPassword();
+      } else if (this.state.rightFooterButtonName === "LOG IN") {
+        //call API to Login (API CALL IN Home)
+        this.apiLogin();
+      } else if (this.state.rightFooterButtonName === "LOOKS GOOD") {
+        // call API to Update screen id and move to next screen
+        let data = {
+          id: this.state.userData.id,
+          screen: 1,
+        };
+        this.apiUpdateScreen(data, "PROCEED");
+      } else if (this.state.rightFooterButtonName === "SAVE AND PROCEED") {
+        //call API to update data (API CALL IN Home)
+        this.apiUpdateUserData();
+      } else if (this.state.rightFooterButtonName === "PROCEED") {
+        // call API to Update screen id and move to next screen
+        let data = {
+          id: this.state.userData.id,
+          screen: 2,
+          ssn: this.state.userData.ssn,
+          url: this.state.userData.url,
+          doing_business: this.state.userData.doing_business,
+        };
+        this.apiUpdateScreen(data, "");
+      } else if (this.state.rightFooterButtonName === "CONTINUE") {
+        // call API to Update screen id ,agreement accepted and move to next screen
+        let data = {
+          id: this.state.userData.id,
+          screen: 3,
+          indepedent_agreement: true,
+          policy_procedures: true,
+        };
+        this.apiUpdateScreen(data, "DONE");
+        userData["indepedent_agreement"] = true;
+        userData["policy_procedures"] = true;
+        this.setUserData(userData);
+        this.setrightFooterButtonDisabled(true);
+      } else if (this.state.rightFooterButtonName === "DONE") {
+        this.apiCreateConsultant();
+      }
+    }
+  };
+
   //*********************************************************** API Calls Starts Here*********************************************************/
 
   // API to Verify Email (landing page)
@@ -745,6 +797,7 @@ class Home extends React.Component {
             handleBackButton={this.handleBackButton}
             apiGetWorkingWithDropDownData={this.apiGetWorkingWithDropDownData}
             working_with_arr={this.state.working_with_arr}
+            handleClickRight={this.handleClickRight}
           />
         );
       case 1:
@@ -762,6 +815,7 @@ class Home extends React.Component {
             checkURLAvailability={this.state.checkURLAvailability}
             setCheckURLAvailability={this.setCheckURLAvailability}
             handleBackButton={this.handleBackButton}
+            handleClickRight={this.handleClickRight}
           />
         );
       case 2:
@@ -779,6 +833,7 @@ class Home extends React.Component {
             currentAgreement={this.state.currentAgreement}
             setCurrentAgreement={this.setCurrentAgreement}
             handleBackButton={this.handleBackButton}
+            handleClickRight={this.handleClickRight}
           />
         );
       case 3:
@@ -797,6 +852,7 @@ class Home extends React.Component {
             billingAddress={this.state.billingAddress}
             setCardDetails={this.setCardDetails}
             handleBackButton={this.handleBackButton}
+            handleClickRight={this.handleClickRight}
           />
         );
       default:
@@ -942,7 +998,7 @@ class Home extends React.Component {
     const { activeStep, load, rightFooterButtonName } = this.state;
 
     return (
-      <React.Fragment>
+      <React.Fragment >
         {load ? (
           <CircularProgress color="black" size={80} className="loader" />
         ) : null}

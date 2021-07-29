@@ -27,6 +27,13 @@ class BusinessDetails extends React.Component {
       load: false,
     };
   }
+
+  handleKeypress = (e) => {
+    if (e.key === "Enter") {
+      this.props.handleClickRight();
+    }
+  };
+
   // to handle change in SSN value and validate it
   handleSSN = (e) => {
     let errorSsn = this.props.errorUserData.ssn;
@@ -233,9 +240,9 @@ class BusinessDetails extends React.Component {
                       }
                     }}
                   />
-               
+
                   {errorCustomURL.length > 0 ? (
-                    <div className="BDerrorMes" >
+                    <div className="BDerrorMes">
                       {errorCustomURL}
                       <br />
                     </div>
@@ -309,7 +316,7 @@ class BusinessDetails extends React.Component {
             </div>
             {/* if the custom url is valid display the rest of the screen */}
             {this.state.customURLAvailability && checkURLAvailability ? (
-              <div style={{marginBottom:"6em"}} >
+              <div style={{ marginBottom: "6em" }}>
                 <div className="row">
                   <span className="businessHead">DOING BUSINESS AS AN</span>
                 </div>
@@ -381,6 +388,7 @@ class BusinessDetails extends React.Component {
                       placeholder="Enter your SSN"
                       autoComplete="off"
                       onChange={this.handleSSN}
+                      onKeyPress={this.handleKeypress}
                       maxLength="11"
                     />
 
