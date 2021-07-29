@@ -447,7 +447,7 @@ class ConfirmDetailsEdit extends React.Component {
             </div>
 
             {/* Last name  */}
-            <div className="col-lg-2 offset-lg-1 col-md-3">
+            <div className="col-lg-2 offset-lg-1  edit-marginLeft">
               <div className="form-group">
                 <span className="head3" htmlFor="last_name">
                   LAST NAME
@@ -478,11 +478,11 @@ class ConfirmDetailsEdit extends React.Component {
               ) : null}
             </div>
             {/* date of bith  */}
-            <div className="col-lg-4 offset-lg-1 col-md-5">
+            <div className="col-lg-4 offset-lg-1 col-md-5 edit-marginLeft">
               <span className="head3">DATE OF BIRTH</span>
 
               <div className="row">
-                <div className="col-lg-1 col-md-2 col-xs-1 mobileDate">
+                <div className="col-lg-1 col-md-5 col-xs-1 mobileDate">
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select
@@ -509,7 +509,7 @@ class ConfirmDetailsEdit extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-3 offset-lg-2 col-md-2 col-xs-1 mobileDate">
+                <div className="col-lg-3 offset-lg-2 col-md-5 col-xs-1 mobileDate">
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select
@@ -683,7 +683,7 @@ class ConfirmDetailsEdit extends React.Component {
             </div>
 
             {/* Zipcode */}
-            <div className="col-lg-2 offset-lg-1">
+            <div className="col-lg-2 offset-lg-1 edit-marginLeft">
               <div className="form-group">
                 <span className="head3" htmlFor="zipcode">
                   ZIPCODE
@@ -717,7 +717,7 @@ class ConfirmDetailsEdit extends React.Component {
             </div>
 
             {/* city */}
-            <div className="col-lg-2 offset-lg-1">
+            <div className="col-lg-2 offset-lg-1 edit-marginLeft">
               <div className="form-group">
                 <span className="head3" htmlFor="city">
                   CITY
@@ -783,7 +783,7 @@ class ConfirmDetailsEdit extends React.Component {
             </div>
 
             {/* cell number */}
-            <div className="col-lg-2 offset-lg-1">
+            <div className="col-lg-2 offset-lg-1 edit-marginLeft">
               <div className="form-group">
                 <span className="head3" htmlFor="phonenumber">
                   CELL NUMBER
@@ -816,7 +816,7 @@ class ConfirmDetailsEdit extends React.Component {
             </div>
 
             {/* working with */}
-            <div className="col-lg-2 offset-lg-1">
+            <div className="col-lg-2 offset-lg-1 edit-marginLeft">
               <div className="form-group">
                 <span className="head3" htmlFor="working_with">
                   WORKING WITH

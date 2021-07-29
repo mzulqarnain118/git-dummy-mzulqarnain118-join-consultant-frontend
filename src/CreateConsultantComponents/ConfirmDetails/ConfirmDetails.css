@@ -233,6 +233,7 @@
   margin-bottom: 8px;
   font-family: Domine !important;
   font-weight: 600 !important;
+  margin-left:2px;
 }
 .edit-year:focus {
   border-color: #d8c5a6 !important;
@@ -274,6 +275,7 @@
   margin-bottom: 8px;
   font-family: Domine !important;
   font-weight: 600 !important;
+  margin-left:2px;
 }
 .edit-year-red :focus {
   border-color: red !important;
@@ -322,6 +324,9 @@ input:disabled {
 } */
 
 @media only screen and (max-width: 550px) {
+  .edit-marginLeft {
+    margin-left: 0% !important;
+  }
   .mobileDisplayColumnSpacing {
     margin-left: 45px;
   }
@@ -407,7 +412,7 @@ input:disabled {
     border-width: 1px;
     border-color: #d8c5a6 !important;
     border-radius: 0 !important;
-    width: 336px !important;
+    width: 323px !important;
     height: 56px !important;
     margin-bottom: 8px;
   }
@@ -504,6 +509,7 @@ input:disabled {
   .displayArea {
     padding: 30px;
   }
+
 }
 @media (max-width: 991px) {
   .email1 {
@@ -528,6 +534,9 @@ input:disabled {
   .marginHead {
     margin-top: 30px;
   }
+  .edit-marginLeft {
+    margin-left: 0% !important;
+  }
 }
 @media (max-width: 768px) {
   .componentMargin1,
@@ -548,6 +557,9 @@ input:disabled {
     width: 310px !important;
     overflow: hidden;
   }
+  .edit-marginLeft {
+    margin-left: 0% !important;
+  }
 }
 @media (max-width: 639px) {
   .mobileDisplayWidth {
@@ -556,6 +568,9 @@ input:disabled {
   }
   .dataText {
     font-size: 16px;
+  }
+  .edit-marginLeft {
+    margin-left: 0% !important;
   }
 }
 
@@ -567,12 +582,18 @@ input:disabled {
   .head2 {
     font-size: 28px;
   }
+  .edit-marginLeft {
+    margin-left: 0% !important;
+  }
 }
 @media (max-width: 414px) {
   .ReCAPTCHA {
     transform: scale(1.2);
     transform-origin: 0 0;
     width: 304px !important;
+  }
+  .edit-marginLeft {
+    margin-left: 0% !important;
   }
 }
 
@@ -582,8 +603,14 @@ input:disabled {
     transform-origin: 0 0;
     width: 304px !important;
   }
+  .edit-marginLeft {
+    margin-left: 0% !important;
+  }
 }
 @media (max-width: 360px) {
+  .edit-marginLeft {
+    margin-left: 0% !important;
+  }
   .ReCAPTCHA {
     transform: scale(1.04);
     transform-origin: 0 0;
@@ -603,4 +630,9 @@ input:disabled {
   margin-left: -21px;
   font-family: Domine !important;
   font-weight: 600 !important;
+}
+@media (max-width: 1440px) {
+  .edit-marginLeft {
+    margin-left: 13.66%;
+  }
 }
