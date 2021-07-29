@@ -92,6 +92,7 @@
   width: 90% !important;
   height: 64px !important;
   margin-bottom: 8px;
+  margin-top: 8px !important;
 }
 .purchaseInput:focus {
   border-color: #d8c5a6 !important;
@@ -103,6 +104,7 @@
   width: 90% !important;
   height: 64px !important;
   margin-bottom: 8px;
+  margin-top: 8px !important;
 }
 
 .purchaseRed:focus {
@@ -125,6 +127,7 @@
   width: 100% !important;
   height: 64px !important;
   margin-bottom: 8px;
+  margin-top: 8px !important;
 }
 .purchaseInput1:focus {
   border-color: #d8c5a6 !important;
@@ -136,6 +139,7 @@
   width: 100% !important;
   height: 64px !important;
   margin-bottom: 8px;
+  margin-top: 8px !important;
 }
 .purchaseRed1:focus {
   border-color: red !important;
@@ -169,6 +173,7 @@
   height: 64px !important;
   margin-bottom: 8px;
   margin-left: 45px !important;
+  margin-top: 8px !important;
 }
 .purchaseInput2:focus {
   border-color: #d8c5a6 !important;
@@ -181,6 +186,7 @@
   height: 64px !important;
   margin-bottom: 8px;
   margin-left: 45px !important;
+  margin-top: 8px !important;
 }
 .purchaseRed2:focus {
   border-color: red !important;

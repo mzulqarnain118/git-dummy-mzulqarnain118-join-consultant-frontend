@@ -29,7 +29,7 @@
   margin-top: 48px;
 }
 .emailLabel {
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   color: grey;
   font-family: oswald;
 }
@@ -107,7 +107,7 @@
   margin-top: 40px;
 }
 .passwordLabel {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   color: grey;
   font-family: oswald;
 }
@@ -144,6 +144,7 @@
   font-size: 18px;
   font-family: Domine;
   overflow-wrap: anywhere !important;
+  margin-top: 8px !important;
 }
 
 .marginHead {
@@ -326,7 +327,7 @@ input:disabled {
   }
 
   .emailLabel {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
   .InputMargin {
     margin-bottom: 10px;
@@ -603,4 +604,3 @@ input:disabled {
   font-family: Domine !important;
   font-weight: 600 !important;
 }
-
