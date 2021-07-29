@@ -517,7 +517,6 @@ class Home extends React.Component {
 
   // API to verify URL
   apiVerifyURL = async (customURL) => {
-    this.setState({ load: true });
     let data = {
       url: customURL,
     };
@@ -529,7 +528,6 @@ class Home extends React.Component {
     )
       .then((response) => {
         try {
-          this.setState({ load: false });
           if (response.data.validText) {
             return true;
           } else {
@@ -537,13 +535,11 @@ class Home extends React.Component {
           }
         } catch (e) {
           console.log("Error in /VerifyURL1");
-          this.setState({ load: false });
           return false;
         }
       })
       .catch((error) => {
         console.log("Error in /VerifyURL2");
-        this.setState({ load: false });
         return false;
       });
   };

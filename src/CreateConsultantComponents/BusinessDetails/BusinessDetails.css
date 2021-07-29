@@ -294,6 +294,11 @@ input::-webkit-input-placeholder {
     position: relative;
     left: 55%;
   }
+  .mobileNotAvailabilityText{
+    margin-top: 5px;
+    position: relative;
+    left: 55%;
+  }
   .searchButton {
     background: #dcba80;
     text-align: center;
@@ -602,7 +607,7 @@ input::-webkit-input-placeholder {
   }
 
   .availableText {
-    margin-top: 115px;
+    margin-top: 115px !important;
     font-family: oswald;
     font-size: 12px;
     margin-left: 10px;
@@ -763,7 +768,11 @@ input::-webkit-input-placeholder {
   }
   .mobileAvailabilityText {
     margin-top: 88px;
-    margin-left: -30px !important;
+    margin-left: -80px ;
+  }
+  .mobileNotAvailabilityText{
+    margin-top: 88px;
+    margin-left: -100px ;
   }
 
   .mobileSsnToggle {

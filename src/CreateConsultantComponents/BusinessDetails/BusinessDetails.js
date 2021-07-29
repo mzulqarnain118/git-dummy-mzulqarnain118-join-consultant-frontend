@@ -288,7 +288,7 @@ class BusinessDetails extends React.Component {
                         </div>
                       </div>
                     ) : (
-                      <div className="col-lg-4 col-md-5 mobileAvailabilityText offsetLeftAvailableIcon">
+                      <div className="col-lg-4 col-md-5 mobileNotAvailabilityText offsetLeftAvailableIcon">
                         <div className="row">
                           <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
                             <CancelIcon
