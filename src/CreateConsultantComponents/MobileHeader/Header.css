@@ -91,6 +91,7 @@
     height: 50px;
   }
 }
-.Header-active-18 > .MuiStepIcon-text {
+
+.MuiStepIcon-active > .MuiStepIcon-text {
   fill: white !important ;
 }

@@ -157,9 +157,6 @@
 .MuiStepIcon-text {
   fill: black !important ;
 }
-.Home-active-5 > .MuiStepIcon-text {
-  fill: white !important ;
-}
-.Home-active-6 > .MuiStepIcon-text {
+.MuiStepIcon-active > .MuiStepIcon-text {
   fill: white !important ;
 }
