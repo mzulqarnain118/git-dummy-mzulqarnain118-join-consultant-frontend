@@ -275,7 +275,6 @@ class Home extends React.Component {
         this.setUserData(userData);
         this.setrightFooterButtonDisabled(true);
       } else if (this.state.rightFooterButtonName === "DONE") {
-        console.log("home page create consultant")
         this.apiCreateConsultant();
       }
     }
@@ -633,7 +632,7 @@ class Home extends React.Component {
 
   // api to create a consultant
   apiCreateConsultant = async () => {
-    this.setState({ load: true });
+    this.setState({ load: true, rightFooterButtonDisabled: true });
     let address = this.state.billingAddress;
     let userData = this.state.userData;
     if (this.state.addresschange) {
