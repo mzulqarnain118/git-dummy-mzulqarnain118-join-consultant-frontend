@@ -171,7 +171,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 this.props.setrightFooterButtonDisabled(true);
               }}
             >
-              Lets's Find It
+              Let's Find it
             </span>
           </div>
           {/* forgot password flow */}
