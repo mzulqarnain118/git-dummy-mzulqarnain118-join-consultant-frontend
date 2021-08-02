@@ -195,10 +195,15 @@ class PaymentConfirmation extends React.Component {
                 onClick={() => {
                   this.props.consultant_error === "Invalid postal code."
                     ? this.props.moveBackToLastScreen(0, "SAVE AND PROCEED")
+                    : this.props.consultant_error ===
+                      "The website name is already taken."
+                    ? this.props.moveBackToLastScreen(1, "PROCEED")
                     : this.props.moveBackToLastScreen(3, "DONE");
                 }}
               >
-                {this.props.consultant_error === "Invalid postal code."
+                {this.props.consultant_error === "Invalid postal code." ||
+                this.props.consultant_error ===
+                  "The website name is already taken."
                   ? "MAKE CHANGES"
                   : "RETRY PAYMENT"}
               </div>
