@@ -193,10 +193,14 @@ class PaymentConfirmation extends React.Component {
               <div
                 className="retryPaymentButton"
                 onClick={() => {
-                  this.props.moveBackToLastScreen(3, "DONE");
+                  this.props.consultant_error === "Invalid postal code."
+                    ? this.props.moveBackToLastScreen(0, "SAVE AND PROCEED")
+                    : this.props.moveBackToLastScreen(3, "DONE");
                 }}
               >
-                RETRY PAYMENT
+                {this.props.consultant_error === "Invalid postal code."
+                  ? "MAKE CHANGES"
+                  : "RETRY PAYMENT"}
               </div>
             </>
           ) : null}

@@ -935,7 +935,7 @@ class Home extends React.Component {
     this.setState({
       activeStep: activeStep,
       rightFooterButtonName: button,
-      rightFooterButtonDisabled: true,
+      rightFooterButtonDisabled: activeStep === 0 ? false : true,
       displayFooter: true,
     });
   };
