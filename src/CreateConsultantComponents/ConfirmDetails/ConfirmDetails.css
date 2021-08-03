@@ -144,6 +144,7 @@
   font-size: 18px;
   font-family: Domine;
   overflow-wrap: anywhere !important;
+  word-break: break-all;
   margin-top: 8px !important;
 }
 

@@ -141,7 +141,7 @@ class PaymentConfirmation extends React.Component {
                       this.props.moveBackToLastScreen(0, "NEXT");
                     }}
                   >
-                    SIGNOUT <Icon4 />
+                    SIGN OUT <Icon4 />
                   </span>
                 </>
               ) : null}
