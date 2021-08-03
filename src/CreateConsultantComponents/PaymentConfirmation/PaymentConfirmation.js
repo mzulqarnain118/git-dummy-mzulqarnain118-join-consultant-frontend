@@ -104,7 +104,7 @@ class PaymentConfirmation extends React.Component {
     return [
       "Confirm Details",
       "Business Details",
-      "Verify Identity",
+      "Review Terms",
       "Purchase Kit",
       "Documentation",
     ];
