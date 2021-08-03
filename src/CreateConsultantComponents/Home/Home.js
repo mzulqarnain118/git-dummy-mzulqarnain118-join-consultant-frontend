@@ -318,7 +318,7 @@ class Home extends React.Component {
           "This email address is in use for an existing Consultant Account."
         ) {
           error.error =
-            "This email address is already in use for an existing Consultant Account. Please login into https:// team.scoutandcellar.com/ Account/Login";
+            "This email address is already in use for an existing Consultant Account. Please login into https://team.scoutandcellar.com/Account/Login";
         }
         errorUserData["email"] = error.error;
         this.setState({
