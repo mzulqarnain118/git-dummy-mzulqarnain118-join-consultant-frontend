@@ -99,6 +99,15 @@ class ConfirmDetailsPasswordPage extends React.Component {
     }
   };
 
+  scrollToBottom = () => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth",
+      });
+    }, 100);
+  };
+
   render() {
     const { password, email, emailError } = this.state;
     const { errorUserData } = this.props;
@@ -220,6 +229,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                       sitekey={site_key}
                       onChange={this.onChangeReCaptcha}
                     />
+                    {this.scrollToBottom()}
                   </div>
                 </div>
               </div>
