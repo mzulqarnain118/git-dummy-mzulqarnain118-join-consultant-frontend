@@ -1,3 +1,11 @@
+.pcStepper {
+  background: transparent;
+  width: 70vw;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
 .PCcomponentMargin {
   margin-top: 4em;
 }
@@ -171,7 +179,7 @@
   cursor: pointer;
   font-weight: 500;
 }
-.payment-confirmation-error-message{
+.payment-confirmation-error-message {
   font-family: Oswald;
   font-size: 1.5em;
   text-align: center;
@@ -200,6 +208,14 @@
 }
 
 @media only screen and (max-width: 550px) {
+  .pcStepper {
+    background: transparent;
+    width: 70vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    position: absolute;
+    left: 50px;
+  }
   .pcFooter {
     background: #241f20;
     width: 100%;
@@ -210,7 +226,6 @@
     padding-top: 0.5em;
   }
   .pcCardMarginLeft {
-    margin-left: 6vw;
     margin-top: 2em;
   }
   .stepperMdMarginLeft {
@@ -220,21 +235,17 @@
     height: 22em;
     overflow: hidden;
   }
-  .mobileHead1 {
-    width: 1em;
-  }
+
   .pcFooterCard {
     background: #6f6c6d;
     width: 20em;
     height: 5em;
     border-radius: 0.5em;
     margin-top: 2em;
-    margin-left: 0vw;
-    position: relative;
     cursor: pointer;
   }
   .pcFooterLeftMargin {
-    margin-left: 8vw;
+    margin-left: 50px;
   }
   .paymentConfirmationHead {
     font-family: Oswald;
@@ -264,7 +275,8 @@
     text-align: center;
     font-size: 0.9em;
     padding-top: 0.4em;
-    margin-left: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
   }
   .paymentConfirmationHead2 {
     font-family: Oswald;
@@ -298,7 +310,8 @@
     font-weight: bold;
     padding-top: 0.25em;
     font-family: Oswald;
-    margin-left: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
   }
   .fontOswald1 {
     font-family: oswald;
@@ -312,11 +325,12 @@
   }
   .pcFooterHead {
     font-family: oswald;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 300;
     color: #ffffff;
     margin-top: 1.5em;
-    text-align: center;
+    text-align: left;
+    margin-left: 8%;
   }
   .pcFooterText {
     color: white;
@@ -405,5 +419,49 @@
     margin-right: auto;
     cursor: pointer;
     font-weight: 500;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .pcFooterHead {
+    font-family: oswald;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #ffffff;
+    margin-top: 1.5em;
+    text-align: left;
+    margin-left: 50px;
+  }
+  .pcFooterLeftMargin {
+    margin-left: 25px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .pcFooterHead {
+    font-family: oswald;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #ffffff;
+    margin-top: 1.5em;
+    text-align: left;
+    margin-left: 30px;
+  }
+  .pcFooterLeftMargin {
+    margin-left: 8px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .pcFooterHead {
+    font-family: oswald;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #ffffff;
+    margin-top: 1.5em;
+    text-align: left;
+    margin-left: 25px;
+  }
+  .pcFooterLeftMargin {
+    margin-left: 0px;
   }
 }

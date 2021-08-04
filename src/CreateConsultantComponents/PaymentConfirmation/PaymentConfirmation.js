@@ -151,13 +151,14 @@ class PaymentConfirmation extends React.Component {
               {confirmation ? (
                 <>
                   <div className="paymentConfirmationSuccess">
-                    Congratulations, welcome to Scout &amp; Cellar!
+                    Congratulations ,{window.innerWidth >= 550 ? null : <br />}{" "}
+                    welcome to Scout &amp; Cellar!
                   </div>
-                  <div className=" mobileHead1">
-                    <div className="customURLAssigned">
-                      scoutandcellar.com/{userData.url}
-                    </div>
+
+                  <div className="customURLAssigned">
+                    scoutandcellar.com/{userData.url}
                   </div>
+
                   <div className=" paymentConfirmationHead2">
                     IS NOW RESERVED!
                   </div>
@@ -223,14 +224,7 @@ class PaymentConfirmation extends React.Component {
           <Stepper
             connector={<GreenStepConnector />}
             activeStep={activeStep}
-            style={{
-              background: "transparent",
-              width: "70vw",
-              marginTop: "1em",
-              marginBottom: "1em",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
+            className="pcStepper"
             orientation={window.innerWidth <= 768 ? "vertical" : "horizontal"}
           >
             {steps.map((label, index) => {
@@ -266,7 +260,7 @@ class PaymentConfirmation extends React.Component {
             <div className="row pcFooterLeftMargin">
               {/* card 1 */}
               <div
-                className="col-lg-3  pcFooterCard"
+                className="col-lg-5 col-md-5 pcFooterCard"
                 onMouseDown={this.onRippleStart1}
                 onMouseUp={this.onRippleStop1}
               >
@@ -284,7 +278,7 @@ class PaymentConfirmation extends React.Component {
 
               {/* card 2 */}
               <div
-                className="col-lg-3 pcFooterCard"
+                className="col-lg-5 col-md-5  pcFooterCard"
                 onMouseDown={this.onRippleStart2}
                 onMouseUp={this.onRippleStop2}
               >
@@ -302,7 +296,7 @@ class PaymentConfirmation extends React.Component {
 
               {/* card 3 */}
               <div
-                className="col-lg-3 pcCardMarginLeft pcFooterCard"
+                className="col-lg-5 col-md-5 pcCardMarginLeft pcFooterCard"
                 onMouseDown={this.onRippleStart3}
                 onMouseUp={this.onRippleStop3}
               >
