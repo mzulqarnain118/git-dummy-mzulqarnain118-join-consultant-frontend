@@ -281,7 +281,7 @@ input::-webkit-input-placeholder {
   width: 1600px !important;
   margin-top: 5px;
   text-align: left;
-  margin-left: -5.75vw;
+  margin-left: -5.8vw;
 }
 
 @media only screen and (max-width: 768px) {
