@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import Ripples from "react-ripples";
+import {MakeChanges} from "../../Assets/MakechangesSVG";
 
 class Footer extends React.Component {
   constructor(props) {
@@ -89,7 +90,10 @@ class Footer extends React.Component {
                 <div className=" col-lg-4 col-md-4 col-sm-4 col-4 grey ">
                   <div className="leftTextButton">
                     <Ripples className="h-100">
-                      <div onClick={this.handleClickLeft}>MAKE CHANGES</div>
+                      <div onClick={this.handleClickLeft}>
+                        {window.innerWidth >= 550 ? null :<MakeChanges />}
+                        {"  "}MAKE CHANGES
+                      </div>
                     </Ripples>
                   </div>
                 </div>
