@@ -300,15 +300,15 @@
     margin-left: 2em;
   }
   .pcConsultantNumber {
-    background: #f7f3f4;
-    height: 2em;
+    background: #F0EAE8;
+    height: 3em;
     width: 16.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 2.5em;
     margin-top: 1em;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: bold;
-    padding-top: 0.25em;
+    padding-top: 0.8em;
     font-family: Oswald;
     margin-left: auto;
     margin-right: auto;
