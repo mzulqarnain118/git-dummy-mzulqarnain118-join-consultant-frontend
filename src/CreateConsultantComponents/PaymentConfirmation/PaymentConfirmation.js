@@ -180,14 +180,19 @@ class PaymentConfirmation extends React.Component {
               ) : (
                 <>
                   <div className="paymentConfirmationFaliure">
-                    Your payment could not be processed.
+                    {this.props.consultant_error === "Invalid postal code."
+                      ? "Looks like the postal code that you entered does not match your city/state."
+                      : this.props.consultant_error ===
+                        "The website name is already taken."
+                      ? "Looks like the website name is already taken."
+                      : "Your payment could not be processed."}
                   </div>
                   <h6 className="payment-confirmation-error-message">
                     {this.props.consultant_error === "Invalid postal code."
-                      ? "Looks like the postal code that you entered does not match your city/state. Click on Make Changes to proceed."
+                      ? "Click on Make Changes to proceed."
                       : this.props.consultant_error ===
                         "The website name is already taken."
-                      ? "Looks like the website name is already taken. Please click on Setup Store to change the URL."
+                      ? "Please click on Setup Store to change the URL."
                       : "Please verify your billing information and try again."}
                   </h6>
                 </>
@@ -207,10 +212,11 @@ class PaymentConfirmation extends React.Component {
                     : this.props.moveBackToLastScreen(3, "DONE");
                 }}
               >
-                {this.props.consultant_error === "Invalid postal code." ||
-                this.props.consultant_error ===
-                  "The website name is already taken."
+                {this.props.consultant_error === "Invalid postal code."
                   ? "MAKE CHANGES"
+                  : this.props.consultant_error ===
+                    "The website name is already taken."
+                  ? "SETUP STORE"
                   : "RETRY PAYMENT"}
               </div>
             </>
