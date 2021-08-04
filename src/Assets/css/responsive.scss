@@ -224,7 +224,7 @@
     text-align: center;
     img {
       width: 200px;
-      margin-left: -40px;
+      margin-left: -50px;
     }
   }
   .back-btn {
@@ -307,7 +307,7 @@
   }
   .wrapper .partners .gray-box {
     margin: 0 0 15px;
-    min-height: 550px ;
+    min-height: 550px;
   }
   .wrapper .hearfrom .hearfrom-slide {
     text-align: center;
@@ -508,5 +508,15 @@
   }
   .wrapper footer .button-v2 {
     bottom: 75px;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper .partners .gray-box {
+    min-height: 600px;
+  }
+}
+@media (max-width: 450px) {
+  .wrapper .partners .gray-box {
+    min-height: 460px;
   }
 }
