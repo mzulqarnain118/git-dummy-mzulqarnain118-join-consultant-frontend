@@ -943,6 +943,9 @@ class Home extends React.Component {
   // header Back button
   handleBackButton = () => {
     let rightButton = this.state.rightFooterButtonName;
+    this.setState({
+      load: false,
+    });
     switch (rightButton) {
       case "NEXT":
         this.props.history.push("/");

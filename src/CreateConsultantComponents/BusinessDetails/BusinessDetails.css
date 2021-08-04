@@ -285,7 +285,7 @@ input::-webkit-input-placeholder {
 }
 
 @media only screen and (max-width: 768px) {
-  .business-margin-url{
+  .business-margin-url {
     margin-left: 0% !important;
   }
   .ipad-not-available-text {
@@ -297,7 +297,7 @@ input::-webkit-input-placeholder {
     position: relative;
     left: 55%;
   }
-  .mobileNotAvailabilityText{
+  .mobileNotAvailabilityText {
     margin-top: 5px;
     position: relative;
     left: 55%;
@@ -771,11 +771,11 @@ input::-webkit-input-placeholder {
   }
   .mobileAvailabilityText {
     margin-top: 88px;
-    margin-left: -80px ;
+    margin-left: -73px;
   }
-  .mobileNotAvailabilityText{
+  .mobileNotAvailabilityText {
     margin-top: 88px;
-    margin-left: -100px ;
+    margin-left: -100px;
   }
 
   .mobileSsnToggle {
@@ -812,7 +812,49 @@ input::-webkit-input-placeholder {
 }
 
 @media (max-width: 1440px) {
-   .business-margin-url{
+  .business-margin-url {
     margin-left: 10.66%;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .mobileAvailabilityText {
+    margin-top: 88px;
+    margin-left: -75px !important;
+  }
+  .mobileNotAvailabilityText {
+    margin-top: 88px;
+    margin-left: -85px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .mobileAvailabilityText {
+    margin-top: 88px;
+    margin-left: -73px !important;
+  }
+  .mobileNotAvailabilityText {
+    margin-top: 88px;
+    margin-left: -93px !important;
+  }
+}
+
+@media only screen and (max-width: 411px) {
+  .mobileAvailabilityText {
+    margin-top: 88px;
+    margin-left: -70px;
+  }
+  .mobileNotAvailabilityText {
+    margin-top: 88px;
+    margin-left: -100px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .mobileAvailabilityText {
+    margin-top: 88px;
+    margin-left: -68px;
+  }
+  .mobileNotAvailabilityText {
+    margin-top: 88px;
+    margin-left: -85px;
   }
 }
