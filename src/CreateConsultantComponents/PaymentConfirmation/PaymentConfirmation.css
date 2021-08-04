@@ -241,6 +241,7 @@
     font-size: 1.5em;
     text-align: center;
     font-weight: 300;
+    margin-top: 1.3em;
   }
   .paymentConfirmationSuccess {
     font-family: Oswald;
@@ -383,9 +384,10 @@
 }
 .signOutStyle {
   position: absolute;
-  left: 21.5em;
+  right: 1.5em;
   margin-top: -1em;
   font-size: 0.8em;
+  font-family: Oswald;
 }
 @media (max-width: 567px) {
   .retryPaymentButton {
