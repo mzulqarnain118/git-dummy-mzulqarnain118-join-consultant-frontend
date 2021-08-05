@@ -100,6 +100,11 @@ class PurchaseKit extends React.Component {
 
     //card holder name
     if (id === "cardHolderName") {
+      value = value
+        .split("")
+        .filter((item) => item.match(/[a-z\s]/i))
+        .join("");
+
       if (value !== "") {
         error[id] = "";
       } else {
@@ -269,7 +274,6 @@ class PurchaseKit extends React.Component {
                     <div className="totalText">Sales Tax</div>
                   </div>
                   <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
-                    
                     <div className="subTotalMoney">
                       ${addTrailingZeros(purchaseKitDetails.subtotal)}
                     </div>
