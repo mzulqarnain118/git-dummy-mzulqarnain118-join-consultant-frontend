@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import Ripples from "react-ripples";
-import {MakeChanges} from "../../Assets/MakechangesSVG";
+import { MakeChanges } from "../../Assets/MakechangesSVG";
 
 class Footer extends React.Component {
   constructor(props) {
@@ -11,6 +11,15 @@ class Footer extends React.Component {
       displayFooter: props.displayFooter,
     };
   }
+
+  scrollToTop = () => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 100);
+  };
 
   // update displayFooter state variable based on new props recived
   componentDidUpdate(prevProps, prevState) {
@@ -27,6 +36,7 @@ class Footer extends React.Component {
 
   // to handle right footer button changes
   handleClickRight = async () => {
+    this.scrollToTop();
     let userData = this.props.userData;
     if (!this.props.rightFooterButtonDisabled) {
       if (this.props.rightFooterButtonName === "NEXT") {
@@ -91,7 +101,7 @@ class Footer extends React.Component {
                   <div className="leftTextButton">
                     <Ripples className="h-100">
                       <div onClick={this.handleClickLeft}>
-                        {window.innerWidth >= 550 ? null :<MakeChanges />}
+                        {window.innerWidth >= 550 ? null : <MakeChanges />}
                         {"  "}MAKE CHANGES
                       </div>
                     </Ripples>

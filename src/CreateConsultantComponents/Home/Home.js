@@ -223,15 +223,27 @@ class Home extends React.Component {
       consultant_error: "",
     };
   }
+
+  scrollToTop = () => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 100);
+  };
+
   handleKeypress = (e) => {
     if (e.key === "Enter") {
       this.handleClickRight();
     }
   };
+
   // to handle right footer button changes
   handleClickRight = async () => {
     let userData = this.state.userData;
     if (!this.state.rightFooterButtonDisabled) {
+      this.scrollToTop();
       if (this.state.rightFooterButtonName === "NEXT") {
         //call API to verify email (API CALL IN Home)
         this.apiVerifyEmail();
