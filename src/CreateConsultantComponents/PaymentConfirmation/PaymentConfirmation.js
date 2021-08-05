@@ -263,56 +263,58 @@ class PaymentConfirmation extends React.Component {
         {confirmation ? (
           <div className="pcFooter">
             <div className="pcFooterHead">LET'S GET GOING</div>
-            <div className="row pcFooterLeftMargin">
-              {/* card 1 */}
-              <div
-                className="col-lg-5 col-md-5 pcFooterCard"
-                onMouseDown={this.onRippleStart1}
-                onMouseUp={this.onRippleStop1}
-              >
-                <TouchRipple ref={rippleRef1} center={false} />
-                <div className="row">
-                  <div className="pcFooterMainIcon">
-                    <Icon1 />
+            <div className="pcFooterLeftMargin">
+              <div className="row ">
+                {/* card 1 */}
+                <div
+                  className="col-lg-5 col-md-5 pcFooterCard"
+                  onMouseDown={this.onRippleStart1}
+                  onMouseUp={this.onRippleStop1}
+                >
+                  <TouchRipple ref={rippleRef1} center={false} />
+                  <div className="row">
+                    <div className="pcFooterMainIcon">
+                      <Icon1 />
+                    </div>
+                    <div className="pcFooterText">
+                      Access your consultant Account
+                    </div>
+                    <IoIosArrowForward className="pcFooterNextIcon" />
                   </div>
-                  <div className="pcFooterText">
-                    Access your consultant Account
-                  </div>
-                  <IoIosArrowForward className="pcFooterNextIcon" />
                 </div>
-              </div>
 
-              {/* card 2 */}
-              <div
-                className="col-lg-5 col-md-5  pcFooterCard"
-                onMouseDown={this.onRippleStart2}
-                onMouseUp={this.onRippleStop2}
-              >
-                <TouchRipple ref={rippleRef2} center={false} />
-                <div className="row">
-                  <div className="pcFooterMainIcon2">
-                    <Icon2 />
+                {/* card 2 */}
+                <div
+                  className="col-lg-5 col-md-5  pcFooterCard"
+                  onMouseDown={this.onRippleStart2}
+                  onMouseUp={this.onRippleStop2}
+                >
+                  <TouchRipple ref={rippleRef2} center={false} />
+                  <div className="row">
+                    <div className="pcFooterMainIcon2">
+                      <Icon2 />
+                    </div>
+                    <div className="pcFooterText1">
+                      Download Vine App for Consultant
+                    </div>
+                    <IoIosArrowForward className="pcFooterNextIcon" />
                   </div>
-                  <div className="pcFooterText1">
-                    Download Vine App for Consultant
-                  </div>
-                  <IoIosArrowForward className="pcFooterNextIcon" />
                 </div>
-              </div>
 
-              {/* card 3 */}
-              <div
-                className="col-lg-5 col-md-5 pcCardMarginLeft pcFooterCard"
-                onMouseDown={this.onRippleStart3}
-                onMouseUp={this.onRippleStop3}
-              >
-                <TouchRipple ref={rippleRef3} center={false} />
-                <div className="row">
-                  <div className="pcFooterMainIcon">
-                    <Icon3 />
+                {/* card 3 */}
+                <div
+                  className="col-lg-5 col-md-5 pcCardMarginLeft pcFooterCard"
+                  onMouseDown={this.onRippleStart3}
+                  onMouseUp={this.onRippleStop3}
+                >
+                  <TouchRipple ref={rippleRef3} center={false} />
+                  <div className="row">
+                    <div className="pcFooterMainIcon">
+                      <Icon3 />
+                    </div>
+                    <div className="pcFooterText2">Get Started Videos</div>
+                    <IoIosArrowForward className="pcFooterNextIcon" />
                   </div>
-                  <div className="pcFooterText2">Get Started Videos</div>
-                  <IoIosArrowForward className="pcFooterNextIcon" />
                 </div>
               </div>
             </div>
