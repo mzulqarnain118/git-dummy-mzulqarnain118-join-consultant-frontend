@@ -22,14 +22,14 @@ class Banner extends React.Component {
                   >
                     GET STARTED
                   </Link>
-                  <a
+                  <Link
                     className="btn btn-secondary ms-2"
                     href="/#"
                     role="button"
                     title="LEARN MORE"
                   >
                     LEARN MORE
-                  </a>
+                  </Link>
                 </p>
               </aside>
             </section>
