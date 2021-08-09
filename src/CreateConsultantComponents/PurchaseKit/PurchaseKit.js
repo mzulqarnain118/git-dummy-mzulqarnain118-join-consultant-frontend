@@ -39,7 +39,7 @@ class PurchaseKit extends React.Component {
   //send data to home component
   sendDataToHomeComponent = () => {
     let cardinfo = this.props.cardinfo;
-    let addresschange = this.props.addresschange;
+    let addresschange = this.props.checked;
     let billingAddress = this.props.billingAddress;
     let form = this.state.form;
 
@@ -236,6 +236,27 @@ class PurchaseKit extends React.Component {
   componentDidMount = async () => {
     if (this.props.purchaseKitDetails.total === 0) {
       await this.props.apiCartDetails();
+    }
+
+    if (
+      this.props.cardinfo.nameoncard !== "" &&
+      this.props.billingAddress.city !== ""
+    ) {
+      let form = this.state.form;
+      let cardinfo = this.props.cardinfo;
+      let billingAddress = this.props.billingAddress;
+
+      form["cardHolderName"] = cardinfo.nameoncard;
+      form["cardNumber"] = cardinfo.cardnumber;
+      form["cardDate"] = cardinfo.expiryMonth + "/" + cardinfo.expiryYear;
+      form["cardCVV"] = cardinfo.cvv;
+      form["street"] = billingAddress.street;
+      form["city"] = billingAddress.city;
+      form["zipCode"] = billingAddress.zipcode;
+      form["state"] = billingAddress.state;
+
+      this.setState({ form, checked: this.props.addresschange });
+      this.props.setrightFooterButtonDisabled(false);
     }
   };
 
@@ -455,6 +476,7 @@ class PurchaseKit extends React.Component {
                     onChange={() => {
                       this.enableDone(!checked);
                       this.setState({ checked: !checked });
+                      this.props.setAddresschange(!checked);
                     }}
                     className="PKcheckBoxAccept"
                     style={{

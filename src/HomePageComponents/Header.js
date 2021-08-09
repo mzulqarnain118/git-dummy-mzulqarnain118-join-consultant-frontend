@@ -13,11 +13,13 @@ const Header = () => {
               <img src={Back} width="15" alt="BACK" />
             </aside>
             <aside className="col-lg-3 col-md-3 col-10 p-0 sc-logo">
-              <img
-                src={Logo}
-                className="img-fluid"
-                alt="Scout&amp;Cellar-WineConsultant"
-              />
+              <a href="https://scoutandcellar.com/">
+                <img
+                  src={Logo}
+                  className="img-fluid"
+                  alt="Scout&amp;Cellar-WineConsultant"
+                />
+              </a>
             </aside>
             <aside className="col-lg-8 col-md-8 col-6 p-0 pt-2 d-md-block">
               <Link

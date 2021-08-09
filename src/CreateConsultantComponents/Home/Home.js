@@ -221,6 +221,8 @@ class Home extends React.Component {
       consultant_number: 0,
       //consulatnt payment error
       consultant_error: "",
+      //email sent confirmation text display
+      showSentEmailText: false,
     };
   }
 
@@ -645,18 +647,28 @@ class Home extends React.Component {
   // api to create a consultant
   apiCreateConsultant = async () => {
     this.setState({ load: true, rightFooterButtonDisabled: true });
-    let address = this.state.billingAddress;
+    let billingAddress = this.state.billingAddress;
     let userData = this.state.userData;
+    console.log(!this.state.addresschange, billingAddress, userData.address);
+    // use same billing and shipping addesss ( note: address change should be set to false when handling request)
+    let Address = {};
     if (this.state.addresschange) {
-      address["city"] = userData.address.city;
-      address["zipcode"] = userData.address.zipcode;
-      address["state"] = userData.address.state;
-      address["country"] = "US";
-      address["street"] = userData.address.street;
+      Address["city"] = userData.address.city;
+      Address["zipcode"] = userData.address.zipcode;
+      Address["state"] = userData.address.state;
+      Address["country"] = "US";
+      Address["street"] = userData.address.street;
+    } else {
+      Address["city"] = billingAddress.city;
+      Address["zipcode"] = billingAddress.zipcode;
+      Address["state"] = billingAddress.state;
+      Address["country"] = "US";
+      Address["street"] = billingAddress.street;
     }
+
     let data = {
-      addresschange: this.state.addresschange,
-      address,
+      addresschange: !this.state.addresschange,
+      address: Address,
       cardinfo: this.state.cardinfo,
     };
 
@@ -724,6 +736,7 @@ class Home extends React.Component {
             rightFooterButtonName: "LOG IN",
             rightFooterButtonDisabled: true,
             displayForgotPassword: false,
+            showSentEmailText: true,
           });
         } catch (e) {
           console.log("Error in /forgotpassword");
@@ -734,6 +747,7 @@ class Home extends React.Component {
             rightFooterButtonName: "LOG IN",
             rightFooterButtonDisabled: true,
             displayForgotPassword: false,
+            showSentEmailText: false,
             errorUserData,
           });
         }
@@ -747,6 +761,7 @@ class Home extends React.Component {
           rightFooterButtonName: "LOG IN",
           rightFooterButtonDisabled: true,
           displayForgotPassword: false,
+          showSentEmailText: false,
           errorUserData,
         });
       });
@@ -829,6 +844,8 @@ class Home extends React.Component {
             handleBackButton={this.handleBackButton}
             apiGetWorkingWithDropDownData={this.apiGetWorkingWithDropDownData}
             working_with_arr={this.state.working_with_arr}
+            showSentEmailText={this.state.showSentEmailText}
+            setShowSentEmailText={this.setShowSentEmailText}
           />
         );
       case 1:
@@ -878,6 +895,7 @@ class Home extends React.Component {
             apiCartDetails={this.apiCartDetails}
             cardinfo={this.state.cardinfo}
             addresschange={this.state.addresschange}
+            setAddresschange={this.setAddresschange}
             billingAddress={this.state.billingAddress}
             setCardDetails={this.setCardDetails}
             handleBackButton={this.handleBackButton}
@@ -888,6 +906,16 @@ class Home extends React.Component {
         return "Unknown step";
     }
   }
+
+  //set email sent confirmation
+  setShowSentEmailText = (value) => {
+    this.setState({ showSentEmailText: value });
+  };
+  //set confirmation
+  setAddresschange = (value) => {
+    this.setState({ addresschange: value });
+  };
+
   //set confirmation
   setConfirmation = (value) => {
     this.setState({ confirmation: value });
@@ -944,10 +972,14 @@ class Home extends React.Component {
 
   //move back to last screen
   moveBackToLastScreen = (activeStep, button) => {
+    if (activeStep === 0 && !this.state.addresschange) {
+      activeStep = 3;
+      button = "DONE";
+    }
     this.setState({
       activeStep: activeStep,
       rightFooterButtonName: button,
-      rightFooterButtonDisabled: activeStep !== 3 ? false : true,
+      rightFooterButtonDisabled: false,
       displayFooter: true,
     });
   };
@@ -1027,7 +1059,7 @@ class Home extends React.Component {
     const steps = this.getSteps();
     const mobileStep = this.getMobileSteps();
     const { activeStep, load, rightFooterButtonName } = this.state;
-
+    console.log(this.state.billingAddress);
     return (
       <div tabIndex="0" onKeyDown={this.handleKeypress}>
         {load ? (

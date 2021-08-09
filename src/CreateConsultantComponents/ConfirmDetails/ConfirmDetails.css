@@ -311,6 +311,18 @@ input:disabled {
   margin-top: 10px;
 }
 
+.forgot-password-confirmation{
+  font-family: Domine;
+  font-size: 15px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.forgot-password-confirmation-Icon {
+  margin-top: 0;
+  color: #4ba380;
+}
+
 /* @media only screen and (min-width: 768px) {
   .displayArea {
     background-color: #e8e0dd;

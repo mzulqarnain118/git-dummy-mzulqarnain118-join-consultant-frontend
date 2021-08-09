@@ -77,7 +77,6 @@ class ConfirmDetails extends React.Component {
                   placeholder="Enter email address"
                   autoComplete="off"
                   onChange={this.handleChange}
-                 
                 />
                 {/* error handling of email field */}
 
@@ -110,7 +109,8 @@ class ConfirmDetails extends React.Component {
             displayForgotPassword={this.props.displayForgotPassword}
             setForgotPassword={this.props.setForgotPassword}
             handleBackButton={this.props.handleBackButton}
-           
+            showSentEmailText={this.props.showSentEmailText}
+            setShowSentEmailText={this.props.setShowSentEmailText}
           />
         ) : rightFooterButtonName === "LOOKS GOOD" ? (
           //to display confirm details page
@@ -120,7 +120,6 @@ class ConfirmDetails extends React.Component {
               this.props.setrightFooterButtonDisabled
             }
             handleBackButton={this.props.handleBackButton}
-           
           />
         ) : (
           //to display editable version  of confirm details page
@@ -132,7 +131,6 @@ class ConfirmDetails extends React.Component {
             setUserData={this.props.setUserData}
             setButtonName={this.props.setButtonName}
             handleBackButton={this.props.handleBackButton}
-          
             apiGetWorkingWithDropDownData={
               this.props.apiGetWorkingWithDropDownData
             }

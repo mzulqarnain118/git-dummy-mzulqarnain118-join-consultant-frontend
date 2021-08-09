@@ -1,6 +1,7 @@
 import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { site_key } from "../../configuration/config";
+import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import "./ConfirmDetails.css";
 
 class ConfirmDetailsPasswordPage extends React.Component {
@@ -81,6 +82,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
     let errorUserData = this.props.errorUserData;
     errorUserData["password"] = "";
     this.props.setErrorUserData(errorUserData);
+    this.props.setShowSentEmailText(false);
   };
 
   onChangeReCaptcha = (recaptchaToken) => {
@@ -191,7 +193,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                   <div className="forgotPassowordContainer">
                     <span className="head2">FORGOT YOUR PASSWORD?</span>
                     <div className="forgotpasswordText1">
-                      Enter your email to be sent a link to reset your password.
+                      Enter your email to be sent a temporary password.
                     </div>
                     <div className="email1 form-group">
                       <label className="emailLabel" htmlFor="emailAddress">
@@ -234,6 +236,20 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 </div>
               </div>
             </>
+          ) : this.props.showSentEmailText ? (
+            <div className="forgot-password-confirmation">
+              <CheckCircleIcon
+                className="forgot-password-confirmation-Icon "
+                style={
+                  window.innerWidth <= 850
+                    ? window.innerWidth <= 550
+                      ? { fontSize: 20 }
+                      : { fontSize: 23 }
+                    : { fontSize: 30 }
+                }
+              />{" "}
+              Temporary password is sent to your email
+            </div>
           ) : null}
         </div>
       </React.Fragment>

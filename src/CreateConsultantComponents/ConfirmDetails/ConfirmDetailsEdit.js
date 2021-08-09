@@ -335,6 +335,7 @@ class ConfirmDetailsEdit extends React.Component {
       errorArr[3] = false;
     } else {
       errorArr[3] = true;
+      this.props.setrightFooterButtonDisabled(false);
     }
     if (userData["city"] === "") {
       errorArr[4] = false;
