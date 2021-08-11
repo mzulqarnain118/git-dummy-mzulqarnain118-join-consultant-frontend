@@ -507,7 +507,7 @@ class Home extends React.Component {
       .then(async (response) => {
         errorUserData["ssn"] = "";
         if (this.state.rightFooterButtonName === "LOOKS GOOD") {
-          await this.apiGetCartId();
+          // await this.apiGetCartId();
         } else if (this.state.rightFooterButtonName === "CONTINUE") {
           await this.apiCartDetails();
         }
@@ -570,29 +570,30 @@ class Home extends React.Component {
         try {
           userData["cart_id"] = response.data.cartId;
           this.setState({
-            load: false,
+            // load: false,
             userData,
           });
         } catch (e) {
           console.log("Error in /CreateCart");
           console.log(e);
-          this.setState({
-            load: false,
-          });
+          // this.setState({
+          //   load: false,
+          // });
         }
       })
       .catch((error) => {
         console.log("Error in /CreateCart");
         console.log(error);
-        this.setState({
-          load: false,
-        });
+        // this.setState({
+        //   load: false,
+        // });
       });
   };
 
   //API get card details
   apiCartDetails = async () => {
     this.setState({ load: true });
+    await this.apiGetCartId();
     let cartId = this.state.userData.cart_id;
     this.setState({ load: true });
     let purchaseKitDetails = this.state.purchaseKitDetails;
