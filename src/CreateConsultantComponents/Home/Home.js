@@ -1053,7 +1053,7 @@ class Home extends React.Component {
     const steps = this.getSteps();
     const mobileStep = this.getMobileSteps();
     const { activeStep, load, rightFooterButtonName } = this.state;
-    console.log(this.state.billingAddress);
+    //console.log(this.state);
     return (
       <div tabIndex="0" onKeyDown={this.handleKeypress}>
         {load ? (

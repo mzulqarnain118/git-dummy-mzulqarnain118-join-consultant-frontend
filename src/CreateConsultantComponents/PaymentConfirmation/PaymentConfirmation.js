@@ -101,13 +101,22 @@ class PaymentConfirmation extends React.Component {
 
   //stepper title content
   getSteps = () => {
-    return [
-      "Confirm Details",
-      "Business Details",
-      "Review Terms",
-      "Purchase Kit",
-      "Documentation",
-    ];
+    if (this.props.userData.doing_business === "Entity") {
+      return [
+        "Confirm Details",
+        "Business Details",
+        "Review Terms",
+        "Purchase Kit",
+        "Documentation",
+      ];
+    } else {
+      return [
+        "Confirm Details",
+        "Business Details",
+        "Review Terms",
+        "Purchase Kit",
+      ];
+    }
   };
 
   render() {
