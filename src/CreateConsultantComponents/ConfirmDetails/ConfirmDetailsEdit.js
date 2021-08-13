@@ -198,7 +198,7 @@ class ConfirmDetailsEdit extends React.Component {
         error[type] = "";
         errorArr[7] = true;
       } else {
-        error[type] = "Working With is mandatory";
+        error[type] = "Working with is mandatory";
         errorArr[7] = false;
       }
       this.props.apiGetWorkingWithDropDownData(value);
