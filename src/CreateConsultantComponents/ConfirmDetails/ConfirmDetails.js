@@ -82,7 +82,20 @@ class ConfirmDetails extends React.Component {
 
                 {errorUserData.email.length ? (
                   <span className="errorMes">
-                    {errorUserData.email}
+                    {errorUserData.email ===
+                    "This email address is in use for an existing Consultant Account." ? (
+                      <>
+                        <span>
+                          This email address is already in use for an existing
+                          Consultant Account. Please login into{" "}
+                        </span>
+                        <a href="https://team.scoutandcellar.com/Account/Login">
+                          https://team.scoutandcellar.com/Account/Login
+                        </a>
+                      </>
+                    ) : (
+                      errorUserData.email
+                    )}
                     <br />
                   </span>
                 ) : null}
