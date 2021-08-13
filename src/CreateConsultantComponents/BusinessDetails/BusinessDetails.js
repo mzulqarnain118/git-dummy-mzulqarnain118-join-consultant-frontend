@@ -298,7 +298,7 @@ class BusinessDetails extends React.Component {
                           </div>
                           <div className="col-lg-11 col-md-11 mobileAvailabilitySubText">
                             <div className="availableText ipad-not-available-text">
-                              This name is Not Available
+                              This name is not Available
                             </div>
                           </div>
                         </div>

@@ -193,7 +193,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                   <div className="forgotPassowordContainer">
                     <span className="head2">FORGOT YOUR PASSWORD?</span>
                     <div className="forgotpasswordText1">
-                      Enter your email to be sent a temporary password.
+                      Enter your email to be sent a password.
                     </div>
                     <div className="email1 form-group">
                       <label className="emailLabel" htmlFor="emailAddress">
@@ -248,7 +248,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                     : { fontSize: 30 }
                 }
               />{" "}
-              Temporary password is sent to your email
+              A password is sent to your email
             </div>
           ) : null}
         </div>
