@@ -676,7 +676,7 @@ class Home extends React.Component {
         try {
           let consultant_number = 0;
           if (response.data.consultant_number !== null) {
-            consultant_number = response.data.consultant_number;
+            consultant_number = response.data.display_number;
           }
           this.setState({
             load: false,
