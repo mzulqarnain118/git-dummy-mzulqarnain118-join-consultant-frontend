@@ -128,7 +128,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
           </div>
 
           <div className="staticText2">
-            We are excited to have you as a member of the Scout &amp; Cellar
+            We are excited to have you as a member of the Scout &amp; Cellar™
             Family.
           </div>
 

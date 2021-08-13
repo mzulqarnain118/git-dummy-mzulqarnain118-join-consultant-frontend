@@ -192,7 +192,7 @@ class BusinessDetails extends React.Component {
           >
             <span className="BDhead1">SETTING UP YOUR STORE</span>
             <div className="BDstaticText3">
-              Pick a custom URL to promote your personalized Scout &amp; Cellar
+              Pick a custom URL to promote your personalized Scout &amp; Cellar™ 
               storefront.
             </div>
 

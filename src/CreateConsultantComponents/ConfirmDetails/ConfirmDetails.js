@@ -90,7 +90,7 @@ class ConfirmDetails extends React.Component {
               {/* Static text dispayed at the bottom of email field */}
               <div className="SubText">
                 The email you already use or want to use with Scout &amp;
-                Cellar.
+                Cellar™ .
               </div>
             </div>
           </div>
