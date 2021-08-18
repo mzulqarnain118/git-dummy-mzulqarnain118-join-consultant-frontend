@@ -7,7 +7,6 @@ import CancelIcon from "@material-ui/icons/Cancel";
 import BusinessCenterOutlinedIcon from "@material-ui/icons/BusinessCenterOutlined";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { FiSearch } from "react-icons/fi";
 
 class BusinessDetails extends React.Component {
   constructor(props) {
@@ -242,7 +241,7 @@ class BusinessDetails extends React.Component {
                     </div>
                   ) : (
                     <button className="searchButton" onClick={this.validateURL}>
-                      <FiSearch color="white" className="searchIcon" />
+                    Verify
                     </button>
                   )}
                 </div>

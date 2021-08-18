@@ -265,6 +265,7 @@ input::-webkit-input-placeholder {
   height: 60px;
   margin-top: 0;
   margin-left: 5px;
+  color:white;
 }
 .searchButton:hover {
   cursor: pointer;
