@@ -135,10 +135,11 @@ class PurchaseKit extends React.Component {
       error["cardNumber"] === "" &&
       error["cardDate"] === "" &&
       error["cardCVV"] === "" &&
-      error["street"] === "" &&
-      error["zipCode"] === "" &&
-      error["city"] === "" &&
-      error["state"] === ""
+      (checked ||
+        (error["street"] === "" &&
+          error["zipCode"] === "" &&
+          error["city"] === "" &&
+          error["state"] === ""))
     ) {
       this.props.setrightFooterButtonDisabled(false);
     } else {
