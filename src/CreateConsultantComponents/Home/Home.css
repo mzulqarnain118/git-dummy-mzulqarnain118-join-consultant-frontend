@@ -7,7 +7,7 @@
 .pkLoader {
   z-index: 1;
   position: absolute;
-  bottom: 40%;
+  top: 28%;
   right: 50%;
 }
 
@@ -145,7 +145,7 @@
   .pkLoader {
     z-index: 1;
     position: absolute;
-    bottom: 40%;
+    top: 40%;
     right: 40%;
   }
 }
@@ -168,7 +168,7 @@
   .pkLoader {
     z-index: 1;
     position: absolute;
-    bottom: 40%;
+    top: 40%;
     right: 40%;
   }
 }
@@ -182,15 +182,23 @@
   .pkLoader {
     z-index: 1;
     position: absolute;
-    bottom: 28%;
-    right: 50%;
+    top: 38%;
+    right: 48%;
+  }
+}
+@media (max-width: 1440px) {
+  .pkLoader {
+    z-index: 1;
+    position: absolute;
+    top: 33%;
+    right: 48%;
   }
 }
 @media (max-width: 375px) {
   .pkLoader {
     z-index: 1;
     position: absolute;
-    bottom: 40%;
+    top: 27% !important;
     right: 40%;
   }
 }
@@ -199,7 +207,7 @@
   .pkLoader {
     z-index: 1;
     position: absolute;
-    bottom: 53%;
+    top: 33%;
     right: 40%;
   }
 }
@@ -208,7 +216,15 @@
   .pkLoader {
     z-index: 1;
     position: absolute;
-    bottom: 45%;
+    top: 24%;
+    right: 40%;
+  }
+}
+@media (max-width: 411px) {
+  .pkLoader {
+    z-index: 1;
+    position: absolute;
+    top: 26%;
     right: 40%;
   }
 }
