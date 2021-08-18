@@ -75,7 +75,7 @@ class ConfirmDetails extends React.Component {
                   id="emailAddress"
                   name="emailAddress"
                   placeholder="Enter email address"
-                  autoComplete="off"
+                  autocomplete="off"
                   onChange={this.handleChange}
                 />
                 {/* error handling of email field */}

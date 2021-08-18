@@ -485,7 +485,7 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autoComplete="off"
+                    autocomplete="off"
                     value={userData["first_name"]}
                     className={
                       error.first_name.length > 0
@@ -516,7 +516,7 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autoComplete="off"
+                    autocomplete="off"
                     value={userData["last_name"]}
                     className={
                       error.last_name.length > 0
@@ -681,7 +681,7 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autoComplete="off"
+                    autocomplete="off"
                     value={userData["email"]}
                     className={
                       error.email.length > 0
@@ -716,7 +716,7 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autoComplete="off"
+                    autocomplete="off"
                     value={userData["address"]["street"]}
                     className={
                       error.address.street.length > 0
@@ -747,7 +747,7 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autoComplete="off"
+                    autocomplete="off"
                     value={userData["address"]["zipcode"]}
                     className={
                       error.address.zipcode.length > 0
@@ -780,7 +780,7 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autoComplete="off"
+                    autocomplete="off"
                     value={userData["address"]["city"]}
                     className={
                       error.address.city.length > 0
@@ -820,7 +820,7 @@ class ConfirmDetailsEdit extends React.Component {
                     value={userData["address"]["state"]}
                     id="state"
                     name="state"
-                    autoComplete="off"
+                    autocomplete="off"
                     onChange={this.handleChange}
                   >
                     <option value={""} key={"dummy state"}>
@@ -851,7 +851,7 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autoComplete="off"
+                    autocomplete="off"
                     value={userData["phonenumber"]}
                     className={
                       error.phonenumber.length > 0
@@ -888,7 +888,7 @@ class ConfirmDetailsEdit extends React.Component {
                         : "form-control edit-Input"
                     }
                     value={value}
-                    autoComplete="off"
+                    autocomplete="off"
                     onChange={(event, newValue) => {
                       let userData = this.state.userData;
                       if (newValue !== null) {
