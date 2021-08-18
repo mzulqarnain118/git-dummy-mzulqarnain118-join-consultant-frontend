@@ -12,6 +12,11 @@
   font-weight: "bold";
   font-family: oswald;
 }
+.AGhead2 {
+  font-size: calc(3px + 1vw);
+  font-family: oswald;
+  font-weight: 300;
+}
 .agreementButton1 {
   background: #dcba80;
   text-align: center;
@@ -237,6 +242,11 @@
   }
 }
 @media only screen and (max-width: 550px) {
+  .AGhead2 {
+    font-size: 16px;
+    font-family: oswald;
+    font-weight: 300;
+  }
   .agreementButton1 {
     background: #dcba80;
     text-align: center;
