@@ -83,6 +83,8 @@ class ConfirmDetailsEdit extends React.Component {
         id: props.userData["working_with"].id,
         DisplayName: props.userData["working_with"].name,
       },
+      //to avoid date error when new user has not completed entering all date information
+      avoidDateError: true,
     };
   }
 
@@ -280,7 +282,7 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     // enable /disable button to move to next screen
-    this.validateToMoveToNextScreen();
+    this.validateToMoveToNextScreen(this.state.avoidDateError);
 
     this.setState({ userData: form, error: error, errorArr: errorArr });
   };
@@ -309,38 +311,45 @@ class ConfirmDetailsEdit extends React.Component {
       if (month === 0) {
         if (day > 0) {
           error["dob"] = "";
-          this.validateToMoveToNextScreen();
+          this.validateToMoveToNextScreen(this.state.avoidDateError);
         } else {
           error["dob"] = "you have to be older than 21 Years";
           this.props.setrightFooterButtonDisabled(true);
         }
       } else if (month > 0) {
         error["dob"] = "";
-        this.validateToMoveToNextScreen();
+        this.validateToMoveToNextScreen(this.state.avoidDateError);
       } else {
         error["dob"] = "you have to be older than 21 Years";
         this.props.setrightFooterButtonDisabled(true);
       }
     } else {
       error["dob"] = "";
-      this.validateToMoveToNextScreen();
+      this.validateToMoveToNextScreen(this.state.avoidDateError);
     }
 
     if (
       moment(
         new Date(userData.dob.year, userData.dob.month, userData.dob.day)
-      ).format("MM/DD/YYYY") === "Invalid date"
+      ).format("MM/DD/YYYY") === "Invalid date" &&
+      this.state.avoidDateError
     ) {
       error["dob"] = "Invalid Date";
       this.props.setrightFooterButtonDisabled(true);
-    } else {
-      this.validateToMoveToNextScreen();
+    }
+    if (
+      moment(
+        new Date(userData.dob.year, userData.dob.month, userData.dob.day)
+      ).format("MM/DD/YYYY") !== "Invalid date"
+    ) {
+      this.setState({ avoidDateError: true });
+      this.validateToMoveToNextScreen(true);
     }
 
     this.setState({ userData: userData });
   };
 
-  validateToMoveToNextScreen = () => {
+  validateToMoveToNextScreen = (avoidDateError) => {
     let errorArr = this.state.errorArr;
     let userData = this.state.userData;
     let date = moment(
@@ -358,6 +367,7 @@ class ConfirmDetailsEdit extends React.Component {
         errorArr[6] &&
         errorArr[7] &&
         errorArr[8] &&
+        avoidDateError &&
         date !== "Invalid date"
       )
     );
@@ -419,6 +429,7 @@ class ConfirmDetailsEdit extends React.Component {
       errorArr[8] = true;
     }
 
+    let avoidDateError = true;
     //to check if date is NaN (Not a Number)
     // eslint-disable-next-line
     if (userData.dob.day !== userData.dob.day) {
@@ -427,8 +438,9 @@ class ConfirmDetailsEdit extends React.Component {
         month: "MM",
         year: "YYYY",
       };
+      avoidDateError = false;
     }
-    this.setState({ errorArr, userData });
+    this.setState({ errorArr, userData, avoidDateError });
   };
 
   render() {
