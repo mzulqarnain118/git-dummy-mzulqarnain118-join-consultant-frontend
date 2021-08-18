@@ -691,7 +691,8 @@ class ConfirmDetailsEdit extends React.Component {
                     id="email"
                     name="email"
                     placeholder="Enter Email ID"
-                    onChange={this.handleChange}
+                    // onChange={this.handleChange}
+                    disabled="true"
                   />
                 </div>
               </div>
@@ -819,6 +820,7 @@ class ConfirmDetailsEdit extends React.Component {
                     value={userData["address"]["state"]}
                     id="state"
                     name="state"
+                    autoComplete="off"
                     onChange={this.handleChange}
                   >
                     <option value={""} key={"dummy state"}>
@@ -886,6 +888,7 @@ class ConfirmDetailsEdit extends React.Component {
                         : "form-control edit-Input"
                     }
                     value={value}
+                    autoComplete="off"
                     onChange={(event, newValue) => {
                       let userData = this.state.userData;
                       if (newValue !== null) {
