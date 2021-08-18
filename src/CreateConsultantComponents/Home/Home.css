@@ -4,6 +4,12 @@
   bottom: 50%;
   right: 50%;
 }
+.pkLoader {
+  z-index: 1;
+  position: absolute;
+  bottom: 40%;
+  right: 50%;
+}
 
 .fontOswald {
   font-family: oswald;
@@ -136,6 +142,12 @@
   .mobileStep {
     margin-top: 20px;
   }
+  .pkLoader {
+    z-index: 1;
+    position: absolute;
+    bottom: 40%;
+    right: 40%;
+  }
 }
 @media (max-width: 480px) {
   .arrowIcon3 svg {
@@ -153,10 +165,50 @@
     bottom: 50%;
     right: 40%;
   }
+  .pkLoader {
+    z-index: 1;
+    position: absolute;
+    bottom: 40%;
+    right: 40%;
+  }
 }
 .MuiStepIcon-text {
   fill: black !important ;
 }
 .MuiStepIcon-active > .MuiStepIcon-text {
   fill: white !important ;
+}
+@media (max-width: 1366px) {
+  .pkLoader {
+    z-index: 1;
+    position: absolute;
+    bottom: 28%;
+    right: 50%;
+  }
+}
+@media (max-width: 375px) {
+  .pkLoader {
+    z-index: 1;
+    position: absolute;
+    bottom: 40%;
+    right: 40%;
+  }
+}
+
+@media (max-width: 360px) {
+  .pkLoader {
+    z-index: 1;
+    position: absolute;
+    bottom: 53%;
+    right: 40%;
+  }
+}
+
+@media (max-width: 414px) {
+  .pkLoader {
+    z-index: 1;
+    position: absolute;
+    bottom: 45%;
+    right: 40%;
+  }
 }

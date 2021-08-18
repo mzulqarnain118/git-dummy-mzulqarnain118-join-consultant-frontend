@@ -1057,7 +1057,11 @@ class Home extends React.Component {
     return (
       <div tabIndex="0" onKeyDown={this.handleKeypress}>
         {load ? (
-          <CircularProgress color="black" size={80} className="loader" />
+          <CircularProgress
+            color="black"
+            size={80}
+            className={rightFooterButtonName !== "DONE" ? "loader" : "pkLoader"}
+          />
         ) : null}
         {/* If active step is less than 4 appropriate step page is dispayed , 
         if active step is 4  - payment confirmation page is displayed */}
