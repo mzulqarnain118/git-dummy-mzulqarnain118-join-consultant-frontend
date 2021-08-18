@@ -82,7 +82,6 @@ class Footer extends React.Component {
         this.props.setUserData(userData);
         this.props.setrightFooterButtonDisabled(true);
       } else if (this.props.rightFooterButtonName === "DONE") {
-        console.log("footer create consultant");
         this.props.apiCreateConsultant();
       }
     }

@@ -643,7 +643,6 @@ class Home extends React.Component {
     this.setState({ load: true, rightFooterButtonDisabled: true });
     let billingAddress = this.state.billingAddress;
     let userData = this.state.userData;
-    console.log(!this.state.addresschange, billingAddress, userData.address);
     // use same billing and shipping addesss ( note: address change should be set to false when handling request)
     let Address = {};
     if (this.state.addresschange) {
@@ -1053,7 +1052,6 @@ class Home extends React.Component {
     const steps = this.getSteps();
     const mobileStep = this.getMobileSteps();
     const { activeStep, load, rightFooterButtonName } = this.state;
-    //console.log(this.state);
     return (
       <div tabIndex="0" onKeyDown={this.handleKeypress}>
         {load ? (
