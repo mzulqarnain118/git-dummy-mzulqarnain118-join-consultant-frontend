@@ -225,7 +225,7 @@ class BusinessDetails extends React.Component {
                     id="webLink"
                     name="webLink"
                     placeholder="Customise your URL"
-                    autoComplete="off"
+                    autocomplete="none"
                     onChange={this.handleChange}
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
@@ -379,7 +379,7 @@ class BusinessDetails extends React.Component {
                       id="ssn"
                       name="ssn"
                       placeholder="Enter your SSN"
-                      autoComplete="off"
+                      autocomplete="none"
                       onChange={this.handleSSN}
                       maxLength="11"
                     />

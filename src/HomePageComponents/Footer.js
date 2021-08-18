@@ -104,7 +104,7 @@ const Footer = () => {
                   placeholder="Your Email"
                   aria-label="Email input field"
                   class="form-control"
-                  autocomplete="off"
+                  autocomplete="none"
                 />
                 <button
                   aria-label="Submit button"
