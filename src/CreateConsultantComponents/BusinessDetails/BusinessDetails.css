@@ -296,6 +296,7 @@ input::-webkit-input-placeholder {
     margin-top: 5px;
     position: relative;
     left: 55%;
+    z-index: 1 !important;
   }
   .mobileNotAvailabilityText {
     margin-top: 5px;
