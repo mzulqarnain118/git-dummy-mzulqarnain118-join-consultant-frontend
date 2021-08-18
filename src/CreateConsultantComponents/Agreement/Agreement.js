@@ -185,7 +185,9 @@ class Agreement extends React.Component {
         >
           <div className="mobileAgreementLeftMargin">
             <span className="AGhead1">LET’S MAKE THIS OFFICIAL!</span>
-            <div className="AGhead2">Please review and agree to both the terms</div>
+            <div className="AGhead2">
+              Please review and agree to both the terms
+            </div>
             {/* buttons to select the requested policy */}
             <div className="row">
               <div className="col-lg-3 col-md-6 mobileAgreementButtonWidth">
@@ -216,8 +218,10 @@ class Agreement extends React.Component {
 
             <div className="col-lg-6 ">
               <div className="downloadButton" onClick={this.downloadFile}>
-                <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp; DOWNLOAD
-                AGREEMENT
+                <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp;{" "}
+                {!currentButton
+                  ? "Download Independent Consultant Agreement"
+                  : "Download Policy and Procedures Agreement"}
               </div>
             </div>
             {/* to display selected policy data */}

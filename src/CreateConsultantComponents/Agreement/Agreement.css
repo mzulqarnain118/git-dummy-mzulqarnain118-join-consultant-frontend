@@ -16,6 +16,8 @@
   font-size: calc(3px + 1vw);
   font-family: oswald;
   font-weight: 300;
+  margin-bottom: 0.5em !important;
+  margin-top: 0.5em !important;
 }
 .agreementButton1 {
   background: #dcba80;
