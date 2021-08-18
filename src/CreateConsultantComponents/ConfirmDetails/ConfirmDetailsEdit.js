@@ -86,6 +86,61 @@ class ConfirmDetailsEdit extends React.Component {
     };
   }
 
+  getStates = () => {
+    return [
+      "Alabama",
+      "Alaska",
+      "Arizona",
+      "Arkansas",
+      "California",
+      "Colorado",
+      "Connecticut",
+      "Delaware",
+      "Florida",
+      "Georgia",
+      "Hawaii",
+      "Idaho",
+      "Illinois",
+      "Indiana",
+      "Iowa",
+      "Kansas",
+      "Kentucky",
+      "Louisiana",
+      "Maine",
+      "Maryland",
+      "Massachusetts",
+      "Michigan",
+      "Minnesota",
+      "Mississippi",
+      "Missouri",
+      "Montana",
+      "Nebraska",
+      "Nevada",
+      "New Hampshire",
+      "New Jersey",
+      "New Mexico",
+      "New York",
+      "North Carolina",
+      "North Dakota",
+      "Ohio",
+      "Oklahoma",
+      "Oregon",
+      "Pennsylvania",
+      "Rhode Island",
+      "South Carolina",
+      "South Dakota",
+      "Tennessee",
+      "Texas",
+      "Utah",
+      "Vermont",
+      "Virginia",
+      "Washington",
+      "West Virginia",
+      "Wisconsin",
+      "Wyoming",
+    ];
+  };
+
   // used to handle change in case of change input
   handleChange = (e) => {
     let type = e.target.id;
@@ -743,20 +798,26 @@ class ConfirmDetailsEdit extends React.Component {
                   STATE
                 </span>
                 <div className="edit-InputMargin">
-                  <input
-                    type="text"
-                    autoComplete="off"
-                    value={userData["address"]["state"]}
+                  <select
                     className={
                       error.address.state.length > 0
                         ? "form-control edit-Red"
                         : "form-control edit-Input"
                     }
+                    value={userData["address"]["state"]}
                     id="state"
                     name="state"
-                    placeholder="Enter state"
                     onChange={this.handleChange}
-                  />
+                  >
+                    <option value={""} key={"dummy state"}>
+                      Select State
+                    </option>
+                    {this.getStates().map((state, index) => (
+                      <option value={state} key={index}>
+                        {state}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
               {error.address.state.length > 0 ? (
