@@ -150,7 +150,6 @@ class BusinessDetails extends React.Component {
     let ssn = this.state.ssn;
     let errorSsn = this.props.errorUserData.ssn;
     // let checkURLAvailability = this.props.checkURLAvailability;
-    console.log(ssn, errorSsn,checkURLAvailability)
     if (ssn !== "" && errorSsn === "" && checkURLAvailability) {
       this.props.setrightFooterButtonDisabled(false);
     } else {

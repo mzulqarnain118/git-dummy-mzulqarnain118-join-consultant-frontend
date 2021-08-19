@@ -356,6 +356,7 @@ class ConfirmDetailsEdit extends React.Component {
       new Date(userData.dob.year, userData.dob.month, userData.dob.day)
     ).format("MM/DD/YYYY");
     // enable /disable button to move to next screen
+    console.log(errorArr, date)
     this.props.setrightFooterButtonDisabled(
       !(
         errorArr[0] &&
