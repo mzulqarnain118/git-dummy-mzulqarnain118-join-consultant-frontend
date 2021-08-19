@@ -266,6 +266,7 @@ input::-webkit-input-placeholder {
   margin-top: 0;
   margin-left: 5px;
   color:white;
+  font-family: oswald;
 }
 .searchButton:hover {
   cursor: pointer;
