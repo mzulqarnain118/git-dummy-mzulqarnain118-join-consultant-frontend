@@ -266,7 +266,7 @@ class Home extends React.Component {
         //call API to update data (API CALL IN Home)
         this.apiUpdateUserData();
       } else if (this.state.rightFooterButtonName === "PROCEED") {
-        if (this.apiVerifyURL(this.state.userData.url)) {
+        if (await this.apiVerifyURL(this.state.userData.url)) {
           // call API to Update screen id and move to next screen
           let data = {
             id: this.state.userData.id,
@@ -276,6 +276,8 @@ class Home extends React.Component {
             doing_business: this.state.userData.doing_business,
           };
           this.apiUpdateScreen(data, "");
+        }else{
+          this.setrightFooterButtonDisabled(true);
         }
       } else if (this.state.rightFooterButtonName === "CONTINUE") {
         // call API to Update screen id ,agreement accepted and move to next screen
@@ -540,17 +542,23 @@ class Home extends React.Component {
       .then((response) => {
         try {
           if (response.data.validText) {
+            this.setState({checkURLAvailability:true})
             return true;
           } else {
+            this.setState({checkURLAvailability:false})
             return false;
           }
         } catch (e) {
           console.log("Error in /VerifyURL1");
+          console.log(e)
+          this.setState({checkURLAvailability:false})
           return false;
         }
       })
       .catch((error) => {
         console.log("Error in /VerifyURL2");
+        console.log(error)
+        this.setState({checkURLAvailability:false})
         return false;
       });
   };

@@ -65,7 +65,7 @@ class BusinessDetails extends React.Component {
     let errorUserData = this.props.errorUserData;
     errorUserData["ssn"] = errorSsn;
     this.props.setErrorUserData(errorUserData);
-    this.validateToMoveToNextScreen();
+    this.validateToMoveToNextScreen(this.props.checkURLAvailability);
   };
 
   toggleButton = (toggle) => {
@@ -106,6 +106,9 @@ class BusinessDetails extends React.Component {
       errorCustomURL,
       customURLAvailability,
     });
+    let userData = this.props.userData;
+    userData["url"] = value;
+    this.props.setUserData(userData);
   };
 
   validateURL = async (e) => {
@@ -131,26 +134,23 @@ class BusinessDetails extends React.Component {
         this.props.setrightFooterButtonDisabled(true);
       } else {
         checkURLAvailability = true;
-        this.validateToMoveToNextScreen();
+        this.validateToMoveToNextScreen(true);
       }
     } else {
       customURLAvailability = false;
       this.props.setrightFooterButtonDisabled(true);
     }
 
-    //update to home state
-    let userData = this.props.userData;
-    userData["url"] = customURL;
-    this.props.setUserData(userData);
     this.setState({ customURLAvailability, load: false });
     this.props.setCheckURLAvailability(checkURLAvailability);
   };
 
   // move to next screen
-  validateToMoveToNextScreen = () => {
+  validateToMoveToNextScreen = (checkURLAvailability) => {
     let ssn = this.state.ssn;
     let errorSsn = this.props.errorUserData.ssn;
-    let checkURLAvailability = this.props.checkURLAvailability;
+    // let checkURLAvailability = this.props.checkURLAvailability;
+    console.log(ssn, errorSsn,checkURLAvailability)
     if (ssn !== "" && errorSsn === "" && checkURLAvailability) {
       this.props.setrightFooterButtonDisabled(false);
     } else {
