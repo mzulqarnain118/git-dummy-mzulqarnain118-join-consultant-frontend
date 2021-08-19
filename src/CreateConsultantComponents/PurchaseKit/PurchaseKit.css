@@ -93,6 +93,8 @@
   height: 56px !important;
   margin-bottom: 8px;
   margin-top: 8px !important;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 .purchaseInput:focus {
   border-color: #d8c5a6 !important;
@@ -105,6 +107,8 @@
   height: 56px !important;
   margin-bottom: 8px;
   margin-top: 8px !important;
+  font-family: Domine !important;
+  font-weight: 600 !important;
 }
 
 .purchaseRed:focus {
