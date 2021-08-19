@@ -266,15 +266,17 @@ class Home extends React.Component {
         //call API to update data (API CALL IN Home)
         this.apiUpdateUserData();
       } else if (this.state.rightFooterButtonName === "PROCEED") {
-        // call API to Update screen id and move to next screen
-        let data = {
-          id: this.state.userData.id,
-          screen: 2,
-          ssn: this.state.userData.ssn,
-          url: this.state.userData.url,
-          doing_business: this.state.userData.doing_business,
-        };
-        this.apiUpdateScreen(data, "");
+        if (this.apiVerifyURL(this.state.userData.url)) {
+          // call API to Update screen id and move to next screen
+          let data = {
+            id: this.state.userData.id,
+            screen: 2,
+            ssn: this.state.userData.ssn,
+            url: this.state.userData.url,
+            doing_business: this.state.userData.doing_business,
+          };
+          this.apiUpdateScreen(data, "");
+        }
       } else if (this.state.rightFooterButtonName === "CONTINUE") {
         // call API to Update screen id ,agreement accepted and move to next screen
         let data = {
@@ -586,7 +588,9 @@ class Home extends React.Component {
   //API get card details
   apiCartDetails = async () => {
     this.setState({ load: true });
-    await this.apiGetCartId();
+    if (this.state.userData.cart_id === "") {
+      await this.apiGetCartId();
+    }
     let cartId = this.state.userData.cart_id;
     this.setState({ load: true });
     let purchaseKitDetails = this.state.purchaseKitDetails;
@@ -1223,6 +1227,7 @@ class Home extends React.Component {
               setCurrentAgreement={this.setCurrentAgreement}
               apiCreateConsultant={this.apiCreateConsultant}
               apiForgotPassword={this.apiForgotPassword}
+              apiVerifyURL={this.apiVerifyURL}
             />
           </>
         ) : (
