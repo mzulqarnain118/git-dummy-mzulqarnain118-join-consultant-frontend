@@ -221,7 +221,7 @@ class Agreement extends React.Component {
                 <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp;{" "}
                 {!currentButton
                   ? "Download Independent Consultant Agreement"
-                  : "Download Policy and Procedures Agreement"}
+                  : "Download Policy and Procedures"}
               </div>
             </div>
             {/* to display selected policy data */}
