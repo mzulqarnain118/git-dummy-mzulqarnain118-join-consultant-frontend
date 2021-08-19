@@ -486,6 +486,7 @@ class ConfirmDetailsEdit extends React.Component {
                   <input
                     type="text"
                     autocomplete="none"
+                    autoComplete="none"
                     value={userData["first_name"]}
                     className={
                       error.first_name.length > 0
@@ -517,6 +518,7 @@ class ConfirmDetailsEdit extends React.Component {
                   <input
                     type="text"
                     autocomplete="none"
+                    autoComplete="none"
                     value={userData["last_name"]}
                     className={
                       error.last_name.length > 0
@@ -682,6 +684,7 @@ class ConfirmDetailsEdit extends React.Component {
                   <input
                     type="text"
                     autocomplete="none"
+                    autoComplete="none"
                     value={userData["email"]}
                     className={
                       error.email.length > 0
@@ -717,6 +720,7 @@ class ConfirmDetailsEdit extends React.Component {
                   <input
                     type="text"
                     autocomplete="none"
+                    autoComplete="none"
                     value={userData["address"]["street"]}
                     className={
                       error.address.street.length > 0
@@ -748,6 +752,7 @@ class ConfirmDetailsEdit extends React.Component {
                   <input
                     type="text"
                     autocomplete="none"
+                    autoComplete="none"
                     value={userData["address"]["zipcode"]}
                     className={
                       error.address.zipcode.length > 0
@@ -781,6 +786,7 @@ class ConfirmDetailsEdit extends React.Component {
                   <input
                     type="text"
                     autocomplete="none"
+                    autoComplete="none"
                     value={userData["address"]["city"]}
                     className={
                       error.address.city.length > 0
@@ -821,6 +827,7 @@ class ConfirmDetailsEdit extends React.Component {
                     id="state"
                     name="state"
                     autocomplete="none"
+                    autoComplete="none"
                     onChange={this.handleChange}
                   >
                     <option value={""} key={"dummy state"}>
@@ -852,6 +859,7 @@ class ConfirmDetailsEdit extends React.Component {
                   <input
                     type="text"
                     autocomplete="none"
+                    autoComplete="none"
                     value={userData["phonenumber"]}
                     className={
                       error.phonenumber.length > 0
@@ -889,6 +897,7 @@ class ConfirmDetailsEdit extends React.Component {
                     }
                     value={value}
                     autocomplete="none"
+                    autoComplete="none"
                     onChange={(event, newValue) => {
                       let userData = this.state.userData;
                       if (newValue !== null) {

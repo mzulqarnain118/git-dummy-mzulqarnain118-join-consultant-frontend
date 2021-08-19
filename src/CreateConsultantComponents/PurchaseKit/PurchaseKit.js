@@ -412,6 +412,7 @@ class PurchaseKit extends React.Component {
                           name="cardHolderName"
                           placeholder="Enter Card Holder Name"
                           autocomplete="none"
+                          autoComplete="none"
                           onChange={this.handleChange}
                         />
 
@@ -443,6 +444,7 @@ class PurchaseKit extends React.Component {
                           name="cardNumber"
                           placeholder="Enter Card Number"
                           autocomplete="none"
+                          autoComplete="none"
                           onChange={this.handleChange}
                           maxLength="19"
                         />
@@ -475,6 +477,7 @@ class PurchaseKit extends React.Component {
                         id="cardDate"
                         name="cardDate"
                         autocomplete="none"
+                        autoComplete="none"
                         placeholder="Enter MM/YY"
                         onChange={this.handleChange}
                         maxLength="5"
@@ -505,6 +508,7 @@ class PurchaseKit extends React.Component {
                         id="cardCVV"
                         name="cardCVV"
                         autocomplete="none"
+                        autoComplete="none"
                         placeholder="Enter CVV"
                         onChange={this.handleChange}
                         maxLength="4"
@@ -564,6 +568,7 @@ class PurchaseKit extends React.Component {
                               name="street"
                               placeholder="Enter Street"
                               autocomplete="none"
+                              autoComplete="none"
                               onChange={this.handleChange}
                             />
 
@@ -595,6 +600,7 @@ class PurchaseKit extends React.Component {
                               name="zipCode"
                               placeholder="Enter ZIP Code"
                               autocomplete="none"
+                              autoComplete="none"
                               onChange={this.handleChange}
                               maxLength="6"
                             />
@@ -629,6 +635,7 @@ class PurchaseKit extends React.Component {
                               name="city"
                               placeholder="Enter City"
                               autocomplete="none"
+                              autoComplete="none"
                               onChange={this.handleChange}
                             />
 
