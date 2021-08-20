@@ -454,7 +454,6 @@ class ConfirmDetailsEdit extends React.Component {
   render() {
     const { userData, error, value } = this.state;
     const { classes, working_with_arr } = this.props;
-    console.log(this.state.avoidPhoneError);
     return (
       <React.Fragment>
         {/* display header for mobile view */}
