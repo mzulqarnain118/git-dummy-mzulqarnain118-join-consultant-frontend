@@ -30,7 +30,7 @@ class BusinessDetails extends React.Component {
   }
 
   // to handle change in SSN value and validate it
-  handleSSN = (e) => {
+  handleSSN = async (e) => {
     let errorSsn = this.props.errorUserData.ssn;
     let value = e.target.value;
 
@@ -39,7 +39,7 @@ class BusinessDetails extends React.Component {
         "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
       );
       if (regex.test(value)) {
-        this.setState({ avoidSSNValidation: true });
+        await this.setState({ avoidSSNValidation: true });
         errorSsn = "";
       } else if (!regex.test(value) && this.state.avoidSSNValidation) {
         errorSsn = "Invalid SSN";
