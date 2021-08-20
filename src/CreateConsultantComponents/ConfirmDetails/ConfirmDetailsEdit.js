@@ -146,7 +146,7 @@ class ConfirmDetailsEdit extends React.Component {
   };
 
   // used to handle change in case of change input
-  handleChange = (e) => {
+  handleChange = async (e) => {
     let type = e.target.id;
     let value = e.target.value;
     let form = this.state.userData;
@@ -234,7 +234,7 @@ class ConfirmDetailsEdit extends React.Component {
         error[type] = "";
         if (value.length === 12) {
           errorArr[6] = true;
-          this.setState({ avoidPhoneError: true });
+          await this.setState({ avoidPhoneError: true });
         } else if(value.length !== 12 && this.state.avoidPhoneError) {
           error[type] = "Invalid Cell Number";
           errorArr[6] = false;
