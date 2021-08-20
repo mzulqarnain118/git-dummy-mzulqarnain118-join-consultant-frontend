@@ -156,6 +156,9 @@ class Home extends React.Component {
         consultant: false,
         dateofbirth: "",
         screen: 0,
+        // note: address is stored on the address varialble itself as a json
+        // and copied into these variables (below 4) during backend call
+        // since backend format is different.
         street: "",
         zipcode: "",
         city: "",
@@ -276,7 +279,7 @@ class Home extends React.Component {
             doing_business: this.state.userData.doing_business,
           };
           this.apiUpdateScreen(data, "");
-        }else{
+        } else {
           this.setrightFooterButtonDisabled(true);
         }
       } else if (this.state.rightFooterButtonName === "CONTINUE") {
@@ -542,23 +545,23 @@ class Home extends React.Component {
       .then((response) => {
         try {
           if (response.data.validText) {
-            this.setState({checkURLAvailability:true})
+            this.setState({ checkURLAvailability: true });
             return true;
           } else {
-            this.setState({checkURLAvailability:false})
+            this.setState({ checkURLAvailability: false });
             return false;
           }
         } catch (e) {
           console.log("Error in /VerifyURL1");
-          console.log(e)
-          this.setState({checkURLAvailability:false})
+          console.log(e);
+          this.setState({ checkURLAvailability: false });
           return false;
         }
       })
       .catch((error) => {
         console.log("Error in /VerifyURL2");
-        console.log(error)
-        this.setState({checkURLAvailability:false})
+        console.log(error);
+        this.setState({ checkURLAvailability: false });
         return false;
       });
   };
