@@ -24,6 +24,8 @@ class BusinessDetails extends React.Component {
       ssn: props.userData.ssn,
       //load circle
       load: false,
+      //avoid sssn validation for new user when they are typing for the first time
+      avoidSSNValidation: false,
     };
   }
 
@@ -37,12 +39,13 @@ class BusinessDetails extends React.Component {
         "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
       );
       if (regex.test(value)) {
+        this.setState({ avoidSSNValidation: true });
         errorSsn = "";
-      } else {
+      } else if (!regex.test(value) && this.state.avoidSSNValidation) {
         errorSsn = "Invalid SSN";
         this.props.setrightFooterButtonDisabled(true);
       }
-    } else {
+    } else if (value === "" && this.state.avoidSSNValidation) {
       errorSsn = "SSN is mandatory";
       this.props.setrightFooterButtonDisabled(true);
     }
@@ -150,7 +153,7 @@ class BusinessDetails extends React.Component {
     let ssn = this.state.ssn;
     let errorSsn = this.props.errorUserData.ssn;
     // let checkURLAvailability = this.props.checkURLAvailability;
-    if (ssn !== "" && errorSsn === "" && checkURLAvailability) {
+    if (ssn !== "" && errorSsn === "" && checkURLAvailability && this.state.avoidSSNValidation) {
       this.props.setrightFooterButtonDisabled(false);
     } else {
       this.props.setrightFooterButtonDisabled(true);
@@ -162,9 +165,12 @@ class BusinessDetails extends React.Component {
     if (this.props.userData.url !== "") {
       await this.checkURLAvailability();
     }
+    let avoidSSNValidation = this.state.avoidSSNValidation;
     if (this.props.userData.ssn !== "") {
+      avoidSSNValidation = true;
       this.props.setrightFooterButtonDisabled(false);
     }
+    this.setState({ avoidSSNValidation });
   };
 
   render() {
@@ -190,7 +196,7 @@ class BusinessDetails extends React.Component {
           >
             <span className="BDhead1">SETTING UP YOUR STORE</span>
             <div className="BDstaticText3">
-              Pick a custom URL to promote your personalized Scout &amp; Cellar™ 
+              Pick a custom URL to promote your personalized Scout &amp; Cellar™
               storefront.
             </div>
 
@@ -241,7 +247,7 @@ class BusinessDetails extends React.Component {
                     </div>
                   ) : (
                     <button className="searchButton" onClick={this.validateURL}>
-                    Verify
+                      Verify
                     </button>
                   )}
                 </div>
