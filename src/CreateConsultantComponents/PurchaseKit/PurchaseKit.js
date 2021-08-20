@@ -491,7 +491,7 @@ class PurchaseKit extends React.Component {
                       ) : null}
                     </div>
                   </div>
-                  <div className="col-lg-2 col-md-4 mobileCVV">
+                  <div className="col-lg-2 col-md-4  mobileCVV">
                     {/* CVV of card */}
                     <div className="form-group">
                       <span className="purchasehead4" htmlFor="cardCVV">
@@ -515,12 +515,9 @@ class PurchaseKit extends React.Component {
                       />
 
                       {error.cardCVV.length > 0 ? (
-                        <span
-                          className="errorMes"
-                          style={{ marginLeft: "48px" }}
-                        >
+                        <span className="errorMesCVV">
                           {error.cardCVV}
-                          <br />
+                         
                         </span>
                       ) : null}
                     </div>
