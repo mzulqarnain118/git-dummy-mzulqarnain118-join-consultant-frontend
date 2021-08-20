@@ -85,6 +85,8 @@ class ConfirmDetailsEdit extends React.Component {
       },
       //to avoid date error when new user has not completed entering all date information
       avoidDateError: true,
+      //to avoid phone error to be displayed when new user has not completed entering all the phone information
+      avoidPhoneError: false,
     };
   }
 
@@ -232,11 +234,12 @@ class ConfirmDetailsEdit extends React.Component {
         error[type] = "";
         if (value.length === 12) {
           errorArr[6] = true;
-        } else {
+          this.setState({ avoidPhoneError: true });
+        } else if(value.length !== 12 && this.state.avoidPhoneError) {
           error[type] = "Invalid Cell Number";
           errorArr[6] = false;
         }
-      } else {
+      } else if (value === "" && this.state.avoidPhoneError) {
         error[type] = "Cell Number is mandatory";
         errorArr[6] = false;
       }
@@ -352,11 +355,11 @@ class ConfirmDetailsEdit extends React.Component {
   validateToMoveToNextScreen = (avoidDateError) => {
     let errorArr = this.state.errorArr;
     let userData = this.state.userData;
+    let avoidPhoneError = this.state.avoidPhoneError;
     let date = moment(
       new Date(userData.dob.year, userData.dob.month, userData.dob.day)
     ).format("MM/DD/YYYY");
     // enable /disable button to move to next screen
-    console.log(errorArr, date)
     this.props.setrightFooterButtonDisabled(
       !(
         errorArr[0] &&
@@ -369,6 +372,7 @@ class ConfirmDetailsEdit extends React.Component {
         errorArr[7] &&
         errorArr[8] &&
         avoidDateError &&
+        avoidPhoneError &&
         date !== "Invalid date"
       )
     );
@@ -382,6 +386,8 @@ class ConfirmDetailsEdit extends React.Component {
   componentDidMount = () => {
     let userData = this.props.userData;
     let errorArr = this.state.errorArr;
+    let avoidPhoneError = this.state.avoidPhoneError;
+
     if (userData["first_name"] === "") {
       errorArr[0] = false;
     } else {
@@ -418,6 +424,7 @@ class ConfirmDetailsEdit extends React.Component {
     } else {
       errorArr[6] = true;
       userData["phonenumber"] = maskingPhoneNumber(userData["phonenumber"]);
+      avoidPhoneError = true;
     }
     if (userData["working_with"].name === "") {
       errorArr[7] = false;
@@ -441,12 +448,13 @@ class ConfirmDetailsEdit extends React.Component {
       };
       avoidDateError = false;
     }
-    this.setState({ errorArr, userData, avoidDateError });
+    this.setState({ errorArr, userData, avoidDateError, avoidPhoneError });
   };
 
   render() {
     const { userData, error, value } = this.state;
     const { classes, working_with_arr } = this.props;
+    console.log(this.state.avoidPhoneError);
     return (
       <React.Fragment>
         {/* display header for mobile view */}
