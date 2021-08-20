@@ -153,6 +153,7 @@ class ConfirmDetailsEdit extends React.Component {
     let error = this.state.error;
     let errorArr = this.state.errorArr;
 
+
     // firstname
     if (type === "first_name") {
       if (value !== "") {
@@ -235,7 +236,7 @@ class ConfirmDetailsEdit extends React.Component {
         if (value.length === 12) {
           errorArr[6] = true;
           await this.setState({ avoidPhoneError: true });
-        } else if(value.length !== 12 && this.state.avoidPhoneError) {
+        } else if (value.length !== 12 && this.state.avoidPhoneError) {
           error[type] = "Invalid Cell Number";
           errorArr[6] = false;
         }
@@ -398,23 +399,23 @@ class ConfirmDetailsEdit extends React.Component {
     } else {
       errorArr[1] = true;
     }
-    if (userData["street"] === "") {
+    if (userData["address"]["street"] === "") {
       errorArr[2] = false;
     } else {
       errorArr[2] = true;
     }
-    if (userData["zipcode"] === "") {
+    if (userData["address"]["zipcode"] === "") {
       errorArr[3] = false;
     } else {
       errorArr[3] = true;
       this.props.setrightFooterButtonDisabled(false);
     }
-    if (userData["city"] === "") {
+    if (userData["address"]["city"] === "") {
       errorArr[4] = false;
     } else {
       errorArr[4] = true;
     }
-    if (userData["state"] === "") {
+    if (userData["address"]["state"] === "") {
       errorArr[5] = false;
     } else {
       errorArr[5] = true;
