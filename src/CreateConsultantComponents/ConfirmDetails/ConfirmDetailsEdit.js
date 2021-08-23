@@ -153,7 +153,6 @@ class ConfirmDetailsEdit extends React.Component {
     let error = this.state.error;
     let errorArr = this.state.errorArr;
 
-
     // firstname
     if (type === "first_name") {
       if (value !== "") {
@@ -306,7 +305,7 @@ class ConfirmDetailsEdit extends React.Component {
 
     // avoid users below 19 years
     if (yearsDiff < 21) {
-      error["dob"] = "you have to be older than 21 Years";
+      error["dob"] = "You have to be older than 21 Years";
       this.props.setrightFooterButtonDisabled(true);
     } else if (yearsDiff === 21) {
       let month = date1.getMonth() - date2.getMonth();
@@ -317,14 +316,14 @@ class ConfirmDetailsEdit extends React.Component {
           error["dob"] = "";
           this.validateToMoveToNextScreen(this.state.avoidDateError);
         } else {
-          error["dob"] = "you have to be older than 21 Years";
+          error["dob"] = "You have to be older than 21 Years";
           this.props.setrightFooterButtonDisabled(true);
         }
       } else if (month > 0) {
         error["dob"] = "";
         this.validateToMoveToNextScreen(this.state.avoidDateError);
       } else {
-        error["dob"] = "you have to be older than 21 Years";
+        error["dob"] = "You have to be older than 21 Years";
         this.props.setrightFooterButtonDisabled(true);
       }
     } else {
