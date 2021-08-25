@@ -16,6 +16,7 @@ import {
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "./PaymentConfirmation.css";
+import { getMobileOperatingSystem } from "../../configuration/config";
 
 // styles for material ui
 const styles = (theme) => ({
@@ -298,16 +299,24 @@ class PaymentConfirmation extends React.Component {
                   onMouseDown={this.onRippleStart2}
                   onMouseUp={this.onRippleStop2}
                 >
-                  <TouchRipple ref={rippleRef2} center={false} />
-                  <div className="row">
-                    <div className="pcFooterMainIcon2">
-                      <Icon2 />
+                  <a
+                    href={
+                      getMobileOperatingSystem() === "Android"
+                        ? "https://play.google.com/store/apps/details/?id=co.vine.android"
+                        : "https://scoutandcellar.com/"
+                    }
+                  >
+                    <TouchRipple ref={rippleRef2} center={false} />
+                    <div className="row">
+                      <div className="pcFooterMainIcon2">
+                        <Icon2 />
+                      </div>
+                      <div className="pcFooterText1">
+                        Download Vine App for Consultant
+                      </div>
+                      <IoIosArrowForward className="pcFooterNextIcon" />
                     </div>
-                    <div className="pcFooterText1">
-                      Download Vine App for Consultant
-                    </div>
-                    <IoIosArrowForward className="pcFooterNextIcon" />
-                  </div>
+                  </a>
                 </div>
 
                 {/* card 3 */}
