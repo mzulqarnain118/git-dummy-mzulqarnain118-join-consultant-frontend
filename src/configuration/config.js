@@ -13,7 +13,7 @@ export function getMobileOperatingSystem() {
   if (/android/i.test(userAgent)) {
     return "Android";
   }
-  // iOS 
+  // iOS
   if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
     return "iOS";
   }
@@ -23,6 +23,10 @@ export function getMobileOperatingSystem() {
 // algolia website to get "working with" drop down data for confirm details edit page
 export const algoliaURL =
   "https://565g60m4tz-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20JavaScript%20(3.35.1)%3B%20Browser%20(lite)%3B%20react%20(16.9.0)%3B%20react-instantsearch%20(5.7.0)%3B%20JS%20Helper%20(2.28.1)&x-algolia-application-id=565G60M4TZ&x-algolia-api-key=90b94f7411220a5d6b88644b81a474c9";
+
+//algoliya get user data
+export const getWorkingWithURL =
+  "https://apidevscoutncellar.influx.co.in/api/v1/users/consultantReferral";
 
 const constant = {
   baseUrl: "https://apidevscoutncellar.influx.co.in",

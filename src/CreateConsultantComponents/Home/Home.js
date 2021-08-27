@@ -18,7 +18,7 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import * as API from "../../configuration/apiconfig";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
-import { algoliaURL } from "../../configuration/config";
+import { algoliaURL, getWorkingWithURL } from "../../configuration/config";
 import moment from "moment";
 require("typeface-oswald");
 require("typeface-domine");
@@ -226,6 +226,8 @@ class Home extends React.Component {
       consultant_error: "",
       //email sent confirmation text display
       showSentEmailText: false,
+      //use fixed working with
+      fixedWorkingWith: false,
     };
   }
 
@@ -391,6 +393,9 @@ class Home extends React.Component {
           }
           if (userData.doing_business === "") {
             userData["doing_business"] = "Individual";
+          }
+          if (this.state.fixedWorkingWith) {
+            userData["working_with"] = this.state.userData["working_with"];
           }
           //update state with user data
           this.setState({
@@ -801,6 +806,43 @@ class Home extends React.Component {
       });
   };
 
+  apiGetWorkingWith = async (userURL) => {
+    let data = {
+      consultantid: userURL,
+    };
+    let fixedWorkingWith = this.state.fixedWorkingWith;
+    let userData = this.state.userData;
+    await axios
+      .post(getWorkingWithURL, data)
+      .then((res) => {
+        try {
+          fixedWorkingWith = true;
+          userData["working_with"] = {
+            id: res.data.id,
+            name: res.data.name,
+          };
+          console.log(userData);
+          this.setState({
+            userData,
+            fixedWorkingWith,
+          });
+        } catch (e) {
+          console.log(e);
+          fixedWorkingWith = false;
+          this.setState({
+            fixedWorkingWith,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        fixedWorkingWith = false;
+        this.setState({
+          fixedWorkingWith,
+        });
+      });
+  };
+
   //*********************************************************** API Calls Ends Here*********************************************************/
 
   //method to set card and address details
@@ -854,6 +896,7 @@ class Home extends React.Component {
             working_with_arr={this.state.working_with_arr}
             showSentEmailText={this.state.showSentEmailText}
             setShowSentEmailText={this.setShowSentEmailText}
+            fixedWorkingWith={this.state.fixedWorkingWith}
           />
         );
       case 1:
@@ -1059,6 +1102,12 @@ class Home extends React.Component {
       default:
         this.setState({ rightFooterButtonName: "NEXT" });
         break;
+    }
+  };
+
+  componentDidMount = () => {
+    if (this.props.userURL !== "") {
+      this.apiGetWorkingWith(this.props.userURL);
     }
   };
 

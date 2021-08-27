@@ -78,11 +78,6 @@ class ConfirmDetailsEdit extends React.Component {
       },
       // used to validate and enable button to move to next screen
       errorArr: [true, true, true, true, true, true, true, true, true],
-      //working with value
-      value: {
-        id: props.userData["working_with"].id,
-        DisplayName: props.userData["working_with"].name,
-      },
       //to avoid date error when new user has not completed entering all date information
       avoidDateError: true,
       //to avoid phone error to be displayed when new user has not completed entering all the phone information
@@ -452,7 +447,7 @@ class ConfirmDetailsEdit extends React.Component {
   };
 
   render() {
-    const { userData, error, value } = this.state;
+    const { userData, error } = this.state;
     const { classes, working_with_arr } = this.props;
     return (
       <React.Fragment>
@@ -898,12 +893,16 @@ class ConfirmDetailsEdit extends React.Component {
                 </span>
                 <div className="edit-InputMargin">
                   <Autocomplete
+                    disabled={this.props.fixedWorkingWith}
                     className={
                       error.working_with.length > 0
                         ? "form-control edit-Red"
                         : "form-control edit-Input"
                     }
-                    value={value}
+                    value={{
+                      id: this.props.userData["working_with"].id,
+                      DisplayName: this.props.userData["working_with"].name,
+                    }}
                     autocomplete="none"
                     autoComplete="none"
                     onChange={(event, newValue) => {
@@ -947,6 +946,7 @@ class ConfirmDetailsEdit extends React.Component {
                         classes={{ root: classes.customTextField }}
                         placeholder="Enter working with"
                         variant="outlined"
+                        disabled={this.props.fixedWorkingWith}
                       />
                     )}
                   />

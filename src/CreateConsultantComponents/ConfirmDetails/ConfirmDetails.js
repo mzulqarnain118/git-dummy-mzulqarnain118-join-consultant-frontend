@@ -138,7 +138,7 @@ class ConfirmDetails extends React.Component {
         ) : (
           //to display editable version  of confirm details page
           <ConfirmDetailsEdit
-            userData={userData}
+            userData={this.props.userData}
             setrightFooterButtonDisabled={
               this.props.setrightFooterButtonDisabled
             }
@@ -149,6 +149,7 @@ class ConfirmDetails extends React.Component {
               this.props.apiGetWorkingWithDropDownData
             }
             working_with_arr={this.props.working_with_arr}
+            fixedWorkingWith={this.props.fixedWorkingWith}
           />
         )}
       </React.Fragment>

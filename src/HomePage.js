@@ -8,6 +8,26 @@ import Home from "./HomePageComponents/Home";
 import Footer from "./HomePageComponents/Footer";
 
 class HomePage extends React.Component {
+  //used to get custom url from the url
+  componentDidMount = () => {
+    let pathname = this.props.location.pathname;
+    let n = pathname.lastIndexOf("/");
+    pathname = pathname.substring(n + 1);
+    let search = this.props.location.search;
+    n = search.lastIndexOf("/?u=");
+    search = search.substring(n + 4);
+    let value = "";
+    if (pathname === "") {
+      value = search;
+    } else {
+      value = pathname;
+    }
+    if (value === undefined) {
+      value = "";
+    }
+    this.props.passCustomURL(value);
+  };
+
   render() {
     return (
       <>

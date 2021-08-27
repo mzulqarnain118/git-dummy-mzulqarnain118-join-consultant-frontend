@@ -2,19 +2,40 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./CreateConsultantComponents/Home/Home";
 import HomePage from "./HomePage";
-import {BrowserRouter as Router, Route,Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      customURL: "",
+    };
+  }
+
+  passCustomURL = (value) => {
+    this.setState({ customURL: value });
+  };
+
   render() {
-   console.log = console.warn = console.error = () => {};
+    console.log = console.warn = console.error = () => {};
     return (
       <div>
         <Router>
           <Switch>
-            <Route path="/consultant" component={Home}></Route>
-            {/* Home Page component */}
-            <Route path="/" component={HomePage}></Route>
             {/* create consultant Home component */}
+            <Route
+              path="/consultant"
+              render={(props) => (
+                <Home userURL={this.state.customURL} {...props} />
+              )}
+            ></Route>
+            {/* Custom URL --> fixed working with */}
+            <Route
+              path="/*"
+              render={(props) => (
+                <HomePage passCustomURL={this.passCustomURL} {...props} />
+              )}
+            ></Route>
           </Switch>
         </Router>
       </div>
