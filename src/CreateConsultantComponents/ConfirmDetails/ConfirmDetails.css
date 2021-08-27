@@ -648,7 +648,8 @@ input:disabled {
     margin-left: 13.66%;
   }
 }
-input[type="text"]:disabled {
-  background: #dddddd;
+
+.MuiAutocomplete-root .Mui-disabled {
+  background: #dddddd !important;
   color: black;
 }
