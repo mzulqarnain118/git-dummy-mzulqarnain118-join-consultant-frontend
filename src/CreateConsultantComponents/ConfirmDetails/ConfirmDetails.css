@@ -234,7 +234,7 @@
   margin-bottom: 8px;
   font-family: Domine !important;
   font-weight: 600 !important;
-  margin-left:2px;
+  margin-left: 2px;
 }
 .edit-year:focus {
   border-color: #d8c5a6 !important;
@@ -276,7 +276,7 @@
   margin-bottom: 8px;
   font-family: Domine !important;
   font-weight: 600 !important;
-  margin-left:2px;
+  margin-left: 2px;
 }
 .edit-year-red :focus {
   border-color: red !important;
@@ -311,7 +311,7 @@ input:disabled {
   margin-top: 10px;
 }
 
-.forgot-password-confirmation{
+.forgot-password-confirmation {
   font-family: Domine;
   font-size: 15px;
   margin-top: 20px;
@@ -522,7 +522,6 @@ input:disabled {
   .displayArea {
     padding: 30px;
   }
-
 }
 @media (max-width: 991px) {
   .email1 {
@@ -648,4 +647,8 @@ input:disabled {
   .edit-marginLeft {
     margin-left: 13.66%;
   }
+}
+input[type="text"]:disabled {
+  background: #dddddd;
+  color: black;
 }
