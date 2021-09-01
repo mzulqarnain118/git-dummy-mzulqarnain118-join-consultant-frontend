@@ -5,7 +5,7 @@ import Hearfromotherconsultants from "./Hearfromotherconsultants";
 import Howdoesitwork from "./Howdoesitwork";
 import Letsgetstarted from "./Letsgetstarted";
 import Partnersinsuccess from "./Partnersinsuccess";
-import Whyscoutandcellar from "./Whyscoutandcellar";
+//import Whyscoutandcellar from "./Whyscoutandcellar";
 //import Whyyou from "./Whyyou";
 
 class Home extends React.Component {
@@ -14,7 +14,7 @@ class Home extends React.Component {
       <div className="bodyWrapper">
         <Banner />
         {/* <Whyyou /> */}
-        <Whyscoutandcellar />
+        {/* <Whyscoutandcellar /> */}
         <Howdoesitwork />
         <Partnersinsuccess />
         <Hearfromotherconsultants />

@@ -5,7 +5,7 @@ class Whyscoutandcellar extends React.Component {
   render() {
     return (
       <>
-        <section className="whyscout position-relative">
+        <section className="whyscout position-relative" ref={this.myRef}>
           <section className="consult-rgt-dts">
             <figure className="consult-img">
               <img
