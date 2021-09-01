@@ -29,15 +29,16 @@ class Hearfromotherconsultants extends React.Component {
                   </aside>
                   <aside className="col-lg-8 col-md-8 col-12 hearfrom-cont d-inline-block align-top">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                      quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                      consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-                      nulla facilisi.
+                      I love working as part of an entrepreneurial company that
+                      offers huge growth opportunities and flexibility. If you
+                      are looking for an opportunity to be part of something
+                      truly different and help pioneer a new way for people to
+                      experience wine, then join us!
                     </p>
                     <h3>
-                      - Courtney Bono
-                      <br />
-                      <span>Senior Consultant, StarBucks</span>
+                      - Chris Hite
+                      {/* <br />
+                      <span>Senior Consultant, StarBucks</span> */}
                     </h3>
                   </aside>
                 </section>
@@ -47,15 +48,15 @@ class Hearfromotherconsultants extends React.Component {
                   </aside>
                   <aside className="col-lg-8 col-md-8 col-12 hearfrom-cont d-inline-block align-top">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                      quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                      consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-                      nulla facilisi.
+                      Scout &amp; Cellar has opened my eyes to seeing a much
+                      bigger future for myself. I have always been building
+                      something to benefit a large company, and now my focus has
+                      shifted to building something of my own.
                     </p>
                     <h3>
                       - Courtney Bono
-                      <br />
-                      <span>Senior Consultant, StarBucks</span>
+                      {/* <br />
+                      <span>Senior Consultant, StarBucks</span> */}
                     </h3>
                   </aside>
                 </section>
@@ -65,15 +66,15 @@ class Hearfromotherconsultants extends React.Component {
                   </aside>
                   <aside className="col-lg-8 col-md-8 col-12 hearfrom-cont d-inline-block align-top">
                     <p>
-                      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-                      quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                      consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-                      nulla facilisi.
+                      We’ve been challenged and fulfilled through this
+                      opportunity, and the success we’ve experienced has
+                      encouraged us to continue pushing to achieve greater
+                      goals.
                     </p>
                     <h3>
-                      - Courtney Bono
-                      <br />
-                      <span>Senior Consultant, StarBucks</span>
+                      - Shelly Hoke, Ann Thompson and Lisa Oldham
+                      {/* <br />
+                      <span>Senior Consultant, StarBucks</span> */}
                     </h3>
                   </aside>
                 </section>

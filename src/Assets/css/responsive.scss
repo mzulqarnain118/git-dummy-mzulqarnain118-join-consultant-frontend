@@ -31,6 +31,12 @@
     top: -49px;
     height: 49px;
   }
+  .wrapper .whyscout {
+    padding: 180px 0 240px;
+  }
+  .wrapper .howdoes {
+    padding: 145px 0 90px;
+  }
 }
 
 @media (max-width: 1599px) {
@@ -51,7 +57,7 @@
     padding: 15px 35px 0;
   }
   .wrapper .whyscout {
-    padding: 50px 0 200px;
+    padding: 195px 0 200px;
   }
   .wrapper .whyscout h2 {
     padding: 0 0 30px;
@@ -77,7 +83,7 @@
     padding: 150px 0 50px;
   }
   .wrapper .partners {
-    padding: 50px 0 200px;
+    padding: 50px 0 120px;
   }
   .wrapper .partners p {
     font-size: 18px;
@@ -117,7 +123,7 @@
     padding: 50px 0 80px;
   }
   .wrapper .letsget {
-    padding: 50px 0;
+    padding: 0 0 50px;
   }
   .wrapper .havemore .accordion-button {
     font-size: 24px;
@@ -143,7 +149,7 @@
     bottom: -20px;
   }
   .wrapper .banner-blk {
-    padding-bottom: 230px;
+    padding-bottom: 180px;
   }
   .wrapper .whyyou-blk:before {
     top: -39px;
@@ -175,6 +181,11 @@
     width: 330px;
     height: 415px;
     padding: 0 30px;
+  }
+}
+@media (max-width: 1359px) {
+  .wrapper .whyscout {
+    padding: 195px 0 250px;
   }
 }
 @media (max-width: 1199px) {

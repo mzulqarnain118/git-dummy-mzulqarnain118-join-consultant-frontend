@@ -36,22 +36,15 @@ class Howdoesitwork extends React.Component {
         <section className="howdoes text-center position-relative">
           <section className="consult-lft-dts">
             <figure className="consult-img">
-              <img
-                src={consultProfile}
-                className="img-fluid"
-                alt=""
-              />
+              <img src={consultProfile} className="img-fluid" alt="" />
               <p>
-                <sup className="topqt">‘</sup>Lorem ipsum dolor sit amet,
-                consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-                enim ad minim veniam, quis nostrud exerci tation ullam corper
-                suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                <sup className="topqt">‘</sup>Scout &amp; Cellar has opened my
+                eyes to seeing a much bigger future for myself. I have always
+                been building something to benefit a large company, and now my
+                focus has shifted to building something of my own.
                 <sup className="btmqt">’</sup>
               </p>
-              <h5>
-                Courtney Bono<span>Senior Consultant, StarBucks</span>
-              </h5>
+              <h5>Courtney Bono</h5>
             </figure>
           </section>
           <section className="container p-0">
