@@ -2,7 +2,7 @@
 
 //reCaptcha site key
 export const site_key = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
-var baseUrl = "https://apidevscoutncellar.influx.co.in";
+var baseUrl = "https://tower-staging.scoutandcellar.com";
 /**
  * Determine the mobile operating system.
  * This function returns one of 'iOS', 'Android', or 'unknown'.
