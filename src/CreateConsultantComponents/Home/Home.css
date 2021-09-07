@@ -229,3 +229,12 @@
     right: 40%;
   }
 }
+.swal-footer{
+  text-align: center !important;
+}
+
+.swal-button{
+  background-color: #DCBA80 !important;
+  color: white !important;
+  border-radius: 0 !important;
+}

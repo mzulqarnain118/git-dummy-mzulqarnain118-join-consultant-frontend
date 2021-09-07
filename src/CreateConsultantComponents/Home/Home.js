@@ -19,6 +19,7 @@ import * as API from "../../configuration/apiconfig";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
 import { algoliaURL, getWorkingWithURL } from "../../configuration/config";
+import swal from "sweetalert";
 import moment from "moment";
 require("typeface-oswald");
 require("typeface-domine");
@@ -686,70 +687,20 @@ class Home extends React.Component {
 
   //API to get cart id
   apiGetCartId = async () => {
-    this.setState({ load: true });
     let userData = this.state.userData;
+    userData["cart_id"] = "";
+    this.setState({ userData });
 
     await API.callEndpoint("POST", "Bearer", "/api/v1/users/createCart")
       .then((response) => {
         try {
           userData["cart_id"] = response.data.cartId;
           this.setState({
-            // load: false,
+            //load: false,
             userData,
           });
         } catch (e) {
           console.log("Error in /CreateCart");
-          console.log(e);
-          // this.setState({
-          //   load: false,
-          // });
-        }
-      })
-      .catch((error) => {
-        console.log("Error in /CreateCart");
-        console.log(error);
-        // this.setState({
-        //   load: false,
-        // });
-      });
-  };
-
-  //API get card details
-  apiCartDetails = async () => {
-    this.setState({ load: true });
-    if (this.state.userData.cart_id === "") {
-      await this.apiGetCartId();
-    }
-    let cartId = this.state.userData.cart_id;
-    this.setState({ load: true });
-    let purchaseKitDetails = this.state.purchaseKitDetails;
-    let data = {
-      id: this.state.userData.id,
-      ssn: this.state.userData.ssn,
-    };
-    await API.callEndpoint(
-      "GET",
-      "Bearer",
-      "/api/v1/users/viewCart?cartid=" + cartId,
-      data
-    )
-      .then((response) => {
-        try {
-          purchaseKitDetails["subtotal"] = response.data.OrderLines[0].Subtotal;
-          purchaseKitDetails["shipping"] =
-            response.data.OrderLines[0].ShippingTax;
-          purchaseKitDetails["salestax"] = response.data.OrderLines[0].ItemTax;
-          purchaseKitDetails["discount"] =
-            response.data.OrderLines[0].Discounts;
-          purchaseKitDetails["total"] = response.data.OrderLines[0].LineTotal;
-
-          this.setState({
-            load: false,
-            cartId,
-            purchaseKitDetails,
-          });
-        } catch (e) {
-          console.log("Error in /get cart details");
           console.log(e);
           this.setState({
             load: false,
@@ -760,7 +711,7 @@ class Home extends React.Component {
         }
       })
       .catch((error) => {
-        console.log("Error in /get cart details");
+        console.log("Error in /CreateCart");
         console.log(error);
         this.setState({
           load: false,
@@ -768,7 +719,76 @@ class Home extends React.Component {
           rightFooterButtonName: "CONTINUE",
           rightFooterButtonDisabled: false,
         });
+        swal({
+          title: "An error occured, try again!",
+          icon: "info",
+        });
       });
+  };
+
+  //API get card details
+  apiCartDetails = async () => {
+    this.setState({ load: true });
+
+    await this.apiGetCartId();
+
+    if (this.state.userData["cart_id"] !== "") {
+      let cartId = this.state.userData.cart_id;
+      this.setState({ load: true });
+      let purchaseKitDetails = this.state.purchaseKitDetails;
+      let data = {
+        id: this.state.userData.id,
+        ssn: this.state.userData.ssn,
+      };
+      await API.callEndpoint(
+        "GET",
+        "Bearer",
+        "/api/v1/users/viewCart?cartid=" + cartId,
+        data
+      )
+        .then((response) => {
+          try {
+            purchaseKitDetails["subtotal"] =
+              response.data.OrderLines[0].Subtotal;
+            purchaseKitDetails["shipping"] =
+              response.data.OrderLines[0].ShippingTax;
+            purchaseKitDetails["salestax"] =
+              response.data.OrderLines[0].ItemTax;
+            purchaseKitDetails["discount"] =
+              response.data.OrderLines[0].Discounts;
+            purchaseKitDetails["total"] = response.data.OrderLines[0].LineTotal;
+
+            this.setState({
+              load: false,
+              cartId,
+              purchaseKitDetails,
+            });
+          } catch (e) {
+            console.log("Error in /get cart details");
+            console.log(e);
+            this.setState({
+              load: false,
+              activeStep: 2,
+              rightFooterButtonName: "CONTINUE",
+              rightFooterButtonDisabled: false,
+            });
+          }
+        })
+        .catch((error) => {
+          console.log("Error in /get cart details");
+          console.log(error);
+          this.setState({
+            load: false,
+            activeStep: 2,
+            rightFooterButtonName: "CONTINUE",
+            rightFooterButtonDisabled: false,
+          });
+          swal({
+            title: "An error occured, try again!",
+            icon: "info",
+          });
+        });
+    }
   };
 
   // api to create a consultant
