@@ -2,6 +2,7 @@
   font-family: oswald;
   font-size: 15px;
   white-space: nowrap;
+  cursor: pointer;
 }
 .mobileHead {
   margin-left: -2vw;

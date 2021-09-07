@@ -185,7 +185,20 @@ class PaymentConfirmation extends React.Component {
 
                   <div className="pcHead3">Consultant Number</div>
 
-                  <div className="pcConsultantNumber"> {consultant_number}</div>
+                  <div className="pcConsultantNumber1"> {consultant_number}</div>
+                  <hr
+                    style={{
+                      background: "white",
+                      color: "white",
+                      width: "60%",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                  />
+
+                  <div className="pcHead3">Email Address</div>
+
+                  <div className="pcConsultantNumber"> {userData.email}</div>
                 </>
               ) : (
                 <>
@@ -281,16 +294,21 @@ class PaymentConfirmation extends React.Component {
                   onMouseDown={this.onRippleStart1}
                   onMouseUp={this.onRippleStop1}
                 >
-                  <TouchRipple ref={rippleRef1} center={false} />
-                  <div className="row">
-                    <div className="pcFooterMainIcon">
-                      <Icon1 />
+                  <a
+                    href="https://team.scoutandcellar.com/Account/Login?utm=bac"
+                    target={"_blank"}
+                  >
+                    <TouchRipple ref={rippleRef1} center={false} />
+                    <div className="row">
+                      <div className="pcFooterMainIcon">
+                        <Icon1 />
+                      </div>
+                      <div className="pcFooterText">
+                        Access your consultant Account
+                      </div>
+                      <IoIosArrowForward className="pcFooterNextIcon" />
                     </div>
-                    <div className="pcFooterText">
-                      Access your consultant Account
-                    </div>
-                    <IoIosArrowForward className="pcFooterNextIcon" />
-                  </div>
+                  </a>
                 </div>
 
                 {/* card 2 */}
@@ -303,8 +321,11 @@ class PaymentConfirmation extends React.Component {
                     href={
                       getMobileOperatingSystem() === "Android"
                         ? "https://play.google.com/store/apps/details/?id=co.vine.android"
-                        : "https://scoutandcellar.com/"
+                        : getMobileOperatingSystem() === "iOS"
+                        ? "https://apps.apple.com/us/app/scout-cellar-vine/id1526860271"
+                        : "https://apps.apple.com/us/app/scout-cellar-vine/id1526860271"
                     }
+                    target={"_blank"}
                   >
                     <TouchRipple ref={rippleRef2} center={false} />
                     <div className="row">
@@ -325,14 +346,19 @@ class PaymentConfirmation extends React.Component {
                   onMouseDown={this.onRippleStart3}
                   onMouseUp={this.onRippleStop3}
                 >
-                  <TouchRipple ref={rippleRef3} center={false} />
-                  <div className="row">
-                    <div className="pcFooterMainIcon">
-                      <Icon3 />
+                  <a
+                    href="https://team.scoutandcellar.com/Account/Login?utm=bactraining"
+                    target={"_blank"}
+                  >
+                    <TouchRipple ref={rippleRef3} center={false} />
+                    <div className="row">
+                      <div className="pcFooterMainIcon">
+                        <Icon3 />
+                      </div>
+                      <div className="pcFooterText2">Get Started Videos</div>
+                      <IoIosArrowForward className="pcFooterNextIcon" />
                     </div>
-                    <div className="pcFooterText2">Get Started Videos</div>
-                    <IoIosArrowForward className="pcFooterNextIcon" />
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>

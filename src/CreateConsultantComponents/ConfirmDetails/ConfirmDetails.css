@@ -147,6 +147,13 @@
   word-break: break-all;
   margin-top: 8px !important;
 }
+.dataTextAddress {
+  font-size: 18px;
+  font-family: Domine;
+  overflow-wrap: anywhere !important;
+  white-space: pre-wrap;
+  margin-top: 8px !important;
+}
 
 .marginHead {
   margin-top: 64px;
@@ -322,7 +329,37 @@ input:disabled {
   margin-top: 0;
   color: #4ba380;
 }
+.wrapper-email {
+  width: 80%;
+}
+.one,
+.two {
+  float: left;
+  width: 38%;
+}
 
+.one1,
+.two1 {
+  float: left;
+  width: 57%;
+}
+
+.NextarrowForwardIcon {
+  cursor: pointer;
+  background-color: #dcba80;
+  width: 50px !important ;
+  align-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+.NextarrowForwardIcon svg {
+  width: 35px;
+  height: 64px;
+}
+.NextarrowForwardIconDisabled {
+  cursor: no-drop;
+}
 /* @media only screen and (min-width: 768px) {
   .displayArea {
     background-color: #e8e0dd;
@@ -371,7 +408,7 @@ input:disabled {
     border-width: 1px;
     border-color: #d8c5a6 !important;
     border-radius: 0 !important;
-    width: 320px !important;
+    width: 280px !important;
     height: 50px !important;
     margin-bottom: 8px;
   }
@@ -382,13 +419,39 @@ input:disabled {
     border-width: 1px;
     border-color: red !important;
     border-radius: 0 !important;
-    width: 320px !important;
+    width: 280px !important;
     height: 50px !important;
     margin-bottom: 8px;
   }
 
   .Red:focus {
     border-color: red !important;
+  }
+
+  .wrapper-email {
+    width: 80%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 85% !important;
+  }
+  .NextarrowForwardIcon {
+    cursor: pointer;
+    background-color: #dcba80;
+    width: 50px !important ;
+    align-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    height: 50px !important;
+  }
+  .NextarrowForwardIcon svg {
+    width: 34px;
+    height: 54px;
+  }
+  .NextarrowForwardIconDisabled {
+    cursor: no-drop;
   }
   .SubText {
     font-size: 15px;
@@ -550,7 +613,7 @@ input:disabled {
     margin-left: 0% !important;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 768px) {
   .componentMargin1,
   .componentMargin2 {
     margin-top: 50px;
@@ -572,6 +635,29 @@ input:disabled {
   .edit-marginLeft {
     margin-left: 0% !important;
   }
+
+  .wrapper-email {
+    width: 80%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 62% !important;
+  }
+  .NextarrowForwardIcon {
+    cursor: pointer;
+    background-color: #dcba80;
+    width: 50px !important ;
+    align-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    height: 64px !important;
+  }
+  .NextarrowForwardIcon svg {
+    width: 35px;
+    height: 64px;
+  }
 }
 @media (max-width: 639px) {
   .mobileDisplayWidth {
@@ -588,7 +674,7 @@ input:disabled {
 
 @media (max-width: 479px) {
   .Input {
-    width: 96% !important;
+    width: 96%;
   }
   .head1,
   .head2 {
@@ -607,6 +693,34 @@ input:disabled {
   .edit-marginLeft {
     margin-left: 0% !important;
   }
+  .Input {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 310px !important;
+    height: 50px !important;
+    margin-bottom: 8px;
+  }
+  .Input:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .Red {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 310px !important;
+    height: 50px !important;
+    margin-bottom: 8px;
+  }
+
+  .Red:focus {
+    border-color: red !important;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 85%;
+  }
 }
 
 @media (max-width: 375px) {
@@ -618,6 +732,34 @@ input:disabled {
   .edit-marginLeft {
     margin-left: 0% !important;
   }
+  .Input {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 280px !important;
+    height: 50px !important;
+    margin-bottom: 8px;
+  }
+  .Input:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .Red {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 280px !important;
+    height: 50px !important;
+    margin-bottom: 8px;
+  }
+
+  .Red:focus {
+    border-color: red !important;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 83%;
+  }
 }
 @media (max-width: 360px) {
   .edit-marginLeft {
@@ -627,6 +769,51 @@ input:disabled {
     transform: scale(1.04);
     transform-origin: 0 0;
     width: 304px !important;
+  }
+  .Input {
+    border-width: 1px;
+    border-color: #d8c5a6 !important;
+    border-radius: 0 !important;
+    width: 260px !important;
+    height: 50px !important;
+    margin-bottom: 8px;
+  }
+  .Input:focus {
+    border-color: #d8c5a6 !important;
+  }
+  .Red {
+    border-width: 1px;
+    border-color: red !important;
+    border-radius: 0 !important;
+    width: 260px !important;
+    height: 50px !important;
+    margin-bottom: 8px;
+  }
+
+  .Red:focus {
+    border-color: red !important;
+  }
+  .wrapper-email {
+    width: 80%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 82% !important;
+  }
+  .NextarrowForwardIcon {
+    cursor: pointer;
+    background-color: #dcba80;
+    width: 50px !important ;
+    align-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    height: 50px !important;
+  }
+  .NextarrowForwardIcon svg {
+    width: 27px !important;
+    height: 54px !important;
   }
 }
 /* @media (max-width: 1440px) {
@@ -652,4 +839,227 @@ input:disabled {
 .MuiAutocomplete-root .Mui-disabled {
   background: #dddddd !important;
   color: black;
+}
+
+@media (max-width: 1366px) {
+  .wrapper-email {
+    width: 100% !important;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 38%;
+  }
+}
+@media (max-width: 1440px) {
+  .wrapper-email {
+    width: 100% !important;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 38%;
+  }
+}
+@media (max-width: 1600px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 38%;
+  }
+}
+
+@media (max-width: 1920px) and (min-width: 1920px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 30%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 45%;
+  }
+}
+@media (max-width: 768px) and (min-width: 768px) {
+  .one1,
+  .two1 {
+    float: left;
+    width: 89%;
+  }
+}
+@media (max-width: 1350px) and (min-width: 1200px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 40%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 64%;
+  }
+  .mobileDate {
+    width: 85px !important;
+  }
+  .edit-day {
+    margin-left: -25px;
+  }
+
+  .edit-day-red {
+    margin-left: -25px;
+  }
+
+  .displayArea {
+    background-color: #e8e0dd;
+    max-width: 947px;
+    margin-top: 16px;
+    padding: 50px;
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 1350px) {
+  .mobileDate {
+    width: 75px !important;
+  }
+  .edit-day {
+    margin-left: -25px;
+  }
+
+  .edit-day-red {
+    margin-left: -25px;
+  }
+}
+
+/* arrow button spacing */
+
+@media (max-width: 1250px) and (min-width: 1200px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 42%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 64%;
+  }
+}
+
+@media (max-width: 1290px) and (min-width: 1280px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 40%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 61.5%;
+  }
+}
+@media (max-width: 1350px) and (min-width: 1300px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 39.5%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 60%;
+  }
+}
+@media (max-width: 1430px) and (min-width: 1366px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 37%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 56.5%;
+  }
+}
+@media (max-width: 1590px) and (min-width: 1440px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 35%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 54.5%;
+  }
+}
+@media (max-width: 1900px) and (min-width: 1600px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 35%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 53.5%;
+  }
+}
+@media (max-width: 1920px) and (min-width: 1920px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 29%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 45%;
+  }
+}
+@media (max-width: 1800px) and (min-width: 1700px) {
+  .wrapper-email {
+    width: 90%;
+  }
+  .one,
+  .two {
+    float: left;
+    width: 32%;
+  }
+  .one1,
+  .two1 {
+    float: left;
+    width: 48%;
+  }
 }

@@ -246,8 +246,104 @@ class Home extends React.Component {
     }
   };
 
+  moveBack = (label) => {
+    let currentScreen = this.state.activeStep;
+    let expected = 0;
+    if (label === "CONFIRM DETAILS") {
+      expected = 0;
+    } else if (label === "BUSINESS DETAILS") {
+      expected = 1;
+    } else if (label === "REVIEW TERMS") {
+      expected = 2;
+    } else if (label === "PURCHASE KIT") {
+      expected = 3;
+    }
+
+    return expected <= currentScreen;
+  };
+
+  checkMaxScreenCovered = () => {
+    if (this.state.cart_id !== "") {
+      return 3;
+    } else if (
+      this.state.userData.indepedent_agreement &&
+      this.state.userData.policy_procedures
+    ) {
+      return 2;
+    } else if (
+      this.state.checkURLAvailability &&
+      this.state.errorUserData.ssn === ""
+    ) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
+
+  userRequestedScreen = (label) => {
+    if (label === "CONFIRM DETAILS") {
+      return 0;
+    } else if (label === "BUSINESS DETAILS") {
+      return 1;
+    } else if (label === "REVIEW TERMS") {
+      return 2;
+    } else if (label === "PURCHASE KIT") {
+      return 3;
+    }
+  };
+
+  //top bar navigation
+  topBarNavigation = async (label) => {
+    let rightFooterButtonName = this.state.rightFooterButtonName;
+    if (
+      rightFooterButtonName !== "LOG IN" &&
+      rightFooterButtonName !== "NEXT" &&
+      rightFooterButtonName !== "CONTINUE " &&
+      this.state.rightFooterButtonName !== "SAVE AND PROCEED"
+    ) {
+      //moving backward
+      if (this.moveBack(label)) {
+        if (label === "CONFIRM DETAILS") {
+          this.setState({
+            rightFooterButtonName: "LOOKS GOOD",
+            activeStep: 0,
+            rightFooterButtonDisabled: false,
+          });
+        } else if (label === "BUSINESS DETAILS") {
+          this.setState({
+            rightFooterButtonName: "PROCEED",
+            activeStep: 1,
+            rightFooterButtonDisabled: false,
+          });
+        } else if (label === "REVIEW TERMS") {
+          this.setState({
+            rightFooterButtonName: "CONTINUE",
+            activeStep: 2,
+            rightFooterButtonDisabled: false,
+          });
+        } else if (label === "PURCHASE KIT") {
+          this.setState({
+            rightFooterButtonName: "DONE",
+            activeStep: 3,
+          });
+        }
+      }
+      //moving forward
+      else {
+        if (!this.moveBack(label) && !this.state.rightFooterButtonDisabled) {
+          let maxScreen = this.checkMaxScreenCovered();
+          let userRequested = this.userRequestedScreen(label);
+
+          if (userRequested <= maxScreen) {
+            await this.handleClickRight(userRequested);
+          }
+        }
+      }
+    }
+  };
+
   // to handle right footer button changes
-  handleClickRight = async () => {
+  handleClickRight = async (userRequested) => {
     let userData = this.state.userData;
     if (!this.state.rightFooterButtonDisabled) {
       this.scrollToTop();
@@ -266,7 +362,7 @@ class Home extends React.Component {
           id: this.state.userData.id,
           screen: 1,
         };
-        this.apiUpdateScreen(data, "PROCEED");
+        this.apiUpdateScreen(data, "PROCEED", userRequested);
       } else if (this.state.rightFooterButtonName === "SAVE AND PROCEED") {
         //call API to update data (API CALL IN Home)
         this.apiUpdateUserData();
@@ -280,7 +376,7 @@ class Home extends React.Component {
             url: this.state.userData.url,
             doing_business: this.state.userData.doing_business,
           };
-          this.apiUpdateScreen(data, "");
+          this.apiUpdateScreen(data, "", userRequested);
         } else {
           this.setrightFooterButtonDisabled(true);
         }
@@ -292,7 +388,7 @@ class Home extends React.Component {
           indepedent_agreement: true,
           policy_procedures: true,
         };
-        this.apiUpdateScreen(data, "DONE");
+        this.apiUpdateScreen(data, "DONE", userRequested);
         userData["indepedent_agreement"] = true;
         userData["policy_procedures"] = true;
         this.setUserData(userData);
@@ -383,7 +479,9 @@ class Home extends React.Component {
             buttonDisable = true;
             buttonName = "PROCEED";
           } else if (activeStep === 2) {
-            buttonDisable = true;
+            buttonDisable = !(
+              userData["indepedent_agreement"] && userData["policy_procedures"]
+            );
             buttonName = "CONTINUE";
           } else if (activeStep === 3) {
             buttonDisable = true;
@@ -404,6 +502,7 @@ class Home extends React.Component {
             rightFooterButtonDisabled: buttonDisable,
             userData,
             activeStep,
+            maxScreenCovered: userData.screen,
           });
         } catch (e) {
           console.log("Error in /Login1");
@@ -504,23 +603,37 @@ class Home extends React.Component {
 
   // Api to update which screen the user has completed ,
   //screen represented by screen id + data collected in that screen
-  apiUpdateScreen = async (data, buttonName) => {
+  apiUpdateScreen = async (data, buttonName, userRequested = "") => {
     this.setState({ load: true, rightFooterButtonDisabled: true });
     let errorUserData = this.state.errorUserData;
     let rightFooterButtonDisabled = true;
     await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
       .then(async (response) => {
         errorUserData["ssn"] = "";
-        if (this.state.rightFooterButtonName === "LOOKS GOOD") {
-          // await this.apiGetCartId();
-        } else if (this.state.rightFooterButtonName === "CONTINUE") {
+
+        if (this.state.rightFooterButtonName === "CONTINUE") {
           await this.apiCartDetails();
         }
+
+        // redirection for top bar navigation
+        if (userRequested !== "") {
+          console.log(userRequested);
+          if (userRequested === 0) {
+            buttonName = "LOOKS GOOD";
+          } else if (userRequested === 1) {
+            buttonName = "PROCEED";
+          } else if (userRequested === 2) {
+            buttonName = "CONTINUE";
+          } else if (userRequested === 3) {
+            buttonName = "DONE";
+          }
+        }
+
         this.setState({
           load: false,
           rightFooterButtonName: buttonName,
           rightFooterButtonDisabled: rightFooterButtonDisabled,
-          activeStep: data.screen,
+          activeStep: userRequested === "" ? data.screen : userRequested,
           errorUserData,
         });
       })
@@ -694,7 +807,7 @@ class Home extends React.Component {
       .then((response) => {
         try {
           let consultant_number = 0;
-          if (response.data.consultant_number !== null) {
+          if (response.data.display_number !== null) {
             consultant_number = response.data.display_number;
           }
           this.setState({
@@ -821,7 +934,6 @@ class Home extends React.Component {
             id: res.data.id,
             name: res.data.name,
           };
-          console.log(userData);
           this.setState({
             userData,
             fixedWorkingWith,
@@ -883,6 +995,7 @@ class Home extends React.Component {
           // confirm details display screen
           <ConfirmDetails
             rightFooterButtonName={this.state.rightFooterButtonName}
+            rightFooterButtonDisabled={this.state.rightFooterButtonDisabled}
             setrightFooterButtonDisabled={this.setrightFooterButtonDisabled}
             userData={this.state.userData}
             errorUserData={this.state.errorUserData}
@@ -893,10 +1006,14 @@ class Home extends React.Component {
             setForgotPassword={this.setForgotPassword}
             handleBackButton={this.handleBackButton}
             apiGetWorkingWithDropDownData={this.apiGetWorkingWithDropDownData}
+            apiVerifyEmail={this.apiVerifyEmail}
+            apiLogin={this.apiLogin}
             working_with_arr={this.state.working_with_arr}
             showSentEmailText={this.state.showSentEmailText}
             setShowSentEmailText={this.setShowSentEmailText}
             fixedWorkingWith={this.state.fixedWorkingWith}
+            topBarNavigation={this.topBarNavigation}
+            apiForgotPassword={this.apiForgotPassword}
           />
         );
       case 1:
@@ -914,6 +1031,7 @@ class Home extends React.Component {
             checkURLAvailability={this.state.checkURLAvailability}
             setCheckURLAvailability={this.setCheckURLAvailability}
             handleBackButton={this.handleBackButton}
+            topBarNavigation={this.topBarNavigation}
           />
         );
       case 2:
@@ -931,6 +1049,7 @@ class Home extends React.Component {
             currentAgreement={this.state.currentAgreement}
             setCurrentAgreement={this.setCurrentAgreement}
             handleBackButton={this.handleBackButton}
+            topBarNavigation={this.topBarNavigation}
           />
         );
       case 3:
@@ -950,6 +1069,7 @@ class Home extends React.Component {
             billingAddress={this.state.billingAddress}
             setCardDetails={this.setCardDetails}
             handleBackButton={this.handleBackButton}
+            topBarNavigation={this.topBarNavigation}
           />
         );
       default:
@@ -1180,7 +1300,12 @@ class Home extends React.Component {
                               },
                             }}
                           >
-                            <span className="fontOswald">{label}</span>
+                            <span
+                              className="fontOswald"
+                              onClick={() => this.topBarNavigation(label)}
+                            >
+                              {label}
+                            </span>
                           </StepLabel>
                         </Step>
                       );

@@ -67,6 +67,22 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.pcConsultantNumber1 {
+  background: #f7f3f4;
+  height: 2em;
+  width: 19.5em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-align: center;
+  font-size: 1.6em;
+  font-weight: bold;
+  padding-top: 0.25em;
+  font-family: Oswald;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .pcHead4 {
   font-family: oswald;
   font-weight: 400;
@@ -313,6 +329,20 @@
     height: 3em;
     width: 15.8em;
     margin-bottom: 2.5em;
+    margin-top: 1em;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-top: 0.8em;
+    font-family: Oswald;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pcConsultantNumber1 {
+    background: #f0eae8;
+    height: 3em;
+    width: 15.8em;
+    margin-bottom: 1.5em;
     margin-top: 1em;
     text-align: center;
     font-size: 1.3em;

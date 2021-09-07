@@ -166,7 +166,6 @@ class VerifyIdentity extends React.Component {
   componentDidMount = () => {
     //temporary move to agreement screen // should be removed in the future
     this.props.setButtonName("CONTINUE");
-    this.props.setrightFooterButtonDisabled(true);
     //   this.props.setDisplayFooter(false);
     //   this.runTimer();
 
@@ -202,7 +201,7 @@ class VerifyIdentity extends React.Component {
           <>
             {/* Header displayed in  mobile view */}
             {window.innerWidth <= 550 ? (
-              <Header step={2} agreement={false} />
+              <Header step={2} agreement={false}   topBarNavigation={this.props.topBarNavigation}/>
             ) : null}
             <div
               className={
@@ -360,6 +359,7 @@ class VerifyIdentity extends React.Component {
             setCurrentAgreement={this.props.setCurrentAgreement}
             handleBackButton={this.props.handleBackButton}
             handleClickRight={this.props.handleClickRight}
+            topBarNavigation={this.props.topBarNavigation}
           />
         )}
       </React.Fragment>

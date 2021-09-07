@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ScoutCellar from "../Assets/images/scout-cellar.png";
-import consultProfile from "../Assets/images/Hear.png";
+import ChrisHite from "../Assets/images/ChrisHite.jpg";
 class Banner extends React.Component {
   constructor(props) {
     super(props);
@@ -58,7 +58,7 @@ class Banner extends React.Component {
           <section className="consult-rgt-dts">
             <figure className="consult-img">
               <img
-                src={consultProfile}
+                src={ChrisHite}
                 className="img-fluid"
                 alt="consult-profile"
               />

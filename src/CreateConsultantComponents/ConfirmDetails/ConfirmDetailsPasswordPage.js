@@ -2,6 +2,7 @@ import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { site_key } from "../../configuration/config";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import "./ConfirmDetails.css";
 
 class ConfirmDetailsPasswordPage extends React.Component {
@@ -138,54 +139,80 @@ class ConfirmDetailsPasswordPage extends React.Component {
             <label className="passwordLabel" htmlFor="password">
               PASSWORD
             </label>
-            <div className="InputMargin">
-              <input
-                style={{ width: "40%" }}
-                type="password"
-                autocomplete="none"
-                autoComplete="none"
-                value={password}
-                className={
-                  errorUserData.password && errorUserData.password.length > 0
-                    ? "form-control Red"
-                    : "form-control Input"
-                }
-                id="password"
-                name="password"
-                placeholder="Enter your password"
-                onChange={this.handleChange}
-                disabled={this.props.displayForgotPassword}
-              />
+            <div className="wrapper-email">
+              <div className="InputMargin one">
+                <input
+                  style={{ width: "40%" }}
+                  type="password"
+                  autocomplete="none"
+                  autoComplete="none"
+                  value={password}
+                  className={
+                    errorUserData.password && errorUserData.password.length > 0
+                      ? "form-control Red"
+                      : "form-control Input"
+                  }
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  onChange={this.handleChange}
+                  disabled={this.props.displayForgotPassword}
+                />
 
-              {/* error message incase for incorrect password */}
-              {errorUserData.password && errorUserData.password.length > 0 ? (
-                <span className="errorMes">
-                  {errorUserData.password}
-                  <br />
-                </span>
+                {/* error message incase for incorrect password */}
+                {errorUserData.password && errorUserData.password.length > 0 ? (
+                  <span className="errorMes">
+                    {errorUserData.password}
+                    <br />
+                  </span>
+                ) : null}
+              </div>
+              {!this.props.displayForgotPassword ? (
+                <div
+                  className={
+                    !this.props.rightFooterButtonDisabled
+                      ? "NextarrowForwardIcon two"
+                      : "NextarrowForwardIcon NextarrowForwardIconDisabled two"
+                  }
+                  onClick={() => {
+                    if (!this.props.rightFooterButtonDisabled) {
+                      if (this.props.rightFooterButtonName === "LOG IN") {
+                        //call API to Login (API CALL IN Home)
+                        this.props.apiLogin();
+                      }
+                    }
+                  }}
+                >
+                  <ArrowForwardIosIcon style={{color:"white"}}/>
+                </div>
               ) : null}
             </div>
-            <span className="SubText">Forgot Your Password? &nbsp;</span>
-            {/* link to forgot password */}
-            <span
-              className="passwordForgotLink"
-              onClick={() => {
-                this.props.setForgotPassword();
-                this.setState({
-                  password: "",
-                });
-                let userData = this.props.userData;
-                userData["password"] = "";
-                this.props.setUserData(userData);
-                let errorUserData = this.props.errorUserData;
-                errorUserData["password"] = "";
-                this.props.setErrorUserData(errorUserData);
-                this.props.setButtonName("CONTINUE ");
-                this.props.setrightFooterButtonDisabled(true);
-              }}
-            >
-              Let's Find it
-            </span>
+            <div style={{ clear: "both" }}>
+              <span className="SubText" style={{ clear: "both" }}>
+                Forgot Your Password? &nbsp;
+              </span>
+              {/* link to forgot password */}
+              <span
+                style={{ clear: "both" }}
+                className="passwordForgotLink"
+                onClick={() => {
+                  this.props.setForgotPassword();
+                  this.setState({
+                    password: "",
+                  });
+                  let userData = this.props.userData;
+                  userData["password"] = "";
+                  this.props.setUserData(userData);
+                  let errorUserData = this.props.errorUserData;
+                  errorUserData["password"] = "";
+                  this.props.setErrorUserData(errorUserData);
+                  this.props.setButtonName("CONTINUE ");
+                  this.props.setrightFooterButtonDisabled(true);
+                }}
+              >
+                Let's Find it
+              </span>
+            </div>
           </div>
           {/* forgot password flow */}
           {this.props.displayForgotPassword ? (
@@ -199,36 +226,58 @@ class ConfirmDetailsPasswordPage extends React.Component {
                     </div>
                     <div className="email1 form-group">
                       <label className="emailLabel" htmlFor="emailAddress">
-                        EMAIL
+                        EMAIL ADDRESS
                       </label>
                       {/* input to accept email address */}
-                      <div className="InputMargin">
-                        <input
-                          type="text"
-                          value={email}
-                          className={
-                            emailError.length > 0
-                              ? "form-control Red"
-                              : "form-control Input"
-                          }
-                          id="emailAddress"
-                          name="emailAddress"
-                          placeholder="Enter email address"
-                          autocomplete="none"
-                          autoComplete="none"
-                          onChange={this.handleForgotPassword}
-                        />
-                        {/* error handling of email field */}
+                      <div className="wrapper-email">
+                        <div className="InputMargin one1">
+                          <input
+                            type="text"
+                            value={email}
+                            className={
+                              emailError.length > 0
+                                ? "form-control Red"
+                                : "form-control Input"
+                            }
+                            id="emailAddress"
+                            name="emailAddress"
+                            placeholder="Enter email address"
+                            autocomplete="none"
+                            autoComplete="none"
+                            onChange={this.handleForgotPassword}
+                          />
+                          {/* error handling of email field */}
 
-                        {emailError.length > 0 ? (
-                          <span className="errorMes">
-                            {emailError}
-                            <br />
-                          </span>
-                        ) : null}
+                          {emailError.length > 0 ? (
+                            <span className="errorMes">
+                              {emailError}
+                              <br />
+                            </span>
+                          ) : null}
+                        </div>
+                        <div
+                          className={
+                            !this.props.rightFooterButtonDisabled
+                              ? "NextarrowForwardIcon two1"
+                              : "NextarrowForwardIcon NextarrowForwardIconDisabled two1"
+                          }
+                          onClick={() => {
+                            if (!this.props.rightFooterButtonDisabled) {
+                              if (
+                                this.props.rightFooterButtonName === "CONTINUE "
+                              ) {
+                                //call API to forgot password (API CALL IN Home)
+                                this.props.apiForgotPassword();
+                              }
+                            }
+                          }}
+                        >
+                          <ArrowForwardIosIcon style={{color:"white"}}/>
+                        </div>
                       </div>
                     </div>
                     <ReCAPTCHA
+                      style={{ clear: "both" }}
                       data-size="compact"
                       className="ReCAPTCHA"
                       sitekey={site_key}

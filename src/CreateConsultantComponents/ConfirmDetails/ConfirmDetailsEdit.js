@@ -457,6 +457,7 @@ class ConfirmDetailsEdit extends React.Component {
             step={0}
             agreement={false}
             handleBackButton={this.props.handleBackButton}
+            topBarNavigation={this.props.topBarNavigation}
           />
         ) : null}
         <div
@@ -573,7 +574,7 @@ class ConfirmDetailsEdit extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-3 offset-lg-2 col-md-5 col-xs-1 mobileDate">
+                <div className="col-lg-3 offset-lg-2 col-md-5 col-xs-1 mobileDate ">
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select

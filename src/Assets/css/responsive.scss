@@ -463,14 +463,15 @@
   }
   .wrapper .hearfrom .hearfrom-slide img {
     width: 260px;
+    border-radius: 50%;
   }
   .wrapper .hearfrom .hearfrom-slide p {
     padding: 10px 30px 20px;
   }
-  .slick-prev,
-  .slick-next {
-    top: 20% !important;
-  }
+  // .slick-prev,
+  // .slick-next {
+  //   top: 20% !important;
+  // }
   .wrapper .havemore .accordion-button {
     font-size: 18px;
     line-height: 30px;

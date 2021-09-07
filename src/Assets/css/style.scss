@@ -905,6 +905,7 @@ i.ic-arrow {
   .consult-img img {
     width: 116px;
     margin-top: -50px;
+    border-radius: 50%;
   }
   p {
     font: 18px/24px "Segoe UI";
@@ -954,6 +955,7 @@ i.ic-arrow {
   .consult-img img {
     width: 116px;
     margin-top: -50px;
+    border-radius: 50%;
   }
 
   sup.topqt {
@@ -999,4 +1001,7 @@ i.ic-arrow {
 .wrapper .howdoes .consult-lft-dts p {
   font: 18px/24px "Segoe UI";
   padding: 20px 0 0;
+}
+.wrapper .banner-blk .btn-secondary:focus {
+  box-shadow: none;
 }

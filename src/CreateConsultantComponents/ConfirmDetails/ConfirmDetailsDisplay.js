@@ -18,6 +18,7 @@ class ConfirmDetailsDisplay extends React.Component {
             step={0}
             agreement={false}
             handleBackButton={this.props.handleBackButton}
+            topBarNavigation={this.props.topBarNavigation}
           />
         ) : null}
         <div
@@ -80,9 +81,11 @@ class ConfirmDetailsDisplay extends React.Component {
               {/* address */}
               <div className="col-lg-3 col-md-3 col-sm-4 col-5  mobileDisplayWidth mobileDisplayColumnSpacing">
                 <span className="head3">SHIPPING ADDRESS</span>
-                <div className="dataText">
-                  {userData.address.street}, {userData.address.city},{" "}
-                  {userData.address.state} {userData.address.zipcode}
+                <div className="dataTextAddress">
+                  {userData.address.street}, <br />
+                  {userData.address.city},{" "}
+                  {userData.address.state},{" "}
+                  {userData.address.zipcode}
                 </div>
               </div>
               {/* working with */}

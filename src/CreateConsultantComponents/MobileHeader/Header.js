@@ -14,7 +14,6 @@ const styles = (theme) => ({
   //   fontColor: "grey",
   //   fill: "#f2efed",
 
-
   //   "& $completed": {
   //     color: "#4BA380",
   //     border: "0px solid white",
@@ -53,7 +52,6 @@ const styles = (theme) => ({
       fill: "#DCBA80",
     },
   },
-
 
   alternativeLabel: {},
   active: {},
@@ -158,7 +156,14 @@ class Header extends React.Component {
                           },
                         }}
                       >
-                        <div className="head-stepper-font">{label}</div>
+                        <div
+                          className="head-stepper-font"
+                          onClick={() => {
+                            this.props.topBarNavigation(label);
+                          }}
+                        >
+                          {label}
+                        </div>
                       </StepLabel>
                     </Step>
                   );

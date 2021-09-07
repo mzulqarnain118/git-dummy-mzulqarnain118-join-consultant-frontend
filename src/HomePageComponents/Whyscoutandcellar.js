@@ -1,6 +1,6 @@
 import React from "react";
 import ScoutCellar from "../Assets/images/scout-cellar.png";
-import consultProfile from "../Assets/images/Hear.png";
+import ChrisHite from "../Assets/images/ChrisHite.jpg";
 class Whyscoutandcellar extends React.Component {
   render() {
     return (
@@ -9,7 +9,7 @@ class Whyscoutandcellar extends React.Component {
           <section className="consult-rgt-dts">
             <figure className="consult-img">
               <img
-                src={consultProfile}
+                src={ChrisHite}
                 className="img-fluid"
                 alt="consult-profile"
               />

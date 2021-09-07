@@ -3,6 +3,7 @@ import "./ConfirmDetails.css";
 import ConfirmDetailsPasswordPage from "./ConfirmDetailsPasswordPage";
 import ConfirmDetailsDisplay from "./ConfirmDetailsDisplay";
 import ConfirmDetailsEdit from "./ConfirmDetailsEdit";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 class ConfirmDetails extends React.Component {
   constructor(props) {
@@ -63,46 +64,68 @@ class ConfirmDetails extends React.Component {
                 EMAIL ADDRESS
               </label>
               {/* input to accept email address */}
-              <div className="InputMargin">
-                <input
-                  type="text"
-                  value={form["emailAddress"]}
-                  className={
-                    errorUserData.email.length
-                      ? "form-control Red"
-                      : "form-control Input"
-                  }
-                  id="emailAddress"
-                  name="emailAddress"
-                  placeholder="Enter email address"
-                  autocomplete="none"
-                  autoComplete="none"
-                  onChange={this.handleChange}
-                />
-                {/* error handling of email field */}
+              <div className="wrapper-email">
+                <div className="InputMargin one">
+                  <input
+                    type="text"
+                    value={form["emailAddress"]}
+                    className={
+                      errorUserData.email.length>0
+                        ? "form-control Red"
+                        : "form-control Input"
+                    }
+                    id="emailAddress"
+                    name="emailAddress"
+                    placeholder="Enter email address"
+                    autocomplete="none"
+                    autoComplete="none"
+                    onChange={this.handleChange}
+                  />
 
-                {errorUserData.email.length ? (
-                  <span className="errorMes">
-                    {errorUserData.email ===
-                    "This email address is in use for an existing Consultant Account." ? (
-                      <>
-                        <span>
-                          This email address is already in use for an existing
-                          Consultant Account. Please login into{" "}
-                        </span>
-                        <a href="https://team.scoutandcellar.com/Account/Login">
-                          https://team.scoutandcellar.com/Account/Login
-                        </a>
-                      </>
-                    ) : (
-                      errorUserData.email
-                    )}
-                    <br />
-                  </span>
-                ) : null}
+                  {/* error handling of email field */}
+
+                  {errorUserData.email.length ? (
+                    <span className="errorMes">
+                      {errorUserData.email ===
+                      "This email address is in use for an existing Consultant Account." ? (
+                        <>
+                          <span>
+                            This email address is already in use for an existing
+                            Consultant Account. Please login into{" "}
+                          </span>
+                          <a href="https://team.scoutandcellar.com/Account/Login">
+                            https://team.scoutandcellar.com/Account/Login
+                          </a>
+                        </>
+                      ) : (
+                        errorUserData.email
+                      )}
+                      <br />
+                    </span>
+                  ) : null}
+                </div>
+
+                <div
+                  className={
+                    !this.props.rightFooterButtonDisabled
+                      ? "NextarrowForwardIcon two"
+                      : "NextarrowForwardIcon NextarrowForwardIconDisabled two"
+                  }
+                  onClick={() => {
+                    if (!this.props.rightFooterButtonDisabled) {
+                      if (this.props.rightFooterButtonName === "NEXT") {
+                        //call API to verify email (API CALL IN Home)
+                        this.props.apiVerifyEmail();
+                      }
+                    }
+                  }}
+                >
+                  <ArrowForwardIosIcon style={{color:"white"}} />
+                </div>
               </div>
+
               {/* Static text dispayed at the bottom of email field */}
-              <div className="SubText">
+              <div className="SubText" style={{ clear: "both" }}>
                 The email you already use or want to use with Scout &amp;
                 Cellar™.
               </div>
@@ -113,6 +136,7 @@ class ConfirmDetails extends React.Component {
           // to display the password page of cnfirm details
           <ConfirmDetailsPasswordPage
             userData={userData}
+            rightFooterButtonName={this.props.rightFooterButtonName}
             setUserData={this.props.setUserData}
             setButtonName={this.props.setButtonName}
             setrightFooterButtonDisabled={
@@ -125,6 +149,9 @@ class ConfirmDetails extends React.Component {
             handleBackButton={this.props.handleBackButton}
             showSentEmailText={this.props.showSentEmailText}
             setShowSentEmailText={this.props.setShowSentEmailText}
+            apiLogin={this.props.apiLogin}
+            rightFooterButtonDisabled={this.props.rightFooterButtonDisabled}
+            apiForgotPassword={this.props.apiForgotPassword}
           />
         ) : rightFooterButtonName === "LOOKS GOOD" ? (
           //to display confirm details page
@@ -134,6 +161,7 @@ class ConfirmDetails extends React.Component {
               this.props.setrightFooterButtonDisabled
             }
             handleBackButton={this.props.handleBackButton}
+            topBarNavigation={this.props.topBarNavigation}
           />
         ) : (
           //to display editable version  of confirm details page
@@ -150,6 +178,7 @@ class ConfirmDetails extends React.Component {
             }
             working_with_arr={this.props.working_with_arr}
             fixedWorkingWith={this.props.fixedWorkingWith}
+            topBarNavigation={this.props.topBarNavigation}
           />
         )}
       </React.Fragment>

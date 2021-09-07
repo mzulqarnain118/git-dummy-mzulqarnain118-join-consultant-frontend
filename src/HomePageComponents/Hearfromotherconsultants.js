@@ -1,4 +1,6 @@
-import Hear from "../Assets/images/Hear.png";
+import ChrisHite from "../Assets/images/ChrisHite.jpg";
+import CourtneyBono from "../Assets/images/CourtneyBono.jpg";
+import ShellyAnnOldham from "../Assets/images/ShellyAnnOldham.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
@@ -25,7 +27,7 @@ class Hearfromotherconsultants extends React.Component {
               <Slider {...settings}>
                 <section className="hearfrom-slide">
                   <aside className="col-lg-4 col-md-4 col-12 hearfrom-img d-inline-block align-top">
-                    <img src={Hear} alt="" className="img-fluid" />
+                    <img src={ChrisHite} alt="" className="img-fluid" />
                   </aside>
                   <aside className="col-lg-8 col-md-8 col-12 hearfrom-cont d-inline-block align-top">
                     <p>
@@ -44,7 +46,7 @@ class Hearfromotherconsultants extends React.Component {
                 </section>
                 <section className="hearfrom-slide">
                   <aside className="col-lg-4 col-md-4 col-12 hearfrom-img d-inline-block align-top">
-                    <img src={Hear} alt="" className="img-fluid" />
+                    <img src={CourtneyBono} alt="" className="img-fluid" />
                   </aside>
                   <aside className="col-lg-8 col-md-8 col-12 hearfrom-cont d-inline-block align-top">
                     <p>
@@ -62,7 +64,7 @@ class Hearfromotherconsultants extends React.Component {
                 </section>
                 <section className="hearfrom-slide">
                   <aside className="col-lg-4 col-md-4 col-12 hearfrom-img d-inline-block align-top">
-                    <img src={Hear} alt="" className="img-fluid" />
+                    <img src={ShellyAnnOldham} alt="" className="img-fluid" />
                   </aside>
                   <aside className="col-lg-8 col-md-8 col-12 hearfrom-cont d-inline-block align-top">
                     <p>

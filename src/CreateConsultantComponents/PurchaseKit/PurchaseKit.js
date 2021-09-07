@@ -327,6 +327,7 @@ class PurchaseKit extends React.Component {
             step={3}
             agreement={false}
             handleBackButton={this.props.handleBackButton}
+            topBarNavigation={this.props.topBarNavigation}
           />
         ) : null}
         <div
