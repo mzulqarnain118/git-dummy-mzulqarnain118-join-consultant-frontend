@@ -183,7 +183,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                     }
                   }}
                 >
-                  <ArrowForwardIosIcon style={{color:"white"}}/>
+                  <ArrowForwardIosIcon style={{ color: "white" }} />
                 </div>
               ) : null}
             </div>
@@ -221,69 +221,99 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 <div className="col-lg-8 col-md-8 col-sm-5">
                   <div className="forgotPassowordContainer">
                     <span className="head2">FORGOT YOUR PASSWORD?</span>
-                    <div className="forgotpasswordText1">
-                      Enter your email to be sent a password.
-                    </div>
-                    <div className="email1 form-group">
-                      <label className="emailLabel" htmlFor="emailAddress">
-                        EMAIL ADDRESS
-                      </label>
-                      {/* input to accept email address */}
-                      <div className="wrapper-email">
-                        <div className="InputMargin one1">
-                          <input
-                            type="text"
-                            value={email}
-                            className={
-                              emailError.length > 0
-                                ? "form-control Red"
-                                : "form-control Input"
-                            }
-                            id="emailAddress"
-                            name="emailAddress"
-                            placeholder="Enter email address"
-                            autocomplete="none"
-                            autoComplete="none"
-                            onChange={this.handleForgotPassword}
-                          />
-                          {/* error handling of email field */}
+                    {!this.props.customer ? (
+                      <>
+                        <div className="forgotpasswordText1">
+                          Enter your email to be sent a password.
+                        </div>
+                        <div className="email1 form-group">
+                          <label className="emailLabel" htmlFor="emailAddress">
+                            EMAIL ADDRESS
+                          </label>
+                          {/* input to accept email address */}
+                          <div className="wrapper-email">
+                            <div className="InputMargin one1">
+                              <input
+                                type="text"
+                                value={email}
+                                className={
+                                  emailError.length > 0
+                                    ? "form-control Red"
+                                    : "form-control Input"
+                                }
+                                id="emailAddress"
+                                name="emailAddress"
+                                placeholder="Enter email address"
+                                autocomplete="none"
+                                autoComplete="none"
+                                onChange={this.handleForgotPassword}
+                              />
+                              {/* error handling of email field */}
 
-                          {emailError.length > 0 ? (
-                            <span className="errorMes">
-                              {emailError}
-                              <br />
-                            </span>
-                          ) : null}
-                        </div>
-                        <div
-                          className={
-                            !this.props.rightFooterButtonDisabled
-                              ? "NextarrowForwardIcon two1"
-                              : "NextarrowForwardIcon NextarrowForwardIconDisabled two1"
-                          }
-                          onClick={() => {
-                            if (!this.props.rightFooterButtonDisabled) {
-                              if (
-                                this.props.rightFooterButtonName === "CONTINUE "
-                              ) {
-                                //call API to forgot password (API CALL IN Home)
-                                this.props.apiForgotPassword();
+                              {emailError.length > 0 ? (
+                                <span className="errorMes">
+                                  {emailError}
+                                  <br />
+                                </span>
+                              ) : null}
+                            </div>
+                            <div
+                              className={
+                                !this.props.rightFooterButtonDisabled
+                                  ? "NextarrowForwardIcon two1"
+                                  : "NextarrowForwardIcon NextarrowForwardIconDisabled two1"
                               }
-                            }
-                          }}
-                        >
-                          <ArrowForwardIosIcon style={{color:"white"}}/>
+                              onClick={() => {
+                                if (!this.props.rightFooterButtonDisabled) {
+                                  if (
+                                    this.props.rightFooterButtonName ===
+                                    "CONTINUE "
+                                  ) {
+                                    //call API to forgot password (API CALL IN Home)
+                                    this.props.apiForgotPassword();
+                                  }
+                                }
+                              }}
+                            >
+                              <ArrowForwardIosIcon style={{ color: "white" }} />
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <ReCAPTCHA
-                      style={{ clear: "both" }}
-                      data-size="compact"
-                      className="ReCAPTCHA"
-                      sitekey={site_key}
-                      onChange={this.onChangeReCaptcha}
-                    />
-                    {this.scrollToBottom()}
+                        <ReCAPTCHA
+                          style={{ clear: "both" }}
+                          data-size="compact"
+                          className="ReCAPTCHA"
+                          sitekey={site_key}
+                          onChange={this.onChangeReCaptcha}
+                        />
+                        {this.scrollToBottom()}
+                      </>
+                    ) : (
+                      <>
+                        <div className="customer-forgot-password">
+                          <ul>
+                            <li>
+                              Check your customer email for a forgot password /
+                              reset email.
+                            </li>
+                            <li>
+                              Visit{" "}
+                              <a
+                                href="https://scoutandcellar.com/"
+                                target={"_blank"}
+                              >
+                                ScoutandCellar.com
+                              </a>{" "}
+                              to reset your password.
+                            </li>
+                            <li>
+                              Come back and re-attempt the login with your
+                              changed password.
+                            </li>
+                          </ul>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

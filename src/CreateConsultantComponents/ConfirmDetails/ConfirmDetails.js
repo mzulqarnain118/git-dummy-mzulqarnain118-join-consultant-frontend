@@ -70,7 +70,7 @@ class ConfirmDetails extends React.Component {
                     type="text"
                     value={form["emailAddress"]}
                     className={
-                      errorUserData.email.length>0
+                      errorUserData.email.length > 0
                         ? "form-control Red"
                         : "form-control Input"
                     }
@@ -120,7 +120,7 @@ class ConfirmDetails extends React.Component {
                     }
                   }}
                 >
-                  <ArrowForwardIosIcon style={{color:"white"}} />
+                  <ArrowForwardIosIcon style={{ color: "white" }} />
                 </div>
               </div>
 
@@ -152,6 +152,7 @@ class ConfirmDetails extends React.Component {
             apiLogin={this.props.apiLogin}
             rightFooterButtonDisabled={this.props.rightFooterButtonDisabled}
             apiForgotPassword={this.props.apiForgotPassword}
+            customer={this.props.customer}
           />
         ) : rightFooterButtonName === "LOOKS GOOD" ? (
           //to display confirm details page

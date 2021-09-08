@@ -32,7 +32,7 @@
     height: 49px;
   }
   .wrapper .whyscout {
-    padding: 180px 0 240px;
+    padding: 0 0 240px;
   }
   .wrapper .howdoes {
     padding: 145px 0 90px;
@@ -57,7 +57,7 @@
     padding: 15px 35px 0;
   }
   .wrapper .whyscout {
-    padding: 195px 0 200px;
+    padding: 0 0 200px;
   }
   .wrapper .whyscout h2 {
     padding: 0 0 30px;
@@ -80,10 +80,10 @@
     padding: 0 0 30px 60px;
   }
   .wrapper .howdoes {
-    padding: 150px 0 50px;
+    padding: 150px 0 100px;
   }
   .wrapper .partners {
-    padding: 50px 0 120px;
+    padding: 100px 0 120px;
   }
   .wrapper .partners p {
     font-size: 18px;
@@ -149,7 +149,7 @@
     bottom: -20px;
   }
   .wrapper .banner-blk {
-    padding-bottom: 180px;
+    padding-bottom: 40px;
   }
   .wrapper .whyyou-blk:before {
     top: -39px;
@@ -182,10 +182,11 @@
     height: 415px;
     padding: 0 30px;
   }
+  .consult-rgt-dts{top: -125px;}
 }
 @media (max-width: 1359px) {
   .wrapper .whyscout {
-    padding: 195px 0 250px;
+    padding: 0 0 250px;
   }
 }
 @media (max-width: 1199px) {
@@ -214,7 +215,7 @@
     right: 15px;
   }
   .wrapper .banner-blk {
-    padding-bottom: 20px;
+    padding-bottom: 0;
   }
   .consult-rgt-dts,
   .consult-lft-dts {
@@ -229,6 +230,13 @@
   .wrapper .howdoes {
     padding: 50px 0;
   }
+  .wrapper .hearfrom .hearfrom-slide img {
+    border-radius: 50%;
+}
+.wrapper .hearfrom .hearfrom-slide .hearfrom-img {
+  padding-right: 30px;
+  padding-left: 20px;
+}
 }
 @media (max-width: 767px) {
   .sc-logo {

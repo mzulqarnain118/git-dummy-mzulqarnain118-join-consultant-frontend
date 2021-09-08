@@ -236,7 +236,7 @@ body {
     }
   }
   .banner-blk {
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     .banner-bg {
       background: url("../images/Home-Banner.png") center 0 no-repeat;
       height: 680px;
@@ -351,7 +351,7 @@ body {
     }
   }
   .whyscout {
-    padding: 180px 0 125px;
+    padding: 0 0 125px;
     h2 {
       padding: 0 0 50px;
     }
@@ -452,28 +452,28 @@ body {
   .partners {
     position: relative;
     padding: 100px 0;
-    &:before {
-      position: absolute;
-      right: 0;
-      top: -60px;
-      content: "";
-      background: url("../images/Fold5-Pic1.png") right top no-repeat;
-      background-size: 100% auto;
-      z-index: 1;
-      width: 274px;
-      height: 515px;
-    }
-    &:after {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      content: "";
-      background: url("../images/Fold5-Pic2.png") left bottom no-repeat;
-      background-size: 100% auto;
-      z-index: 1;
-      width: 274px;
-      height: 568px;
-    }
+    // &:before {
+    //   position: absolute;
+    //   right: 0;
+    //   top: -60px;
+    //   content: "";
+    //   background: url("../images/Fold5-Pic1.png") right top no-repeat;
+    //   background-size: 100% auto;
+    //   z-index: 1;
+    //   width: 274px;
+    //   height: 515px;
+    // }
+    // &:after {
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: 0;
+    //   content: "";
+    //   background: url("../images/Fold5-Pic2.png") left bottom no-repeat;
+    //   background-size: 100% auto;
+    //   z-index: 1;
+    //   width: 274px;
+    //   height: 568px;
+    // }
     .btn-primary {
       color: $tc-bk;
       background-color: transparent;
@@ -908,8 +908,8 @@ i.ic-arrow {
     border-radius: 50%;
   }
   p {
-    font: 18px/24px "Segoe UI";
-    padding: 10px 0 0;
+    font: 18px/24px "Segoe UI" !important;
+    padding: 10px 0 0 !important;
   }
   sup.topqt {
     font: 74px/24px $font-domine;

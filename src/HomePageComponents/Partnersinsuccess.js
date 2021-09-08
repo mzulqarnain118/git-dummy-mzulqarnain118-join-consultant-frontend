@@ -6,11 +6,30 @@ import Videos from "../Assets/images/ic-videos.svg";
 import { Amp } from "../Assets/SandCAmp";
 import { Link } from "react-router-dom";
 
+import ChrisHite from "../Assets/images/ChrisHite.jpg";
 class Partnersinsuccess extends React.Component {
   render() {
     return (
       <>
         <section className="partners text-center">
+          <section className="consult-rgt-dts">
+            <figure className="consult-img">
+              <img
+                src={ChrisHite}
+                className="img-fluid"
+                alt="consult-profile"
+              />
+              <p>
+                <sup className="topqt">‘</sup>I love working as part of an
+                entrepreneurial company that offers huge growth opportunities
+                and flexibility. If you are looking for an opportunity to be
+                part of something truly different and help pioneer a new way for
+                people to experience wine, then join us!
+                <sup className="btmqt">’</sup>
+              </p>
+              <h5>Chris Hite</h5>
+            </figure>
+          </section>
           <section className="container p-0">
             <h2 className="text-uppercase">Partners in Success</h2>
             <p className="text-center">

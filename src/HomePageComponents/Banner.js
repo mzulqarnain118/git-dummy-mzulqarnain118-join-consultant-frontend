@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ScoutCellar from "../Assets/images/scout-cellar.png";
-import ChrisHite from "../Assets/images/ChrisHite.jpg";
 class Banner extends React.Component {
   constructor(props) {
     super(props);
@@ -55,24 +54,6 @@ class Banner extends React.Component {
         </section>
 
         <section className="whyscout position-relative" ref={this.myRef}>
-          <section className="consult-rgt-dts">
-            <figure className="consult-img">
-              <img
-                src={ChrisHite}
-                className="img-fluid"
-                alt="consult-profile"
-              />
-              <p>
-                <sup className="topqt">‘</sup>I love working as part of an
-                entrepreneurial company that offers huge growth opportunities
-                and flexibility. If you are looking for an opportunity to be
-                part of something truly different and help pioneer a new way for
-                people to experience wine, then join us!
-                <sup className="btmqt">’</sup>
-              </p>
-              <h5>Chris Hite</h5>
-            </figure>
-          </section>
           <section className="container p-0">
             <h2 className="text-uppercase text-center">
               Why Scout &amp; Cellar <sup>&#8482;</sup> ?

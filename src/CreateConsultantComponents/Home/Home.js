@@ -229,6 +229,8 @@ class Home extends React.Component {
       showSentEmailText: false,
       //use fixed working with
       fixedWorkingWith: false,
+      // customer
+      customer: false,
     };
   }
 
@@ -417,6 +419,7 @@ class Home extends React.Component {
               load: false,
               rightFooterButtonName: "LOG IN",
               rightFooterButtonDisabled: true,
+              customer: response.data.customer,
               errorUserData: errorUserData,
             });
           }
@@ -1034,6 +1037,7 @@ class Home extends React.Component {
             fixedWorkingWith={this.state.fixedWorkingWith}
             topBarNavigation={this.topBarNavigation}
             apiForgotPassword={this.apiForgotPassword}
+            customer={this.state.customer}
           />
         );
       case 1:

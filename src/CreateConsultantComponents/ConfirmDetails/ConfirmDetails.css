@@ -360,6 +360,14 @@ input:disabled {
 .NextarrowForwardIconDisabled {
   cursor: no-drop;
 }
+
+.customer-forgot-password {
+  margin-top: 2em;
+  font-family: Domine;
+  font-size: 15px;
+  color: red;
+}
+
 /* @media only screen and (min-width: 768px) {
   .displayArea {
     background-color: #e8e0dd;
@@ -374,6 +382,15 @@ input:disabled {
 } */
 
 @media only screen and (max-width: 550px) {
+  .customer-forgot-password {
+    margin-top: 2em;
+    font-family: Domine;
+    font-size: 15px;
+    margin-left: -12px;
+    margin-right: 10px;
+    color: red;
+  }
+
   .edit-marginLeft {
     margin-left: 0% !important;
   }

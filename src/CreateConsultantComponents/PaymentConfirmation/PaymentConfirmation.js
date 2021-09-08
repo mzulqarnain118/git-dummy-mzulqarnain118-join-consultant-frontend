@@ -16,7 +16,8 @@ import {
 import TouchRipple from "@material-ui/core/ButtonBase/TouchRipple";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import "./PaymentConfirmation.css";
-import { getMobileOperatingSystem } from "../../configuration/config";
+import appStore1 from "../../Assets/images/appStore1.png";
+import playStore1 from "../../Assets/images/playStore1.png";
 
 // styles for material ui
 const styles = (theme) => ({
@@ -185,7 +186,10 @@ class PaymentConfirmation extends React.Component {
 
                   <div className="pcHead3">Consultant Number</div>
 
-                  <div className="pcConsultantNumber1"> {consultant_number}</div>
+                  <div className="pcConsultantNumber1">
+                    {" "}
+                    {consultant_number}
+                  </div>
                   <hr
                     style={{
                       background: "white",
@@ -314,35 +318,6 @@ class PaymentConfirmation extends React.Component {
                 {/* card 2 */}
                 <div
                   className="col-lg-5 col-md-5  pcFooterCard"
-                  onMouseDown={this.onRippleStart2}
-                  onMouseUp={this.onRippleStop2}
-                >
-                  <a
-                    href={
-                      getMobileOperatingSystem() === "Android"
-                        ? "https://play.google.com/store/apps/details/?id=co.vine.android"
-                        : getMobileOperatingSystem() === "iOS"
-                        ? "https://apps.apple.com/us/app/scout-cellar-vine/id1526860271"
-                        : "https://apps.apple.com/us/app/scout-cellar-vine/id1526860271"
-                    }
-                    target={"_blank"}
-                  >
-                    <TouchRipple ref={rippleRef2} center={false} />
-                    <div className="row">
-                      <div className="pcFooterMainIcon2">
-                        <Icon2 />
-                      </div>
-                      <div className="pcFooterText1">
-                        Download Vine App for Consultant
-                      </div>
-                      <IoIosArrowForward className="pcFooterNextIcon" />
-                    </div>
-                  </a>
-                </div>
-
-                {/* card 3 */}
-                <div
-                  className="col-lg-5 col-md-5 pcCardMarginLeft pcFooterCard"
                   onMouseDown={this.onRippleStart3}
                   onMouseUp={this.onRippleStop3}
                 >
@@ -359,6 +334,44 @@ class PaymentConfirmation extends React.Component {
                       <IoIosArrowForward className="pcFooterNextIcon" />
                     </div>
                   </a>
+                </div>
+
+                {/* card 3 */}
+                <div
+                  className="col-lg-5 col-md-5 pcCardMarginLeft pcFooterCard1"
+                  onMouseDown={this.onRippleStart2}
+                  onMouseUp={this.onRippleStop2}
+                >
+                  <TouchRipple ref={rippleRef2} center={false} />
+                  <div className="row">
+                    <div className="pcFooterMainIcon2">
+                      <Icon2 />
+                    </div>
+                    <div className="pcFooterText1">
+                      Download Vine App for Consultant
+                    </div>
+                    <a
+                      href="https://apps.apple.com/us/app/scout-cellar-vine/id1526860271"
+                      target={"_blank"}
+                    >
+                      <img
+                        src={appStore1}
+                        className="img-fluid vine-app-store-logo"
+                        alt="vineapp-app-store-link"
+                      />
+                    </a>
+                    <a
+                      href="https://play.google.com/store/apps/details/?id=co.vine.android"
+                      target={"_blank"}
+                    >
+                      <img
+                        src={playStore1}
+                        className="img-fluid vine-play-store-logo"
+                        alt="vineapp-playstore-link"
+                      />
+                    </a>
+                    <IoIosArrowForward className="pcFooterNextIcon1" />
+                  </div>
                 </div>
               </div>
             </div>
