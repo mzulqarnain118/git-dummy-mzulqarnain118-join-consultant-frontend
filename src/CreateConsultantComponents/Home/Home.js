@@ -724,6 +724,7 @@ class Home extends React.Component {
         });
         swal({
           title: "An error occured, try again!",
+          text: error.error,
           icon: "info",
         });
       });
@@ -788,6 +789,7 @@ class Home extends React.Component {
           });
           swal({
             title: "An error occured, try again!",
+            text: error.error,
             icon: "info",
           });
         });
