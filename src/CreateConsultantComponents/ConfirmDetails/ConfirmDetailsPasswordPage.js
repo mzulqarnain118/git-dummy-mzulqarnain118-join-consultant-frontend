@@ -59,7 +59,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
 
     // password
     if (type === "password") {
-      let regex = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,20}$");
+      let regex = new RegExp("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{7,20}$");
       if (regex.test(value)) {
         error = "";
         this.props.setrightFooterButtonDisabled(false);
