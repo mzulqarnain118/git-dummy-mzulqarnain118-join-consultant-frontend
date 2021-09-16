@@ -13,7 +13,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
       password: "",
       //forgot passowrd
       email: props.userData.email,
-      emailError: props.errorUserData.email,
+      emailError: props.errorUserData.forgotPasswordEmail,
       recaptchaToken: "",
     };
   }
@@ -45,7 +45,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
       userData["email"] = value;
       this.props.setUserData(userData);
       let errorUserData = this.props.errorUserData;
-      errorUserData["email"] = error;
+      errorUserData["forgotPasswordEmail"] = error;
       this.props.setErrorUserData(errorUserData);
       this.setState({ emailError: error });
     }
@@ -115,7 +115,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
   render() {
     const { password, email, emailError } = this.state;
     const { errorUserData } = this.props;
-
+    console.log(errorUserData.forgotPasswordEmail);
     return (
       <React.Fragment>
         <div
@@ -199,6 +199,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                   this.props.setForgotPassword();
                   this.setState({
                     password: "",
+                    recaptchaToken: "",
                   });
                   let userData = this.props.userData;
                   userData["password"] = "";
@@ -250,9 +251,9 @@ class ConfirmDetailsPasswordPage extends React.Component {
                               />
                               {/* error handling of email field */}
 
-                              {emailError.length > 0 ? (
+                              {errorUserData.forgotPasswordEmail.length > 0 ? (
                                 <span className="errorMes">
-                                  {emailError}
+                                  {errorUserData.forgotPasswordEmail}
                                   <br />
                                 </span>
                               ) : null}

@@ -178,6 +178,7 @@ class Home extends React.Component {
         email: "",
         ssn: "",
         password: "",
+        forgotPasswordEmail:"",
       },
       //to check if url is available
       checkURLAvailability: false,
@@ -894,12 +895,12 @@ class Home extends React.Component {
         } catch (e) {
           console.log("Error in /forgotpassword");
           console.log(e);
-          errorUserData["password"] = e.error;
+          errorUserData["forgotPasswordEmail"] = e.error;
           this.setState({
             load: false,
-            rightFooterButtonName: "LOG IN",
-            rightFooterButtonDisabled: true,
-            displayForgotPassword: false,
+            rightFooterButtonName: "CONTINUE ",
+            rightFooterButtonDisabled: false,
+            displayForgotPassword: true,
             showSentEmailText: false,
             errorUserData,
           });
@@ -908,12 +909,12 @@ class Home extends React.Component {
       .catch((error) => {
         console.log("Error in /forgotpassword");
         console.log(error);
-        errorUserData["password"] = error.error;
+        errorUserData["forgotPasswordEmail"] = error.error;
         this.setState({
           load: false,
-          rightFooterButtonName: "LOG IN",
-          rightFooterButtonDisabled: true,
-          displayForgotPassword: false,
+          rightFooterButtonName: "CONTINUE ",
+          rightFooterButtonDisabled: false,
+          displayForgotPassword: true,
           showSentEmailText: false,
           errorUserData,
         });
