@@ -18,8 +18,7 @@ class BusinessDetails extends React.Component {
       //to check availability of URL
       customURLAvailability: false,
       // Individual /entity
-      currentButton:
-        props.userData.doing_business === "Individual" ? false : true,
+      currentButton: props.userData.doing_business === "Individual" ? false : true,
       // SSN entered by user
       ssn: props.userData.ssn,
       //load circle
@@ -35,13 +34,14 @@ class BusinessDetails extends React.Component {
     let value = e.target.value;
 
     if (value !== "") {
-      let regex = new RegExp(
-        "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
-      );
+      let regex = new RegExp("^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$");
       if (regex.test(value)) {
-        await this.setState({ avoidSSNValidation: true });
+        await this.setState({avoidSSNValidation: true});
         errorSsn = "";
       } else if (!regex.test(value) && this.state.avoidSSNValidation) {
+        errorSsn = "Invalid SSN";
+        this.props.setrightFooterButtonDisabled(true);
+      } else if (!regex.test(value) && value.length == 11) {
         errorSsn = "Invalid SSN";
         this.props.setrightFooterButtonDisabled(true);
       }
@@ -56,14 +56,12 @@ class BusinessDetails extends React.Component {
         .filter((item) => item.match(/[0-9\\-]/i))
         .join("")
     );
-    this.setState({ ssn: value });
+    this.setState({ssn: value});
 
     // update to home.js userdata state
     let userData = this.props.userData;
     userData["ssn"] = value;
-    userData["doing_business"] = this.state.currentButton
-      ? "Entity"
-      : "Individual";
+    userData["doing_business"] = this.state.currentButton ? "Entity" : "Individual";
     this.props.setUserData(userData);
     let errorUserData = this.props.errorUserData;
     errorUserData["ssn"] = errorSsn;
@@ -75,7 +73,7 @@ class BusinessDetails extends React.Component {
     let userData = this.props.userData;
     userData["doing_business"] = toggle ? "Entity" : "Individual";
     this.props.setUserData(userData);
-    this.setState({ currentButton: toggle });
+    this.setState({currentButton: toggle});
   };
 
   // to handle change in custom URL entered by the user
@@ -115,7 +113,7 @@ class BusinessDetails extends React.Component {
   };
 
   validateURL = async (e) => {
-    this.setState({ load: true });
+    this.setState({load: true});
     // to check the availability of custom URL in the database
     await setTimeout(() => {
       this.checkURLAvailability();
@@ -144,7 +142,7 @@ class BusinessDetails extends React.Component {
       this.props.setrightFooterButtonDisabled(true);
     }
 
-    this.setState({ customURLAvailability, load: false });
+    this.setState({customURLAvailability, load: false});
     this.props.setCheckURLAvailability(checkURLAvailability);
   };
 
@@ -170,52 +168,24 @@ class BusinessDetails extends React.Component {
       avoidSSNValidation = true;
       this.props.setrightFooterButtonDisabled(false);
     }
-    this.setState({ avoidSSNValidation });
+    this.setState({avoidSSNValidation});
   };
 
   render() {
-    const { customURL, errorCustomURL, currentButton, ssn, load } = this.state;
-    const { errorUserData, checkURLAvailability } = this.props;
+    const {customURL, errorCustomURL, currentButton, ssn, load} = this.state;
+    const {errorUserData, checkURLAvailability} = this.props;
     return (
       <React.Fragment>
         {/* header user in mobile view */}
-        {window.innerWidth <= 550 ? (
-          <Header
-            step={1}
-            agreement={false}
-            handleBackButton={this.props.handleBackButton}
-            topBarNavigation={this.props.topBarNavigation}
-          />
-        ) : null}
+        {window.innerWidth <= 550 ? <Header step={1} agreement={false} handleBackButton={this.props.handleBackButton} topBarNavigation={this.props.topBarNavigation} /> : null}
         <div className="mobileoverFlowBusinessDetails">
-          <div
-            className={
-              window.innerWidth >= 550
-                ? "BDcomponentMargin "
-                : "BDmobileComponent"
-            }
-          >
+          <div className={window.innerWidth >= 550 ? "BDcomponentMargin " : "BDmobileComponent"}>
             <span className="BDhead1">SETTING UP YOUR STORE</span>
-            <div className="BDstaticText3">
-              Pick a custom URL to promote your personalized Scout &amp; Cellar™
-              storefront.
-            </div>
+            <div className="BDstaticText3">Pick a custom URL to promote your personalized Scout &amp; Cellar™ storefront.</div>
 
-            <div
-              className={
-                errorCustomURL.length > 0 ? "row urlRow1" : "row urlRow"
-              }
-            >
+            <div className={errorCustomURL.length > 0 ? "row urlRow1" : "row urlRow"}>
               <div className="col-lg-2 col-md-4 ">
-                <div
-                  className={
-                    errorCustomURL.length > 0
-                      ? "BDstaticText5"
-                      : "BDstaticText4"
-                  }
-                >
-                  www.scoutandcellar.com/
-                </div>
+                <div className={errorCustomURL.length > 0 ? "BDstaticText5" : "BDstaticText4"}>www.scoutandcellar.com/</div>
               </div>
               {/* Input to custom URL */}
               <div className="col-lg-3 offset-lg-1 col-md-7 col-xs-3 business-margin-url customurlwidth1280">
@@ -223,11 +193,7 @@ class BusinessDetails extends React.Component {
                   <input
                     type="text"
                     value={customURL}
-                    className={
-                      errorCustomURL.length > 0
-                        ? "form-control customURLRed"
-                        : "form-control customURL"
-                    }
+                    className={errorCustomURL.length > 0 ? "form-control customURLRed" : "form-control customURL"}
                     id="webLink"
                     name="webLink"
                     placeholder="Customise your URL"
@@ -269,21 +235,10 @@ class BusinessDetails extends React.Component {
                       <div className="col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon">
                         <div className="row">
                           <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
-                            <CheckCircleIcon
-                              className="availableIcon"
-                              style={
-                                window.innerWidth <= 850
-                                  ? window.innerWidth <= 550
-                                    ? { fontSize: 20 }
-                                    : { fontSize: 23 }
-                                  : { fontSize: 30 }
-                              }
-                            />
+                            <CheckCircleIcon className="availableIcon" style={window.innerWidth <= 850 ? (window.innerWidth <= 550 ? {fontSize: 20} : {fontSize: 23}) : {fontSize: 30}} />
                           </div>
                           <div className="col-lg-11 col-md-11 mobileAvailabilitySubText">
-                            <div className="availableText">
-                              This name is Available
-                            </div>
+                            <div className="availableText">This name is Available</div>
                           </div>
                         </div>
                       </div>
@@ -291,21 +246,10 @@ class BusinessDetails extends React.Component {
                       <div className="col-lg-4 col-md-5 mobileNotAvailabilityText offsetLeftAvailableIcon">
                         <div className="row">
                           <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
-                            <CancelIcon
-                              className="notAvailableIcon"
-                              style={
-                                window.innerWidth <= 850
-                                  ? window.innerWidth <= 550
-                                    ? { fontSize: 20 }
-                                    : { fontSize: 23 }
-                                  : { fontSize: 30 }
-                              }
-                            />
+                            <CancelIcon className="notAvailableIcon" style={window.innerWidth <= 850 ? (window.innerWidth <= 550 ? {fontSize: 20} : {fontSize: 23}) : {fontSize: 30}} />
                           </div>
                           <div className="col-lg-11 col-md-11 mobileAvailabilitySubText">
-                            <div className="availableText ipad-not-available-text">
-                              This name is not Available
-                            </div>
+                            <div className="availableText ipad-not-available-text">This name is not Available</div>
                           </div>
                         </div>
                       </div>
@@ -316,49 +260,21 @@ class BusinessDetails extends React.Component {
             </div>
             {/* if the custom url is valid display the rest of the screen */}
             {this.state.customURLAvailability && checkURLAvailability ? (
-              <div style={{ marginBottom: "6em" }}>
+              <div style={{marginBottom: "6em"}}>
                 <div className="row">
                   <span className="businessHead">DOING BUSINESS AS AN</span>
                 </div>
                 {/* buttons to select Individual or entity */}
                 <div className="row">
                   <div className="col-lg-3 col-md-5 mobileSsnToggle">
-                    <div
-                      className={
-                        currentButton
-                          ? "businessButton1 businessButtonNotActive1"
-                          : "businessButton1 "
-                      }
-                      onClick={() => this.toggleButton(false)}
-                    >
-                      <AccountCircleOutlinedIcon
-                        className="iconBusiness"
-                        style={
-                          window.innerWidth <= 850
-                            ? { fontSize: 23 }
-                            : { fontSize: 30 }
-                        }
-                      />
+                    <div className={currentButton ? "businessButton1 businessButtonNotActive1" : "businessButton1 "} onClick={() => this.toggleButton(false)}>
+                      <AccountCircleOutlinedIcon className="iconBusiness" style={window.innerWidth <= 850 ? {fontSize: 23} : {fontSize: 30}} />
                       Individual
                     </div>
                   </div>
                   <div className="col-lg-3 col-md-5 mobileSsnToggle">
-                    <div
-                      className={
-                        !currentButton
-                          ? "businessButton2 businessButtonNotActive"
-                          : "businessButton2 "
-                      }
-                      onClick={() => this.toggleButton(true)}
-                    >
-                      <BusinessCenterOutlinedIcon
-                        className="iconBusiness"
-                        style={
-                          window.innerWidth <= 850
-                            ? { fontSize: 23 }
-                            : { fontSize: 30 }
-                        }
-                      />
+                    <div className={!currentButton ? "businessButton2 businessButtonNotActive" : "businessButton2 "} onClick={() => this.toggleButton(true)}>
+                      <BusinessCenterOutlinedIcon className="iconBusiness" style={window.innerWidth <= 850 ? {fontSize: 23} : {fontSize: 30}} />
                       Entity
                     </div>
                   </div>
@@ -368,8 +284,7 @@ class BusinessDetails extends React.Component {
                 </div>
                 <div className="row">
                   <div className="ssnSubtext">
-                    We're mandated by law to collect your{" "}
-                    <span style={{ fontWeight: 400 }}>SSN</span>.
+                    We're mandated by law to collect your <span style={{fontWeight: 400}}>SSN</span>.
                   </div>
                 </div>
                 {/* SSN input  */}
@@ -378,11 +293,7 @@ class BusinessDetails extends React.Component {
                     <input
                       type="text"
                       value={ssn}
-                      className={
-                        errorUserData.ssn.length > 0
-                          ? "form-control ssnInputRed"
-                          : "form-control ssnInput"
-                      }
+                      className={errorUserData.ssn.length > 0 ? "form-control ssnInputRed" : "form-control ssnInput"}
                       id="ssn"
                       name="ssn"
                       placeholder="Enter your SSN"
@@ -403,10 +314,7 @@ class BusinessDetails extends React.Component {
                 {/* Entity warning */}
                 {currentButton ? (
                   <div className="row">
-                    <div className="col-lg-7 entitySubtext">
-                      Additional documentation about your entity might be
-                      required after you complete signing up.
-                    </div>
+                    <div className="col-lg-7 entitySubtext">Additional documentation about your entity might be required after you complete signing up.</div>
                   </div>
                 ) : null}
               </div>
@@ -428,17 +336,9 @@ const maskingSSN = (value) => {
     .join("");
 
   if (value.length > 3 && value.length <= 5) {
-    value =
-      value.split("").splice(0, 3).join("") +
-      "-" +
-      value.split("").splice(3).join("");
+    value = value.split("").splice(0, 3).join("") + "-" + value.split("").splice(3).join("");
   } else if (value.length >= 6) {
-    value =
-      value.split("").splice(0, 3).join("") +
-      "-" +
-      value.split("").splice(3, 2).join("") +
-      "-" +
-      value.split("").splice(5).join("");
+    value = value.split("").splice(0, 3).join("") + "-" + value.split("").splice(3, 2).join("") + "-" + value.split("").splice(5).join("");
   }
   return value;
 };
