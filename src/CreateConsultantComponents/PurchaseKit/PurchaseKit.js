@@ -349,7 +349,7 @@ class PurchaseKit extends React.Component {
                     <div className="subTotalText">Subtotal</div>
                     <div className="totalText">Discount</div>
                     <div className="totalText">Shipping</div>
-                    <div className="totalText">Sales Tax</div>
+                    {/* <div className="totalText">Sales Tax</div> */}
                   </div>
                   <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
                     <div className="subTotalMoney">
@@ -361,9 +361,9 @@ class PurchaseKit extends React.Component {
                     <div className="totalMoney">
                       ${addTrailingZeros(purchaseKitDetails.shipping)}
                     </div>
-                    <div className="totalMoney">
+                    {/* <div className="totalMoney">
                       ${addTrailingZeros(purchaseKitDetails.salestax)}
-                    </div>
+                    </div> */}
                   </div>
                   <div className="col-lg-1"></div>
                 </div>
