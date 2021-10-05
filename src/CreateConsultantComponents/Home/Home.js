@@ -457,6 +457,7 @@ class Home extends React.Component {
       userData.address.city !== "" &&
       userData.address.state !== "" &&
       userData.phonenumber !== "" &&
+      userData.phonenumber.length === 10 &&
       userData.working_with.id !== "" &&
       userData.working_with.name !== ""
     );
@@ -754,70 +755,70 @@ class Home extends React.Component {
 
   //API get card details
   apiCartDetails = async () => {
-   
+
+    this.setState({ load: true });
+
+    await this.apiGetCartId();
+
+    if (this.state.userData["cart_id"] !== "") {
+      let cartId = this.state.userData.cart_id;
       this.setState({ load: true });
+      let purchaseKitDetails = this.state.purchaseKitDetails;
+      let data = {
+        id: this.state.userData.id,
+        ssn: this.state.userData.ssn,
+      };
+      await API.callEndpoint(
+        "GET",
+        "Bearer",
+        "/api/v1/users/viewCart?cartid=" + cartId,
+        data
+      )
+        .then((response) => {
+          try {
+            purchaseKitDetails["subtotal"] =
+              response.data.OrderLines[0].Subtotal;
+            purchaseKitDetails["shipping"] =
+              response.data.OrderLines[0].ShippingTax;
+            purchaseKitDetails["salestax"] =
+              response.data.OrderLines[0].ItemTax;
+            purchaseKitDetails["discount"] =
+              response.data.OrderLines[0].Discounts;
+            purchaseKitDetails["total"] = 
+            response.data.OrderLines[0].LineTotal;
 
-      await this.apiGetCartId();
-
-      if (this.state.userData["cart_id"] !== "") {
-        let cartId = this.state.userData.cart_id;
-        this.setState({ load: true });
-        let purchaseKitDetails = this.state.purchaseKitDetails;
-        let data = {
-          id: this.state.userData.id,
-          ssn: this.state.userData.ssn,
-        };
-        await API.callEndpoint(
-          "GET",
-          "Bearer",
-          "/api/v1/users/viewCart?cartid=" + cartId,
-          data
-        )
-          .then((response) => {
-            try {
-              purchaseKitDetails["subtotal"] =
-                response.data.OrderLines[0].Subtotal;
-              purchaseKitDetails["shipping"] =
-                response.data.OrderLines[0].ShippingTax;
-              purchaseKitDetails["salestax"] =
-                response.data.OrderLines[0].ItemTax;
-              purchaseKitDetails["discount"] =
-                response.data.OrderLines[0].Discounts;
-              purchaseKitDetails["total"] =
-                response.data.OrderLines[0].LineTotal;
-
-              this.setState({
-                load: false,
-                cartId,
-                purchaseKitDetails,
-              });
-            } catch (e) {
-              console.log("Error in /get cart details");
-              console.log(e);
-              this.setState({
-                load: false,
-                activeStep: 2,
-                rightFooterButtonName: "CONTINUE",
-                rightFooterButtonDisabled: false,
-              });
-            }
-          })
-          .catch((error) => {
+            this.setState({
+              load: false,
+              cartId,
+              purchaseKitDetails,
+            });
+          } catch (e) {
             console.log("Error in /get cart details");
-            console.log(error);
+            console.log(e);
             this.setState({
               load: false,
               activeStep: 2,
               rightFooterButtonName: "CONTINUE",
               rightFooterButtonDisabled: false,
             });
-            swal({
-              title: "An error occured, try again!",
-              text: error.error,
-              icon: "info",
-            });
+          }
+        })
+        .catch((error) => {
+          console.log("Error in /get cart details");
+          console.log(error);
+          this.setState({
+            load: false,
+            activeStep: 2,
+            rightFooterButtonName: "CONTINUE",
+            rightFooterButtonDisabled: false,
           });
-      }
+          swal({
+            title: "An error occured, try again!",
+            text: error.error,
+            icon: "info",
+          });
+        });
+    }
     
   };
 

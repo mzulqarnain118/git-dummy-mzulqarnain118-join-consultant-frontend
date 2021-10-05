@@ -415,16 +415,16 @@ class ConfirmDetailsEdit extends React.Component {
       errorArr[5] = true;
     }
     userData["phonenumber"] = maskingPhoneNumber(userData["phonenumber"]);
-    if (
-      userData["phonenumber"] === "" ||
-      userData["phonenumber"].length !== 12
-    ) {
+    if (userData["phonenumber"] === "") {
       errorArr[6] = false;
-    } else {
-      errorArr[6] = true;
-
-      avoidPhoneError = true;
     }
+    if (userData["phonenumber"].length === 12) {
+      errorArr[6] = true;
+      avoidPhoneError = true;
+    } else {
+      errorArr[6] = false;
+    }
+
     if (userData["working_with"].name === "") {
       errorArr[7] = false;
     } else {
