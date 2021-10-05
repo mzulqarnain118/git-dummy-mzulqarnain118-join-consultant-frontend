@@ -14,7 +14,14 @@ class Agreement extends React.Component {
       currentButton: this.props.currentAgreement,
       scrollReachEnd: false,
     };
+    this.myRef = React.createRef(); // Create a ref object
   }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.currentAgreement !== this.props.currentAgreement) {
+      this.setState({ currentButton: this.props.currentAgreement });
+    }
+  }
+
   // policy text data  (Policy and Procedures)
   PolicyAgreement = () => {
     return (
@@ -4295,7 +4302,7 @@ class Agreement extends React.Component {
     await axios
       .get(
         !this.state.currentButton
-          ? "../Agreement-PDF/Policies & Procedures November 2020.pdf"
+          ? "../Agreement-PDF/Independent Consultant Agreement with CCPA Addendum.pdf"
           : "../Agreement-PDF/Policies & Procedures November 2020.pdf",
         {
           responseType: "blob",
@@ -4303,7 +4310,10 @@ class Agreement extends React.Component {
       )
       .then((res) => {
         !this.state.currentButton
-          ? fileDownload(res.data, "Policies & Procedures November 2020.pdf")
+          ? fileDownload(
+              res.data,
+              "Independent Consultant Agreement with CCPA Addendum.pdf"
+            )
           : fileDownload(res.data, "Policies & Procedures November 2020.pdf");
       });
   };
@@ -4324,9 +4334,25 @@ class Agreement extends React.Component {
   handleChangecheckbox = (e) => {
     let userData = this.props.userData;
     if (e.target.id === "checkbox1") {
+      if (
+        !this.props.userData.policy_procedures &&
+        !this.props.userData.indepedent_agreement
+      ) {
+        this.toggleButton(false);
+        window.scrollTo(0, 0);
+        this.myRef.current.scrollTo(0, 0);
+      }
       userData["indepedent_agreement"] =
         !this.props.userData.indepedent_agreement;
     } else {
+      if (
+        !this.props.userData.policy_procedures &&
+        !this.props.userData.indepedent_agreement
+      ) {
+        this.toggleButton(true);
+        window.scrollTo(0, 0);
+        this.myRef.current.scrollTo(0, 0);
+      }
       userData["policy_procedures"] = !this.props.userData.policy_procedures;
     }
     this.props.setUserData(userData);
@@ -4372,7 +4398,8 @@ class Agreement extends React.Component {
           <div className="mobileAgreementLeftMargin">
             <span className="AGhead1">LET’S MAKE THIS OFFICIAL!</span>
             <div className="AGhead2">
-              Please review and agree to both the terms
+              Please review and agree to both the Independent Consultant
+              Agreement &amp; Policy and Procedures
             </div>
             {/* buttons to select the requested policy */}
             <div className="row">
@@ -4412,11 +4439,19 @@ class Agreement extends React.Component {
             </div>
             {/* to display selected policy data */}
             <div className="col-lg-6 ">
-              <div className="agreementPolicy" onScroll={this.handleScroll}>
+              <div
+                className="agreementPolicy"
+                onScroll={this.handleScroll}
+                ref={this.myRef}
+              >
                 {!currentButton
                   ? this.IndependentAgreement()
                   : this.PolicyAgreement()}
               </div>
+            </div>
+            <div className="AGhead3">
+              Please review and agree to both the Independent Consultant
+              Agreement &amp; Policy and Procedures
             </div>
             {/* check Box to accept agreement */}
             <div className="col-lg-8 ">

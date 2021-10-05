@@ -146,6 +146,7 @@ class Home extends React.Component {
         working_with: {
           id: 1,
           name: "",
+          displayId: "",
         },
         url: "",
         ssn: "",
@@ -178,7 +179,7 @@ class Home extends React.Component {
         email: "",
         ssn: "",
         password: "",
-        forgotPasswordEmail:"",
+        forgotPasswordEmail: "",
       },
       //to check if url is available
       checkURLAvailability: false,
@@ -371,6 +372,7 @@ class Home extends React.Component {
         //call API to update data (API CALL IN Home)
         this.apiUpdateUserData();
       } else if (this.state.rightFooterButtonName === "PROCEED") {
+        this.setrightFooterButtonDisabled(true);
         if (await this.apiVerifyURL(this.state.userData.url)) {
           // call API to Update screen id and move to next screen
           let data = {
@@ -445,12 +447,27 @@ class Home extends React.Component {
       });
   };
 
+  validData = (userData) => {
+    return (
+      userData.first_name !== "" &&
+      userData.last_name !== "" &&
+      userData.dob !== "Invalid Date" &&
+      userData.address.street !== "" &&
+      userData.address.zipcode !== "" &&
+      userData.address.city !== "" &&
+      userData.address.state !== "" &&
+      userData.phonenumber !== "" &&
+      userData.working_with.id !== "" &&
+      userData.working_with.name !== ""
+    );
+  };
+
   // API to Login
   apiLogin = async () => {
     this.setState({ load: true, rightFooterButtonDisabled: true });
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
-    let activeStep = this.state.activeStep;
+    let activeStep = 0;
 
     await API.getAccessToken(userData.email, userData.password, false)
       .then((response) => {
@@ -472,27 +489,29 @@ class Home extends React.Component {
           };
           let buttonName = "";
           let buttonDisable = false;
-          if (userData.first_name === "") {
+          if (!this.validData(userData)) {
             buttonName = "SAVE AND PROCEED";
             buttonDisable = true;
           } else {
             buttonName = "LOOKS GOOD";
             buttonDisable = false;
-          }
-          activeStep = userData.screen;
-          if (activeStep === 1) {
-            buttonDisable = true;
-            buttonName = "PROCEED";
-          } else if (activeStep === 2) {
-            buttonDisable = !(
-              userData["indepedent_agreement"] && userData["policy_procedures"]
-            );
-            buttonName = "CONTINUE";
-          } else if (activeStep === 3) {
-            buttonDisable = true;
-            buttonName = "DONE";
-          } else if (activeStep === 4) {
-            buttonDisable = false;
+
+            activeStep = userData.screen;
+            if (activeStep === 1) {
+              buttonDisable = true;
+              buttonName = "PROCEED";
+            } else if (activeStep === 2) {
+              buttonDisable = !(
+                userData["indepedent_agreement"] &&
+                userData["policy_procedures"]
+              );
+              buttonName = "CONTINUE";
+            } else if (activeStep === 3) {
+              buttonDisable = true;
+              buttonName = "DONE";
+            } else if (activeStep === 4) {
+              buttonDisable = false;
+            }
           }
           if (userData.doing_business === "") {
             userData["doing_business"] = "Individual";
@@ -735,68 +754,71 @@ class Home extends React.Component {
 
   //API get card details
   apiCartDetails = async () => {
-    this.setState({ load: true });
-
-    await this.apiGetCartId();
-
-    if (this.state.userData["cart_id"] !== "") {
-      let cartId = this.state.userData.cart_id;
+   
       this.setState({ load: true });
-      let purchaseKitDetails = this.state.purchaseKitDetails;
-      let data = {
-        id: this.state.userData.id,
-        ssn: this.state.userData.ssn,
-      };
-      await API.callEndpoint(
-        "GET",
-        "Bearer",
-        "/api/v1/users/viewCart?cartid=" + cartId,
-        data
-      )
-        .then((response) => {
-          try {
-            purchaseKitDetails["subtotal"] =
-              response.data.OrderLines[0].Subtotal;
-            purchaseKitDetails["shipping"] =
-              response.data.OrderLines[0].ShippingTax;
-            purchaseKitDetails["salestax"] =
-              response.data.OrderLines[0].ItemTax;
-            purchaseKitDetails["discount"] =
-              response.data.OrderLines[0].Discounts;
-            purchaseKitDetails["total"] = response.data.OrderLines[0].LineTotal;
 
-            this.setState({
-              load: false,
-              cartId,
-              purchaseKitDetails,
-            });
-          } catch (e) {
+      await this.apiGetCartId();
+
+      if (this.state.userData["cart_id"] !== "") {
+        let cartId = this.state.userData.cart_id;
+        this.setState({ load: true });
+        let purchaseKitDetails = this.state.purchaseKitDetails;
+        let data = {
+          id: this.state.userData.id,
+          ssn: this.state.userData.ssn,
+        };
+        await API.callEndpoint(
+          "GET",
+          "Bearer",
+          "/api/v1/users/viewCart?cartid=" + cartId,
+          data
+        )
+          .then((response) => {
+            try {
+              purchaseKitDetails["subtotal"] =
+                response.data.OrderLines[0].Subtotal;
+              purchaseKitDetails["shipping"] =
+                response.data.OrderLines[0].ShippingTax;
+              purchaseKitDetails["salestax"] =
+                response.data.OrderLines[0].ItemTax;
+              purchaseKitDetails["discount"] =
+                response.data.OrderLines[0].Discounts;
+              purchaseKitDetails["total"] =
+                response.data.OrderLines[0].LineTotal;
+
+              this.setState({
+                load: false,
+                cartId,
+                purchaseKitDetails,
+              });
+            } catch (e) {
+              console.log("Error in /get cart details");
+              console.log(e);
+              this.setState({
+                load: false,
+                activeStep: 2,
+                rightFooterButtonName: "CONTINUE",
+                rightFooterButtonDisabled: false,
+              });
+            }
+          })
+          .catch((error) => {
             console.log("Error in /get cart details");
-            console.log(e);
+            console.log(error);
             this.setState({
               load: false,
               activeStep: 2,
               rightFooterButtonName: "CONTINUE",
               rightFooterButtonDisabled: false,
             });
-          }
-        })
-        .catch((error) => {
-          console.log("Error in /get cart details");
-          console.log(error);
-          this.setState({
-            load: false,
-            activeStep: 2,
-            rightFooterButtonName: "CONTINUE",
-            rightFooterButtonDisabled: false,
+            swal({
+              title: "An error occured, try again!",
+              text: error.error,
+              icon: "info",
+            });
           });
-          swal({
-            title: "An error occured, try again!",
-            text: error.error,
-            icon: "info",
-          });
-        });
-    }
+      }
+    
   };
 
   // api to create a consultant
@@ -956,11 +978,13 @@ class Home extends React.Component {
     await axios
       .post(getWorkingWithURL, data)
       .then((res) => {
+        console.log("inside workingwith");
         try {
           fixedWorkingWith = true;
           userData["working_with"] = {
             id: res.data.id,
             name: res.data.name,
+            displayId: res.data.displayId,
           };
           this.setState({
             userData,

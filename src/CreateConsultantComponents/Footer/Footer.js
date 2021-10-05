@@ -59,6 +59,7 @@ class Footer extends React.Component {
         //call API to update data (API CALL IN Home)
         this.props.apiUpdateUserData();
       } else if (this.props.rightFooterButtonName === "PROCEED") {
+        this.props.setrightFooterButtonDisabled(true);
         if (await this.props.apiVerifyURL(this.props.userData.url)) {
           // call API to Update screen id and move to next screen
           let data = {
