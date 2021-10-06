@@ -481,6 +481,16 @@ class Home extends React.Component {
             month: 1 + Date.month(),
             year: Date.year(),
           };
+          //existing customer login fix
+          if (userData["phonenumber"].length < 10) {
+            userData["phonenumber"] = "";
+          }
+          if (userData["street"] === "DO NOT USE, DO NOT USE") {
+            userData["street"] = "";
+          }
+          if (userData["city"] === "DO NOT USE") {
+            userData["city"] = "";
+          }
           //update address to required format
           userData["address"] = {
             street: userData["street"],
@@ -755,7 +765,6 @@ class Home extends React.Component {
 
   //API get card details
   apiCartDetails = async () => {
-
     this.setState({ load: true });
 
     await this.apiGetCartId();
@@ -784,8 +793,7 @@ class Home extends React.Component {
               response.data.OrderLines[0].ItemTax;
             purchaseKitDetails["discount"] =
               response.data.OrderLines[0].Discounts;
-            purchaseKitDetails["total"] = 
-            response.data.OrderLines[0].LineTotal;
+            purchaseKitDetails["total"] = response.data.OrderLines[0].LineTotal;
 
             this.setState({
               load: false,
@@ -819,7 +827,6 @@ class Home extends React.Component {
           });
         });
     }
-    
   };
 
   // api to create a consultant
