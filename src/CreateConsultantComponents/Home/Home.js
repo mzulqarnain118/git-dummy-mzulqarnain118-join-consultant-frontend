@@ -482,15 +482,15 @@ class Home extends React.Component {
             year: Date.year(),
           };
           // //existing customer login fix
-          // if (userData["phonenumber"].length < 10) {
-          //   userData["phonenumber"] = "";
-          // }
-          // if (userData["street"] === "DO NOT USE, DO NOT USE") {
-          //   userData["street"] = "";
-          // }
-          // if (userData["city"] === "DO NOT USE") {
-          //   userData["city"] = "";
-          // }
+          if (userData["phonenumber"].length < 10) {
+            userData["phonenumber"] = "";
+          }
+          if (userData["street"] === "DO NOT USE, DO NOT USE") {
+            userData["street"] = "";
+          }
+          if (userData["city"] === "DO NOT USE") {
+            userData["city"] = "";
+          }
           //update address to required format
           userData["address"] = {
             street: userData["street"],
