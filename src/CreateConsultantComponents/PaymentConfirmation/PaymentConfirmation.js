@@ -289,56 +289,57 @@ class PaymentConfirmation extends React.Component {
         {/* Footer  */}
         {confirmation ? (
           <div className="pcFooter">
-            <div className="pcFooterHead">LET'S GET GOING</div>
             <div className="pcFooterLeftMargin">
+              <div className="pcFooterHead">LET'S GET GOING</div>
               <div className="row ">
-                {/* card 1 */}
-                <div
-                  className="col-lg-5 col-md-5 pcFooterCard"
-                  onMouseDown={this.onRippleStart1}
-                  onMouseUp={this.onRippleStop1}
-                >
-                  <a
-                    href="https://team.scoutandcellar.com/Account/Login?utm=bac"
-                    target={"_blank"}
+                <div className="col-xl-6 col-lg-5 col-md-5 mobileStackLeftMargin">
+                  {/* card 1 */}
+                  <div
+                    className="pcFooterCard"
+                    onMouseDown={this.onRippleStart1}
+                    onMouseUp={this.onRippleStop1}
                   >
-                    <TouchRipple ref={rippleRef1} center={false} />
-                    <div className="row">
-                      <div className="pcFooterMainIcon">
-                        <Icon1 />
+                    <a
+                      href="https://team.scoutandcellar.com/Account/Login?utm=bac"
+                      target={"_blank"}
+                    >
+                      <TouchRipple ref={rippleRef1} center={false} />
+                      <div className="row">
+                        <div className="pcFooterMainIcon">
+                          <Icon1 />
+                        </div>
+                        <div className="pcFooterText">
+                          Access your consultant Account
+                        </div>
+                        <IoIosArrowForward className="pcFooterNextIcon" />
                       </div>
-                      <div className="pcFooterText">
-                        Access your consultant Account
-                      </div>
-                      <IoIosArrowForward className="pcFooterNextIcon" />
-                    </div>
-                  </a>
-                </div>
+                    </a>
+                  </div>
 
-                {/* card 2 */}
-                <div
-                  className="col-lg-5 col-md-5  pcFooterCard"
-                  onMouseDown={this.onRippleStart3}
-                  onMouseUp={this.onRippleStop3}
-                >
-                  <a
-                    href="https://team.scoutandcellar.com/Account/Login?utm=bactraining"
-                    target={"_blank"}
+                  {/* card 2 */}
+                  <div
+                    className="pcFooterCard"
+                    onMouseDown={this.onRippleStart3}
+                    onMouseUp={this.onRippleStop3}
                   >
-                    <TouchRipple ref={rippleRef3} center={false} />
-                    <div className="row">
-                      <div className="pcFooterMainIcon">
-                        <Icon3 />
+                    <a
+                      href="https://team.scoutandcellar.com/Account/Login?utm=bactraining"
+                      target={"_blank"}
+                    >
+                      <TouchRipple ref={rippleRef3} center={false} />
+                      <div className="row">
+                        <div className="pcFooterMainIcon">
+                          <Icon3 />
+                        </div>
+                        <div className="pcFooterText2">Get Started Videos</div>
+                        <IoIosArrowForward className="pcFooterNextIcon" />
                       </div>
-                      <div className="pcFooterText2">Get Started Videos</div>
-                      <IoIosArrowForward className="pcFooterNextIcon" />
-                    </div>
-                  </a>
+                    </a>
+                  </div>
                 </div>
-
                 {/* card 3 */}
                 <div
-                  className="col-lg-5 col-md-5 pcCardMarginLeft pcFooterCard1"
+                  className="col-xl-6 col-lg-5 col-md-5 pcCardMarginLeft pcFooterCard1"
                   onMouseDown={this.onRippleStart2}
                   onMouseUp={this.onRippleStop2}
                 >
@@ -374,6 +375,62 @@ class PaymentConfirmation extends React.Component {
                   </div>
                 </div>
               </div>
+            </div>
+            <div>
+              <p className="whileYouarewaiting">
+                <p>
+                  <b>
+                    While you're waiting on pins and needles for your BBK to
+                    arrive (we know you are), you can do the following things to
+                    get your business up and running:
+                  </b>
+                </p>
+                <p>
+                  <b>1. Start learning!</b> You'll receive a series of emails
+                  over the next 5 days with important information and action
+                  items for getting off to a great start! You'll also want to be
+                  sure to complete Scout School Online located in The Cellar and
+                  in our Scout & Cellar Mobile App The Vine. These series of
+                  videos are the most comprehensive resource for everything you
+                  need to know to get started.
+                </p>
+                <p>
+                  <b>2. Get Social!</b> Set up any social media accounts like
+                  Facebook and Instagram that you'd like to personalize for your
+                  Scout & Cellar Business.
+                </p>
+                <p>
+                  <b>3. Start Sharing!</b> Announce your Scout & Cellar business
+                  on social media and share your personal journey to
+                  clean-crafted wine with your followers, family, and friends.
+                  Want personalized business cards? You can create and order
+                  them through FedEx. Learn more in The Cellar &#62; Brand &
+                  Marketing &#62; Business Cards & Supplies.
+                </p>
+                <p>
+                  <b>4. Learn your way around!</b> Dive into all the resources
+                  available in The Cellar to educate yourself regarding our
+                  business, our brand, our wines, and our culture.
+                </p>
+                <p>
+                  <b>5. Begin Connecting!</b> Schedule a call with your Mentor
+                  and join your team's Facebook group.
+                </p>
+                <p>
+                  <b>6. Stock Your Cellar!</b>
+                </p>
+                <p>
+                  <b>7. Book A Tasting!</b> Schedule your first tasting and
+                  start promoting Scout & Cellar wine in-person or online.
+                </p>
+                <p>
+                  <b>8. Send in your W9!</b> You can email it directly to us at{" "}
+                  <a href="mailto:w9form@scoutandcellar.com">
+                    w9form@scoutandcellar.com
+                  </a>{" "}
+                  or mail it to 4531 Simonton Road Farmers Branch, TX 75244.
+                </p>
+              </p>
             </div>
           </div>
         ) : null}

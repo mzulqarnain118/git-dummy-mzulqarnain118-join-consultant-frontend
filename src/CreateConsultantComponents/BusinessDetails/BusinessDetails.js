@@ -85,7 +85,8 @@ class BusinessDetails extends React.Component {
   handleChange = (e) => {
     let customURLAvailability = this.state.customURLAvailability;
     let errorCustomURL = this.state.errorCustomURL;
-    let value = e.target.value.toLowerCase()
+    let value = e.target.value
+      .toLowerCase()
       .split("")
       .filter((item) => item.match(/[a-z0-9]/i))
       .join("")
@@ -203,7 +204,7 @@ class BusinessDetails extends React.Component {
                 : "BDmobileComponent"
             }
           >
-            <span className="BDhead1">SETTING UP YOUR STORE</span>
+            <span className="BDhead1">SETTING UP YOUR PERSONAL URL</span>
             <div className="BDstaticText3">
               Pick a custom URL to promote your personalized Scout &amp; Cellar™
               storefront.
@@ -226,7 +227,7 @@ class BusinessDetails extends React.Component {
                 </div>
               </div>
               {/* Input to custom URL */}
-              <div className="col-lg-3 offset-lg-1 col-md-7 col-xs-3 business-margin-url customurlwidth1280">
+              <div className="col-lg-4 offset-lg-1 col-md-7 col-xs-3 business-margin-url customurlwidth1280">
                 <div className="row">
                   <input
                     type="text"
@@ -275,7 +276,7 @@ class BusinessDetails extends React.Component {
                   {this.state.customURLAvailability ? (
                     checkURLAvailability ? (
                       <div className="col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon">
-                        <div className="row">
+                        <div className="row" style={{ alignItems: "center" }}>
                           <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
                             <CheckCircleIcon
                               className="availableIcon"
@@ -296,11 +297,11 @@ class BusinessDetails extends React.Component {
                         </div>
                       </div>
                     ) : (
-                      <div className="col-lg-4 col-md-5 mobileNotAvailabilityText offsetLeftAvailableIcon">
-                        <div className="row">
+                      <div className="col-lg-4 col-md-5 mobileAvailabilityText offsetLeftAvailableIcon">
+                        <div className="row" style={{ alignItems: "center" }}>
                           <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
                             <CancelIcon
-                              className="notAvailableIcon"
+                              className="availableIcon notAvailableIcon"
                               style={
                                 window.innerWidth <= 850
                                   ? window.innerWidth <= 550
@@ -311,7 +312,7 @@ class BusinessDetails extends React.Component {
                             />
                           </div>
                           <div className="col-lg-11 col-md-11 mobileAvailabilitySubText">
-                            <div className="availableText ipad-not-available-text">
+                            <div className="availableText">
                               This name is not Available
                             </div>
                           </div>
@@ -322,6 +323,37 @@ class BusinessDetails extends React.Component {
                 </>
               )}
             </div>
+
+            <div className={errorCustomURL.length > 0 ? "row" : "row"}>
+              <div className="col-lg-2 col-md-4 "></div>
+              {/* Input to custom URL */}
+              <div className="col-lg-4 offset-lg-1 col-md-7 col-xs-3 business-margin-url customurlwidth1280">
+                <div className="row">
+                  <div className="entitySubtext personalUrlAdditionalInformation">
+                    <p className="personalUrlAdditionalInformationParagraph">
+                      Please keep in mind that your Personalized URL cannot
+                      contain any of the following:
+                    </p>
+                    <p className="personalUrlAdditionalInformationParagraph">
+                      - Special characters, punctuations, or spaces.
+                    </p>
+                    <p className="personalUrlAdditionalInformationParagraph">
+                      - The words "Scout", "Scout & Cellar", "Clean" or
+                      "Clean-Crafted".
+                    </p>
+                    <p className="personalUrlAdditionalInformationParagraph">
+                      - Locations, including cities, states, or uniquely-named
+                      regions (like New England or Gulf Coast).
+                    </p>
+                    <p className="personalUrlAdditionalInformationParagraph">
+                      - Any other language prohibited in our Policies &
+                      Procedures
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* if the custom url is valid display the rest of the screen */}
             {this.state.customURLAvailability && checkURLAvailability ? (
               <div style={{ marginBottom: "6em" }}>
@@ -354,8 +386,8 @@ class BusinessDetails extends React.Component {
                     <div
                       className={
                         !currentButton
-                          ? "businessButton2 businessButtonNotActive"
-                          : "businessButton2 "
+                          ? "businessButton1 businessButtonNotActive"
+                          : "businessButton1 "
                       }
                       onClick={() => this.toggleButton(true)}
                     >
@@ -369,6 +401,21 @@ class BusinessDetails extends React.Component {
                       />
                       Entity
                     </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-lg-6 col-md-10 doingBusinessExtraInformation">
+                    <b>
+                      Should I run my business as an Individual or an Entity?
+                    </b>
+                    <br />
+                    We’re here to help! If you want to run your business by
+                    yourself you should sign up as an individual. If you are
+                    signing up with others on the same Consultant account
+                    (except for married couples) then you should start your
+                    business as an entity. If you have more questions, feel free
+                    to reach out to another Scout & Cellar Consultant. They
+                    would be happy to answer your questions!
                   </div>
                 </div>
                 <div className="row">
@@ -412,8 +459,8 @@ class BusinessDetails extends React.Component {
                 {currentButton ? (
                   <div className="row">
                     <div className="col-lg-7 entitySubtext">
-                      Additional documentation about your entity might be
-                      required after you complete signing up.
+                      Please note: There will be additional paperwork to fill
+                      out should you decide to run your business as an entity.
                     </div>
                   </div>
                 ) : null}

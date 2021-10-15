@@ -18,7 +18,6 @@
 }
 .urlRow {
   display: flex;
-  align-items: center;
   margin-top: 30px;
 }
 .urlRow1 {
@@ -30,6 +29,7 @@
   font-family: Domine;
   margin-top: 0px !important;
   font-weight: bold;
+  margin-top: 15px !important;
 }
 .BDstaticText5 {
   font-size: 16px;
@@ -94,7 +94,6 @@
   font-weight: 100;
 }
 .notAvailableIcon {
-  margin-top: 0;
   color: rgb(236, 85, 85);
 }
 
@@ -102,7 +101,7 @@
   font-size: 28px;
   font-weight: 400;
   font-family: oswald;
-  margin-top: 66px;
+  margin-top: 40px;
 }
 .businessButton1 {
   background: #dcba80;
@@ -236,11 +235,24 @@ input::-webkit-input-placeholder {
   margin-top: 8px !important;
   margin-left: 8px;
   padding: 24px;
-  font-size: 18px !important;
+  font-size: 16px !important;
   width: 504px !important;
   font-family: Domine !important;
 }
-
+.personalUrlAdditionalInformation {
+  margin-left: -5vw;
+  font-size: 12px !important;
+  padding: 10px;
+  width: calc(22vw + 65px) !important;
+}
+.personalUrlAdditionalInformationParagraph {
+  margin-bottom: 7.5px;
+}
+.doingBusinessExtraInformation {
+  font-size: 16px !important;
+  padding: 10px;
+  font-family: Domine !important;
+}
 .errorMesSubtext {
   font-size: 12px;
   color: red;
@@ -250,8 +262,8 @@ input::-webkit-input-placeholder {
 }
 
 .offsetLeftAvailableIcon {
-  margin-left: 0;
-  margin-top: 0;
+  margin-left: 0px;
+  margin-top: 12px;
 }
 .urlLoader {
   margin-top: 0;
@@ -296,6 +308,7 @@ input::-webkit-input-placeholder {
   }
   .mobileAvailabilityText {
     margin-top: 5px;
+    margin-bottom: 5px;
     position: relative;
     left: 55%;
     z-index: 1 !important;
@@ -350,6 +363,10 @@ input::-webkit-input-placeholder {
     font-family: Domine;
     margin-left: 16px;
   }
+  .personalUrlAdditionalInformation {
+    width: calc(296px + 70px) !important;
+    margin-left: 16px !important;
+  }
   .customURL:focus {
     border-color: #d8c5a6;
   }
@@ -384,7 +401,6 @@ input::-webkit-input-placeholder {
     color: #4ba380;
   }
   .notAvailableIcon {
-    margin-top: 0;
     color: rgb(236, 85, 85);
   }
 
@@ -558,7 +574,7 @@ input::-webkit-input-placeholder {
     width: 60px;
     height: 56px;
     margin-top: 16px;
-    margin-left: 5px;
+    margin-left: 10px;
   }
   .customURL {
     border-width: 1px;
@@ -573,6 +589,7 @@ input::-webkit-input-placeholder {
     font-family: Domine;
     margin-left: 10px;
   }
+
   .customURL:focus {
     border-color: #d8c5a6;
   }
@@ -604,16 +621,15 @@ input::-webkit-input-placeholder {
   }
 
   .availableIcon {
-    margin-top: 74px;
+    margin-top: 0px;
     color: #4ba380;
   }
   .notAvailableIcon {
-    margin-top: 74px;
     color: rgb(236, 85, 85);
   }
 
   .availableText {
-    margin-top: 115px !important;
+    margin-top: 0px !important;
     font-family: oswald;
     font-size: 12px;
     margin-left: 10px;
@@ -744,12 +760,15 @@ input::-webkit-input-placeholder {
     margin-top: 16px;
     margin-left: 12px;
     padding: 24px;
-    font-size: 13px;
+    font-size: 16px;
     width: 91% !important;
     font-family: Domine !important;
     margin-bottom: 4em;
   }
-
+  .entitySubtext.personalUrlAdditionalInformation {
+    width: calc(70vw) !important;
+    margin-left: 10px !important;
+  }
   .errorMesSubtext {
     font-size: 12px;
     color: red;
@@ -760,7 +779,7 @@ input::-webkit-input-placeholder {
 
   .mobileAvailabilityIcon {
     width: 16px !important;
-    margin-top: -10em;
+    margin-top: 0;
   }
 
   .urlLoader {
@@ -770,14 +789,14 @@ input::-webkit-input-placeholder {
   }
   .mobileAvailabilitySubText {
     width: 16px !important;
-    margin-top: -12.5em;
+    margin-top: 0;
   }
   .mobileAvailabilityText {
-    margin-top: 88px;
+    margin-top: 0px;
     margin-left: -73px;
   }
   .mobileNotAvailabilityText {
-    margin-top: 88px;
+    margin-top: 60px;
     margin-left: -100px;
   }
 
@@ -853,7 +872,7 @@ input::-webkit-input-placeholder {
 
 @media only screen and (max-width: 414px) {
   .mobileAvailabilityText {
-    margin-top: 88px;
+    margin-top: 0px;
     margin-left: -68px;
   }
   .mobileNotAvailabilityText {
@@ -879,9 +898,27 @@ input::-webkit-input-placeholder {
     font-family: Domine;
     margin-left: -3vw;
   }
+  .personalUrlAdditionalInformation {
+    margin-left: -3vw !important;
+    width: calc(22vw + 65px) !important;
+  }
 }
 @media only screen and (max-width: 1300px) and (min-width: 1236px) {
   .customurlwidth1280 {
     width: 350px !important;
+  }
+}
+
+@media only screen and (max-width: 1920px) and (min-width: 1366px) {
+  .offsetLeftAvailableIcon {
+    margin-left: -60px !important;
+    margin-top: 12px;
+  }
+}
+
+@media only screen and (max-width: 3000px) and (min-width: 1920px) {
+  .offsetLeftAvailableIcon {
+    margin-left: -180px !important;
+    margin-top: 12px;
   }
 }

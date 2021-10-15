@@ -1,6 +1,6 @@
 import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import { site_key } from "../../configuration/config";
+import {site_key} from "../../configuration/config";
 import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import "./ConfirmDetails.css";
@@ -26,12 +26,10 @@ class ConfirmDetailsPasswordPage extends React.Component {
 
     // email
     if (type === "emailAddress") {
-      let regex = new RegExp(
-        '^(([^<>()[\\]\\.,;:\\s@"]+(\\.[^<>()[\\]\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$'
-      );
+      let regex = new RegExp('^(([^<>()[\\]\\.,;:\\s@"]+(\\.[^<>()[\\]\\.,;:\\s@"]+)*)|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$');
       if (regex.test(value)) {
         error = "";
-        this.setState({ emailError: error });
+        this.setState({emailError: error});
         this.checkAndMoveToLogin(error);
       } else {
         error = "Please enter a valid email address";
@@ -47,7 +45,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
       let errorUserData = this.props.errorUserData;
       errorUserData["forgotPasswordEmail"] = error;
       this.props.setErrorUserData(errorUserData);
-      this.setState({ emailError: error });
+      this.setState({emailError: error});
     }
   };
 
@@ -74,7 +72,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
       }
     }
 
-    this.setState({ password: value });
+    this.setState({password: value});
     let errorUserData = this.props.errorUserData;
     errorUserData["password"] = error;
     this.props.setErrorUserData(errorUserData);
@@ -91,7 +89,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
     if (recaptchaToken === null) {
       recaptchaToken = "";
     }
-    this.setState({ recaptchaToken });
+    this.setState({recaptchaToken});
     this.checkAndMoveToLogin(this.props.errorUserData.email);
   };
 
@@ -113,26 +111,17 @@ class ConfirmDetailsPasswordPage extends React.Component {
   };
 
   render() {
-    const { password, email, emailError } = this.state;
-    const { errorUserData } = this.props;
+    const {password, email, emailError} = this.state;
+    const {errorUserData} = this.props;
     console.log(errorUserData.forgotPasswordEmail);
     return (
       <React.Fragment>
-        <div
-          className={
-            window.innerWidth >= 550 ? "componentMargin2 " : "mobileComponent"
-          }
-        >
+        <div className={window.innerWidth >= 550 ? "componentMargin2 " : "mobileComponent"}>
           <span className="head2">Hey, there!</span>
 
-          <div className="staticText1">
-            Welcome {this.props.userData.first_name !== "" ? "back!" : null}
-          </div>
+          <div className="staticText1">Welcome {this.props.userData.first_name !== "" ? "back!" : null}</div>
 
-          <div className="staticText2">
-            We are excited to have you as a member of the Scout &amp; Cellar™
-            Family.
-          </div>
+          <div className="staticText2">We are excited to have you as a member of the Scout &amp; Cellar™ Family.</div>
 
           {/* input to accept Password  */}
           <div className="password1 form-group">
@@ -142,16 +131,12 @@ class ConfirmDetailsPasswordPage extends React.Component {
             <div className="wrapper-email">
               <div className="InputMargin one">
                 <input
-                  style={{ width: "40%" }}
+                  style={{width: "40%"}}
                   type="password"
                   autocomplete="none"
                   autoComplete="none"
                   value={password}
-                  className={
-                    errorUserData.password && errorUserData.password.length > 0
-                      ? "form-control Red"
-                      : "form-control Input"
-                  }
+                  className={errorUserData.password && errorUserData.password.length > 0 ? "form-control Red" : "form-control Input"}
                   id="password"
                   name="password"
                   placeholder="Enter your password"
@@ -169,11 +154,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
               </div>
               {!this.props.displayForgotPassword ? (
                 <div
-                  className={
-                    !this.props.rightFooterButtonDisabled
-                      ? "NextarrowForwardIcon two"
-                      : "NextarrowForwardIcon NextarrowForwardIconDisabled two"
-                  }
+                  className={!this.props.rightFooterButtonDisabled ? "NextarrowForwardIcon two" : "NextarrowForwardIcon NextarrowForwardIconDisabled two"}
                   onClick={() => {
                     if (!this.props.rightFooterButtonDisabled) {
                       if (this.props.rightFooterButtonName === "LOG IN") {
@@ -183,17 +164,17 @@ class ConfirmDetailsPasswordPage extends React.Component {
                     }
                   }}
                 >
-                  <ArrowForwardIosIcon style={{ color: "white" }} />
+                  <ArrowForwardIosIcon style={{color: "white"}} />
                 </div>
               ) : null}
             </div>
-            <div style={{ clear: "both" }}>
-              <span className="SubText" style={{ clear: "both" }}>
+            <div style={{clear: "both"}}>
+              <span className="SubText" style={{clear: "both"}}>
                 Forgot Your Password? &nbsp;
               </span>
               {/* link to forgot password */}
               <span
-                style={{ clear: "both" }}
+                style={{clear: "both"}}
                 className="passwordForgotLink"
                 onClick={() => {
                   this.props.setForgotPassword();
@@ -224,9 +205,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                     <span className="head2">FORGOT YOUR PASSWORD?</span>
                     {!this.props.customer ? (
                       <>
-                        <div className="forgotpasswordText1">
-                          Enter your email to be sent a password.
-                        </div>
+                        <div className="forgotpasswordText1">Enter your email to be sent a password.</div>
                         <div className="email1 form-group">
                           <label className="emailLabel" htmlFor="emailAddress">
                             EMAIL ADDRESS
@@ -237,11 +216,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
                               <input
                                 type="text"
                                 value={email}
-                                className={
-                                  emailError.length > 0
-                                    ? "form-control Red"
-                                    : "form-control Input"
-                                }
+                                className={emailError.length > 0 ? "form-control Red" : "form-control Input"}
                                 id="emailAddress"
                                 name="emailAddress"
                                 placeholder="Enter email address"
@@ -259,58 +234,39 @@ class ConfirmDetailsPasswordPage extends React.Component {
                               ) : null}
                             </div>
                             <div
-                              className={
-                                !this.props.rightFooterButtonDisabled
-                                  ? "NextarrowForwardIcon two1"
-                                  : "NextarrowForwardIcon NextarrowForwardIconDisabled two1"
-                              }
+                              className={!this.props.rightFooterButtonDisabled ? "NextarrowForwardIcon two1" : "NextarrowForwardIcon NextarrowForwardIconDisabled two1"}
                               onClick={() => {
                                 if (!this.props.rightFooterButtonDisabled) {
-                                  if (
-                                    this.props.rightFooterButtonName ===
-                                    "CONTINUE "
-                                  ) {
+                                  if (this.props.rightFooterButtonName === "CONTINUE ") {
                                     //call API to forgot password (API CALL IN Home)
                                     this.props.apiForgotPassword();
                                   }
                                 }
                               }}
                             >
-                              <ArrowForwardIosIcon style={{ color: "white" }} />
+                              <ArrowForwardIosIcon style={{color: "white"}} />
                             </div>
                           </div>
                         </div>
-                        <ReCAPTCHA
-                          style={{ clear: "both" }}
-                          data-size="compact"
-                          className="ReCAPTCHA"
-                          sitekey={site_key}
-                          onChange={this.onChangeReCaptcha}
-                        />
+                        <ReCAPTCHA style={{clear: "both"}} data-size="compact" className="ReCAPTCHA" sitekey={site_key} onChange={this.onChangeReCaptcha} />
                         {this.scrollToBottom()}
                       </>
                     ) : (
                       <>
                         <div className="customer-forgot-password">
                           <ul>
-                            <li>
+                            {/* <li>
                               Check your customer email for a forgot password /
                               reset email.
-                            </li>
+                            </li> */}
                             <li>
                               Visit{" "}
-                              <a
-                                href="https://scoutandcellar.com/"
-                                target={"_blank"}
-                              >
+                              <a href="https://scoutandcellar.com/login/" target={"_blank"}>
                                 ScoutandCellar.com
                               </a>{" "}
                               to reset your password.
                             </li>
-                            <li>
-                              Come back and re-attempt the login with your
-                              changed password.
-                            </li>
+                            <li>Come back and re-attempt the login with your changed password.</li>
                           </ul>
                         </div>
                       </>
@@ -321,17 +277,8 @@ class ConfirmDetailsPasswordPage extends React.Component {
             </>
           ) : this.props.showSentEmailText ? (
             <div className="forgot-password-confirmation">
-              <CheckCircleIcon
-                className="forgot-password-confirmation-Icon "
-                style={
-                  window.innerWidth <= 850
-                    ? window.innerWidth <= 550
-                      ? { fontSize: 20 }
-                      : { fontSize: 23 }
-                    : { fontSize: 30 }
-                }
-              />{" "}
-              A password is sent to your email
+              <CheckCircleIcon className="forgot-password-confirmation-Icon " style={window.innerWidth <= 850 ? (window.innerWidth <= 550 ? {fontSize: 20} : {fontSize: 23}) : {fontSize: 30}} /> A
+              password is sent to your email
             </div>
           ) : null}
         </div>
