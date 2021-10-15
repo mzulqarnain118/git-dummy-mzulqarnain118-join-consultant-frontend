@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import {withStyles} from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -13,12 +13,12 @@ import VerifyIdentity from "../VerifyIdentity/VerifyIdentity";
 import PurchaseKit from "../PurchaseKit/PurchaseKit";
 import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 import StepConnector from "@material-ui/core/StepConnector";
-import { Logo } from "../../Assets/HeaderSVG";
+import {Logo} from "../../Assets/HeaderSVG";
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import * as API from "../../configuration/apiconfig";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
-import { algoliaURL, getWorkingWithURL } from "../../configuration/config";
+import {algoliaURL, getWorkingWithURL} from "../../configuration/config";
 import swal from "sweetalert";
 import moment from "moment";
 require("typeface-oswald");
@@ -270,15 +270,9 @@ class Home extends React.Component {
   checkMaxScreenCovered = () => {
     if (this.state.cart_id !== "") {
       return 3;
-    } else if (
-      this.state.userData.indepedent_agreement &&
-      this.state.userData.policy_procedures
-    ) {
+    } else if (this.state.userData.indepedent_agreement && this.state.userData.policy_procedures) {
       return 2;
-    } else if (
-      this.state.checkURLAvailability &&
-      this.state.errorUserData.ssn === ""
-    ) {
+    } else if (this.state.checkURLAvailability && this.state.errorUserData.ssn === "") {
       return 1;
     } else {
       return 0;
@@ -300,33 +294,28 @@ class Home extends React.Component {
   //top bar navigation
   topBarNavigation = async (label) => {
     let rightFooterButtonName = this.state.rightFooterButtonName;
-    if (
-      rightFooterButtonName !== "LOG IN" &&
-      rightFooterButtonName !== "NEXT" &&
-      rightFooterButtonName !== "CONTINUE " &&
-      this.state.rightFooterButtonName !== "SAVE AND PROCEED"
-    ) {
+    if (rightFooterButtonName !== "LOG IN" && rightFooterButtonName !== "NEXT" && rightFooterButtonName !== "CONTINUE " && this.state.rightFooterButtonName !== "SAVE AND PROCEED") {
       //moving backward
       if (this.moveBack(label)) {
-        if (label === "CONFIRM DETAILS") {
+        if (label === "CONFIRM DETAILS" && this.state.activeStep != 0) {
           this.setState({
             rightFooterButtonName: "LOOKS GOOD",
             activeStep: 0,
             rightFooterButtonDisabled: false,
           });
-        } else if (label === "BUSINESS DETAILS") {
+        } else if (label === "BUSINESS DETAILS" && this.state.activeStep != 1) {
           this.setState({
             rightFooterButtonName: "PROCEED",
             activeStep: 1,
             rightFooterButtonDisabled: false,
           });
-        } else if (label === "REVIEW TERMS") {
+        } else if (label === "REVIEW TERMS" && this.state.activeStep != 2) {
           this.setState({
             rightFooterButtonName: "CONTINUE",
             activeStep: 2,
             rightFooterButtonDisabled: false,
           });
-        } else if (label === "PURCHASE KIT") {
+        } else if (label === "PURCHASE KIT" && this.state.activeStep != 3) {
           this.setState({
             rightFooterButtonName: "DONE",
             activeStep: 3,
@@ -409,10 +398,10 @@ class Home extends React.Component {
 
   // API to Verify Email (landing page)
   apiVerifyEmail = async () => {
-    this.setState({ load: true, rightFooterButtonDisabled: true });
+    this.setState({load: true, rightFooterButtonDisabled: true});
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
-    let data = { email: userData["email"] };
+    let data = {email: userData["email"]};
     await API.callEndpoint("POST", "Basic", "/api/v1/users/verifyEmail", data)
       .then((response) => {
         try {
@@ -465,7 +454,7 @@ class Home extends React.Component {
 
   // API to Login
   apiLogin = async () => {
-    this.setState({ load: true, rightFooterButtonDisabled: true });
+    this.setState({load: true, rightFooterButtonDisabled: true});
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
     let activeStep = 0;
@@ -481,7 +470,7 @@ class Home extends React.Component {
             month: 1 + Date.month(),
             year: Date.year(),
           };
-          // //existing customer login fix
+          //existing customer login fix
           if (userData["phonenumber"].length < 10) {
             userData["phonenumber"] = "";
           }
@@ -512,10 +501,7 @@ class Home extends React.Component {
               buttonDisable = true;
               buttonName = "PROCEED";
             } else if (activeStep === 2) {
-              buttonDisable = !(
-                userData["indepedent_agreement"] &&
-                userData["policy_procedures"]
-              );
+              buttonDisable = !(userData["indepedent_agreement"] && userData["policy_procedures"]);
               buttonName = "CONTINUE";
             } else if (activeStep === 3) {
               buttonDisable = true;
@@ -562,7 +548,7 @@ class Home extends React.Component {
 
   // API to update user data
   apiUpdateUserData = async () => {
-    this.setState({ load: true, rightFooterButtonDisabled: true });
+    this.setState({load: true, rightFooterButtonDisabled: true});
     let data = {};
     let userData = this.state.userData;
 
@@ -641,7 +627,7 @@ class Home extends React.Component {
   // Api to update which screen the user has completed ,
   //screen represented by screen id + data collected in that screen
   apiUpdateScreen = async (data, buttonName, userRequested = "") => {
-    this.setState({ load: true, rightFooterButtonDisabled: true });
+    this.setState({load: true, rightFooterButtonDisabled: true});
     let errorUserData = this.state.errorUserData;
     let rightFooterButtonDisabled = true;
     await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
@@ -691,32 +677,27 @@ class Home extends React.Component {
     let data = {
       url: customURL,
     };
-    return await API.callEndpoint(
-      "POST",
-      "Bearer",
-      "/api/v1/users/verifyUrl",
-      data
-    )
+    return await API.callEndpoint("POST", "Bearer", "/api/v1/users/verifyUrl", data)
       .then((response) => {
         try {
           if (response.data.validText) {
-            this.setState({ checkURLAvailability: true });
+            this.setState({checkURLAvailability: true});
             return true;
           } else {
-            this.setState({ checkURLAvailability: false });
+            this.setState({checkURLAvailability: false});
             return false;
           }
         } catch (e) {
           console.log("Error in /VerifyURL1");
           console.log(e);
-          this.setState({ checkURLAvailability: false });
+          this.setState({checkURLAvailability: false});
           return false;
         }
       })
       .catch((error) => {
         console.log("Error in /VerifyURL2");
         console.log(error);
-        this.setState({ checkURLAvailability: false });
+        this.setState({checkURLAvailability: false});
         return false;
       });
   };
@@ -725,7 +706,7 @@ class Home extends React.Component {
   apiGetCartId = async () => {
     let userData = this.state.userData;
     userData["cart_id"] = "";
-    this.setState({ userData });
+    this.setState({userData});
 
     await API.callEndpoint("POST", "Bearer", "/api/v1/users/createCart")
       .then((response) => {
@@ -765,34 +746,25 @@ class Home extends React.Component {
 
   //API get card details
   apiCartDetails = async () => {
-    this.setState({ load: true });
+    this.setState({load: true});
 
     await this.apiGetCartId();
 
     if (this.state.userData["cart_id"] !== "") {
       let cartId = this.state.userData.cart_id;
-      this.setState({ load: true });
+      this.setState({load: true});
       let purchaseKitDetails = this.state.purchaseKitDetails;
       let data = {
         id: this.state.userData.id,
         ssn: this.state.userData.ssn,
       };
-      await API.callEndpoint(
-        "GET",
-        "Bearer",
-        "/api/v1/users/viewCart?cartid=" + cartId,
-        data
-      )
+      await API.callEndpoint("GET", "Bearer", "/api/v1/users/viewCart?cartid=" + cartId, data)
         .then((response) => {
           try {
-            purchaseKitDetails["subtotal"] =
-              response.data.OrderLines[0].Subtotal;
-            purchaseKitDetails["shipping"] =
-              response.data.OrderLines[0].ShippingTax;
-            purchaseKitDetails["salestax"] =
-              response.data.OrderLines[0].ItemTax;
-            purchaseKitDetails["discount"] =
-              response.data.OrderLines[0].Discounts;
+            purchaseKitDetails["subtotal"] = response.data.OrderLines[0].Subtotal;
+            purchaseKitDetails["shipping"] = response.data.OrderLines[0].ShippingTax;
+            purchaseKitDetails["salestax"] = response.data.OrderLines[0].ItemTax;
+            purchaseKitDetails["discount"] = response.data.OrderLines[0].Discounts;
             purchaseKitDetails["total"] = response.data.OrderLines[0].LineTotal;
 
             this.setState({
@@ -831,7 +803,7 @@ class Home extends React.Component {
 
   // api to create a consultant
   apiCreateConsultant = async () => {
-    this.setState({ load: true, rightFooterButtonDisabled: true });
+    this.setState({load: true, rightFooterButtonDisabled: true});
     let billingAddress = this.state.billingAddress;
     let userData = this.state.userData;
     // use same billing and shipping addesss ( note: address change should be set to false when handling request)
@@ -856,12 +828,7 @@ class Home extends React.Component {
       cardinfo: this.state.cardinfo,
     };
 
-    await API.callEndpoint(
-      "POST",
-      "Bearer",
-      "/api/v1/users/createConsultant",
-      data
-    )
+    await API.callEndpoint("POST", "Bearer", "/api/v1/users/createConsultant", data)
       .then((response) => {
         try {
           let consultant_number = 0;
@@ -902,17 +869,12 @@ class Home extends React.Component {
 
   //api for forgot password
   apiForgotPassword = async () => {
-    this.setState({ load: true });
+    this.setState({load: true});
     let errorUserData = this.state.errorUserData;
     let data = {
       email: this.state.userData.email,
     };
-    await API.callEndpoint(
-      "POST",
-      "Basic",
-      "/api/v1/users/forgotpassword",
-      data
-    )
+    await API.callEndpoint("POST", "Basic", "/api/v1/users/forgotpassword", data)
       .then((response) => {
         try {
           this.setState({
@@ -965,15 +927,15 @@ class Home extends React.Component {
       .post(algoliaURL, data)
       .then((res) => {
         try {
-          this.setState({ working_with_arr: res.data.results[0].hits });
+          this.setState({working_with_arr: res.data.results[0].hits});
         } catch (e) {
           console.log(e);
-          this.setState({ working_with_arr: [] });
+          this.setState({working_with_arr: []});
         }
       })
       .catch((error) => {
         console.log(error);
-        this.setState({ working_with_arr: [] });
+        this.setState({working_with_arr: []});
       });
   };
 
@@ -1019,17 +981,17 @@ class Home extends React.Component {
 
   //method to set card and address details
   setCardDetails = (cardinfo, addresschange, billingAddress) => {
-    this.setState({ cardinfo, addresschange, billingAddress });
+    this.setState({cardinfo, addresschange, billingAddress});
   };
 
   // method to (ennable/disable) footer
   setDisplayFooter = (value) => {
-    this.setState({ displayFooter: value });
+    this.setState({displayFooter: value});
   };
 
   //setCheckURLAvailability
   setCheckURLAvailability = (value) => {
-    this.setState({ checkURLAvailability: value });
+    this.setState({checkURLAvailability: value});
   };
 
   //stepper
@@ -1039,12 +1001,7 @@ class Home extends React.Component {
 
   //stepper title content
   getSteps = () => {
-    return [
-      "CONFIRM DETAILS",
-      "BUSINESS DETAILS",
-      "REVIEW TERMS",
-      "PURCHASE KIT",
-    ];
+    return ["CONFIRM DETAILS", "BUSINESS DETAILS", "REVIEW TERMS", "PURCHASE KIT"];
   };
 
   //stepper content to be displayed based on current active step
@@ -1141,25 +1098,25 @@ class Home extends React.Component {
 
   //set email sent confirmation
   setShowSentEmailText = (value) => {
-    this.setState({ showSentEmailText: value });
+    this.setState({showSentEmailText: value});
   };
   //set confirmation
   setAddresschange = (value) => {
-    this.setState({ addresschange: value });
+    this.setState({addresschange: value});
   };
 
   //set confirmation
   setConfirmation = (value) => {
-    this.setState({ confirmation: value });
+    this.setState({confirmation: value});
   };
 
   //set display forgot password
   setForgotPassword = () => {
-    this.setState({ displayForgotPassword: true });
+    this.setState({displayForgotPassword: true});
   };
   //set current agreement
   setCurrentAgreement = () => {
-    this.setState({ currentAgreement: !this.state.currentAgreement });
+    this.setState({currentAgreement: !this.state.currentAgreement});
   };
 
   //method to move to next screen
@@ -1190,12 +1147,12 @@ class Home extends React.Component {
 
   // method to enable/disable right footer button
   setrightFooterButtonDisabled = (value) => {
-    this.setState({ rightFooterButtonDisabled: value });
+    this.setState({rightFooterButtonDisabled: value});
   };
 
   // to move to next screen
   handleNext = () => {
-    const { activeStep } = this.state;
+    const {activeStep} = this.state;
 
     this.setState({
       activeStep: activeStep + 1,
@@ -1281,7 +1238,7 @@ class Home extends React.Component {
         }
 
       default:
-        this.setState({ rightFooterButtonName: "NEXT" });
+        this.setState({rightFooterButtonName: "NEXT"});
         break;
     }
   };
@@ -1293,35 +1250,23 @@ class Home extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const {classes} = this.props;
     const steps = this.getSteps();
     const mobileStep = this.getMobileSteps();
-    const { activeStep, load, rightFooterButtonName } = this.state;
+    const {activeStep, load, rightFooterButtonName} = this.state;
     return (
       <div tabIndex="0" onKeyDown={this.handleKeypress}>
-        {load ? (
-          <CircularProgress
-            color="black"
-            size={80}
-            className={rightFooterButtonName !== "DONE" ? "loader" : "pkLoader"}
-          />
-        ) : null}
+        {load ? <CircularProgress color="black" size={80} className={rightFooterButtonName !== "DONE" ? "loader" : "pkLoader"} /> : null}
         {/* If active step is less than 4 appropriate step page is dispayed , 
         if active step is 4  - payment confirmation page is displayed */}
         {activeStep < 4 ? (
           <>
             <div className="container-fluid">
               <div className="row headerMarginTop">
-                {window.innerWidth >= 550 ||
-                rightFooterButtonName === "NEXT" ||
-                rightFooterButtonName === "LOG IN" ||
-                rightFooterButtonName === "CONTINUE " ? (
+                {window.innerWidth >= 550 || rightFooterButtonName === "NEXT" || rightFooterButtonName === "LOG IN" || rightFooterButtonName === "CONTINUE " ? (
                   <>
                     <div className="col-xl-2 col-lg-1 col-md-1 col-1">
-                      <div
-                        className="arrowIcon3"
-                        onClick={this.handleBackButton}
-                      >
+                      <div className="arrowIcon3" onClick={this.handleBackButton}>
                         <ArrowBackIosIcon />
                       </div>
                     </div>
@@ -1336,11 +1281,7 @@ class Home extends React.Component {
                 ) : null}
                 <div className="col-xl-8 col-lg-9 col-md-12 col-12 stepperMarginTop">
                   {/* stepper */}
-                  <Stepper
-                    activeStep={activeStep}
-                    connector={<GreenStepConnector />}
-                    orientation={"horizontal"}
-                  >
+                  <Stepper activeStep={activeStep} connector={<GreenStepConnector />} orientation={"horizontal"}>
                     {steps.map((label, index) => {
                       return (
                         <Step
@@ -1361,10 +1302,7 @@ class Home extends React.Component {
                               },
                             }}
                           >
-                            <span
-                              className="fontOswald"
-                              onClick={() => this.topBarNavigation(label)}
-                            >
+                            <span className="fontOswald" onClick={() => this.topBarNavigation(label)}>
                               {label}
                             </span>
                           </StepLabel>
@@ -1382,38 +1320,28 @@ class Home extends React.Component {
                   {window.innerWidth >= 550 ? (
                     <>
                       {/* to display content based on active step */}
-                      <div style={{ marginTop: "4em" }}>
-                        <Typography className={classes.instructions}>
-                          {this.getStepContent(activeStep)}
-                        </Typography>
+                      <div style={{marginTop: "4em"}}>
+                        <Typography className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
                       </div>
                     </>
                   ) : (
                     <>
                       {/* enter email */}
                       <div className="mobileMargin">
-                        <Typography className={classes.instructions}>
-                          {this.getStepContent(activeStep)}
-                        </Typography>
+                        <Typography className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
                       </div>
                       {/* Stepper */}
                       {this.state.rightFooterButtonName === "NEXT" ? (
                         <div className="btm-list-blk">
                           <div className="btm-list-inner">
-                            <div className="mobileStepHead">
-                              WHAT HAPPENS NEXT?
-                            </div>
+                            <div className="mobileStepHead">WHAT HAPPENS NEXT?</div>
                             {/* stepper for mobile view  */}
                             <Stepper
                               connector={<MobileStepConnector />}
                               activeStep={0}
-                              style={{ background: "#e8e0dd" }}
+                              style={{background: "#e8e0dd"}}
                               className="mobileStep"
-                              orientation={
-                                window.innerWidth >= 550
-                                  ? "horizontal"
-                                  : "vertical"
-                              }
+                              orientation={window.innerWidth >= 550 ? "horizontal" : "vertical"}
                             >
                               {mobileStep.map((label, index) => {
                                 return (
@@ -1436,9 +1364,7 @@ class Home extends React.Component {
                                         },
                                       }}
                                     >
-                                      <span className="fontOswald1">
-                                        {label}
-                                      </span>
+                                      <span className="fontOswald1">{label}</span>
                                     </StepLabel>
                                   </Step>
                                 );
