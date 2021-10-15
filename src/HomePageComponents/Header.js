@@ -10,7 +10,9 @@ const Header = () => {
         <section className="container p-0">
           <section className="row d-flex flex-row m-0 justify-content-start align-items-md-start align-items-center">
             <aside className="col-lg-1 col-md-1 col-2 p-0 pt-3 back-btn">
-              <img src={Back} width="15" alt="BACK" />
+              <a href="https://scoutandcellar.com/">
+                <img src={Back} width="15" alt="BACK" />
+              </a>
             </aside>
             <aside className="col-lg-3 col-md-3 col-10 p-0 sc-logo">
               <a href="https://scoutandcellar.com/">

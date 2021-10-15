@@ -158,9 +158,9 @@ const Footer = () => {
             </p>
           </section>
         </section>
-        <button type="button" className="button-v2" title="Chat with bot">
+        {/* <button type="button" className="button-v2" title="Chat with bot">
           <img src={Chat} alt="" />
-        </button>
+        </button> */}
       </footer>
     </>
   );
