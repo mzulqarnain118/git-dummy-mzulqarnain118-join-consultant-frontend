@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Header from "../MobileHeader/Header";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import {withStyles} from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 
 const styles = (theme) => ({
   paper: {
@@ -153,11 +153,19 @@ class ConfirmDetailsEdit extends React.Component {
       if (value !== "") {
         error[type] = "";
         errorArr[0] = true;
+
+        if (value.length > 30) {
+          error[type] = "First name has exceeded the max length";
+          errorArr[0] = false;
+        }
       } else {
         error[type] = "First Name is mandatory";
         errorArr[0] = false;
       }
-      form[type] = value;
+      form[type] = value
+        .split("")
+        .filter((item) => item.match(/[a-zA-Z ]/i))
+        .join("");
     }
 
     // lastname
@@ -165,11 +173,19 @@ class ConfirmDetailsEdit extends React.Component {
       if (value !== "") {
         error[type] = "";
         errorArr[1] = true;
+
+        if (value.length > 30) {
+          error[type] = "Last name has exceeded the max length";
+          errorArr[1] = false;
+        }
       } else {
         error[type] = "Last Name is mandatory";
         errorArr[1] = false;
       }
-      form[type] = value;
+      form[type] = value
+        .split("")
+        .filter((item) => item.match(/[a-zA-Z ]/i))
+        .join("");
     }
 
     // address street
@@ -229,7 +245,7 @@ class ConfirmDetailsEdit extends React.Component {
         error[type] = "";
         if (value.length === 12) {
           errorArr[6] = true;
-          await this.setState({avoidPhoneError: true});
+          await this.setState({ avoidPhoneError: true });
         } else if (value.length !== 12 && this.state.avoidPhoneError) {
           error[type] = "Invalid Cell Number";
           errorArr[6] = false;
@@ -257,7 +273,7 @@ class ConfirmDetailsEdit extends React.Component {
         errorArr[7] = false;
       }
       this.props.apiGetWorkingWithDropDownData(value);
-      form[type] = {id: 1, name: value};
+      form[type] = { id: 1, name: value };
     }
 
     // email id
@@ -282,7 +298,7 @@ class ConfirmDetailsEdit extends React.Component {
     // enable /disable button to move to next screen
     this.validateToMoveToNextScreen(this.state.avoidDateError);
 
-    this.setState({userData: form, error: error, errorArr: errorArr});
+    this.setState({ userData: form, error: error, errorArr: errorArr });
   };
 
   // to handle change in date
@@ -326,23 +342,34 @@ class ConfirmDetailsEdit extends React.Component {
       this.validateToMoveToNextScreen(this.state.avoidDateError);
     }
 
-    if (moment(new Date(userData.dob.year, userData.dob.month, userData.dob.day)).format("MM/DD/YYYY") === "Invalid date" && this.state.avoidDateError) {
+    if (
+      moment(
+        new Date(userData.dob.year, userData.dob.month, userData.dob.day)
+      ).format("MM/DD/YYYY") === "Invalid date" &&
+      this.state.avoidDateError
+    ) {
       error["dob"] = "Invalid Date";
       this.props.setrightFooterButtonDisabled(true);
     }
-    if (moment(new Date(userData.dob.year, userData.dob.month, userData.dob.day)).format("MM/DD/YYYY") !== "Invalid date") {
-      this.setState({avoidDateError: true});
+    if (
+      moment(
+        new Date(userData.dob.year, userData.dob.month, userData.dob.day)
+      ).format("MM/DD/YYYY") !== "Invalid date"
+    ) {
+      this.setState({ avoidDateError: true });
       this.validateToMoveToNextScreen(true);
     }
 
-    this.setState({userData: userData});
+    this.setState({ userData: userData });
   };
 
   validateToMoveToNextScreen = (avoidDateError) => {
     let errorArr = this.state.errorArr;
     let userData = this.state.userData;
     let avoidPhoneError = this.state.avoidPhoneError;
-    let date = moment(new Date(userData.dob.year, userData.dob.month, userData.dob.day)).format("MM/DD/YYYY");
+    let date = moment(
+      new Date(userData.dob.year, userData.dob.month, userData.dob.day)
+    ).format("MM/DD/YYYY");
     // enable /disable button to move to next screen
     this.props.setrightFooterButtonDisabled(
       !(
@@ -436,24 +463,42 @@ class ConfirmDetailsEdit extends React.Component {
       };
       avoidDateError = false;
     }
-    this.setState({errorArr, userData, avoidDateError, avoidPhoneError});
+    this.setState({ errorArr, userData, avoidDateError, avoidPhoneError });
   };
 
   render() {
-    const {userData, error} = this.state;
-    const {classes, working_with_arr} = this.props;
+    const { userData, error } = this.state;
+    const { classes, working_with_arr } = this.props;
     return (
       <React.Fragment>
         {/* display header for mobile view */}
-        {window.innerWidth <= 550 ? <Header step={0} agreement={false} handleBackButton={this.props.handleBackButton} topBarNavigation={this.props.topBarNavigation} /> : null}
-        <div className={window.innerWidth >= 550 ? "componentMargin4 " : "CEmobileComponent"}>
+        {window.innerWidth <= 550 ? (
+          <Header
+            step={0}
+            agreement={false}
+            handleBackButton={this.props.handleBackButton}
+            topBarNavigation={this.props.topBarNavigation}
+          />
+        ) : null}
+        <div
+          className={
+            window.innerWidth >= 550 ? "componentMargin4 " : "CEmobileComponent"
+          }
+        >
           {/* static text to be displayed */}
           <span className="head1">
             GOOD MOVE
-            {this.props.userData.first_name !== "" ? <>, {userData.first_name.toUpperCase()}!</> : null}
+            {this.props.userData.first_name !== "" ? (
+              <>, {userData.first_name.toUpperCase()}!</>
+            ) : null}
           </span>
-          <div className="staticText3">We love it when we have new members of the Scout & Cellar Family. Let’s get you started!</div>
-          <div className="staticText4">Take a quick look at the details below, then we’ll move forward</div>
+          <div className="staticText3">
+            We love it when we have new members of the Scout & Cellar Family.
+            Let’s get you started!
+          </div>
+          <div className="staticText4">
+            Take a quick look at the details below, then we’ll move forward
+          </div>
           {/* edit name and date of birth */}
           <div className="row edit-margin">
             <div className="col-lg-2 col-md-3">
@@ -467,7 +512,11 @@ class ConfirmDetailsEdit extends React.Component {
                     autocomplete="none"
                     autoComplete="none"
                     value={userData["first_name"]}
-                    className={error.first_name.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    className={
+                      error.first_name.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
                     id="first_name"
                     name="first_name"
                     placeholder="Enter first name"
@@ -495,7 +544,11 @@ class ConfirmDetailsEdit extends React.Component {
                     autocomplete="none"
                     autoComplete="none"
                     value={userData["last_name"]}
-                    className={error.last_name.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    className={
+                      error.last_name.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
                     id="last_name"
                     name="last_name"
                     placeholder="Enter last name"
@@ -519,7 +572,11 @@ class ConfirmDetailsEdit extends React.Component {
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select
-                        className={error.dob.length > 0 ? "form-control edit-month-red" : "form-control edit-month"}
+                        className={
+                          error.dob.length > 0
+                            ? "form-control edit-month-red"
+                            : "form-control edit-month"
+                        }
                         value={this.state.userData.dob.month}
                         id="month"
                         name="month"
@@ -541,7 +598,11 @@ class ConfirmDetailsEdit extends React.Component {
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select
-                        className={error.dob.length > 0 ? "form-control edit-day-red" : "form-control edit-day"}
+                        className={
+                          error.dob.length > 0
+                            ? "form-control edit-day-red"
+                            : "form-control edit-day"
+                        }
                         value={this.state.userData.dob.day}
                         id="day"
                         name="day"
@@ -559,7 +620,11 @@ class ConfirmDetailsEdit extends React.Component {
                             i <=
                             [
                               31,
-                              (this.state.userData.dob.year % 4 === 0 && this.state.userData.dob.year % 100 !== 0) || this.state.userData.dob.year % 400 === 0 ? 29 : 28,
+                              (this.state.userData.dob.year % 4 === 0 &&
+                                this.state.userData.dob.year % 100 !== 0) ||
+                              this.state.userData.dob.year % 400 === 0
+                                ? 29
+                                : 28,
                               31,
                               30,
                               31,
@@ -589,7 +654,11 @@ class ConfirmDetailsEdit extends React.Component {
                   <div className="form-group">
                     <div className="edit-InputMargin">
                       <select
-                        className={error.dob.length > 0 ? "form-control edit-year-red" : "form-control edit-year"}
+                        className={
+                          error.dob.length > 0
+                            ? "form-control edit-year-red"
+                            : "form-control edit-year"
+                        }
                         value={this.state.userData.dob.year}
                         id="year"
                         name="year"
@@ -602,7 +671,11 @@ class ConfirmDetailsEdit extends React.Component {
                         );
                         {(() => {
                           const options = [];
-                          for (let i = 1970; i <= new Date().getFullYear() - 21; i++) {
+                          for (
+                            let i = 1970;
+                            i <= new Date().getFullYear() - 21;
+                            i++
+                          ) {
                             options.push(
                               <option value={i} key={"YYYY"}>
                                 {i}
@@ -637,7 +710,11 @@ class ConfirmDetailsEdit extends React.Component {
                     autocomplete="none"
                     autoComplete="none"
                     value={userData["email"]}
-                    className={error.email.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    className={
+                      error.email.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
                     id="email"
                     name="email"
                     placeholder="Enter Email ID"
@@ -669,7 +746,11 @@ class ConfirmDetailsEdit extends React.Component {
                     autocomplete="none"
                     autoComplete="none"
                     value={userData["address"]["street"]}
-                    className={error.address.street.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    className={
+                      error.address.street.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
                     id="street"
                     name="street"
                     placeholder="Enter street"
@@ -697,7 +778,11 @@ class ConfirmDetailsEdit extends React.Component {
                     autocomplete="none"
                     autoComplete="none"
                     value={userData["address"]["zipcode"]}
-                    className={error.address.zipcode.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    className={
+                      error.address.zipcode.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
                     id="zipcode"
                     name="zipcode"
                     placeholder="Enter zipcode"
@@ -727,7 +812,11 @@ class ConfirmDetailsEdit extends React.Component {
                     autocomplete="none"
                     autoComplete="none"
                     value={userData["address"]["city"]}
-                    className={error.address.city.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    className={
+                      error.address.city.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
                     id="city"
                     name="city"
                     placeholder="Enter city"
@@ -753,7 +842,11 @@ class ConfirmDetailsEdit extends React.Component {
                 </span>
                 <div className="edit-InputMargin">
                   <select
-                    className={error.address.state.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    className={
+                      error.address.state.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
                     value={userData["address"]["state"]}
                     id="state"
                     name="state"
@@ -792,7 +885,11 @@ class ConfirmDetailsEdit extends React.Component {
                     autocomplete="none"
                     autoComplete="none"
                     value={userData["phonenumber"]}
-                    className={error.phonenumber.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    className={
+                      error.phonenumber.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
                     id="phonenumber"
                     name="phonenumber"
                     placeholder="Enter cell number"
@@ -818,7 +915,11 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <Autocomplete
                     disabled={this.props.fixedWorkingWith}
-                    className={error.working_with.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    className={
+                      error.working_with.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
                     value={{
                       id: this.props.userData["working_with"].id,
                       DisplayName: this.props.userData["working_with"].name,
@@ -834,7 +935,7 @@ class ConfirmDetailsEdit extends React.Component {
                           displayId: newValue["DisplayID"],
                         };
                       }
-                      this.setState({value: newValue, userData});
+                      this.setState({ value: newValue, userData });
                     }}
                     inputValue={this.state.userData["working_with"].name}
                     onInputChange={(event, newInputValue) => {
@@ -855,14 +956,20 @@ class ConfirmDetailsEdit extends React.Component {
                         return "";
                       }
                     }}
-                    style={{width: 290}}
+                    style={{ width: 290 }}
                     classes={{
                       paper: classes.paper,
                       inputRoot: classes.inputRoot,
                       root: classes.listbox,
                     }}
                     renderInput={(params) => (
-                      <TextField {...params} classes={{root: classes.customTextField}} placeholder="Enter Consultant’s Team You’re Joining" variant="outlined" disabled={this.props.fixedWorkingWith} />
+                      <TextField
+                        {...params}
+                        classes={{ root: classes.customTextField }}
+                        placeholder="Enter Consultant’s Team You’re Joining"
+                        variant="outlined"
+                        disabled={this.props.fixedWorkingWith}
+                      />
                     )}
                   />
                 </div>
@@ -896,9 +1003,17 @@ const maskingPhoneNumber = (value) => {
     .join("");
 
   if (value.length > 3 && value.length <= 6) {
-    value = value.split("").splice(0, 3).join("") + "-" + value.split("").splice(3).join("");
+    value =
+      value.split("").splice(0, 3).join("") +
+      "-" +
+      value.split("").splice(3).join("");
   } else if (value.length >= 7) {
-    value = value.split("").splice(0, 3).join("") + "-" + value.split("").splice(3, 3).join("") + "-" + value.split("").splice(6).join("");
+    value =
+      value.split("").splice(0, 3).join("") +
+      "-" +
+      value.split("").splice(3, 3).join("") +
+      "-" +
+      value.split("").splice(6).join("");
   }
 
   return value;

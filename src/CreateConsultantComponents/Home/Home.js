@@ -297,25 +297,25 @@ class Home extends React.Component {
     if (rightFooterButtonName !== "LOG IN" && rightFooterButtonName !== "NEXT" && rightFooterButtonName !== "CONTINUE " && this.state.rightFooterButtonName !== "SAVE AND PROCEED") {
       //moving backward
       if (this.moveBack(label)) {
-        if (label === "CONFIRM DETAILS" && this.state.activeStep != 0) {
+        if (label === "CONFIRM DETAILS" && this.state.activeStep !== 0) {
           this.setState({
             rightFooterButtonName: "LOOKS GOOD",
             activeStep: 0,
             rightFooterButtonDisabled: false,
           });
-        } else if (label === "BUSINESS DETAILS" && this.state.activeStep != 1) {
+        } else if (label === "BUSINESS DETAILS" && this.state.activeStep !== 1) {
           this.setState({
             rightFooterButtonName: "PROCEED",
             activeStep: 1,
             rightFooterButtonDisabled: false,
           });
-        } else if (label === "REVIEW TERMS" && this.state.activeStep != 2) {
+        } else if (label === "REVIEW TERMS" && this.state.activeStep !== 2) {
           this.setState({
             rightFooterButtonName: "CONTINUE",
             activeStep: 2,
             rightFooterButtonDisabled: false,
           });
-        } else if (label === "PURCHASE KIT" && this.state.activeStep != 3) {
+        } else if (label === "PURCHASE KIT" && this.state.activeStep !== 3) {
           this.setState({
             rightFooterButtonName: "DONE",
             activeStep: 3,
@@ -473,6 +473,12 @@ class Home extends React.Component {
           //existing customer login fix
           if (userData["phonenumber"].length < 10) {
             userData["phonenumber"] = "";
+          }
+          if (userData["first_name"] === "DO NOT USE") {
+            userData["first_name"] = "";
+          }
+          if (userData["last_name"] === "DO NOT USE") {
+            userData["last_name"] = "";
           }
           if (userData["street"] === "DO NOT USE, DO NOT USE") {
             userData["street"] = "";
