@@ -385,51 +385,70 @@ class PaymentConfirmation extends React.Component {
                     get your business up and running:
                   </b>
                 </p>
-                <p>
-                  <b>1. Start learning!</b> You'll receive a series of emails
-                  over the next 5 days with important information and action
-                  items for getting off to a great start! You'll also want to be
-                  sure to complete Scout School Online located in The Cellar and
-                  in our Scout & Cellar Mobile App The Vine. These series of
-                  videos are the most comprehensive resource for everything you
-                  need to know to get started.
-                </p>
-                <p>
-                  <b>2. Get Social!</b> Set up any social media accounts like
-                  Facebook and Instagram that you'd like to personalize for your
-                  Scout & Cellar Business.
-                </p>
-                <p>
-                  <b>3. Start Sharing!</b> Announce your Scout & Cellar business
-                  on social media and share your personal journey to
-                  clean-crafted wine with your followers, family, and friends.
-                  Want personalized business cards? You can create and order
-                  them through FedEx. Learn more in The Cellar &#62; Brand &
-                  Marketing &#62; Business Cards & Supplies.
-                </p>
-                <p>
-                  <b>4. Learn your way around!</b> Dive into all the resources
-                  available in The Cellar to educate yourself regarding our
-                  business, our brand, our wines, and our culture.
-                </p>
-                <p>
-                  <b>5. Begin Connecting!</b> Schedule a call with your Mentor
-                  and join your team's Facebook group.
-                </p>
-                <p>
-                  <b>6. Stock Your Cellar!</b>
-                </p>
-                <p>
-                  <b>7. Book A Tasting!</b> Schedule your first tasting and
-                  start promoting Scout & Cellar wine in-person or online.
-                </p>
-                <p>
-                  <b>8. Send in your W9!</b> You can email it directly to us at{" "}
-                  <a href="mailto:w9form@scoutandcellar.com">
-                    w9form@scoutandcellar.com
-                  </a>{" "}
-                  or mail it to 4531 Simonton Road Farmers Branch, TX 75244.
-                </p>
+                <ol className="paymentConfirmation-Ol">
+                  <li>
+                    <p>
+                      <b> Start learning!</b> You'll receive a series of emails
+                      over the next 5 days with important information and action
+                      items for getting off to a great start! You'll also want
+                      to be sure to complete Scout School Online located in The
+                      Cellar and in our Scout & Cellar Mobile App The Vine.
+                      These series of videos are the most comprehensive resource
+                      for everything you need to know to get started.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <b> Get Social!</b> Set up any social media accounts like
+                      Facebook and Instagram that you'd like to personalize for
+                      your Scout & Cellar Business.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <b> Start Sharing!</b> Announce your Scout & Cellar
+                      business on social media and share your personal journey
+                      to clean-crafted wine with your followers, family, and
+                      friends. Want personalized business cards? You can create
+                      and order them through FedEx. Learn more in The Cellar
+                      &#62; Brand & Marketing &#62; Business Cards & Supplies.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <b> Learn your way around!</b> Dive into all the resources
+                      available in The Cellar to educate yourself regarding our
+                      business, our brand, our wines, and our culture.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <b> Begin Connecting!</b> Schedule a call with your Mentor
+                      and join your team's Facebook group.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <b> Stock Your Cellar!</b>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <b> Book A Tasting!</b> Schedule your first tasting and
+                      start promoting Scout & Cellar wine in-person or online.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <b> Send in your W9!</b> You can email it directly to us
+                      at{" "}
+                      <a href="mailto:w9form@scoutandcellar.com">
+                        w9form@scoutandcellar.com
+                      </a>{" "}
+                      or mail it to 4531 Simonton Road Farmers Branch, TX 75244.
+                    </p>
+                  </li>
+                </ol>
               </p>
             </div>
           </div>
