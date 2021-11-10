@@ -672,7 +672,7 @@ class ConfirmDetailsEdit extends React.Component {
                         {(() => {
                           const options = [];
                           for (
-                            let i = 1970;
+                            let i = 1920;
                             i <= new Date().getFullYear() - 21;
                             i++
                           ) {
