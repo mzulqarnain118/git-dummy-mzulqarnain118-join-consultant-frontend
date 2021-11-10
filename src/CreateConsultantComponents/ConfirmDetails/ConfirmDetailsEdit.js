@@ -672,9 +672,9 @@ class ConfirmDetailsEdit extends React.Component {
                         {(() => {
                           const options = [];
                           for (
-                            let i = 1920;
-                            i <= new Date().getFullYear() - 21;
-                            i++
+                            let i = new Date().getFullYear() - 21;
+                            i >= 1920;
+                            i--
                           ) {
                             options.push(
                               <option value={i} key={"YYYY"}>
