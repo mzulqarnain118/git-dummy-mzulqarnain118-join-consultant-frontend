@@ -269,7 +269,7 @@ class ConfirmDetailsEdit extends React.Component {
       } else {
         error[type] = "";
         errorArr[6] = true;
-        this.setState({avoidPhoneError:true})
+        this.setState({ avoidPhoneError: true });
       }
     }
 
@@ -283,7 +283,7 @@ class ConfirmDetailsEdit extends React.Component {
         errorArr[7] = false;
       }
       this.props.apiGetWorkingWithDropDownData(value);
-      form[type] = { id: 1, name: value };
+      form[type] = { id: 1, name: value, displayId: null };
     }
 
     // email id
@@ -380,6 +380,15 @@ class ConfirmDetailsEdit extends React.Component {
     let date = moment(
       new Date(userData.dob.year, userData.dob.month, userData.dob.day)
     ).format("MM/DD/YYYY");
+    let error = this.state.error;
+    if (userData["working_with"]["displayId"] === null) {
+      error["working_with"] = "Consultant's team you're joining is mandatory";
+      errorArr[7] = false;
+    } else {
+      error["working_with"] = "";
+      errorArr[7] = true;
+    }
+    this.setState({ error, errorArr });
     // enable /disable button to move to next screen
     this.props.setrightFooterButtonDisabled(
       !(
@@ -394,7 +403,8 @@ class ConfirmDetailsEdit extends React.Component {
         errorArr[8] &&
         avoidDateError &&
         avoidPhoneError &&
-        date !== "Invalid date"
+        date !== "Invalid date" &&
+        userData["working_with"]["displayId"] !== null
       )
     );
   };
@@ -946,6 +956,9 @@ class ConfirmDetailsEdit extends React.Component {
                         };
                       }
                       this.setState({ value: newValue, userData });
+                      this.validateToMoveToNextScreen(
+                        this.state.avoidDateError
+                      );
                     }}
                     inputValue={this.state.userData["working_with"].name}
                     onInputChange={(event, newInputValue) => {
