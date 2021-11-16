@@ -52,6 +52,9 @@
 }
 .customURL:focus {
   border-color: #d8c5a6;
+  outline:none !important;
+  border-color:#d8c5a6 !important;
+  box-shadow:0 0 10px #d8c5a6 !important;
 }
 
 .customURL::placeholder {
@@ -195,6 +198,9 @@
 }
 .ssnInput:focus {
   border-color: #d8c5a6;
+  outline:none !important;
+    border-color:#d8c5a6 !important;
+    box-shadow:0 0 10px #d8c5a6 !important;
 }
 
 .ssnInputRed {
@@ -369,6 +375,9 @@ input::-webkit-input-placeholder {
   }
   .customURL:focus {
     border-color: #d8c5a6;
+    outline:none !important;
+    border-color:#d8c5a6 !important;
+    box-shadow:0 0 10px #d8c5a6 !important;
   }
 
   .customURL::placeholder {
@@ -521,6 +530,9 @@ input::-webkit-input-placeholder {
   }
   .ssnInput:focus {
     border-color: #d8c5a6;
+    outline:none !important;
+    border-color:#d8c5a6 !important;
+    box-shadow:0 0 10px #d8c5a6 !important;
   }
 
   .ssnInputRed {
@@ -592,6 +604,9 @@ input::-webkit-input-placeholder {
 
   .customURL:focus {
     border-color: #d8c5a6;
+    outline:none !important;
+    border-color:#d8c5a6 !important;
+    box-shadow:0 0 10px #d8c5a6 !important;
   }
 
   .customURL::placeholder {
@@ -728,6 +743,9 @@ input::-webkit-input-placeholder {
   }
   .ssnInput:focus {
     border-color: #d8c5a6;
+    outline:none !important;
+    border-color:#d8c5a6 !important;
+    box-shadow:0 0 10px #d8c5a6 !important;
   }
 
   .ssnInputRed {

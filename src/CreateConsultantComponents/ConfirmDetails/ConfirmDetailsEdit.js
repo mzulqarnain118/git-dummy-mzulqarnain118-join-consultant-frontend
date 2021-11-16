@@ -260,7 +260,17 @@ class ConfirmDetailsEdit extends React.Component {
           .split("")
           .filter((item) => item.match(/[0-9\\-]/i))
           .join("")
+          .replace(/^0+/, "")
       );
+
+      if (form[type].length !== 12) {
+        error[type] = "Invalid Cell Number";
+        errorArr[6] = false;
+      } else {
+        error[type] = "";
+        errorArr[6] = true;
+        this.setState({avoidPhoneError:true})
+      }
     }
 
     // workingwith
@@ -509,8 +519,8 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autocomplete="none"
-                    autoComplete="none"
+                    // autocomplete="none"
+                    // autoComplete="none"
                     value={userData["first_name"]}
                     className={
                       error.first_name.length > 0
@@ -541,8 +551,8 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autocomplete="none"
-                    autoComplete="none"
+                    // autocomplete="none"
+                    // autoComplete="none"
                     value={userData["last_name"]}
                     className={
                       error.last_name.length > 0
@@ -672,9 +682,9 @@ class ConfirmDetailsEdit extends React.Component {
                         {(() => {
                           const options = [];
                           for (
-                            let i = new Date().getFullYear() - 21;
-                            i >= 1920;
-                            i--
+                            let i = 1920;
+                            i <= new Date().getFullYear() - 21;
+                            i++
                           ) {
                             options.push(
                               <option value={i} key={"YYYY"}>
@@ -707,8 +717,8 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autocomplete="none"
-                    autoComplete="none"
+                    // autocomplete="none"
+                    // autoComplete="none"
                     value={userData["email"]}
                     className={
                       error.email.length > 0
@@ -743,8 +753,8 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autocomplete="none"
-                    autoComplete="none"
+                    // autocomplete="none"
+                    // autoComplete="none"
                     value={userData["address"]["street"]}
                     className={
                       error.address.street.length > 0
@@ -775,8 +785,8 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autocomplete="none"
-                    autoComplete="none"
+                    // autocomplete="none"
+                    // autoComplete="none"
                     value={userData["address"]["zipcode"]}
                     className={
                       error.address.zipcode.length > 0
@@ -809,8 +819,8 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autocomplete="none"
-                    autoComplete="none"
+                    // autocomplete="none"
+                    // autoComplete="none"
                     value={userData["address"]["city"]}
                     className={
                       error.address.city.length > 0
@@ -850,8 +860,8 @@ class ConfirmDetailsEdit extends React.Component {
                     value={userData["address"]["state"]}
                     id="state"
                     name="state"
-                    autocomplete="none"
-                    autoComplete="none"
+                    // autocomplete="none"
+                    // autoComplete="none"
                     onChange={this.handleChange}
                   >
                     <option value={""} key={"dummy state"}>
@@ -882,8 +892,8 @@ class ConfirmDetailsEdit extends React.Component {
                 <div className="edit-InputMargin">
                   <input
                     type="text"
-                    autocomplete="none"
-                    autoComplete="none"
+                    // autocomplete="none"
+                    // autoComplete="none"
                     value={userData["phonenumber"]}
                     className={
                       error.phonenumber.length > 0
@@ -924,8 +934,8 @@ class ConfirmDetailsEdit extends React.Component {
                       id: this.props.userData["working_with"].id,
                       DisplayName: this.props.userData["working_with"].name,
                     }}
-                    autocomplete="none"
-                    autoComplete="none"
+                    // autocomplete="none"
+                    // autoComplete="none"
                     onChange={(event, newValue) => {
                       let userData = this.state.userData;
                       if (newValue !== null) {

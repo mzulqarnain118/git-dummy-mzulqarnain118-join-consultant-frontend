@@ -133,8 +133,8 @@ class ConfirmDetailsPasswordPage extends React.Component {
                 <input
                   style={{width: "40%"}}
                   type="password"
-                  autocomplete="none"
-                  autoComplete="none"
+                  // autocomplete="none"
+                  // autoComplete="none"
                   value={password}
                   className={errorUserData.password && errorUserData.password.length > 0 ? "form-control Red" : "form-control Input"}
                   id="password"
@@ -220,8 +220,8 @@ class ConfirmDetailsPasswordPage extends React.Component {
                                 id="emailAddress"
                                 name="emailAddress"
                                 placeholder="Enter email address"
-                                autocomplete="none"
-                                autoComplete="none"
+                                // autocomplete="none"
+                                // autoComplete="none"
                                 onChange={this.handleForgotPassword}
                               />
                               {/* error handling of email field */}
