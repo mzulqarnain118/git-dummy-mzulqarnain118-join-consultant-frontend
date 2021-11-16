@@ -404,7 +404,8 @@ class ConfirmDetailsEdit extends React.Component {
         avoidDateError &&
         avoidPhoneError &&
         date !== "Invalid date" &&
-        userData["working_with"]["displayId"] !== null
+        userData["working_with"]["displayId"] !== null &&
+        userData["working_with"]["displayId"] !== undefined
       )
     );
   };
