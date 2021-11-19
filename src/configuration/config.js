@@ -2,7 +2,7 @@
 
 //reCaptcha site key
 export const site_key = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
-var baseUrl = "https://joinapi-prod.scoutandcellar.com";
+var baseUrl = "https://joinapi-staging.scoutandcellar.com/"; // "https://joinapi-prod.scoutandcellar.com";
 /**
  * Determine the mobile operating system.
  * This function returns one of 'iOS', 'Android', or 'unknown'.
