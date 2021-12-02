@@ -517,9 +517,9 @@ class ConfirmDetailsEdit extends React.Component {
             We love it when we have new members of the Scout & Cellar Family.
             Let’s get you started!
           </div>
-          <div className="staticText4">
+          {/* <div className="staticText4">
             Take a quick look at the details below, then we’ll move forward
-          </div>
+          </div> */}
           {/* edit name and date of birth */}
           <div className="row edit-margin">
             <div className="col-lg-2 col-md-3">
