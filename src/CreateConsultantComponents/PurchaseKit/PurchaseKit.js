@@ -341,44 +341,59 @@ class PurchaseKit extends React.Component {
         >
           <span className="head1">PURCHASE KIT</span>
           <div className="row">
-            <div className="col-lg-12 col-md-11   ">
+            <div className="col-lg-12 col-md-11 ">
               {/* total panel to display price details */}
               <div className="totalPanel">
+                {/* row 1 in total plane */}
                 <div className="row">
-                  <div className="col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-xs-1 mobileTotalTitle">
+                  <div className="col-lg-8 offset-lg-1  mod-price-1">
                     <div className="subTotalText">Subtotal</div>
-                    <div className="totalText">Discount</div>
-                    <div className="totalText">Shipping</div>
-                    {/* <div className="totalText">Sales Tax</div> */}
                   </div>
-                  <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
+                  <div className="col-lg-2   mod-price-2 ">
                     <div className="subTotalMoney">
                       ${addTrailingZeros(purchaseKitDetails.subtotal)}
                     </div>
-                    <div className="totalMoney">
-                      -${addTrailingZeros(purchaseKitDetails.discount)}
+                  </div>
+                </div>
+                {/* row 2 in total plane */}
+                <div className="row">
+                  <div className="col-lg-8 offset-lg-1 mod-price-1">
+                    <div className="row">
+                      <div className="subTotalText">Discount</div>
+                      <div className=" description-text ">
+                        {`${purchaseKitDetails.discountDescription}`}
+                      </div>
                     </div>
-                    <div className="totalMoney">
+                  </div>
+                  <div className="col-lg-2 mod-price-2">
+                    <div className="subTotalMoney">
+                      ${addTrailingZeros(purchaseKitDetails.discount)}
+                    </div>
+                  </div>
+                </div>
+                {/* row 3 in total plane */}
+                <div className="row">
+                  <div className="col-lg-8 offset-lg-1 mod-price-1">
+                    <div className="subTotalText">Shipping</div>
+                  </div>
+                  <div className="col-lg-2 mod-price-2">
+                    <div className="subTotalMoney">
                       ${addTrailingZeros(purchaseKitDetails.shipping)}
                     </div>
-                    {/* <div className="totalMoney">
-                      ${addTrailingZeros(purchaseKitDetails.salestax)}
-                    </div> */}
                   </div>
-                  <div className="col-lg-1"></div>
                 </div>
               </div>
-              <div className="totalResultPanel">
+              <div className="totalPanel-1">
+                {/* row 4 in total plane */}
                 <div className="row">
-                  <div className="col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-xs-1 mobileTotalTitle">
-                    <div className="ResultText">Total</div>
+                  <div className="col-lg-8 offset-lg-1  mod-price-1">
+                    <div className="subTotalText-1">Total</div>
                   </div>
-                  <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
-                    <div className="ResultMoney">
-                      ${addTrailingZeros(purchaseKitDetails.total)}
+                  <div className="col-lg-2   mod-price-2 ">
+                    <div className="subTotalMoney-1">
+                      ${addTrailingZeros(purchaseKitDetails.subtotal)}
                     </div>
                   </div>
-                  <div className="col-lg-1"></div>
                 </div>
               </div>
               {/* subtext to to be displayed below total panel */}
@@ -516,10 +531,7 @@ class PurchaseKit extends React.Component {
                       />
 
                       {error.cardCVV.length > 0 ? (
-                        <span className="errorMesCVV">
-                          {error.cardCVV}
-                         
-                        </span>
+                        <span className="errorMesCVV">{error.cardCVV}</span>
                       ) : null}
                     </div>
                   </div>

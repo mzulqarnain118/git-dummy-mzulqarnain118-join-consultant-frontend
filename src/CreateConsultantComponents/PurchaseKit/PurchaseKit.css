@@ -1,3 +1,15 @@
+.description-text {
+  font-size: 13px;
+  color:rgb(70, 63, 63);
+  margin-bottom:7px;
+}
+.col-lg-3discount {
+  width: 16%;
+}
+.col-lg-1hypen {
+  width: 1%;
+}
+
 .purchaseComponentMargin1 {
   margin-top: 32px;
 }
@@ -21,12 +33,29 @@
   /* width: 65vw; */
   width: 65vw;
 }
+.totalPanel-1 {
+  background: #241f20;
+  padding: 16px;
+  font-family: Domine;
+  /* width: 65vw; */
+  width: 65vw;
+}
+
 .subTotalText {
   font-size: 19px;
+}
+.subTotalText-1 {
+  font-size: 24px;
+  color: white;
 }
 .subTotalMoney {
   font-size: 20px;
   text-align: right;
+}
+.subTotalMoney-1 {
+  font-size: 24px;
+  text-align: right;
+  color: white;
 }
 .totalText {
   font-size: 16px;
@@ -37,10 +66,9 @@
 }
 .totalResultPanel {
   background: #241f20;
-  padding: 15px;
+  padding: 16px;
   font-family: Domine;
   width: 65vw;
-  /* width: 1248px; */
 }
 .ResultText {
   font-size: 24px;
@@ -98,9 +126,9 @@
 }
 .purchaseInput:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .purchaseRed {
   border-width: 1px;
@@ -145,9 +173,9 @@
 }
 .purchaseInput1:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .purchaseRed1 {
   border-width: 1px;
@@ -194,9 +222,9 @@
 }
 .purchaseInput2:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .purchaseRed2 {
   border-width: 1px;
@@ -223,9 +251,9 @@
   }
   .purchaseInput2:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed2 {
     border-width: 1px;
@@ -269,9 +297,15 @@
     font-family: Domine;
     width: 80vw;
   }
+  .totalPanel-1 {
+    background: #241f20;
+    padding: 16px;
+    font-family: Domine;
+    width: 80vw;
+  }
   .totalResultPanel {
     background: #241f20;
-    padding: 15px;
+    padding: 16px;
     font-family: Domine;
     width: 80vw;
   }
@@ -284,6 +318,25 @@
   }
 }
 @media only screen and (max-width: 550px) {
+  .mod-price-1 {
+    width: 80%;
+    padding-left: 5%;
+  }
+  .mod-price-2 {
+    width: 20%;
+  }
+  .description-text {
+    font-size: 10px;
+    width: 90%;
+    margin-bottom:10px;
+  }
+  .col-lg-3discount {
+    width: 23%;
+  }
+  .col-lg-1hypen {
+    width: 1%;
+  }
+
   .purchaseInput {
     border-width: 1px;
     border-color: #d8c5a6 !important;
@@ -294,9 +347,9 @@
   }
   .purchaseInput:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed {
     border-width: 1px;
@@ -320,9 +373,9 @@
   }
   .purchaseInput1:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed1 {
     border-width: 1px;
@@ -345,9 +398,9 @@
   }
   .purchaseInput2:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed2 {
     border-width: 1px;
@@ -376,7 +429,6 @@
   }
   .mobileTotalValue {
     width: 80px;
-    margin-left: 41vw;
     text-align: right;
   }
   .mobileTotalPanel {
@@ -385,10 +437,19 @@
   .subTotalText {
     font-size: 15px;
   }
+  .subTotalText-1 {
+    font-size: 17px;
+  }
   .subTotalMoney {
     font-size: 16px;
     text-align: right;
     margin-left: -15vw;
+  }
+  .subTotalMoney-1 {
+    font-size: 17px;
+    text-align: right;
+    margin-left: -15vw;
+    color: white;
   }
   .totalText {
     font-size: 12px;
@@ -402,7 +463,6 @@
     color: white;
   }
   .ResultMoney {
-    margin-left: -32px;
     font-size: 17px;
     color: white;
     text-align: right;
@@ -419,9 +479,15 @@
     font-family: Domine;
     width: 90vw;
   }
+  .totalPanel-1 {
+    background: #241f20;
+    padding: 16px;
+    font-family: Domine;
+    width: 90vw;
+  }
   .totalResultPanel {
     background: #241f20;
-    padding: 15px;
+    padding: 16px;
     font-family: Domine;
     width: 90vw;
   }
@@ -430,3 +496,4 @@
     margin-left: -11px !important;
   }
 }
+
