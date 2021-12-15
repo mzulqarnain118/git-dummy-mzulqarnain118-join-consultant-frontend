@@ -804,7 +804,7 @@ class Home extends React.Component {
             purchaseKitDetails["discount"] =
               response.data.OrderLines[0].Discounts;
             purchaseKitDetails["total"] = response.data.OrderLines[0].LineTotal;
-            purchaseKitDetails["discountDescription"] = response.data.DiscountTotals[0].TotalDescription;
+            purchaseKitDetails["discountDescription"] = response.data.DiscountTotals.length>0?response.data.DiscountTotals[0].TotalDescription:"";
 
             this.setState({
               load: false,
