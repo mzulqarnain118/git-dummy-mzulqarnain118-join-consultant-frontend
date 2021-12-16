@@ -290,34 +290,6 @@ class PurchaseKit extends React.Component {
     this.enableDone();
   };
 
-  generateDiscountMsg = (description) => {
-    if (description.startsWith("Coupon -")) {
-      return (
-        <React.Fragment>
-          <VscTag size={17} className="coupon-tag" />{" "}
-          <span className="description-text-1">1 Coupon Applied! </span>
-          <span className="description-text-2"> &nbsp;Code:&nbsp; </span>
-          <span className="description-text-3">
-            {description.slice(
-              description.indexOf("-") + 1,
-              description.lastIndexOf("-")
-            )}
-          </span>
-          <div className="description-text-4">
-            {description.slice(description.lastIndexOf("-") + 1)}
-          </div>
-        </React.Fragment>
-      );
-    } else {
-      return (
-        <React.Fragment>
-          <VscTag size={17} className="coupon-tag" />{" "}
-          <span className="description-text">{description}</span>
-        </React.Fragment>
-      );
-    }
-  };
-
   componentDidMount = async () => {
     if (this.props.purchaseKitDetails.total === 0) {
       await this.props.apiCartDetails();
@@ -392,15 +364,21 @@ class PurchaseKit extends React.Component {
 
                       {purchaseKitDetails.discountDescription !== "" ? (
                         <div className=" description-text ">
-                          {this.generateDiscountMsg(
-                          purchaseKitDetails.discountDescription)}
+                          <VscTag size={17} className="coupon-tag" />
+                          <span className="description-text">
+                            {purchaseKitDetails.discountDescription.startsWith("Coupon - ")? purchaseKitDetails.discountDescription.slice(
+                              purchaseKitDetails.discountDescription.lastIndexOf(
+                                "-"
+                              ) + 1
+                            ):purchaseKitDetails.discountDescription}
+                          </span>
                         </div>
                       ) : null}
                     </div>
                   </div>
                   <div className="col-lg-2 mod-price-2">
                     <div className="subTotalMoney">
-                      ${addTrailingZeros(purchaseKitDetails.discount)}
+                      - ${addTrailingZeros(purchaseKitDetails.discount)}
                     </div>
                   </div>
                 </div>

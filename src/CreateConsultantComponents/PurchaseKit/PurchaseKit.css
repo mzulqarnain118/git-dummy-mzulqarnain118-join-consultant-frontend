@@ -1,5 +1,5 @@
 .description-text {
-  font-size: 13px;
+  font-size: 16px;
   color: rgb(70, 63, 63);
   margin-bottom: 7px;
   font-family: Domine;
@@ -367,12 +367,12 @@
   }
 
   .description-text {
-    font-size: 10px;
+    font-size: 12px;
     width: 95%;
     margin-bottom: 10px;
   }
 
-  .description-text-1 {
+  /* .description-text-1 {
     font-size: 14px;
     color: black;
     font-family: Domine;
@@ -399,7 +399,7 @@
     font-weight: 600;
     margin-left: 20px;
     width: 100%;
-  }
+  } */
 
   .purchaseInput {
     border-width: 1px;
@@ -561,7 +561,7 @@
   }
 }
 
-@media (max-width: 360px) and (min-width: 290px) {
+/* @media (max-width: 360px) and (min-width: 290px) {
   .description-text {
     font-size: 10px;
     width: 100%;
@@ -588,4 +588,4 @@
     width: 87%;
     margin-bottom: 10px;
   }
-}
+} */
