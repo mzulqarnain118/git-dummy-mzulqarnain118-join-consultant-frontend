@@ -402,7 +402,7 @@ class PurchaseKit extends React.Component {
                   </div>
                   <div className="col-lg-2   mod-price-2 ">
                     <div className="subTotalMoney-1">
-                      ${addTrailingZeros(purchaseKitDetails.subtotal)}
+                      ${addTrailingZeros(purchaseKitDetails.total)}
                     </div>
                   </div>
                 </div>
