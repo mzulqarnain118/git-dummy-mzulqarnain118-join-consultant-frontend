@@ -233,7 +233,7 @@ class VerifyIdentity extends React.Component {
                             }
                             id="otp1"
                             name="otp1"
-                            autocomplete="none"
+                            // autocomplete="none"
                             onChange={this.handleChange}
                           />
                           {/* OTP Digit 2 */}
@@ -247,7 +247,7 @@ class VerifyIdentity extends React.Component {
                             }
                             id="otp2"
                             name="otp2"
-                            autocomplete="none"
+                            // autocomplete="none"
                             onChange={this.handleChange}
                           />
                           {/* OTP Digit 3 */}
@@ -261,7 +261,7 @@ class VerifyIdentity extends React.Component {
                             }
                             id="otp3"
                             name="otp3"
-                            autocomplete="none"
+                            // autocomplete="none"
                             onChange={this.handleChange}
                           />
                           {/* OTP Digit 4 */}
@@ -275,7 +275,7 @@ class VerifyIdentity extends React.Component {
                             }
                             id="otp4"
                             name="otp4"
-                            autocomplete="none"
+                            // autocomplete="none"
                             onChange={this.handleChange}
                           />
                           {/* OTP Digit 5 */}
@@ -289,7 +289,7 @@ class VerifyIdentity extends React.Component {
                             }
                             id="otp5"
                             name="otp5"
-                            autocomplete="none"
+                            // autocomplete="none"
                             onChange={this.handleChange}
                           />
                           {/* OTP Digit 6 */}
@@ -303,7 +303,7 @@ class VerifyIdentity extends React.Component {
                             }
                             id="otp6"
                             name="otp6"
-                            autocomplete="none"
+                            // autocomplete="none"
                             onChange={this.handleChange}
                           />
                         </div>

@@ -17,7 +17,7 @@ class ConfirmDetailsDisplay extends React.Component {
         <div className={window.innerWidth >= 550 ? "componentMargin3 " : "mobileComponent1"}>
           <span className="head1">GOOD MOVE, {userData.first_name.toUpperCase()}!</span>
           <div className="staticText3">We love it when we have new members of the Scout & Cellar Family. Let’s get you started!</div>
-          <div className="staticText4">Take a quick look over and we'll move forward.</div>
+          {/* <div className="staticText4">Take a quick look over and we'll move forward.</div> */}
           {/* Display tab to show all user details */}
           <div className="displayArea">
             <div className="row">

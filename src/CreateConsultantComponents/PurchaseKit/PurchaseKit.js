@@ -341,7 +341,7 @@ class PurchaseKit extends React.Component {
         >
           <span className="head1">PURCHASE KIT</span>
           <div className="row">
-            <div className="col-lg-12 col-md-11 mobileTotalPanel">
+            <div className="col-lg-12 col-md-11   ">
               {/* total panel to display price details */}
               <div className="totalPanel">
                 <div className="row">
@@ -412,8 +412,8 @@ class PurchaseKit extends React.Component {
                           id="cardHolderName"
                           name="cardHolderName"
                           placeholder="Enter Card Holder Name"
-                          autocomplete="none"
-                          autoComplete="none"
+                          // autocomplete="none"
+                          // autoComplete="none"
                           onChange={this.handleChange}
                         />
 
@@ -444,8 +444,8 @@ class PurchaseKit extends React.Component {
                           id="cardNumber"
                           name="cardNumber"
                           placeholder="Enter Card Number"
-                          autocomplete="none"
-                          autoComplete="none"
+                          // autocomplete="none"
+                          // autoComplete="none"
                           onChange={this.handleChange}
                           maxLength="19"
                         />
@@ -477,8 +477,8 @@ class PurchaseKit extends React.Component {
                         }
                         id="cardDate"
                         name="cardDate"
-                        autocomplete="none"
-                        autoComplete="none"
+                        // autocomplete="none"
+                        // autoComplete="none"
                         placeholder="Enter MM/YY"
                         onChange={this.handleChange}
                         maxLength="5"
@@ -508,8 +508,8 @@ class PurchaseKit extends React.Component {
                         }
                         id="cardCVV"
                         name="cardCVV"
-                        autocomplete="none"
-                        autoComplete="none"
+                        // autocomplete="none"
+                        // autoComplete="none"
                         placeholder="Enter CVV"
                         onChange={this.handleChange}
                         maxLength="4"
@@ -565,8 +565,8 @@ class PurchaseKit extends React.Component {
                               id="street"
                               name="street"
                               placeholder="Enter Street"
-                              autocomplete="none"
-                              autoComplete="none"
+                              // autocomplete="none"
+                              // autoComplete="none"
                               onChange={this.handleChange}
                             />
 
@@ -597,8 +597,8 @@ class PurchaseKit extends React.Component {
                               id="zipCode"
                               name="zipCode"
                               placeholder="Enter ZIP Code"
-                              autocomplete="none"
-                              autoComplete="none"
+                              // autocomplete="none"
+                              // autoComplete="none"
                               onChange={this.handleChange}
                               maxLength="6"
                             />
@@ -632,8 +632,8 @@ class PurchaseKit extends React.Component {
                               id="city"
                               name="city"
                               placeholder="Enter City"
-                              autocomplete="none"
-                              autoComplete="none"
+                              // autocomplete="none"
+                              // autoComplete="none"
                               onChange={this.handleChange}
                             />
 
