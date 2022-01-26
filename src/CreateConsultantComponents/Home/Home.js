@@ -967,7 +967,7 @@ class Home extends React.Component {
     let data = {
       requests: [
         {
-          indexName: "prod_consultants",
+          indexName: "dev_consultants",
           params: `query=${searchWord}&page=0&highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&facets=%5B%5D&tagFilters=`,
         },
       ],
