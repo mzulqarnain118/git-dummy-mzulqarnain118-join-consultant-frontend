@@ -417,7 +417,7 @@ class Home extends React.Component {
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
     let data = { email: userData["email"] };
-    await API.callEndpoint("POST", "Basic", "/api/v1/users/verifyEmail", data)
+    await API.callEndpoint("POST", "Basic", "/users/verifyEmail", data)
       .then((response) => {
         try {
           if (response.data.is_emailValid) {
@@ -603,7 +603,7 @@ class Home extends React.Component {
       .filter((item) => item !== "-")
       .join("");
 
-    await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
+    await API.callEndpoint("PATCH", "Bearer", "/users/update", data)
       .then((response) => {
         try {
           userData = response.data;
@@ -654,7 +654,7 @@ class Home extends React.Component {
     this.setState({ load: true, rightFooterButtonDisabled: true });
     let errorUserData = this.state.errorUserData;
     let rightFooterButtonDisabled = true;
-    await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
+    await API.callEndpoint("PATCH", "Bearer", "/users/update", data)
       .then(async (response) => {
         errorUserData["ssn"] = "";
 
@@ -704,7 +704,7 @@ class Home extends React.Component {
     return await API.callEndpoint(
       "POST",
       "Bearer",
-      "/api/v1/users/verifyUrl",
+      "/users/verifyUrl",
       data
     )
       .then((response) => {
@@ -737,7 +737,7 @@ class Home extends React.Component {
     userData["cart_id"] = "";
     this.setState({ userData });
 
-    await API.callEndpoint("POST", "Bearer", "/api/v1/users/createCart")
+    await API.callEndpoint("POST", "Bearer", "/users/createCart")
       .then((response) => {
         try {
           userData["cart_id"] = response.data.cartId;
@@ -790,7 +790,7 @@ class Home extends React.Component {
       await API.callEndpoint(
         "GET",
         "Bearer",
-        "/api/v1/users/viewCart?cartid=" + cartId,
+        "/users/viewCart?cartid=" + cartId,
         data
       )
         .then((response) => {
@@ -870,7 +870,7 @@ class Home extends React.Component {
     await API.callEndpoint(
       "POST",
       "Bearer",
-      "/api/v1/users/createConsultant",
+      "/users/createConsultant",
       data
     )
       .then((response) => {
@@ -921,7 +921,7 @@ class Home extends React.Component {
     await API.callEndpoint(
       "POST",
       "Basic",
-      "/api/v1/users/forgotpassword",
+      "/users/forgotpassword",
       data
     )
       .then((response) => {

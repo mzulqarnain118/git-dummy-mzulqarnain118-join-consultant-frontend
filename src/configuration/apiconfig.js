@@ -93,7 +93,7 @@ export async function getAccessToken(username, password, keepmesignedin = true) 
   };
   return new Promise((resolve, reject) => {
     axios({
-      url: constant.baseUrl + "/api/v1/users/login",
+      url: constant.baseUrl + "/users/login",
       method: "POST",
       headers: headerObject,
       data: data,
@@ -115,7 +115,7 @@ function getRefreshToken() {
   data.refreshToken = getCookie("refreshToken");
   return new Promise((resolve, reject) => {
     axios({
-      url: constant.baseUrl + "/api/v1/users/refreshToken",
+      url: constant.baseUrl + "/users/refreshToken",
       method: "POST",
       headers: {Authorization: headerDetails},
       data: data,
