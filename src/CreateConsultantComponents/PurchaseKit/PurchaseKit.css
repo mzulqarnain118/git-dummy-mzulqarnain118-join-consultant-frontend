@@ -156,9 +156,9 @@
 }
 .purchaseInput:focus {
   border-color: #d8c5a6 !important;
-  outline: none !important;
-  border-color: #d8c5a6 !important;
-  box-shadow: 0 0 10px #d8c5a6 !important;
+  outline:none !important;
+  border-color:#d8c5a6 !important;
+  box-shadow:0 0 10px #d8c5a6 !important;
 }
 .purchaseRed {
   border-width: 1px;
@@ -203,9 +203,9 @@
 }
 .purchaseInput1:focus {
   border-color: #d8c5a6 !important;
-  outline: none !important;
-  border-color: #d8c5a6 !important;
-  box-shadow: 0 0 10px #d8c5a6 !important;
+  outline:none !important;
+  border-color:#d8c5a6 !important;
+  box-shadow:0 0 10px #d8c5a6 !important;
 }
 .purchaseRed1 {
   border-width: 1px;
@@ -252,9 +252,9 @@
 }
 .purchaseInput2:focus {
   border-color: #d8c5a6 !important;
-  outline: none !important;
-  border-color: #d8c5a6 !important;
-  box-shadow: 0 0 10px #d8c5a6 !important;
+  outline:none !important;
+  border-color:#d8c5a6 !important;
+  box-shadow:0 0 10px #d8c5a6 !important;
 }
 .purchaseRed2 {
   border-width: 1px;
@@ -281,9 +281,9 @@
   }
   .purchaseInput2:focus {
     border-color: #d8c5a6 !important;
-    outline: none !important;
-    border-color: #d8c5a6 !important;
-    box-shadow: 0 0 10px #d8c5a6 !important;
+    outline:none !important;
+    border-color:#d8c5a6 !important;
+    box-shadow:0 0 10px #d8c5a6 !important;
   }
   .purchaseRed2 {
     border-width: 1px;
@@ -411,9 +411,9 @@
   }
   .purchaseInput:focus {
     border-color: #d8c5a6 !important;
-    outline: none !important;
-    border-color: #d8c5a6 !important;
-    box-shadow: 0 0 10px #d8c5a6 !important;
+    outline:none !important;
+    border-color:#d8c5a6 !important;
+    box-shadow:0 0 10px #d8c5a6 !important;
   }
   .purchaseRed {
     border-width: 1px;
@@ -437,9 +437,9 @@
   }
   .purchaseInput1:focus {
     border-color: #d8c5a6 !important;
-    outline: none !important;
-    border-color: #d8c5a6 !important;
-    box-shadow: 0 0 10px #d8c5a6 !important;
+    outline:none !important;
+    border-color:#d8c5a6 !important;
+    box-shadow:0 0 10px #d8c5a6 !important;
   }
   .purchaseRed1 {
     border-width: 1px;
@@ -462,9 +462,9 @@
   }
   .purchaseInput2:focus {
     border-color: #d8c5a6 !important;
-    outline: none !important;
-    border-color: #d8c5a6 !important;
-    box-shadow: 0 0 10px #d8c5a6 !important;
+    outline:none !important;
+    border-color:#d8c5a6 !important;
+    box-shadow:0 0 10px #d8c5a6 !important;
   }
   .purchaseRed2 {
     border-width: 1px;

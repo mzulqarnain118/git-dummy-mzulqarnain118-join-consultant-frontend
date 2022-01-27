@@ -342,7 +342,7 @@ class PurchaseKit extends React.Component {
         >
           <span className="head1">PURCHASE KIT</span>
           <div className="row">
-            <div className="col-lg-12 col-md-11 ">
+            <div className="col-lg-12 col-md-11   ">
               {/* total panel to display price details */}
               <div className="totalPanel">
                 {/* row 1 in total plane */}
