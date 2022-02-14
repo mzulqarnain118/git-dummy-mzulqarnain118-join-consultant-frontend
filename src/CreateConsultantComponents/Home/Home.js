@@ -401,8 +401,8 @@ class Home extends React.Component {
     this.setState({load: true, rightFooterButtonDisabled: true});
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
-    let data = {email: userData["email"]};
-    await API.callEndpoint("POST", "Basic", "/api/v1/users/verifyEmail", data)
+    let data = { email: userData["email"] };
+    await API.callEndpoint("POST", "Basic", "/users/verifyEmail", data)
       .then((response) => {
         try {
           if (response.data.is_emailValid) {
@@ -585,7 +585,7 @@ class Home extends React.Component {
       .filter((item) => item !== "-")
       .join("");
 
-    await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
+    await API.callEndpoint("PATCH", "Bearer", "/users/update", data)
       .then((response) => {
         try {
           userData = response.data;
@@ -636,7 +636,7 @@ class Home extends React.Component {
     this.setState({load: true, rightFooterButtonDisabled: true});
     let errorUserData = this.state.errorUserData;
     let rightFooterButtonDisabled = true;
-    await API.callEndpoint("PATCH", "Bearer", "/api/v1/users/update", data)
+    await API.callEndpoint("PATCH", "Bearer", "/users/update", data)
       .then(async (response) => {
         errorUserData["ssn"] = "";
 
@@ -683,7 +683,12 @@ class Home extends React.Component {
     let data = {
       url: customURL,
     };
-    return await API.callEndpoint("POST", "Bearer", "/api/v1/users/verifyUrl", data)
+    return await API.callEndpoint(
+      "POST",
+      "Bearer",
+      "/users/verifyUrl",
+      data
+    )
       .then((response) => {
         try {
           if (response.data.validText) {
@@ -714,7 +719,7 @@ class Home extends React.Component {
     userData["cart_id"] = "";
     this.setState({userData});
 
-    await API.callEndpoint("POST", "Bearer", "/api/v1/users/createCart")
+    await API.callEndpoint("POST", "Bearer", "/users/createCart")
       .then((response) => {
         try {
           userData["cart_id"] = response.data.cartId;
@@ -764,7 +769,12 @@ class Home extends React.Component {
         id: this.state.userData.id,
         ssn: this.state.userData.ssn,
       };
-      await API.callEndpoint("GET", "Bearer", "/api/v1/users/viewCart?cartid=" + cartId, data)
+      await API.callEndpoint(
+        "GET",
+        "Bearer",
+        "/users/viewCart?cartid=" + cartId,
+        data
+      )
         .then((response) => {
           try {
             purchaseKitDetails["subtotal"] = response.data.OrderLines[0].Subtotal;
@@ -834,7 +844,12 @@ class Home extends React.Component {
       cardinfo: this.state.cardinfo,
     };
 
-    await API.callEndpoint("POST", "Bearer", "/api/v1/users/createConsultant", data)
+    await API.callEndpoint(
+      "POST",
+      "Bearer",
+      "/users/createConsultant",
+      data
+    )
       .then((response) => {
         try {
           let consultant_number = 0;
@@ -880,7 +895,12 @@ class Home extends React.Component {
     let data = {
       email: this.state.userData.email,
     };
-    await API.callEndpoint("POST", "Basic", "/api/v1/users/forgotpassword", data)
+    await API.callEndpoint(
+      "POST",
+      "Basic",
+      "/users/forgotpassword",
+      data
+    )
       .then((response) => {
         try {
           this.setState({
