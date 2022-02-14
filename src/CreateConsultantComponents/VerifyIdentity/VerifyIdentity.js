@@ -64,7 +64,7 @@ class VerifyIdentity extends React.Component {
       //     otp["otp5"] +
       //     otp["otp6"],
       // };
-      //   API.callEndpoint("POST", "Bearer", "/api/v1/users/verifyOTP", data)
+      //   API.callEndpoint("POST", "Bearer", "/users/verifyOTP", data)
       //     .then((response) => {
       //       try {
       //         this.setState({ agreementScreen: true });
@@ -176,7 +176,7 @@ class VerifyIdentity extends React.Component {
     //   API.callEndpoint(
     //     "POST",
     //     "Bearer",
-    //     "/api/v1/users/initiateVerification",
+    //     "/users/initiateVerification",
     //     data
     //   )
     //     .then((response) => {
