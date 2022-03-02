@@ -94,6 +94,7 @@ class ConfirmDetailsEdit extends React.Component {
       "California",
       "Colorado",
       "Connecticut",
+      "DC",
       "Delaware",
       "Florida",
       "Georgia",
