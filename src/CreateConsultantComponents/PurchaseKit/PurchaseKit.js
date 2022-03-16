@@ -45,6 +45,7 @@ class PurchaseKit extends React.Component {
       "California",
       "Colorado",
       "Connecticut",
+      "DC",
       "Delaware",
       "Florida",
       "Georgia",
