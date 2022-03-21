@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {withStyles} from "@material-ui/core/styles";
+import { identify } from "@fullstory/browser";
+import { withStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
@@ -402,6 +403,7 @@ class Home extends React.Component {
     let userData = this.state.userData;
     let errorUserData = this.state.errorUserData;
     let data = { email: userData["email"] };
+    identify(data.email, { email: data.email });
     await API.callEndpoint("POST", "Basic", "/users/verifyEmail", data)
       .then((response) => {
         try {
