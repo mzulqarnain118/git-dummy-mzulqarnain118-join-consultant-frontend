@@ -1300,9 +1300,7 @@ class Home extends React.Component {
                     </div>
                     <div className="col-xl-2 col-lg-2 col-md-11 col-11">
                       <div className="LogoIcon">
-                        <a href="https://scoutandcellar.com/">
-                          <Logo />
-                        </a>
+                        <Logo />
                       </div>
                     </div>
                   </>
