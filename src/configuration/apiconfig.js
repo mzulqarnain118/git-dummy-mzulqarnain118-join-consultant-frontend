@@ -2,8 +2,7 @@ import axios from "axios";
 import constant from "./config";
 import {browserName, browserVersion} from "react-device-detect";
 
-var accessTokenExpiry = 300;
-var methodType, authorisationType, URL;
+var accessTokenExpiry = 7200;
 
 export async function callEndpoint(methodType, authorisationType, URL, data) {
   if (authorisationType === "Bearer") {
@@ -131,13 +130,9 @@ function getRefreshToken() {
         if (axios.isCancel(ex)) {
           reject({Cancel: ""});
         } else if (ex.response.data.code !== 200 || ex.response.data.message.toLowerCase() === "token invalid") {
-          getAccessToken(constant.username_cinema_app, constant.password_cinema_app).then((response) => {
-            callEndpoint(methodType, authorisationType, URL, data)
-              .then((response) => {
-                resolve(response);
-              })
-              .catch(reject);
-          });
+          document.cookie = "accessToken= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+          document.cookie = "refreshToken= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+          document.location.href = "/";
         }
       });
   });
