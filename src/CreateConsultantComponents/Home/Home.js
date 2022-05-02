@@ -685,12 +685,7 @@ class Home extends React.Component {
     let data = {
       url: customURL,
     };
-    return await API.callEndpoint(
-      "POST",
-      "Bearer",
-      "/users/verifyUrl",
-      data
-    )
+    return await API.callEndpoint("POST", "Bearer", "/users/verifyUrl", data)
       .then((response) => {
         try {
           if (response.data.validText) {
@@ -846,12 +841,7 @@ class Home extends React.Component {
       cardinfo: this.state.cardinfo,
     };
 
-    await API.callEndpoint(
-      "POST",
-      "Bearer",
-      "/users/createConsultant",
-      data
-    )
+    await API.callEndpoint("POST", "Bearer", "/users/createConsultant", data)
       .then((response) => {
         try {
           let consultant_number = 0;
@@ -897,12 +887,7 @@ class Home extends React.Component {
     let data = {
       email: this.state.userData.email,
     };
-    await API.callEndpoint(
-      "POST",
-      "Basic",
-      "/users/forgotpassword",
-      data
-    )
+    await API.callEndpoint("POST", "Basic", "/users/forgotpassword", data)
       .then((response) => {
         try {
           this.setState({
@@ -978,16 +963,18 @@ class Home extends React.Component {
       .then((res) => {
         console.log("inside workingwith");
         try {
-          fixedWorkingWith = true;
-          userData["working_with"] = {
-            id: res.data.id,
-            name: res.data.name,
-            displayId: res.data.displayId,
-          };
-          this.setState({
-            userData,
-            fixedWorkingWith,
-          });
+          if (res.data.name) {
+            fixedWorkingWith = true;
+            userData["working_with"] = {
+              id: res.data.id,
+              name: res.data.name,
+              displayId: res.data.displayId,
+            };
+            this.setState({
+              userData,
+              fixedWorkingWith,
+            });
+          }
         } catch (e) {
           console.log(e);
           fixedWorkingWith = false;
