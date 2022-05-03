@@ -4302,7 +4302,7 @@ class Agreement extends React.Component {
     await axios
       .get(
         !this.state.currentButton
-          ? "../Agreement-PDF/Independent Consultant Agreement with CCPA Addendum.pdf"
+          ? "../Agreement-PDF/Independent Consultant Agreement.pdf"
           : "../Agreement-PDF/Policies & Procedures November 2020.pdf",
         {
           responseType: "blob",
@@ -4312,7 +4312,7 @@ class Agreement extends React.Component {
         !this.state.currentButton
           ? fileDownload(
               res.data,
-              "Independent Consultant Agreement with CCPA Addendum.pdf"
+              "Independent Consultant Agreement.pdf"
             )
           : fileDownload(res.data, "Policies & Procedures November 2020.pdf");
       });
