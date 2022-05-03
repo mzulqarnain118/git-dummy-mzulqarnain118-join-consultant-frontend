@@ -3255,10 +3255,11 @@ class Agreement extends React.Component {
                 three documents collectively. I understand that I am solely
                 responsible for the means and methods by which I promote and
                 market and educate consumers regarding Scout &amp; Cellar
-                products, subject to my compliance with the Agreement. I further
-                understand that this Agreement requires integrity, honesty and
-                responsibility in my behavior and actions with the Company,
-                Scout &amp; Cellar Members, and my fellow Consultants.
+                products and its Clean-Crafted Commitment<sup>TM</sup>, subject
+                to my compliance with the Agreement. I further understand that
+                this Agreement requires integrity, honesty and responsibility in
+                my behavior and actions with the Company, Scout &amp; Cellar
+                Members, and my fellow Consultants.
               </p>
             </>
             <>
@@ -3272,7 +3273,7 @@ class Agreement extends React.Component {
                 than described in this Agreement. No fiduciary relationship
                 exists between the Parties. A Consultant shall, at all times,
                 have and maintain control of the manner and means of the
-                Consultant’s performance under this Agreement, subject to
+                Consultant's performance under this Agreement, subject to
                 compliance with this Agreement. Consultants have no authority,
                 either express or implied, to bind Scout &amp; Cellar to any
                 obligation.
@@ -3285,11 +3286,11 @@ class Agreement extends React.Component {
                 state or local tax purposes or retirement benefits. Scout &amp;
                 Cellar will not withhold or make payments for state or federal
                 income tax, social security, make unemployment insurance or
-                disability insurance contributions, or obtain workers’
+                disability insurance contributions, or obtain workers'
                 compensation insurance on behalf of a Consultant. As a result,
                 Consultants shall not receive or be entitled to receive any
                 insurance or benefit plan sponsored by Scout &amp; Cellar and
-                will not be covered by Scout &amp; Cellar’s workers’
+                will not be covered by Scout &amp; Cellar's workers'
                 compensation, unemployment insurance or retained coverage. Any
                 contrary final determination by an arbitrator, court, or other
                 tribunal shall require the amendment of this Agreement in any
@@ -3310,7 +3311,7 @@ class Agreement extends React.Component {
                 compensation under this Agreement. Scout &amp; Cellar will not
                 withhold or make payments for state or federal income tax,
                 social security, make unemployment insurance or disability
-                insurance contributions, or obtain workers’ compensation
+                insurance contributions, or obtain workers' compensation
                 insurance on behalf of a Consultant.
               </p>
             </>
@@ -3322,7 +3323,7 @@ class Agreement extends React.Component {
                 business or Independent Consultant, and assume the business risk
                 in connection with their independent Scout &amp; Cellar
                 businesses. There is no guarantee that there is or will be a
-                market for the Company’s products or that Consultants will earn
+                market for the Company's products or that Consultants will earn
                 money.
               </p>
             </>
@@ -3335,11 +3336,11 @@ class Agreement extends React.Component {
             </>
             <>
               <p>
-                I acknowledge and agree that Company’s usual course of business
-                is selling wine.&nbsp; I represent and warrant that I am not in
-                the business of selling wine.&nbsp; I represent and warrant that
-                I am in the business of marketing, promotions and education. I
-                acknowledge and agree that Company’s usual course of business is
+                I acknowledge and agree that Company's usual course of business
+                is selling wine. I represent and warrant that I am not in the
+                business of selling wine. I represent and warrant that I am in
+                the business of marketing, promotions and education. I
+                acknowledge and agree that Company's usual course of business is
                 not marketing, promotions and education.
               </p>
             </>
@@ -3347,7 +3348,7 @@ class Agreement extends React.Component {
               <p>
                 I acknowledge and agree that these acknowledgments,
                 representations, and warranties in this section are material
-                inducements to Company’s willingness to enter into this
+                inducements to Company's willingness to enter into this
                 Agreement with me, upon which Company has relied when deciding
                 whether to enter into the Consultant Agreement with me.
               </p>
@@ -3386,18 +3387,19 @@ class Agreement extends React.Component {
               <ul>
                 <>
                   <p>
-                    a) My Scout &amp; Cellar business will promote Scout &amp;
-                    Cellar products, including wine, by conducting Sales Events
-                    or on my personal Independent Consultant website, if
-                    applicable, and tasting experiences using the Scout &amp;
-                    Cellar process described in the Policies &amp; Procedures.
-                    My business will promote, market and facilitate sales of
-                    Scout &amp; Cellar products only to end users. I will inform
-                    my customers that Scout &amp; Cellar offers a Satisfaction
-                    Guarantee Policy with respect Scout &amp; Cellar products,
-                    and I will assist my customers with initiating a return
-                    under such policy with respect to any Scout &amp; Cellar
-                    products.
+                    a) My Scout &amp; Cellar business will promote, market and
+                    educate on Scout &amp; Cellar products and its Clean-Crafted
+                    Commitment<sup>TM</sup>, including wine, by conducting
+                    in-person or virtual Events or on my personal Independent
+                    Consultant website, if applicable, and tasting experiences
+                    using the Scout &amp; Cellar process described in the
+                    Policies &amp; Procedures. My business will promote, market
+                    and facilitate orders of Scout &amp; Cellar products only to
+                    end users. I will inform my customers that Scout &amp;
+                    Cellar offers a Satisfaction Guarantee Policy with respect
+                    Scout &amp; Cellar products, and I will assist my customers
+                    with initiating a return under such policy with respect to
+                    any Scout &amp; Cellar products.
                   </p>
                 </>
                 <>
@@ -3435,7 +3437,7 @@ class Agreement extends React.Component {
                     licensed entity and that all orders must be processed and
                     fulfilled through the Company or its approved licensees. I
                     cannot deliver or sell wines directly to customers or do
-                    anything that would jeopardize the Company’s good standing
+                    anything that would jeopardize the Company's good standing
                     and permits or licenses.
                   </p>
                 </>
@@ -3449,7 +3451,7 @@ class Agreement extends React.Component {
                 </strong>{" "}
                 In the event I sponsor an applicant to be an Independent
                 Consultant and the application is accepted by Scout &amp;
-                Cellar, I will accept the duties and obligations of training,
+                Cellar, I will accept the duties and obligations of education,
                 support and recognition as set forth in the Agreement.
               </p>
             </>
@@ -3459,7 +3461,7 @@ class Agreement extends React.Component {
                 <strong>
                   Use of Scout &amp; Cellar Intellectual Property.
                 </strong>
-                &nbsp;I acknowledge that, upon Scout &amp; Cellar’s acceptance
+                &nbsp;I acknowledge that, upon Scout &amp; Cellar's acceptance
                 of the Agreement, Scout &amp; Cellar has granted me a limited,
                 non-exclusive license to use its trademarks, service marks,
                 trade names, patents, software coding (including source code)
@@ -3488,7 +3490,7 @@ class Agreement extends React.Component {
                 8. <strong>Site Downtime.</strong> I acknowledge that the
                 website for Scout &amp; Cellar may be subject to temporary
                 shutdowns from time to time for maintenance and/or due to causes
-                beyond Scout &amp; Cellar’s or its vendor’s reasonable control,
+                beyond Scout &amp; Cellar's or its vendor's reasonable control,
                 and that Scout &amp; Cellar shall have no liability to me by
                 reason of any such shutdowns.
               </p>
@@ -3502,12 +3504,14 @@ class Agreement extends React.Component {
                 or compile, including but not limited to Business Reports,
                 Customer lists (including names, contact information, and other
                 data), Consultant lists (including names, contact information
-                and other data), information pertaining to Downline [1]
+                and other data), information pertaining to Downline<sup>
+                  1
+                </sup>{" "}
                 genealogy, and any other information which may contain financial
                 or business information, product and purchasing information,
                 customer and Consultant contact and profile details, Consultant
                 lists, operating and production procedures, product development
-                information, financial data and marketing materials are
+                information, financial data and marketing materials which are
                 confidential and proprietary and constitute trade secrets
                 belonging to Scout &amp; Cellar (hereinafter “Confidential
                 Information”) (collectively, “Confidential Information”), and
@@ -3528,32 +3532,32 @@ class Agreement extends React.Component {
                 I am required to or do use, disclose or otherwise employ any
                 Confidential Information obtained during my relationship with
                 Scout &amp; Cellar. I understand and agree that this provision
-                does not prohibit me from working for a competitor of Scout
-                &amp; Cellar during the term of this Agreement or after the
-                termination of this Agreement, but requires me not to use, share
-                or otherwise communicate Confidential Information (including
-                trade secrets) to such a competitor or to perform services for
-                such a competitor. I agree that a breach of this provision shall
-                cause irreparable harm to Scout &amp; Cellar and that Scout
-                &amp; Cellar will be entitled to injunctive relief in the event
-                of a breach of this provision, in addition to any other legal or
-                equitable remedies to which Scout &amp; Cellar may be entitled.
-                I further agree that the terms of this Agreement shall be deemed
-                Confidential Information and shall be subject to the provisions
-                of this Section 9. Upon Scout &amp; Cellar’s reasonable written
-                request, I agree to return to Scout &amp; Cellar all
-                Confidential Information, including but not limited to all
-                marketing collateral, marketing plans, documentation, notes,
-                plans, drawings and copies thereof. All information is provided
-                “AS IS” and without any warranty, express, implied or otherwise,
+                does not prohibit me from working for another company during the
+                term of this Agreement or after the termination of this
+                Agreement, but requires me not to use, share or otherwise
+                communicate Confidential Information (including trade secrets)
+                to such a company or to perform services for such a company. I
+                agree that a breach of this provision shall cause irreparable
+                harm to Scout &amp; Cellar and that Scout &amp; Cellar will be
+                entitled to injunctive relief in the event of a breach of this
+                provision, in addition to any other legal or equitable remedies
+                to which Scout &amp; Cellar may be entitled. I further agree
+                that the terms of this Agreement shall be deemed Confidential
+                Information and shall be subject to the provisions of this
+                Section 9. Upon Scout &amp; Cellar's reasonable written request,
+                I agree to return to Scout &amp; Cellar all Confidential
+                Information, including but not limited to all marketing
+                collateral, marketing plans, documentation, notes, plans,
+                drawings and copies thereof. All information is provided “AS IS”
+                and without any warranty, express, implied or otherwise,
                 regarding its accuracy or performance.
               </p>
             </>
             <>
               <p>
-                [1] A Consultant’s “Downline” includes the group of Consultants
-                directly mentored by that Consultant, along with any Consultants
-                beneath the aforementioned group.
+                <sup>1</sup> A Consultant's “Downline” includes the group of
+                Consultants directly mentored by that Consultant, along with any
+                Consultants beneath the aforementioned group.
               </p>
             </>
             <>
@@ -3580,41 +3584,47 @@ class Agreement extends React.Component {
                 services under this Agreement. I will not enter into any such
                 conflicting agreement during the term of this Agreement.
               </p>
+              <ul>
+                <>
+                  <p>
+                    1) <strong>Non-Solicitation.</strong>&nbsp;During the term
+                    of this Consultant Agreement and for two years thereafter, a
+                    Consultant may not, using Company's trade secrets, directly
+                    or indirectly solicit any Scout &amp; Cellar Consultant or
+                    any Scout &amp; Cellar employee for engagement as an
+                    employee, or as an independent consultant, contractor or
+                    distributor of any direct selling or network marketing
+                    company, nor will Consultant solicit any Scout &amp; Cellar
+                    employee to become a Consultant of Scout &amp; Cellar during
+                    this period. “Solicit” includes (i) communicating
+                    information or offering to provide information about any
+                    other direct selling or network marketing business
+                    opportunity to a Scout &amp; Cellar Consultant or employee;
+                    (ii) posting or messaging information about another direct
+                    selling or network marketing business opportunity on any
+                    social media site utilized by the Consultant to promote her
+                    or his Scout &amp; Cellar business; (iii) tagging any Scout
+                    &amp; Cellar Consultant or employee with a post on any
+                    social media site that provides information or offers to
+                    provide information about another direct selling or network
+                    marketing business opportunity; (iv) enrolling or attempting
+                    to enroll a Scout &amp; Cellar Consultant or employee as a
+                    consultant, independent contractor or distributor in another
+                    direct selling or network marketing company. This conduct
+                    constitutes soliciting even if the Consultant's actions are
+                    in response to an inquiry made by another person who is a
+                    Consultant or a Scout &amp; Cellar employee; and (v) any
+                    additional actions defined as Solicitation in the
+                    “Prohibited Consultant Practices – Non-Solicitation" item in
+                    the Policies and Procedures.
+                  </p>
+                </>
+              </ul>
             </>
             <>
               <p>
-                12. <strong>Non-Solicitation.</strong>&nbsp;During the term of
-                this Consultant Agreement and for one year thereafter, a
-                Consultant may not, using Company’s trade secrets, directly or
-                indirectly solicit any Scout &amp; Cellar Consultant or any
-                Scout &amp; Cellar employee for engagement as an employee, or as
-                an independent consultant, contractor or distributor of any
-                direct selling or network marketing company, nor will Consultant
-                solicit any Scout &amp; Cellar employee to become a Consultant
-                of Scout &amp; Cellar during this period. “Solicit” includes (i)
-                communicating information or offering to provide information
-                about any other direct selling or network marketing business
-                opportunity to a Scout &amp; Cellar Consultant or employee; (ii)
-                posting or messaging information about another direct selling or
-                network marketing business opportunity on any social media site
-                utilized by the Consultant to promote her or his Scout &amp;
-                Cellar business; (iii) tagging any Scout &amp; Cellar Consultant
-                or employee with a post on any social media site that provides
-                information or offers to provide information about another
-                direct selling or network marketing business opportunity; and
-                (iv) enrolling or attempting to enroll a Scout &amp; Cellar
-                Consultant or employee as a consultant, independent contractor
-                or distributor in another direct selling or network marketing
-                company. This conduct constitutes soliciting even if the
-                Consultant’s actions are in response to an inquiry made by
-                another person who is a Consultant or a Scout &amp; Cellar
-                employee.
-              </p>
-            </>
-            <>
-              <p>
-                13. <strong>Release and Permission.&nbsp;</strong>I hereby grant
-                Scout &amp; Cellar and its subsidiaries, affiliates, partners,
+                2). <strong>Release and Permission.&nbsp;</strong>I hereby grant
+                Scout & Cellar and its subsidiaries, affiliates, partners,
                 designees, agents, successors or assigns an unrestricted,
                 perpetual, worldwide, irrevocable, royalty-free, transferable,
                 sub-licensable and fully paid-up license to use, reuse, license,
@@ -3639,16 +3649,16 @@ class Agreement extends React.Component {
             </>
             <>
               <p>
-                14. <strong>Term and Termination of this Agreement.</strong>
+                3) <strong>Term and Termination of this Agreement.</strong>
               </p>
               <ul>
                 <>
                   <p>
                     a) <strong>Term.</strong>&nbsp;This Agreement is effective
-                    from the date of acceptance by Scout &amp; Cellar and will
+                    from the date of acceptance by Scout & Cellar and will
                     automatically renew every twelve (12) months on the
                     anniversary of the date I enter into this Agreement pursuant
-                    to the terms set forth in more detail in the Policies &amp;
+                    to the terms set forth in more detail in the Policies &
                     Procedures, unless terminated earlier as provided in the
                     Agreement.
                   </p>
@@ -3674,11 +3684,11 @@ class Agreement extends React.Component {
                       Consultant has the right to terminate this Agreement at
                       any time, for any reason. Notice of termination must be
                       submitted in writing to the Company at its principal place
-                      of business or via email to{" "}
-                      <a href="mailto:supports@scoutandcellar.com">
-                        supports@scoutandcellar.com
+                      of business or via the contact form at{" "}
+                      <a href="https://scoutandcellar.com/contact">
+                        https://scoutandcellar.com/contact
                       </a>
-                      . Notice must include the Consultant’s name, address, and
+                      . Notice must include the Consultant's name, address, and
                       Consultant ID Number.
                     </strong>
                   </p>
@@ -3687,7 +3697,7 @@ class Agreement extends React.Component {
             </>
             <>
               <p>
-                15.{" "}
+                4){" "}
                 <strong>
                   Events upon Termination of this Agreement.&nbsp;
                 </strong>
@@ -3723,16 +3733,16 @@ class Agreement extends React.Component {
             </>
             <>
               <p>
-                16. <strong>Transferability.&nbsp;</strong>Neither this
-                Agreement nor my Scout &amp; Cellar business may be transferred
-                or assigned by me or operated in partnership with any other
-                person without Scout &amp; Cellar’s prior written consent.
-                Company may assign this Agreement at any time.
+                5) <strong>Transferability.&nbsp;</strong>Neither this Agreement
+                nor my Scout &amp; Cellar business may be transferred or
+                assigned by me or operated in partnership with any other person
+                without Scout &amp; Cellar's prior written consent. Company may
+                assign this Agreement at any time.
               </p>
             </>
             <>
               <p>
-                17. <strong>Entire Agreement: Amendment.</strong>&nbsp;This
+                6) <strong>Entire Agreement: Amendment.</strong>&nbsp;This
                 Agreement (including the Policies &amp; Procedures and
                 Compensation Plan) in its current form, and as may be amended by
                 Scout &amp; Cellar in the future, supersedes all prior
@@ -3746,44 +3756,44 @@ class Agreement extends React.Component {
                 Scout &amp; Cellar. I also understand that this Agreement may be
                 amended by Scout &amp; Cellar in its sole discretion, and I
                 agree to abide by all such amendments. Notification of
-                amendments shall be posted to my Back Office. Amendments shall
-                become effective thirty (30) days after notice of the amendment
-                is posted, but amended policies shall not apply retroactively to
-                conduct that occurred prior to the effective date of the
-                amendment. The continuation of my Scout &amp; Cellar business or
-                my acceptance of bonuses or commissions after the effective date
-                of amendments shall constitute my acceptance of any and all
-                amendments.
+                amendments shall be posted to my Back Office (“The Cellar”).
+                Amendments shall become effective thirty (30) days after notice
+                of the amendment is posted, but amended policies shall not apply
+                retroactively to conduct that occurred prior to the effective
+                date of the amendment, unless expressly stated otherwise. The
+                continuation of my Scout &amp; Cellar business or my acceptance
+                of bonuses or commissions after the effective date of amendments
+                shall constitute my acceptance of any and all amendments.
               </p>
             </>
             <>
               <p>
-                18. <strong>Indemnification/Offset.</strong>&nbsp;I will
+                7) <strong>Indemnification/Offset.</strong>&nbsp;I will
                 indemnify and hold harmless Company, its subsidiaries, managers,
                 officers, employees, agents and assigns from and against any
                 damages, claims or liabilities and expenses (including
-                attorneys’ fees) incident to my: (a) activities as an
+                attorneys' fees) incident to my: (a) activities as an
                 Independent Consultant including, without limitation, any
                 unauthorized representations made by me; (b) any negligent,
                 reckless or intentionally wrongful act of myself or my
                 assistants, employees, contractors or agents, including with
                 respect to claims by third parties related to infringement of
                 third party intellectual property rights; (c) a determination by
-                an arbitrator, court, agency, or other tribunal that the I am
-                not an independent contractor, (d) breach by me or by my
-                assistants, employees, contractors or agents of any of the terms
-                of this Agreement; or (e) violation of or failure to comply with
-                any applicable federal, state or local laws or regulations.
-                Company shall have the right to offset any amounts owed by me to
-                Company (including, without limitation, the repayment of
-                commissions as a result of charge backs and/or product returns)
-                against the amount of any commissions or bonuses owed to me to
-                the fullest extent permitted by applicable law.
+                an arbitrator, court, agency, or other tribunal that I am not an
+                independent contractor, (d) breach by me or by my assistants,
+                employees, contractors or agents of any of the terms of this
+                Agreement; or (e) violation of or failure to comply with any
+                applicable federal, state or local laws or regulations. Company
+                shall have the right to offset any amounts owed by me to Company
+                (including, without limitation, the repayment of commissions as
+                a result of charge backs and/or product returns) against the
+                amount of any commissions or bonuses owed to me to the fullest
+                extent permitted by applicable law.
               </p>
             </>
             <>
               <p>
-                19. <strong>Limitation of Damages.</strong>&nbsp;TO THE EXTENT
+                8) <strong>Limitation of Damages.</strong>&nbsp;TO THE EXTENT
                 PERMITTED BY LAW, COMPANY AND ITS AFFILIATES, OFFICERS MANAGERS,
                 ASSOCIATES AND OTHER REPRESENTATIVES SHALL NOT BE LIABLE FOR,
                 AND I HEREBY RELEASE THE FOREGOING FROM, AND WAIVE ANY CLAIM OF
@@ -3791,7 +3801,7 @@ class Agreement extends React.Component {
                 CONSEQUENTIAL DAMAGES OF ANY KIND OR NATURE, INCLUDING, WITHOUT
                 LIMITATION, DAMAGES FOR LOST PROFITS, LOST BUSINESS, AND LOST
                 OPPORTUNITIES, HOWEVER CAUSED, ARISING OUT OF OR RELATING TO THE
-                COMPANY’S PERFORMANCE, NON-PERFORMANCE, ACT OR OMISSION WITH
+                COMPANY'S PERFORMANCE, NON- PERFORMANCE, ACT OR OMISSION WITH
                 RESPECT TO THE BUSINESS RELATIONSHIP OR OTHER MATTERS BETWEEN
                 MYSELF AND THE COMPANY, WHETHER SUCH LIABILITY IS ASSERTED ON
                 THE BASIS OF CONTRACT, TORT, OR OTHER THEORY OF LIABILITY
@@ -3799,43 +3809,43 @@ class Agreement extends React.Component {
                 OTHERWISE, EVEN IF SCOUT &amp; CELLAR OR ITS AFFILIATES HAVE
                 BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. FURTHERMORE, IT
                 IS AGREED THAT ANY DAMAGE TO ME SHALL NOT EXCEED, AND IS HEREBY
-                EXPRESSLY LIMITED TO THE AMOUNT OF UNSOLD SCOUT &amp; CELLAR
-                PRODUCTS AND SERVICES OWNED OR HELD BY ME, COMMISSIONS, BONUSES
-                AND OVERRIDES.
+                EXPRESSLY LIMITED TO THE AMOUNT OF PRODUCTS AND SERVICES, IF
+                APPLICABLE, OWNED OR HELD BY ME, COMMISSIONS, BONUSES AND
+                OVERRIDES.
               </p>
             </>
             <>
               <p>
-                20. <strong>Cumulative Remedies/Waiver.</strong>&nbsp;All
-                rights, powers and remedies given to either party are
-                cumulative, not exclusive and in addition to any and all other
-                rights and remedies provided by law. No failure or delay of
-                either party to exercise any power or right under this Agreement
-                or to insist upon strict compliance by me with any obligation or
-                provision shall constitute a waiver of such party’s right to
-                demand exact compliance therewith. Waiver by Scout &amp; Cellar
-                can be effective only in writing by an authorized officer of
-                Scout &amp; Cellar.
+                9) <strong>Cumulative Remedies/Waiver.</strong>&nbsp;All rights,
+                powers and remedies given to either party are cumulative, not
+                exclusive and in addition to any and all other rights and
+                remedies provided by law. No failure or delay of either party to
+                exercise any power or right under this Agreement or to insist
+                upon strict compliance by me with any obligation or provision
+                shall constitute a waiver of such party's right to demand exact
+                compliance therewith. Waiver by Scout &amp; Cellar can be
+                effective only in writing by an authorized officer of Scout
+                &amp; Cellar.
               </p>
             </>
             <>
               <p>
-                21. <strong>Injunctive Relief.</strong>&nbsp;Either Scout &amp;
+                10) <strong>Injunctive Relief.</strong>&nbsp;Either Scout &amp;
                 Cellar or I may apply to a court of competent jurisdiction for
                 temporary, preliminary or permanent injunctive relief on the
                 ground that without such relief the agreement to arbitrate in
                 this Agreement may be rendered ineffectual. For example, any
-                breach of the confidentiality or non- solicitation provisions of
+                breach of the confidentiality or non-solicitation provisions of
                 this Agreement by me would cause Scout &amp; Cellar immediate
                 and irreparable harm that could not be made whole solely by
                 monetary damages; therefore, seeking injunctive relief in court
                 before or simultaneous with demanding arbitration, is
-                appropriate.{" "}
+                appropriate.
               </p>
             </>
             <>
               <p>
-                22. <strong>Other Terms.</strong>
+                11) <strong>Other Terms.</strong>
               </p>
               <ul>
                 <>
@@ -3848,12 +3858,14 @@ class Agreement extends React.Component {
                 </>
                 <>
                   <p>
-                    b) I will refer to the Company’s website and/or the Policies
-                    &amp; Procedures to confirm the Company’s current states of
+                    b) I will refer to the Company's website and/or the Policies
+                    &amp; Procedures to confirm the Company's current states of
                     operation, which may change at any time. I understand that I
                     may not conduct business in any state that has not been
                     confirmed by Scout &amp; Cellar as an authorized state for
-                    the sale of wine via the Scout &amp; Cellar program.
+                    the marketing, education and promotion of Scout &amp; Cellar
+                    products and its Clean-Crafted CommitmentTM via the Scout
+                    &amp; Cellar program.
                   </p>
                 </>
                 <>
@@ -3886,7 +3898,7 @@ class Agreement extends React.Component {
             </>
             <>
               <p>
-                23. <strong>Dispute Resolution.</strong>&nbsp;I agree that any
+                12) <strong>Dispute Resolution.</strong>&nbsp;I agree that any
                 controversy, claim or dispute of whatever nature arising between
                 me, on the one hand, and Scout &amp; Cellar, on the other,
                 including but not limited to those arising out of or relating to
@@ -3946,23 +3958,22 @@ class Agreement extends React.Component {
                   <p>
                     d) <strong>Class Action Waiver.</strong> Consultant agrees
                     that by entering into the above agreement to arbitrate,
-                    Consultant is waiving Consultant’s right to have any dispute
+                    Consultant is waiving Consultant's right to have any dispute
                     or claim brought, heard or arbitrated as a class action
                     lawsuit or class action arbitration, any private attorney
-                    general lawsuit or private attorney general
-                    arbitration,&nbsp;or any joint or consolidated lawsuit or
-                    joint or consolidated arbitration of any kind.&nbsp; The
-                    Parties agree that an&nbsp;arbitrator shall not have any
-                    authority to hear or arbitrate any class or collective
-                    action. The Parties agree that&nbsp;any claim that all or
-                    part of this class action waiver is unenforceable shall be
-                    determined by a state or federal&nbsp;court located in
-                    Dallas, Texas and not by an arbitrator. The Parties further
-                    agree that if a court determines&nbsp;that the limitations
-                    of this paragraph are deemed invalid or unenforceable, any
-                    putative class, private attorney general,&nbsp;or
-                    representative action must be brought in a court of proper
-                    jurisdiction and not in arbitration.
+                    general lawsuit or private attorney general arbitration, or
+                    any joint or consolidated lawsuit or joint or consolidated
+                    arbitration of any kind. The Parties agree that an
+                    arbitrator shall not have any authority to hear or arbitrate
+                    any class or collective action. The Parties agree that any
+                    claim that all or part of this class action waiver is
+                    unenforceable shall be determined by a state or federal
+                    court located in Dallas, Texas and not by an arbitrator. The
+                    Parties further agree that if a court determines that the
+                    limitations of this paragraph are deemed invalid or
+                    unenforceable, any putative class, private attorney general,
+                    or representative action must be brought in a court of
+                    proper jurisdiction and not in arbitration.
                   </p>
                 </>
                 <>
@@ -3997,7 +4008,7 @@ class Agreement extends React.Component {
                     shall bear their own legal fees and other expenses incurred
                     in negotiation, mediation, arbitration or any court
                     proceeding. Nothing in this paragraph shall prevent a party
-                    from seeking recovery of its/their attorney’s fees and costs
+                    from seeking recovery of its/their attorney's fees and costs
                     in any legal proceeding if such recovery is permitted by
                     statute or applicable law.
                   </p>
@@ -4008,7 +4019,7 @@ class Agreement extends React.Component {
                     may seek specific performance of this Section, and any party
                     may seek to compel each other party to comply with this
                     Section by petition to any court of competent jurisdiction.
-                    An action to enforce an arbitrator’s award hereunder may be
+                    An action to enforce an arbitrator's award hereunder may be
                     brought before any court of competent jurisdiction. For
                     purposes of any provisional or equitable relief sought under
                     this Section, the parties consent to exclusive jurisdiction
@@ -4021,7 +4032,7 @@ class Agreement extends React.Component {
                     defend against any application for provisional relief on the
                     ground that mediation or arbitration is pending. Each party
                     in any proceeding under this policy shall be responsible for
-                    its own attorney’s fees, legal expenses, and costs. If any
+                    its own attorney's fees, legal expenses, and costs. If any
                     portion of this Section is held to be unenforceable for any
                     reason, the remainder shall remain in full force and effect.
                     Nothing in this Section shall preclude any party from
@@ -4068,7 +4079,7 @@ class Agreement extends React.Component {
             </>
             <>
               <p>
-                24. <strong>Entire Agreement.</strong>&nbsp;The Policies &amp;
+                13) <strong>Entire Agreement.</strong>&nbsp;The Policies &amp;
                 Procedures are incorporated into this Agreement, along with the
                 Compensation Plan, and constitutes the entire agreement of the
                 parties regarding their business relationship.
@@ -4076,7 +4087,7 @@ class Agreement extends React.Component {
             </>
             <>
               <p>
-                25.{" "}
+                14){" "}
                 <strong>
                   California Consumer Privacy Act Addendum <br />
                 </strong>
@@ -4146,7 +4157,7 @@ class Agreement extends React.Component {
                         v) <strong>“Sell” </strong>means selling, renting,
                         releasing, disclosing, disseminating, making available,
                         transferring, or otherwise communicating orally, in
-                        writing, or by electronic or other means, a Consumer’s
+                        writing, or by electronic or other means, a Consumer's
                         Personal Information by the Consultant to a third party
                         for monetary or other valuable consideration.
                       </p>
@@ -4247,7 +4258,7 @@ class Agreement extends React.Component {
                 </>
                 <>
                   <p>
-                    d) <strong>Deletion</strong>. Upon Company’s written
+                    d) <strong>Deletion</strong>. Upon Company's written
                     request, and subject to and in accordance with all
                     applicable laws, Consultant, as a Service Provider, agrees
                     to promptly delete any and all Personal Information.
@@ -4270,15 +4281,15 @@ class Agreement extends React.Component {
               <p>
                 <strong>Indemnification. </strong>Notwithstanding any other
                 limitation of liability or indemnity provisions to the contrary
-                in the Agreement, if Consultantbreaches any of its obligations
+                in the Agreement, if Consultant breaches any of its obligations
                 under this CCPA Addendum or the CCPA, Consultant shall
                 indemnify, defend, and hold the Company harmless from and
                 against all loss, cost, harm, expense (including reasonable
-                attorney’s fees), liabilities or damages (“Damages”) arising
+                attorney's fees), liabilities or damages (“Damages”) arising
                 from the breach. For avoidance of doubt, Damages include (i)
                 monetary fines and penalties issued by any regulatory or
                 governmental authority, and (ii) amounts paid to third parties
-                as damages or amounts paid under the Company’s indemnity
+                as damages or amounts paid under the Company's indemnity
                 obligations to third parties, which shall be considered direct
                 damages.{" "}
               </p>
@@ -4310,10 +4321,7 @@ class Agreement extends React.Component {
       )
       .then((res) => {
         !this.state.currentButton
-          ? fileDownload(
-              res.data,
-              "Independent Consultant Agreement.pdf"
-            )
+          ? fileDownload(res.data, "Independent Consultant Agreement.pdf")
           : fileDownload(res.data, "Policies & Procedures November 2020.pdf");
       });
   };
