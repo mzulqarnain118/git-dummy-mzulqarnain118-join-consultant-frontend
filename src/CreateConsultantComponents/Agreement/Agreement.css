@@ -126,6 +126,24 @@
 .agreementData {
   font-size: 15px;
 }
+
+.agreementData ol {
+  counter-reset: item;
+}
+
+.agreementData ol > li {
+  counter-increment: item;
+}
+
+.agreementData ol ol > li {
+  display: block;
+}
+
+.agreementData ol ol > li:before {
+  content: counters(item, ".") " ";
+  margin-left: -20px;
+}
+
 .acceptAgreement {
   margin-top: 1em;
   font-weight: bold;
