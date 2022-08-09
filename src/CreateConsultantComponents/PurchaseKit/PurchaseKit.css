@@ -1,5 +1,5 @@
 .description-text {
-  font-size: 16px;
+  font-size: 13px;
   color: rgb(70, 63, 63);
   margin-bottom: 7px;
   font-family: Domine;
@@ -156,9 +156,9 @@
 }
 .purchaseInput:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .purchaseRed {
   border-width: 1px;
@@ -180,6 +180,9 @@
   color: red;
   font-family: Domine;
   width: 372px;
+}
+.successMes {
+  color: green;
 }
 .errorMesCVV {
   font-size: 12px;
@@ -203,9 +206,9 @@
 }
 .purchaseInput1:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .purchaseRed1 {
   border-width: 1px;
@@ -252,9 +255,9 @@
 }
 .purchaseInput2:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .purchaseRed2 {
   border-width: 1px;
@@ -281,9 +284,9 @@
   }
   .purchaseInput2:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed2 {
     border-width: 1px;
@@ -367,12 +370,12 @@
   }
 
   .description-text {
-    font-size: 12px;
+    font-size: 10px;
     width: 95%;
     margin-bottom: 10px;
   }
 
-  /* .description-text-1 {
+  .description-text-1 {
     font-size: 14px;
     color: black;
     font-family: Domine;
@@ -399,7 +402,7 @@
     font-weight: 600;
     margin-left: 20px;
     width: 100%;
-  } */
+  }
 
   .purchaseInput {
     border-width: 1px;
@@ -411,9 +414,9 @@
   }
   .purchaseInput:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed {
     border-width: 1px;
@@ -437,9 +440,9 @@
   }
   .purchaseInput1:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed1 {
     border-width: 1px;
@@ -462,9 +465,9 @@
   }
   .purchaseInput2:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed2 {
     border-width: 1px;
@@ -561,7 +564,7 @@
   }
 }
 
-/* @media (max-width: 360px) and (min-width: 290px) {
+@media (max-width: 360px) and (min-width: 290px) {
   .description-text {
     font-size: 10px;
     width: 100%;
@@ -588,4 +591,17 @@
     width: 87%;
     margin-bottom: 10px;
   }
-} */
+}
+.couponCodeApplyButton,
+.couponCodeApplyButton:disabled {
+  background-color: black;
+  border: 0;
+  color: white;
+  font-family: "Oswald";
+  height: 56px !important;
+}
+
+.couponCodeApplyButton:disabled {
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: not-allowed;
+}
