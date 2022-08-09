@@ -67,7 +67,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
       } else {
         error =
           // "Password length must be at least with one letter, one Uppercase letter and one digit ";
-          "Password must be atleast 7 characters long and must contain at least 1 upper case letter, 1 lower case letter and 1 digit.";
+          "Password must be at least 7 characters long and must contain at least 1 upper case letter, 1 lower case letter and 1 digit.";
         this.props.setrightFooterButtonDisabled(true);
       }
     }

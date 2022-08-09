@@ -30,6 +30,7 @@ class PurchaseKit extends React.Component {
         city: "",
         state: "",
       },
+      couponCode: "",
       // checked for billing address / shipping address
       checked: true,
       // purchase kit details
@@ -147,6 +148,17 @@ class PurchaseKit extends React.Component {
     } else {
       this.props.setrightFooterButtonDisabled(true);
     }
+  };
+
+  handleCouponCodeChange = (e) => {
+    this.setState({ couponCode: e.target.value });
+  };
+
+  applyCouponCode = async () => {
+    const couponCodeMessage = await this.props.apiApplyCouponCode(
+      this.state.couponCode
+    );
+    this.setState({ couponCodeMessage });
   };
 
   // handle change to update input details in form state variables
@@ -291,6 +303,34 @@ class PurchaseKit extends React.Component {
     this.enableDone();
   };
 
+  generateDiscountMsg = (description) => {
+    if (description.startsWith("Coupon -")) {
+      return (
+        <React.Fragment>
+          <VscTag size={17} className="coupon-tag" />{" "}
+          <span className="description-text-1">1 Coupon Applied! </span>
+          <span className="description-text-2"> &nbsp;Code:&nbsp; </span>
+          <span className="description-text-3">
+            {description.slice(
+              description.indexOf("-") + 1,
+              description.lastIndexOf("-")
+            )}
+          </span>
+          <div className="description-text-4">
+            {description.slice(description.lastIndexOf("-") + 1)}
+          </div>
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <VscTag size={17} className="coupon-tag" />{" "}
+          <span className="description-text">{description}</span>
+        </React.Fragment>
+      );
+    }
+  };
+
   componentDidMount = async () => {
     if (this.props.purchaseKitDetails.total === 0) {
       await this.props.apiCartDetails();
@@ -365,21 +405,16 @@ class PurchaseKit extends React.Component {
 
                       {purchaseKitDetails.discountDescription !== "" ? (
                         <div className=" description-text ">
-                          <VscTag size={17} className="coupon-tag" />
-                          <span className="description-text">
-                            {purchaseKitDetails.discountDescription.startsWith("Coupon - ")? purchaseKitDetails.discountDescription.slice(
-                              purchaseKitDetails.discountDescription.lastIndexOf(
-                                "-"
-                              ) + 1
-                            ):purchaseKitDetails.discountDescription}
-                          </span>
+                          {this.generateDiscountMsg(
+                            purchaseKitDetails.discountDescription
+                          )}
                         </div>
                       ) : null}
                     </div>
                   </div>
                   <div className="col-lg-2 mod-price-2">
                     <div className="subTotalMoney">
-                      - ${addTrailingZeros(purchaseKitDetails.discount)}
+                      ${addTrailingZeros(purchaseKitDetails.discount)}
                     </div>
                   </div>
                 </div>
@@ -412,6 +447,46 @@ class PurchaseKit extends React.Component {
               <div className="totalSubText">
                 Depending on where your BBK is going, additional taxes and fees
                 may apply. These rates are determined by shipping address
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-lg-5">
+                {/* Coupon Code */}
+                <div className="form-group">
+                  <div className="purchaseInputMargin1">
+                    <span className="purchasehead3" htmlFor="couponCode">
+                      COUPON CODE
+                    </span>
+                    <div className="d-flex align-items-center justify-content-center">
+                      <input
+                        type="text"
+                        value={this.state.couponCode}
+                        className="form-control purchaseInput"
+                        id="couponCode"
+                        name="couponCode"
+                        placeholder="Enter Coupon Code"
+                        onChange={this.handleCouponCodeChange}
+                      />
+                      <button
+                        className="px-3 couponCodeApplyButton"
+                        disabled={this.state.couponCode.length === 0}
+                        onClick={this.applyCouponCode}
+                      >
+                        APPLY
+                      </button>
+                    </div>
+
+                    {this.props.couponCodeMessage.message?.length > 0 && (
+                      <span
+                        className={
+                          this.props.couponCodeMessage.success ? "successMes" : "errorMes"
+                        }
+                      >
+                        {this.props.couponCodeMessage.message}
+                      </span>
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
             <div className="row">
