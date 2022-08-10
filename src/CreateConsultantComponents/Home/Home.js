@@ -234,6 +234,10 @@ class Home extends React.Component {
       fixedWorkingWith: false,
       // customer
       customer: false,
+      couponCodeMessage: {
+        success: false,
+        message: "",
+      },
     };
   }
 
@@ -753,10 +757,12 @@ class Home extends React.Component {
   };
 
   //API get card details
-  apiCartDetails = async () => {
-    this.setState({load: true});
+  apiCartDetails = async (createNewCart = true) => {
+    this.setState({ load: true });
 
-    await this.apiGetCartId();
+    if (createNewCart) {
+      await this.apiGetCartId();
+    }
 
     if (this.state.userData["cart_id"] !== "") {
       let cartId = this.state.userData.cart_id;
@@ -779,6 +785,10 @@ class Home extends React.Component {
             purchaseKitDetails["salestax"] = response.data.OrderLines[0].ItemTax;
             purchaseKitDetails["discount"] = response.data.OrderLines[0].Discounts;
             purchaseKitDetails["total"] = response.data.OrderLines[0].LineTotal;
+            purchaseKitDetails["discountDescription"] =
+              response.data.DiscountTotals.length > 0
+                ? response.data.DiscountTotals[0].TotalDescription
+                : "";
 
             this.setState({
               load: false,
@@ -992,6 +1002,53 @@ class Home extends React.Component {
       });
   };
 
+  apiApplyCouponCode = async (couponCode) => {
+    this.setState({ load: true });
+    try {
+      const res = await axios.post(
+        "https://tower-api.scoutandcellar.com/api/bac/checkout/AddCouponToCart",
+        { CartId: this.state.userData["cart_id"], CouponCode: couponCode }
+      );
+
+      if (res.data.Success) {
+        try {
+          await this.apiCartDetails(false);
+        } catch {
+          this.setState({
+            couponCodeMessage: {
+              success: false,
+              message:
+                "There was an error fetching subtotal data. Please try again later.",
+            },
+          });
+        }
+        this.setState({
+          couponCodeMessage: {
+            success: true,
+            message: "Your coupon was successfully applied.",
+          },
+        });
+      } else {
+        this.setState({
+          couponCodeMessage: {
+            success: false,
+            message: res.data.Error.Traceback.Notifications[0]?.Message,
+          },
+        });
+      }
+    } catch {
+      this.setState({
+        couponCodeMessage: {
+          success: false,
+          message:
+            "There was an error when applying your coupon. Please try again later.",
+        },
+      });
+    } finally {
+      this.setState({ load: false });
+    }
+  };
+
   //*********************************************************** API Calls Ends Here*********************************************************/
 
   //method to set card and address details
@@ -1096,6 +1153,8 @@ class Home extends React.Component {
             setButtonName={this.setButtonName}
             purchaseKitDetails={this.state.purchaseKitDetails}
             apiCartDetails={this.apiCartDetails}
+            apiApplyCouponCode={this.apiApplyCouponCode}
+            couponCodeMessage={this.state.couponCodeMessage}
             cardinfo={this.state.cardinfo}
             addresschange={this.state.addresschange}
             setAddresschange={this.setAddresschange}

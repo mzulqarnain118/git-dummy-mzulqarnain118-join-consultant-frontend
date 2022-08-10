@@ -1,3 +1,45 @@
+.description-text {
+  font-size: 13px;
+  color: rgb(70, 63, 63);
+  margin-bottom: 7px;
+  font-family: Domine;
+}
+.description-text-1 {
+  font-size: 15px;
+  color: black;
+  font-family: Domine;
+  font-weight: 600;
+}
+.description-text-2 {
+  font-size: 15px;
+  color: rgb(94, 83, 83);
+  font-family: Domine;
+  font-weight: 600;
+}
+.description-text-3 {
+  font-size: 15px;
+  color: black;
+  font-family: Domine;
+  font-weight: 600;
+}
+.description-text-4 {
+  font-size: 13px;
+  color: black;
+  font-family: Domine;
+  font-weight: 600;
+  margin-left: 20px;
+}
+.coupon-tag {
+  margin-top: -3px;
+}
+
+.col-lg-3discount {
+  width: 16%;
+}
+.col-lg-1hypen {
+  width: 1%;
+}
+
 .purchaseComponentMargin1 {
   margin-top: 32px;
 }
@@ -98,9 +140,9 @@
 }
 .purchaseInput:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .purchaseRed {
   border-width: 1px;
@@ -122,6 +164,9 @@
   color: red;
   font-family: Domine;
   width: 372px;
+}
+.successMes {
+  color: green;
 }
 .errorMesCVV {
   font-size: 12px;
@@ -145,9 +190,9 @@
 }
 .purchaseInput1:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .purchaseRed1 {
   border-width: 1px;
@@ -194,9 +239,9 @@
 }
 .purchaseInput2:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .purchaseRed2 {
   border-width: 1px;
@@ -223,9 +268,9 @@
   }
   .purchaseInput2:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed2 {
     border-width: 1px;
@@ -284,6 +329,59 @@
   }
 }
 @media only screen and (max-width: 550px) {
+  .mod-price-1 {
+    width: 80%;
+    padding-left: 5%;
+  }
+  .mod-price-2 {
+    width: 20%;
+  }
+  .coupon-tag {
+    margin-top: -3px;
+  }
+
+  .col-lg-3discount {
+    width: 23%;
+  }
+  .col-lg-1hypen {
+    width: 1%;
+  }
+
+  .description-text {
+    font-size: 10px;
+    width: 95%;
+    margin-bottom: 10px;
+  }
+
+  .description-text-1 {
+    font-size: 14px;
+    color: black;
+    font-family: Domine;
+    font-weight: 600;
+    margin-right: 20px;
+  }
+  .description-text-2 {
+    font-size: 14px;
+    color: rgb(94, 83, 83);
+    font-family: Domine;
+    font-weight: 600;
+    margin-left: 15px;
+  }
+  .description-text-3 {
+    font-size: 13px;
+    color: black;
+    font-family: Domine;
+    font-weight: 600;
+  }
+  .description-text-4 {
+    font-size: 13px;
+    color: black;
+    font-family: Domine;
+    font-weight: 600;
+    margin-left: 20px;
+    width: 100%;
+  }
+
   .purchaseInput {
     border-width: 1px;
     border-color: #d8c5a6 !important;
@@ -294,9 +392,9 @@
   }
   .purchaseInput:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed {
     border-width: 1px;
@@ -320,9 +418,9 @@
   }
   .purchaseInput1:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed1 {
     border-width: 1px;
@@ -345,9 +443,9 @@
   }
   .purchaseInput2:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .purchaseRed2 {
     border-width: 1px;
@@ -429,4 +527,45 @@
     margin-top: -0.2em !important;
     margin-left: -11px !important;
   }
+}
+@media (max-width: 360px) and (min-width: 290px) {
+  .description-text {
+    font-size: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 375px) and (min-width: 361px) {
+  .description-text {
+    font-size: 10px;
+    width: 95%;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 411px) and (min-width: 376px) {
+  .description-text {
+    font-size: 10px;
+    width: 85%;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 500px) and (min-width: 411px) {
+  .description-text {
+    font-size: 10px;
+    width: 87%;
+    margin-bottom: 10px;
+  }
+}
+.couponCodeApplyButton,
+.couponCodeApplyButton:disabled {
+  background-color: black;
+  border: 0;
+  color: white;
+  font-family: "Oswald";
+  height: 56px !important;
+}
+
+.couponCodeApplyButton:disabled {
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: not-allowed;
 }
