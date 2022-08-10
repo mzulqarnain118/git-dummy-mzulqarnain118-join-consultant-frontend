@@ -304,7 +304,7 @@ class PurchaseKit extends React.Component {
   };
 
   generateDiscountMsg = (description) => {
-    if (description.startsWith("Coupon -")) {
+    if (description?.startsWith("Coupon -")) {
       return (
         <React.Fragment>
           <VscTag size={17} className="coupon-tag" />{" "}
@@ -482,7 +482,9 @@ class PurchaseKit extends React.Component {
                     {this.props.couponCodeMessage.message?.length > 0 && (
                       <span
                         className={
-                          this.props.couponCodeMessage.success ? "successMes" : "errorMes"
+                          this.props.couponCodeMessage.success
+                            ? "successMes"
+                            : "errorMes"
                         }
                       >
                         {this.props.couponCodeMessage.message}
