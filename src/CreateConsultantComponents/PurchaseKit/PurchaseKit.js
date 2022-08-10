@@ -389,9 +389,6 @@ class PurchaseKit extends React.Component {
                 <div className="row">
                   <div className="col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-xs-1 mobileTotalTitle">
                     <div className="subTotalText">Subtotal</div>
-                    <div className="totalText">Discount</div>
-                    <div className="totalText">Shipping</div>
-                    {/* <div className="totalText">Sales Tax</div> */}
                   </div>
                   <div className="col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-xs-3 mobileTotalValue">
                     <div className="subTotalMoney">
