@@ -1,15 +1,3 @@
-.whileYouarewaiting {
-  color: #ffffff;
-  font-size: 23px !important;
-  font-family: oswald;
-  font-weight: 100;
-  padding: 30px;
-  letter-spacing: 0.25px;
-  text-align: left;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-}
 .pcStepper {
   background: transparent;
   width: 70vw;
@@ -94,16 +82,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-.pcHead4 {
-  font-family: oswald;
-  font-weight: 400;
-  font-size: 23px !important;
-  margin-top: 1em;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
 .fontOswald1 {
   font-family: oswald;
   font-size: 1.3em;
@@ -135,24 +113,10 @@
   height: 6em;
   border-radius: 0.5em;
   margin-top: 2em;
-  margin-left: 6vw;
+  margin-bottom: 2em;
+  display: inline-flex;
   position: relative;
   cursor: pointer;
-}
-.pcFooterCard1 {
-  background: #6f6c6d;
-  width: 24em;
-  height: 10em;
-  border-radius: 0.5em;
-  margin-top: 2em;
-  margin-left: 6vw;
-  position: relative;
-  cursor: pointer;
-}
-.pcFooterLeftMargin {
-  width: 950px;
-  text-align: center;
-  margin: auto;
 }
 .pcCardMarginLeft {
   margin-left: auto;
@@ -167,29 +131,6 @@
   right: 1em;
   bottom: 25%;
 }
-.pcFooterNextIcon1 {
-  color: white;
-  width: 3em;
-  height: 3.5em;
-  position: absolute;
-  right: 1em;
-  bottom: 55%;
-}
-.vine-app-store-logo {
-  height: 50px;
-  width: auto;
-  position: absolute;
-  right: 2em;
-  bottom: 12%;
-}
-
-.vine-play-store-logo {
-  height: 50px;
-  width: auto;
-  position: absolute;
-  right: 12.3em;
-  bottom: 11%;
-}
 .pcFooterMainIcon {
   position: absolute;
   top: 1.5em;
@@ -197,33 +138,10 @@
   height: 1.5em;
   width: 1.5em;
 }
-.pcFooterMainIcon2 {
-  position: absolute;
-  top: 1.5em;
-  left: 5%;
-  height: 1.5em;
-  width: 1.5em;
-}
 .pcFooterText {
   color: white;
   position: absolute;
   top: 15%;
-  left: 23%;
-  width: 10em;
-  font-size: 1.3em;
-}
-.pcFooterText1 {
-  color: white;
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  width: 10em;
-  font-size: 1.3em;
-}
-.pcFooterText2 {
-  color: white;
-  position: absolute;
-  top: 30%;
   left: 23%;
   width: 10em;
   font-size: 1.3em;
@@ -252,9 +170,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .mobileStackLeftMargin {
-    margin-left: -10px;
-  }
   .pcFooter {
     background: #241f20;
     width: 100%;
@@ -267,33 +182,9 @@
     margin-left: 6vw;
     margin-top: 2em;
   }
-  .stepperMdMarginLeft {
-    margin-left: 35vw;
-    height: 22em;
-    overflow: hidden;
-  }
-  .pcFooterLeftMargin {
-    margin-left: 160px;
-    width: 500px;
-  }
 }
 
 @media only screen and (max-width: 550px) {
-  .whileYouarewaiting {
-    color: #ffffff;
-    font-size: 23px !important;
-    font-family: oswald;
-    font-weight: 100;
-    padding: 30px;
-    letter-spacing: 0.25px;
-    text-align: left;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .mobileStackLeftMargin {
-    margin-left: -10px;
-  }
   .pcStepper {
     background: transparent;
     width: 70vw;
@@ -313,13 +204,6 @@
   .pcCardMarginLeft {
     margin-top: 2em;
   }
-  .stepperMdMarginLeft {
-    margin-top: -1em;
-    margin-bottom: 1em;
-    margin-left: 22vw;
-    height: 22em;
-    overflow: hidden;
-  }
 
   .pcFooterCard {
     background: #6f6c6d;
@@ -328,35 +212,6 @@
     border-radius: 0.5em;
     margin-top: 2em;
     cursor: pointer;
-  }
-  .pcFooterCard1 {
-    background: #6f6c6d;
-    width: 20em !important;
-    height: 10em;
-    border-radius: 0.5em;
-    margin-top: 2em;
-    margin-left: 6vw;
-    position: relative;
-    cursor: pointer;
-  }
-  .vine-app-store-logo {
-    height: 43px;
-    width: auto;
-    position: absolute;
-    right: 1.3em;
-    bottom: 12%;
-  }
-
-  .vine-play-store-logo {
-    height: 45px;
-    width: auto;
-    position: absolute;
-    right: 9.7em;
-    bottom: 11%;
-  }
-  .pcFooterLeftMargin {
-    margin-left: 50px;
-    width: 500px;
   }
   .paymentConfirmationHead {
     font-family: Oswald;
@@ -399,16 +254,6 @@
     font-family: Domine;
     text-align: center;
     font-size: 1em;
-  }
-  .pcHead4 {
-    font-family: oswald;
-    font-weight: 400;
-    font-size: 20px !important;
-    margin-top: 1em;
-    text-align: left;
-    padding-left: 1em;
-    padding-right: 1em;
-    margin-left: 2em;
   }
   .pcConsultantNumber {
     background: #f0eae8;
@@ -454,8 +299,6 @@
     font-weight: 300;
     color: #ffffff;
     margin-top: 1.5em;
-    text-align: left;
-    margin-left: 8%;
   }
   .pcFooterText {
     color: white;
@@ -463,22 +306,6 @@
     top: 20%;
     left: 23%;
     width: 11em;
-    font-size: 1.1em;
-  }
-  .pcFooterText1 {
-    color: white;
-    position: absolute;
-    top: 13%;
-    left: 20%;
-    width: 10em;
-    font-size: 1.1em;
-  }
-  .pcFooterText2 {
-    color: white;
-    position: absolute;
-    top: 33%;
-    left: 23%;
-    width: 10em;
     font-size: 1.1em;
   }
   .pcFooterNextIcon {
@@ -496,14 +323,6 @@
     height: 1.5em;
     width: 1.5em;
   }
-  .pcFooterMainIcon2 {
-    position: absolute;
-    top: 1.3em;
-    left: 5%;
-    height: 1.5em;
-    width: 1.5em;
-  }
-
   .arrowIcon1 {
     margin-left: 1em;
     margin-top: -1em;
@@ -553,11 +372,6 @@
     font-weight: 300;
     color: #ffffff;
     margin-top: 1.5em;
-    text-align: left;
-    margin-left: 50px;
-  }
-  .pcFooterLeftMargin {
-    margin-left: 35px;
   }
 }
 
@@ -568,11 +382,6 @@
     font-weight: 300;
     color: #ffffff;
     margin-top: 1.5em;
-    text-align: left;
-    margin-left: 30px;
-  }
-  .pcFooterLeftMargin {
-    margin-left: 15px;
   }
 }
 
@@ -583,28 +392,5 @@
     font-weight: 300;
     color: #ffffff;
     margin-top: 1.5em;
-    text-align: left;
-    margin-left: 25px;
   }
-  .pcFooterLeftMargin {
-    margin-left: 10px;
-  }
-}
-@media only screen and (max-width: 2500px) and (min-width: 1500px) {
-  .pcFooterLeftMargin {
-    width: 1000px;
-    text-align: center;
-    margin: auto;
-  }
-}
-@media only screen and (max-width: 3100px) and (min-width: 2500px) {
-  .pcFooterLeftMargin {
-    width: 1050px;
-    text-align: center;
-    margin: auto;
-  }
-}
-
-.paymentConfirmation-Ol {
-  padding-left: 1rem !important;
 }
