@@ -82,6 +82,20 @@ class Agreement extends React.Component {
                         This isn't a team, it's a FAMILY.
                       </p>
                     </li>
+                    <li>
+                      <strong>Alcoholic vs. Non-Alcoholic Products</strong>
+                      <p>
+                        All alcohol regulatory guidelines contained in these
+                        Policies and Procedures are in effect for all Scout &
+                        Cellar Consultant business activities (including those
+                        dealing with non-alcoholic products) unless an exception
+                        is noted in Part 2, Section 1.7.9 for business activity
+                        that does not involve alcoholic products. Any Consultant
+                        business activity involving a combination of alcoholic
+                        and non-alcoholic products must comply with all
+                        regulatory guidelines for alcoholic products.
+                      </p>
+                    </li>
                   </ol>
                 </li>
                 <li>
@@ -449,28 +463,27 @@ class Agreement extends React.Component {
                           The Brand Standards Team will send out a Brand
                           Standards Basics education video and quiz to each new
                           Consultant during the first week after the Consultant
-                          enters into a Consultant Agreement with Scout &amp;
+                          enters into a Consultant Agreement with Scout &
                           Cellar. This video and quiz cover regulatory
-                          information relevant to the operation of a Scout &amp;
+                          information relevant to the operation of a Scout &
                           Cellar Consultant's independent business. Completion
                           of the quiz with a 9/10 score or higher (hereafter
-                          “passing score”) is mandatory and must occur within 30
-                          days of receiving the education link.
+                          “passing score”) is mandatory to qualify for
+                          recognition, incentives, rewards, prizes, and bonuses
+                          outside of the standard Compensation Plan and should
+                          occur within 30 days of receiving the education link.
                         </li>
                         <li>
-                          If any Consultant fails to submit a passing score
-                          within their first 37 days as a Consultant, the
-                          applicable Consultant account will be subject to
-                          disciplinary action, which may include Lockout, until
+                          If any Consultant fails to submit a passing score, the
+                          applicable Consultant account will be ineligible for
+                          inclusion in recognition (which may include but is not
+                          limited to Tuesday Tasting and other monthly
+                          recognition, AMP recognition and exclusive events,
+                          Incentive Trip qualification and recognition), until
                           the Consultant achieves a passing score on the quiz.
-                          Disciplinary action may result in the suspension of
-                          commission payments and/or the Consultant's access to
-                          the Cellar. Once the quiz is passed, Consultant
-                          account access will be fully reinstated as Active in
-                          as timely a manner as possible. If the Consultant does
-                          not submit a passing score within 60 days of receiving
-                          the link, the Consultant will be in breach of the
-                          Agreement and the relationship will be terminated.
+                          Pay will not be suspended and Consultants will not be
+                          terminated for failure to achieve a passing score on
+                          the quiz.
                         </li>
                       </ol>
                     </li>
@@ -509,9 +522,10 @@ class Agreement extends React.Component {
                       <strong>Usual Course of Consultant Business</strong>
                       <p>
                         The Consultant acknowledges and agrees that the
-                        Company's usual course of business is selling wine.
-                        Consultant represents and warrants that the Consultant
-                        is not in the business of selling wine. The Consultant
+                        Company's usual course of business is selling Scout &
+                        Cellar's products. Consultant represents and warrants
+                        that the Consultant is not in the business of selling
+                        wine or other Scout & Cellar products. The Consultant
                         acknowledges and agrees that Company's usual course of
                         business is not education, marketing, and promotions.
                       </p>
@@ -1530,18 +1544,21 @@ class Agreement extends React.Component {
                   <ol>
                     <li>
                       Federal law requires a signature be obtained from an
-                      individual over the age of 21 for all wine shipments.
-                      Notes with a signature left for the common carrier cannot
-                      be accepted as a replacement for an individual signing for
-                      the shipment. Scout & Cellar recommends that orders are
-                      shipped to a business address or a nearby holding facility
-                      for prompt, successful delivery and to protect the wine.
-                      Consultants are trained to advise their Customers of this
-                      important practice. The Company cannot guarantee the
-                      condition of any wine if delivery is not made on the first
-                      delivery attempt. Orders that are not delivered on the
-                      initial attempt may be held in a facility that is not
-                      temperature controlled.
+                      individual over the age of 21 for all shipments which
+                      include alcoholic products. Notes with a signature left
+                      for the common carrier cannot be accepted as a replacement
+                      for an individual signing for the shipment. Scout & Cellar
+                      recommends that orders are shipped to a business address
+                      or a nearby holding facility for prompt, successful
+                      delivery and to protect the order contents. Consultants
+                      are trained to advise their Customers of this important
+                      practice. The Company cannot guarantee the condition of
+                      any order if delivery is not made on the first delivery
+                      attempt. Orders that are not delivered on the initial
+                      attempt may be held in a facility that is not temperature
+                      controlled. Orders which contain only non-alcoholic
+                      products may be left at the delivery address without a
+                      signature.
                     </li>
                     <li>
                       A Consultant shall not use another Consultant’s or
@@ -1596,21 +1613,21 @@ class Agreement extends React.Component {
                   <ol>
                     <li>
                       Each order must be addressed to a single end consumer of
-                      the products contained in that order. The end consumer
-                      must be 21 and available to provide identification and
-                      proof of their age to the courier upon delivery. Failure
-                      to provide this information may result in a
-                      non-deliverable order.
+                      the products contained in that order. If the order
+                      contains any alcoholic products, the end consumer must be
+                      21 and available to provide identification and proof of
+                      their age to the courier upon delivery. Failure to provide
+                      this information may result in a non-deliverable order.
                     </li>
                     <li>
                       Subject to applicable state laws, customers/end consumers
-                      may ship orders to the Consultant’s address for final
+                      may ship orders to the Consultant's address for final
                       delivery. Such orders must be paid for by the end consumer
                       and shipped with the end consumer listed as the recipient
-                      on the shipping label and must not be opened by the
+                      n the shipping label and must not be opened by the
                       Consultant. Consultants are responsible for knowing and
                       abiding by any applicable state or local regulations which
-                      may restrict the Consultant’s ability to receive orders
+                      may restrict the Consultant's ability to receive orders
                       for their customers.
                     </li>
                     <li>
@@ -1681,9 +1698,10 @@ class Agreement extends React.Component {
                       <strong>Damaged Products</strong>
                       <p>
                         If a Consultant or Customer receives broken or leaking
-                        bottles, they may contact Customer Support immediately
-                        at https://scoutandcellar.com/contact/. Scout & Cellar
-                        will either:
+                        bottles or otherwise-damaged products, they may contact
+                        the Customer Support department immediately at
+                        https://scoutandcellar.com/contact/. Scout & Cellar will
+                        either:
                       </p>
                       <ul>
                         <li>
@@ -1696,17 +1714,17 @@ class Agreement extends React.Component {
                         To help the Company resolve the issue, photos may be
                         requested to determine the best course of action.
                         Consultants and Customers may be given the opportunity
-                        to keep bottles with damaged labels at special pricing,
-                        at the discretion of the Company. All claims must be
-                        made within seven (7) days of receipt.
+                        to keep items with damaged labels at special pricing, at
+                        the discretion of the Company. All claims must be made
+                        within seven (7) days of receipt.
                       </p>
                     </li>
                     <li>
-                      <strong>Defective Wine</strong>
+                      <strong>Defective Products</strong>
                       <p>
                         If a Consultant or Customer believes they have received
-                        a defective bottle of wine, the Consultant or Customer
-                        may contact the Customer Service Department within sixty
+                        a defective product, the Consultant or Customer may
+                        contact the Customer Support Department within sixty
                         (60) days from the date of the order. Scout & Cellar
                         will either:
                       </p>
@@ -1715,19 +1733,19 @@ class Agreement extends React.Component {
                         <li>Provide a credit of the amounts paid.</li>
                       </ul>
                       <p>
-                        Defective means that the wine is flawed or corked; not
-                        “I don’t like it.”
+                        For alcoholic products, defective means that the wine is
+                        flawed or corked; not “I don't like it.”
                       </p>
                     </li>
                     <li>
-                      <strong>Defective Non-Wine Merchandise</strong>
+                      <strong>Defective "Cellar Store" Merchandise</strong>
                       <p>
-                        Defective or incorrectly-sized Merch items may be
-                        exchanged within sixty (60) days of the original
-                        purchase date by contacting Customer Service to obtain a
-                        return shipping label. Once the Merch item to be
-                        exchanged is received at Scout & Cellar, the Company
-                        will either:
+                        Defective or incorrectly-sized items purchased through
+                        the Cellar Store (see glossary) may be exchanged within
+                        sixty (60) days of the original purchase date by
+                        contacting Customer Support to obtain a return shipping
+                        label. Once the item to be exchanged is received at
+                        Scout & Cellar, the Company will either:
                       </p>
                       <ul>
                         <li>
@@ -1759,7 +1777,7 @@ class Agreement extends React.Component {
                   <p>
                     If a customer is not satisfied with a Scout & Cellar wine,
                     the customer or the corresponding Consultant may contact
-                    Customer Service within sixty (60) days from the date of the
+                    Customer Support within sixty (60) days from the date of the
                     order for a credit to be used at Scout & Cellar for the
                     amount paid (less applicable shipping charges and taxes.)
                     Consultants who are not satisfied with a Scout & Cellar wine
@@ -1768,7 +1786,7 @@ class Agreement extends React.Component {
                     unused bottles as further described in this section. If a
                     Customer or Consultant would like to return any unused
                     bottles, the Consultant or Customer may contact Customer
-                    Service for a return shipping label. Once the shipment has
+                    Support for a return shipping label. Once the shipment has
                     been received at our warehouse, the Company will issue a
                     credit in the amount paid (less applicable shipping charges
                     and a 25% restocking fee.)
@@ -1790,11 +1808,11 @@ class Agreement extends React.Component {
                 </li>
                 <li>
                   <strong>
-                    Out of Stock, Backorders, and Missing/Wrong Bottles
+                    Out of Stock, Backorders, and Missing/Wrong Items
                   </strong>
                   <p>
-                    When wine is out of stock, is on backorder, or there are
-                    missing/incorrect bottles in an order, Scout & Cellar will
+                    When a product is out of stock, is on backorder, or there
+                    are missing/incorrect items in an order, Scout & Cellar will
                     abide by the following procedures to resolve the issue:
                   </p>
 
@@ -1802,53 +1820,51 @@ class Agreement extends React.Component {
                     <li>
                       <strong>Backorders</strong>
                       <p>
-                        If a wine is on backorder, Scout & Cellar will
-                        immediately split the order, ship the wines in stock
-                        right away and ship the backordered wines when they
+                        If a product is on backorder, Scout & Cellar will
+                        immediately split the order, ship the products in stock
+                        right away and ship the backordered items when they
                         arrive in the warehouse at no additional cost. The
                         packing slip for the first shipment will identify the
-                        wine missing from the box and provide details about when
-                        it will be received.
+                        items missing from the box and provide details about
+                        when they will be received.
                       </p>
                     </li>
                     <li>
                       <strong>Out of Stock</strong>
                       <p>
-                        If a wine is out of stock, Scout & Cellar will select a
-                        comparable substitute. The packing slip will identify
-                        the wine that sold out and the wine being substituted.
-                        In most substitution scenarios, the replacement wine
-                        will be of equal or greater value than the wine
-                        originally purchased at no additional cost. In rare
-                        circumstances where this is not the case, Scout & Cellar
-                        will extend a credit towards a future purchase for the
-                        difference.
+                        If a product is out of stock, Scout & Cellar will select
+                        a comparable substitute. The packing slip will identify
+                        the item that sold out and the item being substituted.
+                        In most substitution scenarios, the replacement will be
+                        of equal or greater value than the product originally
+                        purchased at no additional cost. In rare circumstances
+                        where this is not the case, Scout & Cellar will extend a
+                        credit towards a future purchase for the difference.
                       </p>
                     </li>
                     <li>
-                      <strong>Incorrect Bottles</strong>
+                      <strong>Incorrect Items</strong>
                       <p>
-                        In the event a shipment contains incorrect bottles,
+                        In the event a shipment contains incorrect items,
                         Customers or Consultants should submit an inquiry using
                         the contact form at https://scoutandcellar.com/contact/.
-                        Scout & Cellar will ship the correct bottles right away
-                        and will make arrangements to pick up the bottles sent
-                        by mistake at no additional cost. Customers or
-                        Consultants who would like to keep any incorrect bottles
-                        from a shipment should submit an inquiry at
+                        Scout & Cellar will ship the correct items right away
+                        and will make arrangements to pick up the items sent by
+                        mistake at no additional cost. Customers or Consultants
+                        who would like to keep any incorrect items from a
+                        shipment should submit an inquiry at
                         https://scoutandcellar.com/contact/ to purchase the
-                        bottles with special pricing.
+                        items with special pricing.
                       </p>
                     </li>
                     <li>
-                      <strong>Missing Bottles</strong>
+                      <strong>Missing Items</strong>
                       <p>
-                        In the event a shipment is missing bottles, Customers or
+                        In the event a shipment is missing items, Customers or
                         Consultants should submit an inquiry using the contact
                         form at https://scoutandcellar.com/contact/. Scout &
-                        Cellar will ship the missing bottles right away or
-                        extend store credit at the Customer or Consultant’s
-                        choice.
+                        Cellar will ship the missing item right away or extend
+                        store credit at the Customer or Consultant's choice.
                       </p>
                     </li>
                   </ol>
@@ -2260,7 +2276,9 @@ class Agreement extends React.Component {
                         Consultant was able to quit a job, earn replacement-
                         level income, acquire expensive or luxury material
                         possessions, travel to exotic or expensive destinations,
-                        get paid to drink wine, or earn free wine.
+                        get paid to consume Scout & Cellar products (especially
+                        wine), or earn free Scout & Cellar products (especially
+                        wine).
                       </p>
                     </li>
                     <li>
@@ -2298,15 +2316,15 @@ class Agreement extends React.Component {
                           .
                         </li>
                         <li>
-                          The wine <strong>sells itself</strong>!
+                          The products <strong>sells themselves</strong>!
                         </li>
                         <li>
-                          "I receive <strong>residual income</strong> from my
-                          customers' participation in Scout Circle"
-                        </li>
-                        <li>
-                          <strong>Passive income</strong> (including any income
-                          from recurring Scout Circle or AutoShip subscriptions)
+                          <strong>
+                            “I receive residual income” or “I receive passive
+                            income”
+                          </strong>{" "}
+                          (including any income from recurring Scout Circle™ or
+                          Auto-Sip™ subscriptions)
                         </li>
                         <li>
                           <strong>No quotas or minimum sales</strong> to remain
@@ -2594,10 +2612,7 @@ class Agreement extends React.Component {
                       Consultants are encouraged to nominate other Consultants
                       whom they find are setting a good example to follow with
                       regards to the Policies & Procedures. Nominations are
-                      accepted through the Brand Standards email as well as
-                      through a dedicated survey available in the Reserve Room
-                      Facebook Group (accessible to all Scout & Cellar
-                      consultants).
+                      accepted through the Brand Standards email address.
                     </li>
                     <li>
                       Abuse of the Reporting Policy may be considered a
@@ -2635,10 +2650,13 @@ class Agreement extends React.Component {
                           Consultant or employee;
                         </li>
                         <li>
-                          Posting or messaging information about another direct
-                          selling or network marketing business opportunity on
-                          any social media site utilized by the Consultant to
-                          promote Consultant’s Scout & Cellar business;
+                          • Posting or messaging information about another
+                          direct selling or network marketing business
+                          opportunity on any social media site. Consultant posts
+                          about such a business must contain no references to
+                          the business opportunity and instead contain only
+                          information (such as benefits and features) about the
+                          products of the non-Scout & Cellar business;
                         </li>
                         <li>
                           Tagging any Scout & Cellar Consultant or employee with
@@ -2651,7 +2669,7 @@ class Agreement extends React.Component {
                           Enrolling or attempting to enroll a Scout & Cellar
                           Consultant or employee as a consultant, independent
                           contractor or distributor in another direct selling or
-                          network marketing company.
+                          network marketing company; and
                         </li>
                       </ul>
                       <p>
@@ -2659,6 +2677,14 @@ class Agreement extends React.Component {
                         Consultant’s actions are in response to an inquiry made
                         by another person who is a Consultant or a Scout &
                         Cellar employee.
+                      </p>
+                      <p>
+                        If a former Consultant is in violation of this
+                        non-solicitation provision more than one year after the
+                        termination of their Consultant agreement, their
+                        Non-Solicitation Period extended to one year from the
+                        date of the Consultant's last solicitation of any other
+                        Scout & Cellar Consultant or Winery Team member.
                       </p>
 
                       <ol>
@@ -2696,9 +2722,9 @@ class Agreement extends React.Component {
                         potential confusion among customers about the
                         relationship(s) between Scout & Cellar and the other
                         business, and to ensure a Consultant is not
-                        unintentionally in violation of relevant alcohol and
-                        beverage regulations, which may vary by state or
-                        municipality.
+                        unintentionally in violation of any applicable
+                        regulations – especially those related to alcohol –
+                        which may vary by state or municipality.
                       </p>
                       <p>
                         A Consultant that is marketing a non-Scout & Cellar
@@ -2709,11 +2735,13 @@ class Agreement extends React.Component {
                         business on a given Social Media profile or account, the
                         Consultant must identify themself as an Independent
                         Scout & Cellar Consultant on each post related to Scout
-                        & Cellar. All posts related to Scout & Cellar must be
-                        identified with #IndependentConsultant #ScoutAndCellar
-                        or similar identification so as not to create confusion
-                        about which company is being promoted. Due to
-                        regulations on alcohol promotion and advertising,
+                        & Cellar. All posts related to Scout & Cellar must
+                        include #IndependentConsultant #ScoutAndCellar or
+                        similar identification so as not to create confusion
+                        about which company is being promoted.
+                      </p>
+                      <p>
+                        Due to regulations on alcohol promotion and advertising,
                         Consultants may not market another business involving
                         the sale of alcohol on the same social media page as
                         their Independent Scout & Cellar Business.
@@ -2917,6 +2945,17 @@ class Agreement extends React.Component {
                         with all additional requirements unique to the
                         Consultant’s state.
                       </p>
+                      <p>
+                        All alcohol regulatory guidelines contained in these
+                        Policies and Procedures are in effect for all Scout &
+                        Cellar Consultant business activities (including those
+                        dealing with non-alcoholic products) unless an exception
+                        is noted in Part 2, Section 1.7.9 for business activity
+                        that does not involve alcoholic products. Any Consultant
+                        business activity involving a combination of alcoholic
+                        and non-alcoholic products must comply with all
+                        regulatory guidelines for alcoholic products.
+                      </p>
                     </li>
                     <li>
                       <strong>
@@ -2935,7 +2974,7 @@ class Agreement extends React.Component {
                           <p>
                             Consultants may use gift tags, such as those
                             available through Scout & Cellar, to personalize a
-                            gifted bottle provided the tag does not hide or
+                            gifted wine bottle provided the tag does not hide or
                             otherwise alter the bottle’s label itself (i.e.
                             stickers or other labels that cannot be separated
                             from the bottle).
@@ -2950,9 +2989,11 @@ class Agreement extends React.Component {
                           approval from the Company.
                         </li>
                         <li>
-                          Consultants are strictly prohibited from reselling
-                          wine to Customers or anyone else. All Customer
-                          purchases are directly fulfilled by Scout & Cellar.
+                          Consultants are strictly prohibited from carrying
+                          inventory (outside of what is intended for personal
+                          use) or reselling any Scout & Cellar product to
+                          Customers or anyone else. All Customer purchases are
+                          directly fulfilled by Scout & Cellar.
                         </li>
                       </ol>
                     </li>
@@ -3227,6 +3268,16 @@ class Agreement extends React.Component {
                     </li>
                     <li>
                       <strong>Tasting & Pouring Policy</strong>
+                      <p>
+                        For the purposes of this section, a “wine tasting”
+                        includes any event where alcoholic Scout & Cellar
+                        products are available for sampling in a traditional
+                        tasting format (digital or in-person), regardless of the
+                        presence of any non-alcoholic Scout & Cellar products.
+                        For guidelines on tasting events including only
+                        non-alcoholic Scout & Cellar products, please see Part
+                        2, Section 1.7.9 of this document.
+                      </p>
                       <ol>
                         <li>
                           <strong>Approved In-Person Tasting Locations</strong>
@@ -3358,6 +3409,42 @@ class Agreement extends React.Component {
                         constitutes an impermissible sale of alcohol and is not
                         compliant with this policy.
                       </p>
+                    </li>
+                    <li>
+                      <strong>Marketing Non-Alcoholic Products</strong>
+                      <p>
+                        Policies in this section only apply if there are no
+                        alcoholic Scout & Cellar products open, tasted, or
+                        purchased in conjunction (at the same time, event,
+                        order, etc.) with non-alcoholic Scout & Cellar products:
+                      </p>
+                      <ol>
+                        <li>
+                          Consultants may distribute samples of non-alcoholic
+                          Scout & Cellar products at events which would not
+                          qualify as fully-compliant wine tastings, including
+                          events which include an admission fee or which are
+                          publicly announced or open to the public. If any
+                          alcoholic Scout & Cellar products are present at such
+                          an event, those products must:
+                          <p>- Be for display purposes only, AND</p>
+                          <p>
+                            - Be unopened and sealed OR be empty and dry upon
+                            arrival at the event, AND
+                          </p>
+                          <p>
+                            - Remain sealed or dry for the duration of the
+                            event.
+                          </p>
+                        </li>
+                        <li>
+                          Offers or gifts involving non-alcoholic products must
+                          not be used to entice sales of alcoholic products.
+                          Activities which constitute a violation of this policy
+                          are likely also unlawful given regulations restricting
+                          how alcoholic products may legally be marketed.
+                        </li>
+                      </ol>
                     </li>
                   </ol>
                 </li>
@@ -3570,12 +3657,13 @@ class Agreement extends React.Component {
                         This includes, but is not limited to, use of the name
                         “Scout & Cellar,” “Clean-Crafted,” and/or "Clean-
                         Crafted Commitment" and any of Scout & Cellar’s other
-                        brands, marks, or tradenames. The use of “Scout &
-                        Cellar”, "Clean-Crafted", “Clean-Crafted Commitment” or
-                        any of Scout & Cellar’s other brands, marks, or
-                        tradenames or any derivative thereof, on any item not
-                        produced by the Company is prohibited, except when the
-                        Consultant is identified as a "Scout & Cellar
+                        brands, marks, or tradenames – including (but not
+                        limited to) “Scouting Grounds” and “Scout Wild”. The use
+                        of “Scout & Cellar”, "Clean-Crafted", “Clean-Crafted
+                        Commitment” or any of Scout & Cellar’s other brands,
+                        marks, or tradenames or any derivative thereof, on any
+                        item not produced by the Company is prohibited, except
+                        when the Consultant is identified as a "Scout & Cellar
                         Independent Consultant" or "S&C Independent Consultant."
                       </p>
                       <ol>
@@ -3914,19 +4002,20 @@ class Agreement extends React.Component {
                           Referencing Scout & Cellar or its products as “clean”
                           instead of “clean-crafted”. Consultants may use
                           “clean” to describe a lifestyle consistent with the
-                          goals of the Clean Crafted Commitment, but may not use
-                          “clean” if it implies a health or medical claim as
-                          described below.
+                          goals of the Clean Crafted Commitment<sup>TM</sup>,
+                          but may not use “clean” if it implies a health or
+                          medical claim as described below.
                           <p>
                             OK: Scout & Cellar is a great fit for my clean
                             lifestyle!
                           </p>
                           <p>
-                            Not OK: Scout & Cellar’s clean wine is my favorite!
+                            Not OK: Scout & Cellar’s clean wine (or clean
+                            coffee) is my favorite!
                           </p>
                           <p>
-                            OK: S&C’s Clean-Crafted<sup>TM</sup> wine is a great
-                            fit for my clean lifestyle
+                            OK: S&C’s products are a great fit for my clean
+                            lifestyle
                           </p>
                           <p>
                             Not OK: Drinking clean wine has improved my well
@@ -3934,12 +4023,13 @@ class Agreement extends React.Component {
                           </p>
                         </li>
                         <li>
-                          Making health related or medical claims including but
-                          not limited to claiming that Scout & Cellar wines are
-                          “headache free” or “hangover free” or do not cause
-                          headaches, hangovers, or other physical conditions.
-                          This includes but is not limited to referring to Scout
-                          & Cellar wines as “healthy” or “good for you.”
+                          Making health related or medical claims about Scout &
+                          Cellar products. This includes but is not limited to
+                          claiming that Scout & Cellar wines are “headache free”
+                          or “hangover free” or do not cause headaches,
+                          hangovers, or other physical conditions, as well as
+                          referring to Scout & Cellar products as “healthy” or
+                          “good for you.”
                         </li>
                         <li>
                           Making generalizations about characteristics of
@@ -3947,9 +4037,10 @@ class Agreement extends React.Component {
                           to our entire product line, including but not limited
                           to claiming that our wines are “organic,” or
                           “biodynamic”. Consultants may only use descriptors of
-                          this nature when speaking about specific wines that
-                          have such characteristics posted on the wine’s Soil to
-                          Sip Report<sup>TM</sup> at{" "}
+                          this nature when speaking about specific products that
+                          have such characteristics posted on the product's
+                          Soil-to-Sip Report<sup>TM</sup> or product description
+                          page at{" "}
                           <a
                             href="https://scoutandcellar.com"
                             target="_blank"
@@ -3962,13 +4053,14 @@ class Agreement extends React.Component {
                         <li>
                           Making statements about the specific amount of
                           calories, sugar, or other measurable characteristics
-                          of the Scout & Cellar wines, except when such
+                          of the Scout & Cellar products, except when such
                           information is made publicly available by Scout &
-                          Cellar, such as through each wine’s Soil to Sip
-                          ReportTM. This is applicable whether using numbers or
-                          percentages, directly or in comparison to other wines,
-                          and in general or specifically, except as otherwise
-                          expressly stated by Scout & Cellar.
+                          Cellar, such as through each product's Soil-to-Sip
+                          Report™️ or product description page. This is
+                          applicable whether using numbers or percentages,
+                          directly or in comparison to other products, and in
+                          general or specifically, except as otherwise expressly
+                          stated by Scout & Cellar.
                         </li>
                         <li>
                           Referring to Scout & Cellar Independent Consultants as
@@ -4111,8 +4203,8 @@ class Agreement extends React.Component {
                   </p>
                   <p>
                     This link may be promoted with language which states “To
-                    learn more about Scout & Cellar Clean Crafted<sup>TM</sup>{" "}
-                    Wine please click here."
+                    learn more about Scout & Cellar and the Clean-Crafted
+                    <sup>TM</sup> Lifestyle please click here."
                   </p>
                   <strong>URLs</strong>
                   <p>
@@ -4143,9 +4235,8 @@ class Agreement extends React.Component {
                   <p>
                     For Independent Websites which only exist as a URL Redirect
                     or Blog Button placement (and have no other Scout &
-                    Cellar-related content to approve), there is an annual fee
-                    of $9.95, charged at the time of the website’s submission
-                    for review and on each subsequent anniversary of that date.
+                    Cellar-related content to approve), there is no one-time or
+                    annual review fee.
                   </p>
                 </li>
                 <li>
@@ -4214,6 +4305,70 @@ class Agreement extends React.Component {
                     that the owner of the intellectual property places on the
                     use of its property.
                   </p>
+                </li>
+                <li>
+                  <strong>
+                    Promotion of Scout & Cellar Products at Retail
+                  </strong>
+                  <p>
+                    Consultants must not publicly interact with any individual
+                    retailer of Scout & Cellar products (except the scenarios
+                    described below in this section or with prior written
+                    permission from the Winery Team), to market Scout & Cellar
+                    products or the retailer of S&C products. This includes
+                    public social media posts, email or text “blasts” to more
+                    than one individual, and commenting about Scout & Cellar's
+                    retail presence directly through the retailer's social
+                    media.
+                  </p>
+                  <p>
+                    If a customer asks a Consultant about Scout & Cellar
+                    products' presence in a retail setting, the Consultant must
+                    not reply publicly, regardless of how or where the customer
+                    made the relevant inquiry. Failure to abide by this policy
+                    likely also indicates unlawful behavior under federal and
+                    state-level alcohol regulations.
+                  </p>
+                  <p>Exceptions are as follows:</p>
+                  <ul>
+                    <li>
+                      Consultants may post about a Scout & Cellar-sponsored
+                      event held at a retailer of Scout & Cellar products only
+                      if:
+                      <ul>
+                        <li>
+                          The post or ad does not include any “laudatory
+                          language” referring to a specific retailer of S&C
+                          products, AND
+                        </li>
+                        <li>
+                          All mentions of a retailer are inconspicuous and do
+                          not stand out from the rest of the ad or post, AND
+                        </li>
+                        <li>No prices are listed in the post, AND</li>
+                        <li>
+                          The post is framed squarely on the event rather than
+                          individual products associated with the event, AND
+                        </li>
+                        <li>
+                          The post includes the date, time, location (including
+                          retailer name and address), products being sampled (if
+                          any), and other relevant information about the event.
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Consultants may repost any retailer-related posts from the
+                      official Scout & Cellar or related brand social media
+                      pages, but may not add any content that did not exist in
+                      the original post.
+                    </li>
+                    <li>
+                      Consultants may discuss Scout & Cellar's retail presence
+                      only as described above or orally, either in a one-on-one
+                      conversation or as part of a small private tasting.
+                    </li>
+                  </ul>
                 </li>
               </ol>
             </li>
@@ -4327,6 +4482,8 @@ class Agreement extends React.Component {
                       over 30 consecutive days for any reason - including but
                       not limited to Policies and Procedures violations - may be
                       subject to termination.
+                    </li>
+                    <li>
                       <ol>
                         <li>
                           <strong>
@@ -4339,27 +4496,6 @@ class Agreement extends React.Component {
                             business operations; (2) dissolve as a corporate
                             entity; or (3) terminate marketing of its products
                             utilizing independent consultants.
-                          </p>
-                        </li>
-                        <li>
-                          <strong>Termination for Inactivity</strong>
-                          <p>
-                            If a Consultant fails to market Scout & Cellar
-                            products resulting in at least $600 in
-                            commissionable volume of Scout & Cellar product over
-                            any twelve-consecutive month period (also expressed
-                            as a rolling average of $50 per month in Personal
-                            Volume across the previous 12 calendar months), such
-                            Consultant’s Consultant Agreement and independent
-                            Scout & Cellar business will be cancelled for
-                            inactivity. If such a Consultant is also enrolled in
-                            a Scout & Cellar monthly wine purchasing program,
-                            the Consultant’s participation in that program shall
-                            also be cancelled. Should the Consultant desire to
-                            maintain an active wine club, the Consultant should
-                            use the contact form at
-                            https://scoutandcellar.com/contact/ to set up a new
-                            Customer account.
                           </p>
                         </li>
                         <li>
@@ -4683,11 +4819,12 @@ class Agreement extends React.Component {
             <>
               <p>
                 I acknowledge and agree that Company's usual course of business
-                is selling wine. I represent and warrant that I am not in the
-                business of selling wine. I represent and warrant that I am in
-                the business of marketing, promotions and education. I
-                acknowledge and agree that Company's usual course of business is
-                not marketing, promotions and education.
+                is selling Scout & Cellar products. I represent and warrant that
+                I am not in the business of selling Scout & Cellar products. I
+                represent and warrant that I am in the business of marketing,
+                promotions and education. I acknowledge and agree that Company's
+                usual course of business is not marketing, promotions and
+                education.
               </p>
             </>
             <>
@@ -4702,14 +4839,16 @@ class Agreement extends React.Component {
             <>
               <p>
                 3. <strong>Business Kit.</strong> I agree to purchase a
-                non-commissionable Business Kit from Scout &amp; Cellar. I
+                non-commissionable Business Kit from Scout & Cellar. I
                 understand that a Business Kit is the only purchase required to
-                conduct business as a Scout &amp; Cellar Independent Consultant.
-                I also agree to pay any renewal fees required to extend the term
-                of this Agreement. If you are a Montana resident, you may return
-                your Starter Kit for a full refund within fifteen (15) days from
-                the date of purchase. Please see the Policies &amp; Procedures
-                for more detailed return policies and procedures.
+                conduct business as a Scout & Cellar Independent Consultant,
+                except where, by law, the purchase of a Business Kit cannot be
+                required. I also agree to pay any renewal fees required to
+                extend the term of this Agreement. If you are a Montana
+                resident, you may return your Starter Kit for a full refund
+                within fifteen (15) days from the date of purchase. Please see
+                the Policies & Procedures for more detailed return policies and
+                procedures.
               </p>
             </>
             <>
@@ -4785,6 +4924,15 @@ class Agreement extends React.Component {
                     cannot deliver or sell wines directly to customers or do
                     anything that would jeopardize the Company's good standing
                     and permits or licenses.
+                  </p>
+                </>
+                <>
+                  <p>
+                    f) Non-Alcoholic Products. I understand that policies
+                    restricting Consultant activity with regard to alcoholic
+                    Scout & Cellar products automatically extend to
+                    non-alcoholic Scout & Cellar products unless expressly
+                    stated within the Policies and Procedures.
                   </p>
                 </>
               </ul>
