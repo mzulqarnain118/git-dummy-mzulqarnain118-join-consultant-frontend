@@ -261,7 +261,7 @@ class PaymentConfirmation extends React.Component {
                 onMouseUp={this.onRippleStop1}
               >
                 <a
-                  href="https://team.scoutandcellar.com/Account/Login?utm=bac"
+                  href="https://team.scoutandcellar.com/Portal/Consultants/OrderHistory"
                   target="_blank"
                   rel="noreferrer"
                 >
