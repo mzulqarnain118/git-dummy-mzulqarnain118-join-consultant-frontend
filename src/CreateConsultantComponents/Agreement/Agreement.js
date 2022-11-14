@@ -91,9 +91,9 @@ class Agreement extends React.Component {
                         dealing with non-alcoholic products) unless an exception
                         is noted in Part 2, Section 1.7.9 for business activity
                         that does not involve alcoholic products. Any Consultant
-                        business activity involving a combination of alcoholic
-                        and non-alcoholic products must comply with all
-                        regulatory guidelines for alcoholic products.
+                        business activity involving gift cards or a combination
+                        of alcoholic and non-alcoholic products must comply with
+                        all regulatory guidelines for alcoholic products.
                       </p>
                     </li>
                   </ol>
@@ -1399,10 +1399,11 @@ class Agreement extends React.Component {
 
                   <ol>
                     <li>
-                      Consultants shall not pay for downline orders to help
-                      themselves or any downline consultants achieve a
-                      particular rank or bonus. All bonuses and commissions must
-                      be earned by the Consultant receiving them.
+                      Consultants shall not pay for downline orders or buy gift
+                      cards to help themselves or any downline consultants
+                      achieve a particular rank or bonus. All bonuses and
+                      commissions must be earned by the Consultant receiving
+                      them.
                     </li>
                     <li>
                       Scout & Cellar will not issue a payment to a Consultant
@@ -1563,7 +1564,8 @@ class Agreement extends React.Component {
                     <li>
                       A Consultant shall not use another Consultant’s or
                       Customer’s credit card to join the Company. A Consultant
-                      may not place orders for Consultants or customers in their
+                      may not place orders (including but not limited to orders
+                      of Gift Cards) for Consultants or customers in their
                       downline organization using their own credit card in order
                       to qualify for any fast start bonuses, trips, promotions
                       or other incentive programs. This is considered
@@ -1799,11 +1801,12 @@ class Agreement extends React.Component {
                   </strong>
                   <p>
                     Excessive and/or improper refund, credit, or order placement
-                    activity may constitute a breach of the Consultant
-                    Agreement. Scout & Cellar reserves the right to review this
-                    activity and terminate the Consultant Agreement of any
-                    Consultant for excessive or improper refund, credit, or
-                    order placement activity.
+                    activity (including the purchase of Gift Cards) may
+                    constitute a breach of the Consultant Agreement. Scout &
+                    Cellar reserves the right to review this activity and
+                    terminate the Consultant Agreement of any Consultant for
+                    excessive or improper refund, credit, or order placement
+                    activity.
                   </p>
                 </li>
                 <li>
@@ -3203,16 +3206,17 @@ class Agreement extends React.Component {
                       <p>
                         If the gift is contingent on any behavior (including on
                         social media) or purchase, it is considered an exchange
-                        of value and is not allowed. As a result, wine cannot be
-                        considered a gift if it is being given away at a
-                        tasting.
+                        of value and is not allowed. As a result, wine (or a
+                        gift card) cannot be considered a gift if it is being
+                        given away at a tasting.
                       </p>
                       <p>
-                        Giveaways of non-wine items via social media may only be
-                        allowed if there is no purchase requirement or other
-                        quid pro quo and the giveaway complies with the social
-                        media platform’s Terms and Conditions and any applicable
-                        laws.
+                        Wine and Gift Cards cannot be given away through social
+                        media. Giveaways of non-wine items via social media may
+                        only be allowed if there is no purchase requirement or
+                        other quid pro quo and the giveaway complies with the
+                        social media platform’s Terms and Conditions and any
+                        applicable laws.
                       </p>
                     </li>
                     <li>
@@ -3477,14 +3481,21 @@ class Agreement extends React.Component {
                       </ol>
                     </li>
                     <li>
-                      Purchasing Scout & Cellar wine on behalf of another
-                      Consultant or Customer (with or without their knowledge),
-                      or under another Consultant’s or Customer’s ID number to
-                      qualify for commissions or bonuses;
+                      Purchasing Scout & Cellar products (including but not
+                      limited to Gift Cards) on behalf of another Consultant or
+                      Customer (with or without their knowledge), or under
+                      another Consultant’s or Customer’s ID number to qualify
+                      for commissions or bonuses;
                     </li>
                     <li>
                       “Gifting” new Consultants or Customers to another
                       Consultant for the purpose of triggering bonuses; and/or
+                    </li>
+                    <li>
+                      Any Consultant purchasing a gift card for themselves,
+                      giving or selling a gift card to any other Consultant, or
+                      redeeming a Gift Card under any account associated with a
+                      Consultant and/or;
                     </li>
                     <li>
                       Any other mechanism or means intended to create the
