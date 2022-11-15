@@ -163,7 +163,7 @@ class PaymentConfirmation extends React.Component {
                 <>
                   <div className="paymentConfirmationSuccess">
                     Congratulations,{window.innerWidth >= 550 ? null : <br />}{" "}
-                    welcome to Scout &amp; Cellar®!
+                    welcome to Scout &amp; Cellar<sup>®</sup>!
                   </div>
 
                   <div className="customURLAssigned">
