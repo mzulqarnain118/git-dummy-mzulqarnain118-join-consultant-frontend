@@ -394,3 +394,8 @@
     margin-top: 1.5em;
   }
 }
+
+.registered-trademark {
+  font-size: 14px;
+  vertical-align: super;
+}
