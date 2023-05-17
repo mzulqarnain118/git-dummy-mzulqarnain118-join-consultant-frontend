@@ -445,7 +445,7 @@ class PurchaseKit extends React.Component {
               </div>
               {/* subtext to to be displayed below total panel */}
               <div className="totalSubText">
-                Depending on where your BBK is going, additional taxes and fees
+                Depending on where your Starter Kit and/or Wine Order is going, additional taxes and fees
                 may apply. These rates are determined by shipping address
               </div>
             </div>
