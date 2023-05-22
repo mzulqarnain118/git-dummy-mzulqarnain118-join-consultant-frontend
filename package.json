@@ -14,11 +14,11 @@
     "bootstrap": "^5.0.1",
     "js-file-download": "^0.4.12",
     "moment": "^2.29.1",
-    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.2",
+    "react-error-overlay": "6.0.9",
     "react-google-recaptcha": "^2.1.0",
     "react-icons": "^4.2.0",
     "react-ripples": "^2.2.1",
@@ -26,6 +26,7 @@
     "react-scripts": "4.0.3",
     "react-select": "^4.3.1",
     "react-slick": "^0.28.1",
+    "sass": "^1.62.1",
     "slick-carousel": "^1.8.1",
     "sweetalert": "^2.1.2",
     "typeface-domine": "^1.1.13",
@@ -38,12 +39,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -55,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
   }
 }

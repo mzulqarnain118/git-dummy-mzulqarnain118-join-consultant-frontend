@@ -780,11 +780,15 @@ class Home extends React.Component {
       )
         .then((response) => {
           try {
-            purchaseKitDetails["subtotal"] = response.data.OrderLines[0].Subtotal;
-            purchaseKitDetails["shipping"] = response.data.OrderLines[0].ShippingTax;
-            purchaseKitDetails["salestax"] = response.data.OrderLines[0].ItemTax;
-            purchaseKitDetails["discount"] = response.data.OrderLines[0].Discounts;
-            purchaseKitDetails["total"] = response.data.OrderLines[0].LineTotal;
+            purchaseKitDetails["subtotal"] =
+              response.data.Subtotal;
+            purchaseKitDetails["shipping"] =
+              response.data.OrderLines[0].ShippingTax;
+            purchaseKitDetails["salestax"] =
+              response.data.OrderLines[0].ItemTax;
+            purchaseKitDetails["discount"] =
+              response.data.OrderLines[0].Discounts || response.data.OrderLines[1]?.Discounts || 0;
+            purchaseKitDetails["total"] = response.data.SubtotalAfterSavings;
             purchaseKitDetails["discountDescription"] =
               response.data.DiscountTotals.length > 0
                 ? response.data.DiscountTotals[0].TotalDescription
