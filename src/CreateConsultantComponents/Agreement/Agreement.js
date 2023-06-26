@@ -4489,7 +4489,7 @@ class Agreement extends React.Component {
                 terms and conditions set forth in this Agreement, including the
                 Scout &amp; Cellar Policies &amp; Procedures (the “Policies
                 &amp; Procedures”) and the{' '}
-                <a href="https://storage.googleapis.com/cellar-static/docs/Consultant_Comp_Plan_Summary.pdf">
+                <a href="https://storage.googleapis.com/cellar-static/docs/Consultant_Comp_Plan_Summary.pdf" target="_blank">
                   Scout &amp; Cellar Compensation Plan
                 </a>
                 , which are both incorporated into and made a part of this
