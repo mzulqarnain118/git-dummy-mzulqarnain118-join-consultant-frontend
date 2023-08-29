@@ -3,7 +3,7 @@ import "./ConfirmDetails.css";
 import ConfirmDetailsPasswordPage from "./ConfirmDetailsPasswordPage";
 import ConfirmDetailsDisplay from "./ConfirmDetailsDisplay";
 import ConfirmDetailsEdit from "./ConfirmDetailsEdit";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 class ConfirmDetails extends React.Component {
   constructor(props) {

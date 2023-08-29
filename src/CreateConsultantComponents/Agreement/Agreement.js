@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../MobileHeader/Header';
 import axios from 'axios';
-import Checkbox from '@material-ui/core/Checkbox';
+import Checkbox from '@mui/material/Checkbox';
 import './Agreement.css';
 import fileDownload from 'js-file-download';
 import { FiDownload } from 'react-icons/fi';
