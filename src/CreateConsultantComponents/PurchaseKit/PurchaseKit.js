@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../MobileHeader/Header";
-import Checkbox from "@material-ui/core/Checkbox";
+import Checkbox from "@mui/material/Checkbox";
 import { VscTag } from "react-icons/vsc";
 import "./PurchaseKit.css";
 

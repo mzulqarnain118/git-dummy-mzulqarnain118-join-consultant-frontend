@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Header.css";
-import { withStyles } from "@material-ui/core/styles";
-import Stepper from "@material-ui/core/Stepper";
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
-import StepConnector from "@material-ui/core/StepConnector";
+import { withStyles } from "@mui/styles";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import StepConnector from "@mui/material/StepConnector";
 require("typeface-oswald");
 
 const styles = (theme) => ({

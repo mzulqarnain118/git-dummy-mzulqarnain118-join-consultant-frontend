@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepConnector from '@material-ui/core/StepConnector';
+import { withStyles } from '@mui/styles';
+import StepConnector from '@mui/material/StepConnector';
 import { IoCheckmarkCircleSharp, IoAlertCircle } from 'react-icons/io5';
 import { IoIosArrowForward } from 'react-icons/io';
 import {
@@ -13,8 +10,8 @@ import {
   Icon3,
   Icon4,
 } from '../../Assets/PaymentConfirmationSVG';
-import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import TouchRipple from '@mui/material/ButtonBase/TouchRipple';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import './PaymentConfirmation.css';
 import appStore1 from '../../Assets/images/appStore1.png';
 import playStore1 from '../../Assets/images/playStore1.png';

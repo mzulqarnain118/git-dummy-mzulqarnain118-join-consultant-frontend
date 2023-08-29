@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { identify } from "@fullstory/browser";
-import { withStyles } from "@material-ui/core/styles";
-import Stepper from "@material-ui/core/Stepper";
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
-import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@mui/styles";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import Typography from "@mui/material/Typography";
 import "./Home.css";
 import ConfirmDetails from "../ConfirmDetails/ConfirmDetails";
 import BusinessDetails from "../BusinessDetails/BusinessDetails";
@@ -13,11 +13,11 @@ import Footer from "../Footer/Footer";
 import VerifyIdentity from "../VerifyIdentity/VerifyIdentity";
 import PurchaseKit from "../PurchaseKit/PurchaseKit";
 import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
-import StepConnector from "@material-ui/core/StepConnector";
+import StepConnector from "@mui/material/StepConnector";
 import { Logo } from "../../Assets/HeaderSVG";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import * as API from "../../configuration/apiconfig";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import CircularProgress from "@mui/joy/CircularProgress";
 import axios from "axios";
 import { algoliaURL, getWorkingWithURL } from "../../configuration/config";
 import swal from "sweetalert";
@@ -28,9 +28,17 @@ require("typeface-domine");
 //style for stepper
 const styles = (theme) => ({
   step: {
-    fill: "#f2efed",
+    color: "#f2efed ",
     border: "1px solid black",
     borderRadius: "50%",
+    
+
+      "&:not($active)" :{
+        "&:not($completed)" :{
+          fill : "white !important"
+        },
+    },
+   
 
     "& $completed": {
       color: "#4BA380",
@@ -1360,7 +1368,7 @@ class Home extends React.Component {
         {load ? (
           <CircularProgress
             color="black"
-            size={80}
+            sx={{ '--CircularProgress-size': '80px' }}
             className={rightFooterButtonName !== "DONE" ? "loader" : "pkLoader"}
           />
         ) : null}

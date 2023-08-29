@@ -1,8 +1,8 @@
 import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import {site_key} from "../../configuration/config";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./ConfirmDetails.css";
 
 class ConfirmDetailsPasswordPage extends React.Component {

@@ -2,11 +2,11 @@ import React from "react";
 import "./BusinessDetails.css";
 import "../ConfirmDetails/ConfirmDetails.css";
 import Header from "../MobileHeader/Header";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import CancelIcon from "@material-ui/icons/Cancel";
-import BusinessCenterOutlinedIcon from "@material-ui/icons/BusinessCenterOutlined";
-import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CancelIcon from "@mui/icons-material/Cancel";
+import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import CircularProgress from "@mui/joy/CircularProgress";
 
 class BusinessDetails extends React.Component {
   constructor(props) {
@@ -267,7 +267,7 @@ class BusinessDetails extends React.Component {
                 <div className="col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon">
                   <div className="row">
                     <div className="col-lg-1 col-md-1 urlLoader">
-                      <CircularProgress color="black" size={30} />
+                      <CircularProgress color="black" sx={{ '--CircularProgress-size': '30px' }} />
                     </div>
                   </div>
                 </div>
