@@ -98,18 +98,18 @@ const Footer = () => {
                 Join our mailing list. Just like our wines, our emails contain
                 only the good stuff.
               </p>
-              <form class="form-inline">
+              <form Name="form-inline">
                 <input
                   type="text"
                   placeholder="Your Email"
                   aria-label="Email input field"
-                  class="form-control"
+                  className="form-control"
                   // autocomplete="none"
                 />
                 <button
                   aria-label="Submit button"
                   type="submit"
-                  class="btn btn-outline-success"
+                  className="btn btn-outline-success"
                 >
                   <img src={Iconsubmit} alt="" />
                 </button>
@@ -117,8 +117,8 @@ const Footer = () => {
             </aside>
           </section>
           <section className="row d-flex flex-row m-0 justify-content-center align-items-center text-center">
-            <div class="col">
-              <div class="justify-content-center">
+            <div className="col">
+              <div className="justify-content-center">
                 <a
                   target="_blank"
                   href="https://www.facebook.com/scoutandcellar/"

@@ -575,7 +575,7 @@ class ConfirmDetailsEdit extends React.Component {
                     <div className='edit-InputMargin'>
                       <select
                         className={error.dob.length > 0 ? 'form-control edit-month-red' : 'form-control edit-month'}
-                        value={this.state.userData.dob.month}
+                        value={this.state.userData.dob.month||''}
                         id='month'
                         name='month'
                         onChange={this.handleDate}
@@ -597,7 +597,7 @@ class ConfirmDetailsEdit extends React.Component {
                     <div className='edit-InputMargin'>
                       <select
                         className={error.dob.length > 0 ? 'form-control edit-day-red' : 'form-control edit-day'}
-                        value={this.state.userData.dob.day}
+                        value={this.state.userData.dob.day||''}
                         id='day'
                         name='day'
                         onChange={this.handleDate}
@@ -648,21 +648,21 @@ class ConfirmDetailsEdit extends React.Component {
                     <div className='edit-InputMargin'>
                       <select
                         className={error.dob.length > 0 ? 'form-control edit-year-red' : 'form-control edit-year'}
-                        value={this.state.userData.dob.year}
+                        value={this.state.userData.dob.year||''}
                         id='year'
                         name='year'
                         onChange={this.handleDate}
                       >
-                        options.push(
+                        {/* options.push( */}
                         <option value={'YYYY'} key={'YYYY'}>
                           YYYY
                         </option>
-                        );
+                        {/* ); */}
                         {(() => {
                           const options = [];
                           for (let i = new Date().getFullYear() - 21; i >= 1920; i--) {
                             options.push(
-                              <option value={i} key={'YYYY'}>
+                              <option value={i} key={i}>
                                 {i}
                               </option>
                             );
@@ -700,7 +700,7 @@ class ConfirmDetailsEdit extends React.Component {
                     name='email'
                     placeholder='Enter Email ID'
                     // onChange={this.handleChange}
-                    disabled='true'
+                    disabled={true}
                   />
                 </div>
               </div>
