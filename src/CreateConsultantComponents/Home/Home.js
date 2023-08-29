@@ -28,9 +28,17 @@ require("typeface-domine");
 //style for stepper
 const styles = (theme) => ({
   step: {
-    fill: "#f2efed",
+    color: "#f2efed ",
     border: "1px solid black",
     borderRadius: "50%",
+    
+
+      "&:not($active)" :{
+        "&:not($completed)" :{
+          fill : "white !important"
+        },
+    },
+   
 
     "& $completed": {
       color: "#4BA380",
