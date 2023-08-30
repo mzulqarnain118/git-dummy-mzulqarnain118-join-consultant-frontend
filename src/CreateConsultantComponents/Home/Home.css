@@ -146,19 +146,22 @@
     right: 40%;
   }
 
-.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root{
+.MuiSvgIcon-root{
   color: #f2efed !important;
 }
-.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root .css-117w1su-MuiStepIcon-text{
+.MuiSvgIcon-root .MuiStepIcon-text{
 fill: black !important
 }
-.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+.MuiSvgIcon-root.Mui-active {
   border: 1px solid black !important;
   fill: black !important ;
 }
-.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active .css-117w1su-MuiStepIcon-text{
+.MuiSvgIcon-root.Mui-active .MuiStepIcon-text{
   fill: white !important
   }
+.MuiStepConnector-line{
+  border-color: white !important;
+}
 }
 @media (max-width: 480px) {
   .arrowIcon3 svg {
