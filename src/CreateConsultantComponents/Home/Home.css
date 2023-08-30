@@ -40,7 +40,7 @@
   width: 60%;
   margin-left: 6% !important;
 }
-.Home-step-1 {
+/* .Home-step-1 {
   border: 0 solid white;
   color: black;
   border-radius: 0;
@@ -145,6 +145,20 @@
     top: 40%;
     right: 40%;
   }
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root{
+  color: #f2efed !important;
+}
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root .css-117w1su-MuiStepIcon-text{
+fill: black !important
+}
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  border: 1px solid black !important;
+  fill: black !important ;
+}
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active .css-117w1su-MuiStepIcon-text{
+  fill: white !important
+  }
 }
 @media (max-width: 480px) {
   .arrowIcon3 svg {
@@ -169,11 +183,13 @@
     right: 40%;
   }
 }
-.MuiStepIcon-text {
-  fill: black !important ;
-}
-.MuiStepIcon-active > .MuiStepIcon-text {
-  fill: white !important ;
+@media (min-width: 568px) {
+  .MuiStepIcon-text {
+    fill: black !important ;
+  }
+  .MuiStepIcon-active > .MuiStepIcon-text {
+    fill: white !important ;
+  }
 }
 @media (max-width: 1366px) {
   .pkLoader {

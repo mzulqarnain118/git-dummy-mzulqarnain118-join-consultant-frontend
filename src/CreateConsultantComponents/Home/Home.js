@@ -1484,7 +1484,7 @@ class Home extends React.Component {
                                   <Step
                                     key={label}
                                     classes={{
-                                      root: classes.step2,
+                                      root: classes.mobileStep,
                                       completed: classes.completed,
                                       active: classes.active,
                                     }}
