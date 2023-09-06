@@ -563,7 +563,6 @@
     margin-left: -11px !important;
   }
 }
-
 @media (max-width: 360px) and (min-width: 290px) {
   .description-text {
     font-size: 10px;
