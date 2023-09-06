@@ -120,13 +120,11 @@ function getRefreshToken() {
       data: data,
     })
       .then((response) => {
-        console.log("inside success ======>>>>>> ");
         document.cookie = "accessToken=" + response.data.accessToken;
         document.cookie = "refreshToken=" + response.data.refreshToken;
         resolve(response);
       })
       .catch((ex) => {
-        console.log("inside failure ======>>>>>> ");
         if (axios.isCancel(ex)) {
           reject({Cancel: ""});
         } else if (ex.response.data.code !== 200 || ex.response.data.message.toLowerCase() === "token invalid") {

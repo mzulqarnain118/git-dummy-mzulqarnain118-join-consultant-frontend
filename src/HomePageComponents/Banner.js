@@ -7,7 +7,6 @@ class Banner extends React.Component {
     this.myRef = React.createRef();
   }
   executeScroll = () => {
-    console.log("Get Block offset value: ", this.myRef.current);
     this.myRef.current.scrollIntoView();
   };
   render() {

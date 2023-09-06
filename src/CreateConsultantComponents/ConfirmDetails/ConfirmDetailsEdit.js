@@ -148,7 +148,6 @@ class ConfirmDetailsEdit extends React.Component {
     let form = this.state.userData;
     let error = this.state.error;
     let errorArr = this.state.errorArr;
-    console.log(value, type, form, errorArr);
     // firstname
     if (type === 'first_name') {
       if (value !== '') {
@@ -468,7 +467,6 @@ class ConfirmDetailsEdit extends React.Component {
     } else {
       errorArr[8] = true;
     }
-    console.log(errorArr);
     let avoidDateError = true;
     //to check if date is NaN (Not a Number)
     // eslint-disable-next-line

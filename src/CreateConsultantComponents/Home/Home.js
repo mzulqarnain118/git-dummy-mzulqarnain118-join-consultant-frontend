@@ -952,8 +952,6 @@ class Home extends React.Component {
         }
       })
       .catch((error) => {
-        console.log("Error in /forgotpassword");
-        console.log(error);
         errorUserData["forgotPasswordEmail"] = error.error;
         this.setState({
           load: false,
@@ -982,12 +980,12 @@ class Home extends React.Component {
         try {
           this.setState({ working_with_arr: res.data.results[0].hits });
         } catch (e) {
-          console.log(e);
+          console.error(e);
           this.setState({ working_with_arr: [] });
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
         this.setState({ working_with_arr: [] });
       });
   };
@@ -1001,7 +999,6 @@ class Home extends React.Component {
     await axios
       .post(getWorkingWithURL, data)
       .then((res) => {
-        console.log("inside workingwith");
         try {
           if (res.data.name) {
             fixedWorkingWith = true;
@@ -1016,7 +1013,7 @@ class Home extends React.Component {
             });
           }
         } catch (e) {
-          console.log(e);
+          console.error(e);
           fixedWorkingWith = false;
           this.setState({
             fixedWorkingWith,
@@ -1024,7 +1021,7 @@ class Home extends React.Component {
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
         fixedWorkingWith = false;
         this.setState({
           fixedWorkingWith,

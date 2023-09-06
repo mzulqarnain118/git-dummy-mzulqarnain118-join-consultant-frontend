@@ -113,7 +113,6 @@ class ConfirmDetailsPasswordPage extends React.Component {
   render() {
     const {password, email, emailError} = this.state;
     const {errorUserData} = this.props;
-    console.log(errorUserData.forgotPasswordEmail);
     return (
       <React.Fragment>
         <div className={window.innerWidth >= 550 ? "componentMargin2 " : "mobileComponent"}>

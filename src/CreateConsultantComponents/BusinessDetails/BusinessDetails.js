@@ -37,7 +37,6 @@ class BusinessDetails extends React.Component {
       let regex = new RegExp(
         "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
       );
-      console.log(regex.test(value));
       if (regex.test(value)) {
         await this.setState({ avoidSSNValidation: true });
         errorSsn = "";
