@@ -49,9 +49,9 @@
 }
 .Input:focus {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .Red {
   border-width: 1px;
@@ -101,6 +101,7 @@
   font-size: 16px;
   text-decoration: underline;
   font-family: Domine;
+  width: fit-content;
 }
 .passwordForgotLink:hover {
   cursor: pointer;
@@ -176,9 +177,9 @@
 }
 .edit-Input:focus-within {
   border-color: #d8c5a6 !important;
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 .edit-Red {
   border-width: 1px;
@@ -204,9 +205,9 @@
   margin-bottom: 16px;
 }
 .edit-InputMargin:focus {
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
 }
 
 .staticText5 {
@@ -314,11 +315,11 @@ select {
   padding-right: 32px;
 }
 
-select:focus{
-  outline:none !important;
-  border-color:#d8c5a6 !important;
-  box-shadow:0 0 10px #d8c5a6 !important;
-}  
+select:focus {
+  outline: none !important;
+  border-color: #d8c5a6 !important;
+  box-shadow: 0 0 10px #d8c5a6 !important;
+}
 
 .forgotPassowordContainer {
   padding-top: 3em;
@@ -495,6 +496,7 @@ input:disabled {
   }
   .passwordForgotLink {
     font-family: Domine;
+    margin-left: 5px;
   }
   /* .head3 {
     color: grey;
@@ -528,9 +530,9 @@ input:disabled {
   }
   .edit-Input:focus {
     border-color: #d8c5a6 !important;
-    outline:none !important;
-    border-color:#d8c5a6 !important;
-    box-shadow:0 0 10px #d8c5a6 !important;
+    outline: none !important;
+    border-color: #d8c5a6 !important;
+    box-shadow: 0 0 10px #d8c5a6 !important;
   }
   .edit-Red {
     border-width: 1px;

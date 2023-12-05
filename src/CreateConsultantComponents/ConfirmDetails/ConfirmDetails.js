@@ -48,35 +48,35 @@ class ConfirmDetails extends React.Component {
 
   render() {
     const { form } = this.state;
-    const { rightFooterButtonName, userData, errorUserData, setErrorUserData } =
-      this.props;
+    const { rightFooterButtonName, userData, errorUserData, setErrorUserData } = this.props;
     return (
       <React.Fragment>
         {rightFooterButtonName === "NEXT" ? (
-          <div
-            className={
-              window.innerWidth >= 550 ? "componentMargin1 " : "mobileComponent"
-            }
-          >
-            <span className="head1">BECOME A CONSULTANT</span>
-            <div className="email1 form-group">
-              <label className="emailLabel" htmlFor="emailAddress">
+          <div className={window.innerWidth >= 550 ? "componentMargin1 " : "mobileComponent"}>
+            <span className='head1'>BECOME A CONSULTANT</span>
+            <div className='email1 form-group'>
+              <div className='SubText' style={{ clear: "both", marginBottom: "25px" }}>
+                Enter the email address you’d like to use for your Scout &amp; Cellar™ business.
+              </div>
+              {/* ™ */}
+              <div className='SubText' style={{ clear: "both", marginBottom: "25px", maxWidth: "750px" }}>
+                Already have a Scout &amp; Cellar customer account and want to use your same email? You will need your
+                password hand for the next step. If you’ve forgotten it, click here to reset your password. (Don’t be
+                gone too long! We miss you already!)
+              </div>
+              <label className='emailLabel' htmlFor='emailAddress'>
                 EMAIL ADDRESS
               </label>
               {/* input to accept email address */}
-              <div className="wrapper-email">
-                <div className="InputMargin one">
+              <div className='wrapper-email'>
+                <div className='InputMargin one'>
                   <input
-                    type="text"
+                    type='text'
                     value={form["emailAddress"]}
-                    className={
-                      errorUserData.email.length > 0
-                        ? "form-control Red"
-                        : "form-control Input"
-                    }
-                    id="emailAddress"
-                    name="emailAddress"
-                    placeholder="Enter email address"
+                    className={errorUserData.email.length > 0 ? "form-control Red" : "form-control Input"}
+                    id='emailAddress'
+                    name='emailAddress'
+                    placeholder='Enter email address'
                     // autocomplete="none"
                     // autoComplete="none"
                     onChange={this.handleChange}
@@ -85,15 +85,13 @@ class ConfirmDetails extends React.Component {
                   {/* error handling of email field */}
 
                   {errorUserData.email.length ? (
-                    <span className="errorMes">
-                      {errorUserData.email ===
-                      "This email address is in use for an existing Consultant Account." ? (
+                    <span className='errorMes'>
+                      {errorUserData.email === "This email address is in use for an existing Consultant Account." ? (
                         <>
                           <span>
-                            This email address is already in use for an existing
-                            Consultant Account. Please login into{" "}
+                            This email address is already in use for an existing Consultant Account. Please login into{" "}
                           </span>
-                          <a href="https://team.scoutandcellar.com/Account/Login">
+                          <a href='https://team.scoutandcellar.com/Account/Login'>
                             https://team.scoutandcellar.com/Account/Login
                           </a>
                         </>
@@ -125,23 +123,20 @@ class ConfirmDetails extends React.Component {
               </div>
 
               {/* Static text dispayed at the bottom of email field */}
-              <div className="SubText" style={{ clear: "both" }}>
+              {/* <div className="SubText" style={{ clear: "both" }}>
                 The email you already use or want to use with Scout &amp;
                 Cellar™.
-              </div>
+              </div> */}
             </div>
           </div>
-        ) : rightFooterButtonName === "LOG IN" ||
-          rightFooterButtonName === "CONTINUE " ? (
+        ) : rightFooterButtonName === "LOG IN" || rightFooterButtonName === "CONTINUE " ? (
           // to display the password page of cnfirm details
           <ConfirmDetailsPasswordPage
             userData={userData}
             rightFooterButtonName={this.props.rightFooterButtonName}
             setUserData={this.props.setUserData}
             setButtonName={this.props.setButtonName}
-            setrightFooterButtonDisabled={
-              this.props.setrightFooterButtonDisabled
-            }
+            setrightFooterButtonDisabled={this.props.setrightFooterButtonDisabled}
             errorUserData={errorUserData}
             setErrorUserData={setErrorUserData}
             displayForgotPassword={this.props.displayForgotPassword}
@@ -158,9 +153,7 @@ class ConfirmDetails extends React.Component {
           //to display confirm details page
           <ConfirmDetailsDisplay
             userData={userData}
-            setrightFooterButtonDisabled={
-              this.props.setrightFooterButtonDisabled
-            }
+            setrightFooterButtonDisabled={this.props.setrightFooterButtonDisabled}
             handleBackButton={this.props.handleBackButton}
             topBarNavigation={this.props.topBarNavigation}
           />
@@ -168,15 +161,11 @@ class ConfirmDetails extends React.Component {
           //to display editable version  of confirm details page
           <ConfirmDetailsEdit
             userData={this.props.userData}
-            setrightFooterButtonDisabled={
-              this.props.setrightFooterButtonDisabled
-            }
+            setrightFooterButtonDisabled={this.props.setrightFooterButtonDisabled}
             setUserData={this.props.setUserData}
             setButtonName={this.props.setButtonName}
             handleBackButton={this.props.handleBackButton}
-            apiGetWorkingWithDropDownData={
-              this.props.apiGetWorkingWithDropDownData
-            }
+            apiGetWorkingWithDropDownData={this.props.apiGetWorkingWithDropDownData}
             working_with_arr={this.props.working_with_arr}
             fixedWorkingWith={this.props.fixedWorkingWith}
             topBarNavigation={this.props.topBarNavigation}

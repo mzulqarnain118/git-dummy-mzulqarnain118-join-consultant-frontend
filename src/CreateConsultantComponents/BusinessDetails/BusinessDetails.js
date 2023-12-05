@@ -18,8 +18,7 @@ class BusinessDetails extends React.Component {
       //to check availability of URL
       customURLAvailability: false,
       // Individual /entity
-      currentButton:
-        props.userData.doing_business === "Individual" ? false : true,
+      currentButton: props.userData.doing_business === "Individual" ? false : true,
       // SSN entered by user
       ssn: props.userData.ssn,
       //load circle
@@ -34,9 +33,7 @@ class BusinessDetails extends React.Component {
     let errorSsn = this.props.errorUserData.ssn;
     let value = e.target.value;
     if (value !== "") {
-      let regex = new RegExp(
-        "^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$"
-      );
+      let regex = new RegExp("^(?!(000|666|9))\\d{3}-(?!00)\\d{2}-(?!0000)\\d{4}$");
       if (regex.test(value)) {
         await this.setState({ avoidSSNValidation: true });
         errorSsn = "";
@@ -63,9 +60,7 @@ class BusinessDetails extends React.Component {
     // update to home.js userdata state
     let userData = this.props.userData;
     userData["ssn"] = value;
-    userData["doing_business"] = this.state.currentButton
-      ? "Entity"
-      : "Individual";
+    userData["doing_business"] = this.state.currentButton ? "Entity" : "Individual";
     this.props.setUserData(userData);
     let errorUserData = this.props.errorUserData;
     errorUserData["ssn"] = errorSsn;
@@ -156,12 +151,7 @@ class BusinessDetails extends React.Component {
     let ssn = this.state.ssn;
     let errorSsn = this.props.errorUserData.ssn;
     // let checkURLAvailability = this.props.checkURLAvailability;
-    if (
-      ssn !== "" &&
-      errorSsn === "" &&
-      checkURLAvailability &&
-      this.state.avoidSSNValidation
-    ) {
+    if (ssn !== "" && errorSsn === "" && checkURLAvailability && this.state.avoidSSNValidation) {
       this.props.setrightFooterButtonDisabled(false);
     } else {
       this.props.setrightFooterButtonDisabled(true);
@@ -195,50 +185,28 @@ class BusinessDetails extends React.Component {
             topBarNavigation={this.props.topBarNavigation}
           />
         ) : null}
-        <div className="mobileoverFlowBusinessDetails">
-          <div
-            className={
-              window.innerWidth >= 550
-                ? "BDcomponentMargin "
-                : "BDmobileComponent"
-            }
-          >
-            <span className="BDhead1">SETTING UP YOUR PERSONAL URL</span>
-            <div className="BDstaticText3">
-              Pick a custom URL to promote your personalized Scout &amp; Cellar™
-              storefront.
-            </div>
+        <div className='mobileoverFlowBusinessDetails'>
+          <div className={window.innerWidth >= 550 ? "BDcomponentMargin " : "BDmobileComponent"}>
+            <span className='BDhead1'>ALMOST THERE!</span>
+            {/* ™ */}
+            <div className='BDstaticText3'>Create a custom URL for your Scout &amp; Cellar business</div>
 
-            <div
-              className={
-                errorCustomURL.length > 0 ? "row urlRow1" : "row urlRow"
-              }
-            >
-              <div className="col-lg-2 col-md-4 ">
-                <div
-                  className={
-                    errorCustomURL.length > 0
-                      ? "BDstaticText5"
-                      : "BDstaticText4"
-                  }
-                >
+            <div className={errorCustomURL.length > 0 ? "row urlRow1" : "row urlRow"}>
+              <div className='col-lg-2 col-md-4 '>
+                <div className={errorCustomURL.length > 0 ? "BDstaticText5" : "BDstaticText4"}>
                   www.scoutandcellar.com/
                 </div>
               </div>
               {/* Input to custom URL */}
-              <div className="col-lg-4 offset-lg-1 col-md-7 col-xs-3 business-margin-url customurlwidth1280">
-                <div className="row">
+              <div className='col-lg-4 offset-lg-1 col-md-7 col-xs-3 business-margin-url customurlwidth1280'>
+                <div className='row'>
                   <input
-                    type="text"
+                    type='text'
                     value={customURL}
-                    className={
-                      errorCustomURL.length > 0
-                        ? "form-control customURLRed"
-                        : "form-control customURL"
-                    }
-                    id="webLink"
-                    name="webLink"
-                    placeholder="Customise your URL"
+                    className={errorCustomURL.length > 0 ? "form-control customURLRed" : "form-control customURL"}
+                    id='webLink'
+                    name='webLink'
+                    placeholder='Customise your URL'
                     // autocomplete="none"
                     // autoComplete="none"
                     onChange={this.handleChange}
@@ -250,12 +218,12 @@ class BusinessDetails extends React.Component {
                   />
 
                   {errorCustomURL.length > 0 ? (
-                    <div className="BDerrorMes">
+                    <div className='BDerrorMes'>
                       {errorCustomURL}
                       <br />
                     </div>
                   ) : (
-                    <button className="searchButton" onClick={this.validateURL}>
+                    <button className='searchButton' onClick={this.validateURL}>
                       Verify
                     </button>
                   )}
@@ -263,10 +231,10 @@ class BusinessDetails extends React.Component {
               </div>
 
               {load ? (
-                <div className="col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon">
-                  <div className="row">
-                    <div className="col-lg-1 col-md-1 urlLoader">
-                      <CircularProgress color="black" sx={{ '--CircularProgress-size': '30px' }} />
+                <div className='col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon'>
+                  <div className='row'>
+                    <div className='col-lg-1 col-md-1 urlLoader'>
+                      <CircularProgress color='black' sx={{ "--CircularProgress-size": "30px" }} />
                     </div>
                   </div>
                 </div>
@@ -274,11 +242,11 @@ class BusinessDetails extends React.Component {
                 <>
                   {this.state.customURLAvailability ? (
                     checkURLAvailability ? (
-                      <div className="col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon">
-                        <div className="row" style={{ alignItems: "center" }}>
-                          <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
+                      <div className='col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon'>
+                        <div className='row' style={{ alignItems: "center" }}>
+                          <div className='col-lg-1 col-md-1 mobileAvailabilityIcon'>
                             <CheckCircleIcon
-                              className="availableIcon"
+                              className='availableIcon'
                               style={
                                 window.innerWidth <= 850
                                   ? window.innerWidth <= 550
@@ -288,19 +256,17 @@ class BusinessDetails extends React.Component {
                               }
                             />
                           </div>
-                          <div className="col-lg-11 col-md-11 mobileAvailabilitySubText">
-                            <div className="availableText">
-                              This name is Available
-                            </div>
+                          <div className='col-lg-11 col-md-11 mobileAvailabilitySubText'>
+                            <div className='availableText'>This name is Available</div>
                           </div>
                         </div>
                       </div>
                     ) : (
-                      <div className="col-lg-4 col-md-5 mobileAvailabilityText offsetLeftAvailableIcon">
-                        <div className="row" style={{ alignItems: "center" }}>
-                          <div className="col-lg-1 col-md-1 mobileAvailabilityIcon">
+                      <div className='col-lg-4 col-md-5 mobileAvailabilityText offsetLeftAvailableIcon'>
+                        <div className='row' style={{ alignItems: "center" }}>
+                          <div className='col-lg-1 col-md-1 mobileAvailabilityIcon'>
                             <CancelIcon
-                              className="availableIcon notAvailableIcon"
+                              className='availableIcon notAvailableIcon'
                               style={
                                 window.innerWidth <= 850
                                   ? window.innerWidth <= 550
@@ -310,10 +276,8 @@ class BusinessDetails extends React.Component {
                               }
                             />
                           </div>
-                          <div className="col-lg-11 col-md-11 mobileAvailabilitySubText">
-                            <div className="availableText">
-                              This name is not Available
-                            </div>
+                          <div className='col-lg-11 col-md-11 mobileAvailabilitySubText'>
+                            <div className='availableText'>This name is not Available</div>
                           </div>
                         </div>
                       </div>
@@ -324,29 +288,25 @@ class BusinessDetails extends React.Component {
             </div>
 
             <div className={errorCustomURL.length > 0 ? "row" : "row"}>
-              <div className="col-lg-2 col-md-4 "></div>
+              <div className='col-lg-2 col-md-4 '></div>
               {/* Input to custom URL */}
-              <div className="col-lg-4 offset-lg-1 col-md-7 col-xs-3 business-margin-url customurlwidth1280">
-                <div className="row">
-                  <div className="entitySubtext personalUrlAdditionalInformation">
-                    <p className="personalUrlAdditionalInformationParagraph">
-                      Please keep in mind that your Personalized URL cannot
-                      contain any of the following:
+              <div className='col-lg-4 offset-lg-1 col-md-7 col-xs-3 business-margin-url customurlwidth1280'>
+                <div className='row'>
+                  <div className='entitySubtext personalUrlAdditionalInformation'>
+                    <p className='personalUrlAdditionalInformationParagraph'>
+                      Please keep in mind that your Personalized URL cannot contain any of the following:
                     </p>
-                    <p className="personalUrlAdditionalInformationParagraph">
+                    <p className='personalUrlAdditionalInformationParagraph'>
                       - Special characters, punctuations, or spaces.
                     </p>
-                    <p className="personalUrlAdditionalInformationParagraph">
-                      - The words "Scout", "Scout & Cellar", "Clean" or
-                      "Clean-Crafted".
+                    <p className='personalUrlAdditionalInformationParagraph'>
+                      - The words "Scout", "Scout & Cellar", "Clean" or "Clean-Crafted".
                     </p>
-                    <p className="personalUrlAdditionalInformationParagraph">
-                      - Locations, including cities, states, or uniquely-named
-                      regions (like New England or Gulf Coast).
+                    <p className='personalUrlAdditionalInformationParagraph'>
+                      - Locations, including cities, states, or uniquely-named regions (like New England or Gulf Coast).
                     </p>
-                    <p className="personalUrlAdditionalInformationParagraph">
-                      - Any other language prohibited in our Policies &
-                      Procedures
+                    <p className='personalUrlAdditionalInformationParagraph'>
+                      - Any other language prohibited in our Policies & Procedures
                     </p>
                   </div>
                 </div>
@@ -356,98 +316,73 @@ class BusinessDetails extends React.Component {
             {/* if the custom url is valid display the rest of the screen */}
             {this.state.customURLAvailability && checkURLAvailability ? (
               <div style={{ marginBottom: "6em" }}>
-                <div className="row">
-                  <span className="businessHead">DOING BUSINESS AS AN</span>
+                <div className='row'>
+                  <span className='businessHead'>How Will You Be Doing Business?</span>
                 </div>
                 {/* buttons to select Individual or entity */}
-                <div className="row">
-                  <div className="col-lg-3 col-md-5 mobileSsnToggle">
+                <div className='row'>
+                  <div className='col-lg-3 col-md-5 mobileSsnToggle'>
                     <div
-                      className={
-                        currentButton
-                          ? "businessButton1 businessButtonNotActive1"
-                          : "businessButton1 "
-                      }
+                      className={currentButton ? "businessButton1 businessButtonNotActive1" : "businessButton1 "}
                       onClick={() => this.toggleButton(false)}
                     >
                       <AccountCircleOutlinedIcon
-                        className="iconBusiness"
-                        style={
-                          window.innerWidth <= 850
-                            ? { fontSize: 23 }
-                            : { fontSize: 30 }
-                        }
+                        className='iconBusiness'
+                        style={window.innerWidth <= 850 ? { fontSize: 23 } : { fontSize: 30 }}
                       />
                       Individual
                     </div>
                   </div>
-                  <div className="col-lg-3 col-md-5 mobileSsnToggle">
+                  <div className='col-lg-3 col-md-5 mobileSsnToggle'>
                     <div
-                      className={
-                        !currentButton
-                          ? "businessButton1 businessButtonNotActive"
-                          : "businessButton1 "
-                      }
+                      className={!currentButton ? "businessButton1 businessButtonNotActive" : "businessButton1 "}
                       onClick={() => this.toggleButton(true)}
                     >
                       <BusinessCenterOutlinedIcon
-                        className="iconBusiness"
-                        style={
-                          window.innerWidth <= 850
-                            ? { fontSize: 23 }
-                            : { fontSize: 30 }
-                        }
+                        className='iconBusiness'
+                        style={window.innerWidth <= 850 ? { fontSize: 23 } : { fontSize: 30 }}
                       />
                       Entity
                     </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-lg-6 col-md-10 doingBusinessExtraInformation">
-                    <b>
-                      Should I run my business as an Individual or an Entity?
-                    </b>
+                <div className='row'>
+                  <div className='col-lg-6 col-md-10 doingBusinessExtraInformation'>
                     <br />
-                    We’re here to help! If you want to run your business by
-                    yourself you should sign up as an individual. If you are
-                    signing up with others on the same Consultant account
-                    (except for married couples) then you should start your
-                    business as an entity. If you have more questions, feel free
-                    to reach out to another Scout & Cellar Consultant. They
-                    would be happy to answer your questions!
+                    <p className='fw-bold'>What's the difference?</p>
+                    <p>If you're running your business solo or with a spouse, choose Individual.</p>
+                    <p>If you have an EIN, choose Entity.</p>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="ssn">SSN</div>
+                <div className='row mt-0'>
+                  <div className='ssn'>SSN or EIN</div>
                 </div>
-                <div className="row">
-                  <div className="ssnSubtext">
-                    We're mandated by law to collect your{" "}
-                    <span style={{ fontWeight: 400 }}>SSN</span>.
+                <div className='row'>
+                  {/* <div className='ssnSubtext'>
+                    We're mandated by law to collect your <span style={{ fontWeight: 400 }}>SSN</span>.
+                  </div> */}
+                  <div className='ssnSubtext'>
+                  We need this information for you to get paid.
                   </div>
                 </div>
                 {/* SSN input  */}
-                <div className="row">
-                  <div className="col-lg-5 ">
+                <div className='row'>
+                  <div className='col-lg-5 '>
                     <input
-                      type="text"
+                      type='text'
                       value={ssn}
-                      className={
-                        errorUserData.ssn.length > 0
-                          ? "form-control ssnInputRed"
-                          : "form-control ssnInput"
-                      }
-                      id="ssn"
-                      name="ssn"
-                      placeholder="Enter your SSN"
+                      className={errorUserData.ssn.length > 0 ? "form-control ssnInputRed" : "form-control ssnInput"}
+                      id='ssn'
+                      name='ssn'
+                      placeholder='Enter your SSN'
                       // autocomplete="none"
                       // autoComplete="none"
                       onChange={this.handleSSN}
-                      maxLength="11"
+                      maxLength='11'
                     />
 
                     {errorUserData.ssn.length > 0 ? (
-                      <span className="errorMesSubtext">
+                      <span className='errorMesSubtext'>
                         {errorUserData.ssn}
                         <br />
                       </span>
@@ -456,10 +391,10 @@ class BusinessDetails extends React.Component {
                 </div>
                 {/* Entity warning */}
                 {currentButton ? (
-                  <div className="row">
-                    <div className="col-lg-7 entitySubtext">
-                      Please note: There will be additional paperwork to fill
-                      out should you decide to run your business as an entity.
+                  <div className='row'>
+                    <div className='col-lg-7 entitySubtext'>
+                      Please note: There will be additional paperwork to fill out should you decide to run your business
+                      as an entity.
                     </div>
                   </div>
                 ) : null}
@@ -482,10 +417,7 @@ const maskingSSN = (value) => {
     .join("");
 
   if (value.length > 3 && value.length <= 5) {
-    value =
-      value.split("").splice(0, 3).join("") +
-      "-" +
-      value.split("").splice(3).join("");
+    value = value.split("").splice(0, 3).join("") + "-" + value.split("").splice(3).join("");
   } else if (value.length >= 6) {
     value =
       value.split("").splice(0, 3).join("") +

@@ -8,22 +8,22 @@ import { withStyles } from '@mui/styles';
 
 const styles = (theme) => ({
   paper: {
-    border: '1px solid #d8c5a6',
-    opacity: '1 !important',
-    backgroundColor: 'white !important',
-    fontFamily: 'Domine !important',
-    fontWeight: '600 !important',
+    border: "1px solid #d8c5a6",
+    opacity: "1 !important",
+    backgroundColor: "white !important",
+    fontFamily: "Domine !important",
+    fontWeight: "600 !important",
   },
   listbox: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     width: 300,
     margin: 0,
     padding: 0,
     height: 57,
-    overflow: 'hidden',
+    overflow: "hidden",
     maxHeight: 200,
-    border: '1px solid #d8c5a6',
-    fontFamily: 'Domine !important',
+    border: "1px solid #d8c5a6",
+    fontFamily: "Domine !important",
   },
   inputRoot: {
     // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
@@ -31,21 +31,21 @@ const styles = (theme) => ({
       // Default left padding is 6px
       paddingLeft: 26,
     },
-    '& .MuiOutlinedInput-notchedOutline': {
-      borderColor: 'white',
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderColor: "white",
     },
-    '&:hover .MuiOutlinedInput-notchedOutline': {
-      borderColor: 'white',
+    "&:hover .MuiOutlinedInput-notchedOutline": {
+      borderColor: "white",
     },
-    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-      borderColor: 'white',
+    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderColor: "white",
     },
   },
   customTextField: {
-    '& input::placeholder': {
-      color: 'black !important',
-      fontFamily: 'Domine !important',
-      fontWeight: '600 !important',
+    "& input::placeholder": {
+      color: "black !important",
+      fontFamily: "Domine !important",
+      fontWeight: "600 !important",
     },
   },
 });
@@ -54,26 +54,26 @@ class ConfirmDetailsEdit extends React.Component {
   constructor(props) {
     super(props);
     //set background color
-    document.body.style = 'background: #F7F3F2 ';
+    document.body.style = "background: #F7F3F2 ";
     this.state = {
       //fetch user details from from props
       userData: props.userData,
       //used to record error message
       error: {
-        email: '',
-        first_name: '',
-        last_name: '',
-        phonenumber: '',
+        email: "",
+        first_name: "",
+        last_name: "",
+        phonenumber: "",
         working_with: {
           id: 1,
-          name: '',
+          name: "",
         },
-        dob: '',
+        dob: "",
         address: {
-          street: '',
-          zipcode: '',
-          city: '',
-          state: '',
+          street: "",
+          zipcode: "",
+          city: "",
+          state: "",
         },
       },
       // used to validate and enable button to move to next screen
@@ -87,57 +87,57 @@ class ConfirmDetailsEdit extends React.Component {
 
   getStates = () => {
     return [
-      'Alabama',
-      'Alaska',
-      'Arizona',
-      'Arkansas',
-      'California',
-      'Colorado',
-      'Connecticut',
-      'DC',
-      'Delaware',
-      'Florida',
-      'Georgia',
-      'Hawaii',
-      'Idaho',
-      'Illinois',
-      'Indiana',
-      'Iowa',
-      'Kansas',
-      'Kentucky',
-      'Louisiana',
-      'Maine',
-      'Maryland',
-      'Massachusetts',
-      'Michigan',
-      'Minnesota',
-      'Mississippi',
-      'Missouri',
-      'Montana',
-      'Nebraska',
-      'Nevada',
-      'New Hampshire',
-      'New Jersey',
-      'New Mexico',
-      'New York',
-      'North Carolina',
-      'North Dakota',
-      'Ohio',
-      'Oklahoma',
-      'Oregon',
-      'Pennsylvania',
-      'Rhode Island',
-      'South Carolina',
-      'South Dakota',
-      'Tennessee',
-      'Texas',
-      'Utah',
-      'Vermont',
-      'Virginia',
-      'Washington',
-      'West Virginia',
-      'Wisconsin',
-      'Wyoming',
+      "Alabama",
+      "Alaska",
+      "Arizona",
+      "Arkansas",
+      "California",
+      "Colorado",
+      "Connecticut",
+      "DC",
+      "Delaware",
+      "Florida",
+      "Georgia",
+      "Hawaii",
+      "Idaho",
+      "Illinois",
+      "Indiana",
+      "Iowa",
+      "Kansas",
+      "Kentucky",
+      "Louisiana",
+      "Maine",
+      "Maryland",
+      "Massachusetts",
+      "Michigan",
+      "Minnesota",
+      "Mississippi",
+      "Missouri",
+      "Montana",
+      "Nebraska",
+      "Nevada",
+      "New Hampshire",
+      "New Jersey",
+      "New Mexico",
+      "New York",
+      "North Carolina",
+      "North Dakota",
+      "Ohio",
+      "Oklahoma",
+      "Oregon",
+      "Pennsylvania",
+      "Rhode Island",
+      "South Carolina",
+      "South Dakota",
+      "Tennessee",
+      "Texas",
+      "Utah",
+      "Vermont",
+      "Virginia",
+      "Washington",
+      "West Virginia",
+      "Wisconsin",
+      "Wyoming",
     ];
   };
 
@@ -149,134 +149,134 @@ class ConfirmDetailsEdit extends React.Component {
     let error = this.state.error;
     let errorArr = this.state.errorArr;
     // firstname
-    if (type === 'first_name') {
-      if (value !== '') {
-        error[type] = '';
+    if (type === "first_name") {
+      if (value !== "") {
+        error[type] = "";
         errorArr[0] = true;
 
         if (value.length > 30) {
-          error[type] = 'First name has exceeded the max length';
+          error[type] = "First name has exceeded the max length";
           errorArr[0] = false;
         }
       } else {
-        error[type] = 'First Name is mandatory';
+        error[type] = "First Name is mandatory";
         errorArr[0] = false;
       }
       form[type] = value
-        .split('')
+        .split("")
         .filter((item) => item.match(/[a-zA-Z ]/i))
-        .join('');
+        .join("");
     }
 
     // lastname
-    if (type === 'last_name') {
-      if (value !== '') {
-        error[type] = '';
+    if (type === "last_name") {
+      if (value !== "") {
+        error[type] = "";
         errorArr[1] = true;
 
         if (value.length > 30) {
-          error[type] = 'Last name has exceeded the max length';
+          error[type] = "Last name has exceeded the max length";
           errorArr[1] = false;
         }
       } else {
-        error[type] = 'Last Name is mandatory';
+        error[type] = "Last Name is mandatory";
         errorArr[1] = false;
       }
       form[type] = value
-        .split('')
+        .split("")
         .filter((item) => item.match(/[a-zA-Z ]/i))
-        .join('');
+        .join("");
     }
 
     // address street
-    if (type === 'street') {
-      if (value !== '') {
-        error['address'][type] = '';
+    if (type === "street") {
+      if (value !== "") {
+        error["address"][type] = "";
         errorArr[2] = true;
       } else {
-        error['address'][type] = 'Street is mandatory';
+        error["address"][type] = "Street is mandatory";
         errorArr[2] = false;
       }
-      form['address'][type] = value;
+      form["address"][type] = value;
     }
 
     // address zipcode
-    if (type === 'zipcode') {
-      if (value !== '') {
-        error['address'][type] = '';
+    if (type === "zipcode") {
+      if (value !== "") {
+        error["address"][type] = "";
         errorArr[3] = true;
       } else {
-        error['address'][type] = 'Zip is mandatory';
+        error["address"][type] = "Zip is mandatory";
         errorArr[3] = false;
       }
-      form['address'][type] = value
-        .split('')
+      form["address"][type] = value
+        .split("")
         .filter((item) => item.match(/[0-9\\-]/i))
-        .join('');
+        .join("");
     }
 
     // address city
-    if (type === 'city') {
-      if (value !== '') {
-        error['address'][type] = '';
+    if (type === "city") {
+      if (value !== "") {
+        error["address"][type] = "";
         errorArr[4] = true;
       } else {
-        error['address'][type] = 'City is mandatory';
+        error["address"][type] = "City is mandatory";
         errorArr[4] = false;
       }
-      form['address'][type] = value;
+      form["address"][type] = value;
     }
 
     // address state
-    if (type === 'state') {
-      if (value !== '') {
-        error['address'][type] = '';
+    if (type === "state") {
+      if (value !== "") {
+        error["address"][type] = "";
         errorArr[5] = true;
       } else {
-        error['address'][type] = 'State is mandatory';
+        error["address"][type] = "State is mandatory";
         errorArr[5] = false;
       }
-      form['address'][type] = value;
+      form["address"][type] = value;
     }
 
     // cellno
-    if (type === 'phonenumber') {
-      if (value !== '') {
-        error[type] = '';
+    if (type === "phonenumber") {
+      if (value !== "") {
+        error[type] = "";
         if (value.length === 12) {
           errorArr[6] = true;
           await this.setState({ avoidPhoneError: true });
         } else if (value.length !== 12 && this.state.avoidPhoneError) {
-          error[type] = 'Invalid Cell Number';
+          error[type] = "Invalid Cell Number";
           errorArr[6] = false;
         }
-      } else if (value === '' && this.state.avoidPhoneError) {
-        error[type] = 'Cell Number is mandatory';
+      } else if (value === "" && this.state.avoidPhoneError) {
+        error[type] = "Cell Number is mandatory";
         errorArr[6] = false;
       }
 
       form[type] = maskingPhoneNumber(
         value
-          .split('')
+          .split("")
           .filter((item) => item.match(/[0-9\\-]/i))
-          .join('')
-          .replace(/^0+/, '')
+          .join("")
+          .replace(/^0+/, "")
       );
 
       if (form[type].length !== 12) {
-        error[type] = 'Invalid Cell Number';
+        error[type] = "Invalid Cell Number";
         errorArr[6] = false;
       } else {
-        error[type] = '';
+        error[type] = "";
         errorArr[6] = true;
         this.setState({ avoidPhoneError: true });
       }
     }
 
     // workingwith
-    if (type === 'working_with') {
-      if (value !== '') {
-        error[type] = '';
+    if (type === "working_with") {
+      if (value !== "") {
+        error[type] = "";
         errorArr[7] = true;
       } else {
         error[type] = "Consultant's team you're joining is mandatory";
@@ -287,19 +287,19 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     // email id
-    if (type === 'email') {
-      if (value !== '') {
-        let regex = new RegExp('^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$');
+    if (type === "email") {
+      if (value !== "") {
+        let regex = new RegExp("^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$");
 
         if (regex.test(value)) {
-          error[type] = '';
+          error[type] = "";
           errorArr[8] = true;
         } else {
-          error[type] = 'Invalid Email ID';
+          error[type] = "Invalid Email ID";
           errorArr[8] = false;
         }
       } else {
-        error[type] = 'Email ID is mandatory';
+        error[type] = "Email ID is mandatory";
         errorArr[8] = false;
       }
       form[type] = value;
@@ -326,7 +326,7 @@ class ConfirmDetailsEdit extends React.Component {
 
     // avoid users below 19 years
     if (yearsDiff < 21) {
-      error['dob'] = 'You have to be older than 21 Years';
+      error["dob"] = "You have to be older than 21 Years";
       this.props.setrightFooterButtonDisabled(true);
     } else if (yearsDiff === 21) {
       let month = date1.getMonth() - date2.getMonth();
@@ -334,21 +334,21 @@ class ConfirmDetailsEdit extends React.Component {
 
       if (month === 0) {
         if (day > 0) {
-          error['dob'] = '';
+          error["dob"] = "";
           this.validateToMoveToNextScreen(this.state.avoidDateError);
         } else {
-          error['dob'] = 'You have to be older than 21 Years';
+          error["dob"] = "You have to be older than 21 Years";
           this.props.setrightFooterButtonDisabled(true);
         }
       } else if (month > 0) {
-        error['dob'] = '';
+        error["dob"] = "";
         this.validateToMoveToNextScreen(this.state.avoidDateError);
       } else {
-        error['dob'] = 'You have to be older than 21 Years';
+        error["dob"] = "You have to be older than 21 Years";
         this.props.setrightFooterButtonDisabled(true);
       }
     } else {
-      error['dob'] = '';
+      error["dob"] = "";
       this.validateToMoveToNextScreen(this.state.avoidDateError);
     }
 
@@ -357,7 +357,7 @@ class ConfirmDetailsEdit extends React.Component {
         'Invalid date' &&
       this.state.avoidDateError
     ) {
-      error['dob'] = 'Invalid Date';
+      error["dob"] = "Invalid Date";
       this.props.setrightFooterButtonDisabled(true);
     }
     if (
@@ -376,11 +376,11 @@ class ConfirmDetailsEdit extends React.Component {
     let avoidPhoneError = this.state.avoidPhoneError;
     let date = moment(new Date(userData.dob.year, userData.dob.month, userData.dob.day)).format('MM/DD/YYYY');
     let error = this.state.error;
-    if (userData['working_with']['displayId'] === null) {
-      error['working_with'] = "Consultant's team you're joining is mandatory";
+    if (userData["working_with"]["displayId"] === null) {
+      error["working_with"] = "Consultant's team you're joining is mandatory";
       errorArr[7] = false;
     } else {
-      error['working_with'] = '';
+      error["working_with"] = "";
       errorArr[7] = true;
     }
     this.setState({ error, errorArr });
@@ -398,9 +398,9 @@ class ConfirmDetailsEdit extends React.Component {
         errorArr[8] &&
         avoidDateError &&
         avoidPhoneError &&
-        date !== 'Invalid date' &&
-        userData['working_with']['displayId'] !== null &&
-        userData['working_with']['displayId'] !== undefined
+        date !== "Invalid date" &&
+        userData["working_with"]["displayId"] !== null &&
+        userData["working_with"]["displayId"] !== undefined
       )
     );
   };
@@ -415,54 +415,54 @@ class ConfirmDetailsEdit extends React.Component {
     let errorArr = this.state.errorArr;
     let avoidPhoneError = this.state.avoidPhoneError;
 
-    if (userData['first_name'] === '') {
+    if (userData["first_name"] === "") {
       errorArr[0] = false;
     } else {
       errorArr[0] = true;
     }
-    if (userData['last_name'] === '') {
+    if (userData["last_name"] === "") {
       errorArr[1] = false;
     } else {
       errorArr[1] = true;
     }
-    if (userData['address']['street'] === '') {
+    if (userData["address"]["street"] === "") {
       errorArr[2] = false;
     } else {
       errorArr[2] = true;
     }
-    if (userData['address']['zipcode'] === '') {
+    if (userData["address"]["zipcode"] === "") {
       errorArr[3] = false;
     } else {
       errorArr[3] = true;
       //this.props.setrightFooterButtonDisabled(false);
     }
-    if (userData['address']['city'] === '') {
+    if (userData["address"]["city"] === "") {
       errorArr[4] = false;
     } else {
       errorArr[4] = true;
     }
-    if (userData['address']['state'] === '') {
+    if (userData["address"]["state"] === "") {
       errorArr[5] = false;
     } else {
       errorArr[5] = true;
     }
-    userData['phonenumber'] = maskingPhoneNumber(userData['phonenumber']);
-    if (userData['phonenumber'] === '') {
+    userData["phonenumber"] = maskingPhoneNumber(userData["phonenumber"]);
+    if (userData["phonenumber"] === "") {
       errorArr[6] = false;
     }
-    if (userData['phonenumber'].length === 12) {
+    if (userData["phonenumber"].length === 12) {
       errorArr[6] = true;
       avoidPhoneError = true;
     } else {
       errorArr[6] = false;
     }
 
-    if (userData['working_with'].name === '') {
+    if (userData["working_with"].name === "") {
       errorArr[7] = false;
     } else {
       errorArr[7] = true;
     }
-    if (userData['email'] === '') {
+    if (userData["email"] === "") {
       errorArr[8] = false;
     } else {
       errorArr[8] = true;
@@ -471,10 +471,10 @@ class ConfirmDetailsEdit extends React.Component {
     //to check if date is NaN (Not a Number)
     // eslint-disable-next-line
     if (userData.dob.day !== userData.dob.day) {
-      userData['dob'] = {
-        day: 'DD',
-        month: 'MM',
-        year: 'YYYY',
+      userData["dob"] = {
+        day: "DD",
+        month: "MM",
+        year: "YYYY",
       };
       avoidDateError = false;
     }
@@ -498,12 +498,10 @@ class ConfirmDetailsEdit extends React.Component {
         <div className={window.innerWidth >= 550 ? 'componentMargin4 ' : 'CEmobileComponent'}>
           {/* static text to be displayed */}
           <span className='head1'>
-            GOOD MOVE
-            {this.props.userData.first_name !== '' ? <>, {userData.first_name.toUpperCase()}!</> : null}
+            LET'S KEEP GOING
+            {/* {this.props.userData.first_name !== "" ? <>, {userData.first_name.toUpperCase()}!</> : null} */}
           </span>
-          <div className='staticText3'>
-            We love it when we have new members of the Scout & Cellar Family. Let’s get you started!
-          </div>
+          <div className='staticText3'>Next, we need to collect some additional information about you.</div>
           {/* <div className="staticText4">
             Take a quick look at the details below, then we’ll move forward
           </div> */}
@@ -578,7 +576,7 @@ class ConfirmDetailsEdit extends React.Component {
                         name='month'
                         onChange={this.handleDate}
                       >
-                        <option value={'MM'} key={'MM'}>
+                        <option value={"MM"} key={"MM"}>
                           MM
                         </option>
                         {moment.monthsShort().map((month, index) => (
@@ -601,7 +599,7 @@ class ConfirmDetailsEdit extends React.Component {
                         onChange={this.handleDate}
                       >
                         options.push(
-                        <option value={'DD'} key={'DD'}>
+                        <option value={"DD"} key={"DD"}>
                           DD
                         </option>
                         );
@@ -630,7 +628,7 @@ class ConfirmDetailsEdit extends React.Component {
                             i++
                           ) {
                             options.push(
-                              <option value={i} key={'DD'}>
+                              <option value={i} key={"DD"}>
                                 {i}
                               </option>
                             );
@@ -817,7 +815,7 @@ class ConfirmDetailsEdit extends React.Component {
                     // autoComplete="none"
                     onChange={this.handleChange}
                   >
-                    <option value={''} key={'dummy state'}>
+                    <option value={""} key={"dummy state"}>
                       Select State
                     </option>
                     {this.getStates().map((state, index) => (
@@ -876,26 +874,26 @@ class ConfirmDetailsEdit extends React.Component {
                     disablePortal={this.props.fixedWorkingWith}
                     className={error.working_with.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
                     value={{
-                      id: this.props.userData['working_with'].id,
-                      DisplayName: this.props.userData['working_with'].name,
+                      id: this.props.userData["working_with"].id,
+                      DisplayName: this.props.userData["working_with"].name,
                     }}
                     onChange={(event, newValue) => {
                       let userData = this.state.userData;
                       if (newValue !== null) {
-                        userData['working_with'] = {
-                          id: newValue['PersonID'],
-                          name: newValue['DisplayName'],
-                          displayId: newValue['DisplayID'],
+                        userData["working_with"] = {
+                          id: newValue["PersonID"],
+                          name: newValue["DisplayName"],
+                          displayId: newValue["DisplayID"],
                         };
                       }
                       this.setState({ value: newValue, userData });
                       this.validateToMoveToNextScreen(this.state.avoidDateError);
                     }}
-                    inputValue={this.state.userData['working_with'].name}
+                    inputValue={this.state.userData["working_with"].name}
                     onInputChange={(event, newInputValue) => {
                       let e = {
                         target: {
-                          id: 'working_with',
+                          id: "working_with",
                           value: newInputValue,
                         },
                       };
@@ -907,7 +905,7 @@ class ConfirmDetailsEdit extends React.Component {
                       if (option.DisplayName !== null) {
                         return option.DisplayName;
                       } else {
-                        return '';
+                        return "";
                       }
                     }}
                     style={{ width: 290 }}
@@ -952,19 +950,19 @@ export default withStyles(styles)(ConfirmDetailsEdit);
 // additional function to add hypen "-" to the phone number
 const maskingPhoneNumber = (value) => {
   value = value
-    .split('')
-    .filter((item) => item !== '-')
-    .join('');
+    .split("")
+    .filter((item) => item !== "-")
+    .join("");
 
   if (value.length > 3 && value.length <= 6) {
     value = value.split('').splice(0, 3).join('') + '-' + value.split('').splice(3).join('');
   } else if (value.length >= 7) {
     value =
-      value.split('').splice(0, 3).join('') +
-      '-' +
-      value.split('').splice(3, 3).join('') +
-      '-' +
-      value.split('').splice(6).join('');
+      value.split("").splice(0, 3).join("") +
+      "-" +
+      value.split("").splice(3, 3).join("") +
+      "-" +
+      value.split("").splice(6).join("");
   }
 
   return value;

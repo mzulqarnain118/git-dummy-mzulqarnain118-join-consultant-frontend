@@ -15,8 +15,10 @@ class ConfirmDetailsDisplay extends React.Component {
         {/* header displayed for mobile view */}
         {window.innerWidth <= 550 ? <Header step={0} agreement={false} handleBackButton={this.props.handleBackButton} topBarNavigation={this.props.topBarNavigation} /> : null}
         <div className={window.innerWidth >= 550 ? "componentMargin3 " : "mobileComponent1"}>
-          <span className="head1">GOOD MOVE, {userData.first_name.toUpperCase()}!</span>
-          <div className="staticText3">We love it when we have new members of the Scout & Cellar Family. Let’s get you started!</div>
+          {/* <span className="head1">GOOD MOVE, {userData.first_name.toUpperCase()}!</span> */}
+          <span className="head1">LET’S DOUBLE-CHECK EVERYTHING</span>
+
+          <div className="staticText3">Confirm your information or click Make Changes below to edit.</div>
           {/* <div className="staticText4">Take a quick look over and we'll move forward.</div> */}
           {/* Display tab to show all user details */}
           <div className="displayArea">

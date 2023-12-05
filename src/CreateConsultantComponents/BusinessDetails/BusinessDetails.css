@@ -173,7 +173,7 @@
 .ssn {
   font-family: oswald;
   font-size: 24px;
-  margin-top: 24px;
+  /* margin-top: 24px; */
   font-weight: 400;
 }
 .ssnSubtext {
@@ -257,6 +257,7 @@ input::-webkit-input-placeholder {
 .doingBusinessExtraInformation {
   font-size: 16px !important;
   padding: 10px;
+  margin-left: 20px;
   font-family: Domine !important;
 }
 .errorMesSubtext {
@@ -512,7 +513,7 @@ input::-webkit-input-placeholder {
   .ssn {
     font-family: oswald;
     font-size: 20px;
-    margin-top: 24px;
+    /* margin-top: 24px; */
     font-weight: 400;
   }
 
@@ -725,7 +726,7 @@ input::-webkit-input-placeholder {
   .ssn {
     font-family: oswald;
     font-size: 20px;
-    margin-top: 2em;
+    /* margin-top: 2em; */
     font-weight: 400;
   }
 
