@@ -115,6 +115,7 @@ class ConfirmDetailsPasswordPage extends React.Component {
   render() {
     const { password, email, emailError } = this.state;
     const { errorUserData } = this.props;
+
     return (
       <React.Fragment>
         <div className={window.innerWidth >= 550 ? "componentMargin2 " : "mobileComponent"}>
@@ -126,10 +127,21 @@ class ConfirmDetailsPasswordPage extends React.Component {
           {/* <div className="staticText2">We are excited to have you as a member of the Scout &amp; Cellar™ Family.</div> */}
 
           {/* input to accept Password  */}
+
+          {this.props.customer && (
+            <div
+              className='SubText'
+              style={{ clear: "both", marginTop: "25px", maxWidth: "600px" }}
+            >
+              If your email address is already linked to a Scout & Cellar customer account, enter that password here.
+            </div>
+          )}
+
           <div className='password1 form-group'>
+          {!this.props.customer && (
             <label className='passwordLabel' htmlFor='password'>
               Create a password
-            </label>
+            </label>)}
             <div className='wrapper-email'>
               <div className='InputMargin one'>
                 <input
@@ -207,51 +219,51 @@ class ConfirmDetailsPasswordPage extends React.Component {
             </div> */}
           </div>
 
-          <div
-            className='SubText'
-            style={{ clear: "both", marginTop: "25px", marginBottom: "25px", maxWidth: "600px" }}
-          >
-            If your email address is already linked to a Scout & Cellar customer account, enter that password here.
-          </div>
-
-          <div style={{ marginTop: "30px", marginBottom: "30px", maxWidth: "600px" }}>
-            <div className='SubText' style={{ clear: "both" }}>
-              Did you start this process but already forgot your password? (It happens.)
-            </div>
-            {/* link to forgot password */}
-            <div
-              style={{ clear: "both" }}
-              className='passwordForgotLink'
-              onClick={() => {
-                this.props.setForgotPassword();
-                this.setState({
-                  password: "",
-                  recaptchaToken: "",
-                });
-                let userData = this.props.userData;
-                userData["password"] = "";
-                this.props.setUserData(userData);
-                let errorUserData = this.props.errorUserData;
-                errorUserData["password"] = "";
-                this.props.setErrorUserData(errorUserData);
-                this.props.setButtonName("CONTINUE ");
-                this.props.setrightFooterButtonDisabled(true);
-              }}
-            >
-              Click here to reset
-            </div>
-          </div>
-          <div style={{ marginTop: "30px", marginBottom: "30px", maxWidth: "700px" }}>
-            <div className='SubText' style={{ clear: "both" }}>
-              Already a Scout & Cellar customer but forgot your password? (This happens more often.)
-            </div>
-            {/* link to forgot password */}
-            <a style={{ textDecoration: "none" }} href='https://team.scoutandcellar.com/Account/ForgotPassword'>
-              <div style={{ clear: "both" }} className='passwordForgotLink'>
+          {!this.props.customer && (
+            <div style={{ marginTop: "30px", marginBottom: "30px", maxWidth: "600px" }}>
+              <div className='SubText' style={{ clear: "both" }}>
+                Did you start this process but already forgot your password? (It happens.)
+              </div>
+              {/* link to forgot password */}
+              <div
+                style={{ clear: "both" }}
+                className='passwordForgotLink'
+                onClick={() => {
+                  this.props.setForgotPassword();
+                  this.setState({
+                    password: "",
+                    recaptchaToken: "",
+                  });
+                  let userData = this.props.userData;
+                  userData["password"] = "";
+                  this.props.setUserData(userData);
+                  let errorUserData = this.props.errorUserData;
+                  errorUserData["password"] = "";
+                  this.props.setErrorUserData(errorUserData);
+                  this.props.setButtonName("CONTINUE ");
+                  this.props.setrightFooterButtonDisabled(true);
+                }}
+              >
                 Click here to reset
               </div>
-            </a>
-          </div>
+            </div>
+          )}
+
+          {this.props.customer && (
+            <div style={{ marginTop: "30px", marginBottom: "30px", maxWidth: "700px" }}>
+              <div className='SubText' style={{ clear: "both" }}>
+                Already a Scout & Cellar customer but forgot your password?
+              </div>
+
+              {/* link to forgot password */}
+
+              <a style={{ textDecoration: "none" }} href='https://team.scoutandcellar.com/Account/ForgotPassword' target="_blank">
+                <div style={{ clear: "both" }} className='passwordForgotLink'>
+                  Click here to reset
+                </div>
+              </a>
+            </div>
+          )}
 
           {/* forgot password flow */}
           {this.props.displayForgotPassword ? (

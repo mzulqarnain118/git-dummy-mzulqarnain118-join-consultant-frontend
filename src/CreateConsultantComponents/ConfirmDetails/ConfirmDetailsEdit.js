@@ -712,7 +712,7 @@ class ConfirmDetailsEdit extends React.Component {
           <div className='staticText5'>SHIPPING ADDRESS</div>
           {/* edit address */}
           <div className='row edit-margin'>
-            <div className='col-lg-2 '>
+            <div className='col-lg-2'>
               <div className='form-group'>
                 <span className='head3' htmlFor='street'>
                   STREET
@@ -734,36 +734,6 @@ class ConfirmDetailsEdit extends React.Component {
               {error.address.street.length > 0 ? (
                 <>
                   <div className='errorMes'>{error.address.street}</div>
-                  <br />
-                </>
-              ) : null}
-            </div>
-
-            {/* Zipcode */}
-            <div className='col-lg-2 offset-lg-1 edit-marginLeft'>
-              <div className='form-group'>
-                <span className='head3' htmlFor='zipcode'>
-                  ZIPCODE
-                </span>
-                <div className='edit-InputMargin'>
-                  <input
-                    type='text'
-                    // autocomplete="none"
-                    // autoComplete="none"
-                    value={userData['address']['zipcode']}
-                    className={error.address.zipcode.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    id='zipcode'
-                    name='zipcode'
-                    placeholder='Enter zipcode'
-                    onChange={this.handleChange}
-                    maxLength='6'
-                  />
-                </div>
-              </div>
-
-              {error.address.zipcode.length > 0 ? (
-                <>
-                  <div className='errorMes'>{error.address.zipcode}</div>
                   <br />
                 </>
               ) : null}
@@ -796,11 +766,9 @@ class ConfirmDetailsEdit extends React.Component {
                 </>
               ) : null}
             </div>
-          </div>
-          {/* address second row */}
-          {/* state */}
-          <div className='row edit-margin bottomMargin'>
-            <div className='col-lg-2 '>
+            {/* state */}
+
+            <div className='col-lg-2 offset-lg-1 edit-marginLeft'>
               <div className='form-group'>
                 <span className='head3' htmlFor='state'>
                   STATE
@@ -829,6 +797,38 @@ class ConfirmDetailsEdit extends React.Component {
               {error.address.state.length > 0 ? (
                 <>
                   <div className='errorMes'>{error.address.state}</div>
+                  <br />
+                </>
+              ) : null}
+            </div>
+          </div>
+          <div className='row edit-margin bottomMargin'>
+            {/* address second row */}
+            {/* Zipcode */}
+            <div className='col-lg-2'>
+              <div className='form-group'>
+                <span className='head3' htmlFor='zipcode'>
+                  ZIPCODE
+                </span>
+                <div className='edit-InputMargin'>
+                  <input
+                    type='text'
+                    // autocomplete="none"
+                    // autoComplete="none"
+                    value={userData["address"]["zipcode"]}
+                    className={error.address.zipcode.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
+                    id='zipcode'
+                    name='zipcode'
+                    placeholder='Enter zipcode'
+                    onChange={this.handleChange}
+                    maxLength='6'
+                  />
+                </div>
+              </div>
+
+              {error.address.zipcode.length > 0 ? (
+                <>
+                  <div className='errorMes'>{error.address.zipcode}</div>
                   <br />
                 </>
               ) : null}
