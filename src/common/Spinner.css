@@ -1,0 +1,9 @@
+.spinner {
+    background-color: rgba(255, 255, 255, 0.3);
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+}

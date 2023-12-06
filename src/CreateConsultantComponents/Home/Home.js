@@ -22,6 +22,7 @@ import axios from "axios";
 import { algoliaURL, getWorkingWithURL } from "../../configuration/config";
 import swal from "sweetalert";
 import moment from "moment";
+import Spinner from "../../common/Spinner";
 require("typeface-oswald");
 require("typeface-domine");
 
@@ -1363,12 +1364,9 @@ class Home extends React.Component {
     return (
       <div tabIndex="0" onKeyDown={this.handleKeypress}>
         {load ? (
-          <CircularProgress
-            color="black"
-            sx={{ '--CircularProgress-size': '80px' }}
-            className={rightFooterButtonName !== "DONE" ? "loader" : "pkLoader"}
-          />
+          <Spinner color='success' size='120px'/>
         ) : null}
+        
         {/* If active step is less than 4 appropriate step page is dispayed , 
         if active step is 4  - payment confirmation page is displayed */}
         {activeStep < 4 ? (

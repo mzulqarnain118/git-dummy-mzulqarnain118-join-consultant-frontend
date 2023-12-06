@@ -234,7 +234,7 @@ class BusinessDetails extends React.Component {
                 <div className='col-lg-4  col-md-3 mobileAvailabilityText offsetLeftAvailableIcon'>
                   <div className='row'>
                     <div className='col-lg-1 col-md-1 urlLoader'>
-                      <CircularProgress color='black' sx={{ "--CircularProgress-size": "30px" }} />
+                      <CircularProgress color='success' sx={{ "--CircularProgress-size": "30px" }} />
                     </div>
                   </div>
                 </div>
