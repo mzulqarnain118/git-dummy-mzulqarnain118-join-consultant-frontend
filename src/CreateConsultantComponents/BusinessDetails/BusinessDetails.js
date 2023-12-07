@@ -189,7 +189,7 @@ class BusinessDetails extends React.Component {
           <div className={window.innerWidth >= 550 ? "BDcomponentMargin " : "BDmobileComponent"}>
             <span className='BDhead1'>ALMOST THERE!</span>
             {/* ™ */}
-            <div className='BDstaticText3'>Create a custom URL for your Scout &amp; Cellar business</div>
+            <div className='BDstaticText3'>Create a custom URL for your Scout &amp; Cellar business.</div>
 
             <div className={errorCustomURL.length > 0 ? "row urlRow1" : "row urlRow"}>
               <div className='col-lg-2 col-md-4 '>
