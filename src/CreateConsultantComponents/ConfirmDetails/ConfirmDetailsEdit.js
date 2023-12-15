@@ -502,15 +502,13 @@ class ConfirmDetailsEdit extends React.Component {
             {/* {this.props.userData.first_name !== "" ? <>, {userData.first_name.toUpperCase()}!</> : null} */}
           </span>
           <div className='staticText3'>Next, we need to collect some additional information about you.</div>
-          {/* <div className="staticText4">
-            Take a quick look at the details below, then we’ll move forward
-          </div> */}
+
           {/* edit name and date of birth */}
           <div className='row edit-margin'>
             <div className='col-lg-2 col-md-3'>
               <div className='form-group'>
                 <span className='head3' htmlFor='first_name'>
-                  FIRST NAME
+                  FIRST NAME* (Required)
                 </span>
                 <div className='edit-InputMargin'>
                   <input
@@ -538,7 +536,7 @@ class ConfirmDetailsEdit extends React.Component {
             <div className='col-lg-2 offset-lg-1  edit-marginLeft'>
               <div className='form-group'>
                 <span className='head3' htmlFor='last_name'>
-                  LAST NAME
+                  LAST NAME* (Required) 
                 </span>
                 <div className='edit-InputMargin'>
                   <input
@@ -561,9 +559,10 @@ class ConfirmDetailsEdit extends React.Component {
                 </>
               ) : null}
             </div>
+
             {/* date of bith  */}
             <div className='col-lg-4 offset-lg-1 col-md-5 edit-marginLeft'>
-              <span className='head3'>DATE OF BIRTH</span>
+              <span className='head3'>DATE OF BIRTH* (Required)</span>
 
               <div className='row'>
                 <div className='col-lg-1 col-md-5 col-xs-1 mobileDate'>
@@ -715,7 +714,7 @@ class ConfirmDetailsEdit extends React.Component {
             <div className='col-lg-2'>
               <div className='form-group'>
                 <span className='head3' htmlFor='street'>
-                  STREET
+                  STREET* (Required)
                 </span>
                 <div className='edit-InputMargin'>
                   <input
@@ -743,7 +742,7 @@ class ConfirmDetailsEdit extends React.Component {
             <div className='col-lg-2 offset-lg-1 edit-marginLeft'>
               <div className='form-group'>
                 <span className='head3' htmlFor='city'>
-                  CITY
+                  CITY* (Required)
                 </span>
                 <div className='edit-InputMargin'>
                   <input
@@ -771,7 +770,7 @@ class ConfirmDetailsEdit extends React.Component {
             <div className='col-lg-2 offset-lg-1 edit-marginLeft'>
               <div className='form-group'>
                 <span className='head3' htmlFor='state'>
-                  STATE
+                  STATE* (Required)
                 </span>
                 <div className='edit-InputMargin'>
                   <select
@@ -784,7 +783,7 @@ class ConfirmDetailsEdit extends React.Component {
                     onChange={this.handleChange}
                   >
                     <option value={""} key={"dummy state"}>
-                      Select State
+                      Select State* (Required)
                     </option>
                     {this.getStates().map((state, index) => (
                       <option value={state} key={index}>
@@ -808,7 +807,7 @@ class ConfirmDetailsEdit extends React.Component {
             <div className='col-lg-2'>
               <div className='form-group'>
                 <span className='head3' htmlFor='zipcode'>
-                  ZIPCODE
+                  ZIPCODE* (Required)
                 </span>
                 <div className='edit-InputMargin'>
                   <input
@@ -838,7 +837,7 @@ class ConfirmDetailsEdit extends React.Component {
             <div className='col-lg-2 offset-lg-1 edit-marginLeft'>
               <div className='form-group'>
                 <span className='head3' htmlFor='phonenumber'>
-                  CELL NUMBER
+                  CELL NUMBER* (Required)
                 </span>
                 <div className='edit-InputMargin'>
                   <input
@@ -867,7 +866,7 @@ class ConfirmDetailsEdit extends React.Component {
             <div className='col-lg-4 offset-lg-1 edit-marginLeft'>
               <div className='form-group'>
                 <span className='head3' htmlFor='working_with'>
-                  CONSULTANT'S TEAM YOU’RE JOINING
+                  CONSULTANT'S TEAM YOU’RE JOINING* (Required)
                 </span>
                 <div className='edit-InputMargin'>
                   <Autocomplete

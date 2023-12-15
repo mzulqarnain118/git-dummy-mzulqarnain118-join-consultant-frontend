@@ -503,7 +503,7 @@ class PurchaseKit extends React.Component {
                           className="purchasehead3"
                           htmlFor="cardHolderName"
                         >
-                          CARD HOLDER NAME
+                          CARD HOLDER NAME* (Required)
                         </span>
                         <input
                           type="text"
@@ -535,7 +535,7 @@ class PurchaseKit extends React.Component {
                     <div className="form-group">
                       <div className="purchaseInputMargin1">
                         <span className="purchasehead3" htmlFor="cardNumber">
-                          CARD NUMBER
+                          CARD NUMBER* (Required)
                         </span>
                         <input
                           type="text"
@@ -569,7 +569,7 @@ class PurchaseKit extends React.Component {
                     {/* Month and year of card */}
                     <div className="form-group">
                       <span className="purchasehead3" htmlFor="cardDate">
-                        MM/YY
+                        MM/YY* (Required)
                       </span>
                       <input
                         type="text"
@@ -600,7 +600,7 @@ class PurchaseKit extends React.Component {
                     {/* CVV of card */}
                     <div className="form-group">
                       <span className="purchasehead4" htmlFor="cardCVV">
-                        CVV
+                        CVV* (Required)
                       </span>
                       <input
                         type="text"
@@ -653,7 +653,7 @@ class PurchaseKit extends React.Component {
                         <div className="form-group">
                           <div className="purchaseInputMargin">
                             <span className="purchasehead3" htmlFor="street">
-                              STREET
+                              STREET* (Required)
                             </span>
                             <input
                               type="text"
@@ -685,7 +685,7 @@ class PurchaseKit extends React.Component {
                         <div className="form-group">
                           <div className="purchaseInputMargin">
                             <span className="purchasehead3" htmlFor="zipCode">
-                              ZIP CODE
+                              ZIP CODE* (Required)
                             </span>
                             <input
                               type="text"
@@ -720,7 +720,7 @@ class PurchaseKit extends React.Component {
                         <div className="form-group">
                           <div className="purchaseInputMargin">
                             <span className="purchasehead3" htmlFor="city">
-                              CITY
+                              CITY* (Required)
                             </span>
                             <input
                               type="text"
@@ -752,7 +752,7 @@ class PurchaseKit extends React.Component {
                         <div className="form-group">
                           <div className="purchaseInputMargin">
                             <span className="purchasehead3" htmlFor="state">
-                              STATE
+                              STATE* (Required)
                             </span>
                             <select
                               className={
