@@ -1,30 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@mui/styles';
-import StepConnector from '@mui/material/StepConnector';
-import { IoCheckmarkCircleSharp, IoAlertCircle } from 'react-icons/io5';
-import { IoIosArrowForward } from 'react-icons/io';
-import {
-  Icon1,
-  Icon2,
-  Icon3,
-  Icon4,
-} from '../../Assets/PaymentConfirmationSVG';
-import TouchRipple from '@mui/material/ButtonBase/TouchRipple';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import './PaymentConfirmation.css';
-import appStore1 from '../../Assets/images/appStore1.png';
-import playStore1 from '../../Assets/images/playStore1.png';
-
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@mui/styles";
+import StepConnector from "@mui/material/StepConnector";
+import { IoCheckmarkCircleSharp, IoAlertCircle } from "react-icons/io5";
+import { IoIosArrowForward } from "react-icons/io";
+import { Icon1, Icon2, Icon3, Icon4 } from "../../Assets/PaymentConfirmationSVG";
+import TouchRipple from "@mui/material/ButtonBase/TouchRipple";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import "./PaymentConfirmation.css";
+import appStore1 from "../../Assets/images/appStore1.png";
+import playStore1 from "../../Assets/images/playStore1.png";
+import JoinTheCellar from "../../Assets/images/Join-TheCellar.jpg";
+import JoinTheSpeakeasy from "../../Assets/images/Join-TheSpeakeasy.jpg";
 // styles for material ui
 const styles = (theme) => ({
   step: {
-    fontColor: 'black',
-    '& $completed': {
-      color: '#4BA380',
+    fontColor: "black",
+    "& $completed": {
+      color: "#4BA380",
     },
-    '& $active': {
-      color: '#4BA380',
+    "& $active": {
+      color: "#4BA380",
     },
   },
 
@@ -38,21 +34,21 @@ const styles = (theme) => ({
 const GreenStepConnector = withStyles({
   alternativeLabel: {
     top: 10,
-    left: 'calc(-50% + 30px)',
-    right: 'calc(50% + 16px)',
+    left: "calc(-50% + 30px)",
+    right: "calc(50% + 16px)",
   },
   active: {
-    '& $line': {
-      borderColor: '#4BA380',
+    "& $line": {
+      borderColor: "#4BA380",
     },
   },
   completed: {
-    '& $line': {
-      borderColor: '#4BA380',
+    "& $line": {
+      borderColor: "#4BA380",
     },
   },
   line: {
-    borderColor: '#EF7070',
+    borderColor: "#EF7070",
     borderTopWidth: 1,
     borderRadius: 1,
   },
@@ -66,10 +62,10 @@ const disabledIcon = (props) => {
     return (
       <IoCheckmarkCircleSharp
         style={{
-          color: '#4BA380',
-          width: '2em',
-          height: '2em',
-          marginLeft: '-3px',
+          color: "#4BA380",
+          width: "2em",
+          height: "2em",
+          marginLeft: "-3px",
         }}
       />
     );
@@ -77,10 +73,10 @@ const disabledIcon = (props) => {
     return (
       <IoAlertCircle
         style={{
-          color: '#EF7070',
-          width: '2em',
-          height: '2em',
-          marginLeft: '-3px',
+          color: "#EF7070",
+          width: "2em",
+          height: "2em",
+          marginLeft: "-3px",
         }}
       />
     );
@@ -100,21 +96,10 @@ class PaymentConfirmation extends React.Component {
 
   //stepper title content
   getSteps = () => {
-    if (this.props.userData.doing_business === 'Entity') {
-      return [
-        'Confirm Details',
-        'Business Details',
-        'Review Terms',
-        'Purchase Kit',
-        'Documentation',
-      ];
+    if (this.props.userData.doing_business === "Entity") {
+      return ["Confirm Details", "Business Details", "Review Terms", "Purchase Kit", "Documentation"];
     } else {
-      return [
-        'Confirm Details',
-        'Business Details',
-        'Review Terms',
-        'Purchase Kit',
-      ];
+      return ["Confirm Details", "Business Details", "Review Terms", "Purchase Kit"];
     }
   };
 
@@ -125,100 +110,92 @@ class PaymentConfirmation extends React.Component {
     const { activeStep, rippleRef1, rippleRef2, rippleRef3 } = this.state;
     return (
       <React.Fragment>
-        <div style={{ background: '#E8E0DD', overflow: 'hidden' }}>
-          <div
-            className={
-              window.innerWidth >= 550
-                ? 'PCcomponentMargin '
-                : 'PCmobileComponent'
-            }
-          >
-            <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+        <div style={{ background: "#E8E0DD", overflow: "hidden" }}>
+          <div className={window.innerWidth >= 550 ? "PCcomponentMargin " : "PCmobileComponent"}>
+            <div style={{ marginLeft: "auto", marginRight: "auto" }}>
               {/* header for mobile view  */}
               {window.innerWidth <= 550 ? (
                 <>
                   <ArrowBackIosIcon
-                    className="arrowIcon1"
+                    className='arrowIcon1'
                     onClick={() => {
-                      this.props.moveBackToLastScreen(3, 'DONE');
+                      this.props.moveBackToLastScreen(3, "DONE");
                     }}
                   />
                   <span
-                    className="signOutStyle"
+                    className='signOutStyle'
                     onClick={() => {
-                      this.props.moveBackToLastScreen(0, 'NEXT');
+                      this.props.moveBackToLastScreen(0, "NEXT");
                     }}
                   >
                     SIGN OUT <Icon4 />
                   </span>
                 </>
               ) : null}
-              <div className="paymentConfirmationHead">
-                HEY, {userData.first_name.toUpperCase()}!
+              <div className='paymentConfirmationHead'>
+                WELCOME TO SCOUT & CELLAR, {userData.first_name.toUpperCase()}!
               </div>
               {confirmation ? (
                 <>
-                  <div className="paymentConfirmationSuccess">
-                    Congratulations,{window.innerWidth >= 550 ? null : <br />}{' '}
-                    welcome to Scout &amp; Cellar
-                    <sup className="registered-trademark">&#174;</sup>!
+                  <div className='paymentConfirmationSuccess'>
+                    Below, you'll find your business details. We’ll be sending them to you via email as well.
                   </div>
 
-                  <div className="customURLAssigned">
-                    scoutandcellar.com/{userData.url}
-                  </div>
+                  {/* 
+                  <div className=' paymentConfirmationHead2'>IS NOW RESERVED!</div> */}
 
-                  <div className=" paymentConfirmationHead2">
-                    IS NOW RESERVED!
-                  </div>
-
-                  <hr
+                  {/* <hr
                     style={{
-                      background: 'white',
-                      color: 'white',
-                      width: '60%',
-                      marginLeft: 'auto',
-                      marginRight: 'auto',
+                      background: "white",
+                      color: "white",
+                      width: "60%",
+                      marginLeft: "auto",
+                      marginRight: "auto",
                     }}
-                  />
+                  /> */}
 
-                  <div className="pcHead3">Consultant Number</div>
-
-                  <div className="pcConsultantNumber1">
-                    {' '}
-                    {consultant_number}
-                  </div>
-                  <hr
+                  {/* <hr
                     style={{
-                      background: 'white',
-                      color: 'white',
-                      width: '60%',
-                      marginLeft: 'auto',
-                      marginRight: 'auto',
+                      background: "white",
+                      color: "white",
+                      width: "60%",
+                      marginLeft: "auto",
+                      marginRight: "auto",
                     }}
-                  />
+                  /> */}
+                  
+                  <div className='pcInfo'>
+                    <div className='pcInfoItem'>
+                      <h4 className='pcHead3'>YOUR INDEPENDENT CONSULTANT ID</h4>
+                      <div className='pcConsultantNumber1'>{consultant_number}</div>
+                    </div>
 
-                  <div className="pcHead3">Email Address</div>
+                    <div className='pcInfoItem'>
+                      <h4 className='pcHead3'>YOUR SCOUT & CELLAR EMAIL ADDRESS</h4>
+                      <div className='pcConsultantNumber1'> {userData.email}</div>
+                    </div>
 
-                  <div className="pcConsultantNumber"> {userData.email}</div>
+                    <div className='pcInfoItem'>
+                      <h4 className='pcHead3'>YOUR SCOUT & CELLAR CUSTOM URL</h4>
+                      <div className='pcConsultantNumber1'>scoutandcellar.com/{userData.url}</div>
+                    </div>
+                  </div>
                 </>
               ) : (
                 <>
-                  <div className="paymentConfirmationFaliure">
-                    {this.props.consultant_error === 'Invalid postal code.'
-                      ? 'Looks like the postal code that you entered does not match your city/state.'
-                      : this.props.consultant_error ===
-                        'The website name is already taken.'
-                      ? 'Looks like the website name is already taken.'
-                      : 'Your payment could not be processed.'}
+                  <div className='paymentConfirmationFaliure'>
+                    {this.props.consultant_error === "Invalid postal code."
+                      ? "Looks like the postal code that you entered does not match your city/state."
+                      : this.props.consultant_error === "The website name is already taken."
+                      ? "Looks like the website name is already taken."
+                      : "Your payment could not be processed."}
                   </div>
-                  <h6 className="payment-confirmation-error-message">
-                    {this.props.consultant_error === 'Invalid postal code.'
-                      ? 'Click on Make Changes to proceed.'
-                      : this.props.consultant_error ===
-                        'The website name is already taken.'
-                      ? 'Please click on Setup Store to change the URL.'
-                      : 'Please verify your billing information and try again.'}
+                  <h6 className='payment-confirmation-error-message'>
+                    {this.props.consultant_error === "Invalid postal code."
+                      ? "Click on Make Changes to proceed."
+                      : this.props.consultant_error === "The website name is already taken."
+                      ? "Please click on Setup Store to change the URL."
+                      : "Please verify your billing information and try again."}
                   </h6>
                 </>
               )}
@@ -227,38 +204,33 @@ class PaymentConfirmation extends React.Component {
           {!confirmation ? (
             <>
               <div
-                className="retryPaymentButton"
+                className='retryPaymentButton'
                 onClick={() => {
-                  this.props.consultant_error === 'Invalid postal code.'
-                    ? this.props.moveBackToLastScreen(0, 'SAVE AND PROCEED')
-                    : this.props.consultant_error ===
-                      'The website name is already taken.'
-                    ? this.props.moveBackToLastScreen(1, 'PROCEED')
-                    : this.props.moveBackToLastScreen(3, 'DONE');
+                  this.props.consultant_error === "Invalid postal code."
+                    ? this.props.moveBackToLastScreen(0, "SAVE AND PROCEED")
+                    : this.props.consultant_error === "The website name is already taken."
+                    ? this.props.moveBackToLastScreen(1, "PROCEED")
+                    : this.props.moveBackToLastScreen(3, "DONE");
                 }}
               >
-                {this.props.consultant_error === 'Invalid postal code.'
-                  ? 'MAKE CHANGES'
-                  : this.props.consultant_error ===
-                    'The website name is already taken.'
-                  ? 'SETUP STORE'
-                  : 'RETRY PAYMENT'}
+                {this.props.consultant_error === "Invalid postal code."
+                  ? "MAKE CHANGES"
+                  : this.props.consultant_error === "The website name is already taken."
+                  ? "SETUP STORE"
+                  : "RETRY PAYMENT"}
               </div>
             </>
           ) : null}
         </div>
         {/* Footer  */}
         {confirmation ? (
-          <div className="pcFooter">
-            <div className="pcFooterHead">LET'S GET GOING</div>
-            <div className="d-flex justify-content-center align-items-center">
+          <div className='pcFooter'>
+            <div className='pcFooterHead'>LET'S GET GOING</div>
+            <div className="pcFooterBody">
+            {/* <div className='d-flex justify-content-center align-items-center gap-3 flex-wrap'> */}
               {/* card 1 */}
-              <div
-                className="pcFooterCard"
-                onMouseDown={this.onRippleStart1}
-                onMouseUp={this.onRippleStop1}
-              >
-                <a
+              {/* <div className='pcFooterCard' onMouseDown={this.onRippleStart1} onMouseUp={this.onRippleStop1}> */}
+              {/* <a
                   href="https://team.scoutandcellar.com/Account/Login?utm=bac"
                   target="_blank"
                   rel="noreferrer"
@@ -273,11 +245,25 @@ class PaymentConfirmation extends React.Component {
                     </div>
                     <IoIosArrowForward className="pcFooterNextIcon" />
                   </div>
-                </a>
-              </div>
+                </a> */}
+              <a
+                href='https://join.scoutandcellar.com/'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <img src={JoinTheCellar} className='pcFooterImg' alt='Join Scout and Cellar' />
+              </a>
+              <a
+                href='https://thespeakeasy.scoutandcellar.com/'
+                target='_blank'
+                rel='noreferrer'
+              >
+                <img src={JoinTheSpeakeasy} className='pcFooterImg' alt='Join The Speak Easy Scout and Cellar' />
+              </a>
             </div>
           </div>
-        ) : null}
+        ) : // </div>
+        null}
       </React.Fragment>
     );
   }

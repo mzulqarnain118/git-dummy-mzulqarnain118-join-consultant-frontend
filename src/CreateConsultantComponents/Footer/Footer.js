@@ -73,7 +73,7 @@ class Footer extends React.Component {
         }else{
           this.props.setrightFooterButtonDisabled(true);
         }
-      } else if (this.props.rightFooterButtonName === "CONTINUE") {
+      } else if (this.props.rightFooterButtonName === "CONTINUE" && userData["indepedent_agreement"] && userData["policy_procedures"]) {
         // call API to Update screen id ,agreement accepted and move to next screen
         let data = {
           id: this.props.userData.id,
@@ -82,9 +82,9 @@ class Footer extends React.Component {
           policy_procedures: true,
         };
         this.props.apiUpdateScreen(data, "DONE");
-        userData["indepedent_agreement"] = true;
-        userData["policy_procedures"] = true;
-        this.props.setUserData(userData);
+        // userData["indepedent_agreement"] = true;
+        // userData["policy_procedures"] = true;
+        // this.props.setUserData(userData);
         this.props.setrightFooterButtonDisabled(true);
       } else if (this.props.rightFooterButtonName === "DONE") {
         this.props.apiCreateConsultant();
