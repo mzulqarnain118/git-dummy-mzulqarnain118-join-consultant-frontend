@@ -53,7 +53,7 @@ class ConfirmDetails extends React.Component {
       <React.Fragment>
         {rightFooterButtonName === "NEXT" ? (
           <div className={window.innerWidth >= 550 ? "componentMargin1 " : "mobileComponent"}>
-            <span className='head1'>SIGN UP TO BECOME A CONSULTANT</span>
+            <span className='signAsConsultant'>SIGN UP TO BECOME A CONSULTANT</span>
             <div className='email1 form-group'>
               {/* ™ */}
               <div className='SubText' style={{ clear: "both", marginBottom: "25px" }}>

@@ -33,39 +33,15 @@
 .headerMarginTop {
   padding-top: 20px;
   padding-bottom: 10px;
-  background: #e8e0dd;
+  background: #F7EDE4;
 }
+
 .stepperMarginTop {
   margin-top: 30px;
   width: 60%;
   margin-left: 6% !important;
 }
-/* .Home-step-1 {
-  border: 0 solid white;
-  color: black;
-  border-radius: 0;
-}
-.MuiStepIcon-root-53.MuiStepIcon-active-54 .MuiStepIcon-text-54 {
-  fill: #034691 !important;
-}
-.HomeContainer {
-  padding-bottom: 30px;
-}
-/* @media only screen and (max-width: 550px) {
-  .mobileMargin {
-    margin-bottom: 10vh;
-    margin-left: -5vw;
-  }
-  .mobileStep {
-    margin-left: 10vw;
-  }
-  .mobileStepHead {
-    margin-left: 15vw;
-    font-size: 3vh;
-    font-family: oswald;
-    font-weight: 400;
-  }
-} */
+
 
 @media (max-width: 1199px) {
   .fontOswald {
@@ -188,10 +164,10 @@ fill: black !important
 }
 @media (min-width: 568px) {
   .MuiStepIcon-text {
-    fill: black !important ;
+    fill: black !important;
   }
-  .MuiStepIcon-active > .MuiStepIcon-text {
-    fill: white !important ;
+  .Mui-active > .MuiStepIcon-text {
+    fill: white !important;
   }
 }
 @media (max-width: 1366px) {

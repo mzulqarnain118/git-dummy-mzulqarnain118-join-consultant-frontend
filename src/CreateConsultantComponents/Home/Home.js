@@ -30,16 +30,15 @@ require("typeface-domine");
 const styles = (theme) => ({
   step: {
     color: "#f2efed ",
-    border: "1px solid black",
+    border: "1px solid #A6A6A6",
     borderRadius: "50%",
-    
+    fontFamily: "Proxima_Nova !important", // Add this line to set the font
 
-      "&:not($active)" :{
-        "&:not($completed)" :{
-          fill : "white !important"
-        },
+    "&:not($active)": {
+      "&:not($completed)": {
+        fill: "white !important",
+      },
     },
-   
 
     "& $completed": {
       color: "#4BA380",
@@ -47,7 +46,7 @@ const styles = (theme) => ({
       borderRadius: "0%",
     },
     "& $active": {
-      color: "#DCBA80",
+      color: "#FFFFFF", // Active step color is white
       border: "0px solid white",
       borderRadius: "0%",
     },
@@ -61,7 +60,7 @@ const styles = (theme) => ({
     "& $active": {
       border: "0px solid white",
       borderRadius: "0%",
-      fill: "#DCBA80",
+      fill: "#085250",
     },
   },
 
@@ -85,7 +84,7 @@ const styles = (theme) => ({
     "& $active": {
       border: "0px solid white",
       borderRadius: "0%",
-      fill: "#DCBA80",
+      fill: "#085250",
     },
   },
 

@@ -110,20 +110,26 @@ class PaymentConfirmation extends React.Component {
     const { activeStep, rippleRef1, rippleRef2, rippleRef3 } = this.state;
     return (
       <React.Fragment>
-        <div style={{ background: "#E8E0DD", overflow: "hidden" }}>
-          <div className={window.innerWidth >= 550 ? "PCcomponentMargin " : "PCmobileComponent"}>
+        <div style={{ background: "white", overflow: "hidden" }}>
+          <div
+            className={
+              window.innerWidth >= 550
+                ? "PCcomponentMargin "
+                : "PCmobileComponent"
+            }
+          >
             <div style={{ marginLeft: "auto", marginRight: "auto" }}>
               {/* header for mobile view  */}
               {window.innerWidth <= 550 ? (
                 <>
                   <ArrowBackIosIcon
-                    className='arrowIcon1'
+                    className="arrowIcon1"
                     onClick={() => {
                       this.props.moveBackToLastScreen(3, "DONE");
                     }}
                   />
                   <span
-                    className='signOutStyle'
+                    className="signOutStyle"
                     onClick={() => {
                       this.props.moveBackToLastScreen(0, "NEXT");
                     }}
@@ -132,13 +138,14 @@ class PaymentConfirmation extends React.Component {
                   </span>
                 </>
               ) : null}
-              <div className='paymentConfirmationHead'>
+              <div className="paymentConfirmationHead">
                 WELCOME TO SCOUT & CELLAR, {userData.first_name.toUpperCase()}!
               </div>
               {confirmation ? (
                 <>
-                  <div className='paymentConfirmationSuccess'>
-                    Below, you'll find your business details. We’ll be sending them to you via email as well.
+                  <div className="paymentConfirmationSuccess">
+                    Below, you'll find your business details. We’ll be sending
+                    them to you via email as well.
                   </div>
 
                   {/* 
@@ -163,37 +170,52 @@ class PaymentConfirmation extends React.Component {
                       marginRight: "auto",
                     }}
                   /> */}
-                  
-                  <div className='pcInfo'>
-                    <div className='pcInfoItem'>
-                      <h4 className='pcHead3'>YOUR INDEPENDENT CONSULTANT ID</h4>
-                      <div className='pcConsultantNumber1'>{consultant_number}</div>
+
+                  <div className="pcInfo">
+                    <div className="pcInfoItem">
+                      <h4 className="yourConsultantId">
+                        YOUR INDEPENDENT CONSULTANT ID
+                      </h4>
+                      <div className="pcConsultantNumber1">
+                        {consultant_number}
+                      </div>
                     </div>
 
-                    <div className='pcInfoItem'>
-                      <h4 className='pcHead3'>YOUR SCOUT & CELLAR EMAIL ADDRESS</h4>
-                      <div className='pcConsultantNumber1'> {userData.email}</div>
+                    <div className="pcInfoItem">
+                      <h4 className="pcHead3">
+                        YOUR SCOUT & CELLAR EMAIL ADDRESS
+                      </h4>
+                      <div className="pcConsultantNumber1">
+                        {" "}
+                        {userData.email}
+                      </div>
                     </div>
 
-                    <div className='pcInfoItem'>
-                      <h4 className='pcHead3'>YOUR SCOUT & CELLAR CUSTOM URL</h4>
-                      <div className='pcConsultantNumber1'>scoutandcellar.com/{userData.url}</div>
+                    <div className="pcInfoItem">
+                      <h4 className="pcHead3">
+                        YOUR SCOUT & CELLAR CUSTOM URL
+                      </h4>
+                      <div className="pcConsultantNumber1">
+                        scoutandcellar.com/{userData.url}
+                      </div>
                     </div>
                   </div>
                 </>
               ) : (
                 <>
-                  <div className='paymentConfirmationFaliure'>
+                  <div className="paymentConfirmationFaliure">
                     {this.props.consultant_error === "Invalid postal code."
                       ? "Looks like the postal code that you entered does not match your city/state."
-                      : this.props.consultant_error === "The website name is already taken."
+                      : this.props.consultant_error ===
+                        "The website name is already taken."
                       ? "Looks like the website name is already taken."
                       : "Your payment could not be processed."}
                   </div>
-                  <h6 className='payment-confirmation-error-message'>
+                  <h6 className="payment-confirmation-error-message">
                     {this.props.consultant_error === "Invalid postal code."
                       ? "Click on Make Changes to proceed."
-                      : this.props.consultant_error === "The website name is already taken."
+                      : this.props.consultant_error ===
+                        "The website name is already taken."
                       ? "Please click on Setup Store to change the URL."
                       : "Please verify your billing information and try again."}
                   </h6>
@@ -204,18 +226,20 @@ class PaymentConfirmation extends React.Component {
           {!confirmation ? (
             <>
               <div
-                className='retryPaymentButton'
+                className="retryPaymentButton"
                 onClick={() => {
                   this.props.consultant_error === "Invalid postal code."
                     ? this.props.moveBackToLastScreen(0, "SAVE AND PROCEED")
-                    : this.props.consultant_error === "The website name is already taken."
+                    : this.props.consultant_error ===
+                      "The website name is already taken."
                     ? this.props.moveBackToLastScreen(1, "PROCEED")
                     : this.props.moveBackToLastScreen(3, "DONE");
                 }}
               >
                 {this.props.consultant_error === "Invalid postal code."
                   ? "MAKE CHANGES"
-                  : this.props.consultant_error === "The website name is already taken."
+                  : this.props.consultant_error ===
+                    "The website name is already taken."
                   ? "SETUP STORE"
                   : "RETRY PAYMENT"}
               </div>
@@ -224,10 +248,10 @@ class PaymentConfirmation extends React.Component {
         </div>
         {/* Footer  */}
         {confirmation ? (
-          <div className='pcFooter'>
-            <div className='pcFooterHead'>LET'S GET GOING</div>
+          <div className="pcFooter">
+            <div className="pcFooterHead">LET'S GET GOING</div>
             <div className="pcFooterBody">
-            {/* <div className='d-flex justify-content-center align-items-center gap-3 flex-wrap'> */}
+              {/* <div className='d-flex justify-content-center align-items-center gap-3 flex-wrap'> */}
               {/* card 1 */}
               {/* <div className='pcFooterCard' onMouseDown={this.onRippleStart1} onMouseUp={this.onRippleStop1}> */}
               {/* <a
@@ -247,18 +271,26 @@ class PaymentConfirmation extends React.Component {
                   </div>
                 </a> */}
               <a
-                href='https://join.scoutandcellar.com/'
-                target='_blank'
-                rel='noreferrer'
+                href="https://join.scoutandcellar.com/"
+                target="_blank"
+                rel="noreferrer"
               >
-                <img src={JoinTheCellar} className='pcFooterImg' alt='Join Scout and Cellar' />
+                <img
+                  src={JoinTheCellar}
+                  className="pcFooterImg"
+                  alt="Join Scout and Cellar"
+                />
               </a>
               <a
-                href='https://thespeakeasy.scoutandcellar.com/'
-                target='_blank'
-                rel='noreferrer'
+                href="https://thespeakeasy.scoutandcellar.com/"
+                target="_blank"
+                rel="noreferrer"
               >
-                <img src={JoinTheSpeakeasy} className='pcFooterImg' alt='Join The Speak Easy Scout and Cellar' />
+                <img
+                  src={JoinTheSpeakeasy}
+                  className="pcFooterImg"
+                  alt="Join The Speak Easy Scout and Cellar"
+                />
               </a>
             </div>
           </div>

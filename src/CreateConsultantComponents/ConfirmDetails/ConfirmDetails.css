@@ -25,26 +25,33 @@
   font-size: 34px;
   font-family: oswald;
 }
+.signAsConsultant {
+  color: #085250;
+  font-size: 34px;
+  font-family: Proxima_Nova;
+  font-weight: regular !important;
+}
 .email1 {
   margin-top: 48px;
 }
 .emailLabel {
   margin-bottom: 8px;
   color: grey;
-  font-family: oswald;
+  font-family: Proxima_Nova;
 }
 .SubText {
   font-size: 15px;
-  font-family: Domine;
+  font-family: Proxima_Nova;
 }
 .Input {
   border-width: 1px;
-  border-color: #d8c5a6 !important;
+  background-color: white;
+  border-color: #c5a475 !important;
   border-radius: 0 !important;
   width: 400px !important;
   height: 64px !important;
   margin-bottom: 8px;
-  font-family: Domine !important;
+  font-family: Proxima_Nova !important;
   font-weight: 600 !important;
 }
 .Input:focus {
@@ -97,7 +104,7 @@
   font-family: Domine;
 }
 .passwordForgotLink {
-  color: #dcba80;
+  color: #c5a475;
   font-size: 16px;
   text-decoration: underline;
   font-family: Domine;
@@ -364,7 +371,7 @@ input:disabled {
 
 .NextarrowForwardIcon {
   cursor: pointer;
-  background-color: #dcba80;
+  background-color: #C5A475;
   width: 50px !important ;
   align-content: center;
   margin-top: auto;
@@ -427,6 +434,12 @@ input:disabled {
     font-weight: "bold";
     font-family: oswald;
   }
+  .signAsConsultant {
+    color: #085250;
+    font-size: 33px;
+    font-family: Proxima_Nova;
+    font-weight: "bold";
+  }
   .mobileComponent {
     margin-top: 20px;
   }
@@ -441,14 +454,14 @@ input:disabled {
   }
   .Input {
     border-width: 1px;
-    border-color: #d8c5a6 !important;
+    border-color: #c5a475 !important;
     border-radius: 0 !important;
     width: 280px !important;
     height: 50px !important;
     margin-bottom: 8px;
   }
   .Input:focus {
-    border-color: #d8c5a6 !important;
+    border-color: #c5a475 !important;
   }
   .Red {
     border-width: 1px;
@@ -473,7 +486,7 @@ input:disabled {
   }
   .NextarrowForwardIcon {
     cursor: pointer;
-    background-color: #dcba80;
+    background-color: #C5A475;
     width: 50px !important ;
     align-content: center;
     margin-top: auto;
@@ -490,7 +503,8 @@ input:disabled {
   }
   .SubText {
     font-size: 15px;
-    font-family: Domine;
+    font-family: Proxima_Nova;
+    font-weight: regular !important;
     width: 96% !important;
     margin-left: 1.3%;
   }
@@ -498,11 +512,6 @@ input:disabled {
     font-family: Domine;
     margin-left: 5px;
   }
-  /* .head3 {
-    color: grey;
-    font-family: oswald;
-    font-size: 48px;
-  } */
 
   .dataText {
     font-size: 62px;
@@ -685,7 +694,7 @@ input:disabled {
   }
   .NextarrowForwardIcon {
     cursor: pointer;
-    background-color: #dcba80;
+    background-color: #C5A475;
     width: 50px !important ;
     align-content: center;
     margin-top: auto;
@@ -734,7 +743,7 @@ input:disabled {
   }
   .Input {
     border-width: 1px;
-    border-color: #d8c5a6 !important;
+    border-color: #c5a475 !important;
     border-radius: 0 !important;
     width: 310px !important;
     height: 50px !important;
@@ -773,7 +782,7 @@ input:disabled {
   }
   .Input {
     border-width: 1px;
-    border-color: #d8c5a6 !important;
+    border-color: #c5a475 !important;
     border-radius: 0 !important;
     width: 280px !important;
     height: 50px !important;
@@ -811,14 +820,14 @@ input:disabled {
   }
   .Input {
     border-width: 1px;
-    border-color: #d8c5a6 !important;
+    border-color: #c5a475 !important;
     border-radius: 0 !important;
     width: 260px !important;
     height: 50px !important;
     margin-bottom: 8px;
   }
   .Input:focus {
-    border-color: #d8c5a6 !important;
+    border-color: #c5a475 !important;
   }
   .Red {
     border-width: 1px;
@@ -842,7 +851,7 @@ input:disabled {
   }
   .NextarrowForwardIcon {
     cursor: pointer;
-    background-color: #dcba80;
+    background-color: #C5A475;
     width: 50px !important ;
     align-content: center;
     margin-top: auto;
