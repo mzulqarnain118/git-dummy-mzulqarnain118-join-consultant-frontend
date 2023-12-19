@@ -1,11 +1,11 @@
 input::placeholder {
   color: #85807e !important;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 
 input {
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 #amp path {

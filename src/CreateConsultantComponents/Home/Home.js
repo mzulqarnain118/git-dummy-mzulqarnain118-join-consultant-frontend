@@ -14,7 +14,7 @@ import VerifyIdentity from "../VerifyIdentity/VerifyIdentity";
 import PurchaseKit from "../PurchaseKit/PurchaseKit";
 import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 import StepConnector from "@mui/material/StepConnector";
-import { Logo } from "../../Assets/HeaderSVG";
+import Logo from "../../Assets/images/ScountCellar.png";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import * as API from "../../configuration/apiconfig";
 import CircularProgress from "@mui/joy/CircularProgress";
@@ -30,38 +30,38 @@ require("typeface-domine");
 const styles = (theme) => ({
   step: {
     color: "#f2efed ",
-    border: "1px solid black",
+    border: "1px solid #A6A6A6",
     borderRadius: "50%",
-    
+    fontFamily: "proxima-nova",
+    fontWeight: 600,
 
-      "&:not($active)" :{
-        "&:not($completed)" :{
-          fill : "white !important"
-        },
+    "&:not($active)": {
+      "&:not($completed)": {
+        fill: "white !important",
+      },
     },
-   
 
     "& $completed": {
-      color: "#4BA380",
+      color: "#085250",
       border: "0px solid white",
       borderRadius: "0%",
     },
     "& $active": {
-      color: "#DCBA80",
+      color: "#FFFFFF", // Active step color is white
       border: "0px solid white",
       borderRadius: "0%",
     },
   },
   step1: {
     "& $completed": {
-      fill: "#4BA380",
+      fill: "#085250",
       border: "0px solid white",
       borderRadius: "0%",
     },
     "& $active": {
       border: "0px solid white",
       borderRadius: "0%",
-      fill: "#DCBA80",
+      fill: "#085250",
     },
   },
 
@@ -78,14 +78,14 @@ const styles = (theme) => ({
     border: "2px solid white",
     borderRadius: "50%",
     "& $completed": {
-      fill: "#4BA380",
+      fill: "#085250",
       border: "0px solid white",
       borderRadius: "0%",
     },
     "& $active": {
       border: "0px solid white",
       borderRadius: "0%",
-      fill: "#DCBA80",
+      fill: "#085250",
     },
   },
 
@@ -137,7 +137,7 @@ class Home extends React.Component {
   constructor() {
     super();
     //background color
-    document.body.style = "background: #F7F3F2";
+    document.body.style = "background: #ffffff";
     this.state = {
       //active step for stepper and to display appropriate screen
       activeStep: 0,
@@ -285,15 +285,9 @@ class Home extends React.Component {
   checkMaxScreenCovered = () => {
     if (this.state.cart_id !== "") {
       return 3;
-    } else if (
-      this.state.userData.indepedent_agreement &&
-      this.state.userData.policy_procedures
-    ) {
+    } else if (this.state.userData.indepedent_agreement && this.state.userData.policy_procedures) {
       return 2;
-    } else if (
-      this.state.checkURLAvailability &&
-      this.state.errorUserData.ssn === ""
-    ) {
+    } else if (this.state.checkURLAvailability && this.state.errorUserData.ssn === "") {
       return 1;
     } else {
       return 0;
@@ -329,10 +323,7 @@ class Home extends React.Component {
             activeStep: 0,
             rightFooterButtonDisabled: false,
           });
-        } else if (
-          label === "BUSINESS DETAILS" &&
-          this.state.activeStep !== 1
-        ) {
+        } else if (label === "BUSINESS DETAILS" && this.state.activeStep !== 1) {
           this.setState({
             rightFooterButtonName: "PROCEED",
             activeStep: 1,
@@ -537,10 +528,7 @@ class Home extends React.Component {
               buttonDisable = true;
               buttonName = "PROCEED";
             } else if (activeStep === 2) {
-              buttonDisable = !(
-                userData["indepedent_agreement"] &&
-                userData["policy_procedures"]
-              );
+              buttonDisable = !(userData["indepedent_agreement"] && userData["policy_procedures"]);
               buttonName = "CONTINUE";
             } else if (activeStep === 3) {
               buttonDisable = true;
@@ -799,27 +787,17 @@ class Home extends React.Component {
         id: this.state.userData.id,
         ssn: this.state.userData.ssn,
       };
-      await API.callEndpoint(
-        "GET",
-        "Bearer",
-        "/users/viewCart?cartid=" + cartId,
-        data
-      )
+      await API.callEndpoint("GET", "Bearer", "/users/viewCart?cartid=" + cartId, data)
         .then((response) => {
           try {
-            purchaseKitDetails["subtotal"] =
-              response.data.Subtotal;
-            purchaseKitDetails["shipping"] =
-              response.data.OrderLines[0].ShippingTax;
-            purchaseKitDetails["salestax"] =
-              response.data.OrderLines[0].ItemTax;
+            purchaseKitDetails["subtotal"] = response.data.Subtotal;
+            purchaseKitDetails["shipping"] = response.data.OrderLines[0].ShippingTax;
+            purchaseKitDetails["salestax"] = response.data.OrderLines[0].ItemTax;
             purchaseKitDetails["discount"] =
               response.data.OrderLines[0].Discounts || response.data.OrderLines[1]?.Discounts || 0;
             purchaseKitDetails["total"] = response.data.SubtotalAfterSavings;
             purchaseKitDetails["discountDescription"] =
-              response.data.DiscountTotals.length > 0
-                ? response.data.DiscountTotals[0].TotalDescription
-                : "";
+              response.data.DiscountTotals.length > 0 ? response.data.DiscountTotals[0].TotalDescription : "";
 
             this.setState({
               load: false,
@@ -1033,10 +1011,10 @@ class Home extends React.Component {
   apiApplyCouponCode = async (couponCode) => {
     this.setState({ load: true });
     try {
-      const res = await axios.post(
-        "https://tower-dev.scoutandcellar.com/api/bac/checkout/AddCouponToCart",
-        { CartId: this.state.userData["cart_id"], CouponCode: couponCode }
-      );
+      const res = await axios.post("https://tower-dev.scoutandcellar.com/api/bac/checkout/AddCouponToCart", {
+        CartId: this.state.userData["cart_id"],
+        CouponCode: couponCode,
+      });
 
       if (res.data.Success) {
         try {
@@ -1045,8 +1023,7 @@ class Home extends React.Component {
           this.setState({
             couponCodeMessage: {
               success: false,
-              message:
-                "There was an error fetching subtotal data. Please try again later.",
+              message: "There was an error fetching subtotal data. Please try again later.",
             },
           });
         }
@@ -1068,8 +1045,7 @@ class Home extends React.Component {
       this.setState({
         couponCodeMessage: {
           success: false,
-          message:
-            "There was an error when applying your coupon. Please try again later.",
+          message: "There was an error when applying your coupon. Please try again later.",
         },
       });
     } finally {
@@ -1101,12 +1077,7 @@ class Home extends React.Component {
 
   //stepper title content
   getSteps = () => {
-    return [
-      "CONFIRM DETAILS",
-      "BUSINESS DETAILS",
-      "REVIEW TERMS",
-      "PURCHASE KIT",
-    ];
+    return ["CONFIRM DETAILS", "BUSINESS DETAILS", "REVIEW TERMS", "PURCHASE KIT"];
   };
 
   //stepper content to be displayed based on current active step
@@ -1195,6 +1166,20 @@ class Home extends React.Component {
             setCardDetails={this.setCardDetails}
             handleBackButton={this.handleBackButton}
             topBarNavigation={this.topBarNavigation}
+          />
+        );
+      case 4:
+        return (
+          //PaymentConfirmation screen
+          <PaymentConfirmation
+            userData={this.state.userData}
+            setUserData={this.setUserData}
+            setButtonName={this.setButtonName}
+            confirmation={this.state.confirmation}
+            setConfirmation={this.setConfirmation}
+            moveBackToLastScreen={this.moveBackToLastScreen}
+            consultant_number={this.state.consultant_number}
+            consultant_error={this.state.consultant_error}
           />
         );
       default:
@@ -1361,193 +1346,162 @@ class Home extends React.Component {
     const steps = this.getSteps();
     const mobileStep = this.getMobileSteps();
     const { activeStep, load, rightFooterButtonName } = this.state;
+    console.log("step: ", activeStep);
     return (
-      <div tabIndex="0" onKeyDown={this.handleKeypress}>
-        {load ? (
-          <Spinner color='success' size='120px'/>
-        ) : null}
-        
+      <div tabIndex='0' onKeyDown={this.handleKeypress}>
+        {load ? <Spinner color='success' size='120px' /> : null}
+
         {/* If active step is less than 4 appropriate step page is dispayed , 
         if active step is 4  - payment confirmation page is displayed */}
-        {activeStep < 4 ? (
-          <>
-            <div className="container-fluid">
-              <div className="row headerMarginTop">
-                {window.innerWidth >= 550 ||
-                rightFooterButtonName === "NEXT" ||
-                rightFooterButtonName === "LOG IN" ||
-                rightFooterButtonName === "CONTINUE " ? (
-                  <>
-                    <div className="col-xl-2 col-lg-1 col-md-1 col-1">
-                      <div
-                        className="arrowIcon3"
-                        onClick={this.handleBackButton}
+        <>
+          <div className='container-fluid'>
+            <div className='row headerMarginTop'>
+              {window.innerWidth >= 550 ||
+              rightFooterButtonName === "NEXT" ||
+              rightFooterButtonName === "LOG IN" ||
+              rightFooterButtonName === "CONTINUE " ? (
+                <>
+                  <div className='col-xl-2 col-lg-1 col-md-1 col-1'>
+                    <div className='arrowIcon3' onClick={this.handleBackButton}>
+                      <ArrowBackIosIcon />
+                    </div>
+                  </div>
+                  <div className='col-xl-2 col-lg-2 col-md-11 col-11'>
+                    <div className='LogoIcon'>
+                      <img src={Logo} alt='' style={{ width: "300px" }} />
+                    </div>
+                  </div>
+                </>
+              ) : null}
+              <div className='col-xl-8 col-lg-9 col-md-12 col-12 stepperMarginTop'>
+                {/* stepper */}
+                <Stepper activeStep={activeStep} connector={<GreenStepConnector />} orientation={"horizontal"}>
+                  {steps.map((label, index) => {
+                    return (
+                      <Step
+                        key={label}
+                        classes={{
+                          root: classes.step1,
+                          completed: classes.completed,
+                          active: classes.active,
+                        }}
                       >
-                        <ArrowBackIosIcon />
-                      </div>
-                    </div>
-                    <div className="col-xl-2 col-lg-2 col-md-11 col-11">
-                      <div className="LogoIcon">
-                        <Logo />
-                      </div>
-                    </div>
-                  </>
-                ) : null}
-                <div className="col-xl-8 col-lg-9 col-md-12 col-12 stepperMarginTop">
-                  {/* stepper */}
-                  <Stepper
-                    activeStep={activeStep}
-                    connector={<GreenStepConnector />}
-                    orientation={"horizontal"}
-                  >
-                    {steps.map((label, index) => {
-                      return (
-                        <Step
-                          key={label}
-                          classes={{
-                            root: classes.step1,
-                            completed: classes.completed,
-                            active: classes.active,
+                        <StepLabel
+                          StepIconProps={{
+                            classes: {
+                              root: classes.step,
+                              completed: classes.completed,
+                              active: classes.active,
+                              disabled: classes.disabled,
+                            },
                           }}
                         >
-                          <StepLabel
-                            StepIconProps={{
-                              classes: {
-                                root: classes.step,
-                                completed: classes.completed,
-                                active: classes.active,
-                                disabled: classes.disabled,
-                              },
-                            }}
-                          >
-                            <span
-                              className="fontOswald"
-                              onClick={() => this.topBarNavigation(label)}
-                            >
-                              {label}
-                            </span>
-                          </StepLabel>
-                        </Step>
-                      );
-                    })}
-                  </Stepper>
-                </div>
+                          <span className='fontProxima' onClick={() => this.topBarNavigation(label)}>
+                            {label}
+                          </span>
+                        </StepLabel>
+                      </Step>
+                    );
+                  })}
+                </Stepper>
               </div>
             </div>
+          </div>
 
-            <div className="container-fluid HomeContainer">
-              <div className="row">
-                <div className="col-xl-10 offset-xl-2 col-lg-11 offset-lg-1">
-                  {window.innerWidth >= 550 ? (
-                    <>
-                      {/* to display content based on active step */}
+          <div className='container-fluid HomeContainer'>
+            <div className='row'>
+              <div className={activeStep !== 4 && "col-xl-10 offset-xl-2 col-lg-11 offset-lg-1"}>
+                {window.innerWidth >= 550 ? (
+                  <>
+                    {/* to display content based on active step */}
+                    {activeStep !== 4 ? (
                       <div style={{ marginTop: "4em" }}>
-                        <Typography className={classes.instructions}>
-                          {this.getStepContent(activeStep)}
-                        </Typography>
+                        <Typography className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
                       </div>
-                    </>
-                  ) : (
-                    <>
-                      {/* enter email */}
-                      <div className="mobileMargin">
-                        <Typography className={classes.instructions}>
-                          {this.getStepContent(activeStep)}
-                        </Typography>
+                    ) : (
+                      <div>
+                        <Typography className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
                       </div>
-                      {/* Stepper */}
-                      {this.state.rightFooterButtonName === "NEXT" ? (
-                        <div className="btm-list-blk">
-                          <div className="btm-list-inner">
-                            <div className="mobileStepHead">
-                              WHAT HAPPENS NEXT?
-                            </div>
-                            {/* stepper for mobile view  */}
-                            <Stepper
-                              connector={<MobileStepConnector />}
-                              activeStep={0}
-                              style={{ background: "#e8e0dd" }}
-                              className="mobileStep"
-                              orientation={
-                                window.innerWidth >= 550
-                                  ? "horizontal"
-                                  : "vertical"
-                              }
-                            >
-                              {mobileStep.map((label, index) => {
-                                return (
-                                  <Step
-                                    key={label}
-                                    classes={{
-                                      root: classes.mobileStep,
-                                      completed: classes.completed,
-                                      active: classes.active,
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {/* enter email */}
+                    <div className='mobileMargin'>
+                      <Typography className={classes.instructions}>{this.getStepContent(activeStep)}</Typography>
+                    </div>
+                    {/* Stepper */}
+                    {this.state.rightFooterButtonName === "NEXT" ? (
+                      <div className='btm-list-blk'>
+                        <div className='btm-list-inner'>
+                          <div className='mobileStepHead'>WHAT HAPPENS NEXT?</div>
+                          {/* stepper for mobile view  */}
+                          <Stepper
+                            connector={<MobileStepConnector />}
+                            activeStep={0}
+                            style={{ background: "#e8e0dd" }}
+                            className='mobileStep'
+                            orientation={window.innerWidth >= 550 ? "horizontal" : "vertical"}
+                          >
+                            {mobileStep.map((label, index) => {
+                              return (
+                                <Step
+                                  key={label}
+                                  classes={{
+                                    root: classes.mobileStep,
+                                    completed: classes.completed,
+                                    active: classes.active,
+                                  }}
+                                >
+                                  <StepLabel
+                                    StepIconProps={{
+                                      classes: {
+                                        root: classes.step3,
+                                        completed: classes.completed,
+                                        active: classes.active,
+                                        disabled: classes.disabled,
+                                        text: classes.textStep,
+                                      },
                                     }}
                                   >
-                                    <StepLabel
-                                      StepIconProps={{
-                                        classes: {
-                                          root: classes.step3,
-                                          completed: classes.completed,
-                                          active: classes.active,
-                                          disabled: classes.disabled,
-                                          text: classes.textStep,
-                                        },
-                                      }}
-                                    >
-                                      <span className="fontOswald1">
-                                        {label}
-                                      </span>
-                                    </StepLabel>
-                                  </Step>
-                                );
-                              })}
-                            </Stepper>
-                          </div>
+                                    <span className='fontProxima1'>{label}</span>
+                                  </StepLabel>
+                                </Step>
+                              );
+                            })}
+                          </Stepper>
                         </div>
-                      ) : null}
-                    </>
-                  )}
+                      </div>
+                    ) : null}
+                  </>
+                )}
 
-                  {/* end of first page */}
-                </div>
+                {/* end of first page */}
               </div>
             </div>
-            {/* Global Footer for all screens  */}
-            <Footer
-              rightFooterButtonName={this.state.rightFooterButtonName}
-              rightFooterButtonDisabled={this.state.rightFooterButtonDisabled}
-              moveToNextScreen={this.moveToNextScreen}
-              userData={this.state.userData}
-              setUserData={this.setUserData}
-              setButtonName={this.setButtonName}
-              setrightFooterButtonDisabled={this.setrightFooterButtonDisabled}
-              displayFooter={this.state.displayFooter}
-              setDisplayFooter={this.setDisplayFooter}
-              apiVerifyEmail={this.apiVerifyEmail}
-              apiLogin={this.apiLogin}
-              apiUpdateUserData={this.apiUpdateUserData}
-              apiUpdateScreen={this.apiUpdateScreen}
-              currentAgreement={this.state.currentAgreement}
-              setCurrentAgreement={this.setCurrentAgreement}
-              apiCreateConsultant={this.apiCreateConsultant}
-              apiForgotPassword={this.apiForgotPassword}
-              apiVerifyURL={this.apiVerifyURL}
-            />
-          </>
-        ) : (
-          // once all steps are completed Payement confirmation screen is displayed
-          <PaymentConfirmation
+          </div>
+          {/* Global Footer for all screens  */}
+          <Footer
+            rightFooterButtonName={this.state.rightFooterButtonName}
+            rightFooterButtonDisabled={this.state.rightFooterButtonDisabled}
+            moveToNextScreen={this.moveToNextScreen}
             userData={this.state.userData}
             setUserData={this.setUserData}
             setButtonName={this.setButtonName}
-            confirmation={this.state.confirmation}
-            setConfirmation={this.setConfirmation}
-            moveBackToLastScreen={this.moveBackToLastScreen}
-            consultant_number={this.state.consultant_number}
-            consultant_error={this.state.consultant_error}
+            setrightFooterButtonDisabled={this.setrightFooterButtonDisabled}
+            displayFooter={this.state.displayFooter}
+            setDisplayFooter={this.setDisplayFooter}
+            apiVerifyEmail={this.apiVerifyEmail}
+            apiLogin={this.apiLogin}
+            apiUpdateUserData={this.apiUpdateUserData}
+            apiUpdateScreen={this.apiUpdateScreen}
+            currentAgreement={this.state.currentAgreement}
+            setCurrentAgreement={this.setCurrentAgreement}
+            apiCreateConsultant={this.apiCreateConsultant}
+            apiForgotPassword={this.apiForgotPassword}
+            apiVerifyURL={this.apiVerifyURL}
           />
-        )}
+        </>
       </div>
     );
   }

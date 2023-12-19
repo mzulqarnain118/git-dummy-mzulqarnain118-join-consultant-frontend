@@ -111,16 +111,18 @@ class Agreement extends React.Component {
 
             {/* to display selected policy data */}
             <div className='col-lg-6'>
-              <iframe src="https://drive.google.com/viewer?embedded=true&url=https://storage.googleapis.com/cellar-static/Consultant-Join/Independent_Consultant_Agreement.pdf" className='agreementPolicy' width='100%' ></iframe>
+              <iframe src="https://drive.google.com/viewer?embedded=true&url=https://storage.googleapis.com/cellar-static/Consultant-Join/Independent_Consultant_Agreement.pdf" type='application/pdf' className='agreementPolicy' width='100%' ></iframe>
             </div>
+
             <div className='AGhead4'>Policy and Procedures</div>
             <div className='col-lg-6 '>
               <div className='downloadButton' onClick={this.downloadFile}>
                 <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp; Download Policy and Procedures
               </div>
             </div>
+            
             <div className='col-lg-6 '>
-              <iframe src="https://drive.google.com/viewer?embedded=true&url=https://storage.googleapis.com/cellar-static/Consultant-Join/Policies_and_Procedures.pdf" className='agreementPolicy' width='100%' ></iframe>
+              <iframe src="https://drive.google.com/viewer?embedded=true&url=https://storage.googleapis.com/cellar-static/Consultant-Join/Policies_and_Procedures.pdf"   className='agreementPolicy' width='100%' ></iframe>
             </div>
 
             <div className='AGhead3'>

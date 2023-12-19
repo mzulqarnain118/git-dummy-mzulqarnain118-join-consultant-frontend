@@ -1,5 +1,5 @@
 .blackBar {
-  background-color: #241f20;
+  background-color: #c5a475;
   position: fixed;
   width: 100%;
   bottom: 0px;
@@ -18,8 +18,9 @@
   cursor: pointer;
 }
 .textButtonDisabled {
-  color: #707070;
+  color: white;
   font-size: 27px;
+  opacity: 0.2;
   font-weight: 500;
   font-family: oswald;
 }
@@ -35,15 +36,7 @@
   background-color: grey;
   padding-top: 8px;
 }
-/* .leftTextButton {
-  color: white;
-  margin: 1%;
-  font-size: 18px;
-  font-weight: 500;
-  margin-top: 1.5%;
-  margin-bottom: 1%;
-  font-family: oswald;
-} */
+
 .leftTextButton:hover {
   cursor: pointer;
 }
@@ -55,6 +48,7 @@
 
   .textButton {
     color: white;
+    background-color: #c5a475;
     font-size: 27px;
     font-weight: 500;
     font-family: oswald;
@@ -68,7 +62,7 @@
 }
 @media only screen and (max-width: 550px) {
   .blackBar {
-    background-color: #241f20;
+    background-color: #c5a475;
     position: fixed;
     width: 1570px;
     bottom: 0px;
@@ -77,6 +71,7 @@
   .textButton {
     margin-top: -25px !important;
     color: white;
+    background-color: #c5a475;
     font-size: 27px;
     font-weight: 500;
     font-family: oswald;

@@ -18,6 +18,7 @@
   font-size: 2em;
   text-align: center;
   font-weight: 500;
+  color:#085250;
 }
 
 paymentConfirmationSuccess {
@@ -56,6 +57,12 @@ paymentConfirmationSuccess {
 
 .pcHead3 {
   font-family: Oswald;
+  text-align: center;
+}
+
+.yourConsultantId {
+  font-family: proxima-nova;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -100,13 +107,18 @@ paymentConfirmationSuccess {
   font-size: 1.3em;
   font-weight: 400;
 }
+.fontProxima1 {
+  font-family: proxima-nova;
+  font-size: 1.3em;
+  font-weight: 400;
+}
 .fontOswald2 {
   font-family: oswald;
   font-size: 1.3em;
   font-weight: 300;
 }
 .pcFooter {
-  background: #241f20;
+  background: #F7EDE4;
   min-height: 263px;
   width: 100%;
   padding-top: 15px;
@@ -116,7 +128,7 @@ paymentConfirmationSuccess {
   font-family: oswald;
   font-size: 1.7em;
   font-weight: 500;
-  color: #fff;
+  color: black;
   text-align: center;
   margin: auto;
   padding-bottom: 20px;
@@ -202,7 +214,7 @@ paymentConfirmationSuccess {
 
 @media only screen and (max-width: 768px) {
   .pcFooter {
-    background: #241f20;
+    background: #F7EDE4;
     width: 100%;
     position: relative;
     bottom: 0;
@@ -225,7 +237,7 @@ paymentConfirmationSuccess {
     left: 50px;
   }
   .pcFooter {
-    background: #241f20;
+    background: #F7EDE4;
     width: 100%;
     position: relative;
     bottom: 0;
@@ -284,6 +296,11 @@ paymentConfirmationSuccess {
     text-align: center;
     font-size: 24px;
   }
+  .yourConsultantId {
+    font-family: proxima-nova;
+    text-align: center;
+    font-size: 24px;
+  }
   .pcConsultantNumber {
     background: #f0eae8;
     height: 3em;
@@ -312,6 +329,11 @@ paymentConfirmationSuccess {
     font-size: 1.2em;
     font-weight: 400;
   }
+  .fontProxima1 {
+    font-family: proxima-nova;
+    font-size: 1.2em;
+    font-weight: 400;
+  }
   .fontOswald2 {
     font-family: oswald;
     font-size: 1.2em;
@@ -321,7 +343,7 @@ paymentConfirmationSuccess {
     font-family: oswald;
     font-size: 1.5em;
     font-weight: 300;
-    color: #ffffff;
+    color: black;
     margin-top: 1.5em;
   }
   .pcFooterText {
@@ -393,7 +415,7 @@ paymentConfirmationSuccess {
     font-family: oswald;
     font-size: 1.5em;
     font-weight: 300;
-    color: #ffffff;
+    color: black;
     margin-top: 1.5em;
   }
 }
@@ -403,7 +425,7 @@ paymentConfirmationSuccess {
     font-family: oswald;
     font-size: 1.5em;
     font-weight: 300;
-    color: #ffffff;
+    color: black;
     margin-top: 1.5em;
   }
 }
@@ -413,7 +435,7 @@ paymentConfirmationSuccess {
     font-family: oswald;
     font-size: 1.5em;
     font-weight: 300;
-    color: #ffffff;
+    color: black;
     margin-top: 1.5em;
   }
 }
