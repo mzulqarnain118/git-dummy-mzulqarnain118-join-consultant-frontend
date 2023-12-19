@@ -68,6 +68,10 @@
   }
 }
 
+.HomeContainer {
+  min-height: 600px;
+}
+
 @media (max-width: 991px) {
   .LogoIcon {
     text-align: center;
