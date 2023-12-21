@@ -957,6 +957,7 @@ class Home extends React.Component {
       .post(algoliaURL, data)
       .then((res) => {
         try {
+          console.log(res.data.results[0].hits, "referal");
           this.setState({ working_with_arr: res.data.results[0].hits });
         } catch (e) {
           console.error(e);
@@ -1334,10 +1335,14 @@ class Home extends React.Component {
         break;
     }
   };
-
   componentDidMount = () => {
+    const params = new URLSearchParams(this.props.location.search);
+    const consultant = params.get("u");
     if (this.props.userURL !== "") {
-      this.apiGetWorkingWith(this.props.userURL);
+      this.apiGetWorkingWith(this.props.userURL.split('&')[0]);
+    } else if (consultant) {
+      console.log("🚀 ~ file: Home.js:1344 ~ Home ~ consultant:", consultant)
+      this.apiGetWorkingWith(consultant);
     }
   };
 
@@ -1346,7 +1351,6 @@ class Home extends React.Component {
     const steps = this.getSteps();
     const mobileStep = this.getMobileSteps();
     const { activeStep, load, rightFooterButtonName } = this.state;
-    console.log("step: ", activeStep);
     return (
       <div tabIndex='0' onKeyDown={this.handleKeypress}>
         {load ? <Spinner color='success' size='120px' /> : null}
