@@ -11,7 +11,7 @@ const styles = (theme) => ({
     border: "1px solid #d8c5a6",
     opacity: "1 !important",
     backgroundColor: "white !important",
-    fontFamily: "Domine !important",
+    fontFamily: "proxima-nova !important",
     fontWeight: "600 !important",
   },
   listbox: {
@@ -23,7 +23,7 @@ const styles = (theme) => ({
     overflow: "hidden",
     maxHeight: 200,
     border: "1px solid #d8c5a6",
-    fontFamily: "Domine !important",
+    fontFamily: "proxima-nova !important",
   },
   inputRoot: {
     // This matches the specificity of the default styles at https://github.com/mui-org/material-ui/blob/v4.11.3/packages/material-ui-lab/src/Autocomplete/Autocomplete.js#L90
@@ -44,7 +44,7 @@ const styles = (theme) => ({
   customTextField: {
     "& input::placeholder": {
       color: "black !important",
-      fontFamily: "Domine !important",
+      fontFamily: "proxima-nova !important",
       fontWeight: "600 !important",
     },
   },
@@ -783,7 +783,7 @@ class ConfirmDetailsEdit extends React.Component {
                     onChange={this.handleChange}
                   >
                     <option value={""} key={"dummy state"}>
-                      Select State* (Required)
+                      Select State
                     </option>
                     {this.getStates().map((state, index) => (
                       <option value={state} key={index}>
@@ -813,7 +813,6 @@ class ConfirmDetailsEdit extends React.Component {
                   <input
                     type='text'
                     // autocomplete="none"
-                    // autoComplete="none"
                     value={userData["address"]["zipcode"]}
                     className={error.address.zipcode.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
                     id='zipcode'

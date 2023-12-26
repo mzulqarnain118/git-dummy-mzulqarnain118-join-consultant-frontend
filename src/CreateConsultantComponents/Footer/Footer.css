@@ -12,7 +12,7 @@
   color: white;
   font-size: 27px;
   font-weight: 500;
-  font-family: oswald;
+  font-family: proxima-nova;
 }
 .textButton:hover {
   cursor: pointer;
@@ -22,7 +22,7 @@
   font-size: 27px;
   opacity: 0.2;
   font-weight: 500;
-  font-family: oswald;
+  font-family: proxima-nova;
 }
 .react-ripples {
   display: flex;
@@ -51,7 +51,7 @@
     background-color: #c5a475;
     font-size: 27px;
     font-weight: 500;
-    font-family: oswald;
+    font-family: proxima-nova;
   }
   .textButton:hover {
     cursor: pointer;
@@ -74,7 +74,7 @@
     background-color: #c5a475;
     font-size: 27px;
     font-weight: 500;
-    font-family: oswald;
+    font-family: proxima-nova;
   }
   .textButton:hover {
     cursor: pointer;
@@ -83,7 +83,7 @@
     margin-top: -25px !important;
     font-size: 27px;
     font-weight: 500;
-    font-family: oswald;
+    font-family: proxima-nova;
   }
   .textButtonDisabled:hover {
     cursor: not-allowed;
@@ -111,7 +111,7 @@
   .leftTextButton {
     color: white;
     font-size: 18px;
-    font-family: oswald;
+    font-family: proxima-nova;
     margin-top: 3px !important;
   }
   .leftTextButton:hover {
@@ -120,7 +120,7 @@
   .mobileLeftMargin {
     margin-left: 100px;
     font-size: 18px;
-    font-family: oswald;
+    font-family: proxima-nova;
     margin-top: -2px !important;
   }
 }

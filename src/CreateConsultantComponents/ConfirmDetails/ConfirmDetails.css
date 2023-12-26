@@ -22,8 +22,9 @@
   margin-top: 20px;
 }
 .head1 {
+  color:#085250;
   font-size: 34px;
-  font-family: oswald;
+  font-family: proxima-nova;
 }
 .signAsConsultant {
   color: #085250;
@@ -69,7 +70,7 @@
   width: 400px !important;
   height: 64px !important;
   margin-bottom: 8px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 
@@ -93,18 +94,19 @@
 }
 /* confirm details passwords page */
 .head2 {
+  color:#085250;
   font-size: 34px;
   font-weight: 400;
-  font-family: oswald;
+  font-family: proxima-nova;
 }
 .staticText1 {
   font-size: 20px;
   margin-top: 12px;
-  font-family: Domine;
+  font-family: proxima-nova;
 }
 .staticText2 {
   font-size: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
 }
 .passwordForgotLink {
   color: #c5a475;
@@ -123,20 +125,20 @@
 .passwordLabel {
   margin-bottom: 8px;
   color: grey;
-  font-family: oswald;
+  font-family: proxima-nova;
 }
 
 /* details display */
 
 .staticText3 {
   font-size: 18px;
-  font-family: Domine;
+  font-family: proxima-nova;
   margin-top: 12px;
 }
 
 .staticText4 {
   font-size: 18px;
-  font-family: Domine;
+  font-family: proxima-nova;
   margin-top: 48px;
   font-weight: bold;
 }
@@ -150,20 +152,20 @@
 
 .head3 {
   color: grey;
-  font-family: oswald;
+  font-family: proxima-nova;
   font-size: 16px;
 }
 
 .dataText {
   font-size: 18px;
-  font-family: Domine;
+  font-family: proxima-nova;
   overflow-wrap: anywhere !important;
   word-break: break-all;
   margin-top: 8px !important;
 }
 .dataTextAddress {
   font-size: 18px;
-  font-family: Domine;
+  font-family: proxima-nova;
   overflow-wrap: anywhere !important;
   white-space: pre-wrap;
   margin-top: 8px !important;
@@ -182,7 +184,7 @@
   width: 288px !important;
   height: 56px !important;
   margin-bottom: 8px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 .edit-Input:focus-within {
@@ -198,7 +200,7 @@
   width: 288px !important;
   height: 56px !important;
   margin-bottom: 8px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 400 !important;
 }
 
@@ -221,7 +223,8 @@
 }
 
 .staticText5 {
-  font-family: oswald;
+  color: #085250;
+  font-family: proxima-nova;
   font-size: 24px;
   margin-top: 20px;
 }
@@ -233,7 +236,7 @@
   width: 96px !important;
   height: 56px !important;
   margin-bottom: 8px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 .edit-month:focus {
@@ -248,7 +251,7 @@
   height: 56px !important;
   margin-bottom: 8px;
   margin-left: 5px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 .edit-day:focus {
@@ -261,7 +264,7 @@
   width: 104px !important;
   height: 56px !important;
   margin-bottom: 8px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
   margin-left: 2px;
 }
@@ -275,7 +278,7 @@
   width: 96px !important;
   height: 56px !important;
   margin-bottom: 8px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 .edit-month-red :focus {
@@ -290,7 +293,7 @@
   height: 56px !important;
   margin-bottom: 8px;
   margin-left: 5px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 .edit-day-red :focus {
@@ -303,7 +306,7 @@
   width: 104px !important;
   height: 56px !important;
   margin-bottom: 8px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
   margin-left: 2px;
 }
@@ -342,12 +345,12 @@ input:disabled {
 
 .forgotpasswordText1 {
   font-size: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   margin-top: 10px;
 }
 
 .forgot-password-confirmation {
-  font-family: Domine;
+  font-family: proxima-nova;
   font-size: 15px;
   margin-top: 20px;
   font-weight: bold;
@@ -391,7 +394,7 @@ input:disabled {
 
 .customer-forgot-password {
   margin-top: 2em;
-  font-family: Domine;
+  font-family: proxima-nova;
   font-size: 15px;
   color: red;
 }
@@ -412,7 +415,7 @@ input:disabled {
 @media only screen and (max-width: 550px) {
   .customer-forgot-password {
     margin-top: 2em;
-    font-family: Domine;
+    font-family: proxima-nova;
     font-size: 15px;
     margin-left: -12px;
     margin-right: 10px;
@@ -435,7 +438,7 @@ input:disabled {
   .head1 {
     font-size: 33px;
     font-weight: "bold";
-    font-family: oswald;
+    font-family: proxima-nova;
   }
   .signAsConsultant {
     color: #085250;
@@ -514,10 +517,9 @@ input:disabled {
     margin-left: 5px;
   }
 
-  .dataText {
+  /* .dataText {
     font-size: 62px;
-    font-family: Domine;
-  }
+  } */
   /* .displayArea {
     background-color: #e8e0dd;
     width: 90%;
@@ -626,7 +628,7 @@ input:disabled {
 
 .displayNote {
   margin-top: 12px;
-  font-family: oswald;
+  font-family: proxima-nova;
   font-weight: 200;
 }
 
@@ -876,7 +878,7 @@ input:disabled {
 
 #controllable-states-demo {
   margin-left: -21px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 @media (max-width: 1440px) {

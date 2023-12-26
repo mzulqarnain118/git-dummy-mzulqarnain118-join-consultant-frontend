@@ -1,5 +1,6 @@
 .head-stepper-font {
-  font-family: oswald;
+  font-family: proxima-nova;
+  font-weight: 600;
   font-size: 15px;
   white-space: nowrap;
   cursor: pointer;
@@ -31,9 +32,10 @@
 */
 
 .AgreementHeader {
+  color: #085250;
   font-size: 1.1em;
-  font-weight: 400;
-  font-family: oswald;
+  font-weight: 500;
+  font-family: proxima-nova;
   margin-left: 16%;
   margin-top: -25px;
   width: 100% !important;

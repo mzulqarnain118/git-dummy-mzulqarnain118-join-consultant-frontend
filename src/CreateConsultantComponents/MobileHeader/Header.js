@@ -30,7 +30,7 @@ const styles = (theme) => ({
     fill: "#f2efed",
 
     "& $completed": {
-      color: "#4BA380",
+      color: "#085250",
       border: "0px solid white",
       borderRadius: "0%",
     },
@@ -42,7 +42,7 @@ const styles = (theme) => ({
   },
   step1: {
     "& $completed": {
-      fill: "#4BA380",
+      fill: "#085250",
       border: "0px solid white",
       borderRadius: "0%",
     },

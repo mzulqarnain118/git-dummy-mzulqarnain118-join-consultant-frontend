@@ -7,13 +7,14 @@
   margin-top: 7em;
 }
 .BDhead1 {
+  color: #085250;
   font-size: 30px;
   font-weight: "bold";
-  font-family: oswald;
+  font-family: proxima-nova;
 }
 .BDstaticText3 {
   font-size: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   margin-top: 12px;
 }
 .urlRow {
@@ -26,14 +27,14 @@
 }
 .BDstaticText4 {
   font-size: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   margin-top: 0px !important;
   font-weight: bold;
   margin-top: 15px !important;
 }
 .BDstaticText5 {
   font-size: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   margin-top: 18px !important;
   font-weight: bold;
 }
@@ -47,7 +48,7 @@
   margin-top: 0;
   font-weight: bold;
   font-size: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   margin-left: -5vw;
 }
 .customURL:focus {
@@ -68,7 +69,7 @@
 
 .availableText {
   margin-top: 0;
-  font-family: oswald;
+  font-family: proxima-nova;
   font-size: 16px;
   margin-left: 3px;
 }
@@ -84,7 +85,7 @@
   /* margin-top: 2.3vw; */
   font-weight: bold;
   font-size: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   border-radius: 0 !important;
   margin-left: -5vw;
 }
@@ -101,9 +102,10 @@
 }
 
 .businessHead {
+  color:#085250;
   font-size: 28px;
   font-weight: 400;
-  font-family: oswald;
+  font-family: proxima-nova;
   margin-top: 40px;
 }
 .businessButton1 {
@@ -116,7 +118,7 @@
   color: white;
   font-size: 18px;
   margin-top: 8px;
-  font-family: Domine;
+  font-family: proxima-nova;
 }
 .businessButton1:hover {
   cursor: pointer;
@@ -133,7 +135,7 @@
   font-size: 18px;
   margin-left: 5px;
   margin-top: 8px;
-  font-family: Domine;
+  font-family: proxima-nova;
 }
 
 .businessButton2:hover {
@@ -171,13 +173,14 @@
   cursor: pointer;
 }
 .ssn {
-  font-family: oswald;
+  color:#085250;
+  font-family: proxima-nova;
   font-size: 24px;
   /* margin-top: 24px; */
   font-weight: 400;
 }
 .ssnSubtext {
-  font-family: Domine;
+  font-family: proxima-nova;
   margin-top: 5px;
   font-size: 16px;
   font-weight: 100;
@@ -192,7 +195,7 @@
   margin-top: 24px;
   font-weight: bold;
   font-size: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   letter-spacing: 16px !important;
   text-align: center;
 }
@@ -213,7 +216,7 @@
   margin-top: 24px;
   font-weight: bold;
   font-size: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   border-radius: 0 !important;
   letter-spacing: 16px !important;
   text-align: center;
@@ -243,7 +246,7 @@ input::-webkit-input-placeholder {
   padding: 24px;
   font-size: 16px !important;
   width: 504px !important;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
 }
 .personalUrlAdditionalInformation {
   margin-left: -5vw;
@@ -258,12 +261,12 @@ input::-webkit-input-placeholder {
   font-size: 16px !important;
   padding: 10px;
   margin-left: 20px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
 }
 .errorMesSubtext {
   font-size: 12px;
   color: red;
-  font-family: Domine;
+  font-family: proxima-nova;
   width: 1600px !important;
   margin-top: 24px;
 }
@@ -285,7 +288,7 @@ input::-webkit-input-placeholder {
   margin-top: 0;
   margin-left: 5px;
   color: white;
-  font-family: oswald;
+  font-family: proxima-nova;
 }
 .searchButton:hover {
   cursor: pointer;
@@ -298,7 +301,7 @@ input::-webkit-input-placeholder {
 .BDerrorMes {
   font-size: 12px;
   color: red;
-  font-family: Domine;
+  font-family: proxima-nova;
   width: 1600px !important;
   margin-top: 5px;
   text-align: left;
@@ -336,13 +339,13 @@ input::-webkit-input-placeholder {
   }
   .BDstaticText4 {
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-top: 0px !important;
     font-weight: bold;
   }
   .BDstaticText5 {
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-top: 38px !important;
     font-weight: bold;
   }
@@ -352,7 +355,7 @@ input::-webkit-input-placeholder {
   }
   .staticText4 {
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-top: 40px;
     font-weight: bold;
   }
@@ -367,7 +370,7 @@ input::-webkit-input-placeholder {
     margin-top: 18px;
     font-weight: bold;
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-left: 16px;
   }
   .personalUrlAdditionalInformation {
@@ -394,7 +397,7 @@ input::-webkit-input-placeholder {
     margin-top: 24px;
     font-weight: bold;
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     border-radius: 0 !important;
     margin-left: 16px;
   }
@@ -416,7 +419,7 @@ input::-webkit-input-placeholder {
 
   .availableText {
     margin-top: -23px;
-    font-family: oswald;
+    font-family: proxima-nova;
     font-size: 16px;
     margin-left: 35px;
     width: 160px;
@@ -425,14 +428,14 @@ input::-webkit-input-placeholder {
   .businessHead {
     font-size: 28px;
     font-weight: 400;
-    font-family: oswald;
+    font-family: proxima-nova;
     margin-top: 10px;
   }
 
   .BDerrorMes {
     font-size: 12px;
     color: red;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 1600px !important;
     margin-left: 5px !important;
     margin-top: 3px !important;
@@ -448,7 +451,7 @@ input::-webkit-input-placeholder {
     color: white;
     font-size: 16px;
     margin-top: 8px;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 100%;
   }
   .businessButton1:hover {
@@ -465,7 +468,7 @@ input::-webkit-input-placeholder {
     color: white;
     font-size: 16px;
     margin-top: 8px;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 100%;
   }
 
@@ -504,14 +507,14 @@ input::-webkit-input-placeholder {
     padding-right: 8px;
     font-size: 16px;
     margin-top: 8px;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 100%;
   }
   .businessButtonNotActive1:hover {
     cursor: pointer;
   }
   .ssn {
-    font-family: oswald;
+    font-family: proxima-nova;
     font-size: 20px;
     /* margin-top: 24px; */
     font-weight: 400;
@@ -527,7 +530,7 @@ input::-webkit-input-placeholder {
     margin-top: 24px;
     font-weight: bold;
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
   }
   .ssnInput:focus {
     border-color: #d8c5a6;
@@ -546,7 +549,7 @@ input::-webkit-input-placeholder {
     margin-top: 24px;
     font-weight: bold;
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     border-radius: 0 !important;
   }
 
@@ -555,7 +558,7 @@ input::-webkit-input-placeholder {
     border-radius: 0 !important;
   }
   .ssnSubtext {
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-top: 5px;
     font-size: 14px;
     font-weight: 100;
@@ -568,13 +571,13 @@ input::-webkit-input-placeholder {
     padding: 24px;
     font-size: 16px;
     width: 512px;
-    font-family: Domine !important;
+    font-family: proxima-nova !important;
   }
 
   .errorMesSubtext {
     font-size: 12px;
     color: red;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 1600px !important;
     margin-top: 24px;
   }
@@ -599,7 +602,7 @@ input::-webkit-input-placeholder {
     margin-top: 16px;
     font-weight: bold;
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-left: 10px;
   }
 
@@ -623,7 +626,7 @@ input::-webkit-input-placeholder {
     margin-top: 16px;
     font-weight: bold;
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     border-radius: 0 !important;
     margin-left: 10px;
   }
@@ -646,7 +649,7 @@ input::-webkit-input-placeholder {
 
   .availableText {
     margin-top: 0px !important;
-    font-family: oswald;
+    font-family: proxima-nova;
     font-size: 12px;
     margin-left: 10px;
     width: 160px;
@@ -655,14 +658,14 @@ input::-webkit-input-placeholder {
   .businessHead {
     font-size: 28px;
     font-weight: 400;
-    font-family: oswald;
+    font-family: proxima-nova;
     margin-top: -30px;
   }
 
   .BDerrorMes {
     font-size: 12px;
     color: red;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 1600px !important;
     margin-left: -2px !important;
     margin-top: 1px !important;
@@ -675,7 +678,7 @@ input::-webkit-input-placeholder {
     padding-bottom: 12px;
     color: white;
     margin-top: 8px;
-    font-family: Domine;
+    font-family: proxima-nova;
     font-size: 16px;
     width: 115%;
     height: 50px;
@@ -691,7 +694,7 @@ input::-webkit-input-placeholder {
     padding-bottom: 12px;
     color: white;
     margin-top: 8px;
-    font-family: Domine;
+    font-family: proxima-nova;
     font-size: 16px;
     width: 115%;
     height: 50px;
@@ -712,7 +715,7 @@ input::-webkit-input-placeholder {
     border-width: 2px;
     border-color: #d8c5a6;
     border-style: solid;
-    font-family: Domine;
+    font-family: proxima-nova;
     font-size: 16px;
     width: 115%;
     height: 50px;
@@ -724,7 +727,7 @@ input::-webkit-input-placeholder {
   }
 
   .ssn {
-    font-family: oswald;
+    font-family: proxima-nova;
     font-size: 20px;
     /* margin-top: 2em; */
     font-weight: 400;
@@ -740,7 +743,7 @@ input::-webkit-input-placeholder {
     margin-top: 24px;
     font-weight: bold;
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
   }
   .ssnInput:focus {
     border-color: #d8c5a6;
@@ -759,7 +762,7 @@ input::-webkit-input-placeholder {
     margin-top: 24px;
     font-weight: bold;
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     border-radius: 0 !important;
   }
 
@@ -768,7 +771,7 @@ input::-webkit-input-placeholder {
     border-radius: 0 !important;
   }
   .ssnSubtext {
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-top: 5px;
     font-size: 14px;
     font-weight: 100;
@@ -781,7 +784,7 @@ input::-webkit-input-placeholder {
     padding: 24px;
     font-size: 16px;
     width: 91% !important;
-    font-family: Domine !important;
+    font-family: proxima-nova !important;
     margin-bottom: 4em;
   }
   .entitySubtext.personalUrlAdditionalInformation {
@@ -791,7 +794,7 @@ input::-webkit-input-placeholder {
   .errorMesSubtext {
     font-size: 12px;
     color: red;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 1600px !important;
     margin-top: 24px;
   }
@@ -825,13 +828,13 @@ input::-webkit-input-placeholder {
   }
   .staticText3 {
     font-size: 12px;
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-top: 12px;
   }
 
   .staticText4 {
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-top: 24px;
     font-weight: bold;
   }
@@ -914,7 +917,7 @@ input::-webkit-input-placeholder {
     margin-top: 0;
     font-weight: bold;
     font-size: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-left: -3vw;
   }
   .personalUrlAdditionalInformation {

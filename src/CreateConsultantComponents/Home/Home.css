@@ -12,12 +12,12 @@
 }
 
 .fontOswald {
-  font-family: oswald;
+  font-family: proxima-nova;
   font-size: 18px;
   cursor: pointer;
 }
 .fontOswald1 {
-  font-family: oswald;
+  font-family: proxima-nova;
   font-size: 50px;
 }
 .fontProxima {
@@ -55,6 +55,12 @@
   margin-left: 6% !important;
 }
 
+.mobileStepHead {
+  color: #085250;
+  display: inline-block;
+  font-family: proxima-nova;
+}
+
 
 @media (max-width: 1199px) {
   .fontOswald {
@@ -69,7 +75,12 @@
 }
 
 .HomeContainer {
+  background-color: #fff;
   min-height: 600px;
+}
+
+.MuiStepIcon-text {
+  font-family: proxima-nova !important;
 }
 
 @media (max-width: 991px) {
@@ -95,7 +106,7 @@
     text-align: left;
   }
   .HomeContainer {
-    padding-left: 20px;
+    /* padding-left: 20px; */
     overflow: hidden;
   }
   .stepperMarginTop {
@@ -130,10 +141,10 @@
     padding-left: 10px;
   }
   .btm-list-blk .btm-list-inner {
-    padding-left: 30px;
+    padding-left: 15px;
   }
   .btm-list-blk .btm-list-inner {
-    font-family: oswald;
+    font-family: proxima-nova;
     font-weight: bold;
   }
   .mobileStep {
@@ -146,21 +157,27 @@
     right: 40%;
   }
 
-.MuiSvgIcon-root{
+/* .MuiSvgIcon-root{
   color: #f2efed !important;
-}
+  font-family: proxima-nova;
+} */
 .MuiSvgIcon-root .MuiStepIcon-text{
 fill: black !important
 }
 .MuiSvgIcon-root.Mui-active {
   border: none !important;
-  fill: black !important ;
+  fill: #085250 !important ;
 }
 .MuiSvgIcon-root.Mui-active .MuiStepIcon-text{
   fill: white !important
   }
 .MuiStepConnector-line{
   border-color: white !important;
+}
+
+.MuiStepLabel-root.Mui-disabled .MuiSvgIcon-root{
+  fill: #fff;
+  font-family: proxima-nova;
 }
 }
 @media (max-width: 480px) {
@@ -169,7 +186,7 @@ fill: black !important
     margin-top: 0.5em;
   }
   .mobileStepHead {
-    font-family: oswald;
+    font-family: proxima-nova;
     font-size: 22px;
     font-weight: 400;
   }

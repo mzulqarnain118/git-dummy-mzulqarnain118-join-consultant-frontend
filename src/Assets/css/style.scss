@@ -137,6 +137,7 @@ $brd-bk: #241f20; //Border block
 $gd-bg: #dcba80; //Gold color
 //Font fontfamily
 $font-oswald: "Oswald";
+$font-proxima_nova: "proxima_nova";
 $font-domine: "Domine";
 /*Common Style*/
 * {
@@ -224,7 +225,7 @@ $font-domine: "Domine";
   }
 }
 body {
-  background: $body-bg;
+  background-color: $body-bg !important;
 }
 .wrapper {
   h2 {

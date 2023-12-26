@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../MobileHeader/Header";
 import axios from "axios";
 import Checkbox from "@mui/material/Checkbox";
+import { pink } from '@mui/material/colors';
 import "./Agreement.css";
 import fileDownload from "js-file-download";
 import { FiDownload } from "react-icons/fi";
@@ -13,6 +14,7 @@ class Agreement extends React.Component {
       //used to indicate the current policy selected
       currentButton: this.props.currentAgreement,
       scrollReachEnd: false,
+      lastClickedButton: null,
       toggle: false,
     };
     this.myRef = React.createRef(); // Create a ref object
@@ -24,21 +26,24 @@ class Agreement extends React.Component {
     }
   }
 
-  // method to download  the required text file from backend
-  downloadFile = async () => {
+  // method to download the required text file from backend
+  downloadFile = async (type) => {
+    const url =
+      type === "agreement"
+        ? "https://storage.googleapis.com/cellar-static/Consultant-Join/Independent_Consultant_Agreement.pdf"
+        : "https://storage.googleapis.com/cellar-static/Consultant-Join/Policies_and_Procedures.pdf";
+
     await axios
-      .get(
-        !this.state.currentButton
-          ? "https://storage.googleapis.com/cellar-static/Consultant-Join/Independent_Consultant_Agreement.pdf"
-          : "https://storage.googleapis.com/cellar-static/Consultant-Join/Policies_and_Procedures.pdf",
-        {
-          responseType: "blob",
-        }
-      )
+      .get(url, {
+        responseType: "blob",
+      })
       .then((res) => {
-        !this.state.currentButton
-          ? fileDownload(res.data, "Independent_Consultant_Agreement.pdf")
-          : fileDownload(res.data, "Policies_Procedures.pdf");
+        const fileName = type === "agreement" ? "Independent_Consultant_Agreement.pdf" : "Policies_Procedures.pdf";
+
+        fileDownload(res.data, fileName);
+
+        // Set the last clicked button when downloading
+        this.setState({ lastClickedButton: type });
       });
   };
 
@@ -78,10 +83,8 @@ class Agreement extends React.Component {
     this.props.setUserData(userData);
   };
 
-  
-
   render() {
-    const {toggle } = this.state;
+    const { toggle,lastClickedButton } = this.state;
 
     return (
       <React.Fragment>
@@ -104,25 +107,35 @@ class Agreement extends React.Component {
             <div className='AGhead4'>Independent Consultant Agreement</div>
 
             <div className='col-lg-6 '>
-              <div className='downloadButton' onClick={this.downloadFile}>
+            <div className='downloadButton' onClick={() => this.downloadFile("agreement")}>
                 <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp; Download Independent Consultant Agreement
               </div>
             </div>
 
             {/* to display selected policy data */}
             <div className='col-lg-6'>
-              <iframe src="https://drive.google.com/viewer?embedded=true&url=https://storage.googleapis.com/cellar-static/Consultant-Join/Independent_Consultant_Agreement.pdf" type='application/pdf' className='agreementPolicy' width='100%' ></iframe>
+              <iframe
+                src='https://drive.google.com/file/d/1EPTy0KRP9Fz_U6v-NnZb3aZsGy9Cngnj/preview?usp=drive_link'
+                type='application/pdf'
+                className='agreementPolicy'
+                width='100%'
+              ></iframe>
             </div>
 
             <div className='AGhead4'>Policy and Procedures</div>
             <div className='col-lg-6 '>
-              <div className='downloadButton' onClick={this.downloadFile}>
+            <div className='downloadButton' onClick={() => this.downloadFile("policies")}>
                 <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp; Download Policy and Procedures
               </div>
             </div>
-            
+
             <div className='col-lg-6 '>
-              <iframe src="https://drive.google.com/viewer?embedded=true&url=https://storage.googleapis.com/cellar-static/Consultant-Join/Policies_and_Procedures.pdf"   className='agreementPolicy' width='100%' ></iframe>
+              {/* <iframe src="https://drive.google.com/viewer?embedded=true&url=https://storage.googleapis.com/cellar-static/Consultant-Join/Policies_and_Procedures.pdf"   className='agreementPolicy' width='100%' ></iframe> */}
+              <iframe
+                src='https://drive.google.com/file/d/1QC5-qUhZ3qc4xA3FDjuvba8_FZLVmb3V/preview?usp=sharing'
+                className='agreementPolicy'
+                width='100%'
+              ></iframe>
             </div>
 
             <div className='AGhead3'>
@@ -138,9 +151,7 @@ class Agreement extends React.Component {
                     checked={toggle}
                     onChange={this.handleChangecheckbox}
                     className='checkBoxAccept'
-                    style={{
-                      color: "#DCBA80",
-                    }}
+                    style={{color: '#c5a475'}}
                   />
                   <span
                     id='checkbox2'

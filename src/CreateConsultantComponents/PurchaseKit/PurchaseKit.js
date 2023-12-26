@@ -640,6 +640,7 @@ class PurchaseKit extends React.Component {
                     className="PKcheckBoxAccept"
                     style={{
                       color: "#DCBA80",
+                      fill:"green"
                     }}
                   />
                   <span className="billingText">Same as shipping address.</span>

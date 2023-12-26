@@ -109,11 +109,11 @@ const GreenStepConnector = withStyles({
   },
   completed: {
     "& $line": {
-      borderColor: "#4BA380",
+      borderColor: "#085250",
     },
   },
   line: {
-    borderColor: "black",
+    borderColor: "#085250",
     borderTopWidth: 1,
     borderRadius: 1,
   },
