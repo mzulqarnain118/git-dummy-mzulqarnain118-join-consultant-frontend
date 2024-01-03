@@ -34,9 +34,9 @@
   opacity: 0.5;
 }
 .arrowIcon3 {
-  margin-top: 5px;
+  /* margin-top: 5px; */
   text-align: right;
-  padding-right: 8px;
+  /* padding-right: 8px; */
   cursor: pointer;
 }
 .arrowIcon3 svg {
@@ -182,8 +182,8 @@ fill: black !important
 }
 @media (max-width: 480px) {
   .arrowIcon3 svg {
-    height: 22px;
-    margin-top: 0.5em;
+    height: 27.5px;
+    /* margin-top: 0.5em; */
   }
   .mobileStepHead {
     font-family: proxima-nova;

@@ -14,7 +14,7 @@ import VerifyIdentity from "../VerifyIdentity/VerifyIdentity";
 import PurchaseKit from "../PurchaseKit/PurchaseKit";
 import PaymentConfirmation from "../PaymentConfirmation/PaymentConfirmation";
 import StepConnector from "@mui/material/StepConnector";
-import Logo from "../../Assets/images/ScountCellar.png";
+import Logo from "../../Assets/images/ScoutAndCellar.png";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import * as API from "../../configuration/apiconfig";
 import CircularProgress from "@mui/joy/CircularProgress";
@@ -1365,12 +1365,12 @@ class Home extends React.Component {
               rightFooterButtonName === "LOG IN" ||
               rightFooterButtonName === "CONTINUE " ? (
                 <>
-                  <div className='col-xl-2 col-lg-1 col-md-1 col-1'>
+                  <div className='col-xl-2 col-lg-1 col-md-1 col-1 d-flex justify-content-center justify-content-md-end align-items-center'>
                     <div className='arrowIcon3' onClick={this.handleBackButton}>
                       <ArrowBackIosIcon />
                     </div>
                   </div>
-                  <div className='col-xl-2 col-lg-2 col-md-11 col-11'>
+                  <div className='col-xl-2 col-lg-2 col-md-11 col-11 d-flex align-items-center'>
                     <div className='LogoIcon'>
                       <img src={Logo} alt='' style={{ width: "300px" }} />
                     </div>
