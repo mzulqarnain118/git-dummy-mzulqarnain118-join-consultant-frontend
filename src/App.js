@@ -11,11 +11,9 @@ class App extends React.Component {
       customURL: "",
     };
   }
-
   passCustomURL = (value) => {
     this.setState({ customURL: value });
   };
-
   render() {
     //to block all testing logs, warnings and errors
     // console.log = console.warn = console.error = () => {};
@@ -27,7 +25,7 @@ class App extends React.Component {
             <Route
               path="/consultant"
               render={(props) => (
-                <Home userURL={this.state.customURL} {...props} />
+                <Home userURL={this.state.customURL} passCustomURL={this.passCustomURL} {...props} />
               )}
             ></Route>
             {/* Custom URL --> fixed working with */}

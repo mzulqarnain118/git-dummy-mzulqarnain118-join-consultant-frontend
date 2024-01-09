@@ -148,28 +148,7 @@ class PaymentConfirmation extends React.Component {
                     them to you via email as well.
                   </div>
 
-                  {/* 
-                  <div className=' paymentConfirmationHead2'>IS NOW RESERVED!</div> */}
 
-                  {/* <hr
-                    style={{
-                      background: "white",
-                      color: "white",
-                      width: "60%",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                  /> */}
-
-                  {/* <hr
-                    style={{
-                      background: "white",
-                      color: "white",
-                      width: "60%",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                  /> */}
 
                   <div className="pcInfo">
                     <div className="pcInfoItem">

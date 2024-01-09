@@ -2,30 +2,30 @@
   font-size: 13px;
   color: rgb(70, 63, 63);
   margin-bottom: 7px;
-  font-family: Domine;
+  font-family: proxima-nova;
 }
 .description-text-1 {
   font-size: 15px;
   color: black;
-  font-family: Domine;
+  font-family: proxima-nova;
   font-weight: 600;
 }
 .description-text-2 {
   font-size: 15px;
   color: rgb(94, 83, 83);
-  font-family: Domine;
+  font-family: proxima-nova;
   font-weight: 600;
 }
 .description-text-3 {
   font-size: 15px;
   color: black;
-  font-family: Domine;
+  font-family: proxima-nova;
   font-weight: 600;
 }
 .description-text-4 {
   font-size: 13px;
   color: black;
-  font-family: Domine;
+  font-family: proxima-nova;
   font-weight: 600;
   margin-left: 20px;
 }
@@ -59,14 +59,14 @@
   background: #e8e0dd;
   margin-top: 16px;
   padding: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   /* width: 65vw; */
   width: 65vw;
 }
 .totalPanel-1 {
   background: #241f20;
   padding: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   /* width: 65vw; */
   width: 65vw;
 }
@@ -97,7 +97,7 @@
 .totalResultPanel {
   background: #241f20;
   padding: 16px;
-  font-family: Domine;
+  font-family: proxima-nova;
   width: 65vw;
 }
 .ResultText {
@@ -115,12 +115,14 @@
   font-size: 12px;
   /* width: 65vw; */
   width: 1248px;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
 }
 .paymentHead {
-  font-family: oswald;
+  color:#085250;
+  font-family: proxima-nova;
+  font-size: 34px;
+  font-weight: 600;
   margin-top: 16px;
-  font-size: 32px;
 }
 .purchaseInputMargin {
   margin-bottom: 16px;
@@ -132,16 +134,18 @@
 }
 .purchasehead3 {
   color: grey;
-  font-family: oswald;
+  font-family: proxima-nova;
   font-size: 16px;
   margin-bottom: 12px;
+  text-wrap: nowrap;
 }
 .purchasehead4 {
   color: grey;
-  font-family: oswald;
+  font-family: proxima-nova;
   font-size: 16px;
   margin-bottom: 12px;
   margin-left: 45px !important;
+  text-wrap: nowrap;
 }
 .purchaseInput {
   border-width: 1px;
@@ -151,7 +155,7 @@
   height: 56px !important;
   margin-bottom: 8px;
   margin-top: 8px !important;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 .purchaseInput:focus {
@@ -168,7 +172,7 @@
   height: 56px !important;
   margin-bottom: 8px;
   margin-top: 8px !important;
-  font-family: Domine !important;
+  font-family: proxima-nova !important;
   font-weight: 600 !important;
 }
 
@@ -178,7 +182,7 @@
 .errorMes {
   font-size: 12px;
   color: red;
-  font-family: Domine;
+  font-family: proxima-nova;
   width: 372px;
 }
 .successMes {
@@ -187,7 +191,7 @@
 .errorMesCVV {
   font-size: 12px;
   color: red;
-  font-family: Domine;
+  font-family: proxima-nova;
   width: 372px;
   margin-left: 45px !important;
 }
@@ -228,7 +232,7 @@
   margin-bottom: 160px;
 }
 .billingHead {
-  font-family: oswald;
+  font-family: proxima-nova;
   margin-top: 16px;
   font-size: 16px;
   color: #241f20;
@@ -238,10 +242,10 @@
   font-weight: bold;
 }
 .billingText {
-  font-family: oswald;
-  font-size: 14px;
-  color: #241f20;
-  font-weight: 300;
+  color: #000000;
+  font-family: proxima-nova;
+  font-size: 18px;
+  font-weight: 500;
 }
 .purchaseInput2 {
   border-width: 1px;
@@ -327,19 +331,19 @@
     background: #e8e0dd;
     margin-top: 16px;
     padding: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 80vw;
   }
   .totalPanel-1 {
     background: #241f20;
     padding: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 80vw;
   }
   .totalResultPanel {
     background: #241f20;
     padding: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 80vw;
   }
   .totalSubText {
@@ -378,27 +382,27 @@
   .description-text-1 {
     font-size: 14px;
     color: black;
-    font-family: Domine;
+    font-family: proxima-nova;
     font-weight: 600;
     margin-right: 20px;
   }
   .description-text-2 {
     font-size: 14px;
     color: rgb(94, 83, 83);
-    font-family: Domine;
+    font-family: proxima-nova;
     font-weight: 600;
     margin-left: 15px;
   }
   .description-text-3 {
     font-size: 13px;
     color: black;
-    font-family: Domine;
+    font-family: proxima-nova;
     font-weight: 600;
   }
   .description-text-4 {
     font-size: 13px;
     color: black;
-    font-family: Domine;
+    font-family: proxima-nova;
     font-weight: 600;
     margin-left: 20px;
     width: 100%;
@@ -535,7 +539,7 @@
     text-align: right;
   }
   .paymentHead {
-    font-family: oswald;
+    font-family: proxima-nova;
     margin-top: 32px;
     font-size: 24px;
   }
@@ -543,19 +547,19 @@
     background: #e8e0dd;
     margin-top: 16px;
     padding: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 90vw;
   }
   .totalPanel-1 {
     background: #241f20;
     padding: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 90vw;
   }
   .totalResultPanel {
     background: #241f20;
     padding: 16px;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 90vw;
   }
   .PKcheckBoxAccept {
@@ -596,7 +600,7 @@
   background-color: black;
   border: 0;
   color: white;
-  font-family: "Oswald";
+  font-family: "proxima-nova";
   height: 56px !important;
 }
 

@@ -349,7 +349,7 @@ class BusinessDetails extends React.Component {
                 <div className='row'>
                   <div className='col-lg-6 col-md-10 doingBusinessExtraInformation'>
                     <br />
-                    <p className='fw-bold'>What's the difference?</p>
+                    <p>What's the difference?</p>
                     <p>If you're running your business solo or with a spouse, choose Individual.</p>
                     <p>If you have an EIN, choose Entity.</p>
                   </div>
