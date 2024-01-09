@@ -118,10 +118,11 @@
   font-family: proxima-nova !important;
 }
 .paymentHead {
-  font-family: proxima-nova;
-  margin-top: 16px;
-  font-size: 32px;
   color:#085250;
+  font-family: proxima-nova;
+  font-size: 34px;
+  font-weight: 600;
+  margin-top: 16px;
 }
 .purchaseInputMargin {
   margin-bottom: 16px;
@@ -241,10 +242,10 @@
   font-weight: bold;
 }
 .billingText {
+  color: #000000;
   font-family: proxima-nova;
-  font-size: 14px;
-  color: #241f20;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 500;
 }
 .purchaseInput2 {
   border-width: 1px;

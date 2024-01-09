@@ -9,9 +9,10 @@
 }
 .AGhead1 {
   color: #085250;
-  font-size: calc(6px + 2vw);
-  font-weight: "bold";
   font-family: proxima-nova;
+  font-size: 34px;
+  /* font-size: calc(6px + 2vw); */
+  font-weight: 600;
 }
 .AGhead2 {
   font-size: calc(3px + 1vw);
@@ -29,9 +30,10 @@
 }
 .AGhead4 {
   color: #085250;
-  font-size: calc(1.75vw);
-  font-weight: "bold";
   font-family: proxima-nova;
+  font-size: 34px;
+  /* font-size: calc(1.75vw); */
+  font-weight: 600;
   margin-top: 60px;
 }
 .agreementButton1 {
@@ -163,8 +165,10 @@
   margin-left: -13px !important;
 }
 .checkboxText {
+  color:#000000;
   font-family: proxima-nova;
-  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
 }
 @media only screen and (max-width: 768px) {
   .AGcomponentMargin {

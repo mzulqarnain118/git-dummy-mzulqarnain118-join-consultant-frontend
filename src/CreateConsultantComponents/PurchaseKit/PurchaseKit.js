@@ -682,41 +682,6 @@ class PurchaseKit extends React.Component {
                         </div>
                       </div>
                       <div className="col-lg-5">
-                        {/* Zip code */}
-                        <div className="form-group">
-                          <div className="purchaseInputMargin">
-                            <span className="purchasehead3" htmlFor="zipCode">
-                              ZIP CODE* (Required)
-                            </span>
-                            <input
-                              type="text"
-                              value={form["zipCode"]}
-                              className={
-                                error.zipCode.length > 0
-                                  ? "form-control purchaseRed"
-                                  : "form-control purchaseInput"
-                              }
-                              id="zipCode"
-                              name="zipCode"
-                              placeholder="Enter ZIP Code"
-                              // autocomplete="none"
-                              // autoComplete="none"
-                              onChange={this.handleChange}
-                              maxLength="6"
-                            />
-
-                            {error.zipCode.length > 0 ? (
-                              <span className="errorMes">
-                                {error.zipCode}
-                                <br />
-                              </span>
-                            ) : null}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="row">
-                      <div className="col-lg-5">
                         {/* City */}
                         <div className="form-group">
                           <div className="purchaseInputMargin">
@@ -748,6 +713,8 @@ class PurchaseKit extends React.Component {
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div className="row">
                       <div className="col-lg-5">
                         {/* State */}
                         <div className="form-group">
@@ -778,6 +745,40 @@ class PurchaseKit extends React.Component {
                             {error.state.length > 0 ? (
                               <span className="errorMes">
                                 {error.state}
+                                <br />
+                              </span>
+                            ) : null}
+                          </div>
+                        </div>
+                      </div>
+
+                    <div className="col-lg-5">
+                        {/* Zip code */}
+                        <div className="form-group">
+                          <div className="purchaseInputMargin">
+                            <span className="purchasehead3" htmlFor="zipCode">
+                              ZIP CODE* (Required)
+                            </span>
+                            <input
+                              type="text"
+                              value={form["zipCode"]}
+                              className={
+                                error.zipCode.length > 0
+                                  ? "form-control purchaseRed"
+                                  : "form-control purchaseInput"
+                              }
+                              id="zipCode"
+                              name="zipCode"
+                              placeholder="Enter ZIP Code"
+                              // autocomplete="none"
+                              // autoComplete="none"
+                              onChange={this.handleChange}
+                              maxLength="6"
+                            />
+
+                            {error.zipCode.length > 0 ? (
+                              <span className="errorMes">
+                                {error.zipCode}
                                 <br />
                               </span>
                             ) : null}

@@ -9,19 +9,19 @@
 }
 .textButton,
 .leftTextButton {
-  color: white;
-  font-size: 27px;
-  font-weight: 500;
+  color: #ffffff;
   font-family: proxima-nova;
+  font-size: 27px;
+  font-weight: 600;
 }
 .textButton:hover {
   cursor: pointer;
 }
 .textButtonDisabled {
-  color: white;
+  color: #ffffff;
   font-size: 27px;
   opacity: 0.2;
-  font-weight: 500;
+  font-weight: 600;
   font-family: proxima-nova;
 }
 .react-ripples {
@@ -47,10 +47,10 @@
   }
 
   .textButton {
-    color: white;
+    color: #ffffff;
     background-color: #c5a475;
     font-size: 27px;
-    font-weight: 500;
+    font-weight: 600;
     font-family: proxima-nova;
   }
   .textButton:hover {
@@ -70,7 +70,7 @@
   }
   .textButton {
     margin-top: -25px !important;
-    color: white;
+    color: #ffffff;
     background-color: #c5a475;
     font-size: 27px;
     font-weight: 500;
@@ -109,7 +109,7 @@
     width: 0;
   }
   .leftTextButton {
-    color: white;
+    color: #ffffff;
     font-size: 18px;
     font-family: proxima-nova;
     margin-top: 3px !important;
