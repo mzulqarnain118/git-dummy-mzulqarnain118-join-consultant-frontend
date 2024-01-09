@@ -96,11 +96,10 @@ class Footer extends React.Component {
     return this.state.displayFooter ? (
       <React.Fragment>
         <div className="blackBar">
-          <div className="row h-100">
+          <div className="row  h-100">
             {/* left button */}
             {this.props.rightFooterButtonName === "LOOKS GOOD" ? (
               <>
-                {/* <div className="col-lg-2 col-md-2 grey "></div> */}
                 <div className=" col-lg-4 col-md-4 col-sm-4 col-4 grey ">
                   <div className="leftTextButton">
                     <Ripples className="h-100">
@@ -135,8 +134,8 @@ class Footer extends React.Component {
                 <div
                   className={
                     this.props.rightFooterButtonDisabled
-                      ? "col-lg-4 col-md-4 col-sm-7 textButtonDisabled "
-                      : "col-lg-4 col-md-4 col-sm-7  textButton "
+                      ? "col-lg-4 col-md-4 col-sm-6 textButtonDisabled "
+                      : "col-lg-4 col-md-4 col-sm-6  textButton "
                   }
                 >
                   <Ripples>

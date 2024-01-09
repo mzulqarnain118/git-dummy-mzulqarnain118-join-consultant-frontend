@@ -1,5 +1,6 @@
 .head-stepper-font {
-  font-family: oswald;
+  font-family: proxima-nova;
+  font-weight: 600;
   font-size: 15px;
   white-space: nowrap;
   cursor: pointer;
@@ -19,21 +20,12 @@
   width: 190vw;
   white-space: nowrap;
 }
-/*
-.LogoIcon svg {
-  width: 375px;
-  height: auto;
-}
-.arrowIcon {
-  margin-top: -11vh;
-  margin-left: -2.5vh;
-}
-*/
 
 .AgreementHeader {
+  color: #085250;
   font-size: 1.1em;
-  font-weight: 400;
-  font-family: oswald;
+  font-weight: 500;
+  font-family: proxima-nova;
   margin-left: 16%;
   margin-top: -25px;
   width: 100% !important;
@@ -92,6 +84,18 @@
 @media (max-width: 480px) {
   .LogoIcon svg {
     height: 50px;
+  }
+  .mobileHeaderHeight {
+    display: flex;
+    align-items: center;
+  }
+  .mobileHeaderHeight1 {
+    display: flex;
+    align-items: center;
+  }
+  .arrowIcon {
+    z-index: 9;
+    margin-right: -5px;
   }
 }
 

@@ -9,20 +9,23 @@
 }
 .textButton,
 .leftTextButton {
-  color: white;
+  color: #ffffff;
+  font-family: proxima-nova;
   font-size: 27px;
-  font-weight: 500;
-  font-family: oswald;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .textButton:hover {
   cursor: pointer;
 }
 .textButtonDisabled {
-  color: white;
+  color: #ffffff;
   font-size: 27px;
-  opacity: 0.5;
-  font-weight: 500;
-  font-family: oswald;
+  opacity: 0.2;
+  font-weight: 600;
+  font-family: proxima-nova;
 }
 .react-ripples {
   display: flex;
@@ -47,11 +50,11 @@
   }
 
   .textButton {
-    color: white;
+    color: #ffffff;
     background-color: #c5a475;
     font-size: 27px;
-    font-weight: 500;
-    font-family: oswald;
+    font-weight: 600;
+    font-family: proxima-nova;
   }
   .textButton:hover {
     cursor: pointer;
@@ -70,20 +73,22 @@
   }
   .textButton {
     margin-top: -25px !important;
-    color: white;
+    color: #ffffff;
     background-color: #c5a475;
     font-size: 27px;
     font-weight: 500;
-    font-family: oswald;
+    font-family: proxima-nova;
   }
   .textButton:hover {
     cursor: pointer;
   }
   .textButtonDisabled {
+    color: #ffffff;
     margin-top: -25px !important;
-    font-size: 27px;
-    font-weight: 500;
-    font-family: oswald;
+    font-size: 22px !important;
+    font-weight: 600;
+    font-family: proxima-nova;
+    opacity: 0.2 !important;
   }
   .textButtonDisabled:hover {
     cursor: not-allowed;
@@ -98,8 +103,6 @@
     margin-left: 450px;
   }
   .grey {
-    background-color: grey;
-    padding-top: 3px;
     width: 220px;
     height: 50px;
     position: fixed;
@@ -109,10 +112,10 @@
     width: 0;
   }
   .leftTextButton {
-    color: white;
+    color: #ffffff;
     font-size: 18px;
-    font-family: oswald;
-    margin-top: 3px !important;
+    font-family: proxima-nova;
+    /* margin-top: 3px !important; */
   }
   .leftTextButton:hover {
     cursor: pointer;
@@ -120,8 +123,8 @@
   .mobileLeftMargin {
     margin-left: 100px;
     font-size: 18px;
-    font-family: oswald;
-    margin-top: -2px !important;
+    font-family: proxima-nova;
+    margin-top: 2px !important;
   }
 }
 @media (max-width: 639px) {

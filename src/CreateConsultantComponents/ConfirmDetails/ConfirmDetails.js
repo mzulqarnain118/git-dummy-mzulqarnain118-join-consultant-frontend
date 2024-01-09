@@ -60,7 +60,7 @@ class ConfirmDetails extends React.Component {
                 Enter the email address you’d like to use for your Scout &amp; Cellar business.
               </div>
               {/* ™ */}
-              <div className='SubText' style={{ clear: "both", marginBottom: "25px", maxWidth: "750px" }}>
+              <div className='SubText' style={{ clear: "both", marginBottom: "25px", maxWidth: "816px" }}>
                 Already have a Scout &amp; Cellar customer account and want to use your same email? You will need your
                 password handy for the next step. If you’ve forgotten it,{" "}
                 <a href='https://team.scoutandcellar.com/Account/ForgotPassword' target='_blank'>

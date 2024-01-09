@@ -8,28 +8,32 @@
   margin-top: 4em;
 }
 .AGhead1 {
-  font-size: calc(6px + 2vw);
-  font-weight: "bold";
-  font-family: oswald;
+  color: #085250;
+  font-family: proxima-nova;
+  font-size: 34px;
+  /* font-size: calc(6px + 2vw); */
+  font-weight: 600;
 }
 .AGhead2 {
   font-size: calc(3px + 1vw);
-  font-family: oswald;
+  font-family: proxima-nova;
   font-weight: 300;
   margin-bottom: 0.5em !important;
   margin-top: 0.5em !important;
 }
 .AGhead3 {
   font-size: calc(3px + 0.8vw);
-  font-family: oswald;
+  font-family: proxima-nova;
   font-weight: 300;
   margin-bottom: 0.5em !important;
   margin-top: 1.5em !important;
 }
 .AGhead4 {
-  font-size: calc(1.75vw);
-  font-weight: "bold";
-  font-family: oswald;
+  color: #085250;
+  font-family: proxima-nova;
+  font-size: 34px;
+  /* font-size: calc(1.75vw); */
+  font-weight: 600;
   margin-top: 60px;
 }
 .agreementButton1 {
@@ -42,7 +46,7 @@
   color: white;
   font-size: 1.2em;
   margin-top: 0.5em;
-  font-family: Domine;
+  font-family: proxima-nova;
   width: initial;
 }
 .agreementButton1:hover {
@@ -60,7 +64,7 @@
   font-size: 1.2em;
   margin-top: 0.5em;
   margin-right: -0.6em;
-  font-family: Domine;
+  font-family: proxima-nova;
   width: initial;
 }
 
@@ -99,7 +103,7 @@
 .downloadButton {
   cursor: pointer;
   background: #e8e0dd;
-  font-family: oswald;
+  font-family: proxima-nova;
   text-align: center;
   margin-top: 1em;
   width: initial;
@@ -120,7 +124,7 @@
   height: 30vw;
   margin-top: 1em;
   overflow-y: scroll;
-  font-family: Domine;
+  font-family: proxima-nova;
   /* padding: 2em; */
   scroll-behavior: smooth;
   /* font-size: calc(1px + 1vw); */
@@ -161,7 +165,10 @@
   margin-left: -13px !important;
 }
 .checkboxText {
-  cursor: pointer;
+  color: #000000;
+  font-family: proxima-nova;
+  font-size: 18px;
+  font-weight: 500;
 }
 @media only screen and (max-width: 768px) {
   .AGcomponentMargin {
@@ -170,24 +177,24 @@
   }
   .AGhead2 {
     font-size: 16px;
-    font-family: oswald;
+    font-family: proxima-nova;
     font-weight: 300;
   }
   .AGhead1 {
     font-size: 35px;
     font-weight: "bold";
-    font-family: oswald;
+    font-family: proxima-nova;
   }
   .AGhead3 {
     font-size: 16px;
-    font-family: oswald;
+    font-family: proxima-nova;
     font-weight: 300;
     margin-top: 2em !important;
   }
   .AGhead4 {
     font-size: calc(5vw);
     font-weight: "bold";
-    font-family: oswald;
+    font-family: proxima-nova;
     margin-top: 60px;
   }
   .componentMargin {
@@ -204,7 +211,7 @@
     color: white;
     font-size: 1.1em;
     margin-top: 0.5em;
-    font-family: Domine;
+    font-family: proxima-nova;
   }
   .agreementButton1:hover {
     cursor: pointer;
@@ -220,7 +227,7 @@
     font-size: 1.1em;
 
     margin-top: 0.5em;
-    font-family: Domine;
+    font-family: proxima-nova;
   }
 
   .agreementButton2:hover {
@@ -256,7 +263,7 @@
   .downloadButton {
     cursor: pointer;
     background: #e8e0dd;
-    font-family: oswald;
+    font-family: proxima-nova;
     text-align: center;
     margin-top: 1em;
     width: 600px;
@@ -276,17 +283,17 @@
     height: 137vw;
     margin-top: 1em;
     overflow-y: scroll;
-    font-family: Domine;
+    font-family: proxima-nova;
     /* padding: 1em; */
   }
-  
+
   /* Optional: Set a maximum height for smaller screens */
   @media (max-width: 768px) {
     .agreementPolicy {
       max-width: 600px; /* Adjust the maximum height for smaller screens */
     }
   }
-  
+
   .agreementTitle {
     font-size: 1.5em;
     font-weight: bold;
@@ -303,20 +310,20 @@
 @media only screen and (max-width: 550px) {
   .AGhead2 {
     font-size: 16px;
-    font-family: oswald;
+    font-family: proxima-nova;
     font-weight: 300;
   }
   .AGhead3 {
     font-size: 16px;
-    font-family: oswald;
+    font-family: proxima-nova;
     font-weight: 300;
     margin-top: 1.5em !important;
   }
   .AGhead4 {
-    font-size: calc(5vw);
     font-weight: "bold";
-    font-family: oswald;
+    font-family: proxima-nova;
     margin-top: 60px;
+    font-size: 24px;
   }
   .agreementButton1 {
     background: #dcba80;
@@ -328,7 +335,7 @@
     color: white;
     font-size: 0.67em;
     margin-top: 0.5em;
-    font-family: Domine;
+    font-family: proxima-nova;
     width: 105%;
     font-weight: 600;
   }
@@ -344,7 +351,7 @@
     color: white;
     font-size: 0.67em;
     margin-top: 0.5em;
-    font-family: Domine;
+    font-family: proxima-nova;
     margin-left: 0px;
     width: 105%;
     font-weight: 600;
@@ -367,7 +374,7 @@
     padding-right: 1em;
     font-size: 0.67em;
     margin-top: 0.5em;
-    font-family: Domine;
+    font-family: proxima-nova;
     font-weight: 600;
   }
   .agreementButtonNotActive1:hover {
@@ -398,7 +405,7 @@
     height: 137vw;
     margin-top: 1em;
     overflow-y: scroll;
-    font-family: Domine;
+    font-family: proxima-nova;
     /* padding: 1em; */
   }
   .agreementTitle {
@@ -416,8 +423,9 @@
     width: 49%;
   }
   .mobileAcceptCheckBox {
-    font-size: 12px;
-    font-family: oswald;
+    font-size: 14px;
+    font-family: proxima-nova;
+    font-weight: 500;
   }
   .mobileAcceptCheckBox1 {
     margin-left: 30px;
@@ -432,12 +440,12 @@
   .AGhead1 {
     font-size: 28px;
     font-weight: "bold";
-    font-family: oswald;
+    font-family: proxima-nova;
   }
   .downloadButton {
     cursor: pointer;
     background: #e8e0dd;
-    font-family: oswald;
+    font-family: proxima-nova;
     text-align: center;
     margin-top: 1em;
     width: initial;

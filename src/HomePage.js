@@ -25,10 +25,11 @@ class HomePage extends React.Component {
     if (value === undefined) {
       value = "";
     }
+    
     this.props.passCustomURL(value);
   };
-
-  render() {
+  
+  render() {    
     return (
       <>
         <section className="wrapper">
