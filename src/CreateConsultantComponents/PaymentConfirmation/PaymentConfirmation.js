@@ -122,20 +122,20 @@ class PaymentConfirmation extends React.Component {
               {/* header for mobile view  */}
               {window.innerWidth <= 550 ? (
                 <>
-                  <ArrowBackIosIcon
+                  {/* <ArrowBackIosIcon
                     className="arrowIcon1"
                     onClick={() => {
                       this.props.moveBackToLastScreen(3, "DONE");
                     }}
-                  />
-                  <span
+                  /> */}
+                  {/* <span
                     className="signOutStyle"
                     onClick={() => {
                       this.props.moveBackToLastScreen(0, "NEXT");
                     }}
                   >
                     SIGN OUT <Icon4 />
-                  </span>
+                  </span> */}
                 </>
               ) : null}
               <div className="paymentConfirmationHead">
@@ -148,11 +148,9 @@ class PaymentConfirmation extends React.Component {
                     them to you via email as well.
                   </div>
 
-
-
                   <div className="pcInfo">
                     <div className="pcInfoItem">
-                      <h4 className="yourConsultantId">
+                      <h4 className="pcHead3">
                         YOUR INDEPENDENT CONSULTANT ID
                       </h4>
                       <div className="pcConsultantNumber1">
@@ -165,7 +163,6 @@ class PaymentConfirmation extends React.Component {
                         YOUR SCOUT & CELLAR EMAIL ADDRESS
                       </h4>
                       <div className="pcConsultantNumber1">
-                        {" "}
                         {userData.email}
                       </div>
                     </div>
@@ -230,25 +227,6 @@ class PaymentConfirmation extends React.Component {
           <div className="pcFooter">
             <div className="pcFooterHead">LET'S GET GOING</div>
             <div className="pcFooterBody">
-              {/* <div className='d-flex justify-content-center align-items-center gap-3 flex-wrap'> */}
-              {/* card 1 */}
-              {/* <div className='pcFooterCard' onMouseDown={this.onRippleStart1} onMouseUp={this.onRippleStop1}> */}
-              {/* <a
-                  href="https://team.scoutandcellar.com/Account/Login?utm=bac"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <TouchRipple ref={rippleRef1} center={false} />
-                  <div className="row">
-                    <div className="pcFooterMainIcon">
-                      <Icon1 />
-                    </div>
-                    <div className="pcFooterText">
-                      Access your consultant Account
-                    </div>
-                    <IoIosArrowForward className="pcFooterNextIcon" />
-                  </div>
-                </a> */}
               <a
                 href="https://join.scoutandcellar.com/"
                 target="_blank"

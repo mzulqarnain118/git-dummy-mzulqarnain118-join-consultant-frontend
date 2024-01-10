@@ -37,17 +37,13 @@
 }
 .grey {
   background-color: grey;
-  padding-top: 8px;
+  height: 50px;
 }
 
 .leftTextButton:hover {
   cursor: pointer;
 }
 @media only screen and (min-width: 768px) {
-  .grey {
-    background-color: grey;
-    padding-top: 3px;
-  }
 
   .textButton {
     color: #ffffff;
@@ -72,12 +68,12 @@
     height: 50px;
   }
   .textButton {
-    margin-top: -25px !important;
+    font-family: proxima-nova;
     color: #ffffff;
     background-color: #c5a475;
     font-size: 27px;
-    font-weight: 500;
-    font-family: proxima-nova;
+    font-weight: 600;
+    margin-top: -25px !important;
   }
   .textButton:hover {
     cursor: pointer;
@@ -104,13 +100,13 @@
   }
   .grey {
     width: 220px;
-    height: 50px;
     position: fixed;
     bottom: 0;
   }
   .emptyWidth {
     width: 0;
   }
+  
   .leftTextButton {
     color: #ffffff;
     font-size: 18px;
@@ -137,5 +133,8 @@
 @media (max-width: 567px) {
   .blackBar {
     width: 100%;
+  }
+  .leftTextButton{
+    margin-left: 6px;
   }
 }

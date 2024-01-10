@@ -31,8 +31,8 @@
   width: 100% !important;
 }
 
-.LogoIcon svg {
-  width: 320px;
+.LogoIcon img {
+  width: 300px;
   height: auto;
 }
 
@@ -48,6 +48,7 @@
   padding-left: 20px !important;
   padding-bottom: 40px !important;
   z-index: 10 !important;
+  display: none;
 }
 
 .mobileHeaderHeight1 {
@@ -69,21 +70,19 @@
 }
 
 @media (max-width: 1199px) {
-  .LogoIcon svg {
+  .LogoIcon img {
     width: 265px;
-    height: 100px;
   }
 }
 @media (max-width: 991px) {
-  .LogoIcon svg {
+  .LogoIcon img {
     width: 100%;
-    height: 70px;
   }
 }
 
 @media (max-width: 480px) {
-  .LogoIcon svg {
-    height: 50px;
+  .LogoIcon img {
+    width: 200px;
   }
   .mobileHeaderHeight {
     display: flex;

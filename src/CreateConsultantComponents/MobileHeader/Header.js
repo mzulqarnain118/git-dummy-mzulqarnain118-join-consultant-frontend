@@ -112,7 +112,7 @@ class Header extends React.Component {
       <React.Fragment>
         <div
           className={
-            this.props.agreement ? "mobileHeaderHeight1" : "mobileHeaderHeight"
+            "mobileHeaderHeight"
           }
         >
           {/* arrow icon (back button) */}

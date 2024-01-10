@@ -120,8 +120,8 @@
 .paymentHead {
   color: #085250;
   font-family: proxima-nova;
-  font-size: 34px;  font-weight: 600;
-
+  font-size: 28px;  
+  font-weight: 500;
   margin-top: 16px;
 }
 .purchaseInputMargin {
@@ -543,8 +543,9 @@
   }
   .paymentHead {
     font-family: proxima-nova;
+    font-size: 22px;
+    font-weight: 500;
     margin-top: 32px;
-    font-size: 24px;
   }
   .totalPanel {
     background: #e8e0dd;

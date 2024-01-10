@@ -113,11 +113,11 @@
 }
 .passwordForgotLink {
   color: #c5a475;
-  font-size: 18px;
-  text-decoration: underline;
-  /* font-family: Domine; */
   font-family: proxima-nova;
+  font-size: 18px;
+  font-weight: 500;
   width: fit-content;
+  text-decoration: underline;
 }
 .passwordForgotLink:hover {
   cursor: pointer;
@@ -159,6 +159,7 @@
   color: grey;
   font-family: proxima-nova;
   font-size: 16px;
+  text-wrap: nowrap;
 }
 
 .dataText {
@@ -230,7 +231,8 @@
 .staticText5 {
   color: #085250;
   font-family: proxima-nova;
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: 500;
   margin-top: 20px;
 }
 
@@ -427,6 +429,13 @@ input:disabled {
     color: red;
   }
 
+  .staticText5 {
+    color: #085250;
+    font-family: proxima-nova;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
   .edit-marginLeft {
     margin-left: 0% !important;
   }
@@ -440,11 +449,11 @@ input:disabled {
   .InputMargin {
     margin-bottom: 10px;
   }
-  .head1 {
+  /* .head1 {
     font-size: 33px;
     font-weight: "bold";
     font-family: proxima-nova;
-  }
+  } */
 
   .signAsConsultant {
     color: #085250;
@@ -522,7 +531,9 @@ input:disabled {
     font-weight: 500;
   }
   .passwordForgotLink {
-    /* font-family: Domine; */
+    font-family: proxima-nova;
+    font-size: 14px;
+    font-weight: 500;
     margin-left: 5px;
   }
 

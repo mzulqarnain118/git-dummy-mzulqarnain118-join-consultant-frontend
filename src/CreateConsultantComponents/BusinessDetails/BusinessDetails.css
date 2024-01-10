@@ -105,9 +105,9 @@
 
 .businessHead {
   color: #085250;
-  font-size: 28px;
-  font-weight: 400;
   font-family: proxima-nova;
+  font-weight: 500;
+  font-size: 28px;
   margin-top: 40px;
 }
 .businessButton1 {
@@ -270,6 +270,9 @@ input::-webkit-input-placeholder {
 }
 .doingBusinessExtraInformation p:nth-child(2) {
   font-weight: 600;
+}
+.doingBusinessExtraInformation p:nth-child(3){
+  text-wrap: balance;
 }
 .errorMesSubtext {
   font-size: 12px;
@@ -435,7 +438,7 @@ input::-webkit-input-placeholder {
 
   .businessHead {
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 500;
     font-family: proxima-nova;
     margin-top: 10px;
   }
@@ -664,8 +667,8 @@ input::-webkit-input-placeholder {
   }
 
   .businessHead {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 500;
     font-family: proxima-nova;
     margin-top: -30px;
   }

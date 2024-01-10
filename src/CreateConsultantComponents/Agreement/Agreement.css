@@ -31,9 +31,9 @@
 .AGhead4 {
   color: #085250;
   font-family: proxima-nova;
-  font-size: 34px;
+  font-size: 28px;
   /* font-size: calc(1.75vw); */
-  font-weight: 600;
+  font-weight: 500;
   margin-top: 60px;
 }
 .agreementButton1 {
@@ -308,6 +308,9 @@
   }
 }
 @media only screen and (max-width: 550px) {
+  .AGmobileComponent {
+    margin-top: 7em;
+  }
   .AGhead2 {
     font-size: 16px;
     font-family: proxima-nova;
@@ -323,7 +326,8 @@
     font-weight: "bold";
     font-family: proxima-nova;
     margin-top: 60px;
-    font-size: 24px;
+    font-size: 22px;
+    font-weight: 500;
   }
   .agreementButton1 {
     background: #dcba80;

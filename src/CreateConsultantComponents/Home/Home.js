@@ -1341,7 +1341,6 @@ class Home extends React.Component {
     if (this.props.userURL !== "") {
       this.apiGetWorkingWith(this.props.userURL.split('&')[0]);
     } else if (consultant) {
-      console.log("🚀 ~ file: Home.js:1344 ~ Home ~ consultant:", consultant)
       this.apiGetWorkingWith(consultant);
     }
   };
@@ -1351,6 +1350,7 @@ class Home extends React.Component {
     const steps = this.getSteps();
     const mobileStep = this.getMobileSteps();
     const { activeStep, load, rightFooterButtonName } = this.state;
+    
     return (
       <div tabIndex='0' onKeyDown={this.handleKeypress}>
         {load ? <Spinner color='success' size='120px' /> : null}
@@ -1366,13 +1366,13 @@ class Home extends React.Component {
               rightFooterButtonName === "CONTINUE " ? (
                 <>
                   <div className='col-xl-2 col-lg-1 col-md-1 col-1 d-flex justify-content-center justify-content-md-end align-items-center'>
-                    <div className='arrowIcon3' onClick={this.handleBackButton}>
+                    {activeStep < 4 && <div className='arrowIcon3' onClick={this.handleBackButton}>
                       <ArrowBackIosIcon />
-                    </div>
+                    </div>}
                   </div>
-                  <div className='col-xl-2 col-lg-2 col-md-11 col-11 d-flex align-items-center'>
+                  <div className='col-xl-2 col-lg-2 col-md-11 col-11 d-flex align-items-center justify-content-center'>
                     <div className='LogoIcon'>
-                      <img src={Logo} alt='' style={{ width: "200px" }} />
+                      <img src={Logo} alt='' />
                     </div>
                   </div>
                 </>
