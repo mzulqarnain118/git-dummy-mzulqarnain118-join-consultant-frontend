@@ -734,8 +734,9 @@ class Home extends React.Component {
     let userData = this.state.userData;
     userData["cart_id"] = "";
     this.setState({ userData });
+    console.log('SKU: ', this.props.customSKU)
 
-    await API.callEndpoint("POST", "Bearer", "/users/createCart")
+    await API.callEndpoint("POST", "Bearer", "/users/createCart", {SKU:this.props.customSKU})
       .then((response) => {
         try {
           userData["cart_id"] = response.data.cartId;
@@ -1338,6 +1339,9 @@ class Home extends React.Component {
   componentDidMount = () => {
     const params = new URLSearchParams(this.props.location.search);
     const consultant = params.get("u");
+    const sku = params.get('sku');
+    this.props.passCustomSKU(sku)
+
     if (this.props.userURL !== "") {
       this.apiGetWorkingWith(this.props.userURL.split('&')[0]);
     } else if (consultant) {

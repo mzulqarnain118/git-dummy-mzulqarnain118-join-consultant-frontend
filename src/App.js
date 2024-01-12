@@ -9,11 +9,17 @@ class App extends React.Component {
     super();
     this.state = {
       customURL: "",
+      customSKU: null,
     };
   }
   passCustomURL = (value) => {
     this.setState({ customURL: value });
   };
+
+  passCustomSKU = (value) => {
+    this.setState({ customSKU: value });
+  };
+
   render() {
     //to block all testing logs, warnings and errors
     // console.log = console.warn = console.error = () => {};
@@ -23,18 +29,19 @@ class App extends React.Component {
           <Switch>
             {/* create consultant Home component */}
             <Route
-              path="/consultant"
+              path='/consultant'
               render={(props) => (
-                <Home userURL={this.state.customURL} passCustomURL={this.passCustomURL} {...props} />
+                <Home
+                  userURL={this.state.customURL}
+                  passCustomURL={this.passCustomURL}
+                  customSKU={this.state.customSKU}
+                  passCustomSKU={this.passCustomSKU}
+                  {...props}
+                />
               )}
             ></Route>
             {/* Custom URL --> fixed working with */}
-            <Route
-              path="/*"
-              render={(props) => (
-                <HomePage passCustomURL={this.passCustomURL} {...props} />
-              )}
-            ></Route>
+            <Route path='/*' render={(props) => <HomePage passCustomURL={this.passCustomURL} {...props} />}></Route>
           </Switch>
         </Router>
       </div>
