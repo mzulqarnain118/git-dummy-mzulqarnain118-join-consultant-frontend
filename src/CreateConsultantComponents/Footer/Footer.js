@@ -70,10 +70,14 @@ class Footer extends React.Component {
             doing_business: this.props.userData.doing_business,
           };
           this.props.apiUpdateScreen(data, "");
-        }else{
+        } else {
           this.props.setrightFooterButtonDisabled(true);
         }
-      } else if (this.props.rightFooterButtonName === "CONTINUE" && userData["indepedent_agreement"] && userData["policy_procedures"]) {
+      } else if (
+        this.props.rightFooterButtonName === "CONTINUE" &&
+        userData["indepedent_agreement"] &&
+        userData["policy_procedures"]
+      ) {
         // call API to Update screen id ,agreement accepted and move to next screen
         let data = {
           id: this.props.userData.id,
@@ -100,10 +104,20 @@ class Footer extends React.Component {
             {/* left button */}
             {this.props.rightFooterButtonName === "LOOKS GOOD" ? (
               <>
-                <div className=" col-lg-4 col-md-4 col-sm-4 col-4 grey" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <div
+                  className=" col-lg-4 col-md-4 col-sm-4 col-4 grey"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   <div className="leftTextButton">
                     <Ripples className="h-100">
-                      <div onClick={this.handleClickLeft}>
+                      <div
+                        className="LeftTextButtonText"
+                        onClick={this.handleClickLeft}
+                      >
                         {window.innerWidth >= 550 ? null : <MakeChanges />}
                         {"  "}MAKE CHANGES
                       </div>
@@ -131,27 +145,34 @@ class Footer extends React.Component {
                 {this.props.rightFooterButtonName === "LOOKS GOOD" ? (
                   <div className="col-lg-4 col-md-1 col-sm-1 col-1"></div>
                 ) : null}
-                <div
-                  className={
-                    this.props.rightFooterButtonDisabled
-                      ? "col-lg-4 col-md-4 col-sm-6 textButtonDisabled "
-                      : "col-lg-4 col-md-4 col-sm-6  textButton "
-                  }
-                >
+                <div className="col-lg-4 col-md-4 col-sm-6">
+                  {/* <div className="rightFooterButton"> */}
+                  <div>
+                    <Ripples>
+                      <div
+                        className={`rightFooterButton mx-auto ${
+                          this.props.rightFooterButtonDisabled
+                            ? "textButtonDisabled"
+                            : "textButton"
+                        }`}
+                        onClick={this.handleClickRight}
+                      >
+                        {this.props.rightFooterButtonName}
+                      </div>
+                    </Ripples>
+                  </div>
+                </div>
+                {/* </div> */}
+              </>
+            ) : (
+              <div className="d-flex flex-row-reverse">
+                <div className="rightFooterButton textButton mobileLeftMargin">
                   <Ripples>
                     <div onClick={this.handleClickRight}>
                       {this.props.rightFooterButtonName}
                     </div>
                   </Ripples>
                 </div>
-              </>
-            ) : (
-              <div className="textButton mobileLeftMargin">
-                <Ripples>
-                  <div onClick={this.handleClickRight}>
-                    {this.props.rightFooterButtonName}
-                  </div>
-                </Ripples>
               </div>
             )}
           </div>

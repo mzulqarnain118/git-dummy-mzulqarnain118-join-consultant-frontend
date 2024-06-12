@@ -7,7 +7,15 @@
   height: 50px;
   text-align: center;
 }
-.textButton,
+.textButton {
+  color: #c5a475;
+  font-family: proxima-nova;
+  font-size: 27px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .leftTextButton {
   color: #ffffff;
   font-family: proxima-nova;
@@ -16,14 +24,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-wrap: nowrap;
 }
 .textButton:hover {
   cursor: pointer;
 }
 .textButtonDisabled {
-  color: #ffffff;
+  color:rgba(197, 164, 117, 0.3);
   font-size: 27px;
-  opacity: 0.2;
   font-weight: 600;
   font-family: proxima-nova;
 }
@@ -43,11 +51,24 @@
 .leftTextButton:hover {
   cursor: pointer;
 }
+
+.rightFooterButton{
+  background-color: #ffffff;
+  padding: 0 20px;
+  margin-top: 5px;
+  max-height: 40px;
+  width: max-content;
+}
+
+.LeftTextButtonText {
+  color: grey;
+  background-color: #ffffff;
+  padding: 0 15px;
+}
+
 @media only screen and (min-width: 768px) {
 
   .textButton {
-    color: #ffffff;
-    background-color: #c5a475;
     font-size: 27px;
     font-weight: 600;
     font-family: proxima-nova;
@@ -69,22 +90,16 @@
   }
   .textButton {
     font-family: proxima-nova;
-    color: #ffffff;
-    background-color: #c5a475;
     font-size: 27px;
     font-weight: 600;
-    margin-top: -25px !important;
   }
   .textButton:hover {
     cursor: pointer;
   }
   .textButtonDisabled {
-    color: #ffffff;
-    margin-top: -25px !important;
     font-size: 22px !important;
     font-weight: 600;
     font-family: proxima-nova;
-    opacity: 0.2 !important;
   }
   .textButtonDisabled:hover {
     cursor: not-allowed;
@@ -108,7 +123,6 @@
   }
   
   .leftTextButton {
-    color: #ffffff;
     font-size: 18px;
     font-family: proxima-nova;
     /* margin-top: 3px !important; */
@@ -116,13 +130,23 @@
   .leftTextButton:hover {
     cursor: pointer;
   }
+  .rightFooterButton{ 
+    padding: 5px 15px;
+    margin-top: 0;
+  }
   .mobileLeftMargin {
-    margin-left: 100px;
+    margin-top: 5px;
+    margin-right: 10px;
     font-size: 18px;
     font-family: proxima-nova;
-    margin-top: 2px !important;
+  }
+  .LeftTextButtonText {
+    color: grey;
+    background-color: #ffffff;
+    padding: 3px 3px;
   }
 }
+
 @media (max-width: 639px) {
   .textButton,
   .leftTextButton,
