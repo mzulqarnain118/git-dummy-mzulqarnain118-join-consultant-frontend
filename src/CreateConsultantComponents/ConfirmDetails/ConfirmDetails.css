@@ -654,6 +654,15 @@ input:disabled {
   font-weight: 500;
 }
 
+.working-with {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.working_with_header1 {
+  margin-bottom: 0.25rem;
+}
+
 @media (max-width: 1199px) {
   .displayArea {
     padding: 30px;

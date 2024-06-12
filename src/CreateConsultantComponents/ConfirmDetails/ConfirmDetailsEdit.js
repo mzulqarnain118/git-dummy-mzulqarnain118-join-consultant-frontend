@@ -708,6 +708,78 @@ class ConfirmDetailsEdit extends React.Component {
             </div>
           </div>
 
+          {/* working with */}
+          <div className='working-with'>
+              <div className='form-group'>
+                <p className='head3 working_with_header1' htmlFor='working_with'>
+                  CONSULTANT'S TEAM YOU’RE JOINING* (Required)
+                </p>
+                <p>If you don't have a Consultant / Mentor, select "Don't have a Consultant" from the drop-down below.</p>
+                <div className='edit-InputMargin'>
+                  <Autocomplete
+                    disablePortal={this.props.fixedWorkingWith}
+                    className={error.working_with.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
+                    value={{
+                      id: this.props.userData["working_with"].id,
+                      DisplayName: this.props.userData["working_with"].name,
+                    }}
+                    onChange={(event, newValue) => {
+                      let userData = this.state.userData;
+                      if (newValue !== null) {
+                        userData["working_with"] = {
+                          id: newValue["PersonID"],
+                          name: newValue["DisplayName"],
+                          displayId: newValue["DisplayID"],
+                        };
+                      }
+                      this.setState({ value: newValue, userData });
+                      this.validateToMoveToNextScreen(this.state.avoidDateError);
+                    }}
+                    inputValue={this.state.userData["working_with"].name}
+                    onInputChange={(event, newInputValue) => {
+                      let e = {
+                        target: {
+                          id: "working_with",
+                          value: newInputValue,
+                        },
+                      };
+                      this.handleChange(e);
+                    }}
+                    id='controllable-states-demo'
+                    options={working_with_arr}
+                    getOptionLabel={(option) => {
+                      if (option.DisplayName !== null) {
+                        return option.DisplayName;
+                      } else {
+                        return "";
+                      }
+                    }}
+                    style={{ width: 290 }}
+                    classes={{
+                      paper: classes.paper,
+                      inputRoot: classes.inputRoot,
+                      root: classes.listbox,
+                    }}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        classes={{ root: classes.customTextField }}
+                        placeholder='Enter Consultant’s Team You’re Joining'
+                        variant='outlined'
+                        disabled={this.props.fixedWorkingWith}
+                      />
+                    )}
+                  />
+                </div>
+              </div>
+              {error.working_with.length > 0 ? (
+                <>
+                  <div className='errorMes'>{error.working_with}</div>
+                  <br />
+                </>
+              ) : null}
+            </div>
+
           <div className='staticText5'>SHIPPING ADDRESS</div>
           {/* edit address */}
           <div className='row edit-margin'>
@@ -856,77 +928,6 @@ class ConfirmDetailsEdit extends React.Component {
               {error.phonenumber.length > 0 ? (
                 <>
                   <div className='errorMes'>{error.phonenumber}</div>
-                  <br />
-                </>
-              ) : null}
-            </div>
-
-            {/* working with */}
-            <div className='col-lg-4 offset-lg-1 edit-marginLeft'>
-              <div className='form-group'>
-                <span className='head3' htmlFor='working_with'>
-                  CONSULTANT'S TEAM YOU’RE JOINING* (Required)
-                </span>
-                <div className='edit-InputMargin'>
-                  <Autocomplete
-                    disablePortal={this.props.fixedWorkingWith}
-                    className={error.working_with.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    value={{
-                      id: this.props.userData["working_with"].id,
-                      DisplayName: this.props.userData["working_with"].name,
-                    }}
-                    onChange={(event, newValue) => {
-                      let userData = this.state.userData;
-                      if (newValue !== null) {
-                        userData["working_with"] = {
-                          id: newValue["PersonID"],
-                          name: newValue["DisplayName"],
-                          displayId: newValue["DisplayID"],
-                        };
-                      }
-                      this.setState({ value: newValue, userData });
-                      this.validateToMoveToNextScreen(this.state.avoidDateError);
-                    }}
-                    inputValue={this.state.userData["working_with"].name}
-                    onInputChange={(event, newInputValue) => {
-                      let e = {
-                        target: {
-                          id: "working_with",
-                          value: newInputValue,
-                        },
-                      };
-                      this.handleChange(e);
-                    }}
-                    id='controllable-states-demo'
-                    options={working_with_arr}
-                    getOptionLabel={(option) => {
-                      if (option.DisplayName !== null) {
-                        return option.DisplayName;
-                      } else {
-                        return "";
-                      }
-                    }}
-                    style={{ width: 290 }}
-                    classes={{
-                      paper: classes.paper,
-                      inputRoot: classes.inputRoot,
-                      root: classes.listbox,
-                    }}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        classes={{ root: classes.customTextField }}
-                        placeholder='Enter Consultant’s Team You’re Joining'
-                        variant='outlined'
-                        disabled={this.props.fixedWorkingWith}
-                      />
-                    )}
-                  />
-                </div>
-              </div>
-              {error.working_with.length > 0 ? (
-                <>
-                  <div className='errorMes'>{error.working_with}</div>
                   <br />
                 </>
               ) : null}
