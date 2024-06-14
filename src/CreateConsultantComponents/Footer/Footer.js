@@ -105,7 +105,7 @@ class Footer extends React.Component {
             {this.props.rightFooterButtonName === "LOOKS GOOD" ? (
               <>
                 <div
-                  className=" col-lg-4 col-md-4 col-sm-4 col-4 grey"
+                  className="col-lg-4 col-md-4 col-sm-4 col-4 grey"
                   style={{
                     display: "flex",
                     justifyContent: "center",
