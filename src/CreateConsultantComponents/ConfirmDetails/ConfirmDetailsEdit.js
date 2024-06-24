@@ -1,10 +1,10 @@
-import React from 'react';
-import moment from 'moment';
-import PropTypes from 'prop-types';
-import Header from '../MobileHeader/Header';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import { withStyles } from '@mui/styles';
+import React from "react";
+import moment from "moment";
+import PropTypes from "prop-types";
+import Header from "../MobileHeader/Header";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import { withStyles } from "@mui/styles";
 
 const styles = (theme) => ({
   paper: {
@@ -353,15 +353,18 @@ class ConfirmDetailsEdit extends React.Component {
     }
 
     if (
-      moment(new Date(userData.dob.year, userData.dob.month, userData.dob.day)).format('MM/DD/YYYY') ===
-        'Invalid date' &&
+      moment(
+        new Date(userData.dob.year, userData.dob.month, userData.dob.day)
+      ).format("MM/DD/YYYY") === "Invalid date" &&
       this.state.avoidDateError
     ) {
       error["dob"] = "Invalid Date";
       this.props.setrightFooterButtonDisabled(true);
     }
     if (
-      moment(new Date(userData.dob.year, userData.dob.month, userData.dob.day)).format('MM/DD/YYYY') !== 'Invalid date'
+      moment(
+        new Date(userData.dob.year, userData.dob.month, userData.dob.day)
+      ).format("MM/DD/YYYY") !== "Invalid date"
     ) {
       this.setState({ avoidDateError: true });
       this.validateToMoveToNextScreen(true);
@@ -374,7 +377,9 @@ class ConfirmDetailsEdit extends React.Component {
     let errorArr = this.state.errorArr;
     let userData = this.state.userData;
     let avoidPhoneError = this.state.avoidPhoneError;
-    let date = moment(new Date(userData.dob.year, userData.dob.month, userData.dob.day)).format('MM/DD/YYYY');
+    let date = moment(
+      new Date(userData.dob.year, userData.dob.month, userData.dob.day)
+    ).format("MM/DD/YYYY");
     let error = this.state.error;
     if (userData["working_with"]["displayId"] === null) {
       error["working_with"] = "Consultant's team you're joining is mandatory";
@@ -495,84 +500,102 @@ class ConfirmDetailsEdit extends React.Component {
             topBarNavigation={this.props.topBarNavigation}
           />
         ) : null}
-        <div className={window.innerWidth >= 550 ? 'componentMargin4 ' : 'CEmobileComponent'}>
+        <div
+          className={
+            window.innerWidth >= 550 ? "componentMargin4 " : "CEmobileComponent"
+          }
+        >
           {/* static text to be displayed */}
-          <span className='head1'>
+          <span className="head1">
             LET'S KEEP GOING
             {/* {this.props.userData.first_name !== "" ? <>, {userData.first_name.toUpperCase()}!</> : null} */}
           </span>
-          <div className='staticText3'>Next, we need to collect some additional information about you.</div>
+          <div className="staticText3">
+            Next, we need to collect some additional information about you.
+          </div>
 
           {/* edit name and date of birth */}
-          <div className='row edit-margin'>
-            <div className='col-lg-2 col-md-3'>
-              <div className='form-group'>
-                <span className='head3' htmlFor='first_name'>
+          <div className="row edit-margin">
+            <div className="col-lg-2 col-md-3">
+              <div className="form-group">
+                <span className="head3" htmlFor="first_name">
                   FIRST NAME* (Required)
                 </span>
-                <div className='edit-InputMargin'>
+                <div className="edit-InputMargin">
                   <input
-                    type='text'
+                    type="text"
                     // autocomplete="none"
                     // autoComplete="none"
-                    value={userData['first_name']}
-                    className={error.first_name.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    id='first_name'
-                    name='first_name'
-                    placeholder='Enter first name'
+                    value={userData["first_name"]}
+                    className={
+                      error.first_name.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
+                    id="first_name"
+                    name="first_name"
+                    placeholder="Enter first name"
                     onChange={this.handleChange}
                   />
                 </div>
               </div>
               {error.first_name.length > 0 ? (
                 <>
-                  <div className='errorMes'>{error.first_name}</div>
+                  <div className="errorMes">{error.first_name}</div>
                   <br />
                 </>
               ) : null}
             </div>
 
             {/* Last name  */}
-            <div className='col-lg-2 offset-lg-1  edit-marginLeft'>
-              <div className='form-group'>
-                <span className='head3' htmlFor='last_name'>
-                  LAST NAME* (Required) 
+            <div className="col-lg-2 offset-lg-1  edit-marginLeft">
+              <div className="form-group">
+                <span className="head3" htmlFor="last_name">
+                  LAST NAME* (Required)
                 </span>
-                <div className='edit-InputMargin'>
+                <div className="edit-InputMargin">
                   <input
-                    type='text'
+                    type="text"
                     // autocomplete="none"
                     // autoComplete="none"
-                    value={userData['last_name']}
-                    className={error.last_name.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    id='last_name'
-                    name='last_name'
-                    placeholder='Enter last name'
+                    value={userData["last_name"]}
+                    className={
+                      error.last_name.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
+                    id="last_name"
+                    name="last_name"
+                    placeholder="Enter last name"
                     onChange={this.handleChange}
                   />
                 </div>
               </div>
               {error.last_name.length > 0 ? (
                 <>
-                  <div className='errorMes'>{error.last_name}</div>
+                  <div className="errorMes">{error.last_name}</div>
                   <br />
                 </>
               ) : null}
             </div>
 
             {/* date of bith  */}
-            <div className='col-lg-4 offset-lg-1 col-md-5 edit-marginLeft'>
-              <span className='head3'>DATE OF BIRTH* (Required)</span>
+            <div className="col-lg-4 offset-lg-1 col-md-5 edit-marginLeft">
+              <span className="head3">DATE OF BIRTH* (Required)</span>
 
-              <div className='row'>
-                <div className='col-lg-1 col-md-5 col-xs-1 mobileDate'>
-                  <div className='form-group'>
-                    <div className='edit-InputMargin'>
+              <div className="row">
+                <div className="col-lg-1 col-md-5 col-xs-1 mobileDate">
+                  <div className="form-group">
+                    <div className="edit-InputMargin">
                       <select
-                        className={error.dob.length > 0 ? 'form-control edit-month-red' : 'form-control edit-month'}
-                        value={this.state.userData.dob.month||''}
-                        id='month'
-                        name='month'
+                        className={
+                          error.dob.length > 0
+                            ? "form-control edit-month-red"
+                            : "form-control edit-month"
+                        }
+                        value={this.state.userData.dob.month || ""}
+                        id="month"
+                        name="month"
                         onChange={this.handleDate}
                       >
                         <option value={"MM"} key={"MM"}>
@@ -587,14 +610,18 @@ class ConfirmDetailsEdit extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className='col-lg-3 offset-lg-2 col-md-5 col-xs-1 mobileDate '>
-                  <div className='form-group'>
-                    <div className='edit-InputMargin'>
+                <div className="col-lg-3 offset-lg-2 col-md-5 col-xs-1 mobileDate ">
+                  <div className="form-group">
+                    <div className="edit-InputMargin">
                       <select
-                        className={error.dob.length > 0 ? 'form-control edit-day-red' : 'form-control edit-day'}
-                        value={this.state.userData.dob.day||''}
-                        id='day'
-                        name='day'
+                        className={
+                          error.dob.length > 0
+                            ? "form-control edit-day-red"
+                            : "form-control edit-day"
+                        }
+                        value={this.state.userData.dob.day || ""}
+                        id="day"
+                        name="day"
                         onChange={this.handleDate}
                       >
                         options.push(
@@ -609,7 +636,8 @@ class ConfirmDetailsEdit extends React.Component {
                             i <=
                             [
                               31,
-                              (this.state.userData.dob.year % 4 === 0 && this.state.userData.dob.year % 100 !== 0) ||
+                              (this.state.userData.dob.year % 4 === 0 &&
+                                this.state.userData.dob.year % 100 !== 0) ||
                               this.state.userData.dob.year % 400 === 0
                                 ? 29
                                 : 28,
@@ -638,24 +666,32 @@ class ConfirmDetailsEdit extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className='col-lg-2  col-md-2 col-xs-1 mobileDate'>
-                  <div className='form-group'>
-                    <div className='edit-InputMargin'>
+                <div className="col-lg-2  col-md-2 col-xs-1 mobileDate">
+                  <div className="form-group">
+                    <div className="edit-InputMargin">
                       <select
-                        className={error.dob.length > 0 ? 'form-control edit-year-red' : 'form-control edit-year'}
-                        value={this.state.userData.dob.year||''}
-                        id='year'
-                        name='year'
+                        className={
+                          error.dob.length > 0
+                            ? "form-control edit-year-red"
+                            : "form-control edit-year"
+                        }
+                        value={this.state.userData.dob.year || ""}
+                        id="year"
+                        name="year"
                         onChange={this.handleDate}
                       >
                         {/* options.push( */}
-                        <option value={'YYYY'} key={'YYYY'}>
+                        <option value={"YYYY"} key={"YYYY"}>
                           YYYY
                         </option>
                         {/* ); */}
                         {(() => {
                           const options = [];
-                          for (let i = new Date().getFullYear() - 21; i >= 1920; i--) {
+                          for (
+                            let i = new Date().getFullYear() - 21;
+                            i >= 1920;
+                            i--
+                          ) {
                             options.push(
                               <option value={i} key={i}>
                                 {i}
@@ -671,29 +707,33 @@ class ConfirmDetailsEdit extends React.Component {
               </div>
               {error.dob.length > 0 ? (
                 <>
-                  <div className='errorMes'>{error.dob}</div>
+                  <div className="errorMes">{error.dob}</div>
                   <br />
                 </>
               ) : null}
             </div>
           </div>
           {/* Email id */}
-          <div className='row'>
-            <div className='col-lg-2 '>
-              <div className='form-group'>
-                <span className='head3' htmlFor='email'>
+          <div className="row">
+            <div className="col-lg-2 ">
+              <div className="form-group">
+                <span className="head3" htmlFor="email">
                   EMAIL ID
                 </span>
-                <div className='edit-InputMargin'>
+                <div className="edit-InputMargin">
                   <input
-                    type='text'
+                    type="text"
                     // autocomplete="none"
                     // autoComplete="none"
-                    value={userData['email']}
-                    className={error.email.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    id='email'
-                    name='email'
-                    placeholder='Enter Email ID'
+                    value={userData["email"]}
+                    className={
+                      error.email.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
+                    id="email"
+                    name="email"
+                    placeholder="Enter Email ID"
                     // onChange={this.handleChange}
                     disabled={true}
                   />
@@ -701,7 +741,7 @@ class ConfirmDetailsEdit extends React.Component {
               </div>
               {error.email.length > 0 ? (
                 <>
-                  <div className='errorMes'>{error.email}</div>
+                  <div className="errorMes">{error.email}</div>
                   <br />
                 </>
               ) : null}
@@ -709,147 +749,167 @@ class ConfirmDetailsEdit extends React.Component {
           </div>
 
           {/* working with */}
-          <div className='working-with'>
-              <div className='form-group'>
-                <p className='head3 working_with_header1' htmlFor='working_with'>
-                  CONSULTANT'S TEAM YOU’RE JOINING* (Required)
-                </p>
-                <p>If you don't have a Consultant / Mentor, select "Don't have a Consultant" from the drop-down below.</p>
-                <div className='edit-InputMargin'>
-                  <Autocomplete
-                    disablePortal={this.props.fixedWorkingWith}
-                    className={error.working_with.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    value={{
-                      id: this.props.userData["working_with"].id,
-                      DisplayName: this.props.userData["working_with"].name,
-                    }}
-                    onChange={(event, newValue) => {
-                      let userData = this.state.userData;
-                      if (newValue !== null) {
-                        userData["working_with"] = {
-                          id: newValue["PersonID"],
-                          name: newValue["DisplayName"],
-                          displayId: newValue["DisplayID"],
-                        };
-                      }
-                      this.setState({ value: newValue, userData });
-                      this.validateToMoveToNextScreen(this.state.avoidDateError);
-                    }}
-                    inputValue={this.state.userData["working_with"].name}
-                    onInputChange={(event, newInputValue) => {
-                      let e = {
-                        target: {
-                          id: "working_with",
-                          value: newInputValue,
-                        },
+          <div className="working-with">
+            <div className="form-group">
+              <p className="head3 working_with_header1" htmlFor="working_with">
+                CONSULTANT'S TEAM YOU’RE JOINING* (Required)
+              </p>
+              <p>
+                If you don't have a Consultant / Mentor, start typing "Don't
+                have a Consultant", and choose that option from the drop-down
+                below.
+              </p>
+              <div className="edit-InputMargin">
+                <Autocomplete
+                  disablePortal={this.props.fixedWorkingWith}
+                  className={
+                    error.working_with.length > 0
+                      ? "form-control edit-Red"
+                      : "form-control edit-Input"
+                  }
+                  value={{
+                    id: this.props.userData["working_with"].id,
+                    DisplayName: this.props.userData["working_with"].name,
+                  }}
+                  onChange={(event, newValue) => {
+                    let userData = this.state.userData;
+                    if (newValue !== null) {
+                      userData["working_with"] = {
+                        id: newValue["PersonID"],
+                        name: newValue["DisplayName"],
+                        displayId: newValue["DisplayID"],
                       };
-                      this.handleChange(e);
-                    }}
-                    id='controllable-states-demo'
-                    options={working_with_arr}
-                    getOptionLabel={(option) => {
-                      if (option.DisplayName !== null) {
-                        return option.DisplayName;
-                      } else {
-                        return "";
-                      }
-                    }}
-                    style={{ width: 290 }}
-                    classes={{
-                      paper: classes.paper,
-                      inputRoot: classes.inputRoot,
-                      root: classes.listbox,
-                    }}
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        classes={{ root: classes.customTextField }}
-                        placeholder='Enter Consultant’s Team You’re Joining'
-                        variant='outlined'
-                        disabled={this.props.fixedWorkingWith}
-                      />
-                    )}
-                  />
-                </div>
+                    }
+                    this.setState({ value: newValue, userData });
+                    this.validateToMoveToNextScreen(this.state.avoidDateError);
+                  }}
+                  inputValue={this.state.userData["working_with"].name}
+                  onInputChange={(event, newInputValue) => {
+                    let e = {
+                      target: {
+                        id: "working_with",
+                        value: newInputValue,
+                      },
+                    };
+                    this.handleChange(e);
+                  }}
+                  id="controllable-states-demo"
+                  options={working_with_arr}
+                  getOptionLabel={(option) => {
+                    if (option.DisplayName !== null) {
+                      return option.DisplayName;
+                    } else {
+                      return "";
+                    }
+                  }}
+                  style={{ width: 290 }}
+                  classes={{
+                    paper: classes.paper,
+                    inputRoot: classes.inputRoot,
+                    root: classes.listbox,
+                  }}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      classes={{ root: classes.customTextField }}
+                      placeholder="Type Consultant's name"
+                      variant="outlined"
+                      disabled={this.props.fixedWorkingWith}
+                    />
+                  )}
+                />
               </div>
-              {error.working_with.length > 0 ? (
-                <>
-                  <div className='errorMes'>{error.working_with}</div>
-                  <br />
-                </>
-              ) : null}
             </div>
+            {error.working_with.length > 0 ? (
+              <>
+                <div className="errorMes">{error.working_with}</div>
+                <br />
+              </>
+            ) : null}
+          </div>
 
-          <div className='staticText5'>SHIPPING ADDRESS</div>
+          <div className="staticText5">SHIPPING ADDRESS</div>
           {/* edit address */}
-          <div className='row edit-margin'>
-            <div className='col-lg-2'>
-              <div className='form-group'>
-                <span className='head3' htmlFor='street'>
+          <div className="row edit-margin">
+            <div className="col-lg-2">
+              <div className="form-group">
+                <span className="head3" htmlFor="street">
                   STREET* (Required)
                 </span>
-                <div className='edit-InputMargin'>
+                <div className="edit-InputMargin">
                   <input
-                    type='text'
+                    type="text"
                     // autocomplete="none"
                     // autoComplete="none"
-                    value={userData['address']['street']}
-                    className={error.address.street.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    id='street'
-                    name='street'
-                    placeholder='Enter street'
+                    value={userData["address"]["street"]}
+                    className={
+                      error.address.street.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
+                    id="street"
+                    name="street"
+                    placeholder="Enter street"
                     onChange={this.handleChange}
                   />
                 </div>
               </div>
               {error.address.street.length > 0 ? (
                 <>
-                  <div className='errorMes'>{error.address.street}</div>
+                  <div className="errorMes">{error.address.street}</div>
                   <br />
                 </>
               ) : null}
             </div>
 
             {/* city */}
-            <div className='col-lg-2 offset-lg-1 edit-marginLeft'>
-              <div className='form-group'>
-                <span className='head3' htmlFor='city'>
+            <div className="col-lg-2 offset-lg-1 edit-marginLeft">
+              <div className="form-group">
+                <span className="head3" htmlFor="city">
                   CITY* (Required)
                 </span>
-                <div className='edit-InputMargin'>
+                <div className="edit-InputMargin">
                   <input
-                    type='text'
+                    type="text"
                     // autocomplete="none"
                     // autoComplete="none"
-                    value={userData['address']['city']}
-                    className={error.address.city.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    id='city'
-                    name='city'
-                    placeholder='Enter city'
+                    value={userData["address"]["city"]}
+                    className={
+                      error.address.city.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
+                    id="city"
+                    name="city"
+                    placeholder="Enter city"
                     onChange={this.handleChange}
                   />
                 </div>
               </div>
               {error.address.city.length > 0 ? (
                 <>
-                  <div className='errorMes'>{error.address.city}</div>
+                  <div className="errorMes">{error.address.city}</div>
                   <br />
                 </>
               ) : null}
             </div>
             {/* state */}
 
-            <div className='col-lg-2 offset-lg-1 edit-marginLeft'>
-              <div className='form-group'>
-                <span className='head3' htmlFor='state'>
+            <div className="col-lg-2 offset-lg-1 edit-marginLeft">
+              <div className="form-group">
+                <span className="head3" htmlFor="state">
                   STATE* (Required)
                 </span>
-                <div className='edit-InputMargin'>
+                <div className="edit-InputMargin">
                   <select
-                    className={error.address.state.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    value={userData['address']['state']}
-                    id='state'
-                    name='state'
+                    className={
+                      error.address.state.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
+                    value={userData["address"]["state"]}
+                    id="state"
+                    name="state"
                     // autocomplete="none"
                     // autoComplete="none"
                     onChange={this.handleChange}
@@ -867,67 +927,75 @@ class ConfirmDetailsEdit extends React.Component {
               </div>
               {error.address.state.length > 0 ? (
                 <>
-                  <div className='errorMes'>{error.address.state}</div>
+                  <div className="errorMes">{error.address.state}</div>
                   <br />
                 </>
               ) : null}
             </div>
           </div>
-          <div className='row edit-margin bottomMargin'>
+          <div className="row edit-margin bottomMargin">
             {/* address second row */}
             {/* Zipcode */}
-            <div className='col-lg-2'>
-              <div className='form-group'>
-                <span className='head3' htmlFor='zipcode'>
+            <div className="col-lg-2">
+              <div className="form-group">
+                <span className="head3" htmlFor="zipcode">
                   ZIPCODE* (Required)
                 </span>
-                <div className='edit-InputMargin'>
+                <div className="edit-InputMargin">
                   <input
-                    type='text'
+                    type="text"
                     // autocomplete="none"
                     value={userData["address"]["zipcode"]}
-                    className={error.address.zipcode.length > 0 ? "form-control edit-Red" : "form-control edit-Input"}
-                    id='zipcode'
-                    name='zipcode'
-                    placeholder='Enter zipcode'
+                    className={
+                      error.address.zipcode.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
+                    id="zipcode"
+                    name="zipcode"
+                    placeholder="Enter zipcode"
                     onChange={this.handleChange}
-                    maxLength='6'
+                    maxLength="6"
                   />
                 </div>
               </div>
 
               {error.address.zipcode.length > 0 ? (
                 <>
-                  <div className='errorMes'>{error.address.zipcode}</div>
+                  <div className="errorMes">{error.address.zipcode}</div>
                   <br />
                 </>
               ) : null}
             </div>
 
             {/* cell number */}
-            <div className='col-lg-2 offset-lg-1 edit-marginLeft'>
-              <div className='form-group'>
-                <span className='head3' htmlFor='phonenumber'>
+            <div className="col-lg-2 offset-lg-1 edit-marginLeft">
+              <div className="form-group">
+                <span className="head3" htmlFor="phonenumber">
                   CELL NUMBER* (Required)
                 </span>
-                <div className='edit-InputMargin'>
+                <div className="edit-InputMargin">
                   <input
-                    type='text'
+                    type="text"
                     // autocomplete="none"
                     // autoComplete="none"
-                    value={userData['phonenumber']}
-                    className={error.phonenumber.length > 0 ? 'form-control edit-Red' : 'form-control edit-Input'}
-                    id='phonenumber'
-                    name='phonenumber'
-                    placeholder='Enter cell number'
+                    value={userData["phonenumber"]}
+                    className={
+                      error.phonenumber.length > 0
+                        ? "form-control edit-Red"
+                        : "form-control edit-Input"
+                    }
+                    id="phonenumber"
+                    name="phonenumber"
+                    placeholder="Enter cell number"
                     onChange={this.handleChange}
-                    maxLength='12'
+                    maxLength="12"
                   />
                 </div>
               </div>
               {error.phonenumber.length > 0 ? (
                 <>
-                  <div className='errorMes'>{error.phonenumber}</div>
+                  <div className="errorMes">{error.phonenumber}</div>
                   <br />
                 </>
               ) : null}
@@ -954,7 +1022,10 @@ const maskingPhoneNumber = (value) => {
     .join("");
 
   if (value.length > 3 && value.length <= 6) {
-    value = value.split('').splice(0, 3).join('') + '-' + value.split('').splice(3).join('');
+    value =
+      value.split("").splice(0, 3).join("") +
+      "-" +
+      value.split("").splice(3).join("");
   } else if (value.length >= 7) {
     value =
       value.split("").splice(0, 3).join("") +
