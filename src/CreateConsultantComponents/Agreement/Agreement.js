@@ -2,10 +2,10 @@ import React from "react";
 import Header from "../MobileHeader/Header";
 import axios from "axios";
 import Checkbox from "@mui/material/Checkbox";
-import { pink } from '@mui/material/colors';
+// import { pink } from "@mui/material/colors";
 import "./Agreement.css";
 import fileDownload from "js-file-download";
-import { FiDownload } from "react-icons/fi";
+// import { FiDownload } from "react-icons/fi";
 
 class Agreement extends React.Component {
   constructor(props) {
@@ -38,7 +38,10 @@ class Agreement extends React.Component {
         responseType: "blob",
       })
       .then((res) => {
-        const fileName = type === "agreement" ? "Independent_Consultant_Agreement.pdf" : "Policies_Procedures.pdf";
+        const fileName =
+          type === "agreement"
+            ? "Independent_Consultant_Agreement.pdf"
+            : "Policies_Procedures.pdf";
 
         fileDownload(res.data, fileName);
 
@@ -57,7 +60,8 @@ class Agreement extends React.Component {
 
     this.toggleButton(!this.state.toggle);
 
-    userData["indepedent_agreement"] = !this.props.userData.indepedent_agreement;
+    userData["indepedent_agreement"] =
+      !this.props.userData.indepedent_agreement;
     userData["policy_procedures"] = !this.props.userData.policy_procedures;
 
     console.log("indepedent_agreement", userData.indepedent_agreement);
@@ -84,7 +88,7 @@ class Agreement extends React.Component {
   };
 
   render() {
-    const { toggle,lastClickedButton } = this.state;
+    const { toggle } = this.state;
 
     return (
       <React.Fragment>
@@ -97,68 +101,94 @@ class Agreement extends React.Component {
             topBarNavigation={this.props.topBarNavigation}
           />
         ) : null}
-        <div className={window.innerWidth >= 550 ? "AGcomponentMargin " : "AGmobileComponent"}>
-          <div className='mobileAgreementLeftMargin'>
-            <span className='AGhead1'>LAST STEP</span>
-            <div className='AGhead2'>
-              Please review and agree to both the Independent Consultant Agreement &amp; Policy and Procedures
+        <div
+          className={
+            window.innerWidth >= 550
+              ? "AGcomponentMargin "
+              : "AGmobileComponent"
+          }
+        >
+          <div className="mobileAgreementLeftMargin">
+            <span className="AGhead1">LAST STEP</span>
+            <div className="AGhead2">
+              By clicking the “I Agree” checkbox below, you agree to that you
+              have read and agree to the terms and conditions outlined in the
+              Independent Consultant Agreement and the Policies & Procedures.
+              Please review the Agreement and the Policies & Procedures
+              carefully before proceeding.
             </div>
             {/* buttons to select the requested policy */}
-            <div className='AGhead4'>Independent Consultant Agreement</div>
+            {/* <div className="AGhead4">Independent Consultant Agreement</div> */}
 
-            <div className='col-lg-6 '>
-            <div className='downloadButton' onClick={() => this.downloadFile("agreement")}>
-                <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp; Download Independent Consultant Agreement
+            <div className="row">
+              <div className="col-lg-5">
+                <div className="viewButton mb-1">
+                  <a
+                    href="https://drive.google.com/file/d/1EPTy0KRP9Fz_U6v-NnZb3aZsGy9Cngnj/preview?usp=drive_link"
+                    target="_blank"
+                  >
+                    View Independent Consultant Agreement
+                  </a>
+                </div>
+                <div onClick={() => this.downloadFile("agreement")}>
+                  <span className="downloadButton">Download PDF</span>
+                </div>
+              </div>
+              <div className="col-lg-5">
+                <div className="viewButton mb-1">
+                  <a
+                    href="https://drive.google.com/file/d/1QC5-qUhZ3qc4xA3FDjuvba8_FZLVmb3V/preview?usp=sharing"
+                    target="_blank"
+                  >
+                    View Policy and Procedures
+                  </a>
+                </div>
+                <div onClick={() => this.downloadFile("policies")}>
+                  <span className="downloadButton">Download PDF</span>
+                </div>
               </div>
             </div>
 
             {/* to display selected policy data */}
-            <div className='col-lg-6'>
+            {/* <div className="col-lg-6">
               <iframe
-                src='https://drive.google.com/file/d/1EPTy0KRP9Fz_U6v-NnZb3aZsGy9Cngnj/preview?usp=drive_link'
-                type='application/pdf'
-                className='agreementPolicy'
-                width='100%'
+                src="https://drive.google.com/file/d/1EPTy0KRP9Fz_U6v-NnZb3aZsGy9Cngnj/preview?usp=drive_link"
+                type="application/pdf"
+                className="agreementPolicy"
+                width="100%"
               ></iframe>
-            </div>
+            </div> */}
 
-            <div className='AGhead4'>Policy and Procedures</div>
-            <div className='col-lg-6 '>
-            <div className='downloadButton' onClick={() => this.downloadFile("policies")}>
-                <FiDownload style={{ marginTop: "-0.3em" }} /> &nbsp; Download Policy and Procedures
-              </div>
-            </div>
+            {/* <div className="AGhead4">Policy and Procedures</div> */}
 
-            <div className='col-lg-6 '>
-              {/* <iframe src="https://drive.google.com/viewer?embedded=true&url=https://storage.googleapis.com/cellar-static/Consultant-Join/Policies_and_Procedures.pdf"   className='agreementPolicy' width='100%' ></iframe> */}
+            {/* <div className="col-lg-6 ">
+  
               <iframe
-                src='https://drive.google.com/file/d/1QC5-qUhZ3qc4xA3FDjuvba8_FZLVmb3V/preview?usp=sharing'
-                className='agreementPolicy'
-                width='100%'
+                src="https://drive.google.com/file/d/1QC5-qUhZ3qc4xA3FDjuvba8_FZLVmb3V/preview?usp=sharing"
+                className="agreementPolicy"
+                width="100%"
               ></iframe>
-            </div>
+            </div> */}
 
-            <div className='AGhead3'>
-              Please review and agree to both the Independent Consultant Agreement &amp; Policy and Procedures
-            </div>
             {/* check Box to accept agreement */}
-            <div className='col-lg-8 '>
-              <div className='acceptAgreement'>
+            <div className="col-lg-8 ">
+              <div className="acceptAgreement">
                 <>
                   <Checkbox
-                    id='checkbox2'
-                    name='checkbox2'
+                    id="checkbox2"
+                    name="checkbox2"
                     checked={toggle}
                     onChange={this.handleChangecheckbox}
-                    className='checkBoxAccept'
-                    style={{color: '#c5a475'}}
+                    className="checkBoxAccept"
+                    style={{ color: "#c5a475" }}
                   />
                   <span
-                    id='checkbox2'
-                    className='checkboxText mobileAcceptCheckBox'
+                    id="checkbox2"
+                    className="checkboxText mobileAcceptCheckBox"
                     onClick={this.handleChangecheckbox}
                   >
-                    I have read and accept the Independent Consultant Agreement and Policies & Procedures.
+                    I Agree to the Independent Consultant Agreement and Policies
+                    & Procedures
                   </span>
                 </>
               </div>

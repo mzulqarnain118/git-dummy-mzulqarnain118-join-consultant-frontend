@@ -15,7 +15,7 @@
   font-weight: 600;
 }
 .AGhead2 {
-  font-size: calc(3px + 1vw);
+  font-size: 18px;
   font-family: proxima-nova;
   font-weight: 300;
   margin-bottom: 0.5em !important;
@@ -100,9 +100,9 @@
   cursor: pointer;
 }
 
-.downloadButton {
+.viewButton {
   cursor: pointer;
-  background: #e8e0dd;
+  background-color: #e8e0dd;
   font-family: proxima-nova;
   text-align: center;
   margin-top: 1em;
@@ -111,6 +111,14 @@
   padding-bottom: 1em;
   color: #6e7071;
   border: 1px solid #5d6163;
+}
+.viewButton a:first-child {
+  color: inherit;
+  text-decoration: none;
+}
+.downloadButton{
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .agreementPolicy {
@@ -260,7 +268,7 @@
     cursor: pointer;
   }
 
-  .downloadButton {
+  .viewButton {
     cursor: pointer;
     background: #e8e0dd;
     font-family: proxima-nova;
@@ -446,7 +454,7 @@
     font-weight: "bold";
     font-family: proxima-nova;
   }
-  .downloadButton {
+  .viewButton {
     cursor: pointer;
     background: #e8e0dd;
     font-family: proxima-nova;
